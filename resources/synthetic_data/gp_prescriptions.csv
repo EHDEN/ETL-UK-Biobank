@@ -1,0 +1,1001 @@
+eid,data_provider,issue_date,read_2,bnf_code,dmd_code,drug_name,quantity
+XXX,3,YYYY-MM-DD,bxd5.,,374294006,Lisinopril 10mg tablets,30 gram
+XXX,3,YYYY-MM-DD,,,,Co-proxamol 32.5mg/325mg tablets,30 tablet
+XXX,3,YYYY-MM-DD,a6c2.,02.12.04.00.00,,Tramadol 50mg capsules,
+XXX,4,YYYY-MM-DD,,02.06.02.00.00,317919004,Simvastatin 40mg tablets,56 tablets
+XXX,4,YYYY-MM-DD,,04.03.03.00.00,,Gliclazide 80mg tablets,
+XXX,3,YYYY-MM-DD,,08.01.03.00.00,,Levothyroxine sodium 50microgram tablets,56.000
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,Atorvastatin 40mg tablets,112.000
+XXX,3,YYYY-MM-DD,,05.01.01.01.00,,,100
+XXX,3,YYYY-MM-DD,blb2.00,02.02.01.00.00,,Salbutamol 100micrograms/dose inhaler,100.000
+XXX,3,YYYY-MM-DD,,11.06.05.00.00,,Levothyroxine sodium 100microgram tablets,4.000
+XXX,3,YYYY-MM-DD,,06.01.06.00.00,,Aspirin 75mg dispersible tablets,56 tab
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Flucloxacillin 500mg capsules,4 tablet
+XXX,1,YYYY-MM-DD,dian.,01.03.05.00.00,,Ramipril 2.5mg capsules,
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Atenolol 50mg tablets,
+XXX,3,YYYY-MM-DD,,,,Salbutamol 100micrograms/dose inhaler CFC free,56 tab
+XXX,3,YYYY-MM-DD,,02.03.02.02.00,319773006,Simvastatin 40mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,,09.01.01.01.00,,Atenolol 50mg tablets,14 tablet
+XXX,3,YYYY-MM-DD,,03.04.01.01.00,,Amlodipine 10mg tablets,28 tablet
+XXX,1,YYYY-MM-DD,,,,,28.000
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,,14 tablet
+XXX,3,YYYY-MM-DD,dian.,02.06.02.00.00,,Losartan 100mg tablets,28.000
+XXX,3,YYYY-MM-DD,,04.03.01.00.00,,,10.000
+XXX,3,YYYY-MM-DD,,01.04.02.00.00,,Levothyroxine sodium 50microgram tablets,56 tablets
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,,Levothyroxine sodium 25microgram tablets,
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Atorvastatin 40mg tablets,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,Beclometasone 50micrograms/dose nasal spray,56.000
+XXX,3,YYYY-MM-DD,,,,,84 capsule
+XXX,3,YYYY-MM-DD,f923.,,,Amlodipine 5mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,,4 tablet
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,Lisinopril 10mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,01.02.02.00.00,,,28 tablets
+XXX,2,YYYY-MM-DD,,04.07.02.00.00,,Simvastatin 40mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,,,Clopidogrel 75mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,03.01.01.03.00,,Bendroflumethiazide 2.5mg tablets,
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Cetirizine 10mg tablets,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Naproxen 500mg tablets,28 tab
+XXX,3,YYYY-MM-DD,,,,,60 capsule
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Bendroflumethiazide 2.5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,
+XXX,3,YYYY-MM-DD,,06.06.02.00.00,,,100.000
+XXX,4,YYYY-MM-DD,,,,Alendronic acid 70mg tablets,84 capsule
+XXX,3,YYYY-MM-DD,,,,Bendroflumethiazide 2.5mg tablets,56 tablet
+XXX,1,YYYY-MM-DD,,02.09.01.00.00,,,60.000
+XXX,2,YYYY-MM-DD,,,,Simvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,,28.000
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,,120.000
+XXX,2,YYYY-MM-DD,,02.09.01.00.00,,Simvastatin 40mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,,,Bendroflumethiazide 2.5mg tablets,84 tablet
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,Aspirin 75mg dispersible tablets,30 gram
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,,28.000
+XXX,3,YYYY-MM-DD,di21.,09.04.04.02.00,,,1.000
+XXX,3,YYYY-MM-DD,,02120400,,Salbutamol 100micrograms/dose inhaler CFC free,500.000
+XXX,2,YYYY-MM-DD,a6c2.,,,Sildenafil 100mg tablets,
+XXX,1,YYYY-MM-DD,f923.00,13.10.02.00.00,,,56.000
+XXX,3,YYYY-MM-DD,j611.,10.02.02.00.00,,Doxycycline 100mg capsules,30
+XXX,3,YYYY-MM-DD,,03.01.02.00.00,,Aspirin 75mg dispersible tablets,
+XXX,1,YYYY-MM-DD,,11.06.05.00.00,319773006,Levothyroxine sodium 25microgram tablets,4 tablet
+XXX,3,YYYY-MM-DD,bs17.00,,,,28.000
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Omeprazole 10mg gastro-resistant capsules,28 tablets
+XXX,3,YYYY-MM-DD,,,,Cetirizine 10mg tablets,7 tablets
+XXX,4,YYYY-MM-DD,,04.01.02.00.00,,Tamsulosin 400microgram modified-release capsules,56 tablet
+XXX,3,YYYY-MM-DD,,,374296008,Simvastatin 40mg tablets,84 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,56.000
+XXX,4,YYYY-MM-DD,,09.05.01.01.00,,Levothyroxine sodium 100microgram tablets,28 tab
+XXX,3,YYYY-MM-DD,bs18.,05.01.13.00.00,,Atenolol 50mg tablets,28
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,84
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Simvastatin 40mg tablets,56.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Atorvastatin 10mg tablets,
+XXX,4,YYYY-MM-DD,,02.02.01.00.00,,,56 tablet
+XXX,2,YYYY-MM-DD,,,,Prednisolone 5mg tablets,56.000
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,Bendroflumethiazide 2.5mg tablets,56 tablet
+XXX,1,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,1.000
+XXX,2,YYYY-MM-DD,,04.03.01.00.00,,,28 tablets
+XXX,3,YYYY-MM-DD,,,,Allopurinol 100mg tablets,28 tab
+XXX,1,YYYY-MM-DD,bi63.,,,,56.000
+XXX,3,YYYY-MM-DD,,,,,1 pack of 100 tablet(s)
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,Ramipril 5mg capsules,28 tab
+XXX,3,YYYY-MM-DD,,,,Atenolol 100mg tablets,84.000
+XXX,4,YYYY-MM-DD,,03.01.01.04.00,,Warfarin 3mg tablets,28 capsule
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Bendroflumethiazide 2.5mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,03.01.01.03.00,,Dihydrocodeine 30mg tablets,
+XXX,1,YYYY-MM-DD,,03.01.01.04.00,,Amlodipine 10mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,04.07.04.01.00,,,
+XXX,3,YYYY-MM-DD,f921.00,02.05.04.00.00,,Amoxicillin 500mg capsules,30 tablets
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Amlodipine 10mg tablets,56.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Atenolol 100mg tablets,56.000
+XXX,3,YYYY-MM-DD,,01.03.01.00.00,,Clopidogrel 75mg tablets,84.000
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 50microgram tablets,1 pack of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Gabapentin 300mg capsules,56 tablets
+XXX,3,YYYY-MM-DD,,,,Bendroflumethiazide 2.5mg tablets,
+XXX,3,YYYY-MM-DD,,,,Co-codamol 30mg/500mg tablets,56 capsule
+XXX,3,YYYY-MM-DD,,03.01.01.03.00,,Co-codamol 8mg/500mg tablets,
+XXX,3,YYYY-MM-DD,,09.04.04.02.00,,,28.000
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Levothyroxine sodium 50microgram tablets,28.000
+XXX,3,YYYY-MM-DD,,,,,
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Hypromellose 0.3% eye drops,56 tablet
+XXX,3,YYYY-MM-DD,,,,Metformin 500mg tablets,28 tablet(s)
+XXX,2,YYYY-MM-DD,c13J.00,02.05.05.02.00,,Omeprazole 20mg gastro-resistant capsules,
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,,56.000
+XXX,3,YYYY-MM-DD,,05.04.01.00.00,,Atenolol 50mg tablets,28 tablet
+XXX,4,YYYY-MM-DD,a6b1.00,02.04.00.00.00,,Ramipril 5mg capsules,28 tablet(s)
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,,56 capsule
+XXX,4,YYYY-MM-DD,,02.06.02.00.00,,Simvastatin 40mg tablets,1 inhaler
+XXX,3,YYYY-MM-DD,,13.04.01.00.00,,Tamsulosin 400microgram modified-release capsules,28 capsule
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Paracetamol 500mg tablets,7 tablet
+XXX,3,YYYY-MM-DD,,06.01.02.03.00,329587009,Senna 7.5mg tablets,56.000
+XXX,4,YYYY-MM-DD,,,,Amitriptyline 10mg tablets,56
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,,28.000
+XXX,3,YYYY-MM-DD,,13.04.03.00.00,,,28.000
+XXX,3,YYYY-MM-DD,bu23.,02.12.04.00.00,,Levothyroxine sodium 100microgram tablets,100 tablet(s)
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,,7 capsule
+XXX,4,YYYY-MM-DD,,02.06.02.00.00,,Folic acid 5mg tablets,56 tablets
+XXX,1,YYYY-MM-DD,,02.05.05.01.00,,Simvastatin 40mg tablets,4.000
+XXX,3,YYYY-MM-DD,bxd2.00,,,Lisinopril 10mg tablets,56 capsule
+XXX,4,YYYY-MM-DD,,,,,28 capsules
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,56.000
+XXX,3,YYYY-MM-DD,,01.04.02.00.00,322236009,Alendronic acid 70mg tablets,
+XXX,1,YYYY-MM-DD,,02.05.05.01.00,,,100 tablets
+XXX,3,YYYY-MM-DD,dia2.,,,Trimethoprim 200mg tablets,56 - tablet(s)
+XXX,3,YYYY-MM-DD,,,,Co-dydramol 10mg/500mg tablets,28.000
+XXX,3,YYYY-MM-DD,bxi2.,02.12.04.00.00,,Metformin 500mg tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,bxd5.00,03.01.01.03.00,,,2 packs of 28 capsule(s)
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,Cetirizine 10mg tablets,28 capsules
+XXX,1,YYYY-MM-DD,bu23.00,,,Aspirin 75mg gastro-resistant tablets,56.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Lansoprazole 15mg gastro-resistant capsules,56 capsules
+XXX,1,YYYY-MM-DD,,02.08.02.00.00,,Amlodipine 5mg tablets,28.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Gabapentin 300mg capsules,56.000
+XXX,3,YYYY-MM-DD,,12.02.01.00.00,,Citalopram 20mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,28 capsule(s)
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,Senna 7.5mg tablets,56.000
+XXX,4,YYYY-MM-DD,,02.02.01.00.00,,Levothyroxine sodium 100microgram tablets,28.000
+XXX,3,YYYY-MM-DD,a6c3.,02.12.04.00.00,,Doxazosin 4mg tablets,60 tablet(s)
+XXX,3,YYYY-MM-DD,bd35.,02.02.01.00.00,,Aspirin 75mg tablets,100 tablet
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Clopidogrel 75mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,320029006,,84
+XXX,4,YYYY-MM-DD,a6c3.,06.06.02.00.00,,Ramipril 10mg capsules,28
+XXX,4,YYYY-MM-DD,,11.08.01.00.00,,,120.000
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,,,50.000
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 25microgram tablets,56.000
+XXX,3,YYYY-MM-DD,,13.06.02.01.00,,Lansoprazole 30mg gastro-resistant capsules,30.000
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Simvastatin 40mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,,112 tablet
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,56.000
+XXX,3,YYYY-MM-DD,a6c2.,,,,84 capsule
+XXX,1,YYYY-MM-DD,,02.02.01.00.00,,,28.000
+XXX,3,YYYY-MM-DD,,,,Simvastatin 40mg tablets,
+XXX,4,YYYY-MM-DD,,06.02.01.00.00,,Amlodipine 5mg tablets,2 packs of 28 tablet(s)
+XXX,1,YYYY-MM-DD,,06.02.01.00.00,,,
+XXX,3,YYYY-MM-DD,,,,Metformin 850mg tablets,
+XXX,3,YYYY-MM-DD,f921.00,02.06.02.00.00,,Prednisolone 5mg tablets,1.000
+XXX,3,YYYY-MM-DD,,06.01.02.03.00,,Sildenafil 100mg tablets,14 tablets
+XXX,2,YYYY-MM-DD,,,,Aspirin 75mg dispersible tablets,28 tablet
+XXX,4,YYYY-MM-DD,,,,Perindopril erbumine 4mg tablets,28 tablet(s) - 2.5 mg
+XXX,4,YYYY-MM-DD,,,,Amitriptyline 25mg tablets,
+XXX,3,YYYY-MM-DD,,,,,30 tablets
+XXX,3,YYYY-MM-DD,,,,Fluoxetine 20mg capsules,28 tablets
+XXX,3,YYYY-MM-DD,,,318783003,,60.000
+XXX,4,YYYY-MM-DD,bxd5.00,05.01.01.03.00,,Bendroflumethiazide 2.5mg tablets,28 tablet(s)
+XXX,4,YYYY-MM-DD,,04.07.02.00.00,,Simvastatin 40mg tablets,30 tablet(s)
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Citalopram 20mg tablets,84 capsule
+XXX,1,YYYY-MM-DD,,09.04.04.02.00,,Atenolol 100mg tablets,100 tab
+XXX,3,YYYY-MM-DD,,14.04.09.00.00,318906001,Zopiclone 7.5mg tablets,112 tablet(s)
+XXX,3,YYYY-MM-DD,,02.05.04.00.00,,Co-codamol 30mg/500mg tablets,100 tab
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,Tramadol 50mg capsules,28.000
+XXX,3,YYYY-MM-DD,,02.05.04.00.00,,Fluticasone propionate 50micrograms/dose nasal spray,
+XXX,1,YYYY-MM-DD,,08.01.03.00.00,,Ramipril 2.5mg capsules,
+XXX,2,YYYY-MM-DD,bxi1.,,,Amoxicillin 500mg capsules,
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 50microgram tablets,56 tablet
+XXX,4,YYYY-MM-DD,,,,Sildenafil 100mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,04.01.01.00.00,,Co-codamol 30mg/500mg tablets,100 tablets
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,Gliclazide 80mg tablets,56 tablets
+XXX,1,YYYY-MM-DD,,,,Bisoprolol 5mg tablets,28.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,60 tablets
+XXX,1,YYYY-MM-DD,a6b1.,02.12.04.00.00,,Salbutamol 100micrograms/dose inhaler,500 gram
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Amlodipine 10mg tablets,
+XXX,2,YYYY-MM-DD,,01.03.05.00.00,,Losartan 100mg tablets,56 tablet
+XXX,4,YYYY-MM-DD,,04.06.03.00.00,,Warfarin 1mg tablets,56.000
+XXX,2,YYYY-MM-DD,,06.01.06.00.00,,Atorvastatin 10mg tablets,112 tablet
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,,28 tablet
+XXX,3,YYYY-MM-DD,,02.05.01.00.00,,Amlodipine 5mg tablets,
+XXX,3,YYYY-MM-DD,,06.01.02.01.00,,Omeprazole 20mg gastro-resistant capsules,4 tablet
+XXX,2,YYYY-MM-DD,,05.01.01.02.00,,Aspirin 75mg dispersible tablets,56.000
+XXX,4,YYYY-MM-DD,,02.04.00.00.00,,Simvastatin 40mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,12.02.01.00.00,,,
+XXX,3,YYYY-MM-DD,,,,Paracetamol 500mg tablets,120 dose
+XXX,3,YYYY-MM-DD,bxd5.,01.03.05.00.00,,Amlodipine 10mg tablets,56.000
+XXX,4,YYYY-MM-DD,,02.12.04.00.00,,Doxazosin 4mg tablets,1.000
+XXX,2,YYYY-MM-DD,,,,,
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,,
+XXX,3,YYYY-MM-DD,,,,,56.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Citalopram 20mg tablets,
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,Furosemide 40mg tablets,56 tab
+XXX,3,YYYY-MM-DD,,10.01.04.01.00,,,
+XXX,3,YYYY-MM-DD,bi63.,02.12.04.00.00,,,28.000
+XXX,4,YYYY-MM-DD,,,,,56 tab
+XXX,3,YYYY-MM-DD,,03.01.01.03.00,,Lansoprazole 15mg gastro-resistant capsules,28 tablet
+XXX,3,YYYY-MM-DD,bk37.,10.01.01.00.00,,Lansoprazole 30mg gastro-resistant capsules,3 packs of 28 tablet(s)
+XXX,1,YYYY-MM-DD,,02.02.01.00.00,,Lansoprazole 30mg gastro-resistant capsules,
+XXX,4,YYYY-MM-DD,,03.02.00.00.00,,Ramipril 10mg capsules,84.000
+XXX,3,YYYY-MM-DD,,,,Gabapentin 300mg capsules,56.000
+XXX,1,YYYY-MM-DD,,02.02.01.00.00,,Atorvastatin 40mg tablets,56 tablet
+XXX,2,YYYY-MM-DD,bu23.,,,,28 tab
+XXX,2,YYYY-MM-DD,,11.06.05.00.00,,Lansoprazole 30mg gastro-resistant capsules,56.000
+XXX,4,YYYY-MM-DD,,,,Doxycycline 100mg capsules,
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,,56.000
+XXX,1,YYYY-MM-DD,,02.05.05.01.00,,Lisinopril 10mg tablets,100 tablet
+XXX,3,YYYY-MM-DD,,,,Amlodipine 10mg tablets,
+XXX,3,YYYY-MM-DD,,04.01.01.00.00,,Amoxicillin 500mg capsules,56 tablet
+XXX,3,YYYY-MM-DD,,07.04.01.01.00,,Cetirizine 10mg tablets,
+XXX,4,YYYY-MM-DD,,02.02.01.00.00,,Lansoprazole 15mg gastro-resistant capsules,4.000
+XXX,1,YYYY-MM-DD,,02.12.04.00.00,,Doxazosin 4mg tablets,60 tablets
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,,,28 tab
+XXX,3,YYYY-MM-DD,,04.03.01.00.00,,Aspirin 75mg dispersible tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Amlodipine 10mg tablets,
+XXX,4,YYYY-MM-DD,,04.07.02.00.00,,Simvastatin 20mg tablets,28.000
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 100microgram tablets,28 tab
+XXX,4,YYYY-MM-DD,,06.01.01.03.00,,Beclometasone 50micrograms/dose nasal spray,28 capsule(s)
+XXX,3,YYYY-MM-DD,,,,Lisinopril 5mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,,,,28 tab
+XXX,2,YYYY-MM-DD,b211.00,09.04.04.02.00,,Co-codamol 30mg/500mg capsules,7 tablet
+XXX,3,YYYY-MM-DD,,02.06.01.01.00,,,28 tablet(s)
+XXX,3,YYYY-MM-DD,di21.00,03.04.01.01.00,,Bendroflumethiazide 2.5mg tablets,14 tablets
+XXX,3,YYYY-MM-DD,,,,Metformin 500mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,,,Clopidogrel 75mg tablets,56 - tablet(s)
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,56 tablet(s)
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,318783003,,3 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Losartan 50mg tablets,28.000
+XXX,3,YYYY-MM-DD,a6c2.,02.02.01.00.00,,Paracetamol 500mg tablets,500.000
+XXX,4,YYYY-MM-DD,,,,Simvastatin 40mg tablets,28 tablet
+XXX,4,YYYY-MM-DD,,06.01.01.02.00,,,
+XXX,1,YYYY-MM-DD,,02.05.05.02.00,,,28 tablets
+XXX,3,YYYY-MM-DD,,02.12.02.00.00,,Aspirin 75mg dispersible tablets,1 pack of 28 tablet(s)
+XXX,1,YYYY-MM-DD,,02.06.02.00.00,,Clenil Modulite 100micrograms/dose inhaler (Chiesi Ltd),84 tablet
+XXX,4,YYYY-MM-DD,,02.05.04.00.00,,Fluoxetine 20mg capsules,30.000
+XXX,2,YYYY-MM-DD,,06.06.02.00.00,,Amitriptyline 50mg tablets,28.000
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Lisinopril 5mg tablets,100 tablets
+XXX,3,YYYY-MM-DD,,09.06.04.00.00,,Amoxicillin 500mg capsules,
+XXX,1,YYYY-MM-DD,,,,,
+XXX,1,YYYY-MM-DD,,02.08.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,120.000
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Citalopram 20mg tablets,56.000
+XXX,3,YYYY-MM-DD,,01030500,,Bendroflumethiazide 2.5mg tablets,84
+XXX,3,YYYY-MM-DD,,11.08.01.00.00,,Simvastatin 40mg tablets,28.000
+XXX,1,YYYY-MM-DD,,02.05.05.02.00,,,28 tablet - 40 mg
+XXX,3,YYYY-MM-DD,bxi3.00,,,Paracetamol 500mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,,Salbutamol 100micrograms/dose inhaler,28 tablets
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 40mg tablets,112 tablet
+XXX,3,YYYY-MM-DD,,,,Cetirizine 10mg tablets,84 tablets
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,,28.000
+XXX,2,YYYY-MM-DD,,0212000Y0AAADAD,,,56 tablet
+XXX,3,YYYY-MM-DD,,10.02.02.00.00,,Codeine 30mg tablets,
+XXX,3,YYYY-MM-DD,,,,Aspirin 75mg dispersible tablets,1 inhaler
+XXX,1,YYYY-MM-DD,,02.12.04.00.00,,Finasteride 5mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Paracetamol 500mg tablets,
+XXX,3,YYYY-MM-DD,,,326874007,Atorvastatin 40mg tablets,56.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,112 tablet
+XXX,3,YYYY-MM-DD,,02.05.05.02.00,,Alendronic acid 70mg tablets,56 capsules
+XXX,3,YYYY-MM-DD,dian.,,,,56 tabs
+XXX,2,YYYY-MM-DD,,03.04.01.01.00,,Lansoprazole 15mg gastro-resistant capsules,28 tablet
+XXX,4,YYYY-MM-DD,da41.,,,Dihydrocodeine 30mg tablets,56.000
+XXX,1,YYYY-MM-DD,bu51.00,01.06.04.00.00,,,28.000
+XXX,2,YYYY-MM-DD,,,,Atenolol 50mg tablets,112.000
+XXX,1,YYYY-MM-DD,,06.03.02.00.00,,Simvastatin 20mg tablets,56.000
+XXX,3,YYYY-MM-DD,,13.04.01.00.00,,Lisinopril 10mg tablets,
+XXX,3,YYYY-MM-DD,,,,Paracetamol 500mg tablets,56 capsule(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Ramipril 10mg capsules,56.000
+XXX,3,YYYY-MM-DD,,03.04.01.01.00,,Diclofenac sodium 50mg gastro-resistant tablets,
+XXX,3,YYYY-MM-DD,d712.,01.03.05.00.00,,Salbutamol 100micrograms/dose inhaler CFC free,84.000
+XXX,1,YYYY-MM-DD,,02.04.00.00.00,,Citalopram 10mg tablets,30 gram
+XXX,3,YYYY-MM-DD,,04.03.01.00.00,,Metformin 500mg tablets,
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,84.000
+XXX,3,YYYY-MM-DD,,020602,,Bendroflumethiazide 2.5mg tablets,2.000
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 15mg gastro-resistant capsules,
+XXX,4,YYYY-MM-DD,,05.01.13.00.00,,Levothyroxine sodium 50microgram tablets,30 capsule
+XXX,3,YYYY-MM-DD,,03.01.01.03.00,,,56.000
+XXX,3,YYYY-MM-DD,,05.01.13.00.00,,,60 tablet(s)
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,,84 tab
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,Amitriptyline 10mg tablets,
+XXX,4,YYYY-MM-DD,,,,Bendroflumethiazide 2.5mg tablets,28.000
+XXX,3,YYYY-MM-DD,,03.01.01.04.00,,,28 tablets
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Ramipril 10mg capsules,84.000
+XXX,1,YYYY-MM-DD,,,,,28.000
+XXX,3,YYYY-MM-DD,bs17.00,,,Simvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,Tamsulosin 400microgram modified-release capsules,56.000
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 20mg tablets,1.000
+XXX,3,YYYY-MM-DD,,13.02.01.02.00,,,60 tablets
+XXX,3,YYYY-MM-DD,,,,Ramipril 10mg capsules,28 tab
+XXX,3,YYYY-MM-DD,,,,Atenolol 25mg tablets,28 tablets
+XXX,4,YYYY-MM-DD,,04.02.01.00.00,,Ramipril 10mg capsules,56 tablet
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,,7 capsule
+XXX,2,YYYY-MM-DD,,14.04.09.00.00,,Naproxen 500mg tablets,
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,,,Aspirin 75mg dispersible tablets,
+XXX,2,YYYY-MM-DD,,07.04.05.00.00,,,
+XXX,3,YYYY-MM-DD,,,,Folic acid 5mg tablets,10 ml
+XXX,3,YYYY-MM-DD,,01.01.02.01.00,,Omeprazole 20mg gastro-resistant capsules,56.000
+XXX,4,YYYY-MM-DD,,02.12.04.00.00,,,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,,,Tamsulosin 400microgram modified-release capsules,56 tablet
+XXX,3,YYYY-MM-DD,,05.01.01.02.00,,Lisinopril 10mg tablets,
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Simvastatin 20mg tablets,28.000
+XXX,1,YYYY-MM-DD,,06.01.02.02.00,,Simvastatin 40mg tablets,100.000
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,,
+XXX,3,YYYY-MM-DD,,,,,56 capsules
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 10mg tablets,
+XXX,3,YYYY-MM-DD,j22e.00,,,,28.000
+XXX,3,YYYY-MM-DD,,,,Simvastatin 10mg tablets,28 tab
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Doxycycline 100mg capsules,5.000
+XXX,4,YYYY-MM-DD,bxi2.,,,Aspirin 75mg dispersible tablets,28 capsules
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 50microgram tablets,56 tab
+XXX,1,YYYY-MM-DD,,,,Naproxen 500mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,02.09.02.00.00,374294006,Simvastatin 20mg tablets,7 tablet
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Ferrous sulfate 200mg tablets,2 packs of 28 capsule(s)
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,,56 tablet
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,Paracetamol 500mg tablets,60.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Amitriptyline 10mg tablets,56.000
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Clenil Modulite 100micrograms/dose inhaler (Chiesi Ltd),30 tablets
+XXX,1,YYYY-MM-DD,,04.01.01.00.00,,Doxazosin 4mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,,1 pack of 28 tablet(s)
+XXX,2,YYYY-MM-DD,,06.02.01.00.00,,Salbutamol 100micrograms/dose inhaler,28 tablet
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,,
+XXX,3,YYYY-MM-DD,,01.04.02.00.00,,Doxycycline 100mg capsules,100 tablets
+XXX,3,YYYY-MM-DD,,01.02.02.00.00,,Ramipril 5mg capsules,
+XXX,3,YYYY-MM-DD,ae11.,02.05.05.02.00,,Tramadol 50mg capsules,56 tablet(s)
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Ramipril 5mg capsules,56 tablet
+XXX,3,YYYY-MM-DD,,02.05.05.02.00,,Trimethoprim 200mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,04.01.02.00.00,,Amitriptyline 25mg tablets,
+XXX,3,YYYY-MM-DD,bxi1.,11.06.05.00.00,,Ferrous sulfate 200mg tablets,
+XXX,3,YYYY-MM-DD,a6c3.,,,Amoxicillin 250mg capsules,28.000
+XXX,3,YYYY-MM-DD,f35z.,,,Co-codamol 8mg/500mg tablets,56 tablet
+XXX,4,YYYY-MM-DD,a6c3.,,,Levothyroxine sodium 100microgram tablets,28 capsules
+XXX,4,YYYY-MM-DD,,06.01.01.03.00,,Co-proxamol 32.5mg/325mg tablets,84 tablet
+XXX,3,YYYY-MM-DD,,,,Sildenafil 100mg tablets,
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Citalopram 20mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,,84 capsule
+XXX,3,YYYY-MM-DD,,11.08.01.00.00,,Gliclazide 80mg tablets,
+XXX,4,YYYY-MM-DD,bu23.00,11.06.05.00.00,,Atorvastatin 20mg tablets,56.000
+XXX,4,YYYY-MM-DD,,02.12.04.00.00,318901006,diclofenac sodium EC tablets 50mg,200.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Clopidogrel 75mg tablets,84 tablets
+XXX,3,YYYY-MM-DD,,,,Ramipril 2.5mg capsules,28 tablets
+XXX,3,YYYY-MM-DD,,,,,56 tablets
+XXX,3,YYYY-MM-DD,,,,,28.000
+XXX,3,YYYY-MM-DD,,09.06.04.00.00,,Omeprazole 20mg gastro-resistant capsules,84 tablet
+XXX,4,YYYY-MM-DD,,07.04.02.00.00,,Omeprazole 20mg gastro-resistant capsules,56 tablet(s)
+XXX,3,YYYY-MM-DD,,12.02.01.00.00,,Atenolol 25mg tablets,84 tabs
+XXX,3,YYYY-MM-DD,b211.,02.12.02.00.00,,Omeprazole 20mg gastro-resistant capsules,28.000
+XXX,1,YYYY-MM-DD,,10.01.01.00.00,,Zopiclone 7.5mg tablets,200 dose
+XXX,4,YYYY-MM-DD,,,408060004,Amitriptyline 10mg tablets,14 tablet
+XXX,3,YYYY-MM-DD,,,,Clopidogrel 75mg tablets,84 tablets
+XXX,2,YYYY-MM-DD,a6b1.00,,,Atorvastatin 20mg tablets,56.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Losartan 100mg tablets,56.000
+XXX,4,YYYY-MM-DD,,02.06.02.00.00,,Flucloxacillin 500mg capsules,
+XXX,1,YYYY-MM-DD,,10.01.04.02.00,,Clopidogrel 75mg tablets,
+XXX,3,YYYY-MM-DD,,04.03.01.00.00,,Fluoxetine 20mg capsules,56 tablet
+XXX,3,YYYY-MM-DD,,,,,84.000
+XXX,1,YYYY-MM-DD,,,,Simvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,f922.,,,Amoxicillin 500mg capsules,28 capsule
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,326874007,Warfarin 1mg tablets,
+XXX,2,YYYY-MM-DD,blb1.,02.05.05.02.00,,,56.000
+XXX,4,YYYY-MM-DD,,09.06.04.00.00,,,30.000
+XXX,2,YYYY-MM-DD,,,,Simvastatin 40mg tablets,56.000
+XXX,4,YYYY-MM-DD,,,,Amitriptyline 10mg tablets,56.000
+XXX,3,YYYY-MM-DD,,,320000009,,56
+XXX,1,YYYY-MM-DD,f921.,,,,28 tablets
+XXX,3,YYYY-MM-DD,c8n1.,02.05.01.00.00,317310006,Mebeverine 135mg tablets,2.000
+XXX,1,YYYY-MM-DD,a6c2.,06.02.01.00.00,374294006,Amlodipine 5mg tablets,1 inhaler(s)
+XXX,3,YYYY-MM-DD,bxi1.00,05.01.02.01.00,,,56.000
+XXX,3,YYYY-MM-DD,a6b1.,09.01.01.01.00,,Atorvastatin 10mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,bxd2.,02.05.05.02.00,,Furosemide 40mg tablets,28 tablet(s) - 2.5 mg
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,322236009,Omeprazole 20mg gastro-resistant capsules,
+XXX,3,YYYY-MM-DD,,,,Bendroflumethiazide 2.5mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,28.000
+XXX,3,YYYY-MM-DD,dji2.,02.12.04.00.00,,,28.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Simvastatin 40mg tablets,28 capsule
+XXX,3,YYYY-MM-DD,dian.,02.04.00.00.00,,Warfarin 1mg tablets,
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,,28 tab
+XXX,2,YYYY-MM-DD,,,,Zopiclone 7.5mg tablets,
+XXX,3,YYYY-MM-DD,,02.06.01.01.00,,,84 tablets
+XXX,3,YYYY-MM-DD,,13.10.02.00.00,,Citalopram 10mg tablets,
+XXX,2,YYYY-MM-DD,,,,Simvastatin 40mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,,
+XXX,2,YYYY-MM-DD,,09.05.01.01.00,,,60 tablet
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Atenolol 50mg tablets,14 tablets
+XXX,3,YYYY-MM-DD,e312.,11.08.01.00.00,,Allopurinol 100mg tablets,
+XXX,3,YYYY-MM-DD,a6b1.00,04.07.04.01.00,,Amitriptyline 10mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,03.01.01.03.00,,Simvastatin 40mg tablets,28 tablet
+XXX,2,YYYY-MM-DD,c8o1.,07.04.02.00.00,,Levothyroxine sodium 25microgram tablets,84 tablets
+XXX,3,YYYY-MM-DD,,,,Codeine 30mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,bu2c.,,,Clopidogrel 75mg tablets,1 inhaler(s)
+XXX,1,YYYY-MM-DD,di21.00,09.04.04.02.00,,Ramipril 5mg capsules,
+XXX,4,YYYY-MM-DD,,04.07.02.00.00,,Atorvastatin 10mg tablets,
+XXX,3,YYYY-MM-DD,,,,Metformin 500mg tablets,28 capsule
+XXX,3,YYYY-MM-DD,bi34.,01.03.05.00.00,,,
+XXX,3,,,02.09.02.00.00,,,60 tablets
+XXX,1,YYYY-MM-DD,b211.,,,Metformin 500mg tablets,84 capsule
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,,
+XXX,3,YYYY-MM-DD,,04.01.01.00.00,,Alendronic acid 70mg tablets,2.000
+XXX,3,YYYY-MM-DD,,06.04.01.01.00,,,
+XXX,3,YYYY-MM-DD,bxd2.,,,Simvastatin 20mg tablets,60 capsule
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,56 cap
+XXX,3,YYYY-MM-DD,,06.01.02.01.00,317291008,Atorvastatin 40mg tablets,56.000
+XXX,3,YYYY-MM-DD,,,,,84 tablet
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Bisoprolol 5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,,56.000
+XXX,3,YYYY-MM-DD,,,,Sertraline 50mg tablets,56 tablet
+XXX,2,YYYY-MM-DD,bi62.00,09.04.04.02.00,,,60 tablet
+XXX,3,YYYY-MM-DD,,,,Loratadine 10mg tablets,
+XXX,4,YYYY-MM-DD,,07.04.05.00.00,,,56 tablet
+XXX,3,YYYY-MM-DD,,,,Adcal-D3 chewable tablets tutti frutti (ProStrakan Ltd),1 pack of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Tramadol 50mg capsules,1 pack of 28 capsule(s)
+XXX,3,YYYY-MM-DD,,10.01.04.01.00,,,56 tabs
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,Lansoprazole 30mg gastro-resistant capsules,
+XXX,4,YYYY-MM-DD,,060201,,Doxycycline 100mg capsules,30 gram
+XXX,3,YYYY-MM-DD,,06.04.01.01.00,,Aspirin 75mg dispersible tablets,112.000
+XXX,3,YYYY-MM-DD,,,,,56.000
+XXX,3,YYYY-MM-DD,bxi2.,04.07.01.02.00,,Bisoprolol 1.25mg tablets,28 tablet(s) - 10 mg
+XXX,3,YYYY-MM-DD,,,,Simvastatin 40mg tablets,7 tablet
+XXX,4,YYYY-MM-DD,d712.,,,Levothyroxine sodium 100microgram tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Ranitidine 150mg tablets,
+XXX,4,YYYY-MM-DD,,02.12.04.00.00,,,56 tablets
+XXX,4,YYYY-MM-DD,,02.02.01.00.00,,Bendroflumethiazide 2.5mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Simvastatin 20mg tablets,10.000
+XXX,4,YYYY-MM-DD,,13.02.01.02.00,,,56.000
+XXX,4,YYYY-MM-DD,,,,,
+XXX,3,YYYY-MM-DD,f41y.00,03.01.01.03.00,,Bendroflumethiazide 2.5mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,06.04.01.01.00,,Amitriptyline 25mg tablets,28.000
+XXX,3,YYYY-MM-DD,,,,,500.000
+XXX,1,YYYY-MM-DD,,02.09.01.00.00,,Lisinopril 20mg tablets,
+XXX,2,YYYY-MM-DD,blb2.,10.01.01.00.00,,Co-dydramol 10mg/500mg tablets,56 tablet
+XXX,1,YYYY-MM-DD,,10.01.01.00.00,317919004,Simvastatin 40mg tablets,28.000
+XXX,3,YYYY-MM-DD,,05.01.01.02.00,,,28 capsules
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,10 ml
+XXX,3,YYYY-MM-DD,,,,Amlodipine 10mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,112.000
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,Simvastatin 20mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,318858008,Allopurinol 300mg tablets,28.000
+XXX,4,YYYY-MM-DD,,02.02.01.00.00,,Citalopram 10mg tablets,
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Amlodipine 5mg tablets,1 pack of 28 tablet(s)
+XXX,4,YYYY-MM-DD,,02.12.04.00.00,,Ranitidine 150mg tablets,84 tablets
+XXX,3,YYYY-MM-DD,a6b7.,,,Naproxen 500mg tablets,28.000
+XXX,3,YYYY-MM-DD,bu23.,,,Doxycycline 100mg capsules,84 capsule
+XXX,3,YYYY-MM-DD,,02.05.01.00.00,,,
+XXX,3,YYYY-MM-DD,,0212000Y0AAADAD,,,28 tab
+XXX,3,YYYY-MM-DD,,02.06.01.01.00,,Bendroflumethiazide 2.5mg tablets,60.000
+XXX,3,YYYY-MM-DD,,,,,
+XXX,1,YYYY-MM-DD,,02.02.01.00.00,,Levothyroxine sodium 25microgram tablets,56 tablet
+XXX,4,YYYY-MM-DD,,13.02.01.02.00,,Atenolol 50mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,06.01.02.01.00,,Levothyroxine sodium 50microgram tablets,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,06.06.02.00.00,,Co-dydramol 10mg/500mg tablets,
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,,
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 15mg gastro-resistant capsules,28.000
+XXX,3,YYYY-MM-DD,,11.08.01.00.00,,,
+XXX,3,YYYY-MM-DD,,01.06.04.00.00,,Levothyroxine sodium 50microgram tablets,
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,,
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,,28.000
+XXX,3,YYYY-MM-DD,,,,Metformin 500mg tablets,1 pack of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,02.08.02.00.00,,Erythromycin 250mg gastro-resistant tablets,
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Aspirin 75mg gastro-resistant tablets,
+XXX,3,YYYY-MM-DD,,,,Doxazosin 4mg tablets,60.000
+XXX,3,YYYY-MM-DD,blb2.,02.06.02.00.00,,Amoxicillin 250mg capsules,30 capsule
+XXX,3,YYYY-MM-DD,,09.01.01.01.00,,Ezetimibe 10mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Simvastatin 40mg tablets,100.000
+XXX,3,YYYY-MM-DD,,06.03.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,56 capsules
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,Finasteride 5mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,bxi1.00,,,Simvastatin 40mg tablets,56.000
+XXX,3,YYYY-MM-DD,,,,,28.000
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,,28 tablets
+XXX,1,YYYY-MM-DD,,06.06.02.00.00,,,28 tab
+XXX,4,,,03.01.01.03.00,,Omeprazole 20mg gastro-resistant capsules,
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Atenolol 100mg tablets,168.000
+XXX,3,YYYY-MM-DD,gc71.00,,,Alendronic acid 70mg tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,07.02.01.00.00,,Ramipril 2.5mg capsules,2.000
+XXX,1,YYYY-MM-DD,bxi3.,06.02.01.00.00,,Lansoprazole 15mg gastro-resistant capsules,30 capsule
+XXX,3,YYYY-MM-DD,,,,,28.000
+XXX,4,YYYY-MM-DD,bdf1.,02.02.01.00.00,,Clopidogrel 75mg tablets,
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,Ramipril 10mg capsules,28 tablets
+XXX,3,YYYY-MM-DD,,,,,28 capsule(s)
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Ferrous sulfate 200mg tablets,28 capsules
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,,28.000
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Doxazosin 4mg tablets,84 capsule
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Atorvastatin 10mg tablets,84 tablet
+XXX,3,YYYY-MM-DD,,13.04.01.00.00,,Cetirizine 10mg tablets,
+XXX,2,YYYY-MM-DD,,11.08.01.00.00,,,
+XXX,3,YYYY-MM-DD,,,,Simvastatin 40mg tablets,30 gram
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Bendroflumethiazide 2.5mg tablets,28.000
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,318420003,Atorvastatin 40mg tablets,28 tablets
+XXX,4,YYYY-MM-DD,bxi2.00,,,Simvastatin 20mg tablets,500.000
+XXX,4,YYYY-MM-DD,,07.04.01.01.00,,Mebeverine 135mg tablets,56 tab
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,Simvastatin 40mg tablets,50.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Tamsulosin 400microgram modified-release capsules,28.000
+XXX,3,YYYY-MM-DD,bxd5.00,02.05.05.01.00,,Simvastatin 20mg tablets,56 capsule
+XXX,2,YYYY-MM-DD,,02.09.02.00.00,,,
+XXX,2,YYYY-MM-DD,,02.12.04.00.00,,Tramadol 50mg capsules,28 - tablet(s)
+XXX,3,YYYY-MM-DD,bi62.,,,Lansoprazole 15mg gastro-resistant capsules,100.000
+XXX,3,YYYY-MM-DD,,,,Allopurinol 300mg tablets,30 tablet
+XXX,4,YYYY-MM-DD,,01.03.05.00.00,,Ibuprofen 400mg tablets,28.000
+XXX,3,YYYY-MM-DD,,09.01.01.01.00,,,28 tablets
+XXX,2,YYYY-MM-DD,,0103050P0AAAGAG,,Omeprazole 20mg gastro-resistant capsules,84 tablet
+XXX,3,YYYY-MM-DD,,,,Sildenafil 100mg tablets,112 tablet(s)
+XXX,1,YYYY-MM-DD,,01.03.05.00.00,,Aspirin 75mg dispersible tablets,30 tablet(s)
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,Lansoprazole 15mg gastro-resistant capsules,2 packs of 28 tablet(s)
+XXX,1,YYYY-MM-DD,,06.04.01.01.00,,Atorvastatin 20mg tablets,28 tablets
+XXX,4,YYYY-MM-DD,,,,Fluoxetine 20mg capsules,
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,56 tab
+XXX,3,YYYY-MM-DD,,04.07.04.01.00,,Co-codamol 8mg/500mg tablets,56.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Bendroflumethiazide 2.5mg tablets,7 tablet
+XXX,3,YYYY-MM-DD,,13.02.01.02.00,,Atenolol 100mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,01.02.02.00.00,,Alendronic acid 70mg tablets,28 tablets
+XXX,1,YYYY-MM-DD,,01.03.05.00.00,,,28.000
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,,56.000
+XXX,2,YYYY-MM-DD,f923.,04.07.02.00.00,,Tramadol 50mg capsules,28.000
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,Atorvastatin 20mg tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,168.000
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Ramipril 5mg capsules,56 tablets
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,329371007,Bendroflumethiazide 2.5mg tablets,60
+XXX,3,YYYY-MM-DD,j611.,02120400,,,200.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,30 tablets
+XXX,2,YYYY-MM-DD,,07.04.01.01.00,,Levothyroxine sodium 100microgram tablets,168 tablet
+XXX,4,YYYY-MM-DD,,02.09.01.00.00,,Amlodipine 5mg tablets,28.000
+XXX,3,YYYY-MM-DD,,04.02.01.00.00,,Salbutamol 100micrograms/dose inhaler CFC free,28.000
+XXX,3,YYYY-MM-DD,bxd2.00,11.08.01.00.00,374294006,Ramipril 5mg capsules,28 tablet
+XXX,3,YYYY-MM-DD,,06.06.02.00.00,,,56.000
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Levothyroxine sodium 25microgram tablets,100 tablets
+XXX,3,YYYY-MM-DD,,10.01.04.01.00,,Ramipril 10mg capsules,84
+XXX,1,YYYY-MM-DD,,02.06.02.00.00,,,10.000
+XXX,3,YYYY-MM-DD,,07.04.05.00.00,,Omeprazole 20mg gastro-resistant capsules,28 - tablet(s)
+XXX,3,YYYY-MM-DD,f923.00,06.02.01.00.00,,Atenolol 50mg tablets,
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Levothyroxine sodium 50microgram tablets,
+XXX,2,YYYY-MM-DD,,07.02.01.00.00,,Amitriptyline 10mg tablets,10.000
+XXX,3,YYYY-MM-DD,a6b1.,02.12.04.00.00,,Aspirin 75mg dispersible tablets,56 tablet
+XXX,1,YYYY-MM-DD,,,,Simvastatin 40mg tablets,1.000
+XXX,4,YYYY-MM-DD,,02.09.01.00.00,,,56 capsule
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,,28 tab
+XXX,3,YYYY-MM-DD,,,,Ramipril 5mg capsules,28 tablet(s) - 2.5 mg
+XXX,1,YYYY-MM-DD,,06.01.01.03.00,,,7.000
+XXX,3,YYYY-MM-DD,,,,,84.000
+XXX,3,YYYY-MM-DD,,05.01.13.00.00,,Atenolol 50mg tablets,112.000
+XXX,2,YYYY-MM-DD,,,,Amlodipine 10mg tablets,
+XXX,1,YYYY-MM-DD,,,374295007,Simvastatin 40mg tablets,
+XXX,4,YYYY-MM-DD,bxi1.,03.04.01.01.00,,,28 tablet
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 100microgram tablets,
+XXX,3,YYYY-MM-DD,,,,Co-dydramol 10mg/500mg tablets,28 tablet
+XXX,4,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,28 capsule
+XXX,1,YYYY-MM-DD,,,,Lansoprazole 15mg gastro-resistant capsules,60
+XXX,3,YYYY-MM-DD,,,,Aspirin 75mg dispersible tablets,56 capsule
+XXX,3,YYYY-MM-DD,,,,Lisinopril 5mg tablets,100.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Simvastatin 20mg tablets,1 pack of 28 capsule(s)
+XXX,4,YYYY-MM-DD,,02.06.02.00.00,,Allopurinol 100mg tablets,
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,Simvastatin 40mg tablets,56
+XXX,4,YYYY-MM-DD,bu51.00,05.01.01.03.00,,Flucloxacillin 500mg capsules,28 capsule
+XXX,3,YYYY-MM-DD,,,,Amlodipine 5mg tablets,50.000
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 20mg tablets,
+XXX,3,YYYY-MM-DD,,03.04.01.01.00,,,30 grams
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 15mg gastro-resistant capsules,28 capsules
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,,60 capsule
+XXX,1,YYYY-MM-DD,,09.06.04.00.00,,,8.000
+XXX,1,YYYY-MM-DD,,10.02.02.00.00,,Naproxen 500mg tablets,
+XXX,2,YYYY-MM-DD,,02.12.04.00.00,,Levothyroxine sodium 100microgram tablets,
+XXX,4,YYYY-MM-DD,,02.09.01.00.00,326874007,Methotrexate 2.5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,Amoxicillin 500mg capsules,
+XXX,3,YYYY-MM-DD,,,,Cetirizine 10mg tablets,112 tablet
+XXX,3,,,02.12.04.00.00,,Simvastatin 10mg tablets,
+XXX,4,YYYY-MM-DD,,0212000Y0AAADAD,,Gliclazide 80mg tablets,
+XXX,3,YYYY-MM-DD,,04.07.04.01.00,,Amlodipine 10mg tablets,
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Salbutamol 100micrograms/dose inhaler CFC free,100 tablets
+XXX,2,YYYY-MM-DD,,,,Atorvastatin 80mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,Beclometasone 50micrograms/dose nasal spray,84 tablets
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,,84 tablets
+XXX,3,YYYY-MM-DD,,09.06.04.00.00,,Naproxen 500mg tablets,
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Fluoxetine 20mg capsules,
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Senna 7.5mg tablets,
+XXX,3,YYYY-MM-DD,dia2.,07.04.05.00.00,,,28.000
+XXX,3,YYYY-MM-DD,bu51.,04.02.01.00.00,,Aspirin 75mg dispersible tablets,
+XXX,4,YYYY-MM-DD,,02.09.01.00.00,,Beclometasone 50micrograms/dose nasal spray,56 capsule
+XXX,1,YYYY-MM-DD,,,,,84 tablets
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 10mg tablets,30 capsule
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Bendroflumethiazide 2.5mg tablets,84 tablet
+XXX,3,YYYY-MM-DD,,,,Co-dydramol 10mg/500mg tablets,30 gram
+XXX,2,YYYY-MM-DD,bxd5.,04.07.02.00.00,,,56.000
+XXX,2,YYYY-MM-DD,,06.02.01.00.00,,,28 tab
+XXX,1,YYYY-MM-DD,,,,Paracetamol 500mg tablets,56.000
+XXX,2,YYYY-MM-DD,,,317919004,Ezetimibe 10mg tablets,56.000
+XXX,1,YYYY-MM-DD,da41.00,02.12.04.00.00,,,56 tablet(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,1 inhaler(s)
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Simvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,,,,Ramipril 2.5mg capsules,56.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Lisinopril 20mg tablets,
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,317291008,Perindopril erbumine 4mg tablets,100 tab
+XXX,3,YYYY-MM-DD,,,,Tramadol 50mg capsules,
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,Paracetamol 500mg tablets,
+XXX,4,YYYY-MM-DD,,,,Amoxicillin 250mg capsules,
+XXX,1,YYYY-MM-DD,,06.01.02.02.00,,,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Amlodipine 5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,07.04.02.00.00,,Omeprazole 20mg gastro-resistant capsules,28 tablet
+XXX,3,YYYY-MM-DD,,02.06.01.01.00,,Ezetimibe 10mg tablets,112 tablet
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Aspirin 75mg dispersible tablets,56 capsule(s)
+XXX,3,YYYY-MM-DD,a6b1.00,02.06.02.00.00,,Lansoprazole 15mg gastro-resistant capsules,500 gram
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Atenolol 50mg tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Bisoprolol 5mg tablets,28.000
+XXX,1,YYYY-MM-DD,a6b1.,,,Allopurinol 100mg tablets,
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Cetirizine 10mg tablets,28.000
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,Clenil Modulite 100micrograms/dose inhaler (Chiesi Ltd),100
+XXX,1,YYYY-MM-DD,,,,Sildenafil 100mg tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,bxi1.00,02.06.02.00.00,318420003,Atorvastatin 40mg tablets,56 capsule
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,,
+XXX,3,YYYY-MM-DD,bu51.00,02.12.04.00.00,,Simvastatin 40mg tablets,2 packs of 28 tablet(s)
+XXX,1,YYYY-MM-DD,bxi3.,0212000Y0AAADAD,,Fluoxetine 20mg capsules,28 tablet
+XXX,3,YYYY-MM-DD,,96.02.01.02.00,,Diclofenac sodium 50mg gastro-resistant tablets,100 capsule
+XXX,2,YYYY-MM-DD,,12.02.01.00.00,,Trimethoprim 200mg tablets,56.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Atenolol 50mg tablets,56 tab
+XXX,1,YYYY-MM-DD,,,,,56 tablet(s)
+XXX,4,YYYY-MM-DD,,06.01.02.02.00,,Lansoprazole 30mg gastro-resistant capsules,28 tablet(s)
+XXX,4,YYYY-MM-DD,,02.09.01.00.00,,Atenolol 50mg tablets,
+XXX,4,YYYY-MM-DD,,04.07.02.00.00,,Atenolol 50mg tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,11.08.01.00.00,,,3 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Simvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,,04.03.04.00.00,,Amitriptyline 25mg tablets,28 tablet(s) - 10 mg
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,,
+XXX,3,YYYY-MM-DD,,02.08.02.00.00,,Bendroflumethiazide 2.5mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,06.03.02.00.00,,Aspirin 75mg dispersible tablets,30 tablets
+XXX,3,YYYY-MM-DD,,,,,60.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,326524001,Ramipril 5mg capsules,56.000
+XXX,3,YYYY-MM-DD,,,,,28 tablet(s)
+XXX,3,YYYY-MM-DD,,03.01.01.04.00,,Naproxen 500mg tablets,100
+XXX,3,YYYY-MM-DD,f922.,,,Methotrexate 2.5mg tablets,28 capsule
+XXX,3,YYYY-MM-DD,di21.,02.04.00.00.00,,Amlodipine 5mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,,09.05.01.01.00,330061001,Atenolol 50mg tablets,28 capsule(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Levothyroxine sodium 25microgram tablets,14 tablets
+XXX,4,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,
+XXX,1,YYYY-MM-DD,,01.03.05.00.00,,Loratadine 10mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,,,,1 inhaler
+XXX,3,YYYY-MM-DD,,02.06.01.01.00,,Losartan 50mg tablets,3 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Zopiclone 7.5mg tablets,168.000
+XXX,2,YYYY-MM-DD,,,,Atorvastatin 40mg tablets,120.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,,28 tablet(s) - 10 mg
+XXX,3,YYYY-MM-DD,,04.01.02.00.00,,Metformin 500mg tablets,28 - tablet(s)
+XXX,1,,,02.02.02.00.00,,Metformin 500mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,01.02.02.00.00,,Beclometasone 50micrograms/dose nasal spray,
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Sildenafil 100mg tablets,
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Bendroflumethiazide 2.5mg tablets,
+XXX,3,YYYY-MM-DD,,,,,28 tablets
+XXX,3,YYYY-MM-DD,,01.01.02.01.00,,,84 tab
+XXX,3,YYYY-MM-DD,,04.07.04.01.00,,Gabapentin 300mg capsules,56.000
+XXX,3,YYYY-MM-DD,,02120400,319781007,Ramipril 2.5mg capsules,30
+XXX,3,YYYY-MM-DD,,0103050P0AAAGAG,,,112 tablet
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,Flucloxacillin 500mg capsules,28 tablets
+XXX,1,YYYY-MM-DD,,04.07.02.00.00,,Gliclazide 80mg tablets,28 capsules
+XXX,3,YYYY-MM-DD,bi63.00,04.07.01.02.00,,Allopurinol 300mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,,,,28 tablet(s) - 10 mg
+XXX,3,YYYY-MM-DD,,12.02.01.00.00,,Atenolol 50mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,Simvastatin 40mg tablets,84 tablets
+XXX,3,YYYY-MM-DD,,07.04.05.00.00,,Fluticasone propionate 50micrograms/dose nasal spray,84 tablet
+XXX,3,YYYY-MM-DD,bd35.,02.02.01.00.00,,Simvastatin 40mg tablets,28.000
+XXX,3,YYYY-MM-DD,,05.01.01.02.00,,Cetirizine 10mg tablets,1 inhaler
+XXX,4,YYYY-MM-DD,,,,Ferrous sulfate 200mg tablets,
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 20mg tablets,
+XXX,4,YYYY-MM-DD,,10.01.01.00.00,,Simvastatin 20mg tablets,28.000
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,Atenolol 25mg tablets,
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,,500.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Co-codamol 30mg/500mg capsules,28 tablet
+XXX,1,YYYY-MM-DD,,,,Amlodipine 5mg tablets,56 capsules
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 20mg tablets,1.000
+XXX,3,YYYY-MM-DD,blb2.,03.04.01.01.00,,Ramipril 10mg capsules,100 tablet
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,321959007,Co-codamol 8mg/500mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Amlodipine 5mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,,
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,56 tab
+XXX,3,YYYY-MM-DD,,01.03.01.00.00,,Atorvastatin 80mg tablets,28.000
+XXX,3,YYYY-MM-DD,,02.05.04.00.00,,Warfarin 1mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,,,,500 gram
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,Cetirizine 10mg tablets,56 tablet
+XXX,1,YYYY-MM-DD,,04.03.04.00.00,,Folic acid 5mg tablets,
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 100microgram tablets,56 tablet
+XXX,2,YYYY-MM-DD,,,,Alendronic acid 70mg tablets,200.000
+XXX,1,YYYY-MM-DD,,02.05.05.02.00,,Perindopril erbumine 4mg tablets,
+XXX,3,YYYY-MM-DD,,02120400,,Lisinopril 10mg tablets,
+XXX,2,YYYY-MM-DD,,02.05.05.02.00,,,56.000
+XXX,3,YYYY-MM-DD,,01.05.01.00.00,,Latanoprost 50micrograms/ml eye drops,
+XXX,3,YYYY-MM-DD,,07.04.05.00.00,,,1 inhaler
+XXX,3,YYYY-MM-DD,,,,Amitriptyline 25mg tablets,
+XXX,4,YYYY-MM-DD,,04.07.01.02.00,,Omeprazole 20mg gastro-resistant capsules,28 tablet
+XXX,3,YYYY-MM-DD,,,,Co-codamol 30mg/500mg tablets,28 capsule
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Citalopram 20mg tablets,56.000
+XXX,4,YYYY-MM-DD,,01030500,,Aspirin 75mg dispersible tablets,28 tablet
+XXX,2,YYYY-MM-DD,f923.,01.03.05.00.00,,Ramipril 5mg capsules,
+XXX,1,YYYY-MM-DD,,04.07.03.00.00,,Atorvastatin 10mg tablets,
+XXX,4,YYYY-MM-DD,,06.02.01.00.00,,Co-dydramol 10mg/500mg tablets,56.000
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,,,28.000
+XXX,3,YYYY-MM-DD,,09.01.02.02.00,,Atorvastatin 10mg tablets,28 capsules
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Gliclazide 80mg tablets,28 tablet(s)
+XXX,2,YYYY-MM-DD,bi34.,01.03.05.00.00,,Warfarin 1mg tablets,84.000
+XXX,3,YYYY-MM-DD,,,,,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,,200.000
+XXX,3,YYYY-MM-DD,,,,Alendronic acid 70mg tablets,
+XXX,3,YYYY-MM-DD,,,,Amlodipine 5mg tablets,28.000
+XXX,3,YYYY-MM-DD,,13.02.01.02.00,317309001,Bendroflumethiazide 2.5mg tablets,1 pack of 28 capsule(s)
+XXX,3,YYYY-MM-DD,,06.01.02.01.00,,Aspirin 75mg dispersible tablets,
+XXX,2,YYYY-MM-DD,d711.00,02.05.05.01.00,,Aspirin 75mg dispersible tablets,56 tabs
+XXX,4,YYYY-MM-DD,,02.05.05.02.00,,Clopidogrel 75mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,bd35.,,,,
+XXX,1,YYYY-MM-DD,,09.04.04.02.00,,Lansoprazole 15mg gastro-resistant capsules,28 tablet - 40 mg
+XXX,4,YYYY-MM-DD,a6c2.,02.06.02.00.00,,Metformin 500mg tablets,84 tablet
+XXX,3,YYYY-MM-DD,c8o1.,03.01.01.03.00,,Fluoxetine 20mg capsules,
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,,Bisoprolol 2.5mg tablets,1.000
+XXX,1,YYYY-MM-DD,,,,Allopurinol 300mg tablets,28 capsules
+XXX,1,YYYY-MM-DD,,03.02.00.00.00,,Bendroflumethiazide 2.5mg tablets,
+XXX,1,YYYY-MM-DD,bxd5.,,,Atorvastatin 40mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Clopidogrel 75mg tablets,84.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,56 capsule
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,Co-codamol 30mg/500mg tablets,1 pack of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,319283006,Gliclazide 80mg tablets,28 tab
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,,28 tablet
+XXX,1,YYYY-MM-DD,,,,Erythromycin 250mg gastro-resistant tablets,100.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Co-codamol 30mg/500mg tablets,56.000
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,,28.000
+XXX,3,YYYY-MM-DD,,02.03.02.02.00,,,56.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Lansoprazole 15mg gastro-resistant capsules,7 tablet
+XXX,4,YYYY-MM-DD,,10.01.04.01.00,,Metformin 500mg tablets,84.000
+XXX,2,YYYY-MM-DD,,,,,56
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Ramipril 10mg capsules,56 - tablet(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Zopiclone 7.5mg tablets,10.000
+XXX,4,YYYY-MM-DD,,,318605000,Amoxicillin 500mg capsules,56 tablet
+XXX,3,YYYY-MM-DD,,,,,30 tablet(s)
+XXX,1,YYYY-MM-DD,a6b1.,02.05.05.01.00,,Aspirin 75mg tablets,
+XXX,3,YYYY-MM-DD,bdfw.,02.09.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,56
+XXX,3,YYYY-MM-DD,,06.06.02.00.00,,Amlodipine 5mg tablets,56.000
+XXX,3,YYYY-MM-DD,,,,Paroxetine 20mg tablets,100 tablets
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,Clopidogrel 75mg tablets,28.000
+XXX,3,YYYY-MM-DD,blb1.,03.01.02.00.00,,Simvastatin 40mg tablets,56 - tablet(s)
+XXX,2,YYYY-MM-DD,,,,Atenolol 100mg tablets,28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Amitriptyline 50mg tablets,30.000
+XXX,3,YYYY-MM-DD,,11.03.01.00.00,,,28
+XXX,3,YYYY-MM-DD,,,,,28 cap
+XXX,3,YYYY-MM-DD,,13.02.01.02.00,,Bendroflumethiazide 2.5mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,,28 tablets
+XXX,4,YYYY-MM-DD,,04.07.01.02.00,,,56.000
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,Ramipril 5mg capsules,28 tablet
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,Aspirin 75mg dispersible tablets,84.000
+XXX,3,YYYY-MM-DD,,01.06.02.00.00,,,28.000
+XXX,2,YYYY-MM-DD,,10.01.01.00.00,,Amitriptyline 25mg tablets,84 tablet
+XXX,4,YYYY-MM-DD,,05.01.01.03.00,,Levothyroxine sodium 50microgram tablets,28.000
+XXX,3,YYYY-MM-DD,,06.06.02.00.00,,Ramipril 2.5mg capsules,
+XXX,4,YYYY-MM-DD,,,,Bendroflumethiazide 2.5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,03.01.01.04.00,,Aspirin 75mg dispersible tablets,56 tab
+XXX,1,YYYY-MM-DD,,,,Amlodipine 5mg tablets,
+XXX,4,YYYY-MM-DD,,03.01.01.03.00,,,28.000
+XXX,3,YYYY-MM-DD,,04.03.01.00.00,,,28.000
+XXX,1,YYYY-MM-DD,,,,,
+XXX,3,YYYY-MM-DD,,06.01.01.02.00,,Tamsulosin 400microgram modified-release capsules,28 tablet - 40 mg
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,56 tablets
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Ramipril 10mg capsules,112 tablet
+XXX,3,YYYY-MM-DD,,02.06.03.00.00,,Atenolol 50mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 20mg tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Atenolol 50mg tablets,56.000
+XXX,3,YYYY-MM-DD,,,,Clopidogrel 75mg tablets,
+XXX,4,YYYY-MM-DD,,03.02.00.00.00,,Ramipril 2.5mg capsules,
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Simvastatin 20mg tablets,56
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,Levothyroxine sodium 50microgram tablets,
+XXX,3,YYYY-MM-DD,,04.03.04.00.00,318590006,Ezetimibe 10mg tablets,56.000
+XXX,3,YYYY-MM-DD,,,,Fluoxetine 20mg capsules,7 tablets
+XXX,3,YYYY-MM-DD,,04.01.01.00.00,,Simvastatin 40mg tablets,
+XXX,4,YYYY-MM-DD,,09.06.04.00.00,,Omeprazole 20mg gastro-resistant capsules,30 tablets
+XXX,3,YYYY-MM-DD,j22e.00,,,Levothyroxine sodium 25microgram tablets,84 capsule
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,84 tablet(s)
+XXX,3,YYYY-MM-DD,,09.05.01.01.00,,Fluoxetine 20mg capsules,28 tablet
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 10mg tablets,1.000
+XXX,2,YYYY-MM-DD,,02.06.02.00.00,327313009,Clopidogrel 75mg tablets,10 ml
+XXX,3,YYYY-MM-DD,a6b1.00,01.05.01.00.00,,Ranitidine 150mg tablets,500 gram
+XXX,2,YYYY-MM-DD,bdf1.,,,Fluoxetine 20mg capsules,
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Co-codamol 30mg/500mg capsules,56 tablet
+XXX,1,YYYY-MM-DD,,02.02.01.00.00,,Metformin 500mg tablets,56.000
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,Fluticasone propionate 50micrograms/dose nasal spray,
+XXX,3,YYYY-MM-DD,,14.04.09.00.00,,Ramipril 10mg capsules,
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,,100.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,100.000
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,,56.000
+XXX,3,YYYY-MM-DD,di21.,02.05.05.01.00,,Ranitidine 150mg tablets,28.000
+XXX,2,YYYY-MM-DD,,06.02.01.00.00,,Lisinopril 10mg tablets,56.000
+XXX,1,YYYY-MM-DD,,,,Metformin 500mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,11.08.01.00.00,,Fluoxetine 20mg capsules,84 tab
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Aspirin 75mg dispersible tablets,
+XXX,3,YYYY-MM-DD,,06.04.01.01.00,,Bisoprolol 2.5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Levothyroxine sodium 50microgram tablets,
+XXX,1,YYYY-MM-DD,,02.05.05.01.00,,Naproxen 500mg tablets,112 tablet
+XXX,2,YYYY-MM-DD,,06.02.01.00.00,,Amoxicillin 250mg capsules,56 tablets
+XXX,4,YYYY-MM-DD,,,,Levothyroxine sodium 100microgram tablets,
+XXX,3,YYYY-MM-DD,f923.,02.05.05.01.00,,,
+XXX,3,YYYY-MM-DD,,11.08.01.00.00,,,56.000
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 40mg tablets,56 tablets
+XXX,3,,,,,,200.000
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,,
+XXX,1,YYYY-MM-DD,,02.05.05.01.00,,Simvastatin 40mg tablets,
+XXX,4,YYYY-MM-DD,,02.12.04.00.00,,,28 tablet(s)
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Atorvastatin 40mg tablets,100.000
+XXX,3,YYYY-MM-DD,,02.12.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,28 capsules
+XXX,4,YYYY-MM-DD,,,,Aspirin 75mg gastro-resistant tablets,28 tablet
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,Prednisolone 5mg tablets,60 tablets
+XXX,3,YYYY-MM-DD,b211.00,02.12.04.00.00,320818006,,28.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Atorvastatin 10mg tablets,
+XXX,3,YYYY-MM-DD,,09.05.01.01.00,,,28 tablet(s)
+XXX,4,YYYY-MM-DD,,06.02.01.00.00,,Lisinopril 20mg tablets,
+XXX,3,YYYY-MM-DD,,,,Cetirizine 10mg tablets,56.000
+XXX,3,YYYY-MM-DD,a6b1.00,02.02.01.00.00,,Bisoprolol 1.25mg tablets,120 dose
+XXX,4,YYYY-MM-DD,,02.05.05.01.00,,,100.000
+XXX,3,YYYY-MM-DD,,01.04.02.00.00,,Tamsulosin 400microgram modified-release capsules,
+XXX,1,YYYY-MM-DD,,0209000A0AAABAB,,Simvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Citalopram 20mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Ranitidine 150mg tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,,09.06.04.00.00,,Levothyroxine sodium 50microgram tablets,56.000
+XXX,2,YYYY-MM-DD,,02.05.05.01.00,,,
+XXX,3,,,01.01.02.01.00,,Ramipril 5mg capsules,28 capsule
+XXX,3,YYYY-MM-DD,,,,Amlodipine 5mg tablets,100 tablet
+XXX,3,,,01.06.04.00.00,,,28 tablet - 40 mg
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,,
+XXX,3,YYYY-MM-DD,,03.01.02.00.00,,Aspirin 75mg gastro-resistant tablets,60 tablets
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Dihydrocodeine 30mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,,,Aspirin 75mg dispersible tablets,
+XXX,3,YYYY-MM-DD,,,,,28.000
+XXX,4,YYYY-MM-DD,,04.03.03.00.00,,Citalopram 20mg tablets,7 tablet
+XXX,4,YYYY-MM-DD,,02.08.02.00.00,,,
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,,56 capsule
+XXX,3,,,,,Omeprazole 20mg gastro-resistant capsules,
+XXX,3,YYYY-MM-DD,,05.01.13.00.00,,,28 tablets
+XXX,1,YYYY-MM-DD,,02.12.04.00.00,,Atenolol 50mg tablets,28.000
+XXX,2,YYYY-MM-DD,,01.04.02.00.00,,Paracetamol 500mg tablets,100.000
+XXX,4,YYYY-MM-DD,,,,Perindopril erbumine 4mg tablets,
+XXX,4,YYYY-MM-DD,,,,Loratadine 10mg tablets,56 tablet
+XXX,4,YYYY-MM-DD,,06.02.01.00.00,,Fluticasone propionate 50micrograms/dose nasal spray,200 dose
+XXX,3,YYYY-MM-DD,,,,,56.000
+XXX,4,YYYY-MM-DD,,03.01.01.03.00,,,30.000
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,Metformin 500mg tablets,56.000
+XXX,3,YYYY-MM-DD,,03.01.01.04.00,,Lansoprazole 30mg gastro-resistant capsules,28 tablets
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Atenolol 50mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Aspirin 75mg dispersible tablets,28
+XXX,1,YYYY-MM-DD,,02.12.04.00.00,,Omeprazole 10mg gastro-resistant capsules,
+XXX,3,YYYY-MM-DD,bu23.,,,Co-dydramol 10mg/500mg tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,01.01.02.01.00,,Amlodipine 5mg tablets,28 - tablet(s)
+XXX,3,YYYY-MM-DD,,,,,56 tablets
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,56.000
+XXX,3,YYYY-MM-DD,,12.02.01.00.00,,Atenolol 100mg tablets,56.000
+XXX,4,YYYY-MM-DD,,04.01.01.00.00,,Ezetimibe 10mg tablets,
+XXX,4,YYYY-MM-DD,,06.01.01.03.00,,Alendronic acid 70mg tablets,56.000
+XXX,3,YYYY-MM-DD,,10.03.02.01.00,,Amlodipine 5mg tablets,28 tab
+XXX,3,YYYY-MM-DD,,05.01.02.01.00,,Bendroflumethiazide 2.5mg tablets,30.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,,84 tablet
+XXX,3,YYYY-MM-DD,,06.01.02.02.00,,Allopurinol 300mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 40mg tablets,84.000
+XXX,2,YYYY-MM-DD,,02.09.01.00.00,,Prednisolone 5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,03.04.01.01.00,320822001,Levothyroxine sodium 25microgram tablets,
+XXX,2,YYYY-MM-DD,,01.03.05.00.00,318902004,Bisoprolol 5mg tablets,10.000
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,1.000
+XXX,3,YYYY-MM-DD,,,,Sildenafil 100mg tablets,56 capsule
+XXX,3,YYYY-MM-DD,,,,Amitriptyline 10mg tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,,02.05.05.02.00,,Levothyroxine sodium 50microgram tablets,100 tablet(s)
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Finasteride 5mg tablets,
+XXX,3,YYYY-MM-DD,,,,Ibuprofen 400mg tablets,
+XXX,3,YYYY-MM-DD,,06.04.01.01.00,,Atorvastatin 40mg tablets,1 pack of 100 tablet(s)
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Atenolol 25mg tablets,112 tablets
+XXX,4,YYYY-MM-DD,,,321987003,Beclometasone 50micrograms/dose nasal spray,4 tablet
+XXX,3,YYYY-MM-DD,bdfx.,02.04.00.00.00,,Sildenafil 100mg tablets,
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Sildenafil 100mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,,,Amoxicillin 250mg capsules,
+XXX,3,YYYY-MM-DD,,,326874007,Lansoprazole 30mg gastro-resistant capsules,56 tablets
+XXX,3,YYYY-MM-DD,,06.01.01.02.00,,Levothyroxine sodium 100microgram tablets,28 tablet
+XXX,4,YYYY-MM-DD,,,,,56 tablet
+XXX,4,YYYY-MM-DD,,06.02.01.00.00,321746008,,3 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,Simvastatin 40mg tablets,28.000
+XXX,3,YYYY-MM-DD,,,,Amitriptyline 25mg tablets,28.000
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Bendroflumethiazide 2.5mg tablets,
+XXX,4,YYYY-MM-DD,,02.12.04.00.00,,Simvastatin 40mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,Aspirin 75mg gastro-resistant tablets,28.000
+XXX,1,YYYY-MM-DD,,,,,
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,,
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,Lansoprazole 15mg gastro-resistant capsules,56 tablet(s)
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,Folic acid 5mg tablets,
+XXX,2,YYYY-MM-DD,,,,Atorvastatin 20mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,,
+XXX,1,YYYY-MM-DD,,02.12.04.00.00,,Levothyroxine sodium 100microgram tablets,112.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Tramadol 50mg capsules,28 tablet
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,
+XXX,3,YYYY-MM-DD,,04.02.01.00.00,319997009,,
+XXX,3,YYYY-MM-DD,,03.02.00.00.00,,Atenolol 25mg tablets,
+XXX,4,YYYY-MM-DD,,10.03.02.01.00,,Dihydrocodeine 30mg tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,bu23.00,11.03.01.00.00,,Fluoxetine 20mg capsules,
+XXX,3,YYYY-MM-DD,c13J.,03.01.01.03.00,,Salbutamol 100micrograms/dose inhaler CFC free,56 tablet
+XXX,4,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,84 tablets
+XXX,2,YYYY-MM-DD,fo4y.00,02.04.00.00.00,,Aspirin 75mg dispersible tablets,84.000
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,,56 tablet(s)
+XXX,4,YYYY-MM-DD,,09.06.04.00.00,,Levothyroxine sodium 25microgram tablets,56 tablet
+XXX,3,YYYY-MM-DD,,02.05.04.00.00,,Bendroflumethiazide 2.5mg tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,,02.06.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,112 tablet
+XXX,3,YYYY-MM-DD,,,,,14 tablet
+XXX,4,YYYY-MM-DD,,,,Beclometasone 50micrograms/dose nasal spray,28.000
+XXX,2,YYYY-MM-DD,,,,Amlodipine 5mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Simvastatin 40mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,02.02.02.00.00,,Metformin 500mg tablets,
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Mebeverine 135mg tablets,56 tab
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,Omeprazole 20mg gastro-resistant capsules,1 pack of 28 tablet(s)
+XXX,3,YYYY-MM-DD,f923.,060201,,,56.000
+XXX,1,YYYY-MM-DD,,13.04.03.00.00,,Atenolol 50mg tablets,56.000
+XXX,3,YYYY-MM-DD,f35z.00,09.04.04.02.00,,Amlodipine 5mg tablets,28 tablet(s)
+XXX,4,YYYY-MM-DD,di21.,13.02.01.02.00,,Lisinopril 5mg tablets,28 - tablet(s)
+XXX,1,YYYY-MM-DD,,02.09.01.00.00,,Dihydrocodeine 30mg tablets,56 tablet(s)
+XXX,1,YYYY-MM-DD,,,,Simvastatin 40mg tablets,14 tablets
+XXX,3,YYYY-MM-DD,,04.08.01.03.00,,Adcal-D3 chewable tablets tutti frutti (ProStrakan Ltd),
+XXX,3,YYYY-MM-DD,,01.03.05.00.00,,,
+XXX,3,YYYY-MM-DD,,04.03.03.00.00,,Amoxicillin 250mg capsules,28 capsule(s)
+XXX,4,YYYY-MM-DD,f921.,13.04.03.00.00,,Bendroflumethiazide 2.5mg tablets,28 tablets
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,56 tablet(s)
+XXX,3,YYYY-MM-DD,,03.01.01.04.00,,Metformin 850mg tablets,28 capsules
+XXX,3,YYYY-MM-DD,,04.07.04.01.00,,,28 tablets
+XXX,2,YYYY-MM-DD,b211.,09.05.01.01.00,,Atorvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,,,,Omeprazole 20mg gastro-resistant capsules,56.000
+XXX,1,YYYY-MM-DD,,01.06.01.00.00,,Lansoprazole 30mg gastro-resistant capsules,28 capsule(s)
+XXX,1,YYYY-MM-DD,,05.01.01.03.00,,Lansoprazole 15mg gastro-resistant capsules,56.000
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,319773006,Atorvastatin 20mg tablets,100.000
+XXX,3,,f922.,04.03.03.00.00,,Folic acid 5mg tablets,28.000
+XXX,1,YYYY-MM-DD,f41y.,02.12.04.00.00,,Omeprazole 20mg gastro-resistant capsules,84 tablet
+XXX,3,YYYY-MM-DD,,06.04.01.01.00,,Beclometasone 50micrograms/dose nasal spray,112.000
+XXX,1,YYYY-MM-DD,dian.,08.01.03.00.00,,Senna 7.5mg tablets,84 tab
+XXX,3,YYYY-MM-DD,,020201,,Lisinopril 10mg tablets,
+XXX,4,YYYY-MM-DD,,,,Ramipril 2.5mg capsules,30 gram
+XXX,3,YYYY-MM-DD,,,,Ezetimibe 10mg tablets,28.000
+XXX,2,YYYY-MM-DD,,05.01.02.01.00,,Atorvastatin 20mg tablets,120.000
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,100
+XXX,3,YYYY-MM-DD,,07.04.05.00.00,,Alendronic acid 70mg tablets,
+XXX,1,YYYY-MM-DD,a6b1.00,06.02.01.00.00,,Levothyroxine sodium 100microgram tablets,100.000
+XXX,3,YYYY-MM-DD,a6b1.,,,Levothyroxine sodium 25microgram tablets,
+XXX,3,YYYY-MM-DD,,02.04.00.00.00,,Simvastatin 20mg tablets,28 tablets
+XXX,1,YYYY-MM-DD,,06.01.01.02.00,,Lisinopril 5mg tablets,28 tablets
+XXX,2,YYYY-MM-DD,,,,Co-codamol 8mg/500mg tablets,30 tablet
+XXX,1,YYYY-MM-DD,,06.04.01.01.00,,Atenolol 25mg tablets,28 tab
+XXX,3,YYYY-MM-DD,,,,Ramipril 10mg capsules,10 ml
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,,56 tabs
+XXX,3,YYYY-MM-DD,j282.,,,Alendronic acid 70mg tablets,
+XXX,1,YYYY-MM-DD,,13.02.01.02.00,,Aspirin 75mg dispersible tablets,
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Citalopram 20mg tablets,56 tablets
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Lansoprazole 15mg gastro-resistant capsules,60 tablet
+XXX,1,YYYY-MM-DD,,,,Atenolol 50mg tablets,
+XXX,3,YYYY-MM-DD,,05.01.13.00.00,,Aspirin 75mg gastro-resistant tablets,84 tablet
+XXX,4,YYYY-MM-DD,,04.07.01.02.00,,Naproxen 500mg tablets,1.000
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Amoxicillin 500mg capsules,28 tab
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Trimethoprim 200mg tablets,1 pack of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,,,,30 tablet
+XXX,3,YYYY-MM-DD,bdfx.,06.02.01.00.00,,,56 tablets
+XXX,3,YYYY-MM-DD,,03.01.01.03.00,,Lisinopril 5mg tablets,
+XXX,3,YYYY-MM-DD,,04.08.01.03.00,320000009,Simvastatin 10mg tablets,10 ml
+XXX,1,YYYY-MM-DD,,02.08.02.00.00,,Simvastatin 40mg tablets,56 tablets
+XXX,4,YYYY-MM-DD,,05.01.01.03.00,,Ranitidine 150mg tablets,56 tablet(s)
+XXX,3,YYYY-MM-DD,,06.01.02.01.00,,Lansoprazole 30mg gastro-resistant capsules,56 tablet
+XXX,2,YYYY-MM-DD,,02.05.04.00.00,,Amlodipine 5mg tablets,21.000
+XXX,3,YYYY-MM-DD,a6b7.,04.02.01.00.00,,Ramipril 10mg capsules,28 tablets
+XXX,1,YYYY-MM-DD,j612.,,,Atenolol 50mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,02.06.03.00.00,,,28.000
+XXX,3,YYYY-MM-DD,,,321959007,,28 tablet
+XXX,3,YYYY-MM-DD,,02.02.02.00.00,,,100
+XXX,1,YYYY-MM-DD,,04.07.03.00.00,,Doxazosin 4mg tablets,1.000
+XXX,3,YYYY-MM-DD,,06.02.01.00.00,,Bendroflumethiazide 2.5mg tablets,28 tablet
+XXX,1,YYYY-MM-DD,,02.09.02.00.00,,Aspirin 75mg dispersible tablets,28 tablet
+XXX,3,YYYY-MM-DD,bdfw.,,,Tramadol 50mg capsules,
+XXX,3,YYYY-MM-DD,dia6.00,02.05.05.01.00,325278007,,28 capsules
+XXX,3,YYYY-MM-DD,,,,Lisinopril 10mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,09.06.04.00.00,,Clenil Modulite 100micrograms/dose inhaler (Chiesi Ltd),112 tab
+XXX,3,YYYY-MM-DD,,02.05.04.00.00,,Amlodipine 5mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,Atorvastatin 20mg tablets,56.000
+XXX,3,YYYY-MM-DD,,12.02.01.00.00,,Flucloxacillin 500mg capsules,56 tablet
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,Ramipril 2.5mg capsules,56 tablets
+XXX,4,YYYY-MM-DD,,01.06.02.00.00,,Levothyroxine sodium 50microgram tablets,56.000
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Flucloxacillin 500mg capsules,
+XXX,3,YYYY-MM-DD,,04.07.01.02.00,,Amitriptyline 10mg tablets,28 - tablet(s)
+XXX,4,YYYY-MM-DD,blb1.,10.01.01.00.00,,Simvastatin 20mg tablets,56 capsule
+XXX,3,YYYY-MM-DD,,,,Lansoprazole 30mg gastro-resistant capsules,28 tablet
+XXX,2,YYYY-MM-DD,b211.,04.07.02.00.00,,,1 pack of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,02.05.01.00.00,,Perindopril erbumine 4mg tablets,
+XXX,4,YYYY-MM-DD,,06.02.01.00.00,,Amoxicillin 250mg capsules,28 tab
+XXX,3,YYYY-MM-DD,,,,,60.000
+XXX,3,YYYY-MM-DD,,,,Levothyroxine sodium 25microgram tablets,100 capsule
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,Lansoprazole 15mg gastro-resistant capsules,56.000
+XXX,3,YYYY-MM-DD,,,,Aspirin 75mg gastro-resistant tablets,28 tablet(s)
+XXX,4,YYYY-MM-DD,,06.04.01.01.00,,Paracetamol 500mg tablets,28.000
+XXX,3,YYYY-MM-DD,,05.01.01.03.00,,,
+XXX,1,YYYY-MM-DD,,96.02.01.02.00,,Atenolol 25mg tablets,4 tablet
+XXX,3,YYYY-MM-DD,,,,,28 tablet
+XXX,3,YYYY-MM-DD,,,,Simvastatin 20mg tablets,56 tablet
+XXX,3,YYYY-MM-DD,,02.02.01.00.00,,,
+XXX,4,YYYY-MM-DD,,03.04.01.01.00,,Co-codamol 8mg/500mg tablets,84.000
+XXX,3,YYYY-MM-DD,,13.02.01.02.00,,Amlodipine 10mg tablets,28 tablet
+XXX,3,YYYY-MM-DD,,,,Amitriptyline 10mg tablets,2 packs of 28 tablet(s)
+XXX,3,YYYY-MM-DD,,10.01.04.01.00,,,100 tablet
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,,
+XXX,3,YYYY-MM-DD,,04.07.02.00.00,,Omeprazole 20mg gastro-resistant capsules,200.000
+XXX,3,YYYY-MM-DD,,02.09.01.00.00,,Co-dydramol 10mg/500mg tablets,30.000
+XXX,3,YYYY-MM-DD,,02.12.04.00.00,,Ramipril 10mg capsules,28 tab
+XXX,3,YYYY-MM-DD,,10.01.01.00.00,,Codeine 30mg tablets,
+XXX,3,YYYY-MM-DD,,0209000A0AAABAB,,Aspirin 75mg dispersible tablets,56
+XXX,3,YYYY-MM-DD,,02.05.05.01.00,,Levothyroxine sodium 25microgram tablets,28
+XXX,1,YYYY-MM-DD,,04.02.01.00.00,,Omeprazole 20mg gastro-resistant capsules,28 tablets
+XXX,3,YYYY-MM-DD,f923.00,,,Ramipril 10mg capsules,28 tablet
+XXX,1,YYYY-MM-DD,,02.05.05.01.00,,Simvastatin 40mg tablets,
+XXX,3,YYYY-MM-DD,,0103050P0AAAGAG,,Ramipril 10mg capsules,28.000
