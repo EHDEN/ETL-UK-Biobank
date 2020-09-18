@@ -55,6 +55,7 @@ class EtlWrapper:
 
     # DATABASE OPERATIONS
 
+    # TODO: replace with truncate instead?
     def drop_cdm(self) -> None:
         """Drops clinical tables, if they exist"""
         logger.info('Dropping OMOP CDM (non-vocabulary) tables if existing')
@@ -85,7 +86,7 @@ class EtlWrapper:
 
     def create_cdm(self) -> None:
         """Create the source-specific target metadata table."""
-        logger.info('Creating target table')
+        logger.info('Creating target tables')
         self.db.base.metadata.create_all(self.db.engine)
 
     # TRANSFORMATION WRAPPERS (Python and SQL)
