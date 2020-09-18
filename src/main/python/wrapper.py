@@ -32,8 +32,18 @@ class Wrapper(EtlWrapper):
         # NOTE: replace the following with project-specific source table names!
         self.source_table_123 = None
 
-    def transform(self):
-        pass
+    def run(self):
+
+        self.start_timing()
+
+        logger.info('{:-^100}'.format(' SETUP '))
+
+        self.drop_cdm()
+        self.create_cdm()
+
+        # TRANSFORMATIONS
+
+        logger.info('{:-^100}'.format(' ETL '))
 
         # NOTE: replace the following with project-specific transformations from python/transformations/ or sql/ folder!
         # (make sure execution follows order of table dependencies)
@@ -44,26 +54,8 @@ class Wrapper(EtlWrapper):
         # sql transformation:
         # self.execute_sql_file(self.path_sql_transformations / 'sample_script.sql')
 
-    def run(self):
-
-        self.start_timing()
-        logger.info('{:-^100}'.format(' UKB ETL '))
-
-        # Prepare target database
-        self.drop_cdm()
-        self.create_cdm()
-
-        # Load source data
-
-        logger.info('{:-^100}'.format(' ETL '))
-
-        self.transform()
-
-        self.etl_stats.write_summary_files()
-        self.etl_stats.log_summary()
-
-        # self.log_summary()
-        # self.log_runtime()
+        self.log_summary()
+        self.log_runtime()
 
     # NOTE: replace the following with project-specific functions to load source tables!
     def get_sample_source_table(self):
