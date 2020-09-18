@@ -8,7 +8,7 @@ This repository will host the ETL code, Mapping Files, Test code, and ETL Docume
 ### Prepare the target database
 - Create an empty database.
 - OMOP vocabulary tables should be pre-loaded to a schema named `vocab`.
-- The ETL will automatically create the schema `cdm531` and the CDM 5.3.1 tables.
+- Create an empty schema `cdm_531`; the ETL will automatically load the CDM 5.3.1 tables to this schema.
 
 ### Customize configuration
 In `config/`:

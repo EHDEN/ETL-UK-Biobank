@@ -7,7 +7,7 @@ metadata = base.metadata
 
 class Cohort(base):
     __tablename__ = 'cohort'
-    __table_args__ = {'schema': 'cdm531'}
+    __table_args__ = {'schema': 'cdm_531'}
 
     cohort_definition_id = Column(ForeignKey('vocab.cohort_definition.cohort_definition_id'), primary_key=True, nullable=False, index=True)
     subject_id = Column(Integer, primary_key=True, nullable=False, index=True)
@@ -19,7 +19,7 @@ class Cohort(base):
 
 class CohortAttribute(base):
     __tablename__ = 'cohort_attribute'
-    __table_args__ = {'schema': 'cdm531'}
+    __table_args__ = {'schema': 'cdm_531'}
 
     cohort_definition_id = Column(ForeignKey('vocab.cohort_definition.cohort_definition_id'), primary_key=True, nullable=False, index=True)
     cohort_start_date = Column(Date, primary_key=True, nullable=False)
