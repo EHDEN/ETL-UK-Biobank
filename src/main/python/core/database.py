@@ -1,4 +1,8 @@
+from __future__ import annotations
+
 import logging
+from getpass import getpass
+from typing import Dict
 from contextlib import contextmanager
 
 from sqlalchemy import create_engine, MetaData
@@ -17,7 +21,6 @@ class Database:
         self.engine = create_engine(uri, use_batch_mode=True)
         self.base = base
         self.metadata = self._set_metadata()
-
         self._sessionmaker = sessionmaker(bind=self.engine)
 
     def _set_metadata(self) -> MetaData:
@@ -25,6 +28,40 @@ class Database:
         metadata = MetaData()
         metadata.reflect(bind=self.engine)
         return metadata
+
+    @classmethod
+    def from_config(cls, config: Dict) -> Database:
+        """
+        Create an instance of Database from a configuration file.
+
+        :param config: Dict
+            Contents of the configuration file.
+        :return: Database
+        """
+        db_config = config['database']
+        hostname = db_config['host']
+        port = db_config['port']
+        database = db_config['database_name']
+        username = db_config['username']
+        password = db_config['password']
+        uri = f'postgresql://{username}:{password}@{hostname}:{port}/{database}'
+        if not password and Database._password_needed(uri):
+            password = getpass('Database password:')
+            uri = f'postgresql://{username}:{password}@{hostname}:{port}/{database}'
+        return cls(uri=uri)
+
+    @staticmethod
+    def _password_needed(uri: str) -> bool:
+        logger.disabled = True
+        try:
+            create_engine(uri).connect()
+        except OperationalError as e:
+            if 'no password supplied' in str(e):
+                return True
+        else:
+            return False
+        finally:
+            logger.disabled = False
 
     def get_new_session(self):
         return self._sessionmaker()
