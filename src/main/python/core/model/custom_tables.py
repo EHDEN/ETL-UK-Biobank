@@ -1,4 +1,4 @@
-from sqlalchemy import BigInteger, Column, Date, DateTime, ForeignKey, Integer, String
+from sqlalchemy import Column, Date, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 from src.main.python.core.database import base
 
@@ -15,7 +15,7 @@ class TreatmentLine(base):
     total_cycle_number = Column(Integer, nullable=True)
     line_start_date = Column(Date, nullable=True)
     line_end_date = Column(Date, nullable=True)
-    drug_concept_id = Column(ForeignKey('vocabulary_schema.concept.concept_id'), index=True)
+    drug_concept_id = Column(ForeignKey('vocab.concept.concept_id'), index=True)
     drug_era_start_date = Column(Date, nullable=True)
     drug_era_end_date = Column(Date, nullable=True)
     drug_exposure_count = Column(Integer, nullable=True)
