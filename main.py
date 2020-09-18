@@ -19,9 +19,9 @@ import sys
 import click
 from pathlib import Path
 from src.main.python.core.yaml import read_yaml_file
-from src.main.python.core.setup_logging import setup_logging
+from src.main.python.core import setup_logging
 from src.main.python.wrapper import Wrapper
-
+from src.main.python.core import Database
 
 __version__ = '0.1.0'
 
@@ -36,12 +36,14 @@ def main(config):
     # Load configuration
     config = read_yaml_file(Path(config))
 
+    db = Database.from_config(config)
+
     # Setup logging
     debug: bool = config['run_options']['debug_mode']
     setup_logging(debug)
 
     # Initialize ETL with configuration parameters
-    etl = Wrapper(config)
+    etl = Wrapper(db, config)
 
 
     logger.info('ETL version {}'.format(__version__))
