@@ -1,0 +1,12 @@
+# Database connection
+database:
+  host: 'localhost'
+  port: 5432
+  database_name: 'ohdsi'
+  username: 'postgres'
+  # Comment out password to provide at runtime
+  password: 'postgres'
+
+run_options:
+  source_data_folder: './resources/source_data'
+  debug_mode: False
