@@ -1,4 +1,4 @@
-from sqlalchemy import BigInteger, CHAR, Column, Date, DateTime, ForeignKey, Integer, Numeric, String, Table, Text
+from sqlalchemy import CHAR, Column, Date, ForeignKey, Integer, Numeric, String
 from sqlalchemy.orm import relationship
 from src.main.python.core.database import base
 

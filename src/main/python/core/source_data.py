@@ -1,4 +1,3 @@
-
 # Copyright 2020 The Hyve
 #
 # Licensed under the GNU General Public License, version 3,
