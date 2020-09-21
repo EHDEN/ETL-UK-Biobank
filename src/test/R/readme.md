@@ -78,5 +78,4 @@ This convention should be used for other numerical variables whenever applicable
 | test_sample_source_8_to_condition_occurrence.R | 700-799 |
 | test_sample_source_9_to_procedure_occurrence.R | 800-899 |
 | test_sample_source_10_to_fact_relationship.R | 900-999 |
-| test_sample_source_11_to_treatment_line.R | 1000-1099 |
-| test_observation_period.R | 1100-1199 |
+| test_observation_period.R | 1000-1099 |
