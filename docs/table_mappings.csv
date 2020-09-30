@@ -1,0 +1,31 @@
+Source Table,Target Table,Comment,Logic,Number of field mappings
+gp_registrations,observation_period,,,0
+gp_prescriptions,drug_exposure,Field to field mapping to be completed.,"Drug code either in read_2, bnf_code or dmd_code. Mutually exclusive.
+",13
+hesin,visit_detail,For every episode (epistart to epiend),TBD,0
+hesin,visit_occurrence,From admission to discharge,"Group by the eid and ins_index.
+Take smallest admidate and biggest disdate",15
+hesin_diag,condition_occurrence,,Join hesin using ins_index,11
+hesin_oper,procedure_occurrence,,,12
+covid,observation,"Test done with result (positive or negative or suspected)
+TODO: is covid19 pre or post coordinated concept?",,8
+stem_table,condition_occurrence,,,15
+stem_table,drug_exposure,,,21
+stem_table,device_exposure,,,14
+stem_table,measurement,,,18
+stem_table,observation,,,17
+stem_table,procedure_occurrence,,,13
+stem_table,specimen,,,15
+gp_clinical,stem_table,,,15
+baseline,stem_table,,,0
+baseline,person,,,9
+gp_prescriptions,visit_occurrence,,"See gp_clinical, merge the two",0
+gp_clinical,visit_occurrence,,Merge with gp_prescriptions to get all unique eid+event_dt/issue_date combinations.,6
+baseline,visit_occurrence,"One person can have up to 4 visits (labeled 0-3).
+Follow-up online or to assessment center.",,6
+covid,visit_occurrence,,,6
+covid,care_site,,"Unique laboratory values
+Get laboratory names from dictionary",0
+baseline,care_site,,"For all unique assessment centres (field 54)
+See data dictionary: https://biobank.ctsu.ox.ac.uk/crystal/field.cgi?id=54",0
+gp_clinical,observation,,"When event_dt is empty, capture 'history of'",0
