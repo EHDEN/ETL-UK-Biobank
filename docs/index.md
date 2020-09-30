@@ -4,7 +4,10 @@
 
 ## Contents
 
-[stem_table](stem_table.md)
+### Baseline Data
+[Baseline data ](baseline/index.md)
+
+### GP, HES, Covid
 
 [person](person.md)
 
@@ -29,6 +32,8 @@
 [specimen](specimen.md)
 
 [care_site](care_site.md)
+
+[stem_table](stem_table.md)
 
 [source_appendix](source_appendix.md)
 
