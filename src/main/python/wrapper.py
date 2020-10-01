@@ -13,6 +13,7 @@
 # GNU General Public License for more details.
 
 from pathlib import Path
+from typing import Optional
 import logging
 from src.main.python.core import EtlWrapper
 from src.main.python.core.source_data import SourceData
@@ -32,7 +33,7 @@ class Wrapper(EtlWrapper):
         self.path_sql_transformations = Path('./src/main/sql')
         self.cdm = cdm
         # NOTE: replace the following with project-specific source table names!
-        self.baseline_to_person = None
+        self.source_file_delimiter = ','
 
     def run(self):
 
@@ -59,9 +60,9 @@ class Wrapper(EtlWrapper):
         self.log_summary()
         self.log_runtime()
 
-    # NOTE: replace the following with project-specific functions to load source tables!
-    def get_baseline_to_person(self):
-        if not self.baseline_to_person:
-            self.baseline_to_person = SourceData(self.source_folder / 'baseline_to_person.csv',
-                                                 delimiter=',')
-        return self.baseline_to_person
+    def get_source_data(self, source_file, custom_delimiter: Optional[str]=None):
+        if custom_delimiter:
+            delimiter = custom_delimiter
+        else:
+            delimiter = self.source_file_delimiter
+        return SourceData(self.source_folder / source_file, delimiter=delimiter)

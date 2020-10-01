@@ -17,10 +17,8 @@ import os
 import re
 import time
 import traceback
-from collections import defaultdict
 from pathlib import Path
 from typing import Optional, Callable
-
 from sqlalchemy import text
 
 # Import ORM for target metadata
