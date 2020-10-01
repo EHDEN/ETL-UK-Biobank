@@ -16,6 +16,7 @@ from pathlib import Path
 import logging
 from src.main.python.core import EtlWrapper
 from src.main.python.core.source_data import SourceData
+import src.main.python.core.model as cdm
 from src.main.python.transformation import *
 
 
@@ -29,8 +30,9 @@ class Wrapper(EtlWrapper):
         self.source_folder = Path(config['run_options']['source_data_folder'])
         self.path_mapping_tables = Path('./resources/mapping_tables')
         self.path_sql_transformations = Path('./src/main/sql')
+        self.cdm = cdm
         # NOTE: replace the following with project-specific source table names!
-        self.source_table_123 = None
+        self.baseline_to_person = None
 
     def run(self):
 
@@ -49,7 +51,7 @@ class Wrapper(EtlWrapper):
         # (make sure execution follows order of table dependencies)
 
         # python transformation:
-        # self.execute_transformation(sample_transformation_name)
+        self.execute_transformation(baseline_to_person)
 
         # sql transformation:
         # self.execute_sql_file(self.path_sql_transformations / 'sample_script.sql')
@@ -58,7 +60,8 @@ class Wrapper(EtlWrapper):
         self.log_runtime()
 
     # NOTE: replace the following with project-specific functions to load source tables!
-    def get_sample_source_table(self):
-        if not self.sample_source_table:
-            self.sample_source_table = SourceData(self.source_folder / 'sample_source_table.csv')
-        return self.sample_source_table
+    def get_baseline_to_person(self):
+        if not self.baseline_to_person:
+            self.baseline_to_person = SourceData(self.source_folder / 'baseline_to_person.csv',
+                                                 delimiter=',')
+        return self.baseline_to_person
