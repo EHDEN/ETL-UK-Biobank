@@ -36,7 +36,7 @@ class EtlWrapper:
     """
     SOURCE_ROW_COUNT_FORMAT = '{:<60.60} {:>10}'
 
-    def __init__(self, database, debug):
+    def __init__(self, database, config):
         self.db = database
 
         self.n_queries_executed = 0
@@ -46,7 +46,7 @@ class EtlWrapper:
         self.t_start = None
         self.cwd = os.getcwd()
 
-        self.debug = debug
+        self.debug = config['run_options']['debug_mode']
 
     def run(self):
         """Run ETL procedure"""
@@ -100,15 +100,18 @@ class EtlWrapper:
         t1 = time.time()
 
         try:
+            records_to_insert = statement(self, *args, **kwargs)
             with self.db.session_scope() as session:
-                records_to_insert = statement(self, *args, **kwargs)
                 session.add_all(records_to_insert)
-
         except Exception as msg:
-            logger.error("#!#! ERROR: Transformation '%s' failed:" % statement.__name__)
-            logger.error(msg)
-            logger.error(traceback.format_exc(limit=1))
+            if self.debug:
+                raise msg
+            logger.error("Transformation '%s' failed:" % statement.__name__)
+            error = msg.args[0].split('\n')[0]
+            logger.error("%s" % error)
+            # logger.error(traceback.format_exc(limit=1))
             self.n_queries_failed += 1
+            return
 
         t2 = time.time()
 
