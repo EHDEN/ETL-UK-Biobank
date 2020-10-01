@@ -16,13 +16,11 @@ import logging
 import os
 import re
 import time
-import traceback
 from pathlib import Path
 from typing import Optional, Callable
 from sqlalchemy import text
+import src.main.python.core.model as cdm
 
-# Import ORM for target metadata
-from src.main.python.core.model import *
 
 logger = logging.getLogger(__name__)
 
@@ -46,6 +44,8 @@ class EtlWrapper:
         self.t_start = None
         self.cwd = os.getcwd()
 
+        self.cdm = cdm
+
         self.debug = config['run_options']['debug_mode']
 
     def run(self):
@@ -59,28 +59,28 @@ class EtlWrapper:
         """Drops clinical tables, if they exist"""
         logger.info('Dropping OMOP CDM (non-vocabulary) tables if existing')
         self.db.base.metadata.drop_all(self.db.engine, tables=[
-            clinical_data.ConditionOccurrence.__table__,
-            clinical_data.DeviceExposure.__table__,
-            clinical_data.DrugExposure.__table__,
-            clinical_data.FactRelationship.__table__,
-            clinical_data.Measurement.__table__,
-            clinical_data.Note.__table__,
-            clinical_data.NoteNlp.__table__,
-            clinical_data.Observation.__table__,
-            clinical_data.ObservationPeriod.__table__,
-            clinical_data.Death.__table__,
-            clinical_data.ProcedureOccurrence.__table__,
-            clinical_data.Specimen.__table__,
-            clinical_data.VisitOccurrence.__table__,
-            derived_elements.DrugEra.__table__,
-            derived_elements.DoseEra.__table__,
-            derived_elements.ConditionEra.__table__,
-            health_economics.PayerPlanPeriod.__table__,
-            health_economics.Cost.__table__,
-            clinical_data.Person.__table__,
-            health_system_data.Location.__table__,
-            health_system_data.CareSite.__table__,
-            health_system_data.Provider.__table__
+            self.cdm.clinical_data.ConditionOccurrence.__table__,
+            self.cdm.clinical_data.DeviceExposure.__table__,
+            self.cdm.clinical_data.DrugExposure.__table__,
+            self.cdm.clinical_data.FactRelationship.__table__,
+            self.cdm.clinical_data.Measurement.__table__,
+            self.cdm.clinical_data.Note.__table__,
+            self.cdm.clinical_data.NoteNlp.__table__,
+            self.cdm.clinical_data.Observation.__table__,
+            self.cdm.clinical_data.ObservationPeriod.__table__,
+            self.cdm.clinical_data.Death.__table__,
+            self.cdm.clinical_data.ProcedureOccurrence.__table__,
+            self.cdm.clinical_data.Specimen.__table__,
+            self.cdm.clinical_data.VisitOccurrence.__table__,
+            self.cdm.derived_elements.DrugEra.__table__,
+            self.cdm.derived_elements.DoseEra.__table__,
+            self.cdm.derived_elements.ConditionEra.__table__,
+            self.cdm.health_economics.PayerPlanPeriod.__table__,
+            self.cdm.health_economics.Cost.__table__,
+            self.cdm.clinical_data.Person.__table__,
+            self.cdm.health_system_data.Location.__table__,
+            self.cdm.health_system_data.CareSite.__table__,
+            self.cdm.health_system_data.Provider.__table__
         ])
 
     def create_cdm(self) -> None:

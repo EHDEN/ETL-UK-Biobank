@@ -17,7 +17,6 @@ from typing import Optional
 import logging
 from src.main.python.core import EtlWrapper
 from src.main.python.core.source_data import SourceData
-import src.main.python.core.model as cdm
 from src.main.python.transformation import *
 
 
@@ -31,7 +30,7 @@ class Wrapper(EtlWrapper):
         self.source_folder = Path(config['run_options']['source_data_folder'])
         self.path_mapping_tables = Path('./resources/mapping_tables')
         self.path_sql_transformations = Path('./src/main/sql')
-        self.cdm = cdm
+
         # NOTE: replace the following with project-specific source table names!
         self.source_file_delimiter = ','
 
