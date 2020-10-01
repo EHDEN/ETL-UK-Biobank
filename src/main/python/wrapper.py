@@ -57,6 +57,8 @@ class Wrapper(EtlWrapper):
         # sql transformation:
         # self.execute_sql_file(self.path_sql_transformations / 'sample_script.sql')
 
+        logger.info('{:-^100}'.format(' Summary stats '))
+
         self.log_summary()
         self.log_runtime()
 

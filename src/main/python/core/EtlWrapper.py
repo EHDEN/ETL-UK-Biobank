@@ -31,7 +31,8 @@ class EtlWrapper:
     """
     This module coordinates the execution of the python transformations.
     If debug mode is on, the primary key constraints are applied before loading
-    to get direct feedback if there are issues. This does make the loading step of the ETL significantly slower.
+    to get direct feedback if there are issues. This does make the loading step
+    of the ETL significantly slower.
     """
     SOURCE_ROW_COUNT_FORMAT = '{:<60.60} {:>10}'
 
@@ -96,19 +97,30 @@ class EtlWrapper:
         :param statement: Callable
             python function which takes this wrapper as input
         """
-        logger.info(f'{"-"*7}Executing transformation: {statement.__name__}{"-"*7}')
+        t1 = time.time()
 
         try:
             with self.db.session_scope() as session:
                 records_to_insert = statement(self, *args, **kwargs)
-                logger.info(f'Saving {len(records_to_insert)} objects')
                 session.add_all(records_to_insert)
 
         except Exception as msg:
+            logger.error("#!#! ERROR: Transformation '%s' failed:" % statement.__name__)
             logger.error(msg)
-            logger.error(traceback.format_exc())
+            logger.error(traceback.format_exc(limit=1))
+            self.n_queries_failed += 1
 
-        logger.info(f'{statement.__name__} completed')
+        t2 = time.time()
+
+        # NOTE: if multiple queries, then rowcount only last number of inserted/updated rows
+        self.log_query_completed(statement, len(records_to_insert), t2 - t1)
+
+        # Note: only tracks row count correctly if 1 insert per file and no update/delete scripts
+        if len(records_to_insert) > 0:
+            self.total_rows_inserted += len(records_to_insert)
+
+        self.n_queries_executed += 1
+        return
 
     def execute_sql_file(self, file_path, verbose=True):
         # Open and read the file as a single buffer
@@ -176,7 +188,8 @@ class EtlWrapper:
         return self.log_table_completed(None, row_count, execution_time)
 
     @staticmethod
-    def log_table_completed(table_into, row_count, execution_time, prefix='INTO', show_count_per_record=False):
+    def log_table_completed(table_into, row_count, execution_time, prefix='INTO',
+                            show_count_per_record=False):
         if table_into:
             table_into_message = prefix + ' ' + table_into
         else:
@@ -260,11 +273,12 @@ class EtlWrapper:
         total_seconds = time.time() - self.t_start
         m, s = divmod(total_seconds, 60)
         h, m = divmod(m, 60)
-        logger.info('Run time: {:>20.1f} seconds ({:>1.0f}:{:>02.0f}:{:>02.0f})'.format(total_seconds, h, m, s))
+        logger.info('Run time: {:>20.1f} seconds ({:>1.0f}:{:>02.0f}:{:>02.0f})'
+                    .format(total_seconds, h, m, s))
 
     def log_summary(self):
-        logger.info("Queries successfully executed: %d" % self.n_queries_executed)
-        logger.info("Queries failed: %d" % self.n_queries_failed)
+        logger.info("Queries/transformations successfully executed: %d" % self.n_queries_executed)
+        logger.info("Queries/transformations failed: %d" % self.n_queries_failed)
         logger.info("Rows inserted: {:,}".format(self.total_rows_inserted))
 
     def log_tables_rowcounts(self, source_data_dir: Path, do_log_total=True):
