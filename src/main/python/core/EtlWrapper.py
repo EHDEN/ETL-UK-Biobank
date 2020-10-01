@@ -122,17 +122,23 @@ class EtlWrapper:
         self.n_queries_executed += 1
         return
 
-    def execute_sql_file(self, file_path, verbose=True):
+    def execute_sql_file(self, file_path, source_schema=None, target_schema=None,
+                         print_failed_query=False):
+
         # Open and read the file as a single buffer
         with open(file_path, 'r') as f:
             query = f.read().strip()
 
-        return self.execute_sql_query(query, verbose)
+        return self.execute_sql_query(query, source_schema, target_schema, from_file=file_path,
+                                      print_failed_query=print_failed_query)
 
-    def execute_sql_query(self, query, schema, verbose=True):
+    def execute_sql_query(self, query, source_schema, target_schema,
+                          from_file=None, print_failed_query=False):
+
         # Prepare parameterized sql
         query = query.replace('@absPath', self.cwd)
-        query = query.replace("@source_schema", schema)
+        query = query.replace("@source_schema", source_schema)
+        query = query.replace("@target_schema", target_schema)
 
         t1 = time.time()
 
@@ -140,22 +146,23 @@ class EtlWrapper:
             try:
                 statement = text(query).execution_options(autocommit=True)
                 result = con.execute(statement)
+            # except SQLAlchemyError as msg:
             except Exception as msg:
                 if self.debug:
                     raise msg
                 error = msg.args[0].split('\n')[0]
-                if verbose:
-                    logger.info("###")  # newline before error
-                logger.error("Query failed:")
-                logger.error(query)
-                logger.error("\t%s" % error)
+                if from_file:
+                    logger.error(f"SQL file: {from_file}")
+                logger.error("%s" % error)
+                if print_failed_query:
+                    logger.error(f"Failed query:\n{query}\n")
                 self.n_queries_failed += 1
                 return
+
         t2 = time.time()
 
-        if verbose:
-            # NOTE: if multiple queries, then rowcount only last number of inserted/updated rows
-            self.log_query_completed_sqlquery(query, result.rowcount, t2 - t1)
+        # NOTE: if multiple queries, then rowcount only last number of inserted/updated rows
+        self.log_query_completed_sqlquery(query, result.rowcount, t2 - t1)
 
         # Note: only tracks row count correctly if 1 insert per file and no update/delete scripts
         if result.rowcount > 0 and self.parse_query_type(query) in ['INTO', 'CREATE']:
