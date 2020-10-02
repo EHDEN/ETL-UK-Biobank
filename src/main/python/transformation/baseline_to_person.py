@@ -23,6 +23,8 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
     #     for variable, value in row.items():
     #         r = ...
 
+    # TODO: move following dictionaries to dedicated demographics mapping file
+
     sex = {
         '0' : 8532, # female
         '1' : 8507  # male
@@ -38,6 +40,7 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
 
     records = []
     for _, row in source.iterrows():
+        # TODO: check correct visit number for fields with multiple visits
         r = wrapper.cdm.Person(
             person_id=row['eid'][4:],
             person_source_value=row['eid'],
