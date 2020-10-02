@@ -51,7 +51,7 @@ class Wrapper(EtlWrapper):
         # (make sure execution follows order of table dependencies)
 
         # python transformation:
-        # self.execute_transformation(assessment_center_to_location)  #TODO: person dependency
+        self.execute_transformation(assessment_center_to_location)
         self.execute_transformation(baseline_to_person)
 
         # sql transformation:
