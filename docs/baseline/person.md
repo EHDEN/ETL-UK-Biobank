@@ -1,8 +1,11 @@
 ## Table name: person
 
-### Reading from Baseline characteristics
+### Reading from Baseline
 
 ![](md_files/image6.png)
+
+The person table contains the main demographics as recorded during the first assessment center visit (instance 0). 
+The demographics recorded are gender, year of birth, month of birth, race and assessment center.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
