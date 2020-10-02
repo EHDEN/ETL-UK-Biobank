@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
 
-    source = pd.DataFrame(wrapper.get_source_data('baseline_to_person.csv'))
+    source = pd.DataFrame(wrapper.get_source_data('baseline/baseline_to_person.csv'))
 
     # The use of DataFrame objects is recommended for:
     # - data filtering
