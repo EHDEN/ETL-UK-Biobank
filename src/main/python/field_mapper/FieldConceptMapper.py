@@ -19,7 +19,7 @@ from typing import Dict, Optional
 import logging
 
 from src.main.python.field_mapper.model.MappingTarget import MappingTarget
-from src.main.python.field_mapper.model.UsagiRow import UsagiRow
+from src.main.python.field_mapper.model.UsagiModel import UsagiRow
 from src.main.python.field_mapper.model.FieldMapping import FieldMapping
 
 logger = logging.getLogger(__name__)

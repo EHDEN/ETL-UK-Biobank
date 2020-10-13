@@ -37,7 +37,7 @@ class UsagiRow:
         self.field_id: str = row['sourceCode'].strip()
         self.value_code: str = row['sourceValueCode'].strip()
         self.target: TargetMapping = TargetMapping(row)
-        self.type: MappingType = MappingType[row['mappingType']]
+        self.status: MappingStatus = MappingStatus[row['mappingStatus']]
         self.comment: str = row['comment']
 
 
@@ -47,6 +47,6 @@ class TargetMapping:
         self.concept_id: int = int(row['conceptId'])
         self.created_by: str = row['createdBy']
         self.created_on: datetime = datetime.fromtimestamp(to_int(row['createdOn'])/1000)
-        self.status: MappingStatus = MappingStatus[row['mappingStatus']]
+        self.type: MappingType = MappingType[row['mappingType']]
         self.status_set_by: str = row['statusSetBy']
         self.status_set_on: datetime = datetime.fromtimestamp(to_int(row['statusSetOn'])/1000)
