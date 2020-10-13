@@ -1,0 +1,1017 @@
+sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
+30835,SHBG missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072144964
+54,UK Biobank assessment centre,11018,Hounslow,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072145080
+2844,Had other major operations,0,No,,309808,,0.5882282853126526,UNCHECKED,,0,4226858,EVENT,,<auto>,1602072145097
+30885,Urate missing reason,1,No data returned,,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072145267
+30705,Creatinine missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072145317
+30785,LDL direct missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072145418
+30755,Glycated haemoglobin (HbA1c) missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072146281
+30813,Phosphate correction level,0,None,,444901,,0.7161340713500977,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072146492
+30254,Reticulocyte count acquisition route,2,Archive,,494715,,0.6764567494392395,UNCHECKED,,0,37397920,EVENT,,<auto>,1602072146840
+30854,Testosterone correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,441248,,0.5780652165412903,UNCHECKED,,0,35604753,EVENT,,<auto>,1602072146845
+30655,Aspartate aminotransferase missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072147494
+30614,Alkaline phosphatase correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487473,,0.7845264077186584,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072147587
+30835,SHBG missing reason,5,Aliquot 4 used,,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072147675
+54,UK Biobank assessment centre,11020,Croydon,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072148467
+2844,Had other major operations,1,Yes - you will be asked about this later by an interviewer,,309808,,0.5882282853126526,UNCHECKED,,0,4226858,EVENT,,<auto>,1602072149263
+30885,Urate missing reason,2,Original value above or below reportable limit,,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072149462
+30705,Creatinine missing reason,5,Aliquot 4 used,,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072149477
+30785,LDL direct missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072149659
+30835,SHBG missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072150363
+30755,Glycated haemoglobin (HbA1c) missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072151440
+30813,Phosphate correction level,1,Date and aliquot correction,,444901,,0.7161340713500977,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072151589
+54,UK Biobank assessment centre,11021,Birmingham,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072151754
+30855,Testosterone missing reason,1,No data returned,,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072151855
+30264,Mean reticulocyte volume acquisition route,0,Direct,,494715,,0.592380940914154,UNCHECKED,,0,3049858,EVENT,,<auto>,1602072152960
+30615,Alkaline phosphatase missing reason,1,No data returned,,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072152999
+30835,SHBG missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072153080
+30786,LDL direct reportability,1,"Reportable at assay and after aliquot correction, if attempted",,486551,,0.4855344295501709,UNCHECKED,,0,4242218,EVENT,,<auto>,1602072153572
+30705,Creatinine missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072153874
+30885,Urate missing reason,3,Unrecoverable aliquot problem (dip),,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072153887
+30655,Aspartate aminotransferase missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072154009
+54,UK Biobank assessment centre,11022,Swansea,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072154959
+30835,SHBG missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072155667
+30855,Testosterone missing reason,2,Original value above or below reportable limit,,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072156647
+30755,Glycated haemoglobin (HbA1c) missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072156784
+30786,LDL direct reportability,2,Reportable at assay but not reportable after any corrections (too low),,486551,,0.4855344295501709,UNCHECKED,,0,4242218,EVENT,,<auto>,1602072157189
+30813,Phosphate correction level,2,Date correction only,,444901,,0.7161340713500977,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072157228
+30004,White blood cell (leukocyte) count acquisition route,0,Direct,,503445,,0.6696266531944275,UNCHECKED,,0,3010813,EVENT,,<auto>,1602072157748
+30836,SHBG reportability,1,"Reportable at assay and after aliquot correction, if attempted",,442060,,0.686029314994812,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072158165
+30885,Urate missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072158172
+30705,Creatinine missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072158276
+54,UK Biobank assessment centre,11023,Wrexham,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072158395
+30615,Alkaline phosphatase missing reason,2,Original value above or below reportable limit,,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072158545
+30264,Mean reticulocyte volume acquisition route,1,Backup,,494715,,0.592380940914154,UNCHECKED,,0,3049858,EVENT,,<auto>,1602072159323
+30656,Aspartate aminotransferase reportability,1,"Reportable at assay and after aliquot correction, if attempted",,485616,,0.8156933784484863,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072160252
+30836,SHBG reportability,2,Reportable at assay but not reportable after any corrections (too low),,442060,,0.686029314994812,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072160444
+30786,LDL direct reportability,3,Reportable at assay but not reportable after any corrections (too high),,486551,,0.4855344295501709,UNCHECKED,,0,4242218,EVENT,,<auto>,1602072160576
+30855,Testosterone missing reason,3,Unrecoverable aliquot problem (dip),,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072161257
+30756,Glycated haemoglobin (HbA1c) reportability,1,"Reportable at assay and after aliquot correction, if attempted",,480973,,0.7271994352340698,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072161596
+54,UK Biobank assessment centre,11024,Cheadle (revisit),,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072161816
+30814,Phosphate correction reason,0,Normal for assay type,,444901,,0.5099889636039734,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072162499
+30885,Urate missing reason,5,Aliquot 4 used,,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072162535
+30705,Creatinine missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072162709
+30836,SHBG reportability,3,Reportable at assay but not reportable after any corrections (too high),,442060,,0.686029314994812,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072162725
+30615,Alkaline phosphatase missing reason,3,Unrecoverable aliquot problem (dip),,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072164118
+30786,LDL direct reportability,4,Not reportable at assay (too low),,486551,,0.4855344295501709,UNCHECKED,,0,4242218,EVENT,,<auto>,1602072164145
+30836,SHBG reportability,4,Not reportable at assay (too low),,442060,,0.686029314994812,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072164983
+54,UK Biobank assessment centre,11025,Cheadle (imaging),,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072165329
+30004,White blood cell (leukocyte) count acquisition route,1,Backup,,503445,,0.6696266531944275,UNCHECKED,,0,3010813,EVENT,,<auto>,1602072165769
+30264,Mean reticulocyte volume acquisition route,2,Archive,,494715,,0.592380940914154,UNCHECKED,,0,3049858,EVENT,,<auto>,1602072165834
+30855,Testosterone missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072166119
+30656,Aspartate aminotransferase reportability,2,Reportable at assay but not reportable after any corrections (too low),,485616,,0.8156933784484863,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072166420
+30756,Glycated haemoglobin (HbA1c) reportability,2,Reportable at assay but not reportable after any corrections (too low),,480973,,0.7271994352340698,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072166569
+30885,Urate missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072166999
+30706,Creatinine reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487201,,0.5203699469566345,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072167179
+30836,SHBG reportability,5,Not reportable at assay (too high),,442060,,0.686029314994812,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072167454
+30814,Phosphate correction reason,1,No tip information,,444901,,0.5099889636039734,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072167768
+30786,LDL direct reportability,5,Not reportable at assay (too high),,486551,,0.4855344295501709,UNCHECKED,,0,4242218,EVENT,,<auto>,1602072167777
+54,UK Biobank assessment centre,11026,Reading (imaging),,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072168764
+30615,Alkaline phosphatase missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072169744
+30792,Lipoprotein A aliquot,0,Manual,,476535,,0.6432298421859741,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072170419
+30842,Total bilirubin aliquot,0,Manual,,491648,,0.7488285899162292,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072170542
+30855,Testosterone missing reason,5,Aliquot 4 used,,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072170950
+30885,Urate missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072171417
+30756,Glycated haemoglobin (HbA1c) reportability,3,Reportable at assay but not reportable after any corrections (too high),,480973,,0.7271994352340698,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072171537
+30706,Creatinine reportability,2,Reportable at assay but not reportable after any corrections (too low),,487201,,0.5203699469566345,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072171663
+54,UK Biobank assessment centre,11027,Newcastle (imaging),,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072172132
+30656,Aspartate aminotransferase reportability,3,Reportable at assay but not reportable after any corrections (too high),,485616,,0.8156933784484863,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072172922
+30814,Phosphate correction reason,2,No aliquot information,,444901,,0.5099889636039734,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072173253
+30792,Lipoprotein A aliquot,1,1,,476535,,0.6432298421859741,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072173284
+30842,Total bilirubin aliquot,1,1,,491648,,0.7488285899162292,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072174337
+30274,Mean sphered cell volume acquisition route,0,Direct,,489146,,0.55938720703125,UNCHECKED,,0,4273303,EVENT,,<auto>,1602072174459
+30004,White blood cell (leukocyte) count acquisition route,2,Archive,,503445,,0.6696266531944275,UNCHECKED,,0,3010813,EVENT,,<auto>,1602072174517
+30615,Alkaline phosphatase missing reason,5,Aliquot 4 used,,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072176003
+30792,Lipoprotein A aliquot,2,2,,476535,,0.6432298421859741,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072176070
+54,UK Biobank assessment centre,11028,Bristol (imaging),,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072176300
+30885,Urate missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24569,,0.5843188166618347,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072176346
+30855,Testosterone missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072176540
+30706,Creatinine reportability,3,Reportable at assay but not reportable after any corrections (too high),,487201,,0.5203699469566345,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072176778
+30756,Glycated haemoglobin (HbA1c) reportability,4,Not reportable at assay (too low),,480973,,0.7271994352340698,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072177423
+30842,Total bilirubin aliquot,2,2,,491648,,0.7488285899162292,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072177863
+30792,Lipoprotein A aliquot,3,3,,476535,,0.6432298421859741,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072178859
+30814,Phosphate correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,444901,,0.5099889636039734,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072178991
+30656,Aspartate aminotransferase reportability,4,Not reportable at assay (too low),,485616,,0.8156933784484863,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072180157
+30886,Urate reportability,1,"Reportable at assay and after aliquot correction, if attempted",,486990,,0.5647829174995422,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072180261
+30842,Total bilirubin aliquot,3,3,,491648,,0.7488285899162292,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072181283
+30706,Creatinine reportability,4,Not reportable at assay (too low),,487201,,0.5203699469566345,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072181448
+30792,Lipoprotein A aliquot,4,4,,476535,,0.6432298421859741,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072181680
+30855,Testosterone missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072181779
+30615,Alkaline phosphatase missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072182182
+30274,Mean sphered cell volume acquisition route,1,Backup,,489146,,0.55938720703125,UNCHECKED,,0,4273303,EVENT,,<auto>,1602072183146
+30756,Glycated haemoglobin (HbA1c) reportability,5,Not reportable at assay (too high),,480973,,0.7271994352340698,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072183210
+55,Month of attending assessment centre,1,January,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072183397
+30014,Red blood cell (erythrocyte) count acquisition route,0,Direct,,503449,,0.37494736909866333,UNCHECKED,,0,3010813,EVENT,,<auto>,1602072184050
+30886,Urate reportability,2,Reportable at assay but not reportable after any corrections (too low),,486990,,0.5647829174995422,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072184259
+30814,Phosphate correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,444901,,0.5099889636039734,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072184830
+30842,Total bilirubin aliquot,4,4,,491648,,0.7488285899162292,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072184914
+30706,Creatinine reportability,5,Not reportable at assay (too high),,487201,,0.5203699469566345,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072186244
+30762,HDL cholesterol aliquot,0,Manual,,491810,,0.7653587460517883,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072186963
+30855,Testosterone missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,70176,,0.6226604580879211,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072187114
+30656,Aspartate aminotransferase reportability,5,Not reportable at assay (too high),,485616,,0.8156933784484863,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072187185
+30886,Urate reportability,3,Reportable at assay but not reportable after any corrections (too high),,486990,,0.5647829174995422,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072188050
+30793,Lipoprotein A correction level,0,None,,389863,,0.6849985122680664,UNCHECKED,,0,37392937,EVENT,,<auto>,1602072188190
+30615,Alkaline phosphatase missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072188229
+30815,Phosphate missing reason,1,No data returned,,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072189579
+55,Month of attending assessment centre,10,October,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072190130
+30762,HDL cholesterol aliquot,1,1,,491810,,0.7653587460517883,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072190554
+30662,Direct bilirubin aliquot,0,Manual,,491483,,0.7623623013496399,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072190859
+30712,C-reactive protein aliquot,0,Manual,,491572,,0.7937952876091003,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072191088
+30886,Urate reportability,4,Not reportable at assay (too low),,486990,,0.5647829174995422,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072192340
+30274,Mean sphered cell volume acquisition route,2,Archive,,489146,,0.55938720703125,UNCHECKED,,0,4273303,EVENT,,<auto>,1602072192365
+30856,Testosterone reportability,1,"Reportable at assay and after aliquot correction, if attempted",,483250,,0.6017963886260986,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072192800
+30843,Total bilirubin correction level,0,None,,485336,,0.8529196381568909,UNCHECKED,,0,37394117,EVENT,,<auto>,1602072192812
+30014,Red blood cell (erythrocyte) count acquisition route,1,Backup,,503449,,0.37494736909866333,UNCHECKED,,0,3010813,EVENT,,<auto>,1602072194610
+30615,Alkaline phosphatase missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,23951,,0.8010231256484985,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072194912
+30793,Lipoprotein A correction level,1,Date and aliquot correction,,389863,,0.6849985122680664,UNCHECKED,,0,37392937,EVENT,,<auto>,1602072195164
+30815,Phosphate missing reason,2,Original value above or below reportable limit,,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072195247
+30662,Direct bilirubin aliquot,1,1,,491483,,0.7623623013496399,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072195531
+30762,HDL cholesterol aliquot,2,2,,491810,,0.7653587460517883,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072195581
+30712,C-reactive protein aliquot,1,1,,491572,,0.7937952876091003,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072196544
+30886,Urate reportability,5,Not reportable at assay (too high),,486990,,0.5647829174995422,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072197388
+55,Month of attending assessment centre,11,November,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072197722
+30856,Testosterone reportability,2,Reportable at assay but not reportable after any corrections (too low),,483250,,0.6017963886260986,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072197901
+30662,Direct bilirubin aliquot,2,2,,491483,,0.7623623013496399,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072199202
+30762,HDL cholesterol aliquot,3,3,,491810,,0.7653587460517883,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072199396
+30616,Alkaline phosphatase reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487522,,0.7859600186347961,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072200606
+30815,Phosphate missing reason,3,Unrecoverable aliquot problem (dip),,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072200883
+30793,Lipoprotein A correction level,2,Date correction only,,389863,,0.6849985122680664,UNCHECKED,,0,37392937,EVENT,,<auto>,1602072201709
+30843,Total bilirubin correction level,1,Date and aliquot correction,,485336,,0.8529196381568909,UNCHECKED,,0,37394117,EVENT,,<auto>,1602072201713
+30892,Vitamin D aliquot,0,Manual,,491703,,0.6093260049819946,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072202128
+30284,Immature reticulocyte fraction acquisition route,0,Direct,,489144,,0.7531044483184814,UNCHECKED,,0,37397780,EVENT,,<auto>,1602072203155
+30856,Testosterone reportability,3,Reportable at assay but not reportable after any corrections (too high),,483250,,0.6017963886260986,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072203195
+30662,Direct bilirubin aliquot,3,3,,491483,,0.7623623013496399,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072203495
+30712,C-reactive protein aliquot,2,2,,491572,,0.7937952876091003,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072203517
+30762,HDL cholesterol aliquot,4,4,,491810,,0.7653587460517883,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072203829
+30014,Red blood cell (erythrocyte) count acquisition route,2,Archive,,503449,,0.37494736909866333,UNCHECKED,,0,3010813,EVENT,,<auto>,1602072205515
+30892,Vitamin D aliquot,1,1,,491703,,0.6093260049819946,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072205828
+55,Month of attending assessment centre,12,December,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072206070
+30815,Phosphate missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072206643
+30616,Alkaline phosphatase reportability,2,Reportable at assay but not reportable after any corrections (too low),,487522,,0.7859600186347961,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072206756
+30662,Direct bilirubin aliquot,4,4,,491483,,0.7623623013496399,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072206976
+30712,C-reactive protein aliquot,3,3,,491572,,0.7937952876091003,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072207753
+30856,Testosterone reportability,4,Not reportable at assay (too low),,483250,,0.6017963886260986,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072208416
+30794,Lipoprotein A correction reason,0,Normal for assay type,,389863,,0.6496498584747314,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072208532
+30892,Vitamin D aliquot,2,2,,491703,,0.6093260049819946,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072209879
+30843,Total bilirubin correction level,2,Date correction only,,485336,,0.8529196381568909,UNCHECKED,,0,37394117,EVENT,,<auto>,1602072210333
+30763,HDL cholesterol correction level,0,None,,445563,,0.7749210596084595,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072212001
+30616,Alkaline phosphatase reportability,3,Reportable at assay but not reportable after any corrections (too high),,487522,,0.7859600186347961,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072212408
+30284,Immature reticulocyte fraction acquisition route,1,Backup,,489144,,0.7531044483184814,UNCHECKED,,0,37397780,EVENT,,<auto>,1602072213248
+30663,Direct bilirubin correction level,0,None,,413662,,0.7819259762763977,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072213270
+30815,Phosphate missing reason,5,Aliquot 4 used,,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072213346
+55,Month of attending assessment centre,2,February,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072213396
+30856,Testosterone reportability,5,Not reportable at assay (too high),,483250,,0.6017963886260986,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072213783
+30892,Vitamin D aliquot,3,3,,491703,,0.6093260049819946,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072214023
+30024,Haemoglobin concentration acquisition route,0,Direct,,503451,,0.707267701625824,UNCHECKED,,0,4267675,EVENT,,<auto>,1602072214283
+30712,C-reactive protein aliquot,4,4,,491572,,0.7937952876091003,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072214311
+30794,Lipoprotein A correction reason,1,No tip information,,389863,,0.6496498584747314,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072214967
+30892,Vitamin D aliquot,4,4,,491703,,0.6093260049819946,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072217716
+30862,Total protein aliquot,0,Manual,,491488,,0.6296827793121338,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072218024
+30844,Total bilirubin correction reason,0,Normal for assay type,,485336,,0.755099356174469,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072218103
+30616,Alkaline phosphatase reportability,4,Not reportable at assay (too low),,487522,,0.7859600186347961,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072218322
+30763,HDL cholesterol correction level,1,Date and aliquot correction,,445563,,0.7749210596084595,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072219214
+30663,Direct bilirubin correction level,1,Date and aliquot correction,,413662,,0.7819259762763977,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072219863
+30815,Phosphate missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072219987
+55,Month of attending assessment centre,3,March,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072221029
+30794,Lipoprotein A correction reason,2,No aliquot information,,389863,,0.6496498584747314,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072221187
+30862,Total protein aliquot,1,1,,491488,,0.6296827793121338,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072221901
+30024,Haemoglobin concentration acquisition route,1,Backup,,503451,,0.707267701625824,UNCHECKED,,0,4267675,EVENT,,<auto>,1602072222749
+30284,Immature reticulocyte fraction acquisition route,2,Archive,,489144,,0.7531044483184814,UNCHECKED,,0,37397780,EVENT,,<auto>,1602072223064
+30713,C-reactive protein correction level,0,None,,486406,,0.8853270411491394,UNCHECKED,,0,4208414,EVENT,,<auto>,1602072223066
+30616,Alkaline phosphatase reportability,5,Not reportable at assay (too high),,487522,,0.7859600186347961,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072223763
+30893,Vitamin D correction level,0,None,,465389,,0.6457652449607849,UNCHECKED,,0,4045160,EVENT,,<auto>,1602072224977
+30815,Phosphate missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072225231
+30663,Direct bilirubin correction level,2,Date correction only,,413662,,0.7819259762763977,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072225703
+30844,Total bilirubin correction reason,1,No tip information,,485336,,0.755099356174469,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072225829
+30763,HDL cholesterol correction level,2,Date correction only,,445563,,0.7749210596084595,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072225921
+30702,Creatinine aliquot,0,Manual,,491703,,0.6599762439727783,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072226573
+30846,Total bilirubin reportability,2,Reportable at assay but not reportable after any corrections (too low),,485354,,0.7859136462211609,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072226933
+30794,Lipoprotein A correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,389863,,0.6496498584747314,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072227337
+55,Month of attending assessment centre,4,April,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072228306
+30622,Alanine aminotransferase aliquot,0,Manual,,492068,,0.7764995694160461,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072228805
+30746,Glucose reportability,3,Reportable at assay but not reportable after any corrections (too high),,445261,,0.5348273515701294,UNCHECKED,,0,40045810,EVENT,,<auto>,1602072229777
+30702,Creatinine aliquot,1,1,,491703,,0.6599762439727783,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072229854
+30815,Phosphate missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,66523,,0.514681339263916,UNCHECKED,,0,4017907,EVENT,,<auto>,1602072230255
+30024,Haemoglobin concentration acquisition route,2,Archive,,503451,,0.707267701625824,UNCHECKED,,0,4267675,EVENT,,<auto>,1602072230437
+30893,Vitamin D correction level,1,Date and aliquot correction,,465389,,0.6457652449607849,UNCHECKED,,0,4045160,EVENT,,<auto>,1602072230863
+30664,Direct bilirubin correction reason,0,Normal for assay type,,413662,,0.7914787530899048,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072231719
+30846,Total bilirubin reportability,3,Reportable at assay but not reportable after any corrections (too high),,485354,,0.7859136462211609,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072232323
+30702,Creatinine aliquot,2,2,,491703,,0.6599762439727783,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072233228
+30746,Glucose reportability,4,Not reportable at assay (too low),,445261,,0.5348273515701294,UNCHECKED,,0,40045810,EVENT,,<auto>,1602072233423
+30844,Total bilirubin correction reason,2,No aliquot information,,485336,,0.755099356174469,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072233616
+30794,Lipoprotein A correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,389863,,0.6496498584747314,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072233771
+30622,Alanine aminotransferase aliquot,1,1,,492068,,0.7764995694160461,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072233860
+30816,Phosphate reportability,1,"Reportable at assay and after aliquot correction, if attempted",,444913,,0.5812903046607971,UNCHECKED,,0,4125861,EVENT,,<auto>,1602072234567
+30294,High light scatter reticulocyte percentage acquisition route,0,Direct,,489146,,0.545708954334259,UNCHECKED,,0,37393631,EVENT,,<auto>,1602072234822
+55,Month of attending assessment centre,5,May,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072235585
+30702,Creatinine aliquot,3,3,,491703,,0.6599762439727783,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072236732
+30893,Vitamin D correction level,2,Date correction only,,465389,,0.6457652449607849,UNCHECKED,,0,4045160,EVENT,,<auto>,1602072237283
+30746,Glucose reportability,5,Not reportable at assay (too high),,445261,,0.5348273515701294,UNCHECKED,,0,40045810,EVENT,,<auto>,1602072237342
+30652,Aspartate aminotransferase aliquot,3,3,,492054,,0.7999057769775391,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072237499
+30846,Total bilirubin reportability,4,Not reportable at assay (too low),,485354,,0.7859136462211609,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072237566
+30034,Haematocrit percentage acquisition route,0,Direct,,503451,,0.5242895483970642,UNCHECKED,,0,316524,EVENT,,<auto>,1602072238773
+30795,Lipoprotein A missing reason,1,No data returned,,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072239244
+30622,Alanine aminotransferase aliquot,2,2,,492068,,0.7764995694160461,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072239274
+30816,Phosphate reportability,2,Reportable at assay but not reportable after any corrections (too low),,444913,,0.5812903046607971,UNCHECKED,,0,4125861,EVENT,,<auto>,1602072239417
+30702,Creatinine aliquot,4,4,,491703,,0.6599762439727783,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072240699
+30844,Total bilirubin correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,485336,,0.755099356174469,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072241674
+55,Month of attending assessment centre,6,June,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072242970
+30652,Aspartate aminotransferase aliquot,4,4,,492054,,0.7999057769775391,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072243111
+30846,Total bilirubin reportability,5,Not reportable at assay (too high),,485354,,0.7859136462211609,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072243120
+30816,Phosphate reportability,3,Reportable at assay but not reportable after any corrections (too high),,444913,,0.5812903046607971,UNCHECKED,,0,4125861,EVENT,,<auto>,1602072243572
+30894,Vitamin D correction reason,0,Normal for assay type,,465389,,0.5194448828697205,UNCHECKED,,0,40097770,EVENT,,<auto>,1602072243818
+30622,Alanine aminotransferase aliquot,3,3,,492068,,0.7764995694160461,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072244143
+30795,Lipoprotein A missing reason,2,Original value above or below reportable limit,,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072244471
+30753,Glycated haemoglobin (HbA1c) correction level,0,None,,480773,,0.7269800901412964,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072244628
+30852,Testosterone aliquot,0,Manual,,487203,,0.5857411026954651,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072246608
+30294,High light scatter reticulocyte percentage acquisition route,1,Backup,,489146,,0.545708954334259,UNCHECKED,,0,37393631,EVENT,,<auto>,1602072246671
+30034,Haematocrit percentage acquisition route,1,Backup,,503451,,0.5242895483970642,UNCHECKED,,0,316524,EVENT,,<auto>,1602072246925
+30703,Creatinine correction level,0,None,,487201,,0.740284264087677,UNCHECKED,,0,37392198,EVENT,,<auto>,1602072247088
+30816,Phosphate reportability,4,Not reportable at assay (too low),,444913,,0.5812903046607971,UNCHECKED,,0,4125861,EVENT,,<auto>,1602072247724
+30844,Total bilirubin correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,485336,,0.755099356174469,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072248706
+30622,Alanine aminotransferase aliquot,4,4,,492068,,0.7764995694160461,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072249143
+30795,Lipoprotein A missing reason,3,Unrecoverable aliquot problem (dip),,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072249614
+30852,Testosterone aliquot,1,1,,487203,,0.5857411026954651,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072249904
+55,Month of attending assessment centre,7,July,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072250240
+30894,Vitamin D correction reason,1,No tip information,,465389,,0.5194448828697205,UNCHECKED,,0,40097770,EVENT,,<auto>,1602072250342
+30753,Glycated haemoglobin (HbA1c) correction level,1,Date and aliquot correction,,480773,,0.7269800901412964,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072251474
+30816,Phosphate reportability,5,Not reportable at assay (too high),,444913,,0.5812903046607971,UNCHECKED,,0,4125861,EVENT,,<auto>,1602072251614
+30653,Aspartate aminotransferase correction level,0,None,,485602,,0.8552553057670593,UNCHECKED,,0,37394375,EVENT,,<auto>,1602072252599
+30703,Creatinine correction level,1,Date and aliquot correction,,487201,,0.740284264087677,UNCHECKED,,0,37392198,EVENT,,<auto>,1602072252916
+30852,Testosterone aliquot,2,2,,487203,,0.5857411026954651,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072253205
+30795,Lipoprotein A missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072254425
+30034,Haematocrit percentage acquisition route,2,Archive,,503451,,0.5242895483970642,UNCHECKED,,0,316524,EVENT,,<auto>,1602072254579
+30845,Total bilirubin missing reason,1,No data returned,,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072254830
+30822,Rheumatoid factor aliquot,0,Manual,,491168,,0.7524484992027283,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072255773
+30894,Vitamin D correction reason,2,No aliquot information,,465389,,0.5194448828697205,UNCHECKED,,0,40097770,EVENT,,<auto>,1602072256065
+30852,Testosterone aliquot,3,3,,487203,,0.5857411026954651,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072256511
+55,Month of attending assessment centre,8,August,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072257043
+30294,High light scatter reticulocyte percentage acquisition route,2,Archive,,489146,,0.545708954334259,UNCHECKED,,0,37393631,EVENT,,<auto>,1602072257939
+30623,Alanine aminotransferase correction level,0,None,,487266,,0.7685123085975647,UNCHECKED,,0,44788835,EVENT,,<auto>,1602072258236
+30753,Glycated haemoglobin (HbA1c) correction level,2,Date correction only,,480773,,0.7269800901412964,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072258239
+30703,Creatinine correction level,2,Date correction only,,487201,,0.740284264087677,UNCHECKED,,0,37392198,EVENT,,<auto>,1602072259017
+30822,Rheumatoid factor aliquot,1,1,,491168,,0.7524484992027283,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072259171
+30795,Lipoprotein A missing reason,5,Aliquot 4 used,,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072259342
+30852,Testosterone aliquot,4,4,,487203,,0.5857411026954651,UNCHECKED,,0,1636780,EVENT,,<auto>,1602072259902
+30845,Total bilirubin missing reason,2,Original value above or below reportable limit,,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072260743
+30044,Mean corpuscular volume acquisition route,0,Direct,,503449,,0.6702079176902771,UNCHECKED,,0,4013522,EVENT,,<auto>,1602072261635
+30653,Aspartate aminotransferase correction level,1,Date and aliquot correction,,485602,,0.8552553057670593,UNCHECKED,,0,37394375,EVENT,,<auto>,1602072262019
+30894,Vitamin D correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,465389,,0.5194448828697205,UNCHECKED,,0,40097770,EVENT,,<auto>,1602072262046
+30822,Rheumatoid factor aliquot,2,2,,491168,,0.7524484992027283,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072262730
+55,Month of attending assessment centre,9,September,,574651,,0.5959538221359253,UNCHECKED,,0,44788911,EVENT,,<auto>,1602072263659
+30795,Lipoprotein A missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072264134
+30754,Glycated haemoglobin (HbA1c) correction reason,0,Normal for assay type,,480773,,0.7301848530769348,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072265096
+30704,Creatinine correction reason,0,Normal for assay type,,487201,,0.6039532423019409,UNCHECKED,,0,44790124,EVENT,,<auto>,1602072265154
+30822,Rheumatoid factor aliquot,3,3,,491168,,0.7524484992027283,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072266291
+30853,Testosterone correction level,0,None,,441248,,0.7241314649581909,UNCHECKED,,0,4020107,EVENT,,<auto>,1602072266425
+30845,Total bilirubin missing reason,3,Unrecoverable aliquot problem (dip),,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072266583
+30623,Alanine aminotransferase correction level,1,Date and aliquot correction,,487266,,0.7685123085975647,UNCHECKED,,0,44788835,EVENT,,<auto>,1602072266825
+190,Reason lost to follow-up,1,Death reported to UK Biobank by a relative,,1298,,0.9267293214797974,UNCHECKED,,0,4163894,EVENT,,<auto>,1602072267466
+30894,Vitamin D correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,465389,,0.5194448828697205,UNCHECKED,,0,40097770,EVENT,,<auto>,1602072268011
+30304,High light scatter reticulocyte count acquisition route,0,Direct,,489145,,0.5653104782104492,UNCHECKED,,0,37397920,EVENT,,<auto>,1602072268192
+30795,Lipoprotein A missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072269035
+30044,Mean corpuscular volume acquisition route,1,Backup,,503449,,0.6702079176902771,UNCHECKED,,0,4013522,EVENT,,<auto>,1602072269210
+30822,Rheumatoid factor aliquot,4,4,,491168,,0.7524484992027283,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072269853
+30704,Creatinine correction reason,1,No tip information,,487201,,0.6039532423019409,UNCHECKED,,0,44790124,EVENT,,<auto>,1602072270822
+190,Reason lost to follow-up,2,NHS records indicate they are lost to follow-up,,1298,,0.9267293214797974,UNCHECKED,,0,4163894,EVENT,,<auto>,1602072270975
+30653,Aspartate aminotransferase correction level,2,Date correction only,,485602,,0.8552553057670593,UNCHECKED,,0,37394375,EVENT,,<auto>,1602072271055
+30754,Glycated haemoglobin (HbA1c) correction reason,1,No tip information,,480773,,0.7301848530769348,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072272296
+30895,Vitamin D missing reason,1,No data returned,,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072272783
+30845,Total bilirubin missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072272919
+30853,Testosterone correction level,1,Date and aliquot correction,,441248,,0.7241314649581909,UNCHECKED,,0,4020107,EVENT,,<auto>,1602072273009
+1558,Alcohol intake frequency.,5,Special occasions only,,573365,,0.6912175416946411,UNCHECKED,,0,4052351,EVENT,,Anne,1602079746502
+30795,Lipoprotein A missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,121561,,0.6668733954429626,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072274220
+190,Reason lost to follow-up,3,NHS records indicate they have left the UK,,1298,,0.9267293214797974,UNCHECKED,,0,4163894,EVENT,,<auto>,1602072274607
+30623,Alanine aminotransferase correction level,2,Date correction only,,487266,,0.7685123085975647,UNCHECKED,,0,44788835,EVENT,,<auto>,1602072276102
+30823,Rheumatoid factor correction level,0,None,,42998,,0.8245974183082581,UNCHECKED,,0,4267510,EVENT,,<auto>,1602072276104
+30704,Creatinine correction reason,2,No aliquot information,,487201,,0.6039532423019409,UNCHECKED,,0,44790124,EVENT,,<auto>,1602072276885
+1558,Alcohol intake frequency.,6,Never,,573365,,0.6912175416946411,UNCHECKED,,0,4052351,EVENT,,Anne,1602079746502
+30895,Vitamin D missing reason,2,Original value above or below reportable limit,,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072277433
+190,Reason lost to follow-up,4,UK Biobank sources report they have left the UK,,1298,,0.9267293214797974,UNCHECKED,,0,4163894,EVENT,,<auto>,1602072278563
+30796,Lipoprotein A reportability,1,"Reportable at assay and after aliquot correction, if attempted",,472412,,0.6509674787521362,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072278624
+30304,High light scatter reticulocyte count acquisition route,1,Backup,,489145,,0.5653104782104492,UNCHECKED,,0,37397920,EVENT,,<auto>,1602072278717
+30853,Testosterone correction level,2,Date correction only,,441248,,0.7241314649581909,UNCHECKED,,0,4020107,EVENT,,<auto>,1602072279448
+30845,Total bilirubin missing reason,5,Aliquot 4 used,,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072279493
+30754,Glycated haemoglobin (HbA1c) correction reason,2,No aliquot information,,480773,,0.7301848530769348,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072279538
+30654,Aspartate aminotransferase correction reason,0,Normal for assay type,,485602,,0.8017446398735046,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072280679
+30895,Vitamin D missing reason,3,Unrecoverable aliquot problem (dip),,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072281856
+190,Reason lost to follow-up,5,Participant has withdrawn consent for future linkage,,1298,,0.9267293214797974,UNCHECKED,,0,4163894,EVENT,,<auto>,1602072282144
+2453,Cancer diagnosed by doctor,-1,Do not know,,573331,,0.6281615495681763,UNCHECKED,,0,3007016,EVENT,,<auto>,1602072282168
+30823,Rheumatoid factor correction level,1,Date and aliquot correction,,42998,,0.8245974183082581,UNCHECKED,,0,4267510,EVENT,,<auto>,1602072282516
+30704,Creatinine correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487201,,0.6039532423019409,UNCHECKED,,0,44790124,EVENT,,<auto>,1602072283100
+30796,Lipoprotein A reportability,2,Reportable at assay but not reportable after any corrections (too low),,472412,,0.6509674787521362,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072283199
+30624,Alanine aminotransferase correction reason,0,Normal for assay type,,487266,,0.7782943248748779,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072285000
+30845,Total bilirubin missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072285738
+30854,Testosterone correction reason,0,Normal for assay type,,441248,,0.5780652165412903,UNCHECKED,,0,35604753,EVENT,,<auto>,1602072285790
+1558,Alcohol intake frequency.,-3,Prefer not to answer,,573365,,0.6912175416946411,UNCHECKED,,0,0,EVENT,,,1602080482828
+30754,Glycated haemoglobin (HbA1c) correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,480773,,0.7301848530769348,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072286899
+2453,Cancer diagnosed by doctor,-3,Prefer not to answer,,573331,,0.6281615495681763,UNCHECKED,,0,3007016,EVENT,,<auto>,1602072286960
+30895,Vitamin D missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072287016
+30796,Lipoprotein A reportability,3,Reportable at assay but not reportable after any corrections (too high),,472412,,0.6509674787521362,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072287894
+30823,Rheumatoid factor correction level,2,Date correction only,,42998,,0.8245974183082581,UNCHECKED,,0,4267510,EVENT,,<auto>,1602072288803
+30304,High light scatter reticulocyte count acquisition route,2,Archive,,489145,,0.5653104782104492,UNCHECKED,,0,37397920,EVENT,,<auto>,1602072289285
+30704,Creatinine correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487201,,0.6039532423019409,UNCHECKED,,0,44790124,EVENT,,<auto>,1602072289548
+30654,Aspartate aminotransferase correction reason,1,No tip information,,485602,,0.8017446398735046,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072290114
+1558,Alcohol intake frequency.,1,Daily or almost daily,,573365,,0.6912175416946411,UNCHECKED,,0,4052351,EVENT,,Anne,1602079746502
+2453,Cancer diagnosed by doctor,0,No,,573331,,0.6281615495681763,UNCHECKED,,0,3007016,EVENT,,<auto>,1602072291487
+30895,Vitamin D missing reason,5,Aliquot 4 used,,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072292229
+30845,Total bilirubin missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072292447
+30854,Testosterone correction reason,1,No tip information,,441248,,0.5780652165412903,UNCHECKED,,0,35604753,EVENT,,<auto>,1602072292733
+30796,Lipoprotein A reportability,4,Not reportable at assay (too low),,472412,,0.6509674787521362,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072292791
+30624,Alanine aminotransferase correction reason,1,No tip information,,487266,,0.7782943248748779,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072294414
+1558,Alcohol intake frequency.,2,Three or four times a week,,573365,,0.6912175416946411,UNCHECKED,,0,4052351,EVENT,,Anne,1602079746502
+30754,Glycated haemoglobin (HbA1c) correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,480773,,0.7301848530769348,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072295006
+30705,Creatinine missing reason,1,No data returned,,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072295258
+30503,Microalbumin in urine device ID,1269519,Analyser 1269659,,503625,,0.8257858753204346,UNCHECKED,,0,3000034,EVENT,,<auto>,1602072295449
+30824,Rheumatoid factor correction reason,0,Normal for assay type,,42998,,0.7636629939079285,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072295679
+30782,LDL direct aliquot,3,3,,491177,,0.5072424411773682,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072295718
+2453,Cancer diagnosed by doctor,1,Yes - you will be asked about this later by an interviewer,,573331,,0.6281615495681763,UNCHECKED,,0,3007016,EVENT,,<auto>,1602072296413
+30895,Vitamin D missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072297033
+30782,LDL direct aliquot,4,4,,491177,,0.5072424411773682,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072298560
+30845,Total bilirubin missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,26088,,0.7713863849639893,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072298617
+1558,Alcohol intake frequency.,3,Once or twice a week,,573365,,0.6912175416946411,UNCHECKED,,0,4052351,EVENT,,Anne,1602079746502
+30854,Testosterone correction reason,2,No aliquot information,,441248,,0.5780652165412903,UNCHECKED,,0,35604753,EVENT,,<auto>,1602072299342
+30654,Aspartate aminotransferase correction reason,2,No aliquot information,,485602,,0.8017446398735046,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072299510
+30705,Creatinine missing reason,2,Original value above or below reportable limit,,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072300104
+30505,Microalbumin in urine result flag,<6.7,Result below 6.7 mg/L,,344221,,0.7337908148765564,UNCHECKED,,0,3000034,EVENT,,<auto>,1602072301273
+30755,Glycated haemoglobin (HbA1c) missing reason,1,No data returned,,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072301420
+30824,Rheumatoid factor correction reason,1,No tip information,,42998,,0.7636629939079285,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072301908
+30876,Triglycerides reportability,3,Reportable at assay but not reportable after any corrections (too high),,487201,,0.6883125305175781,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072302156
+1558,Alcohol intake frequency.,4,One to three times a month,,573365,,0.6912175416946411,UNCHECKED,,0,4052351,EVENT,,Anne,1602079746502
+30624,Alanine aminotransferase correction reason,2,No aliquot information,,487266,,0.7782943248748779,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072303447
+30846,Total bilirubin reportability,1,"Reportable at assay and after aliquot correction, if attempted",,485354,,0.7859136462211609,UNCHECKED,,0,4230543,EVENT,,<auto>,1602072303753
+30783,LDL direct correction level,0,None,,486544,,0.4364844560623169,UNCHECKED,,0,4115931,EVENT,,<auto>,1602072303811
+30705,Creatinine missing reason,3,Unrecoverable aliquot problem (dip),,24223,,0.5754014849662781,UNCHECKED,,0,19071968,EVENT,,<auto>,1602072304898
+30832,SHBG aliquot,0,Manual,,487064,,0.6761684417724609,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072305081
+30854,Testosterone correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,441248,,0.5780652165412903,UNCHECKED,,0,35604753,EVENT,,<auto>,1602072306215
+30832,SHBG aliquot,1,1,,487064,,0.6761684417724609,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072306498
+30876,Triglycerides reportability,4,Not reportable at assay (too low),,487201,,0.6883125305175781,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072306590
+54,UK Biobank assessment centre,11001,Manchester,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072306860
+30513,Creatinine (enzymatic) in urine device ID,1269519,Analyser 1269659,,503650,,0.3280419707298279,UNCHECKED,,0,43532388,EVENT,,<auto>,1602072307759
+30832,SHBG aliquot,2,2,,487064,,0.6761684417724609,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072307890
+30755,Glycated haemoglobin (HbA1c) missing reason,2,Original value above or below reportable limit,,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072307898
+30824,Rheumatoid factor correction reason,2,No aliquot information,,42998,,0.7636629939079285,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072308304
+30783,LDL direct correction level,1,Date and aliquot correction,,486544,,0.4364844560623169,UNCHECKED,,0,4115931,EVENT,,<auto>,1602072308906
+30654,Aspartate aminotransferase correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,485602,,0.8017446398735046,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072309290
+30832,SHBG aliquot,3,3,,487064,,0.6761684417724609,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072309441
+2473,Other serious medical condition/disability diagnosed by doctor,-1,Do not know,,573331,,0.4716580808162689,UNCHECKED,,0,40767842,EVENT,,<auto>,1602072309598
+30876,Triglycerides reportability,5,Not reportable at assay (too high),,487201,,0.6883125305175781,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072310646
+30832,SHBG aliquot,4,4,,487064,,0.6761684417724609,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072310759
+54,UK Biobank assessment centre,11002,Oxford,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072310864
+30716,C-reactive protein reportability,2,Reportable at assay but not reportable after any corrections (too low),,486849,,0.8239763975143433,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072312179
+30624,Alanine aminotransferase correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487266,,0.7782943248748779,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072312507
+30865,Total protein missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072312511
+30882,Urate aliquot,0,Manual,,491482,,0.701625406742096,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072313338
+30783,LDL direct correction level,2,Date correction only,,486544,,0.4364844560623169,UNCHECKED,,0,4115931,EVENT,,<auto>,1602072314002
+30755,Glycated haemoglobin (HbA1c) missing reason,3,Unrecoverable aliquot problem (dip),,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072314442
+30805,Oestradiol missing reason,3,Unrecoverable aliquot problem (dip),,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072314860
+30515,Creatinine (enzymatic) in urine result flag,<88,Result below 88 micro-moles/L,,4,,0.34375110268592834,UNCHECKED,,0,43532388,EVENT,,<auto>,1602072315055
+30833,SHBG correction level,0,None,,441305,,0.6806385517120361,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072315223
+54,UK Biobank assessment centre,11003,Cardiff,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072315293
+30882,Urate aliquot,1,1,,491482,,0.701625406742096,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072316240
+30654,Aspartate aminotransferase correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,485602,,0.8017446398735046,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072318325
+30882,Urate aliquot,2,2,,491482,,0.701625406742096,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072319326
+54,UK Biobank assessment centre,11004,Glasgow,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072319414
+30865,Total protein missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072319460
+30784,LDL direct correction reason,0,Normal for assay type,,486544,,0.4491136968135834,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072319501
+30716,C-reactive protein reportability,3,Reportable at assay but not reportable after any corrections (too high),,486849,,0.8239763975143433,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072319755
+30833,SHBG correction level,1,Date and aliquot correction,,441305,,0.6806385517120361,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072319815
+30755,Glycated haemoglobin (HbA1c) missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072320902
+30805,Oestradiol missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072321041
+30523,Potassium in urine device ID,1269519,Analyser 1269659,,503644,,0.6000075936317444,UNCHECKED,,0,4173269,EVENT,,<auto>,1602072321287
+30624,Alanine aminotransferase correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487266,,0.7782943248748779,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072321737
+30882,Urate aliquot,3,3,,491482,,0.701625406742096,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072322009
+2473,Other serious medical condition/disability diagnosed by doctor,-3,Prefer not to answer,,573331,,0.4716580808162689,UNCHECKED,,0,40767842,EVENT,,<auto>,1602072322865
+54,UK Biobank assessment centre,11005,Edinburgh,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072323276
+30833,SHBG correction level,2,Date correction only,,441305,,0.6806385517120361,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072324236
+30784,LDL direct correction reason,1,No tip information,,486544,,0.4491136968135834,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072324759
+30882,Urate aliquot,4,4,,491482,,0.701625406742096,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072324780
+30865,Total protein missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072325761
+30655,Aspartate aminotransferase missing reason,1,No data returned,,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072325946
+30716,C-reactive protein reportability,4,Not reportable at assay (too low),,486849,,0.8239763975143433,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072326876
+30805,Oestradiol missing reason,5,Aliquot 4 used,,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072327258
+30755,Glycated haemoglobin (HbA1c) missing reason,5,Aliquot 4 used,,30651,,0.7334853410720825,UNCHECKED,,0,4235420,EVENT,,<auto>,1602072327376
+54,UK Biobank assessment centre,11006,Stoke,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072327518
+30525,Potassium in urine result flag,<2.0,Result below 2 millimole/L,,1050,,0.5184600353240967,UNCHECKED,,0,4173269,EVENT,,<auto>,1602072327562
+30834,SHBG correction reason,0,Normal for assay type,,441305,,0.6880567669868469,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072328618
+30625,Alanine aminotransferase missing reason,1,No data returned,,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072329036
+30784,LDL direct correction reason,2,No aliquot information,,486544,,0.4491136968135834,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072329747
+30883,Urate correction level,0,None,,486855,,0.6021515727043152,UNCHECKED,,0,4269858,EVENT,,<auto>,1602072330210
+54,UK Biobank assessment centre,11007,Reading,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072331013
+30866,Total protein reportability,1,"Reportable at assay and after aliquot correction, if attempted",,445306,,0.6386746764183044,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072331660
+30766,HDL cholesterol reportability,4,Not reportable at assay (too low),,445569,,0.7737863659858704,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072332270
+30834,SHBG correction reason,1,No tip information,,441305,,0.6880567669868469,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072332406
+30805,Oestradiol missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072332729
+30655,Aspartate aminotransferase missing reason,2,Original value above or below reportable limit,,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072333292
+30525,Potassium in urine result flag,>200,Result above 200 millimole/L,,1050,,0.5184600353240967,UNCHECKED,,0,4173269,EVENT,,<auto>,1602072333452
+30716,C-reactive protein reportability,5,Not reportable at assay (too high),,486849,,0.8239763975143433,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072333591
+30784,LDL direct correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,486544,,0.4491136968135834,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072334649
+54,UK Biobank assessment centre,11008,Bury,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072335157
+2473,Other serious medical condition/disability diagnosed by doctor,0,No,,573331,,0.4716580808162689,UNCHECKED,,0,40767842,EVENT,,<auto>,1602072335743
+30883,Urate correction level,1,Date and aliquot correction,,486855,,0.6021515727043152,UNCHECKED,,0,4269858,EVENT,,<auto>,1602072336003
+30625,Alanine aminotransferase missing reason,2,Original value above or below reportable limit,,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072336397
+30834,SHBG correction reason,2,No aliquot information,,441305,,0.6880567669868469,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072336790
+30722,Cystatin C aliquot,0,Manual,,491887,,0.6212091445922852,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072337982
+30866,Total protein reportability,2,Reportable at assay but not reportable after any corrections (too low),,445306,,0.6386746764183044,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072338118
+30766,HDL cholesterol reportability,5,Not reportable at assay (too high),,445569,,0.7737863659858704,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072338228
+30805,Oestradiol missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072339071
+54,UK Biobank assessment centre,11009,Newcastle,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072339228
+30533,Sodium in urine device ID,1269519,Analyser 1269659,,503642,,0.5293165445327759,UNCHECKED,,0,4020682,EVENT,,<auto>,1602072339489
+30772,IGF-1 aliquot,0,Manual,,489190,,0.5263546705245972,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072339954
+30784,LDL direct correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,486544,,0.4491136968135834,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072340309
+30655,Aspartate aminotransferase missing reason,3,Unrecoverable aliquot problem (dip),,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072341236
+30834,SHBG correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,441305,,0.6880567669868469,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072341503
+30772,IGF-1 aliquot,1,1,,489190,,0.5263546705245972,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072341564
+30722,Cystatin C aliquot,1,1,,491887,,0.6212091445922852,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072341731
+30883,Urate correction level,2,Date correction only,,486855,,0.6021515727043152,UNCHECKED,,0,4269858,EVENT,,<auto>,1602072342107
+30772,IGF-1 aliquot,2,2,,489190,,0.5263546705245972,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072343188
+54,UK Biobank assessment centre,11010,Leeds,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072343191
+30866,Total protein reportability,3,Reportable at assay but not reportable after any corrections (too high),,445306,,0.6386746764183044,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072343980
+30625,Alanine aminotransferase missing reason,3,Unrecoverable aliquot problem (dip),,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072343996
+30805,Oestradiol missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072344679
+30772,IGF-1 aliquot,3,3,,489190,,0.5263546705245972,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072344800
+30535,Sodium in urine result flag,<10,Result below 10 millimole/L,,1066,,0.44726237654685974,UNCHECKED,,0,4020682,EVENT,,<auto>,1602072345124
+30722,Cystatin C aliquot,2,2,,491887,,0.6212091445922852,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072345420
+30785,LDL direct missing reason,1,No data returned,,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072345763
+30834,SHBG correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,441305,,0.6880567669868469,UNCHECKED,,0,4294144,EVENT,,<auto>,1602072345838
+30772,IGF-1 aliquot,4,4,,489190,,0.5263546705245972,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072346371
+54,UK Biobank assessment centre,11011,Bristol,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072347375
+30884,Urate correction reason,0,Normal for assay type,,486855,,0.5858700275421143,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072347502
+30722,Cystatin C aliquot,3,3,,491887,,0.6212091445922852,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072348875
+30835,SHBG missing reason,1,No data returned,,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072348956
+30655,Aspartate aminotransferase missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072348989
+2473,Other serious medical condition/disability diagnosed by doctor,1,Yes - you will be asked about this later by an interviewer,,573331,,0.4716580808162689,UNCHECKED,,0,40767842,EVENT,,<auto>,1602072349214
+30866,Total protein reportability,4,Not reportable at assay (too low),,445306,,0.6386746764183044,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072349732
+30806,Oestradiol reportability,1,"Reportable at assay and after aliquot correction, if attempted",,454249,,0.5029577612876892,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072350397
+30535,Sodium in urine result flag,>400,Result above 400 millimole/L,,1066,,0.44726237654685974,UNCHECKED,,0,4020682,EVENT,,<auto>,1602072350858
+30785,LDL direct missing reason,2,Original value above or below reportable limit,,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072351265
+30773,IGF-1 correction level,0,None,,484740,,0.5375327467918396,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072351300
+30625,Alanine aminotransferase missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072351463
+54,UK Biobank assessment centre,11012,Barts,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072351763
+30835,SHBG missing reason,2,Original value above or below reportable limit,,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072352556
+30722,Cystatin C aliquot,4,4,,491887,,0.6212091445922852,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072352633
+30884,Urate correction reason,1,No tip information,,486855,,0.5858700275421143,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072353251
+30602,Albumin aliquot,0,Manual,,491945,,0.6323575973510742,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072353279
+30602,Albumin aliquot,1,1,,491945,,0.6323575973510742,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072355618
+54,UK Biobank assessment centre,11013,Nottingham,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072355754
+30866,Total protein reportability,5,Not reportable at assay (too high),,445306,,0.6386746764183044,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072355756
+30773,IGF-1 correction level,1,Date and aliquot correction,,484740,,0.5375327467918396,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072355887
+30835,SHBG missing reason,3,Unrecoverable aliquot problem (dip),,70119,,0.7419383525848389,UNCHECKED,,0,4082602,EVENT,,<auto>,1602072355921
+30806,Oestradiol reportability,2,Reportable at assay but not reportable after any corrections (too low),,454249,,0.5029577612876892,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072355944
+30785,LDL direct missing reason,3,Unrecoverable aliquot problem (dip),,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072356267
+30655,Aspartate aminotransferase missing reason,5,Aliquot 4 used,,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072356554
+2492,Taking other prescription medications,-1,Do not know,,573331,,0.7290593385696411,UNCHECKED,,0,45880777,EVENT,,<auto>,1602072357777
+30602,Albumin aliquot,2,2,,491945,,0.6323575973510742,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072358544
+30884,Urate correction reason,2,No aliquot information,,486855,,0.5858700275421143,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072358879
+30625,Alanine aminotransferase missing reason,5,Aliquot 4 used,,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072358923
+30872,Triglycerides aliquot,0,Manual,,491668,,0.6777955889701843,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072358948
+30723,Cystatin C correction level,0,None,,487423,,0.5922828912734985,UNCHECKED,,0,37392318,EVENT,,<auto>,1602072359009
+54,UK Biobank assessment centre,11014,Sheffield,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072359722
+30773,IGF-1 correction level,2,Date correction only,,484740,,0.5375327467918396,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072360592
+30602,Albumin aliquot,3,3,,491945,,0.6323575973510742,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072361007
+30785,LDL direct missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072361773
+30806,Oestradiol reportability,3,Reportable at assay but not reportable after any corrections (too high),,454249,,0.5029577612876892,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072361968
+30872,Triglycerides aliquot,1,1,,491668,,0.6777955889701843,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072362089
+30824,Rheumatoid factor correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,42998,,0.7636629939079285,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072362724
+30606,Albumin reportability,2,Reportable at assay but not reportable after any corrections (too low),,445786,,0.6074550151824951,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072363208
+30602,Albumin aliquot,4,4,,491945,,0.6323575973510742,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072363348
+54,UK Biobank assessment centre,11016,Liverpool,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072363789
+30655,Aspartate aminotransferase missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,25822,,0.819353461265564,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072364688
+30884,Urate correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,486855,,0.5858700275421143,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072364887
+30774,IGF-1 correction reason,0,Normal for assay type,,484740,,0.5428454279899597,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072365155
+30872,Triglycerides aliquot,2,2,,491668,,0.6777955889701843,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072365191
+30723,Cystatin C correction level,1,Date and aliquot correction,,487423,,0.5922828912734985,UNCHECKED,,0,37392318,EVENT,,<auto>,1602072365536
+30785,LDL direct missing reason,5,Aliquot 4 used,,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072366879
+2492,Taking other prescription medications,-3,Prefer not to answer,,573331,,0.7290593385696411,UNCHECKED,,0,45880777,EVENT,,<auto>,1602072367375
+30606,Albumin reportability,3,Reportable at assay but not reportable after any corrections (too high),,445786,,0.6074550151824951,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072367451
+54,UK Biobank assessment centre,11017,Middlesborough,,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072368135
+30872,Triglycerides aliquot,3,3,,491668,,0.6777955889701843,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072368197
+30806,Oestradiol reportability,4,Not reportable at assay (too low),,454249,,0.5029577612876892,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072368646
+31,Sex,0,Female,,502505,,1.0,UNCHECKED,,0,3046965,EVENT,,<auto>,1602072368862
+30824,Rheumatoid factor correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,42998,,0.7636629939079285,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072369140
+31,Sex,1,Male,,502505,,1.0,UNCHECKED,,0,3046965,EVENT,,<auto>,1602072369428
+30774,IGF-1 correction reason,1,No tip information,,484740,,0.5428454279899597,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072369612
+30603,Albumin correction level,0,None,,445770,,0.777766764163971,UNCHECKED,,0,4275213,EVENT,,<auto>,1602072369992
+30666,Direct bilirubin reportability,5,Not reportable at assay (too high),,485770,,0.8014287948608398,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072370109
+30872,Triglycerides aliquot,4,4,,491668,,0.6777955889701843,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072371371
+30884,Urate correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,486855,,0.5858700275421143,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072371779
+30723,Cystatin C correction level,2,Date correction only,,487423,,0.5922828912734985,UNCHECKED,,0,37392318,EVENT,,<auto>,1602072372033
+30672,Urea aliquot,0,Manual,,491708,,0.6839204430580139,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072372511
+30606,Albumin reportability,4,Not reportable at assay (too low),,445786,,0.6074550151824951,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072372538
+52,Month of birth,1,January,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072372660
+30785,LDL direct missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24880,,0.450356662273407,UNCHECKED,,0,4134862,EVENT,,<auto>,1602072372746
+30774,IGF-1 correction reason,2,No aliquot information,,484740,,0.5428454279899597,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072374049
+30672,Urea aliquot,1,1,,491708,,0.6839204430580139,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072374569
+52,Month of birth,10,October,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072375295
+30806,Oestradiol reportability,5,Not reportable at assay (too high),,454249,,0.5029577612876892,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072375671
+30825,Rheumatoid factor missing reason,1,No data returned,,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072375943
+30672,Urea aliquot,2,2,,491708,,0.6839204430580139,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072376806
+2492,Taking other prescription medications,0,No,,573331,,0.7290593385696411,UNCHECKED,,0,45880777,EVENT,,<auto>,1602072377175
+30606,Albumin reportability,5,Not reportable at assay (too high),,445786,,0.6074550151824951,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072377385
+30775,IGF-1 missing reason,2,Original value above or below reportable limit,,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072377796
+52,Month of birth,11,November,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072378844
+30873,Triglycerides correction level,0,None,,487059,,0.7390533089637756,UNCHECKED,,0,44808857,EVENT,,<auto>,1602072379007
+30672,Urea aliquot,3,3,,491708,,0.6839204430580139,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072379542
+30812,Phosphate aliquot,0,Manual,,491013,,0.6273599863052368,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072379852
+30774,IGF-1 correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,484740,,0.5428454279899597,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072380000
+30724,Cystatin C correction reason,0,Normal for assay type,,487423,,0.5172523856163025,UNCHECKED,,0,409,EVENT,,<auto>,1602072380636
+30672,Urea aliquot,4,4,,491708,,0.6839204430580139,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072381554
+30874,Triglycerides correction reason,0,Normal for assay type,,487059,,0.6930559277534485,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072382003
+52,Month of birth,12,December,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072382324
+30775,IGF-1 missing reason,3,Unrecoverable aliquot problem (dip),,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072382884
+30612,Alkaline phosphatase aliquot,0,Manual,,491978,,0.7776384353637695,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072383060
+30825,Rheumatoid factor missing reason,2,Original value above or below reportable limit,,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072383500
+30204,Neutrophill percentage acquisition route,1,Backup,,502550,,0.5817710161209106,UNCHECKED,,0,37398605,EVENT,,<auto>,1602072383850
+30812,Phosphate aliquot,1,1,,491013,,0.6273599863052368,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072384413
+30774,IGF-1 correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,484740,,0.5428454279899597,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072385085
+52,Month of birth,2,February,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072385401
+30873,Triglycerides correction level,1,Date and aliquot correction,,487059,,0.7390533089637756,UNCHECKED,,0,44808857,EVENT,,<auto>,1602072386167
+30673,Urea correction level,0,None,,487123,,0.5905840396881104,UNCHECKED,,0,4267664,EVENT,,<auto>,1602072386468
+2492,Taking other prescription medications,1,Yes - you will be asked about this later by an interviewer,,573331,,0.7290593385696411,UNCHECKED,,0,45880777,EVENT,,<auto>,1602072387058
+30775,IGF-1 missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072387484
+30812,Phosphate aliquot,2,2,,491013,,0.6273599863052368,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072387567
+30612,Alkaline phosphatase aliquot,1,1,,491978,,0.7776384353637695,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072387861
+30724,Cystatin C correction reason,1,No tip information,,487423,,0.5172523856163025,UNCHECKED,,0,409,EVENT,,<auto>,1602072388253
+52,Month of birth,3,March,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072388287
+30775,IGF-1 missing reason,1,No data returned,,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072389133
+30825,Rheumatoid factor missing reason,3,Unrecoverable aliquot problem (dip),,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072389334
+30874,Triglycerides correction reason,1,No tip information,,487059,,0.6930559277534485,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072389478
+30812,Phosphate aliquot,3,3,,491013,,0.6273599863052368,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072390357
+52,Month of birth,4,April,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072390750
+30673,Urea correction level,1,Date and aliquot correction,,487123,,0.5905840396881104,UNCHECKED,,0,4267664,EVENT,,<auto>,1602072390763
+30775,IGF-1 missing reason,5,Aliquot 4 used,,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072391531
+2844,Had other major operations,-1,Do not know,,309808,,0.5882282853126526,UNCHECKED,,0,4226858,EVENT,,<auto>,1602072391813
+30612,Alkaline phosphatase aliquot,2,2,,491978,,0.7776384353637695,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072391963
+30873,Triglycerides correction level,2,Date correction only,,487059,,0.7390533089637756,UNCHECKED,,0,44808857,EVENT,,<auto>,1602072392436
+30812,Phosphate aliquot,4,4,,491013,,0.6273599863052368,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072393008
+52,Month of birth,5,May,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072393493
+30204,Neutrophill percentage acquisition route,2,Archive,,502550,,0.5817710161209106,UNCHECKED,,0,37398605,EVENT,,<auto>,1602072393549
+30724,Cystatin C correction reason,2,No aliquot information,,487423,,0.5172523856163025,UNCHECKED,,0,409,EVENT,,<auto>,1602072394320
+30825,Rheumatoid factor missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072394942
+30673,Urea correction level,2,Date correction only,,487123,,0.5905840396881104,UNCHECKED,,0,4267664,EVENT,,<auto>,1602072395240
+30775,IGF-1 missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072395667
+30764,HDL cholesterol correction reason,0,Normal for assay type,,445563,,0.7836158275604248,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072395901
+30612,Alkaline phosphatase aliquot,3,3,,491978,,0.7776384353637695,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072396251
+52,Month of birth,6,June,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072396321
+30874,Triglycerides correction reason,2,No aliquot information,,487059,,0.6930559277534485,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072396453
+30862,Total protein aliquot,2,2,,491488,,0.6296827793121338,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072396933
+2844,Had other major operations,-3,Prefer not to answer,,309808,,0.5882282853126526,UNCHECKED,,0,4226858,EVENT,,<auto>,1602072396990
+30796,Lipoprotein A reportability,5,Not reportable at assay (too high),,472412,,0.6509674787521362,UNCHECKED,,0,4199406,EVENT,,<auto>,1602072397890
+52,Month of birth,7,July,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072399181
+30775,IGF-1 missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072399847
+30674,Urea correction reason,0,Normal for assay type,,487123,,0.5643866658210754,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072399857
+30724,Cystatin C correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487423,,0.5172523856163025,UNCHECKED,,0,409,EVENT,,<auto>,1602072400339
+30612,Alkaline phosphatase aliquot,4,4,,491978,,0.7776384353637695,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072400621
+30862,Total protein aliquot,3,3,,491488,,0.6296827793121338,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072400872
+30825,Rheumatoid factor missing reason,5,Aliquot 4 used,,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072400958
+30802,Oestradiol aliquot,0,Manual,,457396,,0.5971684455871582,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072401241
+52,Month of birth,8,August,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072401675
+30874,Triglycerides correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487059,,0.6930559277534485,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072402620
+30764,HDL cholesterol correction reason,1,No tip information,,445563,,0.7836158275604248,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072403085
+30214,Eosinophill percentage acquisition route,0,Direct,,502550,,0.5361872911453247,UNCHECKED,,0,37399255,EVENT,,<auto>,1602072403273
+30775,IGF-1 missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,26684,,0.5619481801986694,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072403805
+30674,Urea correction reason,1,No tip information,,487123,,0.5643866658210754,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072404128
+30802,Oestradiol aliquot,1,1,,457396,,0.5971684455871582,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072404353
+52,Month of birth,9,September,,502505,,0.7151423692703247,UNCHECKED,,0,4083587,EVENT,,<auto>,1602072404445
+30862,Total protein aliquot,4,4,,491488,,0.6296827793121338,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072404793
+30825,Rheumatoid factor missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072406481
+30776,IGF-1 reportability,1,"Reportable at assay and after aliquot correction, if attempted",,484746,,0.5324104428291321,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072406779
+30104,Mean platelet (thrombocyte) volume acquisition route,0,Direct,,503441,,0.4526236653327942,UNCHECKED,,0,37397923,EVENT,,<auto>,1602072407692
+30713,C-reactive protein correction level,1,Date and aliquot correction,,486406,,0.8853270411491394,UNCHECKED,,0,4208414,EVENT,,<auto>,1602072407723
+30802,Oestradiol aliquot,2,2,,457396,,0.5971684455871582,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072408453
+54,UK Biobank assessment centre,10003,Stockport (pilot),,574646,,0.4898470342159271,UNCHECKED,,0,4024612,EVENT,,<auto>,1602072408639
+30674,Urea correction reason,2,No aliquot information,,487123,,0.5643866658210754,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072408749
+30613,Alkaline phosphatase correction level,0,None,,487473,,0.8434965014457703,UNCHECKED,,0,4275206,EVENT,,<auto>,1602072409059
+30874,Triglycerides correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487059,,0.6930559277534485,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072409298
+30776,IGF-1 reportability,2,Reportable at assay but not reportable after any corrections (too low),,484746,,0.5324104428291321,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072410489
+30764,HDL cholesterol correction reason,2,No aliquot information,,445563,,0.7836158275604248,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072410586
+30802,Oestradiol aliquot,3,3,,457396,,0.5971684455871582,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072411734
+30825,Rheumatoid factor missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072412512
+30863,Total protein correction level,0,None,,445289,,0.7251988649368286,UNCHECKED,,0,4152995,EVENT,,<auto>,1602072412517
+30214,Eosinophill percentage acquisition route,1,Backup,,502550,,0.5361872911453247,UNCHECKED,,0,37399255,EVENT,,<auto>,1602072413031
+30674,Urea correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487123,,0.5643866658210754,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072413104
+30776,IGF-1 reportability,3,Reportable at assay but not reportable after any corrections (too high),,484746,,0.5324104428291321,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072413448
+30875,Triglycerides missing reason,1,No data returned,,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072414779
+30713,C-reactive protein correction level,2,Date correction only,,486406,,0.8853270411491394,UNCHECKED,,0,4208414,EVENT,,<auto>,1602072414900
+30802,Oestradiol aliquot,4,4,,457396,,0.5971684455871582,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072415460
+30776,IGF-1 reportability,4,Not reportable at assay (too low),,484746,,0.5324104428291321,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072416268
+30735,Gamma glutamyltransferase missing reason,5,Aliquot 4 used,,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072416360
+30613,Alkaline phosphatase correction level,1,Date and aliquot correction,,487473,,0.8434965014457703,UNCHECKED,,0,4275206,EVENT,,<auto>,1602072417018
+30104,Mean platelet (thrombocyte) volume acquisition route,1,Backup,,503441,,0.4526236653327942,UNCHECKED,,0,37397923,EVENT,,<auto>,1602072417317
+30764,HDL cholesterol correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,445563,,0.7836158275604248,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072417493
+30674,Urea correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487123,,0.5643866658210754,UNCHECKED,,0,4038195,EVENT,,<auto>,1602072417780
+30825,Rheumatoid factor missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,468426,,0.7790133953094482,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072418131
+30776,IGF-1 reportability,5,Not reportable at assay (too high),,484746,,0.5324104428291321,UNCHECKED,,0,4129522,EVENT,,<auto>,1602072418995
+30875,Triglycerides missing reason,2,Original value above or below reportable limit,,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072419995
+30863,Total protein correction level,1,Date and aliquot correction,,445289,,0.7251988649368286,UNCHECKED,,0,4152995,EVENT,,<auto>,1602072420107
+30675,Urea missing reason,1,No data returned,,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072421804
+30803,Oestradiol correction level,0,None,,78535,,0.7446138262748718,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072422035
+30782,LDL direct aliquot,0,Manual,,491177,,0.5072424411773682,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072422312
+30714,C-reactive protein correction reason,0,Normal for assay type,,486406,,0.8486127257347107,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072422702
+30214,Eosinophill percentage acquisition route,2,Archive,,502550,,0.5361872911453247,UNCHECKED,,0,37399255,EVENT,,<auto>,1602072422925
+30826,Rheumatoid factor reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487497,,0.7614025473594666,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072423334
+30735,Gamma glutamyltransferase missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072424369
+30764,HDL cholesterol correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,445563,,0.7836158275604248,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072424767
+30613,Alkaline phosphatase correction level,2,Date correction only,,487473,,0.8434965014457703,UNCHECKED,,0,4275206,EVENT,,<auto>,1602072425373
+30782,LDL direct aliquot,1,1,,491177,,0.5072424411773682,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072425462
+30675,Urea missing reason,2,Original value above or below reportable limit,,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072425860
+30875,Triglycerides missing reason,3,Unrecoverable aliquot problem (dip),,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072426850
+30104,Mean platelet (thrombocyte) volume acquisition route,2,Archive,,503441,,0.4526236653327942,UNCHECKED,,0,37397923,EVENT,,<auto>,1602072428150
+30863,Total protein correction level,2,Date correction only,,445289,,0.7251988649368286,UNCHECKED,,0,4152995,EVENT,,<auto>,1602072428696
+30782,LDL direct aliquot,2,2,,491177,,0.5072424411773682,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072428697
+30826,Rheumatoid factor reportability,2,Reportable at assay but not reportable after any corrections (too low),,487497,,0.7614025473594666,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072429021
+30803,Oestradiol correction level,1,Date and aliquot correction,,78535,,0.7446138262748718,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072430095
+30714,C-reactive protein correction reason,1,No tip information,,486406,,0.8486127257347107,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072431382
+30765,HDL cholesterol missing reason,1,No data returned,,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072432001
+30664,Direct bilirubin correction reason,1,No tip information,,413662,,0.7914787530899048,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072433062
+30735,Gamma glutamyltransferase missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072433305
+30875,Triglycerides missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072433438
+30224,Basophill percentage acquisition route,0,Direct,,502550,,0.5588792562484741,UNCHECKED,,0,37398606,EVENT,,<auto>,1602072434346
+30685,Calcium missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072434593
+30614,Alkaline phosphatase correction reason,0,Normal for assay type,,487473,,0.7845264077186584,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072434672
+30826,Rheumatoid factor reportability,3,Reportable at assay but not reportable after any corrections (too high),,487497,,0.7614025473594666,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072434715
+30114,Platelet distribution width acquisition route,0,Direct,,497773,,0.7373232841491699,UNCHECKED,,0,37399282,EVENT,,<auto>,1602072437459
+30864,Total protein correction reason,0,Normal for assay type,,445289,,0.6860800981521606,UNCHECKED,,0,45769112,EVENT,,<auto>,1602072438043
+30803,Oestradiol correction level,2,Date correction only,,78535,,0.7446138262748718,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072438482
+30765,HDL cholesterol missing reason,2,Original value above or below reportable limit,,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072438906
+30686,Calcium reportability,1,"Reportable at assay and after aliquot correction, if attempted",,445680,,0.5824974179267883,UNCHECKED,,0,4193221,EVENT,,<auto>,1602072439361
+30826,Rheumatoid factor reportability,4,Not reportable at assay (too low),,487497,,0.7614025473594666,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072439772
+30714,C-reactive protein correction reason,2,No aliquot information,,486406,,0.8486127257347107,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072440167
+30664,Direct bilirubin correction reason,2,No aliquot information,,413662,,0.7914787530899048,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072440415
+30875,Triglycerides missing reason,5,Aliquot 4 used,,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072440577
+30735,Gamma glutamyltransferase missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072441494
+30614,Alkaline phosphatase correction reason,1,No tip information,,487473,,0.7845264077186584,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072443290
+30686,Calcium reportability,2,Reportable at assay but not reportable after any corrections (too low),,445680,,0.5824974179267883,UNCHECKED,,0,4193221,EVENT,,<auto>,1602072443594
+30826,Rheumatoid factor reportability,5,Not reportable at assay (too high),,487497,,0.7614025473594666,UNCHECKED,,0,37397812,EVENT,,<auto>,1602072444379
+30114,Platelet distribution width acquisition route,1,Backup,,497773,,0.7373232841491699,UNCHECKED,,0,37399282,EVENT,,<auto>,1602072446184
+30864,Total protein correction reason,1,No tip information,,445289,,0.6860800981521606,UNCHECKED,,0,45769112,EVENT,,<auto>,1602072446612
+30224,Basophill percentage acquisition route,1,Backup,,502550,,0.5588792562484741,UNCHECKED,,0,37398606,EVENT,,<auto>,1602072446749
+30664,Direct bilirubin correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,413662,,0.7914787530899048,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072446950
+30875,Triglycerides missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072447025
+30765,HDL cholesterol missing reason,3,Unrecoverable aliquot problem (dip),,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072447628
+30804,Oestradiol correction reason,0,Normal for assay type,,78535,,0.5082859396934509,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072447735
+30686,Calcium reportability,3,Reportable at assay but not reportable after any corrections (too high),,445680,,0.5824974179267883,UNCHECKED,,0,4193221,EVENT,,<auto>,1602072447783
+30736,Gamma glutamyltransferase reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487301,,0.6710015535354614,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072447916
+30714,C-reactive protein correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,486406,,0.8486127257347107,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072449288
+30603,Albumin correction level,1,Date and aliquot correction,,445770,,0.777766764163971,UNCHECKED,,0,4275213,EVENT,,<auto>,1602072450050
+30614,Alkaline phosphatase correction reason,2,No aliquot information,,487473,,0.7845264077186584,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072450937
+30686,Calcium reportability,4,Not reportable at assay (too low),,445680,,0.5824974179267883,UNCHECKED,,0,4193221,EVENT,,<auto>,1602072451414
+30875,Triglycerides missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072452369
+30664,Direct bilirubin correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,413662,,0.7914787530899048,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072453027
+30114,Platelet distribution width acquisition route,2,Archive,,497773,,0.7373232841491699,UNCHECKED,,0,37399282,EVENT,,<auto>,1602072453956
+30736,Gamma glutamyltransferase reportability,2,Reportable at assay but not reportable after any corrections (too low),,487301,,0.6710015535354614,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072454004
+30765,HDL cholesterol missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072454322
+30864,Total protein correction reason,2,No aliquot information,,445289,,0.6860800981521606,UNCHECKED,,0,45769112,EVENT,,<auto>,1602072454327
+30804,Oestradiol correction reason,1,No tip information,,78535,,0.5082859396934509,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072455090
+30603,Albumin correction level,2,Date correction only,,445770,,0.777766764163971,UNCHECKED,,0,4275213,EVENT,,<auto>,1602072455645
+30686,Calcium reportability,5,Not reportable at assay (too high),,445680,,0.5824974179267883,UNCHECKED,,0,4193221,EVENT,,<auto>,1602072455887
+30224,Basophill percentage acquisition route,2,Archive,,502550,,0.5588792562484741,UNCHECKED,,0,37398606,EVENT,,<auto>,1602072457197
+30714,C-reactive protein correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,486406,,0.8486127257347107,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072457252
+30875,Triglycerides missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24365,,0.7085986137390137,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072458034
+30614,Alkaline phosphatase correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487473,,0.7845264077186584,UNCHECKED,,0,4210900,EVENT,,<auto>,1602072459121
+30665,Direct bilirubin missing reason,1,No data returned,,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072459159
+30692,Cholesterol aliquot,0,Manual,,491989,,0.6182243824005127,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072459406
+30765,HDL cholesterol missing reason,5,Aliquot 4 used,,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072460458
+30736,Gamma glutamyltransferase reportability,3,Reportable at assay but not reportable after any corrections (too high),,487301,,0.6710015535354614,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072460809
+30604,Albumin correction reason,0,Normal for assay type,,445770,,0.6636638045310974,UNCHECKED,,0,45769110,EVENT,,<auto>,1602072461078
+30124,Lymphocyte count acquisition route,0,Direct,,502543,,0.6596889495849609,UNCHECKED,,0,37393858,EVENT,,<auto>,1602072461107
+30804,Oestradiol correction reason,2,No aliquot information,,78535,,0.5082859396934509,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072461251
+30864,Total protein correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,445289,,0.6860800981521606,UNCHECKED,,0,45769112,EVENT,,<auto>,1602072461773
+30876,Triglycerides reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487201,,0.6883125305175781,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072462505
+30692,Cholesterol aliquot,1,1,,491989,,0.6182243824005127,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072462771
+30715,C-reactive protein missing reason,1,No data returned,,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072464703
+30665,Direct bilirubin missing reason,2,Original value above or below reportable limit,,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072465040
+30692,Cholesterol aliquot,2,2,,491989,,0.6182243824005127,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072466290
+30604,Albumin correction reason,1,No tip information,,445770,,0.6636638045310974,UNCHECKED,,0,45769110,EVENT,,<auto>,1602072466423
+30154,Eosinophill count acquisition route,1,Backup,,502543,,0.5872087478637695,UNCHECKED,,0,37393857,EVENT,,<auto>,1602072466498
+30765,HDL cholesterol missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072466702
+30876,Triglycerides reportability,2,Reportable at assay but not reportable after any corrections (too low),,487201,,0.6883125305175781,UNCHECKED,,0,45957223,EVENT,,<auto>,1602072466973
+30804,Oestradiol correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,78535,,0.5082859396934509,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072467762
+30736,Gamma glutamyltransferase reportability,4,Not reportable at assay (too low),,487301,,0.6710015535354614,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072467764
+30124,Lymphocyte count acquisition route,1,Backup,,502543,,0.6596889495849609,UNCHECKED,,0,37393858,EVENT,,<auto>,1602072467903
+30864,Total protein correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,445289,,0.6860800981521606,UNCHECKED,,0,45769112,EVENT,,<auto>,1602072469234
+30234,Nucleated red blood cell percentage acquisition route,0,Direct,,496854,,0.6892992258071899,UNCHECKED,,0,37393325,EVENT,,<auto>,1602072469880
+30692,Cholesterol aliquot,3,3,,491989,,0.6182243824005127,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072469996
+30665,Direct bilirubin missing reason,3,Unrecoverable aliquot problem (dip),,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072470596
+30604,Albumin correction reason,2,No aliquot information,,445770,,0.6636638045310974,UNCHECKED,,0,45769110,EVENT,,<auto>,1602072471704
+40021,Cancer record origin,E/W,Originating from England/Wales,,118822,,0.6236953735351562,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072472497
+30715,C-reactive protein missing reason,2,Original value above or below reportable limit,,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072472579
+30765,HDL cholesterol missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072472768
+30692,Cholesterol aliquot,4,4,,491989,,0.6182243824005127,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072473720
+30154,Eosinophill count acquisition route,2,Archive,,502543,,0.5872087478637695,UNCHECKED,,0,37393857,EVENT,,<auto>,1602072474108
+30736,Gamma glutamyltransferase reportability,5,Not reportable at assay (too high),,487301,,0.6710015535354614,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072474417
+30804,Oestradiol correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,78535,,0.5082859396934509,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072475021
+30124,Lymphocyte count acquisition route,2,Archive,,502543,,0.6596889495849609,UNCHECKED,,0,37393858,EVENT,,<auto>,1602072475044
+30865,Total protein missing reason,1,No data returned,,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072476139
+30742,Glucose aliquot,0,Manual,,491278,,0.6200756430625916,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072476638
+30665,Direct bilirubin missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072476678
+40021,Cancer record origin,HES,Hospital Episode Statistics from England,,118822,,0.6236953735351562,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072477010
+30604,Albumin correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,445770,,0.6636638045310974,UNCHECKED,,0,45769110,EVENT,,<auto>,1602072477120
+30742,Glucose aliquot,1,1,,491278,,0.6200756430625916,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072478770
+30715,C-reactive protein missing reason,3,Unrecoverable aliquot problem (dip),,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072479118
+30765,HDL cholesterol missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,65861,,0.791527509689331,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072479340
+30693,Cholesterol correction level,0,None,,487467,,0.720869243144989,UNCHECKED,,0,44808856,EVENT,,<auto>,1602072480703
+30805,Oestradiol missing reason,1,No data returned,,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072481264
+30134,Monocyte count acquisition route,0,Direct,,502543,,0.6370930671691895,UNCHECKED,,0,37393859,EVENT,,<auto>,1602072481571
+30742,Glucose aliquot,2,2,,491278,,0.6200756430625916,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072481661
+40021,Cancer record origin,NCIN,National Cancer Intelligence Network,,118822,,0.6236953735351562,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072481670
+30164,Basophill count acquisition route,0,Direct,,502543,,0.5687066912651062,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072481692
+30604,Albumin correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,445770,,0.6636638045310974,UNCHECKED,,0,45769110,EVENT,,<auto>,1602072482673
+30665,Direct bilirubin missing reason,5,Aliquot 4 used,,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072482729
+30234,Nucleated red blood cell percentage acquisition route,1,Backup,,496854,,0.6892992258071899,UNCHECKED,,0,37393325,EVENT,,<auto>,1602072482748
+30865,Total protein missing reason,2,Original value above or below reportable limit,,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072482857
+30742,Glucose aliquot,3,3,,491278,,0.6200756430625916,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072484028
+30766,HDL cholesterol reportability,1,"Reportable at assay and after aliquot correction, if attempted",,445569,,0.7737863659858704,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072484711
+40021,Cancer record origin,PEDW,Patient Episode Database for Wales,,118822,,0.6236953735351562,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072485831
+30742,Glucose aliquot,4,4,,491278,,0.6200756430625916,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072486009
+30715,C-reactive protein missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072486332
+30605,Albumin missing reason,1,No data returned,,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072486838
+30805,Oestradiol missing reason,2,Original value above or below reportable limit,,432889,,0.5521752238273621,UNCHECKED,,0,4292703,EVENT,,<auto>,1602072486992
+30693,Cholesterol correction level,1,Date and aliquot correction,,487467,,0.720869243144989,UNCHECKED,,0,44808856,EVENT,,<auto>,1602072487439
+30134,Monocyte count acquisition route,1,Backup,,502543,,0.6370930671691895,UNCHECKED,,0,37393859,EVENT,,<auto>,1602072487683
+30665,Direct bilirubin missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072488263
+30164,Basophill count acquisition route,1,Backup,,502543,,0.5687066912651062,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072488628
+30865,Total protein missing reason,3,Unrecoverable aliquot problem (dip),,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072489410
+30682,Calcium aliquot,4,4,,491562,,0.6460694670677185,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072489723
+40021,Cancer record origin,SCOT,Originating from Scotland,,118822,,0.6236953735351562,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072490112
+30766,HDL cholesterol reportability,2,Reportable at assay but not reportable after any corrections (too low),,445569,,0.7737863659858704,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072490213
+30743,Glucose correction level,0,None,,445253,,0.7116811871528625,UNCHECKED,,0,37393576,EVENT,,<auto>,1602072491198
+30605,Albumin missing reason,2,Original value above or below reportable limit,,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072491215
+30715,C-reactive protein missing reason,5,Aliquot 4 used,,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072493332
+30134,Monocyte count acquisition route,2,Archive,,502543,,0.6370930671691895,UNCHECKED,,0,37393859,EVENT,,<auto>,1602072493427
+30665,Direct bilirubin missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072493744
+40021,Cancer record origin,SMR,Scottish Morbidity Records,,118822,,0.6236953735351562,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072494130
+30693,Cholesterol correction level,2,Date correction only,,487467,,0.720869243144989,UNCHECKED,,0,44808856,EVENT,,<auto>,1602072494374
+30234,Nucleated red blood cell percentage acquisition route,2,Archive,,496854,,0.6892992258071899,UNCHECKED,,0,37393325,EVENT,,<auto>,1602072494950
+30605,Albumin missing reason,3,Unrecoverable aliquot problem (dip),,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072495288
+30766,HDL cholesterol reportability,3,Reportable at assay but not reportable after any corrections (too high),,445569,,0.7737863659858704,UNCHECKED,,0,4011133,EVENT,,<auto>,1602072495523
+30865,Total protein missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072495573
+30683,Calcium correction level,0,None,,445619,,0.772409975528717,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072495610
+30164,Basophill count acquisition route,2,Archive,,502543,,0.5687066912651062,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072495662
+30743,Glucose correction level,1,Date and aliquot correction,,445253,,0.7116811871528625,UNCHECKED,,0,37393576,EVENT,,<auto>,1602072496149
+40022,Inpatient record origin,E/W,Originating from England/Wales,,418041,,0.7073566913604736,UNCHECKED,,0,45882391,EVENT,,<auto>,1602072499037
+30665,Direct bilirubin missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,97762,,0.7880492806434631,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072499247
+30605,Albumin missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072499557
+30715,C-reactive protein missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072499697
+30144,Neutrophill count acquisition route,0,Direct,,502543,,0.6052408218383789,UNCHECKED,,0,4148615,EVENT,,<auto>,1602072500348
+30694,Cholesterol correction reason,0,Normal for assay type,,487467,,0.542523980140686,UNCHECKED,,0,44043028,EVENT,,<auto>,1602072501136
+30683,Calcium correction level,1,Date and aliquot correction,,445619,,0.772409975528717,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072501150
+30743,Glucose correction level,2,Date correction only,,445253,,0.7116811871528625,UNCHECKED,,0,37393576,EVENT,,<auto>,1602072501253
+30865,Total protein missing reason,5,Aliquot 4 used,,66135,,0.6579774022102356,UNCHECKED,,0,4119650,EVENT,,<auto>,1602072501792
+30694,Cholesterol correction reason,2,No aliquot information,,487467,,0.542523980140686,UNCHECKED,,0,44043028,EVENT,,<auto>,1602072501872
+30244,Reticulocyte percentage acquisition route,0,Direct,,494714,,0.6358223557472229,UNCHECKED,,0,37393631,EVENT,,<auto>,1602072503660
+30605,Albumin missing reason,5,Aliquot 4 used,,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072503695
+40022,Inpatient record origin,HES,Hospital Episode Statistics from England,,418041,,0.7073566913604736,UNCHECKED,,0,45882391,EVENT,,<auto>,1602072503734
+30666,Direct bilirubin reportability,1,"Reportable at assay and after aliquot correction, if attempted",,485770,,0.8014287948608398,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072504021
+30174,Nucleated red blood cell count acquisition route,0,Direct,,496853,,0.7401919960975647,UNCHECKED,,0,37399327,EVENT,,<auto>,1602072505590
+30744,Glucose correction reason,0,Normal for assay type,,445253,,0.6175031065940857,UNCHECKED,,0,45771032,EVENT,,<auto>,1602072506623
+30715,C-reactive protein missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072506666
+30683,Calcium correction level,2,Date correction only,,445619,,0.772409975528717,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072506976
+30732,Gamma glutamyltransferase aliquot,1,1,,491877,,0.6619873046875,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072507038
+30144,Neutrophill count acquisition route,1,Backup,,502543,,0.6052408218383789,UNCHECKED,,0,4148615,EVENT,,<auto>,1602072507330
+30694,Cholesterol correction reason,1,No tip information,,487467,,0.542523980140686,UNCHECKED,,0,44043028,EVENT,,<auto>,1602072507731
+30605,Albumin missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072507913
+30694,Cholesterol correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487467,,0.542523980140686,UNCHECKED,,0,44043028,EVENT,,<auto>,1602072508116
+40022,Inpatient record origin,NCIN,National Cancer Intelligence Network,,418041,,0.7073566913604736,UNCHECKED,,0,45882391,EVENT,,<auto>,1602072508163
+30666,Direct bilirubin reportability,2,Reportable at assay but not reportable after any corrections (too low),,485770,,0.8014287948608398,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072509110
+30744,Glucose correction reason,1,No tip information,,445253,,0.6175031065940857,UNCHECKED,,0,45771032,EVENT,,<auto>,1602072511428
+30244,Reticulocyte percentage acquisition route,1,Backup,,494714,,0.6358223557472229,UNCHECKED,,0,37393631,EVENT,,<auto>,1602072511656
+30732,Gamma glutamyltransferase aliquot,2,2,,491877,,0.6619873046875,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072512143
+30605,Albumin missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072512241
+30636,Apolipoprotein A reportability,3,Reportable at assay but not reportable after any corrections (too high),,444907,,0.7168604731559753,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072512493
+40022,Inpatient record origin,PEDW,Patient Episode Database for Wales,,418041,,0.7073566913604736,UNCHECKED,,0,45882391,EVENT,,<auto>,1602072512524
+30684,Calcium correction reason,0,Normal for assay type,,445619,,0.590236485004425,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072512534
+30715,C-reactive protein missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,25018,,0.8239770531654358,UNCHECKED,,0,4264024,EVENT,,<auto>,1602072512892
+30666,Direct bilirubin reportability,3,Reportable at assay but not reportable after any corrections (too high),,485770,,0.8014287948608398,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072513794
+30694,Cholesterol correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487467,,0.542523980140686,UNCHECKED,,0,44043028,EVENT,,<auto>,1602072514543
+30144,Neutrophill count acquisition route,2,Archive,,502543,,0.6052408218383789,UNCHECKED,,0,4148615,EVENT,,<auto>,1602072514571
+30174,Nucleated red blood cell count acquisition route,1,Backup,,496853,,0.7401919960975647,UNCHECKED,,0,37399327,EVENT,,<auto>,1602072514951
+30605,Albumin missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,65654,,0.630436360836029,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072516316
+30744,Glucose correction reason,2,No aliquot information,,445253,,0.6175031065940857,UNCHECKED,,0,45771032,EVENT,,<auto>,1602072516491
+30732,Gamma glutamyltransferase aliquot,3,3,,491877,,0.6619873046875,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072516894
+40022,Inpatient record origin,SCOT,Originating from Scotland,,418041,,0.7073566913604736,UNCHECKED,,0,45882391,EVENT,,<auto>,1602072517119
+30636,Apolipoprotein A reportability,4,Not reportable at assay (too low),,444907,,0.7168604731559753,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072517306
+30684,Calcium correction reason,1,No tip information,,445619,,0.590236485004425,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072517439
+30666,Direct bilirubin reportability,4,Not reportable at assay (too low),,485770,,0.8014287948608398,UNCHECKED,,0,4184442,EVENT,,<auto>,1602072518467
+30716,C-reactive protein reportability,1,"Reportable at assay and after aliquot correction, if attempted",,486849,,0.8239763975143433,UNCHECKED,,0,4052151,EVENT,,<auto>,1602072519331
+30244,Reticulocyte percentage acquisition route,2,Archive,,494714,,0.6358223557472229,UNCHECKED,,0,37393631,EVENT,,<auto>,1602072519465
+30695,Cholesterol missing reason,1,No data returned,,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072519869
+30606,Albumin reportability,1,"Reportable at assay and after aliquot correction, if attempted",,445786,,0.6074550151824951,UNCHECKED,,0,4199139,EVENT,,<auto>,1602072520038
+30744,Glucose correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,445253,,0.6175031065940857,UNCHECKED,,0,45771032,EVENT,,<auto>,1602072521174
+30154,Eosinophill count acquisition route,0,Direct,,502543,,0.5872087478637695,UNCHECKED,,0,37393857,EVENT,,<auto>,1602072521295
+40022,Inpatient record origin,SMR,Scottish Morbidity Records,,418041,,0.7073566913604736,UNCHECKED,,0,45882391,EVENT,,<auto>,1602072521313
+30636,Apolipoprotein A reportability,5,Not reportable at assay (too high),,444907,,0.7168604731559753,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072521849
+30732,Gamma glutamyltransferase aliquot,4,4,,491877,,0.6619873046875,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072522014
+30684,Calcium correction reason,2,No aliquot information,,445619,,0.590236485004425,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072522563
+30174,Nucleated red blood cell count acquisition route,2,Archive,,496853,,0.7401919960975647,UNCHECKED,,0,37399327,EVENT,,<auto>,1602072523935
+30633,Apolipoprotein A correction level,2,Date correction only,,443078,,0.706668496131897,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072524953
+30695,Cholesterol missing reason,2,Original value above or below reportable limit,,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072525202
+30642,Apolipoprotein B aliquot,0,Manual,,491758,,0.682306170463562,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072525286
+30645,Apolipoprotein B missing reason,1,No data returned,,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072525412
+41231,Hospital episode type,1,General episode,,379182,,0.6668391227722168,UNCHECKED,,0,46236992,EVENT,,<auto>,1602072525850
+30744,Glucose correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,445253,,0.6175031065940857,UNCHECKED,,0,45771032,EVENT,,<auto>,1602072526240
+30254,Reticulocyte count acquisition route,0,Direct,,494715,,0.6764567494392395,UNCHECKED,,0,37397920,EVENT,,<auto>,1602072526286
+30625,Alanine aminotransferase missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072526345
+30684,Calcium correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,445619,,0.590236485004425,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072527586
+30044,Mean corpuscular volume acquisition route,2,Archive,,503449,,0.6702079176902771,UNCHECKED,,0,4013522,EVENT,,<auto>,1602072528297
+30642,Apolipoprotein B aliquot,1,1,,491758,,0.682306170463562,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072528972
+30733,Gamma glutamyltransferase correction level,0,None,,487206,,0.6642652750015259,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072529861
+41231,Hospital episode type,2,Delivery episode,,379182,,0.6668391227722168,UNCHECKED,,0,46236992,EVENT,,<auto>,1602072529946
+30745,Glucose missing reason,1,No data returned,,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072530517
+30695,Cholesterol missing reason,3,Unrecoverable aliquot problem (dip),,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072530550
+30645,Apolipoprotein B missing reason,2,Original value above or below reportable limit,,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072530744
+30184,Lymphocyte percentage acquisition route,0,Direct,,502550,,0.6472831964492798,UNCHECKED,,0,37399254,EVENT,,<auto>,1602072531077
+30634,Apolipoprotein A correction reason,0,Normal for assay type,,443078,,0.715560257434845,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072531345
+30642,Apolipoprotein B aliquot,2,2,,491758,,0.682306170463562,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072532292
+30684,Calcium correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,445619,,0.590236485004425,UNCHECKED,,0,4042573,EVENT,,<auto>,1602072532586
+30254,Reticulocyte count acquisition route,1,Backup,,494715,,0.6764567494392395,UNCHECKED,,0,37397920,EVENT,,<auto>,1602072532960
+41231,Hospital episode type,3,Birth episode,,379182,,0.6668391227722168,UNCHECKED,,0,46236992,EVENT,,<auto>,1602072534002
+30625,Alanine aminotransferase missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072534376
+30745,Glucose missing reason,2,Original value above or below reportable limit,,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072534959
+30642,Apolipoprotein B aliquot,3,3,,491758,,0.682306170463562,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072535690
+30054,Mean corpuscular haemoglobin acquisition route,0,Direct,,503445,,0.7113584280014038,UNCHECKED,,0,4182871,EVENT,,<auto>,1602072535696
+30695,Cholesterol missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072536025
+30645,Apolipoprotein B missing reason,3,Unrecoverable aliquot problem (dip),,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072536328
+30675,Urea missing reason,3,Unrecoverable aliquot problem (dip),,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072536837
+30685,Calcium missing reason,1,No data returned,,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072537504
+30733,Gamma glutamyltransferase correction level,1,Date and aliquot correction,,487206,,0.6642652750015259,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072537971
+41231,Hospital episode type,4,Mental health/ psychiatric episode,,379182,,0.6668391227722168,UNCHECKED,,0,46236992,EVENT,,<auto>,1602072537990
+30634,Apolipoprotein A correction reason,1,No tip information,,443078,,0.715560257434845,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072538235
+30184,Lymphocyte percentage acquisition route,1,Backup,,502550,,0.6472831964492798,UNCHECKED,,0,37399254,EVENT,,<auto>,1602072538371
+30642,Apolipoprotein B aliquot,4,4,,491758,,0.682306170463562,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072539040
+30745,Glucose missing reason,3,Unrecoverable aliquot problem (dip),,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072539211
+30675,Urea missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072540680
+30645,Apolipoprotein B missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072541373
+30695,Cholesterol missing reason,5,Aliquot 4 used,,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072541536
+41231,Hospital episode type,5,Other delivery event,,379182,,0.6668391227722168,UNCHECKED,,0,46236992,EVENT,,<auto>,1602072541979
+30625,Alanine aminotransferase missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24158,,0.7972264289855957,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072542003
+30685,Calcium missing reason,2,Original value above or below reportable limit,,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072542339
+30054,Mean corpuscular haemoglobin acquisition route,1,Backup,,503445,,0.7113584280014038,UNCHECKED,,0,4182871,EVENT,,<auto>,1602072542860
+30745,Glucose missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072543284
+30675,Urea missing reason,5,Aliquot 4 used,,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072544212
+30634,Apolipoprotein A correction reason,2,No aliquot information,,443078,,0.715560257434845,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072544566
+30184,Lymphocyte percentage acquisition route,2,Archive,,502550,,0.6472831964492798,UNCHECKED,,0,37399254,EVENT,,<auto>,1602072545347
+30643,Apolipoprotein B correction level,0,None,,484996,,0.6826940178871155,UNCHECKED,,0,37398536,EVENT,,<auto>,1602072545459
+41231,Hospital episode type,6,Other birth event,,379182,,0.6668391227722168,UNCHECKED,,0,46236992,EVENT,,<auto>,1602072545980
+30733,Gamma glutamyltransferase correction level,2,Date correction only,,487206,,0.6642652750015259,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072546137
+30645,Apolipoprotein B missing reason,5,Aliquot 4 used,,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072546781
+30685,Calcium missing reason,3,Unrecoverable aliquot problem (dip),,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072546960
+30695,Cholesterol missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072547012
+30745,Glucose missing reason,5,Aliquot 4 used,,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072547455
+30675,Urea missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072547854
+30626,Alanine aminotransferase reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487333,,0.7777217030525208,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072549080
+30054,Mean corpuscular haemoglobin acquisition route,2,Archive,,503445,,0.7113584280014038,UNCHECKED,,0,4182871,EVENT,,<auto>,1602072550012
+30634,Apolipoprotein A correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,443078,,0.715560257434845,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072550899
+30685,Calcium missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072551305
+30675,Urea missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072551315
+30745,Glucose missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072551825
+30643,Apolipoprotein B correction level,1,Date and aliquot correction,,484996,,0.6826940178871155,UNCHECKED,,0,37398536,EVENT,,<auto>,1602072551970
+30194,Monocyte percentage acquisition route,0,Direct,,502550,,0.6218955516815186,UNCHECKED,,0,37393321,EVENT,,<auto>,1602072552201
+30645,Apolipoprotein B missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072552233
+30695,Cholesterol missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072552235
+30734,Gamma glutamyltransferase correction reason,0,Normal for assay type,,487206,,0.6776118874549866,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072553715
+41232,Administrative and legal statuses,10,NHS patient: not formally detained,,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072553993
+30675,Urea missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24301,,0.5810798406600952,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072554714
+30685,Calcium missing reason,5,Aliquot 4 used,,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072555878
+30745,Glucose missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072556172
+30626,Alanine aminotransferase reportability,2,Reportable at assay but not reportable after any corrections (too low),,487333,,0.7777217030525208,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072556420
+30634,Apolipoprotein A correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,443078,,0.715560257434845,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072557472
+30645,Apolipoprotein B missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072557587
+30676,Urea reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487133,,0.5363632440567017,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072557818
+30695,Cholesterol missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,23957,,0.5990002155303955,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072558288
+30643,Apolipoprotein B correction level,2,Date correction only,,484996,,0.6826940178871155,UNCHECKED,,0,37398536,EVENT,,<auto>,1602072558336
+30194,Monocyte percentage acquisition route,1,Backup,,502550,,0.6218955516815186,UNCHECKED,,0,37393321,EVENT,,<auto>,1602072559032
+30064,Mean corpuscular haemoglobin concentration acquisition route,0,Direct,,503441,,0.7417244911193848,UNCHECKED,,0,4290193,EVENT,,<auto>,1602072559733
+30745,Glucose missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,66171,,0.5066000819206238,UNCHECKED,,0,4096998,EVENT,,<auto>,1602072560466
+30685,Calcium missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072560593
+30676,Urea reportability,2,Reportable at assay but not reportable after any corrections (too low),,487133,,0.5363632440567017,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072561319
+41232,Administrative and legal statuses,11,"NHS patient: formally detained under Part II, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072561648
+30734,Gamma glutamyltransferase correction reason,1,No tip information,,487206,,0.6776118874549866,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072562168
+30645,Apolipoprotein B missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,26428,,0.697312593460083,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072562771
+30696,Cholesterol reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487474,,0.5765122175216675,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072563186
+30635,Apolipoprotein A missing reason,1,No data returned,,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072563256
+30626,Alanine aminotransferase reportability,3,Reportable at assay but not reportable after any corrections (too high),,487333,,0.7777217030525208,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072563800
+30746,Glucose reportability,1,"Reportable at assay and after aliquot correction, if attempted",,445261,,0.5348273515701294,UNCHECKED,,0,40045810,EVENT,,<auto>,1602072564083
+30676,Urea reportability,3,Reportable at assay but not reportable after any corrections (too high),,487133,,0.5363632440567017,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072564435
+30644,Apolipoprotein B correction reason,0,Normal for assay type,,484996,,0.6885547041893005,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072564640
+30685,Calcium missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,65805,,0.5183795094490051,UNCHECKED,,0,43526046,EVENT,,<auto>,1602072565248
+30194,Monocyte percentage acquisition route,2,Archive,,502550,,0.6218955516815186,UNCHECKED,,0,37393321,EVENT,,<auto>,1602072566119
+30746,Glucose reportability,2,Reportable at assay but not reportable after any corrections (too low),,445261,,0.5348273515701294,UNCHECKED,,0,40045810,EVENT,,<auto>,1602072567592
+30646,Apolipoprotein B reportability,1,"Reportable at assay and after aliquot correction, if attempted",,486206,,0.690109133720398,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072567592
+30676,Urea reportability,4,Not reportable at assay (too low),,487133,,0.5363632440567017,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072567673
+30696,Cholesterol reportability,2,Reportable at assay but not reportable after any corrections (too low),,487474,,0.5765122175216675,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072568150
+30635,Apolipoprotein A missing reason,2,Original value above or below reportable limit,,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072568612
+41232,Administrative and legal statuses,12,"NHS patient: formally detained under Part III, Mental Health Act 1983, or under other Acts",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072569038
+30064,Mean corpuscular haemoglobin concentration acquisition route,1,Backup,,503441,,0.7417244911193848,UNCHECKED,,0,4290193,EVENT,,<auto>,1602072569379
+30734,Gamma glutamyltransferase correction reason,2,No aliquot information,,487206,,0.6776118874549866,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072569761
+30676,Urea reportability,5,Not reportable at assay (too high),,487133,,0.5363632440567017,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072570693
+40018,Death record format,2,IC Death Format (2012 onwards),,30263,,0.5853056907653809,UNCHECKED,,0,4249566,EVENT,,<auto>,1602072570740
+30644,Apolipoprotein B correction reason,1,No tip information,,484996,,0.6885547041893005,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072571004
+30724,Cystatin C correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487423,,0.5172523856163025,UNCHECKED,,0,409,EVENT,,<auto>,1602072571023
+30626,Alanine aminotransferase reportability,4,Not reportable at assay (too low),,487333,,0.7777217030525208,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072571098
+30646,Apolipoprotein B reportability,2,Reportable at assay but not reportable after any corrections (too low),,486206,,0.690109133720398,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072572157
+30682,Calcium aliquot,0,Manual,,491562,,0.6460694670677185,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072572858
+30696,Cholesterol reportability,3,Reportable at assay but not reportable after any corrections (too high),,487474,,0.5765122175216675,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072572875
+40018,Death record format,52,English and Welsh death (2020 onwards),,30263,,0.5853056907653809,UNCHECKED,,0,4249566,EVENT,,<auto>,1602072573363
+30635,Apolipoprotein A missing reason,3,Unrecoverable aliquot problem (dip),,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072574221
+30204,Neutrophill percentage acquisition route,0,Direct,,502550,,0.5817710161209106,UNCHECKED,,0,37398605,EVENT,,<auto>,1602072574588
+30682,Calcium aliquot,1,1,,491562,,0.6460694670677185,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072574838
+40018,Death record format,54,Scottish deaths (2017 - Jan 2018),,30263,,0.5853056907653809,UNCHECKED,,0,4249566,EVENT,,<auto>,1602072576202
+41232,Administrative and legal statuses,13,"NHS patient: formally detained under part X, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072576521
+30725,Cystatin C missing reason,1,No data returned,,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072576544
+30646,Apolipoprotein B reportability,3,Reportable at assay but not reportable after any corrections (too high),,486206,,0.690109133720398,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072576678
+30682,Calcium aliquot,2,2,,491562,,0.6460694670677185,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072576702
+30644,Apolipoprotein B correction reason,2,No aliquot information,,484996,,0.6885547041893005,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072577266
+30696,Cholesterol reportability,4,Not reportable at assay (too low),,487474,,0.5765122175216675,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072577460
+30734,Gamma glutamyltransferase correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,487206,,0.6776118874549866,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072577817
+30626,Alanine aminotransferase reportability,5,Not reportable at assay (too high),,487333,,0.7777217030525208,UNCHECKED,,0,4211515,EVENT,,<auto>,1602072578009
+30682,Calcium aliquot,3,3,,491562,,0.6460694670677185,UNCHECKED,,0,4227695,EVENT,,<auto>,1602072578578
+30064,Mean corpuscular haemoglobin concentration acquisition route,2,Archive,,503441,,0.7417244911193848,UNCHECKED,,0,4290193,EVENT,,<auto>,1602072578682
+30895,Vitamin D missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072578939
+40018,Death record format,55,Scottish deaths (2018 onwards),,30263,,0.5853056907653809,UNCHECKED,,0,4249566,EVENT,,<auto>,1602072579056
+30635,Apolipoprotein A missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072579445
+30632,Apolipoprotein A aliquot,0,Manual,,491281,,0.7092130780220032,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072580957
+30646,Apolipoprotein B reportability,4,Not reportable at assay (too low),,486206,,0.690109133720398,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072581022
+30725,Cystatin C missing reason,2,Original value above or below reportable limit,,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072581497
+40018,Death record format,7,Scottish Morbidity Record (SMR),,30263,,0.5853056907653809,UNCHECKED,,0,4249566,EVENT,,<auto>,1602072581702
+30696,Cholesterol reportability,5,Not reportable at assay (too high),,487474,,0.5765122175216675,UNCHECKED,,0,19059097,EVENT,,<auto>,1602072581905
+30895,Vitamin D missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,46035,,0.5366438627243042,UNCHECKED,,0,4308739,EVENT,,<auto>,1602072582889
+30644,Apolipoprotein B correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,484996,,0.6885547041893005,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072583126
+41232,Administrative and legal statuses,20,Private patient: not formally detained,,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072583130
+30632,Apolipoprotein A aliquot,1,1,,491281,,0.7092130780220032,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072583829
+30635,Apolipoprotein A missing reason,5,Aliquot 4 used,,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072584212
+40019,Cancer record format,13,National Cancer Intelligence Network (NCIN) Cancer Data,,118822,,0.5109012722969055,UNCHECKED,,0,3018020,EVENT,,<auto>,1602072584696
+30734,Gamma glutamyltransferase correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,487206,,0.6776118874549866,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072584852
+30646,Apolipoprotein B reportability,5,Not reportable at assay (too high),,486206,,0.690109133720398,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072585207
+30725,Cystatin C missing reason,3,Unrecoverable aliquot problem (dip),,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072586310
+30896,Vitamin D reportability,1,"Reportable at assay and after aliquot correction, if attempted",,468046,,0.5386781692504883,UNCHECKED,,0,40097771,EVENT,,<auto>,1602072586624
+30632,Apolipoprotein A aliquot,2,2,,491281,,0.7092130780220032,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072586671
+30074,Red blood cell (erythrocyte) distribution width acquisition route,0,Direct,,503449,,0.6118120551109314,UNCHECKED,,0,37397924,EVENT,,<auto>,1602072587677
+40019,Cancer record format,22,Scottish Cancer Registry (fixed width format) 2012 onwards,,118822,,0.5109012722969055,UNCHECKED,,0,3018020,EVENT,,<auto>,1602072587741
+30644,Apolipoprotein B correction reason,4,Resurvey only: insufficient participants with aliquot dispensing machine data for aliquot correction,,484996,,0.6885547041893005,UNCHECKED,,0,4098284,EVENT,,<auto>,1602072588608
+30635,Apolipoprotein A missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072588900
+30632,Apolipoprotein A aliquot,3,3,,491281,,0.7092130780220032,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072589425
+41232,Administrative and legal statuses,21,"Private patient: formally detained under Part II, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072589529
+30652,Aspartate aminotransferase aliquot,0,Manual,,492054,,0.7999057769775391,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072589976
+30896,Vitamin D reportability,2,Reportable at assay but not reportable after any corrections (too low),,468046,,0.5386781692504883,UNCHECKED,,0,40097771,EVENT,,<auto>,1602072590090
+40019,Cancer record format,23,NHS Information Centre Cancer Registry 2016 onwards,,118822,,0.5109012722969055,UNCHECKED,,0,3018020,EVENT,,<auto>,1602072590506
+30725,Cystatin C missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072590903
+30735,Gamma glutamyltransferase missing reason,1,No data returned,,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072590963
+30632,Apolipoprotein A aliquot,4,4,,491281,,0.7092130780220032,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072591882
+40019,Cancer record format,3,NHS Information Centre Cancer Registry 2012 onwards,,118822,,0.5109012722969055,UNCHECKED,,0,3018020,EVENT,,<auto>,1602072593089
+30635,Apolipoprotein A missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072593120
+30896,Vitamin D reportability,3,Reportable at assay but not reportable after any corrections (too high),,468046,,0.5386781692504883,UNCHECKED,,0,40097771,EVENT,,<auto>,1602072593238
+30652,Aspartate aminotransferase aliquot,1,1,,492054,,0.7999057769775391,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072594053
+30725,Cystatin C missing reason,5,Aliquot 4 used,,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072594952
+41232,Administrative and legal statuses,22,"Private patient: formally detained under Part III, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072595213
+30074,Red blood cell (erythrocyte) distribution width acquisition route,1,Backup,,503449,,0.6118120551109314,UNCHECKED,,0,37397924,EVENT,,<auto>,1602072595422
+40019,Cancer record format,4,Scottish Cancer Registry (fixed width format) 2012 onwards,,118822,,0.5109012722969055,UNCHECKED,,0,3018020,EVENT,,<auto>,1602072595783
+30735,Gamma glutamyltransferase missing reason,2,Original value above or below reportable limit,,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072596246
+30896,Vitamin D reportability,4,Not reportable at assay (too low),,468046,,0.5386781692504883,UNCHECKED,,0,40097771,EVENT,,<auto>,1602072596556
+30633,Apolipoprotein A correction level,0,None,,443078,,0.706668496131897,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072596825
+30635,Apolipoprotein A missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,68346,,0.7324919104576111,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072597265
+30652,Aspartate aminotransferase aliquot,2,2,,492054,,0.7999057769775391,UNCHECKED,,0,4094657,EVENT,,<auto>,1602072598170
+40020,Death record origin,E/W,Originating from England/Wales,,30263,,0.5888252854347229,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072598388
+30725,Cystatin C missing reason,7,Analyser deemed result not reportable for reason other than above or below reportable range,,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072598930
+30896,Vitamin D reportability,5,Not reportable at assay (too high),,468046,,0.5386781692504883,UNCHECKED,,0,40097771,EVENT,,<auto>,1602072599421
+30636,Apolipoprotein A reportability,1,"Reportable at assay and after aliquot correction, if attempted",,444907,,0.7168604731559753,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072600485
+41232,Administrative and legal statuses,23,"Private patient: formally detained under part X, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072600531
+40020,Death record origin,HES,Hospital Episode Statistics from England,,30263,,0.5888252854347229,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072600857
+30735,Gamma glutamyltransferase missing reason,3,Unrecoverable aliquot problem (dip),,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072601084
+30633,Apolipoprotein A correction level,1,Date and aliquot correction,,443078,,0.706668496131897,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072601466
+40012,Behaviour of cancer tumour,0,Benign,,114009,,0.8637388944625854,UNCHECKED,,0,4077872,EVENT,,<auto>,1602072602323
+30074,Red blood cell (erythrocyte) distribution width acquisition route,2,Archive,,503449,,0.6118120551109314,UNCHECKED,,0,37397924,EVENT,,<auto>,1602072602538
+30725,Cystatin C missing reason,8,Not reportable because dilution factor 0.9-0.99 or 1.01-1.1,,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072602667
+40020,Death record origin,NCIN,National Cancer Intelligence Network,,30263,,0.5888252854347229,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072603194
+30636,Apolipoprotein A reportability,2,Reportable at assay but not reportable after any corrections (too low),,444907,,0.7168604731559753,UNCHECKED,,0,4337512,EVENT,,<auto>,1602072603605
+40012,Behaviour of cancer tumour,1,Uncertain whether benign or malignant,,114009,,0.8637388944625854,UNCHECKED,,0,4077872,EVENT,,<auto>,1602072604800
+41232,Administrative and legal statuses,30,Amenity patient: not formally detained,,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072605284
+30735,Gamma glutamyltransferase missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,24218,,0.712875485420227,UNCHECKED,,0,4289475,EVENT,,<auto>,1602072605380
+40020,Death record origin,PEDW,Patient Episode Database for Wales,,30263,,0.5888252854347229,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072605444
+30725,Cystatin C missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24001,,0.5717143416404724,UNCHECKED,,0,44789161,EVENT,,<auto>,1602072605896
+30084,Platelet count acquisition route,0,Direct,,503448,,0.6494765281677246,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072606238
+40012,Behaviour of cancer tumour,2,Carcinoma in situ,,114009,,0.8637388944625854,UNCHECKED,,0,4077872,EVENT,,<auto>,1602072606994
+40020,Death record origin,SCOT,Originating from Scotland,,30263,,0.5888252854347229,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072607327
+30726,Cystatin C reportability,1,"Reportable at assay and after aliquot correction, if attempted",,487438,,0.47607511281967163,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072608426
+40012,Behaviour of cancer tumour,3,"Malignant, primary site",,114009,,0.8637388944625854,UNCHECKED,,0,4077872,EVENT,,<auto>,1602072609086
+41232,Administrative and legal statuses,31,"Amenity patient: formally detained under Part II, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072609130
+40020,Death record origin,SMR,Scottish Morbidity Records,,30263,,0.5888252854347229,UNCHECKED,,0,4239941,EVENT,,<auto>,1602072609302
+30084,Platelet count acquisition route,1,Backup,,503448,,0.6494765281677246,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072609514
+30726,Cystatin C reportability,2,Reportable at assay but not reportable after any corrections (too low),,487438,,0.47607511281967163,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072610726
+40012,Behaviour of cancer tumour,5,"Malignant, microinvasive",,114009,,0.8637388944625854,UNCHECKED,,0,4077872,EVENT,,<auto>,1602072610940
+30084,Platelet count acquisition route,2,Archive,,503448,,0.6494765281677246,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072612426
+41232,Administrative and legal statuses,32,"Amenity patient: formally detained under Part III, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072612593
+40012,Behaviour of cancer tumour,6,"Malignant, metastatic site",,114009,,0.8637388944625854,UNCHECKED,,0,4077872,EVENT,,<auto>,1602072612874
+30726,Cystatin C reportability,3,Reportable at assay but not reportable after any corrections (too high),,487438,,0.47607511281967163,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072613009
+40012,Behaviour of cancer tumour,9,"Malignant, uncertain whether primary or metastatic site",,114009,,0.8637388944625854,UNCHECKED,,0,4077872,EVENT,,<auto>,1602072614729
+30726,Cystatin C reportability,4,Not reportable at assay (too low),,487438,,0.47607511281967163,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072615252
+30094,Platelet crit acquisition route,0,Direct,,497774,,0.6460209488868713,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072615322
+41232,Administrative and legal statuses,33,"Amenity patient: formally detained under part X, Mental Health Act 1983",,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072616035
+40018,Death record format,1,IC Death Format (2011 and earlier),,30263,,0.5853056907653809,UNCHECKED,,0,4249566,EVENT,,<auto>,1602072616135
+30726,Cystatin C reportability,5,Not reportable at assay (too high),,487438,,0.47607511281967163,UNCHECKED,,0,44809160,EVENT,,<auto>,1602072617553
+40018,Death record format,19,Scottish Morbidity Record (SMR) 99B - 2015,,30263,,0.5853056907653809,UNCHECKED,,0,4249566,EVENT,,<auto>,1602072617602
+30094,Platelet crit acquisition route,1,Backup,,497774,,0.6460209488868713,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072618181
+41232,Administrative and legal statuses,98,Not applicable,,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072619435
+30732,Gamma glutamyltransferase aliquot,0,Manual,,491877,,0.6619873046875,UNCHECKED,,0,4244576,EVENT,,<auto>,1602072619724
+30094,Platelet crit acquisition route,2,Archive,,497774,,0.6460209488868713,UNCHECKED,,0,4076972,EVENT,,<auto>,1602072620825
+41232,Administrative and legal statuses,99,Not known: a validation error,,153117,,0.8285330533981323,UNCHECKED,,0,4146314,EVENT,,<auto>,1602072622352
