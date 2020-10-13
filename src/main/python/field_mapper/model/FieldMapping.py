@@ -14,7 +14,7 @@
 
 # !/usr/bin/env python3
 from typing import Dict, Optional
-from src.Python.model.UsagiRow import UsagiRow, TargetMapping, MappingType
+from src.main.python.field_mapper.model.UsagiRow import UsagiRow, TargetMapping, MappingType
 
 
 class FieldMapping:

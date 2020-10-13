@@ -15,12 +15,12 @@
 # !/usr/bin/env python3
 import csv
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Optional
 import logging
 
-from src.Python.model.MappingTarget import MappingTarget
-from src.Python.model.UsagiRow import UsagiRow
-from src.Python.model.FieldMapping import FieldMapping
+from src.main.python.field_mapper.model.MappingTarget import MappingTarget
+from src.main.python.field_mapper.model.UsagiRow import UsagiRow
+from src.main.python.field_mapper.model.FieldMapping import FieldMapping
 
 logger = logging.getLogger(__name__)
 
@@ -46,6 +46,7 @@ class FieldConceptMapper:
 
     @staticmethod
     def _load_map(file_path: Path):
+        # TODO: store filename for reference
         with file_path.open(encoding='ISO-8859-2') as f_in:
             for row in csv.DictReader(f_in):
                 yield row
@@ -62,7 +63,7 @@ class FieldConceptMapper:
     def has_mapping_for_field(self, field_id: str):
         return field_id in self.field_mappings
 
-    def get_mapping(self, field_id: str) -> FieldMapping:
+    def get_mapping(self, field_id: str) -> Optional[FieldMapping]:
         if field_id in self.field_mappings:
             return self.field_mappings[field_id]
         return None
@@ -121,12 +122,13 @@ class FieldConceptMapper:
 
 
 if __name__ == '__main__':
-    mapper = FieldConceptMapper(Path('./resources/usagi_input'))
+    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'))
 
     # Some simple tests
-    print(mapper.lookup('41256', '0552'))
+    print(mapper.lookup('41256', '0552'))  # unknown field and value
     print(mapper.lookup('30785', '8'))
     print(mapper.lookup('2443', '0'))
     print(mapper.lookup('2443', '1'))
 
+    # get the mapping of a field
     print(mapper.get_mapping('2335'))

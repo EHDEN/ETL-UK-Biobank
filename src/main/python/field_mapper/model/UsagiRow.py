@@ -15,7 +15,7 @@
 # !/usr/bin/env python3
 from enum import Enum
 from datetime import datetime
-from src.Python.util.type_conversion import to_int
+from src.main.python.field_mapper.util.type_conversion import to_int
 
 
 class MappingStatus(Enum):
