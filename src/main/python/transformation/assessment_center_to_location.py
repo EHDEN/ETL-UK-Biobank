@@ -19,8 +19,8 @@ def assessment_center_to_location(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
         #  original name including the part in parenthesis)
         r = wrapper.cdm.Location(
             location_id=row['coding'],
-            location_source_value=row['meaning'],
-            city=row['meaning'].split()[0]
+            location_source_value=row['coding'],
+            city=row['meaning']
         )
         records.append(r)
 
