@@ -9,7 +9,7 @@
 
 ### GP, HES, Covid
 
-[person](person.md)
+[person](baseline/person.md)
 
 [observation_period](observation_period.md)
 

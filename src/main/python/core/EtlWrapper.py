@@ -16,15 +16,11 @@ import logging
 import os
 import re
 import time
-import traceback
-from collections import defaultdict
 from pathlib import Path
 from typing import Optional, Callable
-
 from sqlalchemy import text
+import src.main.python.core.model as cdm
 
-# Import ORM for target metadata
-from src.main.python.core.model import *
 
 logger = logging.getLogger(__name__)
 
@@ -33,11 +29,12 @@ class EtlWrapper:
     """
     This module coordinates the execution of the python transformations.
     If debug mode is on, the primary key constraints are applied before loading
-    to get direct feedback if there are issues. This does make the loading step of the ETL significantly slower.
+    to get direct feedback if there are issues. This does make the loading step
+    of the ETL significantly slower.
     """
     SOURCE_ROW_COUNT_FORMAT = '{:<60.60} {:>10}'
 
-    def __init__(self, database, debug):
+    def __init__(self, database, config):
         self.db = database
 
         self.n_queries_executed = 0
@@ -47,7 +44,9 @@ class EtlWrapper:
         self.t_start = None
         self.cwd = os.getcwd()
 
-        self.debug = debug
+        self.cdm = cdm
+
+        self.debug = config['run_options']['debug_mode']
 
     def run(self):
         """Run ETL procedure"""
@@ -60,28 +59,28 @@ class EtlWrapper:
         """Drops clinical tables, if they exist"""
         logger.info('Dropping OMOP CDM (non-vocabulary) tables if existing')
         self.db.base.metadata.drop_all(self.db.engine, tables=[
-            clinical_data.ConditionOccurrence.__table__,
-            clinical_data.DeviceExposure.__table__,
-            clinical_data.DrugExposure.__table__,
-            clinical_data.FactRelationship.__table__,
-            clinical_data.Measurement.__table__,
-            clinical_data.Note.__table__,
-            clinical_data.NoteNlp.__table__,
-            clinical_data.Observation.__table__,
-            clinical_data.ObservationPeriod.__table__,
-            clinical_data.Death.__table__,
-            clinical_data.ProcedureOccurrence.__table__,
-            clinical_data.Specimen.__table__,
-            clinical_data.VisitOccurrence.__table__,
-            derived_elements.DrugEra.__table__,
-            derived_elements.DoseEra.__table__,
-            derived_elements.ConditionEra.__table__,
-            health_economics.PayerPlanPeriod.__table__,
-            health_economics.Cost.__table__,
-            clinical_data.Person.__table__,
-            health_system_data.Location.__table__,
-            health_system_data.CareSite.__table__,
-            health_system_data.Provider.__table__
+            self.cdm.clinical_data.ConditionOccurrence.__table__,
+            self.cdm.clinical_data.DeviceExposure.__table__,
+            self.cdm.clinical_data.DrugExposure.__table__,
+            self.cdm.clinical_data.FactRelationship.__table__,
+            self.cdm.clinical_data.Measurement.__table__,
+            self.cdm.clinical_data.Note.__table__,
+            self.cdm.clinical_data.NoteNlp.__table__,
+            self.cdm.clinical_data.Observation.__table__,
+            self.cdm.clinical_data.ObservationPeriod.__table__,
+            self.cdm.clinical_data.Death.__table__,
+            self.cdm.clinical_data.ProcedureOccurrence.__table__,
+            self.cdm.clinical_data.Specimen.__table__,
+            self.cdm.clinical_data.VisitOccurrence.__table__,
+            self.cdm.derived_elements.DrugEra.__table__,
+            self.cdm.derived_elements.DoseEra.__table__,
+            self.cdm.derived_elements.ConditionEra.__table__,
+            self.cdm.health_economics.PayerPlanPeriod.__table__,
+            self.cdm.health_economics.Cost.__table__,
+            self.cdm.clinical_data.Person.__table__,
+            self.cdm.health_system_data.Location.__table__,
+            self.cdm.health_system_data.CareSite.__table__,
+            self.cdm.health_system_data.Provider.__table__
         ])
 
     def create_cdm(self) -> None:
@@ -98,31 +97,51 @@ class EtlWrapper:
         :param statement: Callable
             python function which takes this wrapper as input
         """
-        logger.info(f'{"-"*7}Executing transformation: {statement.__name__}{"-"*7}')
+        t1 = time.time()
 
         try:
+            records_to_insert = statement(self, *args, **kwargs)
             with self.db.session_scope() as session:
-                records_to_insert = statement(self, *args, **kwargs)
-                logger.info(f'Saving {len(records_to_insert)} objects')
                 session.add_all(records_to_insert)
-
         except Exception as msg:
-            logger.error(msg)
-            logger.error(traceback.format_exc())
+            if self.debug:
+                raise msg
+            logger.error("Transformation '%s' failed:" % statement.__name__)
+            error = msg.args[0].split('\n')[0]
+            logger.error("%s" % error)
+            # logger.error(traceback.format_exc(limit=1))
+            self.n_queries_failed += 1
+            return
 
-        logger.info(f'{statement.__name__} completed')
+        t2 = time.time()
 
-    def execute_sql_file(self, file_path, verbose=True):
+        # NOTE: if multiple queries, then rowcount only last number of inserted/updated rows
+        self.log_query_completed(statement, len(records_to_insert), t2 - t1)
+
+        # Note: only tracks row count correctly if 1 insert per file and no update/delete scripts
+        if len(records_to_insert) > 0:
+            self.total_rows_inserted += len(records_to_insert)
+
+        self.n_queries_executed += 1
+        return
+
+    def execute_sql_file(self, file_path, source_schema=None, target_schema=None,
+                         print_failed_query=False):
+
         # Open and read the file as a single buffer
         with open(file_path, 'r') as f:
             query = f.read().strip()
 
-        return self.execute_sql_query(query, verbose)
+        return self.execute_sql_query(query, source_schema, target_schema, from_file=file_path,
+                                      print_failed_query=print_failed_query)
 
-    def execute_sql_query(self, query, schema, verbose=True):
+    def execute_sql_query(self, query, source_schema, target_schema,
+                          from_file=None, print_failed_query=False):
+
         # Prepare parameterized sql
         query = query.replace('@absPath', self.cwd)
-        query = query.replace("@source_schema", schema)
+        query = query.replace("@source_schema", source_schema)
+        query = query.replace("@target_schema", target_schema)
 
         t1 = time.time()
 
@@ -130,22 +149,23 @@ class EtlWrapper:
             try:
                 statement = text(query).execution_options(autocommit=True)
                 result = con.execute(statement)
+            # except SQLAlchemyError as msg:
             except Exception as msg:
                 if self.debug:
                     raise msg
                 error = msg.args[0].split('\n')[0]
-                if verbose:
-                    logger.info("###")  # newline before error
-                logger.error("Query failed:")
-                logger.error(query)
-                logger.error("\t%s" % error)
+                if from_file:
+                    logger.error(f"SQL file: {from_file}")
+                logger.error("%s" % error)
+                if print_failed_query:
+                    logger.error(f"Failed query:\n{query}\n")
                 self.n_queries_failed += 1
                 return
+
         t2 = time.time()
 
-        if verbose:
-            # NOTE: if multiple queries, then rowcount only last number of inserted/updated rows
-            self.log_query_completed_sqlquery(query, result.rowcount, t2 - t1)
+        # NOTE: if multiple queries, then rowcount only last number of inserted/updated rows
+        self.log_query_completed_sqlquery(query, result.rowcount, t2 - t1)
 
         # Note: only tracks row count correctly if 1 insert per file and no update/delete scripts
         if result.rowcount > 0 and self.parse_query_type(query) in ['INTO', 'CREATE']:
@@ -178,7 +198,8 @@ class EtlWrapper:
         return self.log_table_completed(None, row_count, execution_time)
 
     @staticmethod
-    def log_table_completed(table_into, row_count, execution_time, prefix='INTO', show_count_per_record=False):
+    def log_table_completed(table_into, row_count, execution_time, prefix='INTO',
+                            show_count_per_record=False):
         if table_into:
             table_into_message = prefix + ' ' + table_into
         else:
@@ -262,11 +283,12 @@ class EtlWrapper:
         total_seconds = time.time() - self.t_start
         m, s = divmod(total_seconds, 60)
         h, m = divmod(m, 60)
-        logger.info('Run time: {:>20.1f} seconds ({:>1.0f}:{:>02.0f}:{:>02.0f})'.format(total_seconds, h, m, s))
+        logger.info('Run time: {:>20.1f} seconds ({:>1.0f}:{:>02.0f}:{:>02.0f})'
+                    .format(total_seconds, h, m, s))
 
     def log_summary(self):
-        logger.info("Queries successfully executed: %d" % self.n_queries_executed)
-        logger.info("Queries failed: %d" % self.n_queries_failed)
+        logger.info("Queries/transformations successfully executed: %d" % self.n_queries_executed)
+        logger.info("Queries/transformations failed: %d" % self.n_queries_failed)
         logger.info("Rows inserted: {:,}".format(self.total_rows_inserted))
 
     def log_tables_rowcounts(self, source_data_dir: Path, do_log_total=True):

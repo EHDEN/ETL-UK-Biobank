@@ -13,6 +13,7 @@
 # GNU General Public License for more details.
 
 from pathlib import Path
+from typing import Optional
 import logging
 from src.main.python.core import EtlWrapper
 from src.main.python.core.source_data import SourceData
@@ -29,8 +30,9 @@ class Wrapper(EtlWrapper):
         self.source_folder = Path(config['run_options']['source_data_folder'])
         self.path_mapping_tables = Path('./resources/mapping_tables')
         self.path_sql_transformations = Path('./src/main/sql')
+
         # NOTE: replace the following with project-specific source table names!
-        self.source_table_123 = None
+        self.source_file_delimiter = ','
 
     def run(self):
 
@@ -49,16 +51,20 @@ class Wrapper(EtlWrapper):
         # (make sure execution follows order of table dependencies)
 
         # python transformation:
-        # self.execute_transformation(sample_transformation_name)
+        self.execute_transformation(assessment_center_to_location)
+        self.execute_transformation(baseline_to_person)
 
         # sql transformation:
         # self.execute_sql_file(self.path_sql_transformations / 'sample_script.sql')
 
+        logger.info('{:-^100}'.format(' Summary stats '))
+
         self.log_summary()
         self.log_runtime()
 
-    # NOTE: replace the following with project-specific functions to load source tables!
-    def get_sample_source_table(self):
-        if not self.sample_source_table:
-            self.sample_source_table = SourceData(self.source_folder / 'sample_source_table.csv')
-        return self.sample_source_table
+    def get_source_data(self, source_file, custom_delimiter: Optional[str]=None):
+        if custom_delimiter:
+            delimiter = custom_delimiter
+        else:
+            delimiter = self.source_file_delimiter
+        return SourceData(self.source_folder / source_file, delimiter=delimiter)
