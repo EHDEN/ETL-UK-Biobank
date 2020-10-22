@@ -17,7 +17,7 @@ config <- yaml.load_file('config.yml')
 
 # Initialize the framework once -------------------------------------------
 # NOTE: remove initFramework() from TestFramework.R, otherwise it resets with every import!
-source('TestFramework.R')
+source('TestFramework_ukbb.R')
 initFramework()
 
 # Import test cases ------------------------------------------------------------
