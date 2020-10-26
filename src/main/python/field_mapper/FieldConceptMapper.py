@@ -44,13 +44,12 @@ class FieldConceptMapper:
             raise FileNotFoundError(f"No such directory: '{directory}'")
 
         for usagi_path in directory.glob('*.csv'):
-            if self.verbose_level == FieldConceptMapper.VERBOSE_FILE:
+            if self.verbose_level >= FieldConceptMapper.VERBOSE_FILE:
                 print(f"Loading {usagi_path.name}...")
             self._load_usagi(usagi_path)
 
     @staticmethod
     def _load_map(file_path: Path):
-        # TODO: store filename for reference
         with file_path.open(encoding='ISO-8859-2') as f_in:
             for row in csv.DictReader(f_in):
                 yield row
@@ -58,15 +57,14 @@ class FieldConceptMapper:
     def _load_usagi(self, file_path: Path):
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row)
-            if self.verbose_level == FieldConceptMapper.VERBOSE_CODE:
+            if self.verbose_level >= FieldConceptMapper.VERBOSE_CODE:
                 print(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
 
-            # TODO: ignore status
             code_mapping = self.field_mappings.setdefault(
                 usagi_mapping.field_id,
                 FieldMapping(usagi_mapping.field_id)
             )
-            code_mapping.add(usagi_mapping)
+            code_mapping.add(usagi_mapping, file_path.name)
 
     def has_mapping_for_field(self, field_id: str):
         return field_id in self.field_mappings
@@ -82,7 +80,8 @@ class FieldConceptMapper:
         The mapping can be one of three types:
         1. Only concept. Variable and value together map to one concept_id.
         2. Categorical. Variable maps to a concept_id, value maps to a value_as_concept_id.
-        3. Numeric. If no mapping for value found, the value is assumed to be numeric. Variable maps to concept_id and unit_concept_id. Value is converted to float.
+        3. Numeric. If no mapping for value found, the value is assumed to be numeric. Variable maps to concept_id and unit_concept_id.
+                    Value is converted to float.
         :param field_id: integer
         :param value: string
         :return: MappingTarget
@@ -130,7 +129,7 @@ class FieldConceptMapper:
 
 
 if __name__ == '__main__':
-    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), FieldConceptMapper.VERBOSE_CODE)
+    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), FieldConceptMapper.VERBOSE_FILE)
 
     # Some simple tests
     print(mapper.lookup('41256', '0552'))  # unknown field and value
@@ -139,4 +138,5 @@ if __name__ == '__main__':
     print(mapper.lookup('2443', '1'))
 
     # get the mapping of a field
-    print(mapper.get_mapping('2335'))
+    # print(mapper.get_mapping('2335'))
+    print(mapper.get_mapping('4041'))

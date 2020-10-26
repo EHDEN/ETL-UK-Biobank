@@ -50,3 +50,7 @@ class TargetMapping:
         self.type: MappingType = MappingType[row['mappingType']]
         self.status_set_by: str = row['statusSetBy']
         self.status_set_on: datetime = datetime.fromtimestamp(to_int(row['statusSetOn'])/1000)
+
+    def __str__(self):
+        return f'concept_id: {self.concept_id}, ' \
+               f'type: {self.type}'

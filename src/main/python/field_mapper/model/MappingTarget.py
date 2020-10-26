@@ -37,4 +37,3 @@ class MappingTarget:
                f'value_source_value: {self.value_source_value}, ' \
                f'variable_comment: {self.variable_comment}, ' \
                f'value_comment: {self.value_comment}'
-
