@@ -20,7 +20,7 @@ import logging
 
 from src.main.python.field_mapper.model.MappingTarget import MappingTarget
 from src.main.python.field_mapper.model.UsagiModel import UsagiRow
-from src.main.python.field_mapper.model.FieldMapping import FieldMapping
+from src.main.python.field_mapper.model.MappingModel import FieldMapping
 
 logger = logging.getLogger(__name__)
 
@@ -74,7 +74,7 @@ class FieldConceptMapper:
             return self.field_mappings[field_id]
         return None
 
-    def lookup(self, field_id: str, value: str) -> MappingTarget:
+    def lookup(self, field_id: str, value: str) -> Optional[MappingTarget]:
         """
         For given variable/value pair, looks up the target concept_id, value_as_concept_id, value_as_number and unit_concept_id.
         The mapping can be one of three types:
@@ -97,7 +97,11 @@ class FieldConceptMapper:
 
         field_mapping = self.get_mapping(field_id)
 
+        if field_mapping.is_ignored():
+            return None
+
         if field_mapping.has_unit():
+            # Create numeric target
             target.concept_id = field_mapping.event_target.concept_id
             target.value_as_number = float(value)
             target.unit_concept_id = field_mapping.unit_target.concept_id
@@ -106,7 +110,12 @@ class FieldConceptMapper:
             return target
 
         if field_mapping.has_values():
+            # Create categorical target
             value_mapping = field_mapping.values.get(value)
+
+            if value_mapping.is_ignored():
+                return None
+
             if not value_mapping:
                 print(f'Value "{value}" for field_id "{field_id}" is unknown')
                 target.concept_id = 0
@@ -136,6 +145,7 @@ if __name__ == '__main__':
     print(mapper.lookup('30785', '8'))
     print(mapper.lookup('2443', '0'))
     print(mapper.lookup('2443', '1'))
+    print(mapper.lookup('4041', '-3'))
 
     # get the mapping of a field
     # print(mapper.get_mapping('2335'))
