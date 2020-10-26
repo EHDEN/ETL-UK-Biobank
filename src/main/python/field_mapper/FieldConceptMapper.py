@@ -26,9 +26,13 @@ logger = logging.getLogger(__name__)
 
 
 class FieldConceptMapper:
-    def __init__(self, in_directory: Path, verbose: bool = False):
+    VERBOSE_SILENT = 0
+    VERBOSE_FILE = 1
+    VERBOSE_CODE = 2
+
+    def __init__(self, in_directory: Path, verbose_level: int = 0):
         self.field_mappings: Dict[str, FieldMapping] = {}
-        self.verbose = verbose
+        self.verbose_level = verbose_level
         self.load(in_directory)
 
     def __call__(self, field_id: str, value: str) -> MappingTarget:
@@ -40,7 +44,7 @@ class FieldConceptMapper:
             raise FileNotFoundError(f"No such directory: '{directory}'")
 
         for usagi_path in directory.glob('*.csv'):
-            if self.verbose:
+            if self.verbose_level == FieldConceptMapper.VERBOSE_FILE:
                 print(f"Loading {usagi_path.name}...")
             self._load_usagi(usagi_path)
 
@@ -54,10 +58,14 @@ class FieldConceptMapper:
     def _load_usagi(self, file_path: Path):
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row)
-            field_id = usagi_mapping.field_id
+            if self.verbose_level == FieldConceptMapper.VERBOSE_CODE:
+                print(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
 
             # TODO: ignore status
-            code_mapping = self.field_mappings.setdefault(field_id, FieldMapping(field_id))
+            code_mapping = self.field_mappings.setdefault(
+                usagi_mapping.field_id,
+                FieldMapping(usagi_mapping.field_id)
+            )
             code_mapping.add(usagi_mapping)
 
     def has_mapping_for_field(self, field_id: str):
@@ -122,7 +130,7 @@ class FieldConceptMapper:
 
 
 if __name__ == '__main__':
-    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'))
+    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), FieldConceptMapper.VERBOSE_CODE)
 
     # Some simple tests
     print(mapper.lookup('41256', '0552'))  # unknown field and value
