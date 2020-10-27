@@ -26,26 +26,21 @@ logger = logging.getLogger(__name__)
 
 
 class FieldConceptMapper:
-    VERBOSE_SILENT = 0
-    VERBOSE_FILE = 1
-    VERBOSE_CODE = 2
 
-    def __init__(self, in_directory: Path, verbose_level: int = 0):
+    def __init__(self, in_directory: Path):
         self.field_mappings: Dict[str, FieldMapping] = {}
-        self.verbose_level = verbose_level
         self.load(in_directory)
 
     def __call__(self, field_id: str, value: str) -> MappingTarget:
-        # Convenience method
-        return self.lookup(field_id, value)
+        # Convenience method to allow field_mapper(field_id, value)
+        return self._lookup(field_id, value)
 
     def load(self, directory: Path):
         if not directory.exists():
             raise FileNotFoundError(f"No such directory: '{directory}'")
 
         for usagi_path in directory.glob('*.csv'):
-            if self.verbose_level >= FieldConceptMapper.VERBOSE_FILE:
-                print(f"Loading {usagi_path.name}...")
+            logger.info(f"Loading {usagi_path.name}...")
             self._load_usagi(usagi_path)
 
     @staticmethod
@@ -57,8 +52,7 @@ class FieldConceptMapper:
     def _load_usagi(self, file_path: Path):
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row)
-            if self.verbose_level >= FieldConceptMapper.VERBOSE_CODE:
-                print(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
+            logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
 
             code_mapping = self.field_mappings.setdefault(
                 usagi_mapping.field_id,
@@ -66,36 +60,31 @@ class FieldConceptMapper:
             )
             code_mapping.add(usagi_mapping, file_path.name)
 
-    def has_mapping_for_field(self, field_id: str):
-        return field_id in self.field_mappings
-
     def get_mapping(self, field_id: str) -> Optional[FieldMapping]:
         if field_id in self.field_mappings:
             return self.field_mappings[field_id]
         return None
 
-    def lookup(self, field_id: str, value: str) -> Optional[MappingTarget]:
+    def _lookup(self, field_id: str, value: str) -> Optional[MappingTarget]:
         """
-        For given variable/value pair, looks up the target concept_id, value_as_concept_id, value_as_number and unit_concept_id.
-        The mapping can be one of three types:
-        1. Only concept. Variable and value together map to one concept_id.
-        2. Categorical. Variable maps to a concept_id, value maps to a value_as_concept_id.
-        3. Numeric. If no mapping for value found, the value is assumed to be numeric. Variable maps to concept_id and unit_concept_id.
-                    Value is converted to float.
-        :param field_id: integer
+        For given field_id/value pair, looks up the target concept_id, value_as_concept_id, value_as_number and unit_concept_id.
+        The mapping can be one of two types:
+        1. Has a unit. If no mapping for value found, the value is assumed to be numeric (float). Variable maps to concept_id and unit_concept_id.
+        2. Has a value. The field_id/value pair maps to a concept_id and (optionally) a value_as_concept_id.
+        :param field_id: string
         :param value: string
         :return: MappingTarget
         """
         target = MappingTarget()
         target.value_source_value = value
 
-        if not self.has_mapping_for_field(field_id):
-            print(f'Field "{field_id}" is unknown')
+        field_mapping = self.get_mapping(field_id)
+
+        if not field_mapping:
+            logger.warning(f'Field "{field_id}" is unknown')
             target.concept_id = 0
             target.source_value = field_id
             return target
-
-        field_mapping = self.get_mapping(field_id)
 
         if field_mapping.is_ignored():
             return None
@@ -113,18 +102,18 @@ class FieldConceptMapper:
             # Create categorical target
             value_mapping = field_mapping.values.get(value)
 
-            if value_mapping.is_ignored():
-                return None
-
             if not value_mapping:
-                print(f'Value "{value}" for field_id "{field_id}" is unknown')
+                logger.warning(f'Value "{value}" for field_id "{field_id}" is unknown')
                 target.concept_id = 0
                 target.source_value = field_id
                 return target
 
+            if value_mapping.is_ignored():
+                return None
+
             if not value_mapping.event_target:
                 target.concept_id = 0
-                print(f'Warning "{field_id}-{value}" does not have an event_concept_id associated')
+                logger.warning(f'"{field_id}-{value}" does not have an event_concept_id associated')
             else:
                 target.concept_id = value_mapping.event_target.concept_id
 
@@ -134,18 +123,21 @@ class FieldConceptMapper:
             target.value_source_value = value
             return target
 
-        raise Warning('This should not happen, mapping is either has unit or value mapping.')
+        raise Warning('"{field_id}-{value}" This should not happen, mapping has to be either a unit or value mapping.')
 
 
 if __name__ == '__main__':
-    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), FieldConceptMapper.VERBOSE_FILE)
+    logger.setLevel('INFO')
+    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'))
 
     # Some simple tests
-    print(mapper.lookup('41256', '0552'))  # unknown field and value
-    print(mapper.lookup('30785', '8'))
-    print(mapper.lookup('2443', '0'))
-    print(mapper.lookup('2443', '1'))
-    print(mapper.lookup('4041', '-3'))
+    print(mapper('50', '180'))  # numeric
+    print(mapper('30785', '8'))
+    print(mapper('2443', '0'))
+    print(mapper('2443', '1'))
+    print(mapper('4041', '-3'))  # Ignored
+    print(mapper('41256', '0552'))  # unknown field
+    print(mapper('4041', '123'))  # unknown value for categorical field
 
     # get the mapping of a field
     # print(mapper.get_mapping('2335'))
