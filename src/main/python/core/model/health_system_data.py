@@ -7,12 +7,12 @@ metadata = base.metadata
 
 class CareSite(base):
     __tablename__ = 'care_site'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     care_site_id = Column(Integer, primary_key=True)
     care_site_name = Column(String(255))
     place_of_service_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
-    location_id = Column(ForeignKey('cdm_531.location.location_id'))
+    location_id = Column(ForeignKey('omopcdm.location.location_id'))
     care_site_source_value = Column(String(50))
     place_of_service_source_value = Column(String(50))
 
@@ -22,7 +22,7 @@ class CareSite(base):
 
 class Location(base):
     __tablename__ = 'location'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     location_id = Column(Integer, primary_key=True)
     address_1 = Column(String(50))
@@ -36,14 +36,14 @@ class Location(base):
 
 class Provider(base):
     __tablename__ = 'provider'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     provider_id = Column(Integer, primary_key=True)
     provider_name = Column(String(255))
     npi = Column(String(20))
     dea = Column(String(20))
     specialty_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
-    care_site_id = Column(ForeignKey('cdm_531.care_site.care_site_id'))
+    care_site_id = Column(ForeignKey('omopcdm.care_site.care_site_id'))
     year_of_birth = Column(Integer)
     gender_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     provider_source_value = Column(String(50))

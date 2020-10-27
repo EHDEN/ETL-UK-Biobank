@@ -2,7 +2,7 @@
 database:
   host: 'localhost'
   port: 6000
-  database_name: 'ukbb'
+  database_name: 'ukb'
   username: 'postgres'
   # Comment out password to provide at runtime
   password: 'postgres'
@@ -12,9 +12,9 @@ database:
 # custom ORM tables, for which you would like to have dynamic schema
 # names.
 schema_translate_map:
-  cdm_schema: 'cdm_531'
+  cdm_schema: 'omopcdm'
   vocabulary_schema: 'vocab'
 
 run_options:
-  source_data_folder: './resources/synthetic_data/'
+  source_data_folder: './src/test/R/test_intermediates/source_data'
   debug_mode: False

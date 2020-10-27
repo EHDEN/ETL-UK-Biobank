@@ -100,7 +100,7 @@ initFramework <- function() {
   defaults$laboratory <- '3'
   defaults$origin <- '1'
   defaults$result <- '0'
-  assign('covid19_result', defaults, envir = frameworkContext$defaultValues)
+  assign('covid', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1085407'
@@ -384,8 +384,8 @@ set_defaults_death_cause <- function(eid, ins_index, arr_index, level, cause_icd
   invisible(defaults)
 }
 
-set_defaults_covid19_result <- function(eid, specdate, spectype, laboratory, origin, result) {
-  defaults <- get('covid19_result', envir = frameworkContext$defaultValues)
+set_defaults_covid <- function(eid, specdate, spectype, laboratory, origin, result) {
+  defaults <- get('covid', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -404,7 +404,7 @@ set_defaults_covid19_result <- function(eid, specdate, spectype, laboratory, ori
   if (!missing(result)) {
     defaults$result <- result
   }
-  assign('covid19_result', defaults, envir = frameworkContext$defaultValues)
+  assign('covid', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
@@ -514,8 +514,8 @@ get_defaults_death_cause <- function() {
   return(defaults)
 }
 
-get_defaults_covid19_result <- function() {
-  defaults <- get('covid19_result', envir = frameworkContext$defaultValues)
+get_defaults_covid <- function() {
+  defaults <- get('covid', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
@@ -1144,14 +1144,14 @@ add_death_cause <- function(eid, ins_index, arr_index, level, cause_icd10) {
   invisible(NULL)
 }
 
-add_covid19_result <- function(eid, specdate, spectype, laboratory, origin, result) {
-  defaults <- get('covid19_result', envir = frameworkContext$defaultValues)
+add_covid <- function(eid, specdate, spectype, laboratory, origin, result) {
+  defaults <- get('covid', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1159,7 +1159,7 @@ add_covid19_result <- function(eid, specdate, spectype, laboratory, origin, resu
   if (missing(specdate)) {
     specdate <- defaults$specdate
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.specdate')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid.specdate')
   }
   fields <- c(fields, "specdate")
   values <- c(values, if (is.null(specdate)) "NULL" else if (is(specdate, "subQuery")) paste0("(", as.character(specdate), ")") else paste0("'", as.character(specdate), "'"))
@@ -1167,7 +1167,7 @@ add_covid19_result <- function(eid, specdate, spectype, laboratory, origin, resu
   if (missing(spectype)) {
     spectype <- defaults$spectype
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.spectype')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid.spectype')
   }
   fields <- c(fields, "spectype")
   values <- c(values, if (is.null(spectype)) "NULL" else if (is(spectype, "subQuery")) paste0("(", as.character(spectype), ")") else paste0("'", as.character(spectype), "'"))
@@ -1175,7 +1175,7 @@ add_covid19_result <- function(eid, specdate, spectype, laboratory, origin, resu
   if (missing(laboratory)) {
     laboratory <- defaults$laboratory
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.laboratory')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid.laboratory')
   }
   fields <- c(fields, "laboratory")
   values <- c(values, if (is.null(laboratory)) "NULL" else if (is(laboratory, "subQuery")) paste0("(", as.character(laboratory), ")") else paste0("'", as.character(laboratory), "'"))
@@ -1183,7 +1183,7 @@ add_covid19_result <- function(eid, specdate, spectype, laboratory, origin, resu
   if (missing(origin)) {
     origin <- defaults$origin
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.origin')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid.origin')
   }
   fields <- c(fields, "origin")
   values <- c(values, if (is.null(origin)) "NULL" else if (is(origin, "subQuery")) paste0("(", as.character(origin), ")") else paste0("'", as.character(origin), "'"))
@@ -1191,12 +1191,12 @@ add_covid19_result <- function(eid, specdate, spectype, laboratory, origin, resu
   if (missing(result)) {
     result <- defaults$result
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.result')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid.result')
   }
   fields <- c(fields, "result")
   values <- c(values, if (is.null(result)) "NULL" else if (is(result, "subQuery")) paste0("(", as.character(result), ")") else paste0("'", as.character(result), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid19_result", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
@@ -11465,7 +11465,7 @@ generateInsertSql <- function(databaseSchema = NULL) {
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_oper;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death_cause;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.covid19_result;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.covid;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_diag;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_scripts;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death;")
