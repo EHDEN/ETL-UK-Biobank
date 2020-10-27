@@ -17,14 +17,14 @@ initFramework <- function() {
   defaults$value1 <- ''
   defaults$value2 <- ''
   defaults$value3 <- ''
-  assign('gp_clinical_c', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_clinical', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1133122'
   defaults$data_provider <- '3'
   defaults$reg_date <- '02/02/1902'
   defaults$deduct_date <- ''
-  assign('gp_registrations_c', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_registrations', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1130218'
@@ -38,7 +38,7 @@ initFramework <- function() {
   defaults$oper4_nb <- ''
   defaults$posopdur <- ''
   defaults$preopdur <- ''
-  assign('hesin_oper_c', defaults, envir = frameworkContext$defaultValues)
+  assign('hesin_oper', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1130218'
@@ -83,7 +83,7 @@ initFramework <- function() {
   defaults$disdest_uni <- '1000'
   defaults$disdest <- '19'
   defaults$carersi <- '99'
-  assign('hesin_c', defaults, envir = frameworkContext$defaultValues)
+  assign('hesin', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1089123'
@@ -91,7 +91,7 @@ initFramework <- function() {
   defaults$arr_index <- '0'
   defaults$level <- '2'
   defaults$cause_icd10 <- 'I259'
-  assign('death_cause_c', defaults, envir = frameworkContext$defaultValues)
+  assign('death_cause', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1046090'
@@ -100,7 +100,7 @@ initFramework <- function() {
   defaults$laboratory <- '3'
   defaults$origin <- '1'
   defaults$result <- '0'
-  assign('covid19_result_c', defaults, envir = frameworkContext$defaultValues)
+  assign('covid19_result', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1085407'
@@ -111,7 +111,7 @@ initFramework <- function() {
   defaults$diag_icd9_nb <- ''
   defaults$diag_icd10 <- 'I10'
   defaults$diag_icd10_nb <- ''
-  assign('hesin_diag_c', defaults, envir = frameworkContext$defaultValues)
+  assign('hesin_diag', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1006846'
@@ -122,7 +122,7 @@ initFramework <- function() {
   defaults$dmd_code <- ''
   defaults$drug_name <- ''
   defaults$quantity <- ''
-  assign('gp_scripts_c', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_scripts', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- ''
@@ -130,7 +130,7 @@ initFramework <- function() {
   defaults$dsource <- 'E/W'
   defaults$source <- '2'
   defaults$date_of_death <- ''
-  assign('death_c', defaults, envir = frameworkContext$defaultValues)
+  assign('death', defaults, envir = frameworkContext$defaultValues)
 
   frameworkContext$sourceFieldsMapped <- c(
   )
@@ -144,8 +144,8 @@ initFramework <- function() {
 
 initFramework()
 
-set_defaults_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, value1, value2, value3) {
-  defaults <- get('gp_clinical_c', envir = frameworkContext$defaultValues)
+set_defaults_gp_clinical <- function(eid, data_provider, event_dt, read_2, read_3, value1, value2, value3) {
+  defaults <- get('gp_clinical', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -170,12 +170,12 @@ set_defaults_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, rea
   if (!missing(value3)) {
     defaults$value3 <- value3
   }
-  assign('gp_clinical_c', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_clinical', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_gp_registrations_c <- function(eid, data_provider, reg_date, deduct_date) {
-  defaults <- get('gp_registrations_c', envir = frameworkContext$defaultValues)
+set_defaults_gp_registrations <- function(eid, data_provider, reg_date, deduct_date) {
+  defaults <- get('gp_registrations', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -188,12 +188,12 @@ set_defaults_gp_registrations_c <- function(eid, data_provider, reg_date, deduct
   if (!missing(deduct_date)) {
     defaults$deduct_date <- deduct_date
   }
-  assign('gp_registrations_c', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_registrations', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, oper3_nb, oper4, oper4_nb, posopdur, preopdur) {
-  defaults <- get('hesin_oper_c', envir = frameworkContext$defaultValues)
+set_defaults_hesin_oper <- function(eid, ins_index, arr_index, level, opdate, oper3, oper3_nb, oper4, oper4_nb, posopdur, preopdur) {
+  defaults <- get('hesin_oper', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -227,12 +227,12 @@ set_defaults_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, 
   if (!missing(preopdur)) {
     defaults$preopdur <- preopdur
   }
-  assign('hesin_oper_c', defaults, envir = frameworkContext$defaultValues)
+  assign('hesin_oper', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidur, bedyear, epistat, epitype, epiorder, spell_index, spell_seq, spelbgin, spelend, speldur, pctcode, gpprpct, category, elecdate, elecdur, admidate, admimeth_uni, admimeth, admisorc_uni, admisorc, firstreg, classpat_uni, classpat, intmanag_uni, intmanag, mainspef_uni, mainspef, tretspef_uni, tretspef, operstat, disdate, dismeth_uni, dismeth, disdest_uni, disdest, carersi) {
-  defaults <- get('hesin_c', envir = frameworkContext$defaultValues)
+set_defaults_hesin <- function(eid, ins_index, dsource, source, epistart, epiend, epidur, bedyear, epistat, epitype, epiorder, spell_index, spell_seq, spelbgin, spelend, speldur, pctcode, gpprpct, category, elecdate, elecdur, admidate, admimeth_uni, admimeth, admisorc_uni, admisorc, firstreg, classpat_uni, classpat, intmanag_uni, intmanag, mainspef_uni, mainspef, tretspef_uni, tretspef, operstat, disdate, dismeth_uni, dismeth, disdest_uni, disdest, carersi) {
+  defaults <- get('hesin', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -359,12 +359,12 @@ set_defaults_hesin_c <- function(eid, ins_index, dsource, source, epistart, epie
   if (!missing(carersi)) {
     defaults$carersi <- carersi
   }
-  assign('hesin_c', defaults, envir = frameworkContext$defaultValues)
+  assign('hesin', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_death_cause_c <- function(eid, ins_index, arr_index, level, cause_icd10) {
-  defaults <- get('death_cause_c', envir = frameworkContext$defaultValues)
+set_defaults_death_cause <- function(eid, ins_index, arr_index, level, cause_icd10) {
+  defaults <- get('death_cause', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -380,12 +380,12 @@ set_defaults_death_cause_c <- function(eid, ins_index, arr_index, level, cause_i
   if (!missing(cause_icd10)) {
     defaults$cause_icd10 <- cause_icd10
   }
-  assign('death_cause_c', defaults, envir = frameworkContext$defaultValues)
+  assign('death_cause', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_covid19_result_c <- function(eid, specdate, spectype, laboratory, origin, result) {
-  defaults <- get('covid19_result_c', envir = frameworkContext$defaultValues)
+set_defaults_covid19_result <- function(eid, specdate, spectype, laboratory, origin, result) {
+  defaults <- get('covid19_result', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -404,12 +404,12 @@ set_defaults_covid19_result_c <- function(eid, specdate, spectype, laboratory, o
   if (!missing(result)) {
     defaults$result <- result
   }
-  assign('covid19_result_c', defaults, envir = frameworkContext$defaultValues)
+  assign('covid19_result', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_icd9_nb, diag_icd10, diag_icd10_nb) {
-  defaults <- get('hesin_diag_c', envir = frameworkContext$defaultValues)
+set_defaults_hesin_diag <- function(eid, ins_index, arr_index, level, diag_icd9, diag_icd9_nb, diag_icd10, diag_icd10_nb) {
+  defaults <- get('hesin_diag', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -434,12 +434,12 @@ set_defaults_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd
   if (!missing(diag_icd10_nb)) {
     defaults$diag_icd10_nb <- diag_icd10_nb
   }
-  assign('hesin_diag_c', defaults, envir = frameworkContext$defaultValues)
+  assign('hesin_diag', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
-  defaults <- get('gp_scripts_c', envir = frameworkContext$defaultValues)
+set_defaults_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
+  defaults <- get('gp_scripts', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -464,12 +464,12 @@ set_defaults_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bn
   if (!missing(quantity)) {
     defaults$quantity <- quantity
   }
-  assign('gp_scripts_c', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_scripts', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
 set_defaults_death_c <- function(eid, ins_index, dsource, source, date_of_death) {
-  defaults <- get('death_c', envir = frameworkContext$defaultValues)
+  defaults <- get('death', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -485,52 +485,52 @@ set_defaults_death_c <- function(eid, ins_index, dsource, source, date_of_death)
   if (!missing(date_of_death)) {
     defaults$date_of_death <- date_of_death
   }
-  assign('death_c', defaults, envir = frameworkContext$defaultValues)
+  assign('death', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-get_defaults_gp_clinical_c <- function() {
-  defaults <- get('gp_clinical_c', envir = frameworkContext$defaultValues)
+get_defaults_gp_clinical <- function() {
+  defaults <- get('gp_clinical', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_gp_registrations_c <- function() {
-  defaults <- get('gp_registrations_c', envir = frameworkContext$defaultValues)
+get_defaults_gp_registrations <- function() {
+  defaults <- get('gp_registrations', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_hesin_oper_c <- function() {
-  defaults <- get('hesin_oper_c', envir = frameworkContext$defaultValues)
+get_defaults_hesin_oper <- function() {
+  defaults <- get('hesin_oper', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_hesin_c <- function() {
-  defaults <- get('hesin_c', envir = frameworkContext$defaultValues)
+get_defaults_hesin <- function() {
+  defaults <- get('hesin', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_death_cause_c <- function() {
-  defaults <- get('death_cause_c', envir = frameworkContext$defaultValues)
+get_defaults_death_cause <- function() {
+  defaults <- get('death_cause', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_covid19_result_c <- function() {
-  defaults <- get('covid19_result_c', envir = frameworkContext$defaultValues)
+get_defaults_covid19_result <- function() {
+  defaults <- get('covid19_result', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_hesin_diag_c <- function() {
-  defaults <- get('hesin_diag_c', envir = frameworkContext$defaultValues)
+get_defaults_hesin_diag <- function() {
+  defaults <- get('hesin_diag', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_gp_scripts_c <- function() {
-  defaults <- get('gp_scripts_c', envir = frameworkContext$defaultValues)
+get_defaults_gp_scripts <- function() {
+  defaults <- get('gp_scripts', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
 get_defaults_death_c <- function() {
-  defaults <- get('death_c', envir = frameworkContext$defaultValues)
+  defaults <- get('death', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
@@ -539,14 +539,14 @@ declareTest <- function(id, description) {
   frameworkContext$testDescription <- description
 }
 
-add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, value1, value2, value3) {
-  defaults <- get('gp_clinical_c', envir = frameworkContext$defaultValues)
+add_gp_clinical <- function(eid, data_provider, event_dt, read_2, read_3, value1, value2, value3) {
+  defaults <- get('gp_clinical', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -554,7 +554,7 @@ add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, valu
   if (missing(data_provider)) {
     data_provider <- defaults$data_provider
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.data_provider')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.data_provider')
   }
   fields <- c(fields, "data_provider")
   values <- c(values, if (is.null(data_provider)) "NULL" else if (is(data_provider, "subQuery")) paste0("(", as.character(data_provider), ")") else paste0("'", as.character(data_provider), "'"))
@@ -562,7 +562,7 @@ add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, valu
   if (missing(event_dt)) {
     event_dt <- defaults$event_dt
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.event_dt')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.event_dt')
   }
   fields <- c(fields, "event_dt")
   values <- c(values, if (is.null(event_dt)) "NULL" else if (is(event_dt, "subQuery")) paste0("(", as.character(event_dt), ")") else paste0("'", as.character(event_dt), "'"))
@@ -570,7 +570,7 @@ add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, valu
   if (missing(read_2)) {
     read_2 <- defaults$read_2
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.read_2')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.read_2')
   }
   fields <- c(fields, "read_2")
   values <- c(values, if (is.null(read_2)) "NULL" else if (is(read_2, "subQuery")) paste0("(", as.character(read_2), ")") else paste0("'", as.character(read_2), "'"))
@@ -578,7 +578,7 @@ add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, valu
   if (missing(read_3)) {
     read_3 <- defaults$read_3
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.read_3')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.read_3')
   }
   fields <- c(fields, "read_3")
   values <- c(values, if (is.null(read_3)) "NULL" else if (is(read_3, "subQuery")) paste0("(", as.character(read_3), ")") else paste0("'", as.character(read_3), "'"))
@@ -586,7 +586,7 @@ add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, valu
   if (missing(value1)) {
     value1 <- defaults$value1
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.value1')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.value1')
   }
   fields <- c(fields, "value1")
   values <- c(values, if (is.null(value1)) "NULL" else if (is(value1, "subQuery")) paste0("(", as.character(value1), ")") else paste0("'", as.character(value1), "'"))
@@ -594,7 +594,7 @@ add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, valu
   if (missing(value2)) {
     value2 <- defaults$value2
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.value2')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.value2')
   }
   fields <- c(fields, "value2")
   values <- c(values, if (is.null(value2)) "NULL" else if (is(value2, "subQuery")) paste0("(", as.character(value2), ")") else paste0("'", as.character(value2), "'"))
@@ -602,24 +602,24 @@ add_gp_clinical_c <- function(eid, data_provider, event_dt, read_2, read_3, valu
   if (missing(value3)) {
     value3 <- defaults$value3
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical_c.value3')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_clinical.value3')
   }
   fields <- c(fields, "value3")
   values <- c(values, if (is.null(value3)) "NULL" else if (is(value3, "subQuery")) paste0("(", as.character(value3), ")") else paste0("'", as.character(value3), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_clinical_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_clinical", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_gp_registrations_c <- function(eid, data_provider, reg_date, deduct_date) {
-  defaults <- get('gp_registrations_c', envir = frameworkContext$defaultValues)
+add_gp_registrations <- function(eid, data_provider, reg_date, deduct_date) {
+  defaults <- get('gp_registrations', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -627,7 +627,7 @@ add_gp_registrations_c <- function(eid, data_provider, reg_date, deduct_date) {
   if (missing(data_provider)) {
     data_provider <- defaults$data_provider
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations_c.data_provider')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations.data_provider')
   }
   fields <- c(fields, "data_provider")
   values <- c(values, if (is.null(data_provider)) "NULL" else if (is(data_provider, "subQuery")) paste0("(", as.character(data_provider), ")") else paste0("'", as.character(data_provider), "'"))
@@ -635,7 +635,7 @@ add_gp_registrations_c <- function(eid, data_provider, reg_date, deduct_date) {
   if (missing(reg_date)) {
     reg_date <- defaults$reg_date
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations_c.reg_date')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations.reg_date')
   }
   fields <- c(fields, "reg_date")
   values <- c(values, if (is.null(reg_date)) "NULL" else if (is(reg_date, "subQuery")) paste0("(", as.character(reg_date), ")") else paste0("'", as.character(reg_date), "'"))
@@ -643,24 +643,24 @@ add_gp_registrations_c <- function(eid, data_provider, reg_date, deduct_date) {
   if (missing(deduct_date)) {
     deduct_date <- defaults$deduct_date
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations_c.deduct_date')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_registrations.deduct_date')
   }
   fields <- c(fields, "deduct_date")
   values <- c(values, if (is.null(deduct_date)) "NULL" else if (is(deduct_date, "subQuery")) paste0("(", as.character(deduct_date), ")") else paste0("'", as.character(deduct_date), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_registrations_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_registrations", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, oper3_nb, oper4, oper4_nb, posopdur, preopdur) {
-  defaults <- get('hesin_oper_c', envir = frameworkContext$defaultValues)
+add_hesin_oper <- function(eid, ins_index, arr_index, level, opdate, oper3, oper3_nb, oper4, oper4_nb, posopdur, preopdur) {
+  defaults <- get('hesin_oper', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -668,7 +668,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(ins_index)) {
     ins_index <- defaults$ins_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.ins_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.ins_index')
   }
   fields <- c(fields, "ins_index")
   values <- c(values, if (is.null(ins_index)) "NULL" else if (is(ins_index, "subQuery")) paste0("(", as.character(ins_index), ")") else paste0("'", as.character(ins_index), "'"))
@@ -676,7 +676,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(arr_index)) {
     arr_index <- defaults$arr_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.arr_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.arr_index')
   }
   fields <- c(fields, "arr_index")
   values <- c(values, if (is.null(arr_index)) "NULL" else if (is(arr_index, "subQuery")) paste0("(", as.character(arr_index), ")") else paste0("'", as.character(arr_index), "'"))
@@ -684,7 +684,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(level)) {
     level <- defaults$level
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.level')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.level')
   }
   fields <- c(fields, "level")
   values <- c(values, if (is.null(level)) "NULL" else if (is(level, "subQuery")) paste0("(", as.character(level), ")") else paste0("'", as.character(level), "'"))
@@ -692,7 +692,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(opdate)) {
     opdate <- defaults$opdate
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.opdate')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.opdate')
   }
   fields <- c(fields, "opdate")
   values <- c(values, if (is.null(opdate)) "NULL" else if (is(opdate, "subQuery")) paste0("(", as.character(opdate), ")") else paste0("'", as.character(opdate), "'"))
@@ -700,7 +700,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(oper3)) {
     oper3 <- defaults$oper3
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.oper3')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.oper3')
   }
   fields <- c(fields, "oper3")
   values <- c(values, if (is.null(oper3)) "NULL" else if (is(oper3, "subQuery")) paste0("(", as.character(oper3), ")") else paste0("'", as.character(oper3), "'"))
@@ -708,7 +708,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(oper3_nb)) {
     oper3_nb <- defaults$oper3_nb
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.oper3_nb')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.oper3_nb')
   }
   fields <- c(fields, "oper3_nb")
   values <- c(values, if (is.null(oper3_nb)) "NULL" else if (is(oper3_nb, "subQuery")) paste0("(", as.character(oper3_nb), ")") else paste0("'", as.character(oper3_nb), "'"))
@@ -716,7 +716,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(oper4)) {
     oper4 <- defaults$oper4
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.oper4')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.oper4')
   }
   fields <- c(fields, "oper4")
   values <- c(values, if (is.null(oper4)) "NULL" else if (is(oper4, "subQuery")) paste0("(", as.character(oper4), ")") else paste0("'", as.character(oper4), "'"))
@@ -724,7 +724,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(oper4_nb)) {
     oper4_nb <- defaults$oper4_nb
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.oper4_nb')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.oper4_nb')
   }
   fields <- c(fields, "oper4_nb")
   values <- c(values, if (is.null(oper4_nb)) "NULL" else if (is(oper4_nb, "subQuery")) paste0("(", as.character(oper4_nb), ")") else paste0("'", as.character(oper4_nb), "'"))
@@ -732,7 +732,7 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(posopdur)) {
     posopdur <- defaults$posopdur
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.posopdur')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.posopdur')
   }
   fields <- c(fields, "posopdur")
   values <- c(values, if (is.null(posopdur)) "NULL" else if (is(posopdur, "subQuery")) paste0("(", as.character(posopdur), ")") else paste0("'", as.character(posopdur), "'"))
@@ -740,24 +740,24 @@ add_hesin_oper_c <- function(eid, ins_index, arr_index, level, opdate, oper3, op
   if (missing(preopdur)) {
     preopdur <- defaults$preopdur
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper_c.preopdur')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_oper.preopdur')
   }
   fields <- c(fields, "preopdur")
   values <- c(values, if (is.null(preopdur)) "NULL" else if (is(preopdur, "subQuery")) paste0("(", as.character(preopdur), ")") else paste0("'", as.character(preopdur), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "hesin_oper_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "hesin_oper", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidur, bedyear, epistat, epitype, epiorder, spell_index, spell_seq, spelbgin, spelend, speldur, pctcode, gpprpct, category, elecdate, elecdur, admidate, admimeth_uni, admimeth, admisorc_uni, admisorc, firstreg, classpat_uni, classpat, intmanag_uni, intmanag, mainspef_uni, mainspef, tretspef_uni, tretspef, operstat, disdate, dismeth_uni, dismeth, disdest_uni, disdest, carersi) {
-  defaults <- get('hesin_c', envir = frameworkContext$defaultValues)
+add_hesin <- function(eid, ins_index, dsource, source, epistart, epiend, epidur, bedyear, epistat, epitype, epiorder, spell_index, spell_seq, spelbgin, spelend, speldur, pctcode, gpprpct, category, elecdate, elecdur, admidate, admimeth_uni, admimeth, admisorc_uni, admisorc, firstreg, classpat_uni, classpat, intmanag_uni, intmanag, mainspef_uni, mainspef, tretspef_uni, tretspef, operstat, disdate, dismeth_uni, dismeth, disdest_uni, disdest, carersi) {
+  defaults <- get('hesin', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -765,7 +765,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(ins_index)) {
     ins_index <- defaults$ins_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.ins_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.ins_index')
   }
   fields <- c(fields, "ins_index")
   values <- c(values, if (is.null(ins_index)) "NULL" else if (is(ins_index, "subQuery")) paste0("(", as.character(ins_index), ")") else paste0("'", as.character(ins_index), "'"))
@@ -773,7 +773,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(dsource)) {
     dsource <- defaults$dsource
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.dsource')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.dsource')
   }
   fields <- c(fields, "dsource")
   values <- c(values, if (is.null(dsource)) "NULL" else if (is(dsource, "subQuery")) paste0("(", as.character(dsource), ")") else paste0("'", as.character(dsource), "'"))
@@ -781,7 +781,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(source)) {
     source <- defaults$source
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.source')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.source')
   }
   fields <- c(fields, "source")
   values <- c(values, if (is.null(source)) "NULL" else if (is(source, "subQuery")) paste0("(", as.character(source), ")") else paste0("'", as.character(source), "'"))
@@ -789,7 +789,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(epistart)) {
     epistart <- defaults$epistart
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.epistart')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.epistart')
   }
   fields <- c(fields, "epistart")
   values <- c(values, if (is.null(epistart)) "NULL" else if (is(epistart, "subQuery")) paste0("(", as.character(epistart), ")") else paste0("'", as.character(epistart), "'"))
@@ -797,7 +797,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(epiend)) {
     epiend <- defaults$epiend
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.epiend')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.epiend')
   }
   fields <- c(fields, "epiend")
   values <- c(values, if (is.null(epiend)) "NULL" else if (is(epiend, "subQuery")) paste0("(", as.character(epiend), ")") else paste0("'", as.character(epiend), "'"))
@@ -805,7 +805,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(epidur)) {
     epidur <- defaults$epidur
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.epidur')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.epidur')
   }
   fields <- c(fields, "epidur")
   values <- c(values, if (is.null(epidur)) "NULL" else if (is(epidur, "subQuery")) paste0("(", as.character(epidur), ")") else paste0("'", as.character(epidur), "'"))
@@ -813,7 +813,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(bedyear)) {
     bedyear <- defaults$bedyear
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.bedyear')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.bedyear')
   }
   fields <- c(fields, "bedyear")
   values <- c(values, if (is.null(bedyear)) "NULL" else if (is(bedyear, "subQuery")) paste0("(", as.character(bedyear), ")") else paste0("'", as.character(bedyear), "'"))
@@ -821,7 +821,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(epistat)) {
     epistat <- defaults$epistat
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.epistat')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.epistat')
   }
   fields <- c(fields, "epistat")
   values <- c(values, if (is.null(epistat)) "NULL" else if (is(epistat, "subQuery")) paste0("(", as.character(epistat), ")") else paste0("'", as.character(epistat), "'"))
@@ -829,7 +829,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(epitype)) {
     epitype <- defaults$epitype
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.epitype')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.epitype')
   }
   fields <- c(fields, "epitype")
   values <- c(values, if (is.null(epitype)) "NULL" else if (is(epitype, "subQuery")) paste0("(", as.character(epitype), ")") else paste0("'", as.character(epitype), "'"))
@@ -837,7 +837,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(epiorder)) {
     epiorder <- defaults$epiorder
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.epiorder')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.epiorder')
   }
   fields <- c(fields, "epiorder")
   values <- c(values, if (is.null(epiorder)) "NULL" else if (is(epiorder, "subQuery")) paste0("(", as.character(epiorder), ")") else paste0("'", as.character(epiorder), "'"))
@@ -845,7 +845,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(spell_index)) {
     spell_index <- defaults$spell_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.spell_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.spell_index')
   }
   fields <- c(fields, "spell_index")
   values <- c(values, if (is.null(spell_index)) "NULL" else if (is(spell_index, "subQuery")) paste0("(", as.character(spell_index), ")") else paste0("'", as.character(spell_index), "'"))
@@ -853,7 +853,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(spell_seq)) {
     spell_seq <- defaults$spell_seq
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.spell_seq')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.spell_seq')
   }
   fields <- c(fields, "spell_seq")
   values <- c(values, if (is.null(spell_seq)) "NULL" else if (is(spell_seq, "subQuery")) paste0("(", as.character(spell_seq), ")") else paste0("'", as.character(spell_seq), "'"))
@@ -861,7 +861,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(spelbgin)) {
     spelbgin <- defaults$spelbgin
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.spelbgin')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.spelbgin')
   }
   fields <- c(fields, "spelbgin")
   values <- c(values, if (is.null(spelbgin)) "NULL" else if (is(spelbgin, "subQuery")) paste0("(", as.character(spelbgin), ")") else paste0("'", as.character(spelbgin), "'"))
@@ -869,7 +869,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(spelend)) {
     spelend <- defaults$spelend
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.spelend')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.spelend')
   }
   fields <- c(fields, "spelend")
   values <- c(values, if (is.null(spelend)) "NULL" else if (is(spelend, "subQuery")) paste0("(", as.character(spelend), ")") else paste0("'", as.character(spelend), "'"))
@@ -877,7 +877,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(speldur)) {
     speldur <- defaults$speldur
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.speldur')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.speldur')
   }
   fields <- c(fields, "speldur")
   values <- c(values, if (is.null(speldur)) "NULL" else if (is(speldur, "subQuery")) paste0("(", as.character(speldur), ")") else paste0("'", as.character(speldur), "'"))
@@ -885,7 +885,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(pctcode)) {
     pctcode <- defaults$pctcode
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.pctcode')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.pctcode')
   }
   fields <- c(fields, "pctcode")
   values <- c(values, if (is.null(pctcode)) "NULL" else if (is(pctcode, "subQuery")) paste0("(", as.character(pctcode), ")") else paste0("'", as.character(pctcode), "'"))
@@ -893,7 +893,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(gpprpct)) {
     gpprpct <- defaults$gpprpct
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.gpprpct')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.gpprpct')
   }
   fields <- c(fields, "gpprpct")
   values <- c(values, if (is.null(gpprpct)) "NULL" else if (is(gpprpct, "subQuery")) paste0("(", as.character(gpprpct), ")") else paste0("'", as.character(gpprpct), "'"))
@@ -901,7 +901,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(category)) {
     category <- defaults$category
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.category')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.category')
   }
   fields <- c(fields, "category")
   values <- c(values, if (is.null(category)) "NULL" else if (is(category, "subQuery")) paste0("(", as.character(category), ")") else paste0("'", as.character(category), "'"))
@@ -909,7 +909,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(elecdate)) {
     elecdate <- defaults$elecdate
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.elecdate')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.elecdate')
   }
   fields <- c(fields, "elecdate")
   values <- c(values, if (is.null(elecdate)) "NULL" else if (is(elecdate, "subQuery")) paste0("(", as.character(elecdate), ")") else paste0("'", as.character(elecdate), "'"))
@@ -917,7 +917,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(elecdur)) {
     elecdur <- defaults$elecdur
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.elecdur')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.elecdur')
   }
   fields <- c(fields, "elecdur")
   values <- c(values, if (is.null(elecdur)) "NULL" else if (is(elecdur, "subQuery")) paste0("(", as.character(elecdur), ")") else paste0("'", as.character(elecdur), "'"))
@@ -925,7 +925,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(admidate)) {
     admidate <- defaults$admidate
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.admidate')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.admidate')
   }
   fields <- c(fields, "admidate")
   values <- c(values, if (is.null(admidate)) "NULL" else if (is(admidate, "subQuery")) paste0("(", as.character(admidate), ")") else paste0("'", as.character(admidate), "'"))
@@ -933,7 +933,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(admimeth_uni)) {
     admimeth_uni <- defaults$admimeth_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.admimeth_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.admimeth_uni')
   }
   fields <- c(fields, "admimeth_uni")
   values <- c(values, if (is.null(admimeth_uni)) "NULL" else if (is(admimeth_uni, "subQuery")) paste0("(", as.character(admimeth_uni), ")") else paste0("'", as.character(admimeth_uni), "'"))
@@ -941,7 +941,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(admimeth)) {
     admimeth <- defaults$admimeth
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.admimeth')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.admimeth')
   }
   fields <- c(fields, "admimeth")
   values <- c(values, if (is.null(admimeth)) "NULL" else if (is(admimeth, "subQuery")) paste0("(", as.character(admimeth), ")") else paste0("'", as.character(admimeth), "'"))
@@ -949,7 +949,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(admisorc_uni)) {
     admisorc_uni <- defaults$admisorc_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.admisorc_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.admisorc_uni')
   }
   fields <- c(fields, "admisorc_uni")
   values <- c(values, if (is.null(admisorc_uni)) "NULL" else if (is(admisorc_uni, "subQuery")) paste0("(", as.character(admisorc_uni), ")") else paste0("'", as.character(admisorc_uni), "'"))
@@ -957,7 +957,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(admisorc)) {
     admisorc <- defaults$admisorc
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.admisorc')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.admisorc')
   }
   fields <- c(fields, "admisorc")
   values <- c(values, if (is.null(admisorc)) "NULL" else if (is(admisorc, "subQuery")) paste0("(", as.character(admisorc), ")") else paste0("'", as.character(admisorc), "'"))
@@ -965,7 +965,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(firstreg)) {
     firstreg <- defaults$firstreg
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.firstreg')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.firstreg')
   }
   fields <- c(fields, "firstreg")
   values <- c(values, if (is.null(firstreg)) "NULL" else if (is(firstreg, "subQuery")) paste0("(", as.character(firstreg), ")") else paste0("'", as.character(firstreg), "'"))
@@ -973,7 +973,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(classpat_uni)) {
     classpat_uni <- defaults$classpat_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.classpat_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.classpat_uni')
   }
   fields <- c(fields, "classpat_uni")
   values <- c(values, if (is.null(classpat_uni)) "NULL" else if (is(classpat_uni, "subQuery")) paste0("(", as.character(classpat_uni), ")") else paste0("'", as.character(classpat_uni), "'"))
@@ -981,7 +981,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(classpat)) {
     classpat <- defaults$classpat
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.classpat')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.classpat')
   }
   fields <- c(fields, "classpat")
   values <- c(values, if (is.null(classpat)) "NULL" else if (is(classpat, "subQuery")) paste0("(", as.character(classpat), ")") else paste0("'", as.character(classpat), "'"))
@@ -989,7 +989,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(intmanag_uni)) {
     intmanag_uni <- defaults$intmanag_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.intmanag_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.intmanag_uni')
   }
   fields <- c(fields, "intmanag_uni")
   values <- c(values, if (is.null(intmanag_uni)) "NULL" else if (is(intmanag_uni, "subQuery")) paste0("(", as.character(intmanag_uni), ")") else paste0("'", as.character(intmanag_uni), "'"))
@@ -997,7 +997,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(intmanag)) {
     intmanag <- defaults$intmanag
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.intmanag')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.intmanag')
   }
   fields <- c(fields, "intmanag")
   values <- c(values, if (is.null(intmanag)) "NULL" else if (is(intmanag, "subQuery")) paste0("(", as.character(intmanag), ")") else paste0("'", as.character(intmanag), "'"))
@@ -1005,7 +1005,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(mainspef_uni)) {
     mainspef_uni <- defaults$mainspef_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.mainspef_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.mainspef_uni')
   }
   fields <- c(fields, "mainspef_uni")
   values <- c(values, if (is.null(mainspef_uni)) "NULL" else if (is(mainspef_uni, "subQuery")) paste0("(", as.character(mainspef_uni), ")") else paste0("'", as.character(mainspef_uni), "'"))
@@ -1013,7 +1013,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(mainspef)) {
     mainspef <- defaults$mainspef
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.mainspef')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.mainspef')
   }
   fields <- c(fields, "mainspef")
   values <- c(values, if (is.null(mainspef)) "NULL" else if (is(mainspef, "subQuery")) paste0("(", as.character(mainspef), ")") else paste0("'", as.character(mainspef), "'"))
@@ -1021,7 +1021,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(tretspef_uni)) {
     tretspef_uni <- defaults$tretspef_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.tretspef_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.tretspef_uni')
   }
   fields <- c(fields, "tretspef_uni")
   values <- c(values, if (is.null(tretspef_uni)) "NULL" else if (is(tretspef_uni, "subQuery")) paste0("(", as.character(tretspef_uni), ")") else paste0("'", as.character(tretspef_uni), "'"))
@@ -1029,7 +1029,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(tretspef)) {
     tretspef <- defaults$tretspef
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.tretspef')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.tretspef')
   }
   fields <- c(fields, "tretspef")
   values <- c(values, if (is.null(tretspef)) "NULL" else if (is(tretspef, "subQuery")) paste0("(", as.character(tretspef), ")") else paste0("'", as.character(tretspef), "'"))
@@ -1037,7 +1037,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(operstat)) {
     operstat <- defaults$operstat
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.operstat')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.operstat')
   }
   fields <- c(fields, "operstat")
   values <- c(values, if (is.null(operstat)) "NULL" else if (is(operstat, "subQuery")) paste0("(", as.character(operstat), ")") else paste0("'", as.character(operstat), "'"))
@@ -1045,7 +1045,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(disdate)) {
     disdate <- defaults$disdate
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.disdate')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.disdate')
   }
   fields <- c(fields, "disdate")
   values <- c(values, if (is.null(disdate)) "NULL" else if (is(disdate, "subQuery")) paste0("(", as.character(disdate), ")") else paste0("'", as.character(disdate), "'"))
@@ -1053,7 +1053,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(dismeth_uni)) {
     dismeth_uni <- defaults$dismeth_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.dismeth_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.dismeth_uni')
   }
   fields <- c(fields, "dismeth_uni")
   values <- c(values, if (is.null(dismeth_uni)) "NULL" else if (is(dismeth_uni, "subQuery")) paste0("(", as.character(dismeth_uni), ")") else paste0("'", as.character(dismeth_uni), "'"))
@@ -1061,7 +1061,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(dismeth)) {
     dismeth <- defaults$dismeth
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.dismeth')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.dismeth')
   }
   fields <- c(fields, "dismeth")
   values <- c(values, if (is.null(dismeth)) "NULL" else if (is(dismeth, "subQuery")) paste0("(", as.character(dismeth), ")") else paste0("'", as.character(dismeth), "'"))
@@ -1069,7 +1069,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(disdest_uni)) {
     disdest_uni <- defaults$disdest_uni
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.disdest_uni')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.disdest_uni')
   }
   fields <- c(fields, "disdest_uni")
   values <- c(values, if (is.null(disdest_uni)) "NULL" else if (is(disdest_uni, "subQuery")) paste0("(", as.character(disdest_uni), ")") else paste0("'", as.character(disdest_uni), "'"))
@@ -1077,7 +1077,7 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(disdest)) {
     disdest <- defaults$disdest
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.disdest')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.disdest')
   }
   fields <- c(fields, "disdest")
   values <- c(values, if (is.null(disdest)) "NULL" else if (is(disdest, "subQuery")) paste0("(", as.character(disdest), ")") else paste0("'", as.character(disdest), "'"))
@@ -1085,24 +1085,24 @@ add_hesin_c <- function(eid, ins_index, dsource, source, epistart, epiend, epidu
   if (missing(carersi)) {
     carersi <- defaults$carersi
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_c.carersi')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin.carersi')
   }
   fields <- c(fields, "carersi")
   values <- c(values, if (is.null(carersi)) "NULL" else if (is(carersi, "subQuery")) paste0("(", as.character(carersi), ")") else paste0("'", as.character(carersi), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "hesin_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "hesin", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_death_cause_c <- function(eid, ins_index, arr_index, level, cause_icd10) {
-  defaults <- get('death_cause_c', envir = frameworkContext$defaultValues)
+add_death_cause <- function(eid, ins_index, arr_index, level, cause_icd10) {
+  defaults <- get('death_cause', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1110,7 +1110,7 @@ add_death_cause_c <- function(eid, ins_index, arr_index, level, cause_icd10) {
   if (missing(ins_index)) {
     ins_index <- defaults$ins_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause_c.ins_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause.ins_index')
   }
   fields <- c(fields, "ins_index")
   values <- c(values, if (is.null(ins_index)) "NULL" else if (is(ins_index, "subQuery")) paste0("(", as.character(ins_index), ")") else paste0("'", as.character(ins_index), "'"))
@@ -1118,7 +1118,7 @@ add_death_cause_c <- function(eid, ins_index, arr_index, level, cause_icd10) {
   if (missing(arr_index)) {
     arr_index <- defaults$arr_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause_c.arr_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause.arr_index')
   }
   fields <- c(fields, "arr_index")
   values <- c(values, if (is.null(arr_index)) "NULL" else if (is(arr_index, "subQuery")) paste0("(", as.character(arr_index), ")") else paste0("'", as.character(arr_index), "'"))
@@ -1126,7 +1126,7 @@ add_death_cause_c <- function(eid, ins_index, arr_index, level, cause_icd10) {
   if (missing(level)) {
     level <- defaults$level
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause_c.level')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause.level')
   }
   fields <- c(fields, "level")
   values <- c(values, if (is.null(level)) "NULL" else if (is(level, "subQuery")) paste0("(", as.character(level), ")") else paste0("'", as.character(level), "'"))
@@ -1134,24 +1134,24 @@ add_death_cause_c <- function(eid, ins_index, arr_index, level, cause_icd10) {
   if (missing(cause_icd10)) {
     cause_icd10 <- defaults$cause_icd10
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause_c.cause_icd10')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_cause.cause_icd10')
   }
   fields <- c(fields, "cause_icd10")
   values <- c(values, if (is.null(cause_icd10)) "NULL" else if (is(cause_icd10, "subQuery")) paste0("(", as.character(cause_icd10), ")") else paste0("'", as.character(cause_icd10), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "death_cause_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "death_cause", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_covid19_result_c <- function(eid, specdate, spectype, laboratory, origin, result) {
-  defaults <- get('covid19_result_c', envir = frameworkContext$defaultValues)
+add_covid19_result <- function(eid, specdate, spectype, laboratory, origin, result) {
+  defaults <- get('covid19_result', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1159,7 +1159,7 @@ add_covid19_result_c <- function(eid, specdate, spectype, laboratory, origin, re
   if (missing(specdate)) {
     specdate <- defaults$specdate
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result_c.specdate')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.specdate')
   }
   fields <- c(fields, "specdate")
   values <- c(values, if (is.null(specdate)) "NULL" else if (is(specdate, "subQuery")) paste0("(", as.character(specdate), ")") else paste0("'", as.character(specdate), "'"))
@@ -1167,7 +1167,7 @@ add_covid19_result_c <- function(eid, specdate, spectype, laboratory, origin, re
   if (missing(spectype)) {
     spectype <- defaults$spectype
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result_c.spectype')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.spectype')
   }
   fields <- c(fields, "spectype")
   values <- c(values, if (is.null(spectype)) "NULL" else if (is(spectype, "subQuery")) paste0("(", as.character(spectype), ")") else paste0("'", as.character(spectype), "'"))
@@ -1175,7 +1175,7 @@ add_covid19_result_c <- function(eid, specdate, spectype, laboratory, origin, re
   if (missing(laboratory)) {
     laboratory <- defaults$laboratory
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result_c.laboratory')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.laboratory')
   }
   fields <- c(fields, "laboratory")
   values <- c(values, if (is.null(laboratory)) "NULL" else if (is(laboratory, "subQuery")) paste0("(", as.character(laboratory), ")") else paste0("'", as.character(laboratory), "'"))
@@ -1183,7 +1183,7 @@ add_covid19_result_c <- function(eid, specdate, spectype, laboratory, origin, re
   if (missing(origin)) {
     origin <- defaults$origin
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result_c.origin')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.origin')
   }
   fields <- c(fields, "origin")
   values <- c(values, if (is.null(origin)) "NULL" else if (is(origin, "subQuery")) paste0("(", as.character(origin), ")") else paste0("'", as.character(origin), "'"))
@@ -1191,24 +1191,24 @@ add_covid19_result_c <- function(eid, specdate, spectype, laboratory, origin, re
   if (missing(result)) {
     result <- defaults$result
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result_c.result')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'covid19_result.result')
   }
   fields <- c(fields, "result")
   values <- c(values, if (is.null(result)) "NULL" else if (is(result, "subQuery")) paste0("(", as.character(result), ")") else paste0("'", as.character(result), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid19_result_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid19_result", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_icd9_nb, diag_icd10, diag_icd10_nb) {
-  defaults <- get('hesin_diag_c', envir = frameworkContext$defaultValues)
+add_hesin_diag <- function(eid, ins_index, arr_index, level, diag_icd9, diag_icd9_nb, diag_icd10, diag_icd10_nb) {
+  defaults <- get('hesin_diag', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1216,7 +1216,7 @@ add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_i
   if (missing(ins_index)) {
     ins_index <- defaults$ins_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.ins_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.ins_index')
   }
   fields <- c(fields, "ins_index")
   values <- c(values, if (is.null(ins_index)) "NULL" else if (is(ins_index, "subQuery")) paste0("(", as.character(ins_index), ")") else paste0("'", as.character(ins_index), "'"))
@@ -1224,7 +1224,7 @@ add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_i
   if (missing(arr_index)) {
     arr_index <- defaults$arr_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.arr_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.arr_index')
   }
   fields <- c(fields, "arr_index")
   values <- c(values, if (is.null(arr_index)) "NULL" else if (is(arr_index, "subQuery")) paste0("(", as.character(arr_index), ")") else paste0("'", as.character(arr_index), "'"))
@@ -1232,7 +1232,7 @@ add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_i
   if (missing(level)) {
     level <- defaults$level
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.level')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.level')
   }
   fields <- c(fields, "level")
   values <- c(values, if (is.null(level)) "NULL" else if (is(level, "subQuery")) paste0("(", as.character(level), ")") else paste0("'", as.character(level), "'"))
@@ -1240,7 +1240,7 @@ add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_i
   if (missing(diag_icd9)) {
     diag_icd9 <- defaults$diag_icd9
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.diag_icd9')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.diag_icd9')
   }
   fields <- c(fields, "diag_icd9")
   values <- c(values, if (is.null(diag_icd9)) "NULL" else if (is(diag_icd9, "subQuery")) paste0("(", as.character(diag_icd9), ")") else paste0("'", as.character(diag_icd9), "'"))
@@ -1248,7 +1248,7 @@ add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_i
   if (missing(diag_icd9_nb)) {
     diag_icd9_nb <- defaults$diag_icd9_nb
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.diag_icd9_nb')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.diag_icd9_nb')
   }
   fields <- c(fields, "diag_icd9_nb")
   values <- c(values, if (is.null(diag_icd9_nb)) "NULL" else if (is(diag_icd9_nb, "subQuery")) paste0("(", as.character(diag_icd9_nb), ")") else paste0("'", as.character(diag_icd9_nb), "'"))
@@ -1256,7 +1256,7 @@ add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_i
   if (missing(diag_icd10)) {
     diag_icd10 <- defaults$diag_icd10
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.diag_icd10')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.diag_icd10')
   }
   fields <- c(fields, "diag_icd10")
   values <- c(values, if (is.null(diag_icd10)) "NULL" else if (is(diag_icd10, "subQuery")) paste0("(", as.character(diag_icd10), ")") else paste0("'", as.character(diag_icd10), "'"))
@@ -1264,24 +1264,24 @@ add_hesin_diag_c <- function(eid, ins_index, arr_index, level, diag_icd9, diag_i
   if (missing(diag_icd10_nb)) {
     diag_icd10_nb <- defaults$diag_icd10_nb
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag_c.diag_icd10_nb')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'hesin_diag.diag_icd10_nb')
   }
   fields <- c(fields, "diag_icd10_nb")
   values <- c(values, if (is.null(diag_icd10_nb)) "NULL" else if (is(diag_icd10_nb, "subQuery")) paste0("(", as.character(diag_icd10_nb), ")") else paste0("'", as.character(diag_icd10_nb), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "hesin_diag_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "hesin_diag", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
-  defaults <- get('gp_scripts_c', envir = frameworkContext$defaultValues)
+add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
+  defaults <- get('gp_scripts', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1289,7 +1289,7 @@ add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, d
   if (missing(data_provider)) {
     data_provider <- defaults$data_provider
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.data_provider')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.data_provider')
   }
   fields <- c(fields, "data_provider")
   values <- c(values, if (is.null(data_provider)) "NULL" else if (is(data_provider, "subQuery")) paste0("(", as.character(data_provider), ")") else paste0("'", as.character(data_provider), "'"))
@@ -1297,7 +1297,7 @@ add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, d
   if (missing(issue_date)) {
     issue_date <- defaults$issue_date
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.issue_date')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.issue_date')
   }
   fields <- c(fields, "issue_date")
   values <- c(values, if (is.null(issue_date)) "NULL" else if (is(issue_date, "subQuery")) paste0("(", as.character(issue_date), ")") else paste0("'", as.character(issue_date), "'"))
@@ -1305,7 +1305,7 @@ add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, d
   if (missing(read_2)) {
     read_2 <- defaults$read_2
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.read_2')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.read_2')
   }
   fields <- c(fields, "read_2")
   values <- c(values, if (is.null(read_2)) "NULL" else if (is(read_2, "subQuery")) paste0("(", as.character(read_2), ")") else paste0("'", as.character(read_2), "'"))
@@ -1313,7 +1313,7 @@ add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, d
   if (missing(bnf_code)) {
     bnf_code <- defaults$bnf_code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.bnf_code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.bnf_code')
   }
   fields <- c(fields, "bnf_code")
   values <- c(values, if (is.null(bnf_code)) "NULL" else if (is(bnf_code, "subQuery")) paste0("(", as.character(bnf_code), ")") else paste0("'", as.character(bnf_code), "'"))
@@ -1321,7 +1321,7 @@ add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, d
   if (missing(dmd_code)) {
     dmd_code <- defaults$dmd_code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.dmd_code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.dmd_code')
   }
   fields <- c(fields, "dmd_code")
   values <- c(values, if (is.null(dmd_code)) "NULL" else if (is(dmd_code, "subQuery")) paste0("(", as.character(dmd_code), ")") else paste0("'", as.character(dmd_code), "'"))
@@ -1329,7 +1329,7 @@ add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, d
   if (missing(drug_name)) {
     drug_name <- defaults$drug_name
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.drug_name')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.drug_name')
   }
   fields <- c(fields, "drug_name")
   values <- c(values, if (is.null(drug_name)) "NULL" else if (is(drug_name, "subQuery")) paste0("(", as.character(drug_name), ")") else paste0("'", as.character(drug_name), "'"))
@@ -1337,24 +1337,24 @@ add_gp_scripts_c <- function(eid, data_provider, issue_date, read_2, bnf_code, d
   if (missing(quantity)) {
     quantity <- defaults$quantity
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts_c.quantity')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.quantity')
   }
   fields <- c(fields, "quantity")
   values <- c(values, if (is.null(quantity)) "NULL" else if (is(quantity, "subQuery")) paste0("(", as.character(quantity), ")") else paste0("'", as.character(quantity), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_scripts_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_scripts", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_death_c <- function(eid, ins_index, dsource, source, date_of_death) {
-  defaults <- get('death_c', envir = frameworkContext$defaultValues)
+add_death <- function(eid, ins_index, dsource, source, date_of_death) {
+  defaults <- get('death', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_c.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1362,7 +1362,7 @@ add_death_c <- function(eid, ins_index, dsource, source, date_of_death) {
   if (missing(ins_index)) {
     ins_index <- defaults$ins_index
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_c.ins_index')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death.ins_index')
   }
   fields <- c(fields, "ins_index")
   values <- c(values, if (is.null(ins_index)) "NULL" else if (is(ins_index, "subQuery")) paste0("(", as.character(ins_index), ")") else paste0("'", as.character(ins_index), "'"))
@@ -1370,7 +1370,7 @@ add_death_c <- function(eid, ins_index, dsource, source, date_of_death) {
   if (missing(dsource)) {
     dsource <- defaults$dsource
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_c.dsource')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death.dsource')
   }
   fields <- c(fields, "dsource")
   values <- c(values, if (is.null(dsource)) "NULL" else if (is(dsource, "subQuery")) paste0("(", as.character(dsource), ")") else paste0("'", as.character(dsource), "'"))
@@ -1378,7 +1378,7 @@ add_death_c <- function(eid, ins_index, dsource, source, date_of_death) {
   if (missing(source)) {
     source <- defaults$source
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_c.source')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death.source')
   }
   fields <- c(fields, "source")
   values <- c(values, if (is.null(source)) "NULL" else if (is(source, "subQuery")) paste0("(", as.character(source), ")") else paste0("'", as.character(source), "'"))
@@ -1386,12 +1386,12 @@ add_death_c <- function(eid, ins_index, dsource, source, date_of_death) {
   if (missing(date_of_death)) {
     date_of_death <- defaults$date_of_death
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death_c.date_of_death')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'death.date_of_death')
   }
   fields <- c(fields, "date_of_death")
   values <- c(values, if (is.null(date_of_death)) "NULL" else if (is(date_of_death, "subQuery")) paste0("(", as.character(date_of_death), ")") else paste0("'", as.character(date_of_death), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "death_c", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "death", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
@@ -11460,15 +11460,15 @@ lookup_fact_relationship <- function(fetchField, domain_concept_id_1, fact_id_1,
 
 generateInsertSql <- function(databaseSchema = NULL) {
   insertSql <- c()
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_clinical_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_registrations_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_oper_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death_cause_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.covid19_result_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_diag_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_scripts_c;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death_c;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_clinical;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_registrations;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_oper;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death_cause;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.covid19_result;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_diag;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_scripts;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death;")
   createInsertStatement <- function(insert, env) {
     s <- c()
     if (env$testId != insert$testId) {
