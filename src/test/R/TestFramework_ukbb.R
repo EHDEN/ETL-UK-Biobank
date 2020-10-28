@@ -7,6 +7,12 @@ initFramework <- function() {
   frameworkContext$testId <- -1
   frameworkContext$testDescription <- ""
   frameworkContext$defaultValues <- new.env(parent = frameworkContext)
+  
+  defaults <- list()
+  defaults$eid <- 'XXX'
+  defaults$field <- '728-0.0'
+  defaults$value <- '0'
+  assign('baseline', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1002951'
@@ -143,6 +149,21 @@ initFramework <- function() {
 }
 
 initFramework()
+
+set_defaults_baseline <- function(eid, field, value) {
+  defaults <- get('baseline', envir = frameworkContext$defaultValues)
+  if (!missing(eid)) {
+    defaults$eid <- eid
+  }
+  if (!missing(field)) {
+    defaults$field <- field
+  }
+  if (!missing(value)) {
+    defaults$value <- value
+  }
+  assign('baseline', defaults, envir = frameworkContext$defaultValues)
+  invisible(defaults)
+}
 
 set_defaults_gp_clinical <- function(eid, data_provider, event_dt, read_2, read_3, value1, value2, value3) {
   defaults <- get('gp_clinical', envir = frameworkContext$defaultValues)
@@ -489,6 +510,11 @@ set_defaults_death_c <- function(eid, ins_index, dsource, source, date_of_death)
   invisible(defaults)
 }
 
+get_defaults_baseline <- function() {
+  defaults <- get('baseline', envir = frameworkContext$defaultValues)
+  return(defaults)
+}
+
 get_defaults_gp_clinical <- function() {
   defaults <- get('gp_clinical', envir = frameworkContext$defaultValues)
   return(defaults)
@@ -537,6 +563,39 @@ get_defaults_death_c <- function() {
 declareTest <- function(id, description) {
   frameworkContext$testId <- id
   frameworkContext$testDescription <- description
+}
+
+add_baseline <- function(eid, field, value) {
+  defaults <- get('baseline', envir = frameworkContext$defaultValues)
+  fields <- c()
+  values <- c()
+  if (missing(eid)) {
+    eid <- defaults$eid
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.eid')
+  }
+  fields <- c(fields, "eid")
+  values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
+  
+  if (missing(field)) {
+    field <- defaults$field
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "field")
+  values <- c(values, if (is.null(field)) "NULL" else if (is(field, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(field), "'"))
+  
+  if (missing(value)) {
+    value <- defaults$value
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.value')
+  }
+  fields <- c(fields, "value")
+  values <- c(values, if (is.null(value)) "NULL" else if (is(value, "subQuery")) paste0("(", as.character(value), ")") else paste0("'", as.character(value), "'"))
+  
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "baseline", fields = fields, values = values)
+  frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
+  invisible(NULL)
 }
 
 add_gp_clinical <- function(eid, data_provider, event_dt, read_2, read_3, value1, value2, value3) {
