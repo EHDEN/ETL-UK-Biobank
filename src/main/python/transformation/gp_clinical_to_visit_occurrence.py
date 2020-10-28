@@ -3,10 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
-from datetime import datetime
-
-from ..util.date_handling import get_datetime
-
+from ..util.date_functions import get_datetime
 from ..core.model import VisitOccurrence
 
 if TYPE_CHECKING:
@@ -19,7 +16,7 @@ def gp_clinical_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
     records = []
 
     for _, row in source.iterrows():
-        visit_date = get_datetime(datetime.strftime(datetime.strptime(row['event_dt'], "%d/%m/%Y"), '%Y-%m-%d'))
+        visit_date = get_datetime(row['event_dt'], "%d/%m/%Y")
 
         r = VisitOccurrence(
             person_id=row['eid'],

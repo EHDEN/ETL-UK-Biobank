@@ -19,33 +19,29 @@ import pandas as pd
 
 # NOTE: sample date functions, remove if unused
 
-def get_datetime(date: str = '', sep='-', default_date='1970-01-01') -> datetime:
+def get_datetime(date: str = '', format='%Y-%m-%d', default_date='1970-01-01') -> datetime:
     """
-    Expects a date in the format **YYYY<sep>MM<sep>DD**,
-    where the default separator <sep> == "-".
-    If the date uses a different separator, you should specify it with the "sep" argument.
     If the date is incomplete, returns:
      - 1st of the month (if day missing)
      - 1st of January (if month missing)
-    If the date is missing, returns a default date.
+    If the date is missing, returns given default date.
     :param date: string
     :param sep: date separator, default "-"
     :param default_date: default start date ("1970-01-01")
     """
-    if pd.isnull(date) or not date.strip():  # None, NaN + empty string ('', ' ')
+    if pd.isnull(date) or not date.strip():
         date = default_date
-    if sep != '-':
-        date = date.replace(sep, '-')
     try:
-        return datetime.strptime(date, '%Y-%m-%d')
+        return datetime.strptime(date, format)
+    except ValueError:
+        pass
+    format_year_month = format.replace('%d', '').strip('-/')
+    try:
+        return datetime.strptime(date, format_year_month)  # returns 1st of the month by default
     except ValueError:
         pass
     try:
-        return datetime.strptime(date, '%Y-%m') # returns 1st of the month by default
-    except ValueError:
-        pass
-    try:
-        return datetime.strptime(date, '%Y') # returns 1st of January by default
+        return datetime.strptime(date, '%Y')  # returns 1st of January by default
     except ValueError:
         raise ValueError(f'unrecognized date value {date}')
 
