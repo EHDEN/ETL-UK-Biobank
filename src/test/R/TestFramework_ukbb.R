@@ -10,7 +10,7 @@ initFramework <- function() {
   
   defaults <- list()
   defaults$eid <- 'XXX'
-  defaults$`34-0.1` <- '1950'
+  defaults$`34-0.0` <- '1950'
   defaults$`21000-0.0` <- '1'
   defaults$`21000-1.0` <- '1002'
   defaults$`52-0.0` <- '1'
@@ -156,13 +156,13 @@ initFramework <- function() {
 
 initFramework()
 
-set_defaults_baseline <- function(eid,`34-0.1`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
+set_defaults_baseline <- function(eid,`34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
-  if (!missing(`34-0.1`)) {
-    defaults$`34-0.1` <- `34-0.1`
+  if (!missing(`34-0.0`)) {
+    defaults$`34-0.0` <- `34-0.0`
   }
   if (!missing(`21000-0.0`)) {
     defaults$`21000-0.0` <- `21000-0.0`
@@ -589,7 +589,7 @@ declareTest <- function(id, description) {
   frameworkContext$testDescription <- description
 }
 
-add_baseline <- function(eid, `34-0.1`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
+add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
@@ -601,13 +601,13 @@ add_baseline <- function(eid, `34-0.1`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
   
-  if (missing(`34-0.1`)) {
-    `34-0.1` <- defaults$`34-0.1`
+  if (missing(`34-0.0`)) {
+    `34-0.0` <- defaults$`34-0.0`
   } else {
     frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
   }
-  fields <- c(fields, "34-0.1")
-  values <- c(values, if (is.null(`34-0.1`)) "NULL" else if (is(`34-0.1`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`34-0.1`), "'"))
+  fields <- c(fields, "34-0.0")
+  values <- c(values, if (is.null(`34-0.0`)) "NULL" else if (is(`34-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`34-0.0`), "'"))
   
   if (missing(`21000-0.0`)) {
     `21000-0.0` <- defaults$`21000-0.0`
