@@ -10,8 +10,14 @@ initFramework <- function() {
   
   defaults <- list()
   defaults$eid <- 'XXX'
-  defaults$field <- '728-0.0'
-  defaults$value <- '0'
+  defaults$`34-0.1` <- '1950'
+  defaults$`21000-0.0` <- '1'
+  defaults$`21000-1.0` <- '1002'
+  defaults$`52-0.0` <- '1'
+  defaults$`54-0.0` <- '11004'
+  defaults$`54-1.0` <- '11009'
+  defaults$`54-2.0` <- '11014'
+  defaults$`31-0.0` <- '0'
   assign('baseline', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
@@ -150,16 +156,34 @@ initFramework <- function() {
 
 initFramework()
 
-set_defaults_baseline <- function(eid, field, value) {
+set_defaults_baseline <- function(eid,`34-0.1`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
-  if (!missing(field)) {
-    defaults$field <- field
+  if (!missing(`34-0.1`)) {
+    defaults$`34-0.1` <- `34-0.1`
   }
-  if (!missing(value)) {
-    defaults$value <- value
+  if (!missing(`21000-0.0`)) {
+    defaults$`21000-0.0` <- `21000-0.0`
+  }
+  if (!missing(`21000-1.0`)) {
+    defaults$`21000-1.0` <- `21000-1.0`
+  }
+  if (!missing(`52-0.0`)) {
+    defaults$`52-0.0` <- `52-0.0`
+  }
+  if (!missing(`54-0.0`)) {
+    defaults$`54-0.0` <- `54-0.0`
+  }
+  if (!missing(`54-1.0`)) {
+    defaults$`54-1.0` <- `54-1.0`
+  }
+  if (!missing(`54-2.0`)) {
+    defaults$`54-2.0` <- `54-2.0`
+  }
+  if (!missing(`31-0.0`)) {
+    defaults$`31-0.0` <- `31-0.0`
   }
   assign('baseline', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
@@ -565,7 +589,7 @@ declareTest <- function(id, description) {
   frameworkContext$testDescription <- description
 }
 
-add_baseline <- function(eid, field, value) {
+add_baseline <- function(eid, `34-0.1`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
@@ -577,21 +601,70 @@ add_baseline <- function(eid, field, value) {
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
   
-  if (missing(field)) {
-    field <- defaults$field
+  if (missing(`34-0.1`)) {
+    `34-0.1` <- defaults$`34-0.1`
   } else {
     frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
   }
-  fields <- c(fields, "field")
-  values <- c(values, if (is.null(field)) "NULL" else if (is(field, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(field), "'"))
+  fields <- c(fields, "34-0.1")
+  values <- c(values, if (is.null(`34-0.1`)) "NULL" else if (is(`34-0.1`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`34-0.1`), "'"))
   
-  if (missing(value)) {
-    value <- defaults$value
+  if (missing(`21000-0.0`)) {
+    `21000-0.0` <- defaults$`21000-0.0`
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.value')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
   }
-  fields <- c(fields, "value")
-  values <- c(values, if (is.null(value)) "NULL" else if (is(value, "subQuery")) paste0("(", as.character(value), ")") else paste0("'", as.character(value), "'"))
+  fields <- c(fields, "21000-0.0")
+  values <- c(values, if (is.null(`21000-0.0`)) "NULL" else if (is(`21000-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`21000-0.0`), "'"))
+  
+  if (missing(`21000-1.0`)) {
+    `21000-1.0` <- defaults$`21000-1.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "21000-1.0")
+  values <- c(values, if (is.null(`21000-1.0`)) "NULL" else if (is(`21000-1.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`21000-1.0`), "'"))
+  
+  if (missing(`52-0.0`)) {
+    `52-0.0` <- defaults$`52-0.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "52-0.0")
+  values <- c(values, if (is.null(`52-0.0`)) "NULL" else if (is(`52-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`52-0.0`), "'"))
+  
+  if (missing(`54-0.0`)) {
+    `54-0.0` <- defaults$`54-0.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "54-0.0")
+  values <- c(values, if (is.null(`54-0.0`)) "NULL" else if (is(`54-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`54-0.0`), "'"))
+  
+  if (missing(`54-1.0`)) {
+    `54-1.0` <- defaults$`54-1.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "54-1.0")
+  values <- c(values, if (is.null(`54-1.0`)) "NULL" else if (is(`54-1.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`54-1.0`), "'"))
+  
+  if (missing(`54-2.0`)) {
+    `54-2.0` <- defaults$`54-2.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "54-2.0")
+  values <- c(values, if (is.null(`54-2.0`)) "NULL" else if (is(`54-2.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`54-2.0`), "'"))
+  
+  if (missing(`31-0.0`)) {
+    `31-0.0` <- defaults$`31-0.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "31-0.0")
+  values <- c(values, if (is.null(`31-0.0`)) "NULL" else if (is(`31-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`31-0.0`), "'"))
+  
   
   inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "baseline", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
