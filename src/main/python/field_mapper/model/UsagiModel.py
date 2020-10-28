@@ -33,12 +33,13 @@ class MappingType(Enum):
 
 class UsagiRow:
 
-    def __init__(self, row):
+    def __init__(self, row, filename):
         self.field_id: str = row['sourceCode'].strip()
         self.value_code: str = row['sourceValueCode'].strip()
         self.target: TargetMapping = TargetMapping(row)
         self.status: MappingStatus = MappingStatus[row['mappingStatus']]
         self.comment: str = row['comment']
+        self.source_file_name: str = filename  # For provenance of data
 
 
 class TargetMapping:

@@ -13,23 +13,23 @@
 # GNU General Public License for more details.
 
 # !/usr/bin/env python3
-import logging
 from abc import ABC
 from dataclasses import dataclass
 from typing import Dict, Optional
 from src.main.python.field_mapper.model.UsagiModel import UsagiRow, TargetMapping, MappingType, MappingStatus
-
-logger = logging.getLogger(__name__)
+from src.main.python.field_mapper.model.Validator import validator
 
 
 @dataclass
 class _AbstractMapping(ABC):
+    field_id: str = None
+    value_code: str = None  # Only implemented for ValueMapping
     event_target: Optional[TargetMapping] = None
     unit_target: Optional[TargetMapping] = None
     value_target: Optional[TargetMapping] = None
     comment: Optional[str] = None
     status: Optional[MappingStatus] = None
-    _key: str = None
+    source_file_name: Optional[str] = None
 
     def is_ignored(self):
         return self.status == MappingStatus.IGNORED
@@ -37,38 +37,41 @@ class _AbstractMapping(ABC):
     def set_status(self, status: MappingStatus):
         # Although each Usagi row has a comment and status, these are given on field-value level
         if self.status and self.status != status:
-            logger.warning(f'{self._key} has two conflicting statuses "{self.status}" and "{status}", the last is used')
+            message = f'Two conflicting statuses "{self.status}" and "{status}", the last is used'
+            validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
         if status == MappingStatus.IGNORED and (self.event_target or self.unit_target or self.value_target):
-            logger.warning(f'{self._key} is ignored and has target mappings. The mappings will not be used.')
+            message = f'Ignored with target mappings. The mappings will not be used.'
+            validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
         self.status = status
 
     def set_target(self, target: TargetMapping):
         if target.type == MappingType.EVENT:
             if self.event_target:
-                logger.warning(f'{self._key} already has a event_concept_id assigned and will be overwritten.')
+                message = f'Existing event_concept_id will be overwritten.'
+                validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
             self.event_target = target
         elif target.type == MappingType.UNIT:
             if self.unit_target:
-                logger.warning(f'{self._key} already has a unit_concept_id assigned and will be overwritten.')
+                message = f'Existing unit_concept_id will be overwritten.'
+                validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
             self.unit_target = target
         elif target.type == MappingType.VALUE:
             if self.value_target:
-                logger.warning(f'{self._key} already has a value_concept_id assigned and will be overwritten.')
+                message = f'Existing value_concept_id will be overwritten.'
+                validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
             self.value_target = target
         else:
-            logger.warning(f'unknown MappingType "{target.type}"')
+            message = f'Unknown MappingType "{target.type}"'
+            validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
 
 class FieldMapping(_AbstractMapping):
     def __init__(self, field_id: str):
         super()
-        self.field_id: str = field_id
+        self.field_id = field_id
         self.values: Dict[str, ValueMapping] = {}
-        self.source_file_name: Optional[str] = None
-
-        self._key = self.field_id
 
     def has_unit(self) -> bool:
         # TODO: what about numeric mappings that do not have a unit assigned?
@@ -78,7 +81,7 @@ class FieldMapping(_AbstractMapping):
         # TODO: what about numeric mappings that also have a few codes (-1, -3)
         return bool(self.values)
 
-    def add(self, usagi_row: UsagiRow, source_file_name: str):
+    def add(self, usagi_row: UsagiRow):
         """
         If value_code is given, unit mapping is ignored with warning.
         If no value_code is given, value mapping is ignored with warning.
@@ -86,11 +89,9 @@ class FieldMapping(_AbstractMapping):
         :param source_file_name: from where the mapping is retrieved
         :return:
         """
-        self.source_file_name = source_file_name
-
         if usagi_row.field_id != self.field_id:
-            # TODO: log as warnings and/or raise custom warning. Collect warnings for validation
-            logger.warning(f'given field_id "{usagi_row.field_id}" does not match field_id of mapping object "{self.field_id}". Row is skipped.')
+            message = f'Given field_id "{usagi_row.field_id}" does not match field_id of mapping object "{self.field_id}". Row is skipped.'
+            validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
             return
 
         is_value_mapping = bool(usagi_row.value_code)
@@ -105,9 +106,11 @@ class FieldMapping(_AbstractMapping):
         :param usagi_row:
         :return:
         """
-        self.comment = usagi_row.comment
+        self.source_file_name = usagi_row.source_file_name
 
+        self.comment = usagi_row.comment
         self.set_status(usagi_row.status)
+
         if self.status == MappingStatus.IGNORED:
             return
 
@@ -124,6 +127,7 @@ class FieldMapping(_AbstractMapping):
             usagi_row.value_code,
             ValueMapping(usagi_row.value_code, self)
         )
+        value_mapping.source_file_name = usagi_row.source_file_name
 
         # Although each Usagi row has a comment and status, these are given on field-value level in the tool.
         value_mapping.comment = usagi_row.comment
@@ -134,7 +138,8 @@ class FieldMapping(_AbstractMapping):
 
         if self.event_target or self.unit_target or self.value_target:
             # TODO: continuous fields with few categorical values (-1, -3)
-            logger.warning(f'{self.field_id} already has a mapping on field level and we are trying to add a mapping of the value.')
+            message = f'Already mapping assigned on field level and we are trying to add a mapping of the value.'
+            validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
         value_mapping.set_target(usagi_row.target)
 
@@ -154,17 +159,16 @@ class FieldMapping(_AbstractMapping):
 class ValueMapping(_AbstractMapping):
 
     def __init__(self, value_code: str, parent_field: FieldMapping):
-        self.field: FieldMapping = parent_field
         self.value_code: str = value_code
-
-        self._key = self.field.field_id + '|' + self.value_code
+        self.field_id: str = parent_field.field_id
 
     def set_target(self, target: TargetMapping):
         super().set_target(target)
 
         # Value specific warning
         if target.type == MappingType.UNIT:
-            logger.warning(f'{self.field.field_id}-{self.value_code} if value given as code, we expect no unit.')
+            message = f'If value given as code, we expect no unit.'
+            validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
     def __str__(self):
         if self.is_ignored():

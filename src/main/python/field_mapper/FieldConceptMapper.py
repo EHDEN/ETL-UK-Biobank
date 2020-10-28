@@ -21,6 +21,7 @@ import logging
 from src.main.python.field_mapper.model.MappingTarget import MappingTarget
 from src.main.python.field_mapper.model.UsagiModel import UsagiRow
 from src.main.python.field_mapper.model.MappingModel import FieldMapping
+from src.main.python.field_mapper.model.Validator import validator
 
 logger = logging.getLogger(__name__)
 
@@ -51,14 +52,16 @@ class FieldConceptMapper:
 
     def _load_usagi(self, file_path: Path):
         for row in self._load_map(file_path):
-            usagi_mapping = UsagiRow(row)
+            usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
+
+            # TODO: handle mapping file with fixed event mappings (e.g. cancer codes or operations)
 
             code_mapping = self.field_mappings.setdefault(
                 usagi_mapping.field_id,
                 FieldMapping(usagi_mapping.field_id)
             )
-            code_mapping.add(usagi_mapping, file_path.name)
+            code_mapping.add(usagi_mapping)
 
     def get_mapping(self, field_id: str) -> Optional[FieldMapping]:
         if field_id in self.field_mappings:
@@ -142,3 +145,6 @@ if __name__ == '__main__':
     # get the mapping of a field
     # print(mapper.get_mapping('2335'))
     print(mapper.get_mapping('4041'))
+
+    validator.print_summary()
+    # validator.print_all()
