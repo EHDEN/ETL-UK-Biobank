@@ -1,12 +1,20 @@
 # Database connection
 database:
   host: 'localhost'
-  port: 5432
-  database_name: 'ohdsi'
+  port: 6000
+  database_name: 'ukb'
   username: 'postgres'
   # Comment out password to provide at runtime
   password: 'postgres'
 
+# The schema names of the OMOP CDM (target schema) and the vocabulary
+# tables. Additional key-value pairs can be added here if you have
+# custom ORM tables, for which you would like to have dynamic schema
+# names.
+schema_translate_map:
+  cdm_schema: 'omopcdm'
+  vocabulary_schema: 'vocab'
+
 run_options:
-  source_data_folder: './resources/source_data'
+  source_data_folder: './src/test/R/test_intermediates/source_data'
   debug_mode: False

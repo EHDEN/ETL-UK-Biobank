@@ -7,10 +7,10 @@ metadata = base.metadata
 
 class PayerPlanPeriod(base):
     __tablename__ = 'payer_plan_period'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     payer_plan_period_id = Column(Integer, nullable=False, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False)
     payer_plan_period_start_date = Column(Date, nullable=False)
     payer_plan_period_end_date = Column(Date, nullable=False)
     payer_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
@@ -35,7 +35,7 @@ class PayerPlanPeriod(base):
 
 class Cost(base):
     __tablename__ = 'cost'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     cost_id = Column(Integer, primary_key=True)
     cost_event_id = Column(Integer, nullable=False)
@@ -53,7 +53,7 @@ class Cost(base):
     paid_by_primary = Column(Numeric)
     paid_ingredient_cost = Column(Numeric)
     paid_dispensing_fee = Column(Numeric)
-    payer_plan_period_id = Column(ForeignKey('cdm_531.payer_plan_period.payer_plan_period_id'))
+    payer_plan_period_id = Column(ForeignKey('omopcdm.payer_plan_period.payer_plan_period_id'))
     amount_allowed = Column(Numeric)
     revenue_code_concept_id = Column(Integer)
     reveue_code_source_value = Column(String(50))

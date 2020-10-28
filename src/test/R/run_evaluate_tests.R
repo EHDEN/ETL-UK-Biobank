@@ -17,7 +17,7 @@ library(yaml)
 config <- yaml.load_file('config.yml')
 options(width=150)  # Preventing wrapping when printing dataframe
 
-source('TestFramework.R')
+source('TestFramework_ukbb.R')
 
 # Run and output test queries ---------------------------------------------
 connectionConfig <- config$connectionDetails

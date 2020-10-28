@@ -7,10 +7,10 @@ metadata = base.metadata
 
 class ConditionOccurrence(base):
     __tablename__ = 'condition_occurrence'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     condition_occurrence_id = Column(BigInteger, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     condition_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     condition_start_date = Column(Date, nullable=False)
     condition_start_datetime = Column(DateTime, nullable=False)
@@ -18,8 +18,8 @@ class ConditionOccurrence(base):
     condition_end_datetime = Column(DateTime)
     condition_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     stop_reason = Column(String(20))
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    visit_occurrence_id = Column(ForeignKey('cdm_531.visit_occurrence.visit_occurrence_id'), index=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     condition_source_value = Column(String(50))
     condition_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     condition_status_source_value = Column(String(50))
@@ -36,10 +36,10 @@ class ConditionOccurrence(base):
 
 class DeviceExposure(base):
     __tablename__ = 'device_exposure'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     device_exposure_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     device_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     device_exposure_start_date = Column(Date, nullable=False)
     device_exposure_start_datetime = Column(DateTime, nullable=False)
@@ -48,8 +48,8 @@ class DeviceExposure(base):
     device_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     unique_device_id = Column(String(50))
     quantity = Column(Integer)
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    visit_occurrence_id = Column(ForeignKey('cdm_531.visit_occurrence.visit_occurrence_id'), index=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     device_source_value = Column(String(100))
     device_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
 
@@ -63,10 +63,10 @@ class DeviceExposure(base):
 
 class DrugExposure(base):
     __tablename__ = 'drug_exposure'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     drug_exposure_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     drug_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     drug_exposure_start_date = Column(Date, nullable=False)
     drug_exposure_start_datetime = Column(DateTime)
@@ -81,8 +81,8 @@ class DrugExposure(base):
     sig = Column(Text)
     route_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     lot_number = Column(String(50))
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    visit_occurrence_id = Column(ForeignKey('cdm_531.visit_occurrence.visit_occurrence_id'), index=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     drug_source_value = Column(String(50))
     drug_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     route_source_value = Column(String(50))
@@ -99,7 +99,7 @@ class DrugExposure(base):
 
 class FactRelationship(base):
     __tablename__ = 'fact_relationship'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     # TODO: update with appropriate fact relationship logic
     fact_relationship_id = Column(Integer, primary_key=True)
@@ -112,10 +112,10 @@ class FactRelationship(base):
 
 class Measurement(base):
     __tablename__ = 'measurement'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     measurement_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     measurement_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     measurement_date = Column(Date, nullable=False)
     measurement_datetime = Column(DateTime)
@@ -126,8 +126,8 @@ class Measurement(base):
     unit_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     range_low = Column(Numeric)
     range_high = Column(Numeric)
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    visit_occurrence_id = Column(ForeignKey('cdm_531.visit_occurrence.visit_occurrence_id'), index=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     measurement_source_value = Column(String(50))
     measurement_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     unit_source_value = Column(String(50))
@@ -146,10 +146,10 @@ class Measurement(base):
 
 class Note(base):
     __tablename__ = 'note'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     note_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     note_date = Column(Date, nullable=False)
     note_datetime = Column(DateTime)
     note_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
@@ -158,8 +158,8 @@ class Note(base):
     note_text = Column(Text, nullable=False)
     encoding_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     language_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    visit_occurrence_id = Column(ForeignKey('cdm_531.visit_occurrence.visit_occurrence_id'), index=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     note_source_value = Column(String(50))
 
     encoding_concept = relationship('Concept', primaryjoin='Note.encoding_concept_id == Concept.concept_id')
@@ -173,10 +173,10 @@ class Note(base):
 
 class NoteNlp(base):
     __tablename__ = 'note_nlp'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     note_nlp_id = Column(BigInteger, primary_key=True)
-    note_id = Column(ForeignKey('cdm_531.note.note_id'), nullable=False, index=False)
+    note_id = Column(ForeignKey('omopcdm.note.note_id'), nullable=False, index=False)
     section_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     snippet = Column(String(250))
     offset = Column(String(250))
@@ -197,10 +197,10 @@ class NoteNlp(base):
 
 class Observation(base):
     __tablename__ = 'observation'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     observation_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     observation_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     observation_date = Column(Date, nullable=False)
     observation_datetime = Column(DateTime)
@@ -210,8 +210,8 @@ class Observation(base):
     value_as_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     qualifier_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     unit_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    visit_occurrence_id = Column(ForeignKey('cdm_531.visit_occurrence.visit_occurrence_id'), index=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     observation_source_value = Column(String(50))
     observation_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     unit_source_value = Column(String(50))
@@ -230,10 +230,10 @@ class Observation(base):
 
 class ObservationPeriod(base):
     __tablename__ = 'observation_period'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     observation_period_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     observation_period_start_date = Column(Date, nullable=False)
     observation_period_end_date = Column(Date, nullable=False)
     period_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
@@ -244,7 +244,7 @@ class ObservationPeriod(base):
 
 class Person(base):
     __tablename__ = 'person'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     person_id = Column(Integer, primary_key=True, unique=True)
     gender_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
@@ -254,9 +254,9 @@ class Person(base):
     birth_datetime = Column(DateTime)
     race_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     ethnicity_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
-    location_id = Column(ForeignKey('cdm_531.location.location_id'))
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    care_site_id = Column(ForeignKey('cdm_531.care_site.care_site_id'))
+    location_id = Column(ForeignKey('omopcdm.location.location_id'))
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    care_site_id = Column(ForeignKey('omopcdm.care_site.care_site_id'))
     person_source_value = Column(String(50))
     gender_source_value = Column(String(50))
     gender_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
@@ -278,9 +278,9 @@ class Person(base):
 
 class Death(base):
     __tablename__ = 'death'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), primary_key=True, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), primary_key=True, index=False)
     death_date = Column(Date, nullable=True)
     death_datetime = Column(DateTime)
     death_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
@@ -295,18 +295,18 @@ class Death(base):
 
 class ProcedureOccurrence(base):
     __tablename__ = 'procedure_occurrence'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     procedure_occurrence_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     procedure_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     procedure_date = Column(Date, nullable=False)
     procedure_datetime = Column(DateTime, nullable=False)
     procedure_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     modifier_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     quantity = Column(Integer)
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    visit_occurrence_id = Column(ForeignKey('cdm_531.visit_occurrence.visit_occurrence_id'), index=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     procedure_source_value = Column(String(50))
     procedure_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     qualifier_source_value = Column(String(50))
@@ -322,10 +322,10 @@ class ProcedureOccurrence(base):
 
 class Specimen(base):
     __tablename__ = 'specimen'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     specimen_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     specimen_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     specimen_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     specimen_date = Column(Date, nullable=False)
@@ -350,18 +350,18 @@ class Specimen(base):
 
 class VisitOccurrence(base):
     __tablename__ = 'visit_occurrence'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     visit_occurrence_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=False)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=False)
     visit_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=False)
     visit_start_date = Column(Date, nullable=False)
     visit_start_datetime = Column(DateTime)
     visit_end_date = Column(Date, nullable=False)
     visit_end_datetime = Column(DateTime)
     visit_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
-    provider_id = Column(ForeignKey('cdm_531.provider.provider_id'))
-    care_site_id = Column(ForeignKey('cdm_531.care_site.care_site_id'))
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    care_site_id = Column(ForeignKey('omopcdm.care_site.care_site_id'))
     visit_source_value = Column(String(50))
     visit_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     admitting_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))

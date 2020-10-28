@@ -17,12 +17,16 @@ config <- yaml.load_file('config.yml')
 
 # Initialize the framework once -------------------------------------------
 # NOTE: remove initFramework() from TestFramework.R, otherwise it resets with every import!
-source('TestFramework.R')
+source('TestFramework_ukbb.R')
 initFramework()
 
 # Import test cases ------------------------------------------------------------
-# NOTE: add your test cases here! (remove the following)
-source('test_cases/test_sample_source_to_person.R')
+# source('test_cases/test_assessment_center_to_location.R')   # test IDs    1-99
+source('test_cases/test_covid_to_care_site.R')              # test IDs 100-199
+# source('test_cases/test_baseline_to_person.R')              # test IDs 200-299
+# source('test_cases/test_gp_registrations_to_obs_period.R')  # test IDs 300-399
+# source('test_cases/test_gp_clinical_to_visit_occurrence.R') # test IDs 400-499
+# source('test_cases/test_gp_clinical_to_stem_table.R')       # test IDs 500-599
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)

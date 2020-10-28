@@ -7,7 +7,7 @@ metadata = base.metadata
 
 class Cohort(base):
     __tablename__ = 'cohort'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     cohort_definition_id = Column(ForeignKey('vocab.cohort_definition.cohort_definition_id'), primary_key=True, nullable=False, index=True)
     subject_id = Column(Integer, primary_key=True, nullable=False, index=True)
@@ -19,7 +19,7 @@ class Cohort(base):
 
 class CohortAttribute(base):
     __tablename__ = 'cohort_attribute'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     cohort_definition_id = Column(ForeignKey('vocab.cohort_definition.cohort_definition_id'), primary_key=True, nullable=False, index=True)
     cohort_start_date = Column(Date, primary_key=True, nullable=False)
@@ -36,10 +36,10 @@ class CohortAttribute(base):
 
 class ConditionEra(base):
     __tablename__ = 'condition_era'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     condition_era_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=True)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=True)
     condition_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=True)
     condition_era_start_date = Column(Date, nullable=False)
     condition_era_end_date = Column(Date, nullable=False)
@@ -51,10 +51,10 @@ class ConditionEra(base):
 
 class DoseEra(base):
     __tablename__ = 'dose_era'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     dose_era_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=True)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=True)
     drug_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=True)
     unit_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     dose_value = Column(Numeric, nullable=False)
@@ -68,10 +68,10 @@ class DoseEra(base):
 
 class DrugEra(base):
     __tablename__ = 'drug_era'
-    __table_args__ = {'schema': 'cdm_531'}
+    __table_args__ = {'schema': 'omopcdm'}
 
     drug_era_id = Column(Integer, primary_key=True)
-    person_id = Column(ForeignKey('cdm_531.person.person_id'), nullable=False, index=True)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=True)
     drug_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=True)
     drug_era_start_date = Column(Date, nullable=False)
     drug_era_end_date = Column(Date, nullable=False)
