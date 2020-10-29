@@ -16,7 +16,7 @@ def gp_clinical_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
     records = []
 
     for _, row in source.iterrows():
-        visit_date = get_datetime(row['event_dt'], "%d/%m/%Y", default_date='01/01/1970')
+        visit_date = get_datetime(row['event_dt'], "%d/%m/%Y")
 
         r = VisitOccurrence(
             person_id=row['eid'],
