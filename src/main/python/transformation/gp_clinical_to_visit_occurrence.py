@@ -16,7 +16,7 @@ def gp_clinical_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
     records = []
 
     for _, row in source.iterrows():
-        visit_date = get_datetime(row['event_dt'], "%d/%m/%Y")
+        visit_date = get_datetime(row['event_dt'], "%d/%m/%Y", default_date='01/01/1970')
 
         r = VisitOccurrence(
             person_id=row['eid'],
@@ -26,7 +26,7 @@ def gp_clinical_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
             visit_end_date=visit_date.date(),
             visit_end_datetime=visit_date,
             visit_type_concept_id=44818518,  # Visit derived from EHR record
-            care_site_id=row['data_provider']
+            # care_site_id=row['data_provider']
         )
         records.append(r)
     return records
