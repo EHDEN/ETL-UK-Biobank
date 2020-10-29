@@ -16,21 +16,22 @@ from datetime import datetime
 from calendar import monthrange
 import pandas as pd
 
+DEFAULT_DATETIME = datetime.strptime('1970-01-01', '%Y-%m-%d')
 
-# NOTE: sample date functions, remove if unused
 
-def get_datetime(date: str = '', format='%Y-%m-%d', default_date='1970-01-01') -> datetime:
+def get_datetime(date: str = '', format='%Y-%m-%d', default_date=DEFAULT_DATETIME) -> datetime:
     """
+    If the date uses a different separator, you should specify it with the "sep" argument.
     If the date is incomplete, returns:
      - 1st of the month (if day missing)
      - 1st of January (if month missing)
     If the date is missing, returns given default date.
     :param date: string
-    :param sep: date format
+    :param format: date format
     :param default_date: default start date ("1970-01-01")
     """
     if pd.isnull(date) or not date.strip():
-        date = default_date
+        return default_date
     try:
         return datetime.strptime(date, format)
     except ValueError:
@@ -46,7 +47,7 @@ def get_datetime(date: str = '', format='%Y-%m-%d', default_date='1970-01-01') -
         raise ValueError(f'unrecognized date value {date}')
 
 
-def get_end_datetime(date: str, format='%Y-%m-%d', default_date='1970-01-01') -> datetime:
+def get_end_datetime(date: str, format='%Y-%m-%d', default_date=DEFAULT_DATETIME) -> datetime:
     """
     If the date is incomplete, returns:
      - last of the month (if day missing)
