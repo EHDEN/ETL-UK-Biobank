@@ -8,5 +8,5 @@ database:
   password: 'postgres'
 
 run_options:
-  source_data_folder: './src/test/R/test_intermediates/source_data'
+  source_data_folder: './resources/synthetic_data'
   debug_mode: False
