@@ -378,3 +378,88 @@ class VisitOccurrence(base):
     visit_concept = relationship('Concept', primaryjoin='VisitOccurrence.visit_concept_id == Concept.concept_id')
     visit_source_concept = relationship('Concept', primaryjoin='VisitOccurrence.visit_source_concept_id == Concept.concept_id')
     visit_type_concept = relationship('Concept', primaryjoin='VisitOccurrence.visit_type_concept_id == Concept.concept_id')
+
+
+class StemTable(base):
+    __tablename__ = 'stem_table'
+    __table_args__ = {'schema': 'omopcdm'}
+
+    id = Column(Integer, primary_key=True)
+    domain_id = Column(ForeignKey('vocab.domain.domain_id'),
+                      comment='A foreign key identifying the domain this event belongs to.'
+                              'The domain drives the target CDM table this event will be '
+                              'recorded in. If one is not set, specify a default domain.')
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=True)
+    concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, 
+                       index=True)
+    start_date = Column(Date)
+    start_datetime = Column(DateTime, nullable=False)
+    end_date = Column(Date)
+    end_datetime = Column(DateTime)
+    verbatim_end_date = Column(Date)
+    type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
+    operator_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    value_as_number = Column(Numeric)
+    value_as_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    value_as_string = Column(String(60))
+    value_as_datetime = Column(DateTime)
+    unit_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    range_low = Column(Numeric)
+    range_high = Column(Numeric)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'),
+                                 index=True)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
+    source_value = Column(String(50))
+    source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    unit_source_value = Column(String(50))
+    value_source_value = Column(String(50))
+    stop_reason = Column(String(20))
+    refills = Column(Integer)
+    quantity = Column(Numeric)
+    days_supply = Column(Integer)
+    sig = Column(Text)
+    route_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    lot_number = Column(String(50))
+    route_source_value = Column(String(50))
+    dose_unit_source_value = Column(String(50))
+    condition_status_source_value = Column(String(50))
+    condition_status_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    qualifier_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    qualifier_source_value = Column(String(50))
+    modifier_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    unique_device_id = Column(String(50))
+    anatomic_site_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    disease_status_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    specimen_source_id = Column(String(50))
+    anatomic_site_source_value = Column(String(50))
+    disease_status_source_value = Column(String(50))
+    modifier_source_value = Column(String(50))
+    
+    person = relationship('Person')
+    provider = relationship('Provider')
+    visit_occurrence = relationship('VisitOccurrence')
+    concept = relationship('Concept', primaryjoin='StemTable.concept_id == Concept.concept_id')
+    source_concept = relationship('Concept', primaryjoin='StemTable.source_concept_id == '
+                                                       'Concept.concept_id')
+    type_concept = relationship('Concept', primaryjoin='StemTable.type_concept_id == '
+                                                      'Concept.concept_id')
+    operator_concept = relationship('Concept', primaryjoin='StemTable.operator_concept_id == '
+                                                          'Concept.concept_id')
+    unit_concept = relationship('Concept', primaryjoin='StemTable.unit_concept_id == '
+                                                      'Concept.concept_id')
+    value_as_concept = relationship('Concept', primaryjoin='StemTable.value_as_concept_id == '
+                                                          'Concept.concept_id')
+    route_concept = relationship('Concept', primaryjoin='StemTable.route_concept_id == '
+                                                       'Concept.concept_id')
+    qualifier_concept = relationship('Concept', primaryjoin='StemTable.qualifier_concept_id == '
+                                                           'Concept.concept_id')
+    modifier_concept = relationship('Concept', primaryjoin='StemTable.modifier_concept_id == '
+                                                          'Concept.concept_id')
+    anatomic_site_concept = relationship('Concept',
+                                         primaryjoin='StemTable.anatomic_site_concept_id '
+                                                     '== Concept.concept_id')
+    disease_status_concept = relationship('Concept',
+                                          primaryjoin='StemTable.disease_status_concept_id '
+                                                      '== Concept.concept_id')
+    visit_detail = relationship('VisitDetail')
