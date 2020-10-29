@@ -7,7 +7,7 @@ if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-def assessment_center_to_location(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
+def assessment_center_to_location(wrapper: Wrapper) -> List[Wrapper.cdm.Location]:
     with open('./resources/encodings/10_assessment_center.tsv') as f_in:
         assessment_centers = csv.DictReader(f_in, delimiter='\t')
 
