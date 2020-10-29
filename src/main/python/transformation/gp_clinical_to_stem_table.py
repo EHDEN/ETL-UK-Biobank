@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
-from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+from sqlalchemy.orm.exc import NoResultFound
 
 from ..util.date_functions import get_datetime
 from ..core.model import VisitOccurrence
@@ -12,8 +12,6 @@ if TYPE_CHECKING:
 
 
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
-    
-
 
     source = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'), )
 
@@ -23,7 +21,6 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
         person_id = row['eid']
 
-        # TODO: double-check placeholder date
         event_date =  get_datetime(row['event_dt'], "%d/%m/%Y")
 
         # Look up visit_id in VisitOccurrence by patient_id + visit_start_date
@@ -38,7 +35,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             try:
                 visit_record = query.one()
                 visit_id = visit_record.visit_occurrence_id
-            except NoResultFound or MultipleResultsFound:
+            except NoResultFound:
                 continue
 
         # TODO: implement correct logic to look up concept code.
@@ -59,7 +56,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         # TODO: remove workaround, this should be coming from mappings
         unit_as_concept = 12345 if unit else None
         try:
-            unit_as_number = float(value) if value else None
+            unit_as_number = float(unit) if unit else None
         except Exception:
             unit_as_number = 0
 

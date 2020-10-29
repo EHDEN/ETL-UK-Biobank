@@ -27,7 +27,7 @@ def get_datetime(date: str = '', format='%Y-%m-%d', default_date=DEFAULT_DATETIM
     If the date is missing, returns given default date.
     :param date: string
     :param format: date format
-    :param default_date: default start date ("1990-01-01")
+    :param default_date: default start date ("1900-01-01")
     """
     if pd.isnull(date) or not date.strip():
         return default_date
@@ -54,7 +54,7 @@ def get_end_datetime(date: str, format='%Y-%m-%d', default_date=DEFAULT_DATETIME
     If the date is missing, returns a default date.
     :param date: string
     :param format: date format
-    :param default_date: default end date ("1970-01-01)
+    :param default_date: default end date ("1990-01-01)
     """
     end_date = get_datetime(date, format, default_date)
     if pd.notnull(date):
