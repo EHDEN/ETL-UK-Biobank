@@ -15,13 +15,17 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     records = []
     for _, row in source.iterrows():
 
+        # TODO: no person ID available in current synthetic data,
+        #  need to update with plausible values for this to work normally
         person_id = row['eid'][4:]
-
-        # TODO: Look up visit occurrence by unique eid+event_dt
-        visit_occurrence_id = person_id + event_date
+        if not person_id:
+            continue
 
         # TODO: check if placeholder already in source, or we actually need to provide it
         event_date = row['event_dt'] if row['event_dt'] else '1900-01-01'
+
+        # TODO: Look up visit occurrence by unique eid+event_dt
+        visit_occurrence_id = person_id + event_date
 
         # TODO: implement logic.
         #  Deduced field, read_2 or read_3. Read v2 is subset of Read v3
