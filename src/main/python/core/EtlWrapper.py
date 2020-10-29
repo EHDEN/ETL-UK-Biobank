@@ -59,6 +59,7 @@ class EtlWrapper:
         """Drops clinical tables, if they exist"""
         logger.info('Dropping OMOP CDM (non-vocabulary) tables if existing')
         self.db.base.metadata.drop_all(self.db.engine, tables=[
+            self.cdm.clinical_data.StemTable.__table__,
             self.cdm.clinical_data.ConditionOccurrence.__table__,
             self.cdm.clinical_data.DeviceExposure.__table__,
             self.cdm.clinical_data.DrugExposure.__table__,
@@ -71,6 +72,7 @@ class EtlWrapper:
             self.cdm.clinical_data.Death.__table__,
             self.cdm.clinical_data.ProcedureOccurrence.__table__,
             self.cdm.clinical_data.Specimen.__table__,
+            self.cdm.clinical_data.VisitDetail.__table__,
             self.cdm.clinical_data.VisitOccurrence.__table__,
             self.cdm.derived_elements.DrugEra.__table__,
             self.cdm.derived_elements.DoseEra.__table__,
