@@ -380,6 +380,42 @@ class VisitOccurrence(base):
     visit_type_concept = relationship('Concept', primaryjoin='VisitOccurrence.visit_type_concept_id == Concept.concept_id')
 
 
+class VisitDetail(base):
+    __tablename__ = 'visit_detail'
+    __table_args__ = {'schema': 'omopcdm'}
+
+    visit_detail_id = Column(Integer, primary_key=True)
+    person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=True)
+    visit_detail_concept_id = Column(Integer, nullable=False, index=True)
+    visit_detail_start_date = Column(Date, nullable=False)
+    visit_detail_start_datetime = Column(DateTime)
+    visit_detail_end_date = Column(Date, nullable=False)
+    visit_detail_end_datetime = Column(DateTime)
+    visit_detail_type_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
+    provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
+    care_site_id = Column(ForeignKey('omopcdm.care_site.care_site_id'))
+    admitting_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    discharge_to_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    preceding_visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
+    visit_detail_source_value = Column(String(50))
+    visit_detail_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    admitting_source_value = Column(String(50))
+    discharge_to_source_value = Column(String(50))
+    visit_detail_parent_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
+    visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), nullable=False)
+
+    admitting_source_concept = relationship('Concept', primaryjoin='VisitDetail.admitting_source_concept_id == Concept.concept_id')
+    care_site = relationship('CareSite')
+    discharge_to_concept = relationship('Concept', primaryjoin='VisitDetail.discharge_to_concept_id == Concept.concept_id')
+    person = relationship('Person')
+    preceding_visit_detail = relationship('VisitDetail', remote_side=[visit_detail_id], primaryjoin='VisitDetail.preceding_visit_detail_id == VisitDetail.visit_detail_id')
+    provider = relationship('Provider')
+    visit_detail_parent = relationship('VisitDetail', remote_side=[visit_detail_id], primaryjoin='VisitDetail.visit_detail_parent_id == VisitDetail.visit_detail_id')
+    visit_detail_source_concept = relationship('Concept', primaryjoin='VisitDetail.visit_detail_source_concept_id == Concept.concept_id')
+    visit_detail_type_concept = relationship('Concept', primaryjoin='VisitDetail.visit_detail_type_concept_id == Concept.concept_id')
+    visit_occurrence = relationship('VisitOccurrence')
+
+
 class StemTable(base):
     __tablename__ = 'stem_table'
     __table_args__ = {'schema': 'omopcdm'}
