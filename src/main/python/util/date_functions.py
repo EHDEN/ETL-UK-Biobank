@@ -16,7 +16,7 @@ from datetime import datetime
 from calendar import monthrange
 import pandas as pd
 
-DEFAULT_DATETIME = datetime.strptime('1990-01-01', '%Y-%m-%d')
+DEFAULT_DATETIME = datetime.strptime('1900-01-01', '%Y-%m-%d')
 
 
 def get_datetime(date: str = '', format='%Y-%m-%d', default_date=DEFAULT_DATETIME) -> datetime:
