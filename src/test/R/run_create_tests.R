@@ -21,7 +21,7 @@ source('TestFramework_ukbb.R')
 initFramework()
 
 # Import test cases ------------------------------------------------------------
-# source('test_cases/test_assessment_center_to_location.R')   # test IDs    1-99
+source('test_cases/test_assessment_center_to_location.R')   # test IDs    1-99
 source('test_cases/test_covid_to_care_site.R')              # test IDs 100-199
 # source('test_cases/test_baseline_to_person.R')              # test IDs 200-299
 # source('test_cases/test_gp_registrations_to_obs_period.R')  # test IDs 300-399
