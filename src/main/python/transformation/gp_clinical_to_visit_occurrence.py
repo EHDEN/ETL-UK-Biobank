@@ -4,13 +4,12 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import get_datetime
-from ..core.model import VisitOccurrence
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-def gp_clinical_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
+def gp_clinical_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
     source = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'))
 
     records = []
@@ -18,7 +17,7 @@ def gp_clinical_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
     for _, row in source.iterrows():
         visit_date = get_datetime(row['event_dt'], "%d/%m/%Y")
 
-        r = VisitOccurrence(
+        r = wrapper.cdm.VisitOccurrence(
             person_id=row['eid'],
             visit_concept_id=38004453,  # Family Practice
             visit_start_date=visit_date.date(),
