@@ -3,7 +3,9 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
-from ..core.model import ObservationPeriod
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+
+from ..core.model import ObservationPeriod, Person
 from ..util.date_functions import get_datetime, get_end_datetime
 
 if TYPE_CHECKING:
@@ -14,16 +16,26 @@ def gp_registrations_to_observation_period(wrapper: Wrapper) -> List[Observation
     source = pd.DataFrame(wrapper.get_source_data('gp_registrations.csv'))
 
     records = []
-    for _, row in source.iterrows():
+    with wrapper.db.session_scope() as session:
+        for _, row in source.iterrows():
 
-        start_date = get_datetime(row['reg_date'], "%Y/%m/%d")
-        end_date = get_end_datetime(row['deduct_date'], "%Y/%m/%d", '2099/7/1')
+            query = session.query(Person) \
+                .filter(Person.person_id == row['eid'])
 
-        r = ObservationPeriod(
-            person_id= row['eid'],
-            observation_period_start_date=start_date,
-            observation_period_end_date=end_date,
-            period_type_concept_id= 32817 #EHR
-        )
-        records.append(r)
-    return records
+            try:
+                person_record = query.one()
+                person_id = person_record.person_id
+            except NoResultFound or MultipleResultsFound:
+                continue
+
+            start_date = get_datetime(row['reg_date'], "%d/%m/%Y")
+            end_date = get_end_datetime(row['deduct_date'], "%d/%m/%Y")
+
+            r = ObservationPeriod(
+                person_id=person_id,
+                observation_period_start_date=start_date.date(),
+                observation_period_end_date=end_date.date(),
+                period_type_concept_id=0 #TODO decide the type, 32817(EHR) not in vocab.concepts
+            )
+            records.append(r)
+        return records
