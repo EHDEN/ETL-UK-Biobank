@@ -34,6 +34,21 @@ class _AbstractMapping(ABC):
     def is_ignored(self):
         return self.status == MappingStatus.IGNORED
 
+    def get_event_concept_id(self):
+        if not self.event_target:
+            return 0
+        return self.event_target.concept_id
+
+    def get_unit_concept_id(self):
+        if not self.unit_target:
+            return 0
+        return self.unit_target.concept_id
+
+    def get_value_concept_id(self):
+        if not self.value_target:
+            return 0
+        return self.value_target.concept_id
+
     def set_status(self, status: MappingStatus):
         # Although each Usagi row has a comment and status, these are given on field-value level
         if self.status and self.status != status:
@@ -71,6 +86,7 @@ class FieldMapping(_AbstractMapping):
     def __init__(self, field_id: str):
         super()
         self.field_id = field_id
+        self.field_description: str = None
         self.values: Dict[str, ValueMapping] = {}
 
     def has_unit(self) -> bool:
@@ -94,6 +110,9 @@ class FieldMapping(_AbstractMapping):
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
             return
 
+        self.source_file_name = usagi_row.source_file_name
+        self.field_description = usagi_row.field_description
+
         is_value_mapping = bool(usagi_row.value_code)
         if is_value_mapping:
             self._add_value_mapping(usagi_row)
@@ -106,8 +125,6 @@ class FieldMapping(_AbstractMapping):
         :param usagi_row:
         :return:
         """
-        self.source_file_name = usagi_row.source_file_name
-
         self.comment = usagi_row.comment
         self.set_status(usagi_row.status)
 
@@ -131,6 +148,7 @@ class FieldMapping(_AbstractMapping):
 
         # Although each Usagi row has a comment and status, these are given on field-value level in the tool.
         value_mapping.comment = usagi_row.comment
+        value_mapping.value_description = usagi_row.value_description
         value_mapping.set_status(usagi_row.status)
 
         if value_mapping.status == MappingStatus.IGNORED:
@@ -160,6 +178,7 @@ class ValueMapping(_AbstractMapping):
 
     def __init__(self, value_code: str, parent_field: FieldMapping):
         self.value_code: str = value_code
+        self.value_description: str = None
         self.field_id: str = parent_field.field_id
 
     def set_target(self, target: TargetMapping):

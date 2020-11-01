@@ -28,7 +28,8 @@ logger = logging.getLogger(__name__)
 
 class FieldConceptMapper:
 
-    def __init__(self, in_directory: Path):
+    def __init__(self, in_directory: Path, log_level: str = 'INFO'):
+        logger.setLevel(log_level)
         self.field_mappings: Dict[str, FieldMapping] = {}
         self.load(in_directory)
 
@@ -67,6 +68,10 @@ class FieldConceptMapper:
         if field_id in self.field_mappings:
             return self.field_mappings[field_id]
         return None
+
+    def get_random(self, n=20):
+        import random
+        return random.sample(list(self.field_mappings.values()), n)
 
     def _lookup(self, field_id: str, value: str) -> Optional[MappingTarget]:
         """
@@ -130,8 +135,7 @@ class FieldConceptMapper:
 
 
 if __name__ == '__main__':
-    logger.setLevel('INFO')
-    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'))
+    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
 
     # Some simple tests
     print(mapper('50', '180'))  # numeric
