@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | observation_period_id |  |  |  |
 | person_id |  |  |  |
-| observation_period_start_date |  |  |  |
-| observation_period_end_date |  |  |  |
-| period_type_concept_id |  |  |  |
+| observation_period_start_date | reg_date |  |  |
+| observation_period_end_date | deduct_date |  |  |
+| period_type_concept_id | 32817 | EHR |  |
 

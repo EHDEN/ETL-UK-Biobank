@@ -35,7 +35,7 @@ def gp_registrations_to_observation_period(wrapper: Wrapper) -> List[Observation
                 person_id=person_id,
                 observation_period_start_date=start_date.date(),
                 observation_period_end_date=end_date.date(),
-                period_type_concept_id=0 #TODO decide the type, 32817(EHR) not in vocab.concepts
+                period_type_concept_id=32817 #EHR
             )
             records.append(r)
         return records
