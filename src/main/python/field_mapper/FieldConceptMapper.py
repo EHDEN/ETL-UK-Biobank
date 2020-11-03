@@ -28,10 +28,11 @@ logger = logging.getLogger(__name__)
 
 class FieldConceptMapper:
 
-    def __init__(self, in_directory: Path, log_level: str = 'INFO'):
+    def __init__(self, in_directory: Path = None, log_level: str = 'INFO'):
         logger.setLevel(log_level)
         self.field_mappings: Dict[str, FieldMapping] = {}
-        self.load(in_directory)
+        if in_directory:
+            self.load(in_directory)
 
     def __call__(self, field_id: str, value: str) -> MappingTarget:
         # Convenience method to allow field_mapper(field_id, value)
