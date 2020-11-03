@@ -33,7 +33,7 @@
 
 [care_site](care_site.md)
 
-[stem_table](stem_table.md)
+[gp_clinical to stem_table](gp_clinical_to_stem_table.md)
 
 [source_appendix](source_appendix.md)
 
