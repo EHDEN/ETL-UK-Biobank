@@ -14,6 +14,10 @@ initFramework <- function() {
   defaults$`21000-0.0` <- '1'
   defaults$`21000-1.0` <- '1002'
   defaults$`52-0.0` <- '1'
+  defaults$`53-0.0` <- ''
+  defaults$`53-1.0` <- ''
+  defaults$`53-2.0` <- ''
+  defaults$`53-3.0` <- ''
   defaults$`54-0.0` <- '11004'
   defaults$`54-1.0` <- '11009'
   defaults$`54-2.0` <- '11014'
@@ -156,7 +160,7 @@ initFramework <- function() {
 
 initFramework()
 
-set_defaults_baseline <- function(eid,`34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
+set_defaults_baseline <- function(eid,`34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `53-0.0`, `53-1.0`, `53-2.0`, `53-3.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
@@ -172,6 +176,18 @@ set_defaults_baseline <- function(eid,`34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.
   }
   if (!missing(`52-0.0`)) {
     defaults$`52-0.0` <- `52-0.0`
+  }
+  if (!missing(`53-0.0`)) {
+    defaults$`53-0.0` <- `53-0.0`
+  }
+  if (!missing(`53-1.0`)) {
+    defaults$`53-1.0` <- `53-1.0`
+  }
+  if (!missing(`53-2.0`)) {
+    defaults$`53-2.0` <- `53-2.0`
+  }
+  if (!missing(`53-3.0`)) {
+    defaults$`53-3.0` <- `53-3.0`
   }
   if (!missing(`54-0.0`)) {
     defaults$`54-0.0` <- `54-0.0`
@@ -589,7 +605,7 @@ declareTest <- function(id, description) {
   frameworkContext$testDescription <- description
 }
 
-add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
+add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `53-0.0`, `53-1.0`, `53-2.0`, `53-3.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
@@ -632,6 +648,38 @@ add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-
   }
   fields <- c(fields, "52-0.0")
   values <- c(values, if (is.null(`52-0.0`)) "NULL" else if (is(`52-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`52-0.0`), "'"))
+  
+  if (missing(`53-0.0`)) {
+    `53-0.0` <- defaults$`53-0.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-0.0")
+  values <- c(values, if (is.null(`53-0.0`)) "NULL" else if (is(`53-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-0.0`), "'"))
+  
+  if (missing(`53-1.0`)) {
+    `53-1.0` <- defaults$`53-1.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-1.0")
+  values <- c(values, if (is.null(`53-1.0`)) "NULL" else if (is(`53-1.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-1.0`), "'"))
+  
+  if (missing(`53-2.0`)) {
+    `53-2.0` <- defaults$`53-2.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-2.0")
+  values <- c(values, if (is.null(`53-2.0`)) "NULL" else if (is(`53-2.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-2.0`), "'"))
+  
+  if (missing(`53-3.0`)) {
+    `53-3.0` <- defaults$`53-3.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-3.0")
+  values <- c(values, if (is.null(`53-3.0`)) "NULL" else if (is(`53-3.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-3.0`), "'"))
   
   if (missing(`54-0.0`)) {
     `54-0.0` <- defaults$`54-0.0`

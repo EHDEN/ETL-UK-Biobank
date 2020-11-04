@@ -28,6 +28,7 @@ source('test_cases/test_gp_registrations_to_obs_period.R')             # test ID
 source('test_cases/test_gp_clinical_to_visit_occurrence.R')            # test IDs 400-499
 source('test_cases/test_covid_to_visit_occurrence.R')                  # test IDs 500-599
 source('test_cases/test_gp_prescriptions_to_visit_occurrence.R')       # test IDs 600-699
+source('test_cases/test_baseline_to_visit_occurrence.R')               # test IDs 700-799
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)
