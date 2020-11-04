@@ -2,8 +2,8 @@
 
 ### Reading from covid
 
-Test done with result (positive or negative or suspected)
-TODO: is covid19 pre or post coordinated concept?
+Type of test done (type of specimen collected) with result (positive or negative or suspected).
+Covid is mapped as post coordinated concept.
 
 ![](md_files/image17.png)
 
@@ -11,7 +11,7 @@ TODO: is covid19 pre or post coordinated concept?
 | --- | --- | --- | --- |
 | observation_id |  |  |  |
 | person_id | eid |  |  |
-| observation_concept_id | spectype |  |  |
+| observation_concept_id | spectype | Codes from field 1853 (COVID19 test locations) describing where the sample for the test is taken from |  |
 | observation_date | specdate |  |  |
 | observation_datetime | specdate |  |  |
 | visit_occurrence_id | specdate<br>eid | Lookup in previously created visit occurrence by eid and specdate |  |
