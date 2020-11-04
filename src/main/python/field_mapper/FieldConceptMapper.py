@@ -72,6 +72,8 @@ class FieldConceptMapper:
 
     def get_random(self, n=20):
         import random
+        if n > len(self.field_mappings):
+            n = len(self.field_mappings)
         return random.sample(list(self.field_mappings.values()), n)
 
     def _lookup(self, field_id: str, value: str) -> Optional[MappingTarget]:

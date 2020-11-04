@@ -13,9 +13,10 @@
 # GNU General Public License for more details.
 
 # !/usr/bin/env python3
+from __future__ import annotations
 from abc import ABC
 from dataclasses import dataclass
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from src.main.python.field_mapper.model.UsagiModel import UsagiRow, TargetMapping, MappingType, MappingStatus
 from src.main.python.field_mapper.model.Validator import validator
 
@@ -23,7 +24,9 @@ from src.main.python.field_mapper.model.Validator import validator
 @dataclass
 class _AbstractMapping(ABC):
     field_id: str = None
+    field_description: str = None
     value_code: str = None  # Only implemented for ValueMapping
+    value_description: str = None  # Only implemented for ValueMapping
     event_target: Optional[TargetMapping] = None
     unit_target: Optional[TargetMapping] = None
     value_target: Optional[TargetMapping] = None
@@ -86,7 +89,6 @@ class FieldMapping(_AbstractMapping):
     def __init__(self, field_id: str):
         super()
         self.field_id = field_id
-        self.field_description: str = None
         self.values: Dict[str, ValueMapping] = {}
 
     def has_unit(self) -> bool:
@@ -96,6 +98,9 @@ class FieldMapping(_AbstractMapping):
     def has_values(self) -> bool:
         # TODO: what about numeric mappings that also have a few codes (-1, -3)
         return bool(self.values)
+
+    def get_values(self) -> List[ValueMapping]:
+        return list(self.values.values())
 
     def add(self, usagi_row: UsagiRow):
         """
@@ -112,6 +117,8 @@ class FieldMapping(_AbstractMapping):
 
         self.source_file_name = usagi_row.source_file_name
         self.field_description = usagi_row.field_description
+        if usagi_row.unit_description:
+            self.field_description = f'{self.field_description} ({usagi_row.unit_description})'
 
         is_value_mapping = bool(usagi_row.value_code)
         if is_value_mapping:
@@ -148,7 +155,7 @@ class FieldMapping(_AbstractMapping):
 
         # Although each Usagi row has a comment and status, these are given on field-value level in the tool.
         value_mapping.comment = usagi_row.comment
-        value_mapping.value_description = usagi_row.value_description
+        value_mapping.value_description = usagi_row.value_description if usagi_row.value_description else usagi_row.field_description
         value_mapping.set_status(usagi_row.status)
 
         if value_mapping.status == MappingStatus.IGNORED:
@@ -178,7 +185,6 @@ class ValueMapping(_AbstractMapping):
 
     def __init__(self, value_code: str, parent_field: FieldMapping):
         self.value_code: str = value_code
-        self.value_description: str = None
         self.field_id: str = parent_field.field_id
 
     def set_target(self, target: TargetMapping):
