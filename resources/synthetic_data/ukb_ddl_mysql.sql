@@ -38,7 +38,7 @@ CREATE TABLE `gp_registrations` (
 
 -- ukb.gp_scripts definition
 
-CREATE TABLE `gp_scripts` (
+CREATE TABLE `gp_prescriptions` (
   `eid` int(11) DEFAULT NULL,
   `data_provider` int(1) DEFAULT NULL,
   `issue_date` date DEFAULT NULL,

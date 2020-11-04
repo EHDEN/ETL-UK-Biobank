@@ -8,6 +8,7 @@ src/test/R/unittest_results.csv
 src/test/R/.Rhistory
 src/test/R/.RData
 src/test/R/errorReport.txt
+src/test/R/errorReportSql.txt
 
 # logs
 /logs/

@@ -38,12 +38,12 @@ See gp_clinical, merge the two
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
 | visit_occurrence_id |  |  | Auto-increment |
-| person_id |  |  |  |
+| person_id | eid |  |  |
 | visit_concept_id |  |  | For gp_clinical, gp_prescription: 38004453 - Family Practice  For baseline: 44818519 - Clinical Study visit (to be discussed)  For covid: 32693 - Health examination |
-| visit_start_date |  |  |  |
-| visit_start_datetime |  |  |  |
-| visit_end_date |  |  |  |
-| visit_end_datetime |  |  |  |
+| visit_start_date | issue_date |  |  |
+| visit_start_datetime | issue_date |  |  |
+| visit_end_date | issue_date |  |  |
+| visit_end_datetime | issue_date |  |  |
 | visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: x - Screening (Procedure Type) |
 | provider_id |  |  |  |
 | care_site_id |  |  | For hesin: care site group info is present, but not granular enough. |
@@ -121,7 +121,7 @@ Follow-up online or to assessment center.
 | visit_start_datetime | specdate |  |  |
 | visit_end_date | specdate |  |  |
 | visit_end_datetime | specdate |  |  |
-| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: x - Screening (Procedure Type) |
+| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: 4063579 - Screening (Procedure Type) |
 | provider_id |  |  |  |
 | care_site_id | laboratory | Capture unique laboratories in care_site table. | For hesin: care site group info is present, but not granular enough. |
 | visit_source_value |  |  |  |

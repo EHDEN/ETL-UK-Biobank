@@ -27,6 +27,12 @@ logger = logging.getLogger(__name__)
 
 
 class FieldConceptMapper:
+    """
+    TODO: configuration file to load the baseline_field_mappings, to cover:
+     - handle mappings with fixed event mappings (e.g. cancer codes or operations)
+     - handle field_ids using same value mapping (opcs codes from 41256;41258;42908)
+     - mark field_id to date_field_id mapping?
+    """
 
     def __init__(self, in_directory: Path):
         self.field_mappings: Dict[str, FieldMapping] = {}
@@ -54,8 +60,6 @@ class FieldConceptMapper:
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
-
-            # TODO: handle mapping file with fixed event mappings (e.g. cancer codes or operations)
 
             code_mapping = self.field_mappings.setdefault(
                 usagi_mapping.field_id,

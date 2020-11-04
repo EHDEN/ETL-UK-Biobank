@@ -1,1001 +1,848 @@
 eid,data_provider,issue_date,read_2,bnf_code,dmd_code,drug_name,quantity
-1002672,3,23/07/2012,,,321745007,PRIMOLUT N TABLETS 5MG,56 tablet(s)
-1006846,3,24/05/2016,,02.12.04.00.00,,CITALOPRAM tabs 20mg,30 tablets
-1001720,3,04/09/2013,,06.02.01.00.00,,Citalopram 20mg tablets,80 grams
-1000428,4,15/05/2015,,04.03.04.00.00,,Bendroflumethiazide 2.5mg tablets,56.000
-1006811,1,17/09/2007,ff2c.00,,,Aspirin 75mg tablets,100
-1006710,3,16/01/2013,,,,,224 capsules
-1005927,4,02/11/2009,d711.00,02.08.02.00.00,,Tramadol 100mg modified-release tablets,56 tablet(s)
-1002299,3,08/12/2011,bd3j.00,04.07.01.02.00,,Folic acid 5mg tablets,
-1002299,3,06/08/2010,l8Dz.00,13.09.01.00.00,,Ubidecarenone 100mg capsules,1*200 ML(S)
-1000223,3,10/03/2009,e311.,10.01.01.00.00,,Calcipotriol 50micrograms/ml scalp solution,21.000
-1004828,3,08/02/2016,blb1.00,,,,
-1005081,2,22/02/2016,,02.05.05.02.00,318978004,,56 tabs
-1004547,3,26/01/2015,b431.,01.03.05.00.00,322343000,Trospium chloride 20mg tablets,56.000
-1006710,3,27/10/2010,,06.01.02.02.00,,Simvastatin 40mg tablets,2 packs of 28 tablet(s)
-1001383,3,11/09/2014,,01.03.01.00.00,317291008,Aspirin 75mg gastro-resistant tablets,1.000
-1001442,3,19/12/2011,,,,Tramadol 37.5mg / Paracetamol 325mg tablets,56 tablet(s)
-1005772,3,16/05/2016,,03.03.01.00.00,,Atenolol 25mg tablets,2 packs of 84 tablet(s)
-1007784,3,25/01/2010,,14.04.21.00.00,,,28 capsule(s) - 20 mg
-1007705,3,09/10/2012,,10.01.01.00.00,,METHOTREXATE TAB 2.5,2 packs of 28 tablet(s)
-1006707,3,19/11/2014,,09.06.04.00.00,,Estradiol 1mg tablets,112 tablet
-1005915,3,26/02/2009,,,,CITALOPRAM tabs 20mg,1 400 dose inhaler
-1006427,3,22/02/2013,,04.02.03.04.00,318901006,Atenolol 25mg tablets,2 x28 tablet(s)
-1004713,3,02/10/2007,,,,Simvastatin TABS 40MG,1 pack of 500 g (dispenser)
-1003047,3,26/04/2012,,,,,"20 dressing - square, 15 cm x 15 cm"
-1006242,3,14/04/2009,gh52.,,,CALCICHEW-D3 chewable tablet [SHIRE],
-1005760,4,19/03/2010,,,,Co-codamol 30mg/500mg capsules,112.000
-1002582,1,07/10/2013,,,,Tramadol 100mg modified-release tablets,56 tablets - 50 mg
-1007020,3,14/02/2011,,13.08.01.02.00,,,30.000
-1006707,3,28/04/2005,bl3y.,02.05.05.02.00,,Gentamicin 0.3% / Hydrocortisone acetate 1% ear drops,4 tablet
-1004566,4,06/08/2012,ph7L.,06.02.01.00.00,,Lyrica 150mg capsules (Pfizer Ltd),1 pack of 500 mls peppermint
-1001296,1,18/10/2011,dnjy.00,01.03.05.00.00,,Ibuprofen 400mg tablets,200 tablet
-1007020,1,06/07/2012,,13.05.02.01.00,319284000,GAVISCON oral liquid sugar-free [RECKITT B],56 tablet(s) - 75 mg
-1000154,3,19/01/2010,,02.04.00.00.00,,,84.000
-1003782,4,27/10/2014,ip3f.,,,Amlodipine 5mg tablets,1 pack of 100 tablet(s)
-1001455,3,08/06/2015,,01.06.04.00.00,,Ferrous fumarate 210mg tablets,28 tablets
-1003554,1,25/06/2014,,01.05.01.00.00,,Amitriptyline 25mg tablets,
-1007020,3,03/04/2017,,02.04.00.00.00,360311000001104,Aspirin 75mg dispersible tablets,
-1006977,4,30/08/2013,,04.07.02.00.00,,Levothyroxine sodium 50microgram tablets,56.000
-1003777,3,06/06/2016,jA1w.00,02.05.05.01.00,321987003,Trimethoprim 200mg tablets,56 tablet
-1000618,4,26/02/2016,,04.03.04.00.00,,SILDENAFIL SLS TABLETS 100MG,
-1002299,3,03/01/2013,a6c2.,07.02.02.00.00,3154411000001105,,30.000
-1002951,2,02/07/2012,ph7W.,01.03.05.00.00,,Atenolol 25mg tablets,56 tablet
-1000265,3,02/07/2007,,07.04.01.01.00,,Fluoxetine CAPS 20MG,56.000
-1004547,3,07/05/2014,,06.01.05.00.00,,Diazepam 5mg tablets,4 tablets
-1000040,4,23/11/2009,,06.04.01.01.00,,Hypromellose 0.5% eye drops,56 tab
-1000522,3,25/02/2015,,01.03.05.00.00,,Dovonex 50micrograms/ml scalp solution (LEO Pharma),7 tablet
-1007476,1,06/06/2013,,,,Olanzapine 10mg oral lyophilisates sugar free,56 tablets
-1000820,3,14/01/2011,,04.07.01.02.00,,Simvastatin 40mg tablets,2 packs of 100 tablet(s)
-1007020,3,20/05/2013,,,319288002,Adcal-D3 chewable tablets tutti frutti (Kyowa Kirin Ltd),500 ml - 10 mg/5 ml
-1006255,3,02/07/2007,,06.03.02.00.00,,,
-1002709,3,15/08/2013,,02.04.00.00.00,,,28 tablets
-1005760,4,11/11/2014,,12.02.01.00.00,,Omeprazole 20mg gastro-resistant capsules,
-1007020,1,28/12/2012,,,,Felodipine 10mg modified-release tablets,28 tablet
-1000599,3,18/05/2015,,13.06.02.01.00,,Pizotifen 500microgram tablets,224 capsule
-1001481,3,03/02/2014,a6b1.,02.09.03.00.00,,Revaxis vaccine suspension for injection 0.5ml pre-filled syringes (sanofi pasteur MSD Ltd),
-1000733,3,18/03/2013,,,,Co-proxamol 32.5mg/325mg tablets,56 tablet
-1007750,1,18/03/2013,,,,,1 pack of 30 tablet(s)
-1005366,3,07/03/2013,,01.03.05.00.00,,Tramadol 37.5mg / Paracetamol 325mg tablets,7 tablet
-1004547,4,08/02/2011,,06.01.02.03.00,,Bendroflumethiazide TABS 2.5MG,
-1007233,3,08/02/2011,,10.03.02.01.00,321747004,Finasteride 5mg tablets,56 tablet(s)
-1004713,3,07/12/2015,f35z.,02.05.05.02.00,,Duloxetine 60mg gastro-resistant capsules,
-1002274,3,08/03/2010,,,,Pregabalin 50mg capsules,56 tablet
-1001124,3,29/07/2013,,04.07.02.00.00,,Colecalciferol 800unit capsules,2 packs of 60 tablet(s)
-1001720,3,17/06/2013,,90.01.01.02.00,,Canagliflozin 100mg tablets,84 tab
-1005927,4,10/09/2007,f923.,12.01.03.00.00,,,56 capsule
-1007262,3,16/07/2015,,01.03.05.00.00,,,56 tablets - 50 mg
-1007199,3,07/04/2014,,06.02.01.00.00,,Furosemide  Tablets  40 mg,10.000
-1004970,1,14/03/2016,dnbc.00,0501050B0AAADAD,,Levothyroxine sodium 25microgram tablets,200 dose
-1007012,4,14/10/2013,a6b1.,02.05.05.02.00,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),140 dose
-1004275,3,26/02/2010,c8n1.,02.05.05.02.00,,Bendroflumethiazide 2.5mg tablets,
-1002951,1,28/04/2011,,1001010P0AAADAD,,,56 capsule
-1004275,3,23/10/2006,,01.03.01.00.00,,Combihesive Natura two piece ostomy system combihesive flange S7246 45mm (ConvaTec Ltd),
-1001455,3,24/02/2015,d712.00,,,Hypromellose 0.5% eye drops,
-1006722,3,07/12/2010,,04.03.03.00.00,,ADIZEM XL capsules 120mg [NAPPPHARM],200.000
-1002763,1,19/12/2005,,10.01.04.03.00,,Valsartan 80mg capsules,28 tablet
-1005280,3,19/01/2010,,01.03.05.00.00,,Doxazosin Mesilate  Tablets  2 mg,56 tablet - 500 mg
-1002601,3,04/02/2015,,,,Co-codamol 30mg/500mg capsules,2 packs of 2.5 mls
-1006453,3,17/02/2016,blb2.,04.07.01.02.00,,Sildenafil Citrate  Tablets  100 mg,28.000
-1001146,1,04/02/2014,,11.04.02.00.00,,,7 capsule
-1002108,3,24/10/2007,,04.06.03.00.00,,Ramipril 5mg capsules,240 caps
-1000367,3,19/07/2013,,02.06.01.02.00,,Beclometasone 50micrograms/dose nasal spray,56 tablet
-1004529,3,22/11/2006,,06.04.01.01.00,,Bisoprolol 5mg tablets,28 tablet
-1002466,1,09/02/2009,ce36.,14.04.09.00.00,,Naproxen 500mg tablets,
-1003554,3,04/03/2015,,02.06.01.02.00,,Ramipril 5mg capsules,100 capsule
-1000692,3,24/06/2008,bxd5.,02.02.01.00.00,,Doxycycline 100mg capsules,56.000
-1004607,3,24/09/2013,,,,Omeprazole 10mg gastro-resistant capsules,56 tablet
-1003554,2,07/11/2011,,0906040N0BBABDU,,Levothyroxine sodium 50microgram tablets,56 tablet
-1001892,3,08/05/2013,,01.03.05.00.00,329654002,Celecoxib 100mg capsules,
-1003777,3,31/01/2011,,,,Folic acid 5mg tablets,2 packs of 28 tablet(s)
-1000820,4,25/11/2014,l881.,,,Lansoprazole 30mg gastro-resistant capsules,
-1001572,3,18/08/2014,dnj3.00,06.01.02.02.00,,,60.000
-1006427,3,18/12/2012,,02.12.04.00.00,,Isosorbide mononitrate 40mg modified-release capsules,56.000
-1000419,4,24/06/2008,bxd5.,05.01.01.02.00,,BENDROFLUAZIDE TAB 2.5mg,8.000
-1004933,3,18/01/2005,,04.07.04.02.00,,,28 capsule(s) - 15 mg
-1000223,3,06/12/2010,,,,Aspirin 75mg dispersible tablets,5 millilitres
-1004781,3,30/08/2005,,01.07.04.00.00,,E45 cream (Forum Health Products Ltd),60.000
-1002108,3,01/03/2011,,,415162000,Zomorph 10mg modified-release capsules (Ethypharm UK Ltd),56 tabs
-1007653,3,04/05/2016,,12.01.01.02.00,,Dosulepin 75mg tablets,28 capsule
-1002601,3,04/09/2013,,13.05.02.01.00,,Mometasone 0.1% ointment,56 tablet(s)
-1000507,3,12/12/2011,bdfw.,06.01.05.00.00,,Levothyroxine sodium 100microgram tablets,56 tablet(s)
-1002108,1,28/09/2015,,04.03.01.00.00,,,25 tablet
-1005347,3,01/05/2012,f923.,,,Alendronic acid 70mg tablets,1 spray
-1000599,3,25/02/2013,,04.07.01.02.00,,Omeprazole 20mg gastro-resistant capsules,1 op - 0.05 %
-1002672,3,23/07/2013,,04.03.03.00.00,,Aciclovir 800mg tablets,112.000
-1001124,3,15/06/2015,,02.09.02.00.00,,Candesartan 32mg tablets,
-1006722,3,24/09/2015,,12.02.01.00.00,,Atorvastatin 20mg tablets,28 tab
-1002748,3,15/06/2015,,,,,
-1000428,4,17/03/2015,,,,Atorvastatin 10mg tablets,240 capsules
-1003018,3,24/05/2013,,02.12.03.00.00,,Ramipril 10mg capsules,
-1001572,3,03/02/2012,,13.10.02.00.00,,fluticasone with salmeterol dry powder inhaler 500micrograms + 50micrograms/inhalation,28 capsule(s)
-1000428,3,01/10/2012,gda3.,11.08.01.00.00,,ispaghula husk gluten-free powder sugar-free 3.5g,
-1000375,1,12/11/2010,,020201,321196004,Morphine sulfate 10mg/5ml oral solution,28 tablet(s) - 50 mg
-1006453,4,25/03/2015,k693.,12.03.05.02.00,,Diclofenac sodium 50mg gastro-resistant tablets,56 tab
-1004529,1,11/05/2011,,04.03.04.00.00,,,168 tablets
-1005964,1,02/06/2010,bxi2.,02.04.00.00.00,,Levothyroxine Sodium TABS 100MICROGRAMS,0.5ml
-1001442,3,10/08/2009,,02.04.00.00.00,,GABAPENTIN caps 400mg,7 tablet
-1002598,4,04/09/2013,,04.03.03.00.00,,Aspirin 75mg dispersible tablets,16.000
-1003092,3,16/09/2015,dian.,02.12.06.00.00,,Colecalciferol 400unit / Calcium carbonate 1.25g chewable tablets,1 spray(s) - 50 micrograms/dose
-1004076,1,30/03/2015,b211.,02.05.05.01.00,,Citalopram 10mg tablets,56 tablets - 50 mg
-1005760,3,02/09/2009,bi32.,02.12.04.00.00,,Capasal Therapeutic shampoo (Dermal Laboratories Ltd),56 tablet - 75 mg
-1003657,4,02/07/2007,ip3e.00,03.02.00.00.00,,Adcal-D3 chewable tablets tutti frutti (ProStrakan Ltd),28 tablet
-1001124,3,15/06/2015,d713.00,,,amlodipine (as besilate) tablets 5mg,3 - ml
-1002299,3,10/05/2013,dnbc.00,10.01.01.00.00,323021008,Amoxicillin 250mg capsules,21 tablet
-1006242,3,09/04/2014,,13.04.03.00.00,,,112.000
-1004080,3,07/09/2015,,05.01.13.00.00,,Omeprazole 10mg gastro-resistant capsules,56 tablet
-1006977,1,15/10/2014,heE1.,01.04.02.00.00,,,30
-1005081,1,11/11/2008,,02.09.01.00.00,,Alendronic acid 70mg tablets,21 capsule
-1006977,4,04/02/2013,,,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),2 packs of 125 gram(s)
-1000338,3,16/07/2012,,,323021008,Ibuprofen 400mg tablets,56 cap
-1003509,2,29/06/2006,,05.01.01.03.00,,,
-1001374,3,20/12/2011,,01.03.01.00.00,,Levothyroxine Sodium TABS 100MICROGRAMS,56 tablet(s)
-1001124,1,05/11/2010,,02.04.00.00.00,,Simvastatin 10mg tablets,56 tablet(s)
-1004801,3,08/05/2014,,04.03.01.00.00,,,
-1004933,1,02/03/2015,,,,Gabapentin 300mg capsules,
-1007145,1,03/06/2016,,03.04.01.01.00,,Risperidone 3mg tablets,112 - tablet(s)
-1007012,3,22/03/2011,,05.01.13.00.00,3151011000001104,,1 spray
-1007145,1,10/10/2011,,,,Ibuprofen 400mg tablets,28 tablet(s)
-1005104,3,03/11/2015,l8Dz.,,,Fluticasone furoate 27.5micrograms/dose nasal spray,56 capsules
-1006242,3,17/09/2012,,,195385001000027109,Aspirin 75mg gastro-resistant tablets,4.000
-1006514,3,07/04/2015,,,,ESTRAPAK 50,
-1007199,3,15/11/2012,,02.08.02.00.00,,Dipyridamole 200mg modified-release capsules,
-1002951,1,23/08/2010,ja18.00,13.04.01.00.00,,Amitriptyline 10mg tablets,56 tablets - 10 mg
-1007145,3,30/08/2013,fe6i.,09.06.04.00.00,,Glyceryl trinitrate 400micrograms/dose pump sublingual spray,
-1000507,3,29/10/2012,b211.00,09.06.04.00.00,,,4.000
-1002582,4,30/06/2015,,,,Pregabalin 300mg capsules,56 capsule
-1001442,1,28/11/2016,bxd2.,02.12.04.00.00,,,28 capsule - 1.25 mg
-1007640,1,29/03/2016,,04.07.01.02.00,,Bendroflumethiazide TABS 2.5MG,60 tablet(s)
-1004140,3,06/11/2012,,04.03.01.00.00,,Valsartan 80mg capsules,28.00 capsule(s)
-1000721,1,10/12/2010,,02.04.00.00.00,,,
-1004275,3,29/10/2007,,,,,1 pack of 30 tablet(s)
-1002089,3,14/10/2011,,04.03.03.00.00,,Celecoxib 100mg capsules,200 dose
-1006811,4,18/07/2014,,06.06.02.00.00,,Bisoprolol 5mg tablets,28 capsule
-1002582,3,15/11/2010,bxd2.,09.04.04.02.00,,Balneum Plus cream (Almirall Ltd),2 packs of 28 tablet(s)
-1007705,3,18/04/2011,ph77.,04.07.01.02.00,,Lisinopril 5mg tablets,180 dose
-1000618,3,27/07/2011,,10.03.02.01.00,,,84.000
-1003591,1,09/04/2015,,01.03.05.00.00,,Sodium cromoglicate 2% eye drops,
-1001831,3,22/04/2009,dl71.00,07040250,,Mebeverine 200mg modified-release capsules,
-1002582,3,18/05/2015,,02.09.01.00.00,,,56 tablet
-1004835,3,23/05/2016,,02.05.05.01.00,,Codeine 30mg tablets,
-1005638,1,09/12/2013,a6c3.,,,,21
-1000460,3,19/01/2010,gdA5.,12.02.01.00.00,,Olanzapine 10mg tablets,250 ml
-1006722,4,27/02/2015,,,,Sulfasalazine 500mg gastro-resistant tablets,2 packs of 28 tablet(s)
-1007491,3,03/06/2014,,10.01.01.00.00,,Sulfasalazine 500mg gastro-resistant tablets,56 dispersible tablets - 75 mg
-1002598,4,03/05/2011,,94.05.12.00.00,317919004,Simvastatin 40mg tablets,10.000
-1002299,4,03/07/2006,,,,Paracetamol 500mg tablets,300.000
-1000428,3,17/09/2013,bd35.,07.04.05.00.00,,amlodipine (as besilate) tablets 5mg,56 - tablet
-1000071,3,16/03/2016,,07.04.02.00.00,,Colecalciferol 800unit capsules,14.000
-1006710,4,30/07/2012,,07.04.05.00.00,,Atorvastatin 80mg tablets,28 tablet
-1002466,2,08/02/2016,,02.02.01.00.00,,Atorvastatin 20mg tablets,28 CAPSULE
-1003243,4,23/02/2009,,,,,30 gram
-1006028,3,18/09/2014,,02.04.00.00.00,,LACRI-LUBE EYE OIN,14 tablets - 10 mg
-1001712,3,19/11/2014,j22e.,090604,327550006,Bendroflumethiazide 2.5mg tablets,2 x28 tablet(s)
-1000216,3,12/10/2011,,01.04.02.00.00,,CO-CODAMOL caps 30mg + 500mg,28 tablets
-1000666,3,01/06/2016,,,,Zopiclone 7.5mg tablets,28 tablet
-1003608,4,19/06/2012,dia7.,04.03.01.00.00,,,28.000
-1000154,2,12/05/2014,,,,Enalapril 5mg tablets,168 tablet(s)
-1005081,3,24/02/2014,ip...00,04.06.02.00.00,237585001000027100,,28 capsule(s) - 120 mg
-1003554,3,22/02/2016,,020201,,Nuvelle tablets (Bayer Plc),56 tabs
-1003243,4,21/11/2011,bd35.00,02.05.05.02.00,327550006,Levothyroxine sodium 100microgram tablets,28.000
-1007161,1,26/01/2016,,13.09.01.00.00,,,
-1004713,4,24/09/2015,,,,Bisoprolol 2.5mg tablets,84 tablet(s)
-1004547,3,05/11/2010,,02.04.00.00.00,,,28 capsule(s) - 10 mg
-1005291,3,01/02/2016,ef12.,,,,56 tablets
-1004529,3,15/12/2015,,03.01.01.03.00,,Irbesartan 150mg tablets,120 - tablet(s)
-1003355,3,27/05/2015,,02.06.02.00.00,3154411000001105,Metoprolol 50mg tablets,56
-1002582,3,22/05/2014,,06.02.01.00.00,,Omeprazole 20mg gastro-resistant capsules,
-1005760,3,12/11/2015,,04070402,323021008,,8.000
-1000154,3,01/06/2015,,12.02.01.00.00,,,3 x 28 tablet
-1005347,3,07/05/2013,,01.03.05.00.00,,Paroxetine 20mg tablets,56
-1001383,3,17/06/2013,,12.02.01.00.00,,,
-1006930,4,18/01/2010,,14.04.09.00.00,,Omeprazole 10mg gastro-resistant capsules,100 tablet
-1006242,4,14/09/2015,,06.02.01.00.00,,,28.00 capsule(s)
-1002672,3,28/05/2013,,06.07.02.00.00,,Metformin 500mg tablets,28 tablet
-1002274,2,15/01/2007,bu23.00,,,FELODIPINE mr tab 10mg,28 capsule(s) - 80 mg
-1002466,3,15/11/2013,,10.01.01.00.00,,Ibuprofen 400mg tablets,
-1006192,1,12/02/2016,,02.04.00.00.00,317291008,,56 tablets
-1000419,1,01/12/2015,j2c2.,,,Aspirin 75mg tablets,
-1000259,4,12/01/2016,,02.04.00.00.00,,Ezetimibe 10mg tablets,6 tablet - Sugar Free 10 mg
-1001712,1,19/11/2013,,04.03.04.00.00,327550006,Lansoprazole 15mg gastro-resistant capsules,168 tabs
-1004529,1,06/06/2016,,,,,56.000
-1005081,3,23/04/2013,a6b1.,,317416004,Losartan 100mg tablets,200 tablet
-1000223,3,01/10/2013,ph7n.,0212000Y0AAADAD,327550006,Ferrous sulfate 200mg tablets,0.5 millilitres
-1002582,3,22/01/2010,,,,Omeprazole 20mg gastro-resistant capsules,2*28 capsules - 200 mg
-1005772,3,03/07/2006,b211.,06.04.02.00.00,,Folic acid 5mg tablets,56.000
-1006977,3,13/02/2014,bxi5.,,,Mefenamic acid 500mg tablets,28 tablet
-1002951,3,05/02/2014,j22p.00,04.03.03.00.00,,Omeprazole 20mg gastro-resistant capsules,1 pack of 100 gram(s)
-1003397,3,20/10/2014,,,,Simvastatin TABS 40MG,28 tab
-1004032,3,03/06/2016,ka32.00,,,,56 tabs
-1001383,3,10/03/2009,,13.02.01.02.00,,Perindopril erbumine 4mg tablets,30 - gram(s)
-1005537,2,19/08/2014,,04.01.01.00.00,,Lansoprazole 15mg gastro-resistant capsules,56.000
-1001892,2,10/02/2010,,,,Folic acid 5mg tablets,56
-1005760,3,27/05/2011,,,,Calcipotriol 50micrograms/ml scalp solution,14.000
-1005042,1,16/04/2007,,11.08.01.00.00,,AMLODIPINE (AS MALEATE) tabs 10mg,
-1006846,2,21/07/2016,,06.02.01.00.00,,Atenolol 25mg tablets,120 ml - 50 micrograms/ml
-1005760,4,06/06/2016,,,,Levothyroxine sodium 25microgram tablets,2 OP
-1005772,4,10/02/2010,da91.00,06.02.01.00.00,,Venlafaxine 225mg modified-release tablets,28 tablets - 20 mg
-1004828,3,04/03/2015,gddz.,04.03.01.00.00,,Terbinafine 1% cream,84 tablets
-1004547,3,16/01/2013,l887.,,,Lactulose 3.1-3.7g/5ml oral solution,
-1001481,3,07/03/2016,,10.01.04.03.00,,Lansoprazole 30mg gastro-resistant capsules,2*28 tablet
-1004017,4,09/08/2013,bl8j.,01.03.05.00.00,3651611000001107,Metoprolol 50mg tablets,100 tablet
-1004529,4,04/09/2013,,,,Priadel 200mg modified-release tablets (Sanofi),56.000
-1005939,1,21/02/2012,,14.04.05.00.00,,Diazepam 5mg tablets,56.000
-1006306,3,02/07/2012,,12.02.01.00.00,318906001,,56 tablets - 5 mg
-1001712,1,06/03/2012,,130201000BBBAAL,,Rosuvastatin 10mg tablets,60 tablets - Sugar Free 1.25 grams
-1002598,1,16/02/2015,scGc.,,,,28 tablets
-1000428,3,11/11/2013,j2c2.,03.01.01.04.00,,Colecalciferol 200unit / Calcium carbonate 750mg tablets,
-1002951,3,26/11/2012,,02.04.00.00.00,,Vitamin B compound strong tablets,
-1006385,3,11/09/2014,,02.05.05.02.00,,,56 tablets
-1004921,3,14/01/2016,,06.02.01.00.00,,Allopurinol 100mg tablets,84 tablets - 400 mg
-1007534,1,10/04/2012,,02.06.01.01.00,,LACRI-LUBE eye oint,
-1004933,4,23/08/2010,,04.03.01.00.00,,Lansoprazole 30mg gastro-resistant capsules,1.000
-1003777,4,06/02/2012,dnj2.00,02.09.01.00.00,,Volumatic (GlaxoSmithKline UK Ltd),84 - tablet(s)
-1006846,3,30/06/2015,,13.06.02.01.00,,Ramipril 1.25mg capsules,28 tablet(s) - 75 mg
-1002466,3,09/05/2016,,02.06.01.01.00,2940411000001108,,
-1006846,1,20/04/2015,,02.05.05.01.00,,Nitrofurantoin 100mg modified-release capsules,2.000
-1001442,4,02/12/2008,a6b1.,,,Doxazosin 4mg tablets,42 tablet(s)
-1002299,3,18/08/2014,,,,Paracetamol 500mg capsules,2 OP
-1001720,3,19/08/2015,,10.01.04.01.00,,Isosorbide mononitrate 20mg tablets,2 millilitres
-1004828,3,15/10/2015,dia6.00,02.04.00.00.00,,Co-codamol 8mg/500mg tablets,56.000
-1006846,3,22/10/2012,,12.02.01.00.00,321987003,Omeprazole 20mg gastro-resistant capsules,28.000
-1006846,3,25/07/2011,,02.09.01.00.00,,Chloramphenicol 0.5% eye drops,28 tablets
-1002466,4,23/03/2016,,07.03.01.00.00,,Flomaxtra XL 400microgram tablets (Astellas Pharma Ltd),56 TABLET(S)
-1005760,3,31/07/2014,,12.02.01.00.00,,Paracetamol 500mg tablets,100.000
-1003243,3,27/03/2012,,,,,1 pack of 120 mls
-1001892,3,02/10/2007,,,7374311000001101,Omeprazole 20mg gastro-resistant capsules,
-1004437,3,12/01/2015,,02.04.00.00.00,,Dihydrocodeine 30mg tablets,
-1004382,3,21/10/2013,,04.03.03.00.00,,Naproxen 250mg tablets,28.000
-1005858,3,16/08/2013,,01.06.04.00.00,,Estradiol 0.06% gel (750microgram per actuation),2 packs of 28 tablet(s)
-1001310,4,31/07/2017,,06.01.02.02.00,,Capasal Therapeutic shampoo (Dermal Laboratories Ltd),56.000
-1000749,3,05/02/2013,,,,Co-codamol 8mg/500mg capsules,200
-1000820,3,17/07/2006,,02.04.00.00.00,,Amlodipine 10mg tablets,24
-1006242,4,10/02/2010,,02.08.02.00.00,,EVOREL -50 patch 50mcg/24 hours (3.2mg/unit) [JANSSEN],
-1004547,3,04/11/2015,,11.04.01.00.00,,E45 cream (Forum Health Products Ltd),100 tablet(s)
-1005760,1,20/08/2008,dibD.00,02.05.05.01.00,,Dipyridamole 200mg modified-release capsules,60.000
-1001361,3,09/08/2013,,05.01.03.00.00,,Tramadol 100mg modified-release tablets,56 tablet(s) - 5 mg
-1003018,3,13/10/2015,,1302011M0BDABAB,,Ramipril 2.5mg capsules,60 capsules
-1005915,4,10/12/2010,,,,Losartan 50mg tablets,28.00 tablet(s)
-1003018,3,13/12/2010,,02.05.05.02.00,,,
-1001383,3,07/01/2015,,,,Amitriptyline 50mg tablets,50 strips
-1006255,3,10/04/2014,,10.01.01.00.00,,Omeprazole  Capsules (Gastro-Resistant)  20 mg,100 capsule(s)
-1001442,3,28/09/2011,b211.00,,,,28 tablets - 10 mg
-1000428,3,29/07/2014,,02.12.04.00.00,326874007,Bisoprolol 2.5mg tablets,200 tablet
-1000390,3,09/11/2015,,0407010Q0AAAAAA,,Paroxetine 20mg tablets,84 tablets
-1002299,3,21/03/2012,,,,Simvastatin 40mg tablets,56 tab
-1001442,3,14/08/2013,,,325443009,CO-CODAMOL caps 30mg + 500mg,84 cap
-1007731,3,17/09/2012,bxkw.00,02.12.04.00.00,,Dihydrocodeine 30mg tablets,100.000
-1007911,4,15/03/2011,bu25.00,,,,
-1005433,4,19/10/2009,,04.02.01.00.00,,Simvastatin 40mg tablets,28.000
-1002763,1,24/08/2006,,02.04.00.00.00,,Levothyroxine sodium 25microgram tablets,7 tablet - 75 mg
-1002951,3,24/07/2014,,,,FOLIC ACID tabs 5mg,112 capsule(s)
-1002951,3,04/01/2016,,06.01.02.01.00,,Fluoxetine 20mg capsules,4 packs of 30 capsule(s)
-1005081,3,09/10/2012,,02.02.01.00.00,,Ventolin 100micrograms/dose Evohaler (GlaxoSmithKline UK Ltd),
-1005116,3,02/07/2013,bdfw.,02.05.05.02.00,,,
-1006453,3,01/07/2014,blc2.00,04.03.04.00.00,,Atenolol 50mg tablets,28 tablet
-1007784,3,11/04/2012,,02.12.04.00.00,,Clopidogrel 75mg tablets,4.000
-1001850,3,13/08/2009,,04.08.01.08.00,,Enzira vaccine suspension for injection 0.5ml pre-filled syringes (Pfizer Ltd),
-1003031,4,02/03/2015,bi32.,02.05.05.02.00,330162006,AMITRIPTYLINE TAB 25,7 tablet
-1001124,3,29/12/2005,a6c3.,02.02.01.00.00,,Diazepam 5mg tablets,100.000
-1002582,3,03/06/2015,,02.04.00.00.00,,ATENOLOL tabs 100mg,7 tablets
-1004140,3,18/10/2011,,02.04.00.00.00,,Losartan 50mg tablets,
-1006846,3,02/11/2005,,04.07.01.02.00,,,28 capsules
-1006722,3,04/08/2015,,0704050Z0AAACAC,,Clarithromycin 500mg tablets,
-1001442,3,18/12/2014,,09.06.04.00.00,,,56.000
-1005457,2,11/11/2013,,01.04.02.00.00,,Citalopram 20mg tablets,56
-1002672,4,09/09/2008,,,,SILDENAFIL SLS TABLETS 100MG,2 packs of 28 tablet(s)
-1003608,3,23/02/2015,,,,Co-codamol 30mg/500mg capsules,3 packs of 28 tablet(s)
-1002274,3,25/04/2014,,05.02.05.00.00,,Atenolol 25mg tablets,2 packs of 28 tablet(s)
-1007640,3,10/12/2014,,,,,4.000
-1004140,4,12/10/2011,,02.06.02.00.00,,AeroChamber Plus (GlaxoSmithKline UK Ltd),2 packs of 28 tablet(s)
-1006930,3,19/04/2011,da91.00,02.12.04.00.00,,Co-proxamol 32.5mg/325mg tablets,56 tablets
-1004275,1,28/04/2011,,,,Levothyroxine sodium 100microgram tablets,
-1006306,3,09/02/2015,,,,Co-codamol 30mg/500mg tablets,28 tablets
-1006846,3,27/05/2014,,06.04.01.01.00,,,28 tablets
-1006242,3,12/06/2006,,13.05.02.01.00,,Amlodipine 5mg tablets,56 - tablet(s)
-1006707,3,02/12/2013,ip3b.00,,,Dosulepin 25mg capsules,112 tablet(s)
-1001442,3,03/01/2014,djzk.00,100101,,SODIUM VALPROATE + VALPROIC ACID mr tab 200mg,40 tablet
-1001481,4,07/07/2009,,,,Tamoxifen 20mg tablets,56 CAPSULE
-1004658,3,23/09/2008,ig1j.,02.12.04.00.00,,Co-Codamol 30/500  Tablets,
-1003591,4,24/02/2015,,02.05.05.01.00,,Solifenacin 5mg tablets,28 capsule
-1005927,3,13/05/2014,,02.06.02.00.00,,LACRI-LUBE eye oint,56.000
-1007784,3,29/08/2012,,12.02.01.00.00,,Peak flow meter standard range,28 tablet
-1007161,3,13/08/2013,bd35.,14.04.20.00.00,,Bisoprolol 5mg tablets,140 dose
-1006846,2,23/05/2008,,,,,56 tab
-1003777,1,11/05/2015,,,,,28 tablet
-1000428,3,07/12/2015,,06.02.01.00.00,,,112 tablets
-1005081,3,11/01/2008,,04.07.02.00.00,,Bendroflumethiazide 2.5mg tablets,1700.000
-1001383,4,15/07/2013,,02.04.00.00.00,321987003,,56 tablets
-1002672,4,07/04/2015,,01.04.02.00.00,,,60 tablets
-1003411,4,14/10/2011,b211.,02.09.01.00.00,,,28 tablets - 10 mg
-1000223,2,24/06/2016,,10.01.01.00.00,,FELODIPINE mr tab 10mg,30 tablet
-1004933,3,07/02/2011,,10.01.01.00.00,,Betamethasone valerate 0.1% cream,30 cap
-1005116,3,13/07/2015,k3g2.00,,,Beclometasone 50micrograms/dose nasal spray,
-1003782,3,15/07/2013,,02.06.01.01.00,,Betahistine 8mg tablets,4 x10 mls
-1006846,3,24/02/2010,,,,Ketoprofen 100mg capsules,
-1004828,3,15/01/2014,ph88.,,,CO-CODAMOL EFFERVESC TAB,200
-1005760,1,08/04/2015,d1d1.,02.03.02.03.00,,Levothyroxine sodium 50microgram tablets,28 capsule - 5 mg
-1006549,2,07/04/2015,ph88.,09.01.02.02.00,,Simvador 40mg tablets (Discovery Pharmaceuticals),
-1006707,3,26/04/2012,,,,Paracetamol 500mg tablets,500 ml
-1005772,4,09/12/2013,bl8i.,,,Risedronate sodium 35mg tablets,28 tablet
-1002951,3,17/01/2012,,02.09.01.00.00,,,
-1005291,3,01/05/2015,djkp.00,02.08.02.00.00,,Simvastatin 40mg tablets,224.000
-1004835,3,14/11/2007,a6b1.,,,Propranolol 80mg modified-release capsules,0.5 ml
-1007534,3,11/02/2011,,04.07.02.00.00,,Simvastatin 80mg tablets,60.000
-1006846,4,19/04/2010,ph7W.,,,Lansoprazole 15mg gastro-resistant capsules,60.000
-1007012,3,10/07/2012,bdfy.,02.05.05.01.00,,Peak flow meter standard range,250
-1002709,3,03/12/2012,,07.04.02.00.00,,Warfarin 3mg tablets,28.000
-1002951,4,26/08/2014,,02.05.05.01.00,,,224 capsule(s)
-1006242,3,18/06/2013,,10.01.03.06.00,,,7.000
-1005760,3,19/10/2015,,13.06.02.01.00,,Doxazosin 8mg modified-release tablets,112 cap
-1004921,3,31/01/2012,,,,Omeprazole 20mg gastro-resistant capsules,28.000
-1006255,3,17/07/2013,f724.,11.03.01.00.00,,CHLORAMPHENICOL eye drp 0.5%,
-1004933,3,06/10/2015,,10.01.01.00.00,,,1 pack of 112 tablet(s)
-1006904,3,03/05/2011,,04070402,,Atorvastatin 40mg tablets,500 tab
-1003018,4,01/04/2015,,,,CELECOXIB caps 100mg,
-1003864,4,12/03/2007,,02.09.01.00.00,3154411000001105,,4.000
-1002582,3,11/11/2009,dibD.00,,,Codeine 30mg tablets,1 spray(s)
-1002274,3,11/09/2013,,,,,56 tablet
-1002748,3,09/03/2016,,02.05.04.00.00,,ADCAL -D3 chewable tab,200.000
-1007491,4,05/01/2016,,,,GABAPENTIN caps 300mg,
-1000040,3,09/01/2014,,,,Amlodipine 5mg tablets,84 tablet(s)
-1002791,3,08/11/2013,,04.03.04.00.00,,Zomorph 60mg modified-release capsules (Archimedes Pharma...,500 gram
-1003243,3,07/10/2013,blb1.,04.03.03.00.00,,Levothyroxine sodium 25microgram tablets,
-1006722,3,05/03/2014,,94.04.00.00.00,,Felodipine 10mg modified-release tablets,250 ml
-1001374,1,18/04/2006,,03.02.00.00.00,,Atenolol 25mg tablets,84 tablet(s) - 135 mg
-1001215,3,08/01/2016,,01.03.05.00.00,,FENACTOL ec tab 50mg,28 tablets
-1006846,3,17/11/2009,,06.02.01.00.00,,Capasal Therapeutic shampoo (Dermal Laboratories Ltd),56.000
-1006977,4,10/04/2014,,10.01.01.00.00,,Anastrozole 1mg tablets,28 tab
-1005042,3,09/04/2015,,04.03.04.00.00,,Furosemide 40mg tablets,28 capsule - 150 mg
-1006722,1,01/12/2015,,04.03.03.00.00,,Warfarin Sodium  Tablets  1 mg,
-1006306,1,14/12/2015,,02.02.01.00.00,,Codeine 30mg tablets,120 dose
-1000926,3,07/09/2015,,,,Noriday 350microgram tablets (Pfizer Ltd),84 capsule
-1006586,3,09/04/2014,dibt.00,,,Aspirin 75mg tablets,30 capsule - 20 mg
-1001310,3,28/06/2011,ef12.,13.05.02.05.00,,,56 capsule
-1007295,3,13/01/2014,,02.09.01.00.00,,Citalopram 10mg tablets,100.000
-1000820,3,15/03/2012,,01.06.01.00.00,,Amitriptyline 10mg tablets,56.000
-1004607,4,10/04/2007,b211.,06.01.02.02.00,330202001,,56 tablet(s)
-1000154,3,11/09/2015,,07.02.01.00.00,,Voltarol 1.16% Emulgel (Novartis Consumer Health UK Ltd),2 spray(s) - 50 micrograms/dose
-1005457,3,09/03/2012,,01.03.05.00.00,,Simvastatin 20mg tablets,7 tablet - 50 mg
-1002052,3,20/04/2010,k85y.,02.04.00.00.00,,Tramadol 37.5mg / Paracetamol 325mg tablets,56.000
-1005421,4,31/03/2011,,01.05.01.00.00,,,28.000
-1006965,1,29/03/2011,ph77.,02.12.04.00.00,,Olanzapine 10mg oral lyophilisates sugar free,7 tablet
-1004547,1,13/01/2012,,,,Tenoretic 100mg/25mg tablets (AstraZeneca UK Ltd),56 tablet(s)
-1002951,2,14/06/2016,,01.04.02.00.00,,Calcipotriol 50micrograms/g cream,56.000
-1006846,3,11/05/2009,,02.12.04.00.00,,METHOTREXATE tabs 2.5mg,56 tablet(s) - 4 mg
-1003777,3,08/04/2013,j22e.,,,Lacri-lube eye ointment (Allergan Ltd),
-1003355,4,19/07/2006,,10.01.01.00.00,,Aspirin 75mg tablets,
-1007020,3,15/11/2012,,1304000V0AAADAD,,Atenolol 50mg tablets,1 x30 gram(s)
-1003554,4,24/06/2014,,06.07.02.00.00,,,90 tablet(s)
-1005760,3,02/07/2012,,10.01.01.00.00,,Warfarin 1mg tablets,28 tab
-1007161,4,25/08/2011,,01.03.05.00.00,,Dihydrocodeine  Tablets  30 mg,28 tablet - 50 mg
-1004914,1,28/06/2010,bl5F.,03.04.01.01.00,,Dosulepin 75mg tablets,28 capsules - 15 mg
-1006549,3,23/02/2009,ka8z.,,,Ramipril 5mg capsules,60 sachet
-1004437,2,11/11/2014,j2c2.,,317919004,Prochlorperazine 5mg tablets,56 tablet(s)
-1002274,4,20/08/2012,,,,Atorvastatin 20mg tablets,8 tablet
-1004713,3,08/10/2008,,0103010T0AAAAAA,,Risperidone 2mg tablets,56 - capsule(s)
-1002245,3,02/09/2011,,,,Diclofenac sodium 50mg gastro-resistant tablets,1 pack of 500 g (dispenser)
-1007020,1,17/02/2014,,02.09.01.00.00,322366004,Levothyroxine sodium 25microgram tablets,200.000
-1003608,1,19/06/2015,,91.04.00.00.00,,Perindopril erbumine 2mg tablets,60.000
-1005760,4,08/07/2014,,,,Folic acid 5mg tablets,5.000
-1007640,3,12/05/2014,gh52.,,,,3 packs of 28 tablet(s)
-1001572,3,21/04/2015,c13v.,,,Atorvastatin 40mg tablets,56 tabs
-1005939,4,30/07/2013,ph7W.,1106000X0AAACAC,,Diazepam 5mg tablets,56 capsule
-1006846,4,24/10/2013,,12.01.03.00.00,,Prednisolone 1mg tablets,28.000
-1002951,3,14/09/2011,,04070100,,Levothyroxine sodium 50microgram tablets,200 tab
-1007729,1,22/09/2014,,040702,330781005,Hydromol ointment (Alliance Pharmaceuticals Ltd),300 TABLET
-1001535,3,04/12/2006,,06.01.05.00.00,,Chlorpromazine 100mg tablets,1 unit
-1004140,3,26/03/2015,a6b1.,,,Co-amoxiclav 250mg/125mg tablets,
-1007262,3,25/06/2015,,06.04.01.01.00,,,28.000
-1004080,3,18/10/2011,,,,Atorvastatin 40mg tablets,28 tablets
-1004835,2,11/11/2008,,,,Bisoprolol Fumarate  Tablets  5 mg,28.000
-1006774,3,11/09/2014,,04.03.03.00.00,,Domperidone 10mg tablets,168 tablets
-1006710,3,18/04/2006,,11.08.01.00.00,,Doxycycline 100mg capsules,56 cap
-1001442,3,21/10/2008,,10.01.01.00.00,,Mebeverine 135mg tablets,112 tablets
-1005225,3,20/02/2012,,02.12.04.00.00,,Atenolol 50mg tablets,200 tab
-1007199,4,05/07/2010,,,,Aqueous cream,56 tablets
-1000390,2,02/08/2010,,02.04.00.00.00,,Levothyroxine sodium 100microgram tablets,200
-1007161,1,07/12/2012,,02.04.00.00.00,,Tamsulosin 400microgram modified-release capsules,28.000
-1002672,3,16/01/2013,,,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),2*1 inhaler
-1001831,3,26/02/2016,k8i1.,06.02.01.00.00,,Naproxen 500mg gastro-resistant tablets,56 tabs
-1006846,2,24/09/2015,bi32.,,,Enalapril 10mg tablets,
-1006586,4,09/12/2013,,10.01.01.00.00,,ESTRAPAK 50,60.000
-1001481,3,08/12/2014,,04.06.03.00.00,,Levothyroxine Sodium  Tablets  100 micrograms,
-1004699,3,16/05/2016,,,,,84.000
-1007020,1,20/07/2015,gdA5.,04.03.03.00.00,,,10
-1001336,3,17/11/2015,,01.04.02.00.00,,Colecalciferol 800unit capsules,120 tablet
-1002906,3,04/09/2012,,01.03.01.00.00,,Amlodipine 10mg tablets,
-1005940,3,01/05/2013,b211.,02.05.04.00.00,,,100 capsule(s) - 50 mg
-1006242,2,30/12/2013,,02.12.04.00.00,318407001,Levothyroxine sodium 100microgram tablets,1 pack of 100 capsule(s)
-1007640,3,18/09/2014,,09.06.04.00.00,,Noriday 350microgram tablets (Pfizer Ltd),
-1005462,4,15/05/2012,ecc2.00,,,ALENDRONIC ACID (AS SODIUM SALT) tabs 70mg,
-1001712,3,16/05/2016,,020202,,Atmocol pocket deodorant spray 785911 (Ecolab Healthcare Division),250 ml
-1000428,3,10/09/2007,d712.,,,Aspirin 75mg dispersible tablets,56 capsule - 20 mg
-1005940,3,14/12/2015,,,,Dipyridamole 200mg modified-release capsules,56 cap
-1006192,1,01/09/2015,,,881811000001100,PARACETAMOL tabs 500mg,
-1006846,4,21/04/2010,,02.12.04.00.00,,Fentanyl 12micrograms/hour transdermal patches,56 tablet(s) - 50 micrograms
-1006200,3,24/08/2015,,04.06.02.00.00,,Omeprazole 20mg gastro-resistant capsules,56 tablet(s) - 2.5 mg
-1000733,3,02/02/2015,dy12.,02.12.04.00.00,,Elleste Solo 1mg tablets (Meda Pharmaceuticals Ltd),100 tablet
-1000692,1,20/04/2010,,04.03.03.00.00,326874007,Amlodipine 10mg tablets,56 tablet
-1007020,4,07/08/2014,,,,,28.000
-1006453,1,15/07/2014,,02.04.00.00.00,,Codeine 30mg tablets,100.000
-1007491,3,17/01/2011,,02.02.01.00.00,,,
-1005081,3,12/08/2014,,04.03.04.00.00,,Peri-Prep wipes 840001 (Salts Healthcare),
-1006707,3,07/05/2014,,10.01.04.03.00,,Nasonex 50micrograms/dose nasal spray (Merck Sharp & Dohme Ltd),2 packs of 28 tablet(s)
-1003243,1,22/11/2006,,07.04.05.00.00,,Indapamide 2.5mg tablets,60 capsules
-1006846,3,06/02/2015,fe6h.00,,,Aspirin 75mg dispersible tablets,28.000
-1002951,3,31/08/2010,ftez.00,,,,4.000
-1005760,3,15/02/2016,,04.07.02.00.00,319773006,Aspirin 75mg dispersible tablets,7 tablet - 10 mg
-1003243,3,16/06/2008,a6b7.,02.02.01.00.00,,Meloxicam 7.5mg tablets,30 cap
-1001124,1,09/05/2007,,02.04.00.00.00,,Atorvastatin 40mg tablets,
-1006707,3,04/01/2016,ja18.00,01.06.04.00.00,318906001,Lisinopril 10mg tablets,112 tablets
-1003334,3,26/01/2016,,04.03.01.00.00,,DICLOFENAC & MISOPROSTOL tabs 50mg + 200micrograms,2 x28 tablet(s)
-1004921,2,11/09/2015,b51y.,04.05.01.00.00,,Paracetamol 500mg tablets,28 tablet(s) - 100 micrograms
-1007705,3,22/05/2014,fe6i.00,06.02.01.00.00,,GABAPENTIN caps 300mg,28 cap
-1005638,3,16/06/2014,bi67.,03.03.02.00.00,,Hydroxocobalamin 1mg/1ml solution for injection ampoules,20 tabs
-1004592,3,19/07/2013,,02.06.01.02.00,,Aspirin 75mg gastro-resistant tablets,
-1004437,4,01/11/2007,,03.02.00.00.00,,Ramipril 2.5mg capsules,100 tablet(s)
-1000154,3,05/11/2015,,,,Ibuprofen 400mg tablets,28 tablet
-1006453,3,03/03/2014,,01.04.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,60 capsule - 2 mg
-1002656,3,19/03/2010,d711.00,,,,4.000
-1002951,4,06/02/2012,ft8z.,04.03.01.00.00,,Ibuprofen 400mg tablets,
-1001442,3,25/11/2013,,02.12.04.00.00,,Amitriptyline 10mg tablets,4.000
-1004529,3,06/06/2011,,13.09.01.00.00,,,28 tablet(s)
-1006811,3,09/09/2011,,13.06.02.01.00,,Amlodipine 10mg tablets,56.000
-1002299,1,13/01/2014,,,,Cyclizine 50mg tablets,1xop - 50 micrograms/dose
-1000913,3,24/03/2014,,02.06.03.00.00,,Glucosamine sulfate 500mg / Chondroitin 400mg tablets,28 capsule(s)
-1002108,3,14/11/2014,d711.00,02.05.05.02.00,,,2 packs of 28 tablet(s)
-1004140,1,26/02/2016,,10.03.02.01.00,,Monomil XL 60mg tablets (Teva UK Ltd),2 packs of 30 capsule(s)
-1003489,3,05/07/2010,dian.,04.03.03.00.00,,Candesartan 4mg tablets,28 tablet
-1002748,3,24/09/2013,,05.01.01.02.00,,Megestrol 40mg tablets,28.000
-1006904,4,10/01/2014,,,,Atenolol 50mg tablets,28 tablets
-1002951,4,29/03/2016,dnbr.00,10.03.02.01.00,329367009,Simvastatin 40mg tablets,56
-1007729,1,03/02/2014,,02.06.02.00.00,317919004,,1 pack of 28 tablet(s)
-1007161,4,21/04/2011,,05.04.01.00.00,,Terbutaline 500micrograms/dose dry powder inhaler,28 tab
-1006846,3,16/10/2013,,,319288002,Co-proxamol 32.5mg/325mg tablets,28.000
-1003608,3,06/12/2010,m118.,0403010L0AAABAB,,Betahistine 8mg tablets,28.000
-1006453,2,21/04/2011,f923.,01.03.05.00.00,,Amitriptyline 25mg tablets,500.000
-1006035,3,04/11/2015,,,,Folic acid 5mg tablets,84 tablets
-1007199,2,10/06/2013,o441.00,02.12.04.00.00,,Levothyroxine sodium 50microgram tablets,1 pack of 28 tablet(s)
-1006306,2,12/02/2013,,01.03.05.00.00,,Lisinopril 5mg tablets,28 capsule - 10 mg
-1003243,1,08/06/2009,,02.08.02.00.00,,FYBOGEL granules gluten-free and sugar-free [RECKITT B],15 capsule
-1002951,3,09/11/2015,,,,,28 tablets
-1005280,1,09/09/2013,,02.05.05.02.00,,Piroxicam 0.5% gel,30 tablet
-1001712,3,18/06/2015,gdAC.,07.02.01.00.00,,Simvastatin 10mg tablets,60 sachet(s) - 3.5 grams/sachet
-1002763,3,27/01/2015,,02.04.00.00.00,325443009,AMITRIPTYLINE HCl tabs 50mg,28 tablets
-1004529,1,27/04/2011,,08.01.03.00.00,,Sildenafil Sls TABS 50MG,1 pack of 28 capsule(s)
-1001720,4,21/04/2009,f923.00,07.02.01.00.00,,INFLUENZA INACTIVATED SPLIT VIRION vaccine [SAN PAST],28.000
-1001751,3,29/01/2007,,02.12.03.00.00,,Spironolactone 25mg tablets,28.000
-1007784,1,06/01/2015,,,,,200.000
-1007344,2,12/07/2005,,06.02.01.00.00,320000009,,112 capsules
-1006609,3,29/02/2016,,07.04.01.01.00,,Aspirin 75mg dispersible tablets,
-1007012,4,18/01/2010,,01.03.05.00.00,,Aspirin 75mg gastro-resistant tablets,
-1000324,1,26/10/2009,l882.,,,Amoxicillin 250mg capsules,
-1007012,3,29/07/2013,,02.02.01.00.00,,Naproxen 500mg gastro-resistant tablets,200 unit
-1001124,3,11/05/2015,,01.04.02.00.00,,Famotidine 40mg tablets,
-1001481,3,18/02/2011,,02.04.00.00.00,,IRBESARTAN + HYDROCHLOROTHIAZIDE tabs 300mg + 12.5mg,
-1007020,2,19/11/2010,,0103050P0AAAFAF,,Ranitidine 150mg tablets,1 - 200 dose inhaler
-1000419,3,20/12/2011,bu2c.,,,Citalopram 20mg tablets,8 tab
-1006710,3,27/08/2009,,,,Olanzapine 10mg oral lyophilisates sugar free,200 tablet
-1000040,1,14/09/2015,,11.06.02.00.00,18109911000001108,,80 tablet(s)
-1006427,2,03/09/2012,,02.05.05.01.00,,Levothyroxine sodium 25microgram tablets,
-1007161,3,12/11/2013,,02.06.02.00.00,,Ramipril 2.5mg capsules,60 capsule - 500 mg
-1001124,1,21/05/2012,,02.04.00.00.00,,,7 tablets
-1007199,3,19/06/2008,blb2.00,02.09.01.00.00,,Ramipril 10mg capsules,56.000
-1002906,3,18/11/2013,,02.12.04.00.00,,Prednisolone 5mg gastro-resistant tablets,84 tab
-1004921,3,02/07/2013,,02.04.00.00.00,,Simvastatin 20mg tablets,84 tablet(s)
-1004080,3,04/07/2011,,02.12.04.00.00,,Carbamazepine 200mg tablets,60 gram
-1007161,3,10/02/2010,ka2y.00,04.07.01.02.00,,FUCITHALMIC eye drp 1%,
-1003657,1,03/09/2010,ph7W.,02.09.01.00.00,,Amoxicillin 500mg capsules,84 tablet(s)
-1001383,4,14/03/2016,,02.06.02.00.00,319288002,,
-1006710,4,19/08/2009,,,,,100 tablet(s)
-1004713,3,26/02/2008,bu25.00,,,Mebeverine 135mg tablets,168.000
-1006453,3,18/10/2013,,,,Terazosin 2mg tablets,1 pack of 84 tablet(s)
-1007270,3,11/01/2010,,,318420003,Opatanol 1mg/ml eye drops (Alcon Laboratories (UK) Ltd),
-1005964,3,04/12/2015,,1302011L0BBAAAA,,Naproxen 500mg tablets,21 capsules
-1004933,3,12/06/2006,da91.00,11.08.01.00.00,,OMEPRAZOLE CAPSULES 10MG,28 capsule
-1000692,3,21/03/2014,gdA2.,,,Aspirin 75mg dispersible tablets,
-1005457,1,25/03/2014,,14.05.01.00.00,330170001,,1 pack of 28 tablet(s)
-1004547,1,09/02/2015,dia6.,04.03.01.00.00,,Calcipotriol 50micrograms/ml scalp solution,
-1002598,3,09/07/2015,,13.02.01.01.00,,Chlorphenamine 4mg tablets,1 pack of 28 capsule(s)
-1003777,3,16/01/2013,,13.09.01.00.00,,Glyceryl trinitrate 400micrograms/dose aerosol sublingual spray,7 tablet
-1000154,3,14/08/2012,,,318902004,Morphine sulfate 10mg/5ml oral solution,56 tablets
-1002052,1,08/04/2016,k693.,02.12.04.00.00,,Rofecoxib 25mg/5ml oral suspension sugar free,84 tablet(s)
-1000390,1,08/05/2012,,02.02.01.00.00,,Simvastatin 20mg tablets,28.000
-1004547,3,28/11/2012,b212.,02.05.05.02.00,134599008,Nicardipine 30mg modified-release capsules,28.000
-1007534,4,01/03/2016,,,,Co-dydramol 10mg/500mg tablets,56 tablet(s)
-1000507,3,06/08/2015,b211.00,,,Levothyroxine sodium 50microgram tablets,60 tablet
-1004872,3,12/02/2013,bxi1.,06.04.01.01.00,319316005,Levothyroxine sodium 50microgram tablets,28 capsules
-1006846,1,04/12/2012,,04.07.01.02.00,,Gliclazide 80mg tablets,7 tablet
-1006904,3,14/06/2016,m45v.,,,,84
-1002979,3,04/08/2010,e222.,15.01.04.01.00,,Peppermint oil 0.2ml gastro-resistant modified-release capsules,28 capsule(s) - 15 mg
-1004933,3,22/08/2013,,,,Levothyroxine sodium 25microgram tablets,10 gram
-1006242,4,25/07/2011,,,,Tibolone 2.5mg tablets,28 tablets
-1001383,3,10/08/2010,d713.00,,,Amlodipine 5mg tablets,100 tablet(s)
-1006242,2,10/11/2010,,12.02.01.00.00,,Atenolol 25mg tablets,56.000
-1004547,3,10/04/2007,,04.06.03.00.00,,Paroxetine 20mg tablets,1 OP
-1000223,3,08/04/2014,bdf1.,,,Xipamide 20mg tablets,28 tablet
-1001296,4,12/08/2013,,03.04.01.01.00,320000009,Bendroflumethiazide TABS 2.5MG,28 capsule
-1002299,4,16/01/2013,,13.09.01.00.00,,Co-codamol 15mg/500mg tablets,1 pack of 30 tablet(s)
-1001124,3,24/10/2007,,02.12.04.00.00,,,28 tablet
-1007012,3,02/06/2010,,,,Simvastatin 20mg tablets,10.000
-1002672,4,09/03/2016,,01.03.05.00.00,,Amoxicillin 500mg capsules,112 tablet(s) - 500 mg
-1006965,1,10/11/2009,bu23.00,02.04.00.00.00,,Losartan 100mg tablets,2*140 TABLET
-1001383,3,23/08/2010,,,,Glutafin gluten free tea biscuits (Dr Schar UK Ltd),56 tablet
-1000786,4,07/02/2011,,02.04.00.00.00,,Aspirin 75mg gastro-resistant tablets,
-1001850,3,13/09/2011,,,,Codeine 30mg tablets,
-1002245,3,23/08/2010,,,322341003,,56 capsules
-1006242,3,18/04/2011,,,3154411000001105,Atenolol 100mg tablets,28 tablets
-1000926,1,15/05/2015,,02.06.01.01.00,,Tramadol 37.5mg / Paracetamol 325mg tablets,112 tablets
-1001442,3,12/11/2015,,,,Buprenorphine  Transdermal patches  10 micrograms/hour,
-1004914,1,28/06/2016,,0208020V0AAAAAA,,Tranexamic acid 500mg tablets,28 capsule
-1002466,3,17/05/2010,,02.06.01.02.00,,Perindopril erbumine 2mg tablets,200 ml
-1001383,1,16/12/2010,,04.07.01.02.00,,Metformin 500mg tablets,56.000
-1002951,3,11/03/2009,a6b1.,01.02.02.00.00,321959007,Triptorelin Acetate  Powder and solvent for injection  15 mg vial (11.25 mg Triptorelin),56 tablet
-1004962,3,20/03/2013,,13.07.00.00.00,,Co-codamol 30mg/500mg tablets,1 canister(s) - 0.12 %
-1006965,3,08/04/2016,ph8D.,04.03.04.00.00,,Celecoxib 100mg capsules,
-1007012,2,08/05/2014,,,,,1 pack of 30 gram(s)
-1004139,3,14/08/2008,,04.07.02.00.00,,Diclofenac Sodium Ec TABS 50MG,28 tablets
-1004054,1,14/05/2015,,,,Tramadol 50mg capsules,
-1005081,1,15/01/2013,,02.06.02.00.00,,Levothyroxine sodium 50microgram tablets,100 gram
-1004835,3,01/09/2015,,,,Amoxicillin 250mg capsules,56.000
-1005347,3,12/06/2015,,0407010F0AAAHAH,,Hydroxychloroquine 200mg tablets,14 capsules
-1007161,3,14/07/2009,,,,Isosorbide mononitrate 60mg modified-release tablets,
-1004025,4,07/05/2013,,02.09.01.00.00,,Folic acid 5mg tablets,60 tablets
-1002672,3,09/01/2012,,03.04.01.01.00,,Ramipril 10mg capsules,30 millilitres
-1002920,4,18/08/2014,,10.01.04.03.00,,SIMVASTATIN tabs 40mg,4 tablet
-1000428,4,12/03/2010,,02.05.05.01.00,,,56.000
-1003243,3,08/04/2016,ip3e.00,02.12.04.00.00,,Testosterone 40mg capsules,2*28 tablet - 20 mg
-1000428,3,21/12/2015,puh1.,,,Warfarin 5mg tablets,56.000
-1005462,3,07/10/2013,,,,Lisinopril 10mg tablets,84.000
-1002951,4,20/10/2015,,06.02.01.00.00,,Estracombi TTS patches (Novartis Pharmaceuticals UK Ltd),
-1007640,3,31/05/2012,bk72.00,01.03.05.00.00,319288002,Paracetamol 500mg tablets,28 tablet(s) - 25 mg
-1003018,1,21/11/2007,,,,Bisoprolol 10mg tablets,
-1007233,1,01/12/2008,,,,Omeprazole 10mg gastro-resistant capsules,500 ml
-1007270,4,27/04/2015,,,,CYCLIZINE tabs 50mg,1 pack of 30 tablet(s)
-1001383,3,30/12/2015,,0206020C0BIACAW,,Duloxetine 30mg gastro-resistant capsules,28 tablet(s)
-1002951,1,20/06/2006,ecc2.,12.02.01.00.00,,Chlorphenamine 4mg tablets,
-1006965,4,09/01/2012,bl8i.,01030500,,,100 capsule
-1001442,3,22/02/2013,,02.02.01.00.00,4074911000001106,Omeprazole 20mg gastro-resistant capsules,30 g
-1007233,3,17/08/2009,,0604012P0BBAAAA,,clotrimazole with hydrocortisone cream 1% + 1%,30 capsule(s) - 50 mg
-1005760,3,06/06/2008,dia6.,,,Fenofibrate micronised 267mg capsules,56.000
-1003018,3,22/01/2010,,09.01.01.01.00,,Fluticasone 125micrograms/dose / Salmeterol 25micrograms/dose inhaler CFC free,100 tablets
-1004547,1,18/06/2012,h341.00,02.08.02.00.00,,,1 pack of 30 tablet(s)
-1006761,3,20/08/2008,,11.06.05.00.00,,Adcal-D3 750mg/200unit caplets (ProStrakan Ltd),30 tablets
-1000428,3,15/07/2014,a6b1.,,,Simvastatin 20mg tablets,56.000
-1001239,2,20/08/2013,,,,Metformin 500mg tablets,56 capsules
-1003355,3,19/01/2010,,,,Oilatum Emollient (GlaxoSmithKline Consumer Healthcare),28 tablet
-1000375,3,27/05/2016,,02.04.00.00.00,,Atenolol 50mg tablets,50 tabs
-1005772,2,12/05/2015,,,,,28.000
-1003548,3,24/06/2013,a6b1.,89.02.00.00.00,,Amitriptyline 50mg tablets,
-1000277,4,30/03/2016,,,415166002,Algesal cream (Thornton & Ross Ltd),
-1001374,3,14/07/2014,,05.01.01.03.00,,Omeprazole 20mg gastro-resistant capsules,100 lancet
-1001008,3,16/03/2016,,,,Pregabalin 150mg capsules,2*28 tablet - 40 mg
-1002709,3,24/10/2007,,02.12.04.00.00,134599008,,6 tablet
-1007602,3,11/04/2012,,13.04.01.00.00,,,56 tablets
-1006453,2,02/08/2013,f724.,02.04.00.00.00,,Losartan 50mg tablets,
-1001296,1,16/12/2014,fo4y.00,,,Aspirin 75mg dispersible tablets,56 capsule
-1000721,3,03/12/2010,bk53.00,06.02.01.00.00,,Premique Low Dose 0.3mg/1.5mg modified-release tablets (Pfizer Ltd),56.000
-1006707,3,18/09/2007,,,,Celecoxib 100mg capsules,100 g
-1004835,3,19/04/2011,,10.01.04.01.00,,Amoxicillin 250mg capsules,90 tab
-1006707,3,25/08/2011,,12.02.01.00.00,,Felodipine 10mg modified-release tablets,200
-1001442,3,29/09/2010,,01.04.02.00.00,,Simvastatin 40mg tablets,60 capsule
-1002090,3,29/10/2012,k8i1.,04.10.02.00.00,,Movelat cream (Genus Pharmaceuticals Ltd),56 tablet
-1001850,3,06/01/2014,,,330404003,Co-codamol 30mg/500mg tablets,1 pack of 30 gram(s)
-1006691,3,27/03/2008,,03.01.01.03.00,,Bendroflumethiazide 2.5mg tablets,1 - OP
-1001712,4,12/05/2016,j2c2.,,,Omeprazole 20mg gastro-resistant capsules,1 pack of 30 gram(s)
-1007199,3,10/09/2012,dl71.00,04.07.01.02.00,,,60.000
-1006306,1,02/09/2014,,02.09.01.00.00,,Candesartan 8mg tablets,56 tablet
-1002672,3,17/01/2011,,02.05.01.00.00,,Salbutamol 100micrograms/dose inhaler CFC free,56 TABLET(S)
-1004437,1,11/03/2013,dibD.00,04.03.03.00.00,415162000,,7 tablet
-1006977,3,18/11/2014,dibD.00,02.12.04.00.00,,Bendroflumethiazide 2.5mg tablets,28.000
-1005760,3,15/05/2015,c8o1.,01.03.05.00.00,,,140 dose
-1000545,3,12/10/2011,bi31.,0205040D0BBABAB,,Diprobase cream (Bayer Plc),
-1007640,3,07/06/2012,bdfw.00,10.01.03.06.00,,Senna 7.5mg tablets,28 tablet
-1006846,3,02/12/2008,,,,Nefopam 30mg tablets,1700.000
-1006549,4,26/04/2016,,,,Bendroflumethiazide 2.5mg tablets,28 tablet
-1005964,3,17/09/2015,j22y.,,,Atorvastatin 40mg tablets,
-1004140,3,23/01/2008,b211.,,,Trimethoprim 200mg tablets,28 capsule(s) - 15 mg
-1004828,3,05/12/2007,,,,PRIMOLUT N TABLETS 5MG,1 pre-filled disposable injection
-1004518,3,29/03/2010,,06.04.01.01.00,,Omeprazole 20mg gastro-resistant capsules,56 tablet
-1001374,2,18/04/2008,dia2.,,,Levothyroxine sodium 100microgram tablets,60 tablets - 250 mg
-1006846,1,22/09/2011,,06.01.02.02.00,,,100.000
-1004713,3,04/06/2010,fh1G.00,05.01.01.03.00,,GABAPENTIN caps 400mg,1.000
-1001892,3,18/09/2014,,10.03.02.01.00,,Fucibet cream (LEO Pharma),
-1003243,1,10/02/2014,,02.12.04.00.00,,,28.000
-1003657,3,13/12/2013,,,,Simvastatin 80mg tablets,80 tablet(s)
-1007262,3,03/06/2014,,02.06.02.00.00,,Simvastatin 20mg tablets,84 tablet(s) - 135 mg
-1006846,3,17/10/2011,,,,,60 tablet
-1000367,3,16/06/2014,,,,Levothyroxine sodium 50microgram tablets,56 tabs
-1001336,4,02/02/2015,ip3m.,10.01.03.04.00,,Betamethasone 0.1% ear/eye/nose drops,30 cap
-1006379,3,24/06/2013,ja18.00,,,ADIZEM XL capsules 120mg [NAPPPHARM],
-1006707,3,05/01/2015,,06.02.01.00.00,415162000,Ramipril 10mg capsules,56 capsules
-1005366,1,20/12/2010,da91.00,02.06.01.01.00,,IBUPROFEN TABLETS 400MG,56 tablet(s) - 2.5 mg
-1005728,1,03/12/2015,,03.03.02.00.00,,Losartan 50mg tablets,56 tablet
-1002672,3,18/10/2011,,,,Bendroflumethiazide 2.5mg tablets,
-1004713,2,20/12/2011,,04.07.01.02.00,,Perindopril erbumine 4mg tablets,56.000
-1000259,3,22/10/2014,k3g2.00,,,,14 tablet
-1001383,2,19/01/2010,,,,Folic acid 400microgram tablets,84 tab
-1001383,3,21/12/2015,,02.05.02.00.00,,Warfarin 3mg tablets,8 tab
-1002299,3,02/04/2013,,10.01.01.00.00,,,28 tablet
-1005537,3,23/04/2013,,02.06.02.00.00,360311000001104,Simvastatin 40mg tablets,56.000
-1003657,3,17/05/2006,di21.00,,,Omeprazole 20mg gastro-resistant capsules,168 tablets
-1000311,3,29/01/2016,bi32.,,,Citalopram 20mg tablets,30 g
-1005760,3,25/03/2015,,10.01.01.00.00,,ASPIRIN disp tab 75mg,
-1006846,3,07/10/2013,,02.09.02.00.00,,Kliovance tablets (Novo Nordisk Ltd),4 tablets
-1004080,3,15/04/2016,,04.03.01.00.00,,Octasa 400mg MR gastro-resistant tablets (Tillotts Pharma Ltd),28 tablets
-1006691,3,05/02/2013,,03.01.01.03.00,325443009,Beclometasone 50micrograms/dose nasal spray,60 grams - 0.025 %
-1006774,1,11/07/2012,,,,Omeprazole 20mg gastro-resistant capsules,15 tab
-1005081,3,26/08/2014,,04.08.01.05.00,,Xipamide 20mg tablets,168
-1006707,3,15/11/2012,ka83.,,,Atenolol 100mg tablets,56 tablet - 75 mg
-1005964,3,17/06/2014,,02.04.00.00.00,,Bendroflumethiazide 2.5mg tablets,120 dose
-1000820,4,30/01/2012,,02.04.00.00.00,,Oxytetracycline 250mg tablets,28.000
-1004914,3,26/01/2010,,06.02.01.00.00,,Ramipril 10mg capsules,28 capsules
-1002660,3,16/01/2008,bxi2.00,,182975001000027106,Bendroflumethiazide 2.5mg tablets,7 tablet
-1006306,3,10/12/2014,,,,Losartan 100mg tablets,112 tablet
-1002364,3,23/05/2014,ka32.00,04.02.01.00.00,,Bisoprolol 5mg tablets,360.000
-1002516,3,04/03/2014,,01.03.05.00.00,,,240 dose
-1007729,3,06/04/2010,dia2.,,,Dipyridamole 200mg modified-release capsules,250 ml
-1007199,3,24/11/2014,,02.02.02.00.00,,,100 gram
-1001008,4,02/08/2013,,,,,60 tab
-1001374,3,04/02/2015,,02.06.02.00.00,,Xipamide 20mg tablets,
-1003355,3,11/05/2015,bxd5.00,04.07.02.00.00,,Simvastatin 80mg tablets,28 tablets - 37.5 mg
-1000510,3,05/10/2015,,01.03.05.00.00,,Meloxicam 7.5mg tablets,28 tablet
-1001383,3,09/11/2011,,,329367009,,1 pack of 28 tablet(s)
-1004547,3,31/05/2012,,02.05.05.02.00,,Allopurinol 100mg tablets,6.000
-1002951,3,10/09/2013,,,,Bisoprolol 1.25mg tablets,100 tablet(s)
-1007145,3,25/08/2011,ip3j.00,,,betamethasone sodium phosphate ear drops 0.1%,
-1002672,3,22/07/2013,,02.02.01.00.00,,Paracetamol 500mg tablets,14 tablet
-1004275,3,21/11/2003,,10.01.01.00.00,,Aspirin 75mg dispersible tablets,28 tablet
-1003243,1,05/05/2009,,04.03.04.00.00,,Aspirin 75mg dispersible tablets,56.000
-1007012,3,07/11/2008,j2c2.,02.05.05.01.00,,Atorvastatin 10mg tablets,28.00 tablet(s)
-1001383,3,25/11/2013,,04.07.01.02.00,,Finasteride 5mg tablets,56 cap
-1004908,3,26/02/2016,,,,Finasteride 5mg tablets,112.000
-1002660,3,11/01/2012,fo4y.,,,Sertraline 50mg tablets,14 tab
-1005305,3,24/06/2013,,,,Lisinopril 10mg tablets,28 tablet(s) - 25 micrograms
-1001008,3,14/06/2010,,,,Gliclazide 80mg tablets,
-1005081,3,17/04/2014,,06.01.02.02.00,,,56.000
-1005927,3,10/11/2014,,,,SOLPADOL EFFERVESCEN TAB,1 pack of 21 capsule(s)
-1001374,3,16/07/2012,,,,Codeine 30mg tablets,
-1007784,3,12/11/2013,a6c2.,,,Cetirizine 10mg tablets,500.000
-1003716,3,08/08/2011,,,,Ramipril 5mg capsules,28.000
-1002672,4,09/11/2015,bu23.,,,,100 strip(s)
-1006306,3,01/05/2012,,,344111000001101,Symbicort 200/6 Turbohaler (AstraZeneca UK Ltd),56.000
-1002516,3,27/10/2010,c13T.,06.02.01.00.00,,Atorvastatin 40mg tablets,10.000
-1006846,3,14/03/2013,,03.04.01.01.00,,Atenolol 25mg tablets,112.000
-1005254,4,02/09/2011,blc2.00,02.04.00.00.00,,,56.000
-1006846,4,28/06/2013,ip3e.00,04.07.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,56
-1002598,3,15/04/2014,,06.02.01.00.00,,,100 TABLET(S)
-1001146,3,28/06/2013,bxi1.,01.03.05.00.00,,Gliclazide 80mg tablets (A A H Pharmaceuticals Ltd),56 tablet
-1006707,3,12/01/2015,,09.06.04.00.00,,,28.000
-1002466,4,19/06/2008,,11.08.01.00.00,321959007,,28 tablets - 25 mg
-1003716,3,21/09/2015,bxd5.,,,Omeprazole 20mg gastro-resistant capsules,28.000
-1002951,4,03/02/2014,,,415166002,"Influenza vaccine (split virion, inactivated) suspension for injection 0.5ml pre-filled syringes",120 tablets
-1002791,3,25/03/2015,,12.02.01.00.00,,Citalopram 20mg tablets,100 capsule(s)
-1003397,3,18/05/2007,,,,,60.000
-1007199,3,23/11/2006,,02.04.00.00.00,,Dihydrocodeine 30mg tablets,
-1005116,3,27/04/2015,d1d3.,03.03.02.00.00,,Alendronic acid 70mg tablets,56.000
-1001720,3,11/01/2010,,04.07.01.02.00,,MEPTAZINOL tabs 200mg,28.000
-1001528,3,14/03/2014,,02.09.01.00.00,317291008,,28 tablet(s) - 100 micrograms
-1006722,3,11/03/2009,jA2z.00,10.01.04.01.00,,Celecoxib 200mg capsules,100
-1004140,2,12/11/2013,,01.02.02.00.00,,Prothiaden 25mg capsules (Teofarma),28 cap
-1007640,3,03/11/2009,,0302,489711000001100,Eprosartan 400mg tablets,28 tablet
-1001528,1,01/07/2013,,,,Hypromellose 0.3% eye drops,56 capsule(s)
-1000428,1,26/02/2008,,06.02.01.00.00,,Pizotifen 1.5mg tablets,
-1000419,3,19/08/2015,,07.04.02.00.00,,Omeprazole 10mg gastro-resistant capsules,10.000
-1006846,3,23/10/2013,,06.02.01.00.00,,Methotrexate TABS 10MG,
-1003554,3,08/02/2016,,,,Anusol HC ointment (McNeil Products Ltd),28.000
-1007145,4,06/10/2015,,,679511000001100,Co-codamol 30mg/500mg tablets,200 tablets
-1000040,3,06/01/2015,,,,Folic acid 5mg tablets,
-1006508,4,29/03/2012,bd35.,03.02.00.00.00,,Griseofulvin 500mg tablets,56 tablet(s) - 75 mg
-1003018,3,28/09/2011,jA1w.00,01.03.01.00.00,323015009,Doxycycline 100mg capsules,
-1001124,3,14/03/2011,ka2y.00,,,,8.000
-1003342,4,09/11/2009,,80.01.01.00.00,,Bendroflumethiazide 2.5mg tablets,100 tablet
-1004835,1,19/03/2010,,02.09.01.00.00,,,28 tablet
-1002245,1,11/09/2015,fe6i.,,,Lercanidipine 10mg tablets,56 tablet
-1004140,3,14/10/2011,,02.05.05.01.00,,Oxybutynin 2.5mg tablets,20 capsule(s)
-1004592,1,24/10/2013,,,,TRAMADOL caps 50mg,500 g
-1006200,3,01/05/2012,b51y.,13.04.01.00.00,,,2 packs of 30 tablet(s)
-1006427,2,09/11/2009,,02.06.02.00.00,,Dermovate 0.05% cream (GlaxoSmithKline UK Ltd),28 tablet
-1000666,3,18/11/2013,,06.03.02.00.00,,Olanzapine 10mg tablets,30 device
-1005964,2,06/10/2015,,05.01.01.03.00,,,28.000
-1002466,3,05/11/2012,i151.,04.07.01.02.00,,Ramipril 5mg capsules,30.000
-1005042,3,03/06/2016,b211.,03.01.01.03.00,,,30 sachet - 3.5 grams/sachet
-1002582,3,14/06/2016,,04.02.03.04.00,,Aspirin 75mg dispersible tablets,112 grams
-1002274,3,15/11/2012,blb1.,02.12.04.00.00,,Prednisolone 5mg gastro-resistant tablets,112 tablets
-1006192,3,29/02/2016,,,,ispaghula husk gluten-free effervescent granules sugar-free,56 tablet(s)
-1006710,3,16/02/2010,,13.09.01.00.00,321745007,,7 tablet
-1001932,3,15/01/2014,,02.09.01.00.00,,Simvastatin 40mg tablets,56 capsule
-1006255,2,09/12/2013,gdA6.,,3154411000001105,Omeprazole 20mg gastro-resistant capsules,56 tablets
-1004933,4,13/02/2013,,10.03.02.01.00,,Venlafaxine 150mg modified-release capsules,28 tablets
-1001720,3,09/05/2016,,,,Amlodipine 5mg tablets,
-1006846,3,06/05/2016,,02.12.04.00.00,,Simvastatin 20mg tablets,56 tablets
-1006846,2,09/08/2010,,02120400,,Amitriptyline 10mg tablets,
-1003716,3,05/11/2010,dia2.,02.12.04.00.00,,Aspirin 75mg gastro-resistant tablets,2 packs of 28 tablet(s)
-1000692,3,11/03/2013,,02.02.01.00.00,,FENACTOL ec tab 50mg,30 g
-1000390,3,12/10/2015,c144.,02.02.01.00.00,,Amoxicillin 250mg capsules,28 tabs
-1001641,1,24/06/2014,dian.,02.09.01.00.00,,Perindopril erbumine 8mg tablets,1.000
-1004713,1,01/03/2010,,02.09.01.00.00,331080007,Alendronic acid 70mg tablets,28 tablet - 2.5 mg
-1006761,4,12/01/2011,,02.02.01.00.00,,,28 capsule(s)
-1002601,3,10/08/2010,,12.01.01.02.00,3154411000001105,Diclofenac sodium 50mg gastro-resistant tablets,56 tablets
-1002582,3,09/05/2012,,,,OMEPRAZOLE CAPSULES 20MG,20 millilitre
-1005081,1,27/10/2014,,02.05.05.02.00,,Simvastatin 20mg tablets,120 tabs
-1002516,1,13/05/2014,,,,Doxazosin Mesilate  Tablets  2 mg,28 tablets
-1001831,3,04/03/2015,,,,,56 tablets
-1002951,3,09/06/2014,,01.02.02.00.00,,,
-1007491,2,01/05/2013,,02.06.02.00.00,,Ramipril 5mg capsules,
-1002582,3,17/01/2012,,02.12.04.00.00,11930411000001105,,84 tablet - 8 mg
-1006255,3,19/01/2016,f73..,,,GABAPENTIN caps 300mg,28.000
-1007729,3,02/10/2007,,13.04.02.00.00,3154411000001105,Fluoxetine 20mg capsules,28 tablets
-1002274,3,10/09/2010,,04.02.01.00.00,,Lactulose 3.1-3.7g/5ml oral solution,8.000
-1000770,3,16/05/2016,,02.04.00.00.00,,Levothyroxine sodium 50microgram tablets,100.000
-1006977,3,18/12/2014,bu23.00,,,,
-1004828,1,02/02/2015,ab2A.,,,,2 packs of 84 tablet(s)
-1004025,3,06/06/2014,,02.04.00.00.00,,LACTULOSE ORAL SOLN 3.35G/5ML,100 tablet
-1000375,3,10/12/2013,,,,,60 tablets
-1004592,2,17/03/2011,,,330784002,Citalopram 20mg tablets,28 capsule
-1004054,4,17/12/2012,,,,DOXAZOSIN TABLETS 2MG,
-1002672,3,31/07/2015,bxd2.,06.01.02.02.00,,,1 x1 0.5ml pre-fill
-1006691,4,18/12/2012,,02.05.05.01.00,,MINOCIN MR CAPSULES 100MG,20 tab
-1006710,3,16/05/2016,,09.04.04.02.00,,,60.000
-1006337,3,22/06/2011,,02.09.01.00.00,,Ramipril 10mg capsules,56 tablets
-1005964,3,07/10/2014,bu23.00,,,Glucosamine sulfate 500mg / Chondroitin 400mg tablets,2*28 tablet - 10 mg
-1003657,3,12/03/2010,,06.02.01.00.00,,Paracetamol 500mg tablets,112
-1002210,1,10/08/2010,,,,BENDROFLUAZIDE tabs 2.5mg,56 capsules
-1006846,4,07/05/2015,puhl.,09.06.02.00.00,,Laxido Orange oral powder sachets sugar free (Galen Ltd),28 tablet
-1004713,1,14/07/2009,,,,OxyContin 5mg modified-release tablets (Napp Pharmaceutic...,1700.000
-1003777,3,18/01/2010,,02.12.04.00.00,,Piroxicam 20mg capsules,8 tab
-1000223,3,19/06/2014,,,,Folic acid 5mg tablets,
-1004139,3,27/08/2009,bl3M.,04.07.01.02.00,318421004,,168 tablet
-1000223,1,31/07/2017,,06.07.02.00.00,,,
-1001535,4,17/04/2014,,,,Lansoprazole 30mg gastro-resistant capsules,30 cap
-1004080,3,09/06/2006,,,,Methotrexate 2.5mg tablets,4.000
-1002906,4,11/04/2014,b211.,,,Metoprolol 50mg tablets,
-1006385,4,19/04/2013,bi67.,02.09.01.00.00,,ispaghula husk gluten-free effervescent granules sugar-free,
-1002582,3,15/11/2010,,06.02.01.00.00,,glyceryl trinitrate spray 400micrograms/dose,56 tablets
-1001008,3,22/07/2013,bxd2.,01.03.05.00.00,,Lansoprazole  Capsules (Gastro-Resistant)  15 mg,28 tablets - 10 mg
-1001831,4,22/06/2015,,02.09.03.00.00,,Amlodipine 5mg tablets,
-1000419,3,14/07/2009,bxd5.,04.01.01.00.00,,GABAPENTIN caps 400mg,
-1006691,4,21/10/2013,bd35.,10.03.02.01.00,,Paracetamol 500mg tablets,84 tablet(s)
-1004275,3,03/09/2015,,,317291008,Simvastatin 10mg tablets,
-1004437,1,11/09/2006,,14.04.20.00.00,,Metronidazole 400mg tablets,2 packs of 30 capsule(s)
-1004275,3,09/06/2014,a6b1.00,,,Betahistine 8mg tablets,28.000
-1007161,1,17/02/2014,,02.09.01.00.00,,Aspirin 75mg dispersible tablets,4.000
-1003782,3,01/09/2009,blb2.,13.05.02.03.00,,Otomize ear spray (Forest Laboratories UK Ltd),
-1002245,1,11/12/2014,b211.,04.03.04.00.00,,Amitriptyline 50mg tablets,28 tab
-1004547,3,16/03/2015,,020201,,Olanzapine 10mg tablets,28 tablet
-1006707,3,22/09/2015,,02.05.05.02.00,,,30.000
-1006549,4,27/03/2012,,02.12.04.00.00,,Atenolol 50mg tablets,4.000
-1003243,1,03/06/2011,,04.07.01.02.00,,Tramadol 100mg modified-release tablets,56 tab
-1005305,3,28/04/2015,,02.05.05.01.00,,Nifedipine 10mg capsules,
-1005392,3,19/01/2015,,,,,100 gram
-1001336,3,19/12/2005,,,326874007,Chlorpromazine 50mg tablets,
-1006691,3,09/12/2010,,10.01.01.00.00,3651611000001107,Simvastatin  Tablets  40 mg,2 packs of 28 capsule(s)
-1004921,3,23/03/2015,,,,Methotrexate 2.5mg tablets,28 tablet
-1005728,3,21/12/2011,,0401020K0AAAHAH,,Salbutamol 100micrograms/dose inhaler CFC free,100 tablet(s)
-1006453,2,06/08/2012,,02.02.01.00.00,,BENDROFLUMETHIAZIDE tabs 2.5mg,2 120 dose inhaler
-1007020,3,12/01/2016,bu23.00,94.05.12.00.00,3192111000001101,Felodipine 10mg modified-release tablets,56 tablet(s) - 10 mg
-1004275,3,18/04/2006,,,,Hydroxocobalamin 1mg/1ml solution for injection ampoules,2 packs of 28 tablet(s)
-1000154,4,06/01/2012,,,,Doxazosin 4mg tablets,56 tablet
-1000786,3,12/01/2011,,02.12.04.00.00,,TYLEX caps 500mg + 30mg,28 tab
-1002709,3,29/12/2009,,06.02.01.00.00,,Gabapentin 300mg capsules,56 TABLET(S)
-1006549,3,22/02/2016,,,,Felodipine 10mg modified-release tablets,56 x tablets
-1006846,4,24/10/2007,a6b1.,,,BRICANYL TURBOHALER 500micrograms [ASTRAZENEC],
-1006691,3,08/09/2014,,04.08.01.06.00,,Polytar AF liquid (GlaxoSmithKline UK Ltd),56 tablet
-1003334,2,16/12/2013,blb1.,,,Synalar 0.025% gel (Derma UK Ltd),4 tablet
-1001383,3,23/03/2016,,,,Minocycline  M/R capsules  100 mg,30 tablet
-1000223,3,02/08/2013,,94.04.00.00.00,344111000001101,Metoprolol 50mg tablets,56 tab
-1001478,3,29/10/2007,,01.04.02.00.00,,Metformin 500mg tablets,20 flan
-1006904,3,13/04/2015,bd36.00,02.12.04.00.00,,ASPIRIN disp tab 75mg,84 capsule - 0.2 ml
-1003411,3,20/08/2008,,02.05.05.01.00,,Aspirin  Dispersible tablets  75 mg,28 tablet
-1005760,3,17/03/2014,,,,Ventolin 100micrograms/dose Evohaler (GlaxoSmithKline UK Ltd),56.000
-1007729,3,02/12/2013,,02.12.04.00.00,,Ramipril 10mg capsules,28 tabs
-1003554,3,25/07/2013,,02.09.02.00.00,,Lisinopril 10mg tablets,
-1003334,1,18/06/2012,,04.02.01.00.00,,,7 tablet
-1002582,4,20/10/2014,,01.04.02.00.00,320139002,BENDROFLUAZIDE TAB 2.5mg,84 - tablet(s)
-1006586,3,13/08/2012,,02090000,,Fluticasone propionate 50micrograms/dose nasal spray,2 packs of 28 tablet(s)
-1005760,1,10/04/2007,,04.01.01.00.00,,Amoxicillin 250mg capsules,112 tablet
-1005116,3,04/08/2015,,0205040D0BBABAB,,,56.000
-1003591,1,23/10/2012,bk32.,13.10.02.00.00,317919004,Colecalciferol 200unit / Calcium carbonate 750mg tablets,56 tablets
-1006192,3,16/01/2013,,02.09.01.00.00,,,28 tablet(s) - 5 mg
-1006453,3,06/11/2012,,,,Amitriptyline 10mg tablets,28 capsule - 1.25 mg
-1003657,1,28/05/2013,jA2z.00,06.04.01.01.00,,Hypromellose 0.3% eye drops,100 tablet
-1000770,3,11/08/2015,,04.07.02.00.00,,Tamsulosin 400microgram modified-release tablets,100 tablet(s) - 100 micrograms
-1003608,3,10/08/2015,,01.02.02.00.00,,Atorvastatin 20mg tablets,28 tablet
-1007161,1,23/07/2012,,09.06.04.00.00,408027002,Lisinopril 10mg tablets,1 pack of 100 tablet(s)
-1004054,3,09/05/2016,a6b1.,,,Zopiclone 3.75mg tablets,56 tablet(s) - 75 mg
-1001383,4,27/10/2014,,14.04.15.00.00,3651611000001107,Ramipril 5mg capsules,28.00 tablet(s)
-1006306,3,11/02/2011,,04.07.02.00.00,,,84.000
-1001831,1,30/06/2014,,94.05.07.00.00,,Salbutamol 100micrograms/dose inhaler CFC free,30 grams
-1005081,4,12/08/2014,,13.10.01.02.00,,Gabapentin 300mg capsules,30 capsule(s)
-1003334,1,22/04/2010,,04.10.02.00.00,,Aspirin 75mg dispersible tablets,90 tablet
-1007020,3,07/01/2014,,,,Aspirin 75mg dispersible tablets,56 capsules
-1007319,3,16/07/2012,dia2.,10.01.01.00.00,,,112.000
-1000419,3,10/03/2014,bu2c.,08.01.03.00.00,,HYPROMELLOSE EYE DRO 0.5,2 packs of 28 tablet(s)
-1002582,3,09/10/2015,,,,Salbutamol 100micrograms/dose inhaler CFC free,
-1007012,3,15/11/2010,,02.05.05.01.00,,Metformin 500mg tablets,56 tablet
-1003864,1,29/12/2008,,02.04.00.00.00,,,84 tablet(s) - 135 mg
-1006846,4,17/06/2015,,03.04.01.01.00,,ispaghula husk gluten-free powder sugar-free 3.5g,28 tablet - 50 mg
-1003243,3,13/01/2012,b211.,,323021008,Tadalafil 20mg tablets,56 tablet
-1006710,3,20/05/2013,,,,Omeprazole 10mg gastro-resistant capsules,10 ml
-1001374,4,29/12/2015,ab2A.,04.06.02.00.00,3470811000001103,Bisoprolol 1.25mg tablets (A A H Pharmaceuticals Ltd),2 packs of 500 mls peppermint
-1004054,4,25/08/2011,di21.00,06.04.01.01.00,,,28 capsule - 15 mg
-1002672,3,27/08/2015,,06.04.01.01.00,,Solifenacin 5mg tablets,60 tablet(s)
-1000419,1,25/05/2012,,,,ROFECOXIB tabs 12.5mg,
-1006242,3,18/01/2005,dji2.,,,Levothyroxine sodium 100microgram tablets,2 packs of 28 tablet(s)
-1005964,3,09/12/2011,,,,Ramipril 1.25mg capsules,
-1000599,3,06/01/2014,,0403010L0AAABAB,,ispaghula husk gluten-free powder sugar-free 3.5g,4 tablet(s)
-1006710,3,23/09/2008,,,,Amitriptyline 10mg tablets,1.000
-1005081,3,26/10/2015,,12.02.01.00.00,,,56.000
-1000618,3,07/07/2014,bd35.,0203020D0AAABAB,,LOSARTAN + HYDROCHLOROTHIAZIDE tabs 100mg + 25mg,60.000
-1001641,3,04/12/2014,,01.04.02.00.00,,Methotrexate 2.5mg tablets,28.000
-1006941,1,14/06/2004,,040701,,BRICANYL TURBOHALER 500micrograms [ASTRAZENEC],
-1003777,3,23/08/2007,,,,,1 - 200 dose aerosol spray
-1005915,3,17/03/2015,,02.09.02.00.00,,Ispaghula husk 3.5g effervescent granules sachets gluten free sugar free (A A H Pharmaceuticals Ltd),28 tablet - 75 mg
-1002672,3,14/12/2012,fh1k.00,03.01.01.03.00,,,
-1001712,3,13/06/2016,,02.09.01.00.00,,Mebeverine 135mg tablets,100
-1003548,4,25/06/2014,f41y.,04.07.01.02.00,,Co-codamol 30mg/500mg tablets,1 x 350mls
-1003243,3,17/11/2009,,02.09.01.00.00,,Venlafaxine 75mg modified-release capsules,28.000
-1002672,3,12/11/2012,,02.12.04.00.00,,IBUPROFEN TABLETS 400MG,100 capsules
-1002466,3,27/08/2014,,,330170001,,28 capsule
-1002274,4,28/06/2010,dn31.00,09.04.04.02.00,,Levothyroxine sodium 100microgram tablets,200 dose
-1007161,3,25/09/2012,,10.01.01.00.00,17071811000001108,Simvastatin 40mg tablets,
-1001535,1,21/10/2014,,02.12.04.00.00,,Sebco ointment (Derma UK Ltd),
-1002299,3,02/09/2011,,02.05.05.02.00,,,224 capsule
-1006710,4,01/03/2016,,,,Amitriptyline 25mg tablets,5 ml
-1000375,3,03/05/2016,bd3j.,,,Amitriptyline 10mg tablets,28 tablet - 25 micrograms
-1002598,1,12/07/2010,,06.01.02.02.00,,Pregabalin 50mg capsules,112.000
-1006722,3,04/03/2015,,01.06.01.00.00,374296008,Atorvastatin 10mg tablets,56 tablet
-1000154,4,09/09/2014,,01.03.05.00.00,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),60 tablets
-1007784,3,25/11/2014,,,,Zopiclone 3.75mg tablets,28 tablet(s) - 100 micrograms
-1006846,3,05/08/2013,bu23.,03.02.00.00.00,,AMLODIPINE tabs 10mg,60 tablet
-1005462,3,16/11/2012,,06.02.01.00.00,,,60 tablet
-1001481,3,23/03/2012,,13.06.02.01.00,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),84 tablet
-1000338,4,16/05/2012,,12.02.01.00.00,,Atenolol 25mg tablets,28 tab
-1004607,3,23/11/2009,ip3j.00,04.03.01.00.00,,Lactulose  Solution  3.1-3.7 g/5 ml,84 tablets
-1000618,2,22/11/2010,,02.12.04.00.00,318420003,Prednisolone 5mg gastro-resistant tablets,28.000
-1002951,4,17/06/2013,dibt.00,,329367009,,56.000
-1002855,3,28/04/2005,,,,Metformin 500mg tablets,100 grams
-1001374,1,19/01/2016,,09.04.04.02.00,,Finasteride 5mg tablets,
-1002672,4,08/02/2016,fo4y.00,,,,28 tablet(s) - 2.5 mg
-1006722,3,06/02/2015,,02.04.00.00.00,,Omeprazole 20mg gastro-resistant capsules,120 dose
-1006471,3,17/06/2013,,02.12.04.00.00,,Cyclizine 50mg tablets,5.000
-1004607,3,20/11/2013,,,,,2 inhaler(s) - 200/6 micrograms/inhalation
-1000154,3,06/06/2012,bu23.,02.12.04.00.00,,Valsartan 80mg capsules,56.000
-1001481,4,07/05/2015,m118.,01.03.05.00.00,321747004,Macrogol compound oral powder sachets NPF sugar free,30 tabs
-1005081,3,18/09/2007,c8n1.,02.02.01.00.00,,Lansoprazole 15mg gastro-resistant capsules,56 tablet
-1001768,3,23/11/2009,,02.12.04.00.00,,Elleste Solo 1mg tablets (Meda Pharmaceuticals Ltd),
-1004017,3,12/03/2012,,07.02.01.00.00,3154411000001105,GASTROCOTE tablets [SSL INT],15 gram
-1001095,3,14/12/2009,puhx.,13.02.01.01.00,,AMLODIPINE (AS MALEATE) tabs 10mg,56 tablets - 10 mg
-1003591,1,02/06/2010,,0906040N0BBABDU,,Meloxicam 7.5mg tablets,56 capsules
-1001442,1,04/02/2011,,,,Kliofem tablets (Novo Nordisk Ltd),56 tablet(s)
-1002466,3,30/07/2012,bxi1.,04.07.01.02.00,,Amoxicillin 500mg capsules,
-1004076,4,10/08/2015,,02.06.02.00.00,,Perindopril erbumine 2mg tablets,7 tablet
-1004275,3,16/01/2013,,04.07.01.02.00,,Levothyroxine sodium 100microgram tablets,
-1004962,4,02/02/2016,fe6i.00,07.04.01.01.00,,lidocaine injection 2%,56 tablet
-1003777,3,07/12/2015,f283.,06.02.01.00.00,,Aspirin 75mg gastro-resistant tablets,126 tablets
-1007199,3,05/05/2015,,02.02.01.00.00,,,56 tablet
-1004529,2,18/08/2014,,0103050P0AAAFAF,,,7 tablet - 75 mg
-1002656,1,22/02/2013,,10.03.02.01.00,,Atorvastatin 10mg tablets,30 grams
-1006242,3,24/04/2015,dia6.,12.02.01.00.00,,Spironolactone 25mg tablets,56
-1003243,3,06/06/2011,,04.07.04.04.00,,Diclofenac sodium 50mg gastro-resistant tablets,240 dose
-1002601,3,12/10/2015,,02.05.05.02.00,,,60.000
-1002951,3,02/09/2014,,01.03.05.00.00,,,
-1002601,4,29/03/2012,,,,,56.000
-1002906,4,03/02/2014,,02.05.05.02.00,,Pravastatin 20mg tablets,4.000
-1002274,2,18/04/2011,,,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),28 tablet
-1000629,3,14/03/2005,,13.05.01.02.00,,,28.000
-1004139,4,19/07/2006,,,,ispaghula husk gluten-free effervescent granules sugar-free,28 tablets
-1000913,3,16/01/2013,bxd2.,01.04.02.00.00,,Alendronic acid 70mg tablets,112.000
-1006242,3,28/12/2012,,04.06.08.00.00,,Aspirin 75mg dispersible tablets,
-1004547,3,09/01/2014,,06.04.01.01.00,,Pioglitazone 15mg / Metformin 850mg tablets,14 tablet(s)
-1001215,3,15/10/2014,dji2.00,06.01.02.02.00,,Felodipine 10mg modified-release tablets,168 tablets - 30 mg
-1002763,3,26/08/2014,,02.05.05.01.00,,Meloxicam 7.5mg tablets,20.000
-1004140,3,11/07/2012,fo4y.00,02.02.01.00.00,,,56.000
-1003334,4,21/10/2014,,06.04.01.01.00,,,20 tablets
-1002274,4,09/12/2013,bu23.00,07.03.01.00.00,320030001,,1 - 200 dose nasal spray
-1000154,3,23/08/2007,dh4y.00,10.01.01.00.00,,Bisoprolol 5mg tablets,28.000
-1006890,3,20/12/2010,,,,,7 tablet
-1005964,3,25/11/2010,,02.08.02.00.00,,Pizotifen 1.5mg tablets,14 tablet(s)
-1004529,3,11/01/2012,,,,Atenolol 25mg tablets,28 capsules
-1006774,1,21/05/2013,,03.02.00.00.00,,Estradiol 25microgram pessaries,28 - capsule(s)
-1006306,3,12/06/2015,,09.01.01.01.00,,Dihydrocodeine  Tablets  30 mg,2 packs of 56 tablet(s)
-1004547,3,15/07/2013,f923.,02.05.05.02.00,,METHOTREXATE tabs 2.5mg,
-1000428,3,27/08/2013,,06.01.02.02.00,,Fluoxetine Hydrochloride  Capsules  20 mg,100 gram
-1005462,2,13/05/2010,bxd2.,01.06.01.00.00,,Pravastatin 20mg tablets,200 millilitres
-1003243,4,10/02/2014,,,,Terazosin 2mg tablets,56.000
-1003798,3,18/01/2005,,04.07.03.00.00,,Atenolol 25mg tablets,84.000
-1001296,2,04/08/2009,,02.12.04.00.00,,Bisoprolol 5mg tablets,168.000
-1002951,1,19/10/2015,f294.,09.01.02.02.00,,AMITRIPTYLINE HCl tabs 50mg,56 capsule
-1001442,3,08/09/2015,b211.,01.03.05.00.00,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),500 g
-1007534,3,02/10/2007,b211.,01.03.05.00.00,,Aveeno cream (Johnson & Johnson Ltd),28 tablet
-1004275,3,07/10/2014,,02.04.00.00.00,,Cilest 35microgram/250microgram tablets (Janssen-Cilag Ltd),
-1006846,4,29/01/2013,,02.04.00.00.00,322863001,,4.000
-1006977,3,15/09/2015,,07.04.02.00.00,,Aspirin 75mg dispersible tablets,175.000
-1002813,4,17/12/2014,bi57.,02.04.00.00.00,,Trimethoprim 200mg tablets,
-1004566,4,01/06/2015,,02.12.04.00.00,,Lansoprazole 30mg gastro-resistant capsules,28 capsule(s) - 10 mg
-1007534,3,17/08/2009,,13.05.02.01.00,,,28 capsules
-1007020,3,18/04/2006,bdf1.,02.12.04.00.00,134460003,Aspirin 75mg gastro-resistant tablets,60.000
-1005964,3,14/01/2016,,04.09.02.00.00,,AMITRIPTYLINE HCl tabs 50mg,84 tab
-1001831,3,31/07/2014,j22e.,,,,16.000
-1006846,3,04/12/2006,,04.03.03.00.00,,Prednisolone 5mg tablets,1 spray(s) - 50 micrograms/dose
-1000618,4,03/12/2010,,04.07.02.00.00,,,
-1004054,3,26/08/2014,aa6v.00,02.09.01.00.00,,Ibuprofen 400mg tablets,112 capsule
-1004139,3,14/10/2013,,04.03.01.00.00,,Atenolol 25mg tablets,100 tablets - 30 mg
-1007784,3,18/10/2010,,13.06.02.01.00,,fusidic acid with betamethasone valerate cream 2% + 0.1%,250 ml
-1003958,3,10/03/2015,,13.02.01.02.00,318421004,,56 tablet
-1001831,3,14/08/2013,,0106040G0AAAAAA,,Candesartan 8mg tablets,56 TABLET(S)
-1006242,3,02/02/2015,ph88.,,,,28 tab
-1007911,3,21/03/2006,,01.03.05.00.00,,Paracetamol 500mg tablets,168 tablets
-1006707,1,20/04/2010,bs18.,02.02.01.00.00,,Fluoxetine 20mg capsules,168 tablet(s) - 2.5 mg
-1005457,3,08/03/2013,,03.01.01.04.00,,,56 tablet(s)
-1001442,4,04/03/2014,,13.10.01.02.00,,Juvela gluten free fibre mix (Hero UK Ltd),60 tablet(s)
-1001720,3,21/12/2015,,,,Omeprazole 10mg gastro-resistant capsules,84 tablet
-1007145,3,31/05/2012,,06.02.01.00.00,,Amitriptyline 10mg tablets,56 tablet
-1001892,3,19/12/2013,bxi3.00,06.04.01.01.00,,Diclofenac sodium 50mg gastro-resistant tablets,56 tablets - 2.5 mg
-1004801,3,23/10/2006,,02.09.01.00.00,,Carbomer 0.2% eye gel (Blumont Healthcare Ltd),168 tablet(s)
-1007233,4,30/07/2009,ip3f.,01.02.01.00.00,,Finasteride 5mg tablets,2 packs of 60 tablet(s)
-1005964,4,07/10/2015,,02.02.01.00.00,330781005,Simvastatin 20mg tablets,28.000
-1001932,3,24/05/2010,,02.05.04.00.00,,IRBESARTAN tabs 300mg,
-1006904,4,21/05/2013,blb1.,02.09.01.00.00,,Codeine 15mg tablets,28 capsule
-1006977,3,10/03/2014,,11.05.00.00.00,,,56 tablets
-1006306,3,15/02/2010,a6c2.,,,,1 pack of 100 tablet(s)
-1002763,4,14/11/2014,,06.06.02.00.00,,Betahistine 16mg tablets,84 tab
-1007705,3,17/06/2013,,09.04.04.02.00,,,30.000
-1007448,3,06/06/2008,,,329367009,Capasal Therapeutic shampoo (Dermal Laboratories Ltd),2 packs of 28 tablet(s)
-1006846,4,17/11/2009,,,,Sertraline 50mg tablets,56 capsule
-1002709,4,10/12/2013,,13.10.03.00.00,,Diclofenac sodium 75mg modified-release tablets,28 tablet(s) - 4 mg
-1004025,3,07/12/2009,,02.04.00.00.00,,,120 dose
-1003355,2,09/01/2012,,04070200,319996000,Chloramphenicol 0.5% eye drops,56 tablets
-1001296,3,15/02/2016,bl3M.,04.06.03.00.00,,Folic acid 5mg tablets,28 tablet
-1006707,3,04/11/2008,e911.00,06.01.02.02.00,,CALCICHEW-D3 FORTE chewable tab,1 nasal spray
-1000223,3,09/09/2008,,,,Aspirin 75mg dispersible tablets,
-1002245,3,19/04/2011,dia2.,,321987003,Tramadol 100mg modified-release tablets,100 tablet
-1007784,3,24/03/2014,,01.03.01.00.00,,Aspirin 75mg dispersible tablets,
-1006379,1,11/03/2014,ei15.,02.12.02.00.00,,Clopidogrel 75mg tablets,28
-1001831,4,01/12/2006,,,415162000,Levothyroxine Sodium TABS 100MICROGRAMS,28 capsules - 150 mg
-1007161,3,27/05/2016,,,,Aspirin 75mg gastro-resistant tablets,
-1006549,3,22/10/2012,,,,,
-1003657,1,17/11/2014,c331.,01.04.02.00.00,,Bendroflumethiazide 2.5mg tablets,
-1001310,4,06/10/2014,,02.12.04.00.00,,,60 tablets
-1007476,3,28/04/2005,,,,Folic acid 5mg tablets,2 packs of 28 capsule(s)
-1004699,3,11/11/2013,,02.04.00.00.00,,Bisoprolol 2.5mg tablets,56.000
-1005760,3,22/07/2013,,09.06.04.00.00,,BENDROFLUAZIDE tabs 2.5mg,2 - 120 dose inhaler with counter
-1004025,3,08/09/2014,,04.03.03.00.00,,Candesartan 4mg tablets,
-1004139,3,19/12/2011,,02.12.04.00.00,,Atenolol 50mg tablets,28 tablet
-1003777,4,28/04/2014,,02.05.04.00.00,,Ramipril 1.25mg capsules,28 tablet
-1004921,1,18/10/2011,,,,Ispaghula husk 3.5g effervescent granules sachets gluten free sugar free (A A H Pharmaceuticals Ltd),112 tablet
-1006385,3,12/07/2010,,,,Tolterodine 2mg tablets,112 tablet
-1002763,3,27/04/2011,,10.01.04.03.00,321987003,Fusidic acid 1% modified-release eye drops,
-1003777,3,29/06/2006,,02.05.04.00.00,322366004,Indapamide 2.5mg tablets,1 pack of 500 mls
-1001535,3,27/05/2014,bxl1.00,10.01.01.00.00,,Dosulepin 25mg capsules,
-1004529,3,06/02/2015,di21.,,,Bisoprolol 1.25mg tablets,56 TABLET(S)
-1001124,3,14/11/2012,,02.09.02.00.00,,Atorvastatin 10mg tablets,168 tablets
-1006846,4,17/09/2007,,,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),60.000
-1007262,3,27/07/2011,m412.,06.02.01.00.00,,Betahistine 8mg tablets,28 capsule
-1001481,4,20/08/2013,,04.07.02.00.00,,Tetracycline 250mg tablets,
-1001442,3,23/03/2015,ip3e.00,020201,,Simvador 40mg tablets (Discovery Pharmaceuticals),60.000
-1003798,3,27/11/2012,,06.02.01.00.00,,,56 tab
-1007534,3,22/10/2015,,10.01.03.06.00,,Hydromol ointment (Alliance Pharmaceuticals Ltd),112.000
-1007262,3,01/10/2013,,11.08.01.00.00,,CITALOPRAM tabs 20mg,28.000
-1007356,1,09/11/2009,k8i1.,,,Aspirin 75mg gastro-resistant tablets,21.000
-1002364,3,11/06/2012,dia6.,06.02.01.00.00,,Ramipril 5mg capsules,28.00 tablet(s)
-1007161,4,16/09/2015,,01.03.05.00.00,,Bettamousse 0.1% cutaneous foam (Focus Pharmaceuticals Ltd),56 capsules
-1004610,3,09/02/2015,dnj2.00,,,Ramipril 5mg capsules,60 tabs
-1004713,3,12/08/2013,,03.02.00.00.00,322623000,,60
-1003777,3,10/02/2010,,12.03.02.00.00,,Amlodipine  Tablets  5 mg,56.000
-1003031,4,11/02/2011,,02.09.01.00.00,318980005,Lansoprazole 15mg gastro-resistant capsules,200 ml
-1001831,3,01/12/2006,,0801030P0AAAHAH,,GAVISCON ADVANCE oral suspension sugar-free [RECKITT B],56.000
-1001442,3,27/07/2015,gdew.,03.01.01.03.00,,Qvar 50 inhaler (Teva UK Ltd),7 tablet
-1007012,3,22/03/2013,b431.,11.08.01.00.00,,EZETIMIBE + SIMVASTATIN tabs 10mg + 40mg,56 tablet - 5 mg
-1000599,3,01/09/2015,,01.03.05.00.00,,Oxybutynin 2.5mg tablets,100 capsule - 10 mg
-1001535,4,04/12/2012,,03.01.05.02.00,,Opatanol 1mg/ml eye drops (Alcon Laboratories (UK) Ltd),28 tablet(s)
-1002780,4,02/04/2013,da91.,,,Hydroxychloroquine 200mg tablets,56 capsule(s)
-1003243,3,26/02/2016,ip3b.00,02.02.01.00.00,,Chloramphenicol 0.5% eye drops,1 pack of 60 gram(s)
-1006427,3,21/10/2008,,,,,56 tablet
-1005116,1,14/09/2011,,,,,
-1003243,3,22/10/2012,b211.,02.09.01.00.00,415166002,Dipyridamole 200mg modified-release capsules,28 tab
-1006965,3,22/12/2008,,02.05.05.01.00,,Ranitidine 150mg tablets,28 capsule
-1002951,3,27/07/2011,fo4y.00,02.05.05.01.00,,Calcium and Ergocalciferol tablets,10 - tablet(s)
-1007136,3,15/12/2015,,06.04.01.01.00,,Ramipril 10mg capsules,56 tablet
-1006965,3,21/04/2015,,02.12.04.00.00,,Bisoprolol 5mg tablets,28 tabs
+9787890,3,23/07/2012,,,321745007,PRIMOLUT N TABLETS 5MG,56 tablet(s)
+4356390,3,24/05/2016,,02.12.04.00.00,,CITALOPRAM tabs 20mg,30 tablets
+8018365,3,04/09/2013,,06.02.01.00.00,,Citalopram 20mg tablets,80 grams
+5216158,4,15/05/2015,,04.03.04.00.00,,Bendroflumethiazide 2.5mg tablets,56.000
+5384852,1,17/09/2007,ff2c.00,,,Aspirin 75mg tablets,100
+3765515,3,16/01/2013,,,,,224 capsules
+2342614,4,02/11/2009,d711.00,02.08.02.00.00,,Tramadol 100mg modified-release tablets,56 tablet(s)
+2013334,3,08/12/2011,bd3j.00,04.07.01.02.00,,Folic acid 5mg tablets,
+2013334,3,06/08/2010,l8Dz.00,13.09.01.00.00,,Ubidecarenone 100mg capsules,1*200 ML(S)
+5286127,3,10/03/2009,e311.,10.01.01.00.00,,Calcipotriol 50micrograms/ml scalp solution,21.000
+2146330,3,08/02/2016,blb1.00,,,,
+0739128,2,22/02/2016,,02.05.05.02.00,318978004,,56 tabs
+7896160,3,26/01/2015,b431.,01.03.05.00.00,322343000,Trospium chloride 20mg tablets,56.000
+3765515,3,27/10/2010,,06.01.02.02.00,,Simvastatin 40mg tablets,2 packs of 28 tablet(s)
+2572814,3,11/09/2014,,01.03.01.00.00,317291008,Aspirin 75mg gastro-resistant tablets,1.000
+2759533,3,19/12/2011,,,,Tramadol 37.5mg / Paracetamol 325mg tablets,56 tablet(s)
+8086156,3,16/05/2016,,03.03.01.00.00,,Atenolol 25mg tablets,2 packs of 84 tablet(s)
+1947461,3,25/01/2010,,14.04.21.00.00,,,28 capsule(s) - 20 mg
+1015541,3,09/10/2012,,10.01.01.00.00,,METHOTREXATE TAB 2.5,2 packs of 28 tablet(s)
+2553559,3,19/11/2014,,09.06.04.00.00,,Estradiol 1mg tablets,112 tablet
+7602676,3,26/02/2009,,,,CITALOPRAM tabs 20mg,1 400 dose inhaler
+8379628,3,22/02/2013,,04.02.03.04.00,318901006,Atenolol 25mg tablets,2 x28 tablet(s)
+3840609,3,02/10/2007,,,,Simvastatin TABS 40MG,1 pack of 500 g (dispenser)
+8452152,3,26/04/2012,,,,,"20 dressing - square, 15 cm x 15 cm"
+9402479,3,14/04/2009,gh52.,,,CALCICHEW-D3 chewable tablet [SHIRE],
+1120792,4,19/03/2010,,,,Co-codamol 30mg/500mg capsules,112.000
+9067009,1,07/10/2013,,,,Tramadol 100mg modified-release tablets,56 tablets - 50 mg
+6699668,3,14/02/2011,,13.08.01.02.00,,,30.000
+2553559,3,28/04/2005,bl3y.,02.05.05.02.00,,Gentamicin 0.3% / Hydrocortisone acetate 1% ear drops,4 tablet
+4348378,4,06/08/2012,ph7L.,06.02.01.00.00,,Lyrica 150mg capsules (Pfizer Ltd),1 pack of 500 mls peppermint
+3894871,1,18/10/2011,dnjy.00,01.03.05.00.00,,Ibuprofen 400mg tablets,200 tablet
+6699668,1,06/07/2012,,13.05.02.01.00,319284000,GAVISCON oral liquid sugar-free [RECKITT B],56 tablet(s) - 75 mg
+4637932,3,19/01/2010,,02.04.00.00.00,,,84.000
+2574263,4,27/10/2014,ip3f.,,,Amlodipine 5mg tablets,1 pack of 100 tablet(s)
+0944173,3,08/06/2015,,01.06.04.00.00,,Ferrous fumarate 210mg tablets,28 tablets
+3166964,1,25/06/2014,,01.05.01.00.00,,Amitriptyline 25mg tablets,
+6699668,3,03/04/2017,,02.04.00.00.00,360311000001104,Aspirin 75mg dispersible tablets,
+8766522,4,30/08/2013,,04.07.02.00.00,,Levothyroxine sodium 50microgram tablets,56.000
+0015725,3,06/06/2016,jA1w.00,02.05.05.01.00,321987003,Trimethoprim 200mg tablets,56 tablet
+3555892,4,26/02/2016,,04.03.04.00.00,,SILDENAFIL SLS TABLETS 100MG,
+2013334,3,03/01/2013,a6c2.,07.02.02.00.00,3154411000001105,,30.000
+5226712,2,02/07/2012,ph7W.,01.03.05.00.00,,Atenolol 25mg tablets,56 tablet
+6793535,3,02/07/2007,,07.04.01.01.00,,Fluoxetine CAPS 20MG,56.000
+7896160,3,07/05/2014,,06.01.05.00.00,,Diazepam 5mg tablets,4 tablets
+7667876,4,23/11/2009,,06.04.01.01.00,,Hypromellose 0.5% eye drops,56 tab
+7903246,3,25/02/2015,,01.03.05.00.00,,Dovonex 50micrograms/ml scalp solution (LEO Pharma),7 tablet
+5991968,1,06/06/2013,,,,Olanzapine 10mg oral lyophilisates sugar free,56 tablets
+2091007,3,14/01/2011,,04.07.01.02.00,,Simvastatin 40mg tablets,2 packs of 100 tablet(s)
+6699668,3,20/05/2013,,,319288002,Adcal-D3 chewable tablets tutti frutti (Kyowa Kirin Ltd),500 ml - 10 mg/5 ml
+1829771,3,02/07/2007,,06.03.02.00.00,,,
+4837869,3,15/08/2013,,02.04.00.00.00,,,28 tablets
+1120792,4,11/11/2014,,12.02.01.00.00,,Omeprazole 20mg gastro-resistant capsules,
+6699668,1,28/12/2012,,,,Felodipine 10mg modified-release tablets,28 tablet
+8132321,3,18/05/2015,,13.06.02.01.00,,Pizotifen 500microgram tablets,224 capsule
+8184997,3,03/02/2014,a6b1.,02.09.03.00.00,,Revaxis vaccine suspension for injection 0.5ml pre-filled syringes (sanofi pasteur MSD Ltd),
+7124098,3,18/03/2013,,,,Co-proxamol 32.5mg/325mg tablets,56 tablet
+6906537,1,18/03/2013,,,,,1 pack of 30 tablet(s)
+2990128,3,07/03/2013,,01.03.05.00.00,,Tramadol 37.5mg / Paracetamol 325mg tablets,7 tablet
+7896160,4,08/02/2011,,06.01.02.03.00,,Bendroflumethiazide TABS 2.5MG,
+4972784,3,08/02/2011,,10.03.02.01.00,321747004,Finasteride 5mg tablets,56 tablet(s)
+3840609,3,07/12/2015,f35z.,02.05.05.02.00,,Duloxetine 60mg gastro-resistant capsules,
+9409190,3,08/03/2010,,,,Pregabalin 50mg capsules,56 tablet
+9157817,3,29/07/2013,,04.07.02.00.00,,Colecalciferol 800unit capsules,2 packs of 60 tablet(s)
+8018365,3,17/06/2013,,90.01.01.02.00,,Canagliflozin 100mg tablets,84 tab
+2342614,4,10/09/2007,f923.,12.01.03.00.00,,,56 capsule
+3794152,3,16/07/2015,,01.03.05.00.00,,,56 tablets - 50 mg
+3776111,3,07/04/2014,,06.02.01.00.00,,Furosemide  Tablets  40 mg,10.000
+4228391,1,14/03/2016,dnbc.00,0501050B0AAADAD,,Levothyroxine sodium 25microgram tablets,200 dose
+6339714,4,14/10/2013,a6b1.,02.05.05.02.00,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),140 dose
+1894136,3,26/02/2010,c8n1.,02.05.05.02.00,,Bendroflumethiazide 2.5mg tablets,
+5226712,1,28/04/2011,,1001010P0AAADAD,,,56 capsule
+1894136,3,23/10/2006,,01.03.01.00.00,,Combihesive Natura two piece ostomy system combihesive flange S7246 45mm (ConvaTec Ltd),
+0944173,3,24/02/2015,d712.00,,,Hypromellose 0.5% eye drops,
+7465829,3,07/12/2010,,04.03.03.00.00,,ADIZEM XL capsules 120mg [NAPPPHARM],200.000
+5750977,1,19/12/2005,,10.01.04.03.00,,Valsartan 80mg capsules,28 tablet
+2912072,3,19/01/2010,,01.03.05.00.00,,Doxazosin Mesilate  Tablets  2 mg,56 tablet - 500 mg
+6459511,3,04/02/2015,,,,Co-codamol 30mg/500mg capsules,2 packs of 2.5 mls
+3173810,3,17/02/2016,blb2.,04.07.01.02.00,,Sildenafil Citrate  Tablets  100 mg,28.000
+7715319,1,04/02/2014,,11.04.02.00.00,,,7 capsule
+0169103,3,24/10/2007,,04.06.03.00.00,,Ramipril 5mg capsules,240 caps
+5786693,3,19/07/2013,,02.06.01.02.00,,Beclometasone 50micrograms/dose nasal spray,56 tablet
+0169103,3,22/11/2006,,06.04.01.01.00,,Bisoprolol 5mg tablets,28 tablet
+5786693,1,09/02/2009,ce36.,14.04.09.00.00,,Naproxen 500mg tablets,
+3166964,3,04/03/2015,,02.06.01.02.00,,Ramipril 5mg capsules,100 capsule
+9911614,3,24/06/2008,bxd5.,02.02.01.00.00,,Doxycycline 100mg capsules,56.000
+5157047,3,24/09/2013,,,,Omeprazole 10mg gastro-resistant capsules,56 tablet
+3166964,2,07/11/2011,,0906040N0BBABDU,,Levothyroxine sodium 50microgram tablets,56 tablet
+5056803,3,08/05/2013,,01.03.05.00.00,329654002,Celecoxib 100mg capsules,
+0015725,3,31/01/2011,,,,Folic acid 5mg tablets,2 packs of 28 tablet(s)
+2091007,4,25/11/2014,l881.,,,Lansoprazole 30mg gastro-resistant capsules,
+1436348,3,18/08/2014,dnj3.00,06.01.02.02.00,,,60.000
+8379628,3,18/12/2012,,02.12.04.00.00,,Isosorbide mononitrate 40mg modified-release capsules,56.000
+1003424,4,24/06/2008,bxd5.,05.01.01.02.00,,BENDROFLUAZIDE TAB 2.5mg,8.000
+2102958,3,18/01/2005,,04.07.04.02.00,,,28 capsule(s) - 15 mg
+5286127,3,06/12/2010,,,,Aspirin 75mg dispersible tablets,5 millilitres
+0883996,3,30/08/2005,,01.07.04.00.00,,E45 cream (Forum Health Products Ltd),60.000
+0169103,3,01/03/2011,,,415162000,Zomorph 10mg modified-release capsules (Ethypharm UK Ltd),56 tabs
+2178682,3,04/05/2016,,12.01.01.02.00,,Dosulepin 75mg tablets,28 capsule
+6459511,3,04/09/2013,,13.05.02.01.00,,Mometasone 0.1% ointment,56 tablet(s)
+9291720,3,12/12/2011,bdfw.,06.01.05.00.00,,Levothyroxine sodium 100microgram tablets,56 tablet(s)
+0169103,1,28/09/2015,,04.03.01.00.00,,,25 tablet
+3857841,3,01/05/2012,f923.,,,Alendronic acid 70mg tablets,1 spray
+8132321,3,25/02/2013,,04.07.01.02.00,,Omeprazole 20mg gastro-resistant capsules,1 op - 0.05 %
+9787890,3,23/07/2013,,04.03.03.00.00,,Aciclovir 800mg tablets,112.000
+9157817,3,15/06/2015,,02.09.02.00.00,,Candesartan 32mg tablets,
+7465829,3,24/09/2015,,12.02.01.00.00,,Atorvastatin 20mg tablets,28 tab
+6456350,3,15/06/2015,,,,,
+5216158,4,17/03/2015,,,,Atorvastatin 10mg tablets,240 capsules
+8908719,3,24/05/2013,,02.12.03.00.00,,Ramipril 10mg capsules,
+1436348,3,03/02/2012,,13.10.02.00.00,,fluticasone with salmeterol dry powder inhaler 500micrograms + 50micrograms/inhalation,28 capsule(s)
+5216158,3,01/10/2012,gda3.,11.08.01.00.00,,ispaghula husk gluten-free powder sugar-free 3.5g,
+2157140,1,12/11/2010,,020201,321196004,Morphine sulfate 10mg/5ml oral solution,28 tablet(s) - 50 mg
+3173810,4,25/03/2015,k693.,12.03.05.02.00,,Diclofenac sodium 50mg gastro-resistant tablets,56 tab
+0169103,1,11/05/2011,,04.03.04.00.00,,,168 tablets
+8962092,1,02/06/2010,bxi2.,02.04.00.00.00,,Levothyroxine Sodium TABS 100MICROGRAMS,0.5ml
+2759533,3,10/08/2009,,02.04.00.00.00,,GABAPENTIN caps 400mg,7 tablet
+7339341,4,04/09/2013,,04.03.03.00.00,,Aspirin 75mg dispersible tablets,16.000
+6207155,3,16/09/2015,dian.,02.12.06.00.00,,Colecalciferol 400unit / Calcium carbonate 1.25g chewable tablets,1 spray(s) - 50 micrograms/dose
+6308334,1,30/03/2015,b211.,02.05.05.01.00,,Citalopram 10mg tablets,56 tablets - 50 mg
+1120792,3,02/09/2009,bi32.,02.12.04.00.00,,Capasal Therapeutic shampoo (Dermal Laboratories Ltd),56 tablet - 75 mg
+9496317,4,02/07/2007,ip3e.00,03.02.00.00.00,,Adcal-D3 chewable tablets tutti frutti (ProStrakan Ltd),28 tablet
+9157817,3,15/06/2015,d713.00,,,amlodipine (as besilate) tablets 5mg,3 - ml
+2013334,3,10/05/2013,dnbc.00,10.01.01.00.00,323021008,Amoxicillin 250mg capsules,21 tablet
+9402479,3,09/04/2014,,13.04.03.00.00,,,112.000
+6394629,3,07/09/2015,,05.01.13.00.00,,Omeprazole 10mg gastro-resistant capsules,56 tablet
+8766522,1,15/10/2014,heE1.,01.04.02.00.00,,,30
+0739128,1,11/11/2008,,02.09.01.00.00,,Alendronic acid 70mg tablets,21 capsule
+8766522,4,04/02/2013,,,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),2 packs of 125 gram(s)
+3665358,3,16/07/2012,,,323021008,Ibuprofen 400mg tablets,56 cap
+8990555,2,29/06/2006,,05.01.01.03.00,,,
+2010565,3,20/12/2011,,01.03.01.00.00,,Levothyroxine Sodium TABS 100MICROGRAMS,56 tablet(s)
+9157817,1,05/11/2010,,02.04.00.00.00,,Simvastatin 10mg tablets,56 tablet(s)
+5228091,3,08/05/2014,,04.03.01.00.00,,,
+2102958,1,02/03/2015,,,,Gabapentin 300mg capsules,
+2550137,1,03/06/2016,,03.04.01.01.00,,Risperidone 3mg tablets,112 - tablet(s)
+6339714,3,22/03/2011,,05.01.13.00.00,3151011000001104,,1 spray
+2550137,1,10/10/2011,,,,Ibuprofen 400mg tablets,28 tablet(s)
+6081782,3,03/11/2015,l8Dz.,,,Fluticasone furoate 27.5micrograms/dose nasal spray,56 capsules
+9402479,3,17/09/2012,,,195385001000027109,Aspirin 75mg gastro-resistant tablets,4.000
+6648693,3,07/04/2015,,,,ESTRAPAK 50,
+3776111,3,15/11/2012,,02.08.02.00.00,,Dipyridamole 200mg modified-release capsules,
+5226712,1,23/08/2010,ja18.00,13.04.01.00.00,,Amitriptyline 10mg tablets,56 tablets - 10 mg
+2550137,3,30/08/2013,fe6i.,09.06.04.00.00,,Glyceryl trinitrate 400micrograms/dose pump sublingual spray,
+9291720,3,29/10/2012,b211.00,09.06.04.00.00,,,4.000
+9067009,4,30/06/2015,,,,Pregabalin 300mg capsules,56 capsule
+2759533,1,28/11/2016,bxd2.,02.12.04.00.00,,,28 capsule - 1.25 mg
+6125701,1,29/03/2016,,04.07.01.02.00,,Bendroflumethiazide TABS 2.5MG,60 tablet(s)
+3949855,3,06/11/2012,,04.03.01.00.00,,Valsartan 80mg capsules,28.00 capsule(s)
+4802474,1,10/12/2010,,02.04.00.00.00,,,
+1894136,3,29/10/2007,,,,,1 pack of 30 tablet(s)
+6715704,3,14/10/2011,,04.03.03.00.00,,Celecoxib 100mg capsules,200 dose
+5384852,4,18/07/2014,,06.06.02.00.00,,Bisoprolol 5mg tablets,28 capsule
+9067009,3,15/11/2010,bxd2.,09.04.04.02.00,,Balneum Plus cream (Almirall Ltd),2 packs of 28 tablet(s)
+1015541,3,18/04/2011,ph77.,04.07.01.02.00,,Lisinopril 5mg tablets,180 dose
+3555892,3,27/07/2011,,10.03.02.01.00,,,84.000
+4235920,1,09/04/2015,,01.03.05.00.00,,Sodium cromoglicate 2% eye drops,
+7049179,3,22/04/2009,dl71.00,07040250,,Mebeverine 200mg modified-release capsules,
+9067009,3,18/05/2015,,02.09.01.00.00,,,56 tablet
+8839273,3,23/05/2016,,02.05.05.01.00,,Codeine 30mg tablets,
+5458687,1,09/12/2013,a6c3.,,,,21
+4217129,3,19/01/2010,gdA5.,12.02.01.00.00,,Olanzapine 10mg tablets,250 ml
+7465829,4,27/02/2015,,,,Sulfasalazine 500mg gastro-resistant tablets,2 packs of 28 tablet(s)
+2150003,3,03/06/2014,,10.01.01.00.00,,Sulfasalazine 500mg gastro-resistant tablets,56 dispersible tablets - 75 mg
+7339341,4,03/05/2011,,94.05.12.00.00,317919004,Simvastatin 40mg tablets,10.000
+2013334,4,03/07/2006,,,,Paracetamol 500mg tablets,300.000
+5216158,3,17/09/2013,bd35.,07.04.05.00.00,,amlodipine (as besilate) tablets 5mg,56 - tablet
+1056667,3,16/03/2016,,07.04.02.00.00,,Colecalciferol 800unit capsules,14.000
+3765515,4,30/07/2012,,07.04.05.00.00,,Atorvastatin 80mg tablets,28 tablet
+5786693,2,08/02/2016,,02.02.01.00.00,,Atorvastatin 20mg tablets,28 CAPSULE
+1064689,4,23/02/2009,,,,,30 gram
+1067519,3,18/09/2014,,02.04.00.00.00,,LACRI-LUBE EYE OIN,14 tablets - 10 mg
+1080663,3,19/11/2014,j22e.,090604,327550006,Bendroflumethiazide 2.5mg tablets,2 x28 tablet(s)
+1022455,3,12/10/2011,,01.04.02.00.00,,CO-CODAMOL caps 30mg + 500mg,28 tablets
+1023807,3,01/06/2016,,,,Zopiclone 7.5mg tablets,28 tablet
+1024938,4,19/06/2012,dia7.,04.03.01.00.00,,,28.000
+4637932,2,12/05/2014,,,,Enalapril 5mg tablets,168 tablet(s)
+0739128,3,24/02/2014,ip...00,04.06.02.00.00,237585001000027100,,28 capsule(s) - 120 mg
+3166964,3,22/02/2016,,020201,,Nuvelle tablets (Bayer Plc),56 tabs
+1064689,4,21/11/2011,bd35.00,02.05.05.02.00,327550006,Levothyroxine sodium 100microgram tablets,28.000
+1069839,1,26/01/2016,,13.09.01.00.00,,,
+3840609,4,24/09/2015,,,,Bisoprolol 2.5mg tablets,84 tablet(s)
+7896160,3,05/11/2010,,02.04.00.00.00,,,28 capsule(s) - 10 mg
+1026391,3,01/02/2016,ef12.,,,,56 tablets
+0169103,3,15/12/2015,,03.01.01.03.00,,Irbesartan 150mg tablets,120 - tablet(s)
+1138943,3,27/05/2015,,02.06.02.00.00,3154411000001105,Metoprolol 50mg tablets,56
+9067009,3,22/05/2014,,06.02.01.00.00,,Omeprazole 20mg gastro-resistant capsules,
+1120792,3,12/11/2015,,04070402,323021008,,8.000
+4637932,3,01/06/2015,,12.02.01.00.00,,,3 x 28 tablet
+3857841,3,07/05/2013,,01.03.05.00.00,,Paroxetine 20mg tablets,56
+2572814,3,17/06/2013,,12.02.01.00.00,,,
+1133122,4,18/01/2010,,14.04.09.00.00,,Omeprazole 10mg gastro-resistant capsules,100 tablet
+9402479,4,14/09/2015,,06.02.01.00.00,,,28.00 capsule(s)
+9787890,3,28/05/2013,,06.07.02.00.00,,Metformin 500mg tablets,28 tablet
+9409190,2,15/01/2007,bu23.00,,,FELODIPINE mr tab 10mg,28 capsule(s) - 80 mg
+5786693,3,15/11/2013,,10.01.01.00.00,,Ibuprofen 400mg tablets,
+1078771,1,12/02/2016,,02.04.00.00.00,317291008,,56 tablets
+1003424,1,01/12/2015,j2c2.,,,Aspirin 75mg tablets,
+1015897,4,12/01/2016,,02.04.00.00.00,,Ezetimibe 10mg tablets,6 tablet - Sugar Free 10 mg
+1080663,1,19/11/2013,,04.03.04.00.00,327550006,Lansoprazole 15mg gastro-resistant capsules,168 tabs
+0169103,1,06/06/2016,,,,,56.000
+0739128,3,23/04/2013,a6b1.,,317416004,Losartan 100mg tablets,200 tablet
+5286127,3,01/10/2013,ph7n.,0212000Y0AAADAD,327550006,Ferrous sulfate 200mg tablets,0.5 millilitres
+9067009,3,22/01/2010,,,,Omeprazole 20mg gastro-resistant capsules,2*28 capsules - 200 mg
+8086156,3,03/07/2006,b211.,06.04.02.00.00,,Folic acid 5mg tablets,56.000
+8766522,3,13/02/2014,bxi5.,,,Mefenamic acid 500mg tablets,28 tablet
+5226712,3,05/02/2014,j22p.00,04.03.03.00.00,,Omeprazole 20mg gastro-resistant capsules,1 pack of 100 gram(s)
+1137469,3,20/10/2014,,,,Simvastatin TABS 40MG,28 tab
+1009317,3,03/06/2016,ka32.00,,,,56 tabs
+2572814,3,10/03/2009,,13.02.01.02.00,,Perindopril erbumine 4mg tablets,30 - gram(s)
+1030013,2,19/08/2014,,04.01.01.00.00,,Lansoprazole 15mg gastro-resistant capsules,56.000
+5056803,2,10/02/2010,,,,Folic acid 5mg tablets,56
+1120792,3,27/05/2011,,,,Calcipotriol 50micrograms/ml scalp solution,14.000
+1113118,1,16/04/2007,,11.08.01.00.00,,AMLODIPINE (AS MALEATE) tabs 10mg,
+4356390,2,21/07/2016,,06.02.01.00.00,,Atenolol 25mg tablets,120 ml - 50 micrograms/ml
+1120792,4,06/06/2016,,,,Levothyroxine sodium 25microgram tablets,2 OP
+8086156,4,10/02/2010,da91.00,06.02.01.00.00,,Venlafaxine 225mg modified-release tablets,28 tablets - 20 mg
+2146330,3,04/03/2015,gddz.,04.03.01.00.00,,Terbinafine 1% cream,84 tablets
+7896160,3,16/01/2013,l887.,,,Lactulose 3.1-3.7g/5ml oral solution,
+8184997,3,07/03/2016,,10.01.04.03.00,,Lansoprazole 30mg gastro-resistant capsules,2*28 tablet
+1074743,4,09/08/2013,bl8j.,01.03.05.00.00,3651611000001107,Metoprolol 50mg tablets,100 tablet
+0169103,4,04/09/2013,,,,Priadel 200mg modified-release tablets (Sanofi),56.000
+1091350,1,21/02/2012,,14.04.05.00.00,,Diazepam 5mg tablets,56.000
+1091350,3,02/07/2012,,12.02.01.00.00,318906001,,56 tablets - 5 mg
+1080663,1,06/03/2012,,130201000BBBAAL,,Rosuvastatin 10mg tablets,60 tablets - Sugar Free 1.25 grams
+7339341,1,16/02/2015,scGc.,,,,28 tablets
+5216158,3,11/11/2013,j2c2.,03.01.01.04.00,,Colecalciferol 200unit / Calcium carbonate 750mg tablets,
+5226712,3,26/11/2012,,02.04.00.00.00,,Vitamin B compound strong tablets,
+1028163,3,11/09/2014,,02.05.05.02.00,,,56 tablets
+1030568,3,14/01/2016,,06.02.01.00.00,,Allopurinol 100mg tablets,84 tablets - 400 mg
+1055252,1,10/04/2012,,02.06.01.01.00,,LACRI-LUBE eye oint,
+2102958,4,23/08/2010,,04.03.01.00.00,,Lansoprazole 30mg gastro-resistant capsules,1.000
+0015725,4,06/02/2012,dnj2.00,02.09.01.00.00,,Volumatic (GlaxoSmithKline UK Ltd),84 - tablet(s)
+4356390,3,30/06/2015,,13.06.02.01.00,,Ramipril 1.25mg capsules,28 tablet(s) - 75 mg
+5786693,3,09/05/2016,,02.06.01.01.00,2940411000001108,,
+4356390,1,20/04/2015,,02.05.05.01.00,,Nitrofurantoin 100mg modified-release capsules,2.000
+2759533,4,02/12/2008,a6b1.,,,Doxazosin 4mg tablets,42 tablet(s)
+2013334,3,18/08/2014,,,,Paracetamol 500mg capsules,2 OP
+8018365,3,19/08/2015,,10.01.04.01.00,,Isosorbide mononitrate 20mg tablets,2 millilitres
+2146330,3,15/10/2015,dia6.00,02.04.00.00.00,,Co-codamol 8mg/500mg tablets,56.000
+4356390,3,22/10/2012,,12.02.01.00.00,321987003,Omeprazole 20mg gastro-resistant capsules,28.000
+4356390,3,25/07/2011,,02.09.01.00.00,,Chloramphenicol 0.5% eye drops,28 tablets
+5786693,4,23/03/2016,,07.03.01.00.00,,Flomaxtra XL 400microgram tablets (Astellas Pharma Ltd),56 TABLET(S)
+1120792,3,31/07/2014,,12.02.01.00.00,,Paracetamol 500mg tablets,100.000
+1064689,3,27/03/2012,,,,,1 pack of 120 mls
+5056803,3,02/10/2007,,,7374311000001101,Omeprazole 20mg gastro-resistant capsules,
+1116741,3,12/01/2015,,02.04.00.00.00,,Dihydrocodeine 30mg tablets,
+1033881,3,21/10/2013,,04.03.03.00.00,,Naproxen 250mg tablets,28.000
+1076802,3,16/08/2013,,01.06.04.00.00,,Estradiol 0.06% gel (750microgram per actuation),2 packs of 28 tablet(s)
+1108497,4,31/07/2017,,06.01.02.02.00,,Capasal Therapeutic shampoo (Dermal Laboratories Ltd),56.000
+1013064,3,05/02/2013,,,,Co-codamol 8mg/500mg capsules,200
+2091007,3,17/07/2006,,02.04.00.00.00,,Amlodipine 10mg tablets,24
+9402479,4,10/02/2010,,02.08.02.00.00,,EVOREL -50 patch 50mcg/24 hours (3.2mg/unit) [JANSSEN],
+7896160,3,04/11/2015,,11.04.01.00.00,,E45 cream (Forum Health Products Ltd),100 tablet(s)
+1120792,1,20/08/2008,dibD.00,02.05.05.01.00,,Dipyridamole 200mg modified-release capsules,60.000
+1070968,3,09/08/2013,,05.01.03.00.00,,Tramadol 100mg modified-release tablets,56 tablet(s) - 5 mg
+8908719,3,13/10/2015,,1302011M0BDABAB,,Ramipril 2.5mg capsules,60 capsules
+7602676,4,10/12/2010,,,,Losartan 50mg tablets,28.00 tablet(s)
+8908719,3,13/12/2010,,02.05.05.02.00,,,
+2572814,3,07/01/2015,,,,Amitriptyline 50mg tablets,50 strips
+1829771,3,10/04/2014,,10.01.01.00.00,,Omeprazole  Capsules (Gastro-Resistant)  20 mg,100 capsule(s)
+2759533,3,28/09/2011,b211.00,,,,28 tablets - 10 mg
+5216158,3,29/07/2014,,02.12.04.00.00,326874007,Bisoprolol 2.5mg tablets,200 tablet
+1078197,3,09/11/2015,,0407010Q0AAAAAA,,Paroxetine 20mg tablets,84 tablets
+2013334,3,21/03/2012,,,,Simvastatin 40mg tablets,56 tab
+2759533,3,14/08/2013,,,325443009,CO-CODAMOL caps 30mg + 500mg,84 cap
+1122775,3,17/09/2012,bxkw.00,02.12.04.00.00,,Dihydrocodeine 30mg tablets,100.000
+1055115,4,15/03/2011,bu25.00,,,,
+1059618,4,19/10/2009,,04.02.01.00.00,,Simvastatin 40mg tablets,28.000
+5750977,1,24/08/2006,,02.04.00.00.00,,Levothyroxine sodium 25microgram tablets,7 tablet - 75 mg
+5226712,3,24/07/2014,,,,FOLIC ACID tabs 5mg,112 capsule(s)
+5226712,3,04/01/2016,,06.01.02.01.00,,Fluoxetine 20mg capsules,4 packs of 30 capsule(s)
+0739128,3,09/10/2012,,02.02.01.00.00,,Ventolin 100micrograms/dose Evohaler (GlaxoSmithKline UK Ltd),
+1085169,3,02/07/2013,bdfw.,02.05.05.02.00,,,
+3173810,3,01/07/2014,blc2.00,04.03.04.00.00,,Atenolol 50mg tablets,28 tablet
+1947461,3,11/04/2012,,02.12.04.00.00,,Clopidogrel 75mg tablets,4.000
+1055592,3,13/08/2009,,04.08.01.08.00,,Enzira vaccine suspension for injection 0.5ml pre-filled syringes (Pfizer Ltd),
+1133012,4,02/03/2015,bi32.,02.05.05.02.00,330162006,AMITRIPTYLINE TAB 25,7 tablet
+9157817,3,29/12/2005,a6c3.,02.02.01.00.00,,Diazepam 5mg tablets,100.000
+9067009,3,03/06/2015,,02.04.00.00.00,,ATENOLOL tabs 100mg,7 tablets
+3949855,3,18/10/2011,,02.04.00.00.00,,Losartan 50mg tablets,
+4356390,3,02/11/2005,,04.07.01.02.00,,,28 capsules
+7465829,3,04/08/2015,,0704050Z0AAACAC,,Clarithromycin 500mg tablets,
+2759533,3,18/12/2014,,09.06.04.00.00,,,56.000
+1067925,2,11/11/2013,,01.04.02.00.00,,Citalopram 20mg tablets,56
+9787890,4,09/09/2008,,,,SILDENAFIL SLS TABLETS 100MG,2 packs of 28 tablet(s)
+1024938,3,23/02/2015,,,,Co-codamol 30mg/500mg capsules,3 packs of 28 tablet(s)
+9409190,3,25/04/2014,,05.02.05.00.00,,Atenolol 25mg tablets,2 packs of 28 tablet(s)
+6125701,3,10/12/2014,,,,,4.000
+3949855,4,12/10/2011,,02.06.02.00.00,,AeroChamber Plus (GlaxoSmithKline UK Ltd),2 packs of 28 tablet(s)
+1133122,3,19/04/2011,da91.00,02.12.04.00.00,,Co-proxamol 32.5mg/325mg tablets,56 tablets
+1894136,1,28/04/2011,,,,Levothyroxine sodium 100microgram tablets,
+1091350,3,09/02/2015,,,,Co-codamol 30mg/500mg tablets,28 tablets
+4356390,3,27/05/2014,,06.04.01.01.00,,,28 tablets
+9402479,3,12/06/2006,,13.05.02.01.00,,Amlodipine 5mg tablets,56 - tablet(s)
+2553559,3,02/12/2013,ip3b.00,,,Dosulepin 25mg capsules,112 tablet(s)
+2759533,3,03/01/2014,djzk.00,100101,,SODIUM VALPROATE + VALPROIC ACID mr tab 200mg,40 tablet
+8184997,4,07/07/2009,,,,Tamoxifen 20mg tablets,56 CAPSULE
+1086757,3,23/09/2008,ig1j.,02.12.04.00.00,,Co-Codamol 30/500  Tablets,
+4235920,4,24/02/2015,,02.05.05.01.00,,Solifenacin 5mg tablets,28 capsule
+2342614,3,13/05/2014,,02.06.02.00.00,,LACRI-LUBE eye oint,56.000
+1947461,3,29/08/2012,,12.02.01.00.00,,Peak flow meter standard range,28 tablet
+1069839,3,13/08/2013,bd35.,14.04.20.00.00,,Bisoprolol 5mg tablets,140 dose
+4356390,2,23/05/2008,,,,,56 tab
+0015725,1,11/05/2015,,,,,28 tablet
+5216158,3,07/12/2015,,06.02.01.00.00,,,112 tablets
+0739128,3,11/01/2008,,04.07.02.00.00,,Bendroflumethiazide 2.5mg tablets,1700.000
+2572814,4,15/07/2013,,02.04.00.00.00,321987003,,56 tablets
+9787890,4,07/04/2015,,01.04.02.00.00,,,60 tablets
+1067743,4,14/10/2011,b211.,02.09.01.00.00,,,28 tablets - 10 mg
+5286127,2,24/06/2016,,10.01.01.00.00,,FELODIPINE mr tab 10mg,30 tablet
+2102958,3,07/02/2011,,10.01.01.00.00,,Betamethasone valerate 0.1% cream,30 cap
+1085169,3,13/07/2015,k3g2.00,,,Beclometasone 50micrograms/dose nasal spray,
+2574263,3,15/07/2013,,02.06.01.01.00,,Betahistine 8mg tablets,4 x10 mls
+4356390,3,24/02/2010,,,,Ketoprofen 100mg capsules,
+2146330,3,15/01/2014,ph88.,,,CO-CODAMOL EFFERVESC TAB,200
+1120792,1,08/04/2015,d1d1.,02.03.02.03.00,,Levothyroxine sodium 50microgram tablets,28 capsule - 5 mg
+1036167,2,07/04/2015,ph88.,09.01.02.02.00,,Simvador 40mg tablets (Discovery Pharmaceuticals),
+2553559,3,26/04/2012,,,,Paracetamol 500mg tablets,500 ml
+8086156,4,09/12/2013,bl8i.,,,Risedronate sodium 35mg tablets,28 tablet
+5226712,3,17/01/2012,,02.09.01.00.00,,,
+1026391,3,01/05/2015,djkp.00,02.08.02.00.00,,Simvastatin 40mg tablets,224.000
+8839273,3,14/11/2007,a6b1.,,,Propranolol 80mg modified-release capsules,0.5 ml
+1055252,3,11/02/2011,,04.07.02.00.00,,Simvastatin 80mg tablets,60.000
+4356390,4,19/04/2010,ph7W.,,,Lansoprazole 15mg gastro-resistant capsules,60.000
+6339714,3,10/07/2012,bdfy.,02.05.05.01.00,,Peak flow meter standard range,250
+4837869,3,03/12/2012,,07.04.02.00.00,,Warfarin 3mg tablets,28.000
+5226712,4,26/08/2014,,02.05.05.01.00,,,224 capsule(s)
+9402479,3,18/06/2013,,10.01.03.06.00,,,7.000
+1120792,3,19/10/2015,,13.06.02.01.00,,Doxazosin 8mg modified-release tablets,112 cap
+1030568,3,31/01/2012,,,,Omeprazole 20mg gastro-resistant capsules,28.000
+1829771,3,17/07/2013,f724.,11.03.01.00.00,,CHLORAMPHENICOL eye drp 0.5%,
+2102958,3,06/10/2015,,10.01.01.00.00,,,1 pack of 112 tablet(s)
+1089543,3,03/05/2011,,04070402,,Atorvastatin 40mg tablets,500 tab
+8908719,4,01/04/2015,,,,CELECOXIB caps 100mg,
+1082766,4,12/03/2007,,02.09.01.00.00,3154411000001105,,4.000
+9067009,3,11/11/2009,dibD.00,,,Codeine 30mg tablets,1 spray(s)
+9409190,3,11/09/2013,,,,,56 tablet
+6456350,3,09/03/2016,,02.05.04.00.00,,ADCAL -D3 chewable tab,200.000
+2150003,4,05/01/2016,,,,GABAPENTIN caps 300mg,
+7667876,3,09/01/2014,,,,Amlodipine 5mg tablets,84 tablet(s)
+1064689,3,07/10/2013,blb1.,04.03.03.00.00,,Levothyroxine sodium 25microgram tablets,
+7465829,3,05/03/2014,,94.04.00.00.00,,Felodipine 10mg modified-release tablets,250 ml
+2010565,1,18/04/2006,,03.02.00.00.00,,Atenolol 25mg tablets,84 tablet(s) - 135 mg
+4356390,3,17/11/2009,,06.02.01.00.00,,Capasal Therapeutic shampoo (Dermal Laboratories Ltd),56.000
+8766522,4,10/04/2014,,10.01.01.00.00,,Anastrozole 1mg tablets,28 tab
+1113118,3,09/04/2015,,04.03.04.00.00,,Furosemide 40mg tablets,28 capsule - 150 mg
+7465829,1,01/12/2015,,04.03.03.00.00,,Warfarin Sodium  Tablets  1 mg,
+1091350,1,14/12/2015,,02.02.01.00.00,,Codeine 30mg tablets,120 dose
+1108497,3,28/06/2011,ef12.,13.05.02.05.00,,,56 capsule
+2091007,3,15/03/2012,,01.06.01.00.00,,Amitriptyline 10mg tablets,56.000
+5157047,4,10/04/2007,b211.,06.01.02.02.00,330202001,,56 tablet(s)
+4637932,3,11/09/2015,,07.02.01.00.00,,Voltarol 1.16% Emulgel (Novartis Consumer Health UK Ltd),2 spray(s) - 50 micrograms/dose
+1067925,3,09/03/2012,,01.03.05.00.00,,Simvastatin 20mg tablets,7 tablet - 50 mg
+1027742,1,29/03/2011,ph77.,02.12.04.00.00,,Olanzapine 10mg oral lyophilisates sugar free,7 tablet
+7896160,1,13/01/2012,,,,Tenoretic 100mg/25mg tablets (AstraZeneca UK Ltd),56 tablet(s)
+5226712,2,14/06/2016,,01.04.02.00.00,,Calcipotriol 50micrograms/g cream,56.000
+4356390,3,11/05/2009,,02.12.04.00.00,,METHOTREXATE tabs 2.5mg,56 tablet(s) - 4 mg
+0015725,3,08/04/2013,j22e.,,,Lacri-lube eye ointment (Allergan Ltd),
+1138943,4,19/07/2006,,10.01.01.00.00,,Aspirin 75mg tablets,
+6699668,3,15/11/2012,,1304000V0AAADAD,,Atenolol 50mg tablets,1 x30 gram(s)
+3166964,4,24/06/2014,,06.07.02.00.00,,,90 tablet(s)
+1120792,3,02/07/2012,,10.01.01.00.00,,Warfarin 1mg tablets,28 tab
+1069839,4,25/08/2011,,01.03.05.00.00,,Dihydrocodeine  Tablets  30 mg,28 tablet - 50 mg
+1036167,3,23/02/2009,ka8z.,,,Ramipril 5mg capsules,60 sachet
+1116741,2,11/11/2014,j2c2.,,317919004,Prochlorperazine 5mg tablets,56 tablet(s)
+9409190,4,20/08/2012,,,,Atorvastatin 20mg tablets,8 tablet
+3840609,3,08/10/2008,,0103010T0AAAAAA,,Risperidone 2mg tablets,56 - capsule(s)
+6699668,1,17/02/2014,,02.09.01.00.00,322366004,Levothyroxine sodium 25microgram tablets,200.000
+1024938,1,19/06/2015,,91.04.00.00.00,,Perindopril erbumine 2mg tablets,60.000
+1120792,4,08/07/2014,,,,Folic acid 5mg tablets,5.000
+6125701,3,12/05/2014,gh52.,,,,3 packs of 28 tablet(s)
+1436348,3,21/04/2015,c13v.,,,Atorvastatin 40mg tablets,56 tabs
+1091350,4,30/07/2013,ph7W.,1106000X0AAACAC,,Diazepam 5mg tablets,56 capsule
+4356390,4,24/10/2013,,12.01.03.00.00,,Prednisolone 1mg tablets,28.000
+5226712,3,14/09/2011,,04070100,,Levothyroxine sodium 50microgram tablets,200 tab
+1134652,3,04/12/2006,,06.01.05.00.00,,Chlorpromazine 100mg tablets,1 unit
+3949855,3,26/03/2015,a6b1.,,,Co-amoxiclav 250mg/125mg tablets,
+3794152,3,25/06/2015,,06.04.01.01.00,,,28.000
+6394629,3,18/10/2011,,,,Atorvastatin 40mg tablets,28 tablets
+8839273,2,11/11/2008,,,,Bisoprolol Fumarate  Tablets  5 mg,28.000
+3765515,3,18/04/2006,,11.08.01.00.00,,Doxycycline 100mg capsules,56 cap
+2759533,3,21/10/2008,,10.01.01.00.00,,Mebeverine 135mg tablets,112 tablets
+3776111,4,05/07/2010,,,,Aqueous cream,56 tablets
+1078197,2,02/08/2010,,02.04.00.00.00,,Levothyroxine sodium 100microgram tablets,200
+1069839,1,07/12/2012,,02.04.00.00.00,,Tamsulosin 400microgram modified-release capsules,28.000
+9787890,3,16/01/2013,,,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),2*1 inhaler
+7049179,3,26/02/2016,k8i1.,06.02.01.00.00,,Naproxen 500mg gastro-resistant tablets,56 tabs
+4356390,2,24/09/2015,bi32.,,,Enalapril 10mg tablets,
+8184997,3,08/12/2014,,04.06.03.00.00,,Levothyroxine Sodium  Tablets  100 micrograms,
+6699668,1,20/07/2015,gdA5.,04.03.03.00.00,,,10
+9402479,2,30/12/2013,,02.12.04.00.00,318407001,Levothyroxine sodium 100microgram tablets,1 pack of 100 capsule(s)
+6125701,3,18/09/2014,,09.06.04.00.00,,Noriday 350microgram tablets (Pfizer Ltd),
+1080663,3,16/05/2016,,020202,,Atmocol pocket deodorant spray 785911 (Ecolab Healthcare Division),250 ml
+5216158,3,10/09/2007,d712.,,,Aspirin 75mg dispersible tablets,56 capsule - 20 mg
+1078771,1,01/09/2015,,,881811000001100,PARACETAMOL tabs 500mg,
+4356390,4,21/04/2010,,02.12.04.00.00,,Fentanyl 12micrograms/hour transdermal patches,56 tablet(s) - 50 micrograms
+7124098,3,02/02/2015,dy12.,02.12.04.00.00,,Elleste Solo 1mg tablets (Meda Pharmaceuticals Ltd),100 tablet
+9911614,1,20/04/2010,,04.03.03.00.00,326874007,Amlodipine 10mg tablets,56 tablet
+6699668,4,07/08/2014,,,,,28.000
+3173810,1,15/07/2014,,02.04.00.00.00,,Codeine 30mg tablets,100.000
+2150003,3,17/01/2011,,02.02.01.00.00,,,
+0739128,3,12/08/2014,,04.03.04.00.00,,Peri-Prep wipes 840001 (Salts Healthcare),
+2553559,3,07/05/2014,,10.01.04.03.00,,Nasonex 50micrograms/dose nasal spray (Merck Sharp & Dohme Ltd),2 packs of 28 tablet(s)
+1064689,1,22/11/2006,,07.04.05.00.00,,Indapamide 2.5mg tablets,60 capsules
+4356390,3,06/02/2015,fe6h.00,,,Aspirin 75mg dispersible tablets,28.000
+5226712,3,31/08/2010,ftez.00,,,,4.000
+1120792,3,15/02/2016,,04.07.02.00.00,319773006,Aspirin 75mg dispersible tablets,7 tablet - 10 mg
+1064689,3,16/06/2008,a6b7.,02.02.01.00.00,,Meloxicam 7.5mg tablets,30 cap
+9157817,1,09/05/2007,,02.04.00.00.00,,Atorvastatin 40mg tablets,
+2553559,3,04/01/2016,ja18.00,01.06.04.00.00,318906001,Lisinopril 10mg tablets,112 tablets
+1030568,2,11/09/2015,b51y.,04.05.01.00.00,,Paracetamol 500mg tablets,28 tablet(s) - 100 micrograms
+1015541,3,22/05/2014,fe6i.00,06.02.01.00.00,,GABAPENTIN caps 300mg,28 cap
+5458687,3,16/06/2014,bi67.,03.03.02.00.00,,Hydroxocobalamin 1mg/1ml solution for injection ampoules,20 tabs
+1116741,4,01/11/2007,,03.02.00.00.00,,Ramipril 2.5mg capsules,100 tablet(s)
+4637932,3,05/11/2015,,,,Ibuprofen 400mg tablets,28 tablet
+3173810,3,03/03/2014,,01.04.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,60 capsule - 2 mg
+5226712,4,06/02/2012,ft8z.,04.03.01.00.00,,Ibuprofen 400mg tablets,
+2759533,3,25/11/2013,,02.12.04.00.00,,Amitriptyline 10mg tablets,4.000
+0169103,3,06/06/2011,,13.09.01.00.00,,,28 tablet(s)
+5384852,3,09/09/2011,,13.06.02.01.00,,Amlodipine 10mg tablets,56.000
+2013334,1,13/01/2014,,,,Cyclizine 50mg tablets,1xop - 50 micrograms/dose
+0169103,3,14/11/2014,d711.00,02.05.05.02.00,,,2 packs of 28 tablet(s)
+3949855,1,26/02/2016,,10.03.02.01.00,,Monomil XL 60mg tablets (Teva UK Ltd),2 packs of 30 capsule(s)
+6456350,3,24/09/2013,,05.01.01.02.00,,Megestrol 40mg tablets,28.000
+1089543,4,10/01/2014,,,,Atenolol 50mg tablets,28 tablets
+5226712,4,29/03/2016,dnbr.00,10.03.02.01.00,329367009,Simvastatin 40mg tablets,56
+1069839,4,21/04/2011,,05.04.01.00.00,,Terbutaline 500micrograms/dose dry powder inhaler,28 tab
+4356390,3,16/10/2013,,,319288002,Co-proxamol 32.5mg/325mg tablets,28.000
+1024938,3,06/12/2010,m118.,0403010L0AAABAB,,Betahistine 8mg tablets,28.000
+3173810,2,21/04/2011,f923.,01.03.05.00.00,,Amitriptyline 25mg tablets,500.000
+3776111,2,10/06/2013,o441.00,02.12.04.00.00,,Levothyroxine sodium 50microgram tablets,1 pack of 28 tablet(s)
+1091350,2,12/02/2013,,01.03.05.00.00,,Lisinopril 5mg tablets,28 capsule - 10 mg
+1064689,1,08/06/2009,,02.08.02.00.00,,FYBOGEL granules gluten-free and sugar-free [RECKITT B],15 capsule
+5226712,3,09/11/2015,,,,,28 tablets
+2912072,1,09/09/2013,,02.05.05.02.00,,Piroxicam 0.5% gel,30 tablet
+1080663,3,18/06/2015,gdAC.,07.02.01.00.00,,Simvastatin 10mg tablets,60 sachet(s) - 3.5 grams/sachet
+5750977,3,27/01/2015,,02.04.00.00.00,325443009,AMITRIPTYLINE HCl tabs 50mg,28 tablets
+0169103,1,27/04/2011,,08.01.03.00.00,,Sildenafil Sls TABS 50MG,1 pack of 28 capsule(s)
+8018365,4,21/04/2009,f923.00,07.02.01.00.00,,INFLUENZA INACTIVATED SPLIT VIRION vaccine [SAN PAST],28.000
+1947461,1,06/01/2015,,,,,200.000
+6339714,4,18/01/2010,,01.03.05.00.00,,Aspirin 75mg gastro-resistant tablets,
+6339714,3,29/07/2013,,02.02.01.00.00,,Naproxen 500mg gastro-resistant tablets,200 unit
+9157817,3,11/05/2015,,01.04.02.00.00,,Famotidine 40mg tablets,
+8184997,3,18/02/2011,,02.04.00.00.00,,IRBESARTAN + HYDROCHLOROTHIAZIDE tabs 300mg + 12.5mg,
+6699668,2,19/11/2010,,0103050P0AAAFAF,,Ranitidine 150mg tablets,1 - 200 dose inhaler
+1003424,3,20/12/2011,bu2c.,,,Citalopram 20mg tablets,8 tab
+3765515,3,27/08/2009,,,,Olanzapine 10mg oral lyophilisates sugar free,200 tablet
+7667876,1,14/09/2015,,11.06.02.00.00,18109911000001108,,80 tablet(s)
+8379628,2,03/09/2012,,02.05.05.01.00,,Levothyroxine sodium 25microgram tablets,
+1069839,3,12/11/2013,,02.06.02.00.00,,Ramipril 2.5mg capsules,60 capsule - 500 mg
+9157817,1,21/05/2012,,02.04.00.00.00,,,7 tablets
+3776111,3,19/06/2008,blb2.00,02.09.01.00.00,,Ramipril 10mg capsules,56.000
+1030568,3,02/07/2013,,02.04.00.00.00,,Simvastatin 20mg tablets,84 tablet(s)
+6394629,3,04/07/2011,,02.12.04.00.00,,Carbamazepine 200mg tablets,60 gram
+1069839,3,10/02/2010,ka2y.00,04.07.01.02.00,,FUCITHALMIC eye drp 1%,
+9496317,1,03/09/2010,ph7W.,02.09.01.00.00,,Amoxicillin 500mg capsules,84 tablet(s)
+2572814,4,14/03/2016,,02.06.02.00.00,319288002,,
+3765515,4,19/08/2009,,,,,100 tablet(s)
+3840609,3,26/02/2008,bu25.00,,,Mebeverine 135mg tablets,168.000
+3173810,3,18/10/2013,,,,Terazosin 2mg tablets,1 pack of 84 tablet(s)
+8962092,3,04/12/2015,,1302011L0BBAAAA,,Naproxen 500mg tablets,21 capsules
+2102958,3,12/06/2006,da91.00,11.08.01.00.00,,OMEPRAZOLE CAPSULES 10MG,28 capsule
+9911614,3,21/03/2014,gdA2.,,,Aspirin 75mg dispersible tablets,
+1067925,1,25/03/2014,,14.05.01.00.00,330170001,,1 pack of 28 tablet(s)
+7896160,1,09/02/2015,dia6.,04.03.01.00.00,,Calcipotriol 50micrograms/ml scalp solution,
+7339341,3,09/07/2015,,13.02.01.01.00,,Chlorphenamine 4mg tablets,1 pack of 28 capsule(s)
+0015725,3,16/01/2013,,13.09.01.00.00,,Glyceryl trinitrate 400micrograms/dose aerosol sublingual spray,7 tablet
+4637932,3,14/08/2012,,,318902004,Morphine sulfate 10mg/5ml oral solution,56 tablets
+1078197,1,08/05/2012,,02.02.01.00.00,,Simvastatin 20mg tablets,28.000
+7896160,3,28/11/2012,b212.,02.05.05.02.00,134599008,Nicardipine 30mg modified-release capsules,28.000
+1055252,4,01/03/2016,,,,Co-dydramol 10mg/500mg tablets,56 tablet(s)
+9291720,3,06/08/2015,b211.00,,,Levothyroxine sodium 50microgram tablets,60 tablet
+4356390,1,04/12/2012,,04.07.01.02.00,,Gliclazide 80mg tablets,7 tablet
+1089543,3,14/06/2016,m45v.,,,,84
+2102958,3,22/08/2013,,,,Levothyroxine sodium 25microgram tablets,10 gram
+9402479,4,25/07/2011,,,,Tibolone 2.5mg tablets,28 tablets
+2572814,3,10/08/2010,d713.00,,,Amlodipine 5mg tablets,100 tablet(s)
+9402479,2,10/11/2010,,12.02.01.00.00,,Atenolol 25mg tablets,56.000
+7896160,3,10/04/2007,,04.06.03.00.00,,Paroxetine 20mg tablets,1 OP
+5286127,3,08/04/2014,bdf1.,,,Xipamide 20mg tablets,28 tablet
+3894871,4,12/08/2013,,03.04.01.01.00,320000009,Bendroflumethiazide TABS 2.5MG,28 capsule
+2013334,4,16/01/2013,,13.09.01.00.00,,Co-codamol 15mg/500mg tablets,1 pack of 30 tablet(s)
+9157817,3,24/10/2007,,02.12.04.00.00,,,28 tablet
+6339714,3,02/06/2010,,,,Simvastatin 20mg tablets,10.000
+9787890,4,09/03/2016,,01.03.05.00.00,,Amoxicillin 500mg capsules,112 tablet(s) - 500 mg
+1027742,1,10/11/2009,bu23.00,02.04.00.00.00,,Losartan 100mg tablets,2*140 TABLET
+2572814,3,23/08/2010,,,,Glutafin gluten free tea biscuits (Dr Schar UK Ltd),56 tablet
+1055592,3,13/09/2011,,,,Codeine 30mg tablets,
+9402479,3,18/04/2011,,,3154411000001105,Atenolol 100mg tablets,28 tablets
+2759533,3,12/11/2015,,,,Buprenorphine  Transdermal patches  10 micrograms/hour,
+5786693,3,17/05/2010,,02.06.01.02.00,,Perindopril erbumine 2mg tablets,200 ml
+2572814,1,16/12/2010,,04.07.01.02.00,,Metformin 500mg tablets,56.000
+5226712,3,11/03/2009,a6b1.,01.02.02.00.00,321959007,Triptorelin Acetate  Powder and solvent for injection  15 mg vial (11.25 mg Triptorelin),56 tablet
+1027742,3,08/04/2016,ph8D.,04.03.04.00.00,,Celecoxib 100mg capsules,
+6339714,2,08/05/2014,,,,,1 pack of 30 gram(s)
+0739128,1,15/01/2013,,02.06.02.00.00,,Levothyroxine sodium 50microgram tablets,100 gram
+8839273,3,01/09/2015,,,,Amoxicillin 250mg capsules,56.000
+3857841,3,12/06/2015,,0407010F0AAAHAH,,Hydroxychloroquine 200mg tablets,14 capsules
+1069839,3,14/07/2009,,,,Isosorbide mononitrate 60mg modified-release tablets,
+9787890,3,09/01/2012,,03.04.01.01.00,,Ramipril 10mg capsules,30 millilitres
+5216158,4,12/03/2010,,02.05.05.01.00,,,56.000
+1064689,3,08/04/2016,ip3e.00,02.12.04.00.00,,Testosterone 40mg capsules,2*28 tablet - 20 mg
+5216158,3,21/12/2015,puh1.,,,Warfarin 5mg tablets,56.000
+5226712,4,20/10/2015,,06.02.01.00.00,,Estracombi TTS patches (Novartis Pharmaceuticals UK Ltd),
+6125701,3,31/05/2012,bk72.00,01.03.05.00.00,319288002,Paracetamol 500mg tablets,28 tablet(s) - 25 mg
+8908719,1,21/11/2007,,,,Bisoprolol 10mg tablets,
+4972784,1,01/12/2008,,,,Omeprazole 10mg gastro-resistant capsules,500 ml
+2572814,3,30/12/2015,,0206020C0BIACAW,,Duloxetine 30mg gastro-resistant capsules,28 tablet(s)
+5226712,1,20/06/2006,ecc2.,12.02.01.00.00,,Chlorphenamine 4mg tablets,
+1027742,4,09/01/2012,bl8i.,01030500,,,100 capsule
+2759533,3,22/02/2013,,02.02.01.00.00,4074911000001106,Omeprazole 20mg gastro-resistant capsules,30 g
+4972784,3,17/08/2009,,0604012P0BBAAAA,,clotrimazole with hydrocortisone cream 1% + 1%,30 capsule(s) - 50 mg
+1120792,3,06/06/2008,dia6.,,,Fenofibrate micronised 267mg capsules,56.000
+8908719,3,22/01/2010,,09.01.01.01.00,,Fluticasone 125micrograms/dose / Salmeterol 25micrograms/dose inhaler CFC free,100 tablets
+7896160,1,18/06/2012,h341.00,02.08.02.00.00,,,1 pack of 30 tablet(s)
+5216158,3,15/07/2014,a6b1.,,,Simvastatin 20mg tablets,56.000
+1138943,3,19/01/2010,,,,Oilatum Emollient (GlaxoSmithKline Consumer Healthcare),28 tablet
+2157140,3,27/05/2016,,02.04.00.00.00,,Atenolol 50mg tablets,50 tabs
+8086156,2,12/05/2015,,,,,28.000
+2010565,3,14/07/2014,,05.01.01.03.00,,Omeprazole 20mg gastro-resistant capsules,100 lancet
+4837869,3,24/10/2007,,02.12.04.00.00,134599008,,6 tablet
+3173810,2,02/08/2013,f724.,02.04.00.00.00,,Losartan 50mg tablets,
+3894871,1,16/12/2014,fo4y.00,,,Aspirin 75mg dispersible tablets,56 capsule
+4802474,3,03/12/2010,bk53.00,06.02.01.00.00,,Premique Low Dose 0.3mg/1.5mg modified-release tablets (Pfizer Ltd),56.000
+2553559,3,18/09/2007,,,,Celecoxib 100mg capsules,100 g
+8839273,3,19/04/2011,,10.01.04.01.00,,Amoxicillin 250mg capsules,90 tab
+2553559,3,25/08/2011,,12.02.01.00.00,,Felodipine 10mg modified-release tablets,200
+2759533,3,29/09/2010,,01.04.02.00.00,,Simvastatin 40mg tablets,60 capsule
+1055592,3,06/01/2014,,,330404003,Co-codamol 30mg/500mg tablets,1 pack of 30 gram(s)
+1080663,4,12/05/2016,j2c2.,,,Omeprazole 20mg gastro-resistant capsules,1 pack of 30 gram(s)
+3776111,3,10/09/2012,dl71.00,04.07.01.02.00,,,60.000
+1091350,1,02/09/2014,,02.09.01.00.00,,Candesartan 8mg tablets,56 tablet
+9787890,3,17/01/2011,,02.05.01.00.00,,Salbutamol 100micrograms/dose inhaler CFC free,56 TABLET(S)
+1116741,1,11/03/2013,dibD.00,04.03.03.00.00,415162000,,7 tablet
+8766522,3,18/11/2014,dibD.00,02.12.04.00.00,,Bendroflumethiazide 2.5mg tablets,28.000
+1120792,3,15/05/2015,c8o1.,01.03.05.00.00,,,140 dose
+6125701,3,07/06/2012,bdfw.00,10.01.03.06.00,,Senna 7.5mg tablets,28 tablet
+4356390,3,02/12/2008,,,,Nefopam 30mg tablets,1700.000
+1036167,4,26/04/2016,,,,Bendroflumethiazide 2.5mg tablets,28 tablet
+8962092,3,17/09/2015,j22y.,,,Atorvastatin 40mg tablets,
+3949855,3,23/01/2008,b211.,,,Trimethoprim 200mg tablets,28 capsule(s) - 15 mg
+2146330,3,05/12/2007,,,,PRIMOLUT N TABLETS 5MG,1 pre-filled disposable injection
+2010565,2,18/04/2008,dia2.,,,Levothyroxine sodium 100microgram tablets,60 tablets - 250 mg
+4356390,1,22/09/2011,,06.01.02.02.00,,,100.000
+3840609,3,04/06/2010,fh1G.00,05.01.01.03.00,,GABAPENTIN caps 400mg,1.000
+5056803,3,18/09/2014,,10.03.02.01.00,,Fucibet cream (LEO Pharma),
+1064689,1,10/02/2014,,02.12.04.00.00,,,28.000
+9496317,3,13/12/2013,,,,Simvastatin 80mg tablets,80 tablet(s)
+3794152,3,03/06/2014,,02.06.02.00.00,,Simvastatin 20mg tablets,84 tablet(s) - 135 mg
+4356390,3,17/10/2011,,,,,60 tablet
+5786693,3,16/06/2014,,,,Levothyroxine sodium 50microgram tablets,56 tabs
+2553559,3,05/01/2015,,06.02.01.00.00,415162000,Ramipril 10mg capsules,56 capsules
+2990128,1,20/12/2010,da91.00,02.06.01.01.00,,IBUPROFEN TABLETS 400MG,56 tablet(s) - 2.5 mg
+9787890,3,18/10/2011,,,,Bendroflumethiazide 2.5mg tablets,
+3840609,2,20/12/2011,,04.07.01.02.00,,Perindopril erbumine 4mg tablets,56.000
+1015897,3,22/10/2014,k3g2.00,,,,14 tablet
+2572814,2,19/01/2010,,,,Folic acid 400microgram tablets,84 tab
+2572814,3,21/12/2015,,02.05.02.00.00,,Warfarin 3mg tablets,8 tab
+2013334,3,02/04/2013,,10.01.01.00.00,,,28 tablet
+1030013,3,23/04/2013,,02.06.02.00.00,360311000001104,Simvastatin 40mg tablets,56.000
+9496317,3,17/05/2006,di21.00,,,Omeprazole 20mg gastro-resistant capsules,168 tablets
+1120792,3,25/03/2015,,10.01.01.00.00,,ASPIRIN disp tab 75mg,
+4356390,3,07/10/2013,,02.09.02.00.00,,Kliovance tablets (Novo Nordisk Ltd),4 tablets
+6394629,3,15/04/2016,,04.03.01.00.00,,Octasa 400mg MR gastro-resistant tablets (Tillotts Pharma Ltd),28 tablets
+0739128,3,26/08/2014,,04.08.01.05.00,,Xipamide 20mg tablets,168
+2553559,3,15/11/2012,ka83.,,,Atenolol 100mg tablets,56 tablet - 75 mg
+8962092,3,17/06/2014,,02.04.00.00.00,,Bendroflumethiazide 2.5mg tablets,120 dose
+2091007,4,30/01/2012,,02.04.00.00.00,,Oxytetracycline 250mg tablets,28.000
+1091350,3,10/12/2014,,,,Losartan 100mg tablets,112 tablet
+1025326,3,23/05/2014,ka32.00,04.02.01.00.00,,Bisoprolol 5mg tablets,360.000
+3776111,3,24/11/2014,,02.02.02.00.00,,,100 gram
+2010565,3,04/02/2015,,02.06.02.00.00,,Xipamide 20mg tablets,
+1138943,3,11/05/2015,bxd5.00,04.07.02.00.00,,Simvastatin 80mg tablets,28 tablets - 37.5 mg
+2572814,3,09/11/2011,,,329367009,,1 pack of 28 tablet(s)
+7896160,3,31/05/2012,,02.05.05.02.00,,Allopurinol 100mg tablets,6.000
+5226712,3,10/09/2013,,,,Bisoprolol 1.25mg tablets,100 tablet(s)
+2550137,3,25/08/2011,ip3j.00,,,betamethasone sodium phosphate ear drops 0.1%,
+9787890,3,22/07/2013,,02.02.01.00.00,,Paracetamol 500mg tablets,14 tablet
+1894136,3,21/11/2003,,10.01.01.00.00,,Aspirin 75mg dispersible tablets,28 tablet
+1064689,1,05/05/2009,,04.03.04.00.00,,Aspirin 75mg dispersible tablets,56.000
+6339714,3,07/11/2008,j2c2.,02.05.05.01.00,,Atorvastatin 10mg tablets,28.00 tablet(s)
+2572814,3,25/11/2013,,04.07.01.02.00,,Finasteride 5mg tablets,56 cap
+0739128,3,17/04/2014,,06.01.02.02.00,,,56.000
+2342614,3,10/11/2014,,,,SOLPADOL EFFERVESCEN TAB,1 pack of 21 capsule(s)
+2010565,3,16/07/2012,,,,Codeine 30mg tablets,
+1947461,3,12/11/2013,a6c2.,,,Cetirizine 10mg tablets,500.000
+9787890,4,09/11/2015,bu23.,,,,100 strip(s)
+1091350,3,01/05/2012,,,344111000001101,Symbicort 200/6 Turbohaler (AstraZeneca UK Ltd),56.000
+4356390,3,14/03/2013,,03.04.01.01.00,,Atenolol 25mg tablets,112.000
+4356390,4,28/06/2013,ip3e.00,04.07.02.00.00,,Lansoprazole 30mg gastro-resistant capsules,56
+7339341,3,15/04/2014,,06.02.01.00.00,,,100 TABLET(S)
+7715319,3,28/06/2013,bxi1.,01.03.05.00.00,,Gliclazide 80mg tablets (A A H Pharmaceuticals Ltd),56 tablet
+2553559,3,12/01/2015,,09.06.04.00.00,,,28.000
+5786693,4,19/06/2008,,11.08.01.00.00,321959007,,28 tablets - 25 mg
+5226712,4,03/02/2014,,,415166002,"Influenza vaccine (split virion, inactivated) suspension for injection 0.5ml pre-filled syringes",120 tablets
+1137469,3,18/05/2007,,,,,60.000
+3776111,3,23/11/2006,,02.04.00.00.00,,Dihydrocodeine 30mg tablets,
+1085169,3,27/04/2015,d1d3.,03.03.02.00.00,,Alendronic acid 70mg tablets,56.000
+8018365,3,11/01/2010,,04.07.01.02.00,,MEPTAZINOL tabs 200mg,28.000
+7465829,3,11/03/2009,jA2z.00,10.01.04.01.00,,Celecoxib 200mg capsules,100
+3949855,2,12/11/2013,,01.02.02.00.00,,Prothiaden 25mg capsules (Teofarma),28 cap
+6125701,3,03/11/2009,,0302,489711000001100,Eprosartan 400mg tablets,28 tablet
+5216158,1,26/02/2008,,06.02.01.00.00,,Pizotifen 1.5mg tablets,
+1003424,3,19/08/2015,,07.04.02.00.00,,Omeprazole 10mg gastro-resistant capsules,10.000
+4356390,3,23/10/2013,,06.02.01.00.00,,Methotrexate TABS 10MG,
+3166964,3,08/02/2016,,,,Anusol HC ointment (McNeil Products Ltd),28.000
+2550137,4,06/10/2015,,,679511000001100,Co-codamol 30mg/500mg tablets,200 tablets
+7667876,3,06/01/2015,,,,Folic acid 5mg tablets,
+8908719,3,28/09/2011,jA1w.00,01.03.01.00.00,323015009,Doxycycline 100mg capsules,
+9157817,3,14/03/2011,ka2y.00,,,,8.000
+8839273,1,19/03/2010,,02.09.01.00.00,,,28 tablet
+3949855,3,14/10/2011,,02.05.05.01.00,,Oxybutynin 2.5mg tablets,20 capsule(s)
+8379628,2,09/11/2009,,02.06.02.00.00,,Dermovate 0.05% cream (GlaxoSmithKline UK Ltd),28 tablet
+1023807,3,18/11/2013,,06.03.02.00.00,,Olanzapine 10mg tablets,30 device
+8962092,2,06/10/2015,,05.01.01.03.00,,,28.000
+5786693,3,05/11/2012,i151.,04.07.01.02.00,,Ramipril 5mg capsules,30.000
+1113118,3,03/06/2016,b211.,03.01.01.03.00,,,30 sachet - 3.5 grams/sachet
+9067009,3,14/06/2016,,04.02.03.04.00,,Aspirin 75mg dispersible tablets,112 grams
+9409190,3,15/11/2012,blb1.,02.12.04.00.00,,Prednisolone 5mg gastro-resistant tablets,112 tablets
+1078771,3,29/02/2016,,,,ispaghula husk gluten-free effervescent granules sugar-free,56 tablet(s)
+3765515,3,16/02/2010,,13.09.01.00.00,321745007,,7 tablet
+1829771,2,09/12/2013,gdA6.,,3154411000001105,Omeprazole 20mg gastro-resistant capsules,56 tablets
+2102958,4,13/02/2013,,10.03.02.01.00,,Venlafaxine 150mg modified-release capsules,28 tablets
+8018365,3,09/05/2016,,,,Amlodipine 5mg tablets,
+4356390,3,06/05/2016,,02.12.04.00.00,,Simvastatin 20mg tablets,56 tablets
+4356390,2,09/08/2010,,02120400,,Amitriptyline 10mg tablets,
+9911614,3,11/03/2013,,02.02.01.00.00,,FENACTOL ec tab 50mg,30 g
+1078197,3,12/10/2015,c144.,02.02.01.00.00,,Amoxicillin 250mg capsules,28 tabs
+3840609,1,01/03/2010,,02.09.01.00.00,331080007,Alendronic acid 70mg tablets,28 tablet - 2.5 mg
+6459511,3,10/08/2010,,12.01.01.02.00,3154411000001105,Diclofenac sodium 50mg gastro-resistant tablets,56 tablets
+9067009,3,09/05/2012,,,,OMEPRAZOLE CAPSULES 20MG,20 millilitre
+0739128,1,27/10/2014,,02.05.05.02.00,,Simvastatin 20mg tablets,120 tabs
+7049179,3,04/03/2015,,,,,56 tablets
+5226712,3,09/06/2014,,01.02.02.00.00,,,
+2150003,2,01/05/2013,,02.06.02.00.00,,Ramipril 5mg capsules,
+9067009,3,17/01/2012,,02.12.04.00.00,11930411000001105,,84 tablet - 8 mg
+1829771,3,19/01/2016,f73..,,,GABAPENTIN caps 300mg,28.000
+9409190,3,10/09/2010,,04.02.01.00.00,,Lactulose 3.1-3.7g/5ml oral solution,8.000
+8766522,3,18/12/2014,bu23.00,,,,
+2146330,1,02/02/2015,ab2A.,,,,2 packs of 84 tablet(s)
+2157140,3,10/12/2013,,,,,60 tablets
+9787890,3,31/07/2015,bxd2.,06.01.02.02.00,,,1 x1 0.5ml pre-fill
+3765515,3,16/05/2016,,09.04.04.02.00,,,60.000
+8962092,3,07/10/2014,bu23.00,,,Glucosamine sulfate 500mg / Chondroitin 400mg tablets,2*28 tablet - 10 mg
+9496317,3,12/03/2010,,06.02.01.00.00,,Paracetamol 500mg tablets,112
+4356390,4,07/05/2015,puhl.,09.06.02.00.00,,Laxido Orange oral powder sachets sugar free (Galen Ltd),28 tablet
+3840609,1,14/07/2009,,,,OxyContin 5mg modified-release tablets (Napp Pharmaceutic...,1700.000
+0015725,3,18/01/2010,,02.12.04.00.00,,Piroxicam 20mg capsules,8 tab
+5286127,3,19/06/2014,,,,Folic acid 5mg tablets,
+5286127,1,31/07/2017,,06.07.02.00.00,,,
+1134652,4,17/04/2014,,,,Lansoprazole 30mg gastro-resistant capsules,30 cap
+6394629,3,09/06/2006,,,,Methotrexate 2.5mg tablets,4.000
+1028163,4,19/04/2013,bi67.,02.09.01.00.00,,ispaghula husk gluten-free effervescent granules sugar-free,
+9067009,3,15/11/2010,,06.02.01.00.00,,glyceryl trinitrate spray 400micrograms/dose,56 tablets
+7049179,4,22/06/2015,,02.09.03.00.00,,Amlodipine 5mg tablets,
+1003424,3,14/07/2009,bxd5.,04.01.01.00.00,,GABAPENTIN caps 400mg,
+1894136,3,03/09/2015,,,317291008,Simvastatin 10mg tablets,
+1116741,1,11/09/2006,,14.04.20.00.00,,Metronidazole 400mg tablets,2 packs of 30 capsule(s)
+1894136,3,09/06/2014,a6b1.00,,,Betahistine 8mg tablets,28.000
+1069839,1,17/02/2014,,02.09.01.00.00,,Aspirin 75mg dispersible tablets,4.000
+2574263,3,01/09/2009,blb2.,13.05.02.03.00,,Otomize ear spray (Forest Laboratories UK Ltd),
+7896160,3,16/03/2015,,020201,,Olanzapine 10mg tablets,28 tablet
+2553559,3,22/09/2015,,02.05.05.02.00,,,30.000
+1036167,4,27/03/2012,,02.12.04.00.00,,Atenolol 50mg tablets,4.000
+1064689,1,03/06/2011,,04.07.01.02.00,,Tramadol 100mg modified-release tablets,56 tab
+1030568,3,23/03/2015,,,,Methotrexate 2.5mg tablets,28 tablet
+3173810,2,06/08/2012,,02.02.01.00.00,,BENDROFLUMETHIAZIDE tabs 2.5mg,2 120 dose inhaler
+6699668,3,12/01/2016,bu23.00,94.05.12.00.00,3192111000001101,Felodipine 10mg modified-release tablets,56 tablet(s) - 10 mg
+1894136,3,18/04/2006,,,,Hydroxocobalamin 1mg/1ml solution for injection ampoules,2 packs of 28 tablet(s)
+4637932,4,06/01/2012,,,,Doxazosin 4mg tablets,56 tablet
+4837869,3,29/12/2009,,06.02.01.00.00,,Gabapentin 300mg capsules,56 TABLET(S)
+1036167,3,22/02/2016,,,,Felodipine 10mg modified-release tablets,56 x tablets
+4356390,4,24/10/2007,a6b1.,,,BRICANYL TURBOHALER 500micrograms [ASTRAZENEC],
+2572814,3,23/03/2016,,,,Minocycline  M/R capsules  100 mg,30 tablet
+5286127,3,02/08/2013,,94.04.00.00.00,344111000001101,Metoprolol 50mg tablets,56 tab
+1089543,3,13/04/2015,bd36.00,02.12.04.00.00,,ASPIRIN disp tab 75mg,84 capsule - 0.2 ml
+1067743,3,20/08/2008,,02.05.05.01.00,,Aspirin  Dispersible tablets  75 mg,28 tablet
+1120792,3,17/03/2014,,,,Ventolin 100micrograms/dose Evohaler (GlaxoSmithKline UK Ltd),56.000
+3166964,3,25/07/2013,,02.09.02.00.00,,Lisinopril 10mg tablets,
+9067009,4,20/10/2014,,01.04.02.00.00,320139002,BENDROFLUAZIDE TAB 2.5mg,84 - tablet(s)
+1120792,1,10/04/2007,,04.01.01.00.00,,Amoxicillin 250mg capsules,112 tablet
+1085169,3,04/08/2015,,0205040D0BBABAB,,,56.000
+4235920,1,23/10/2012,bk32.,13.10.02.00.00,317919004,Colecalciferol 200unit / Calcium carbonate 750mg tablets,56 tablets
+1078771,3,16/01/2013,,02.09.01.00.00,,,28 tablet(s) - 5 mg
+3173810,3,06/11/2012,,,,Amitriptyline 10mg tablets,28 capsule - 1.25 mg
+9496317,1,28/05/2013,jA2z.00,06.04.01.01.00,,Hypromellose 0.3% eye drops,100 tablet
+1024938,3,10/08/2015,,01.02.02.00.00,,Atorvastatin 20mg tablets,28 tablet
+1069839,1,23/07/2012,,09.06.04.00.00,408027002,Lisinopril 10mg tablets,1 pack of 100 tablet(s)
+2572814,4,27/10/2014,,14.04.15.00.00,3651611000001107,Ramipril 5mg capsules,28.00 tablet(s)
+1091350,3,11/02/2011,,04.07.02.00.00,,,84.000
+7049179,1,30/06/2014,,94.05.07.00.00,,Salbutamol 100micrograms/dose inhaler CFC free,30 grams
+0739128,4,12/08/2014,,13.10.01.02.00,,Gabapentin 300mg capsules,30 capsule(s)
+6699668,3,07/01/2014,,,,Aspirin 75mg dispersible tablets,56 capsules
+1003424,3,10/03/2014,bu2c.,08.01.03.00.00,,HYPROMELLOSE EYE DRO 0.5,2 packs of 28 tablet(s)
+9067009,3,09/10/2015,,,,Salbutamol 100micrograms/dose inhaler CFC free,
+6339714,3,15/11/2010,,02.05.05.01.00,,Metformin 500mg tablets,56 tablet
+1082766,1,29/12/2008,,02.04.00.00.00,,,84 tablet(s) - 135 mg
+4356390,4,17/06/2015,,03.04.01.01.00,,ispaghula husk gluten-free powder sugar-free 3.5g,28 tablet - 50 mg
+1064689,3,13/01/2012,b211.,,323021008,Tadalafil 20mg tablets,56 tablet
+3765515,3,20/05/2013,,,,Omeprazole 10mg gastro-resistant capsules,10 ml
+2010565,4,29/12/2015,ab2A.,04.06.02.00.00,3470811000001103,Bisoprolol 1.25mg tablets (A A H Pharmaceuticals Ltd),2 packs of 500 mls peppermint
+9787890,3,27/08/2015,,06.04.01.01.00,,Solifenacin 5mg tablets,60 tablet(s)
+1003424,1,25/05/2012,,,,ROFECOXIB tabs 12.5mg,
+9402479,3,18/01/2005,dji2.,,,Levothyroxine sodium 100microgram tablets,2 packs of 28 tablet(s)
+8962092,3,09/12/2011,,,,Ramipril 1.25mg capsules,
+8132321,3,06/01/2014,,0403010L0AAABAB,,ispaghula husk gluten-free powder sugar-free 3.5g,4 tablet(s)
+3765515,3,23/09/2008,,,,Amitriptyline 10mg tablets,1.000
+0739128,3,26/10/2015,,12.02.01.00.00,,,56.000
+3555892,3,07/07/2014,bd35.,0203020D0AAABAB,,LOSARTAN + HYDROCHLOROTHIAZIDE tabs 100mg + 25mg,60.000
+0015725,3,23/08/2007,,,,,1 - 200 dose aerosol spray
+7602676,3,17/03/2015,,02.09.02.00.00,,Ispaghula husk 3.5g effervescent granules sachets gluten free sugar free (A A H Pharmaceuticals Ltd),28 tablet - 75 mg
+9787890,3,14/12/2012,fh1k.00,03.01.01.03.00,,,
+1080663,3,13/06/2016,,02.09.01.00.00,,Mebeverine 135mg tablets,100
+1064689,3,17/11/2009,,02.09.01.00.00,,Venlafaxine 75mg modified-release capsules,28.000
+9787890,3,12/11/2012,,02.12.04.00.00,,IBUPROFEN TABLETS 400MG,100 capsules
+5786693,3,27/08/2014,,,330170001,,28 capsule
+9409190,4,28/06/2010,dn31.00,09.04.04.02.00,,Levothyroxine sodium 100microgram tablets,200 dose
+1069839,3,25/09/2012,,10.01.01.00.00,17071811000001108,Simvastatin 40mg tablets,
+1134652,1,21/10/2014,,02.12.04.00.00,,Sebco ointment (Derma UK Ltd),
+2013334,3,02/09/2011,,02.05.05.02.00,,,224 capsule
+3765515,4,01/03/2016,,,,Amitriptyline 25mg tablets,5 ml
+2157140,3,03/05/2016,bd3j.,,,Amitriptyline 10mg tablets,28 tablet - 25 micrograms
+7339341,1,12/07/2010,,06.01.02.02.00,,Pregabalin 50mg capsules,112.000
+7465829,3,04/03/2015,,01.06.01.00.00,374296008,Atorvastatin 10mg tablets,56 tablet
+4637932,4,09/09/2014,,01.03.05.00.00,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),60 tablets
+1947461,3,25/11/2014,,,,Zopiclone 3.75mg tablets,28 tablet(s) - 100 micrograms
+4356390,3,05/08/2013,bu23.,03.02.00.00.00,,AMLODIPINE tabs 10mg,60 tablet
+8184997,3,23/03/2012,,13.06.02.01.00,,Fostair 100micrograms/dose / 6micrograms/dose inhaler (Chiesi Ltd),84 tablet
+3665358,4,16/05/2012,,12.02.01.00.00,,Atenolol 25mg tablets,28 tab
+5157047,3,23/11/2009,ip3j.00,04.03.01.00.00,,Lactulose  Solution  3.1-3.7 g/5 ml,84 tablets
+3555892,2,22/11/2010,,02.12.04.00.00,318420003,Prednisolone 5mg gastro-resistant tablets,28.000
+5226712,4,17/06/2013,dibt.00,,329367009,,56.000
+2010565,1,19/01/2016,,09.04.04.02.00,,Finasteride 5mg tablets,
+9787890,4,08/02/2016,fo4y.00,,,,28 tablet(s) - 2.5 mg
+7465829,3,06/02/2015,,02.04.00.00.00,,Omeprazole 20mg gastro-resistant capsules,120 dose
+5157047,3,20/11/2013,,,,,2 inhaler(s) - 200/6 micrograms/inhalation
+4637932,3,06/06/2012,bu23.,02.12.04.00.00,,Valsartan 80mg capsules,56.000
+8184997,4,07/05/2015,m118.,01.03.05.00.00,321747004,Macrogol compound oral powder sachets NPF sugar free,30 tabs
+0739128,3,18/09/2007,c8n1.,02.02.01.00.00,,Lansoprazole 15mg gastro-resistant capsules,56 tablet
+1074743,3,12/03/2012,,07.02.01.00.00,3154411000001105,GASTROCOTE tablets [SSL INT],15 gram
+4235920,1,02/06/2010,,0906040N0BBABDU,,Meloxicam 7.5mg tablets,56 capsules
+2759533,1,04/02/2011,,,,Kliofem tablets (Novo Nordisk Ltd),56 tablet(s)
+5786693,3,30/07/2012,bxi1.,04.07.01.02.00,,Amoxicillin 500mg capsules,
+6308334,4,10/08/2015,,02.06.02.00.00,,Perindopril erbumine 2mg tablets,7 tablet
+1894136,3,16/01/2013,,04.07.01.02.00,,Levothyroxine sodium 100microgram tablets,
+0015725,3,07/12/2015,f283.,06.02.01.00.00,,Aspirin 75mg gastro-resistant tablets,126 tablets
+3776111,3,05/05/2015,,02.02.01.00.00,,,56 tablet
+0169103,2,18/08/2014,,0103050P0AAAFAF,,,7 tablet - 75 mg
+9402479,3,24/04/2015,dia6.,12.02.01.00.00,,Spironolactone 25mg tablets,56
+1064689,3,06/06/2011,,04.07.04.04.00,,Diclofenac sodium 50mg gastro-resistant tablets,240 dose
+6459511,3,12/10/2015,,02.05.05.02.00,,,60.000
+5226712,3,02/09/2014,,01.03.05.00.00,,,
+6459511,4,29/03/2012,,,,,56.000
+9409190,2,18/04/2011,,,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),28 tablet
+9402479,3,28/12/2012,,04.06.08.00.00,,Aspirin 75mg dispersible tablets,
+7896160,3,09/01/2014,,06.04.01.01.00,,Pioglitazone 15mg / Metformin 850mg tablets,14 tablet(s)
+5750977,3,26/08/2014,,02.05.05.01.00,,Meloxicam 7.5mg tablets,20.000
+3949855,3,11/07/2012,fo4y.00,02.02.01.00.00,,,56.000
+9409190,4,09/12/2013,bu23.00,07.03.01.00.00,320030001,,1 - 200 dose nasal spray
+4637932,3,23/08/2007,dh4y.00,10.01.01.00.00,,Bisoprolol 5mg tablets,28.000
+8962092,3,25/11/2010,,02.08.02.00.00,,Pizotifen 1.5mg tablets,14 tablet(s)
+0169103,3,11/01/2012,,,,Atenolol 25mg tablets,28 capsules
+1091350,3,12/06/2015,,09.01.01.01.00,,Dihydrocodeine  Tablets  30 mg,2 packs of 56 tablet(s)
+7896160,3,15/07/2013,f923.,02.05.05.02.00,,METHOTREXATE tabs 2.5mg,
+5216158,3,27/08/2013,,06.01.02.02.00,,Fluoxetine Hydrochloride  Capsules  20 mg,100 gram
+1064689,4,10/02/2014,,,,Terazosin 2mg tablets,56.000
+3894871,2,04/08/2009,,02.12.04.00.00,,Bisoprolol 5mg tablets,168.000
+5226712,1,19/10/2015,f294.,09.01.02.02.00,,AMITRIPTYLINE HCl tabs 50mg,56 capsule
+2759533,3,08/09/2015,b211.,01.03.05.00.00,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),500 g
+1055252,3,02/10/2007,b211.,01.03.05.00.00,,Aveeno cream (Johnson & Johnson Ltd),28 tablet
+1894136,3,07/10/2014,,02.04.00.00.00,,Cilest 35microgram/250microgram tablets (Janssen-Cilag Ltd),
+4356390,4,29/01/2013,,02.04.00.00.00,322863001,,4.000
+8766522,3,15/09/2015,,07.04.02.00.00,,Aspirin 75mg dispersible tablets,175.000
+4348378,4,01/06/2015,,02.12.04.00.00,,Lansoprazole 30mg gastro-resistant capsules,28 capsule(s) - 10 mg
+1055252,3,17/08/2009,,13.05.02.01.00,,,28 capsules
+6699668,3,18/04/2006,bdf1.,02.12.04.00.00,134460003,Aspirin 75mg gastro-resistant tablets,60.000
+8962092,3,14/01/2016,,04.09.02.00.00,,AMITRIPTYLINE HCl tabs 50mg,84 tab
+7049179,3,31/07/2014,j22e.,,,,16.000
+4356390,3,04/12/2006,,04.03.03.00.00,,Prednisolone 5mg tablets,1 spray(s) - 50 micrograms/dose
+3555892,4,03/12/2010,,04.07.02.00.00,,,
+1947461,3,18/10/2010,,13.06.02.01.00,,fusidic acid with betamethasone valerate cream 2% + 0.1%,250 ml
+7049179,3,14/08/2013,,0106040G0AAAAAA,,Candesartan 8mg tablets,56 TABLET(S)
+9402479,3,02/02/2015,ph88.,,,,28 tab
+1055115,3,21/03/2006,,01.03.05.00.00,,Paracetamol 500mg tablets,168 tablets
+2553559,1,20/04/2010,bs18.,02.02.01.00.00,,Fluoxetine 20mg capsules,168 tablet(s) - 2.5 mg
+1067925,3,08/03/2013,,03.01.01.04.00,,,56 tablet(s)
+2759533,4,04/03/2014,,13.10.01.02.00,,Juvela gluten free fibre mix (Hero UK Ltd),60 tablet(s)
+8018365,3,21/12/2015,,,,Omeprazole 10mg gastro-resistant capsules,84 tablet
+2550137,3,31/05/2012,,06.02.01.00.00,,Amitriptyline 10mg tablets,56 tablet
+5056803,3,19/12/2013,bxi3.00,06.04.01.01.00,,Diclofenac sodium 50mg gastro-resistant tablets,56 tablets - 2.5 mg
+5228091,3,23/10/2006,,02.09.01.00.00,,Carbomer 0.2% eye gel (Blumont Healthcare Ltd),168 tablet(s)
+4972784,4,30/07/2009,ip3f.,01.02.01.00.00,,Finasteride 5mg tablets,2 packs of 60 tablet(s)
+8962092,4,07/10/2015,,02.02.01.00.00,330781005,Simvastatin 20mg tablets,28.000
+1089543,4,21/05/2013,blb1.,02.09.01.00.00,,Codeine 15mg tablets,28 capsule
+8766522,3,10/03/2014,,11.05.00.00.00,,,56 tablets
+1091350,3,15/02/2010,a6c2.,,,,1 pack of 100 tablet(s)
+5750977,4,14/11/2014,,06.06.02.00.00,,Betahistine 16mg tablets,84 tab
+1015541,3,17/06/2013,,09.04.04.02.00,,,30.000
+4356390,4,17/11/2009,,,,Sertraline 50mg tablets,56 capsule
+4837869,4,10/12/2013,,13.10.03.00.00,,Diclofenac sodium 75mg modified-release tablets,28 tablet(s) - 4 mg
+1138943,2,09/01/2012,,04070200,319996000,Chloramphenicol 0.5% eye drops,56 tablets
+3894871,3,15/02/2016,bl3M.,04.06.03.00.00,,Folic acid 5mg tablets,28 tablet
+2553559,3,04/11/2008,e911.00,06.01.02.02.00,,CALCICHEW-D3 FORTE chewable tab,1 nasal spray
+5286127,3,09/09/2008,,,,Aspirin 75mg dispersible tablets,
+1947461,3,24/03/2014,,01.03.01.00.00,,Aspirin 75mg dispersible tablets,
+7049179,4,01/12/2006,,,415162000,Levothyroxine Sodium TABS 100MICROGRAMS,28 capsules - 150 mg
+1069839,3,27/05/2016,,,,Aspirin 75mg gastro-resistant tablets,
+1036167,3,22/10/2012,,,,,
+9496317,1,17/11/2014,c331.,01.04.02.00.00,,Bendroflumethiazide 2.5mg tablets,
+1108497,4,06/10/2014,,02.12.04.00.00,,,60 tablets
+5991968,3,28/04/2005,,,,Folic acid 5mg tablets,2 packs of 28 capsule(s)
+1120792,3,22/07/2013,,09.06.04.00.00,,BENDROFLUAZIDE tabs 2.5mg,2 - 120 dose inhaler with counter
+0015725,4,28/04/2014,,02.05.04.00.00,,Ramipril 1.25mg capsules,28 tablet
+1030568,1,18/10/2011,,,,Ispaghula husk 3.5g effervescent granules sachets gluten free sugar free (A A H Pharmaceuticals Ltd),112 tablet
+1028163,3,12/07/2010,,,,Tolterodine 2mg tablets,112 tablet
+5750977,3,27/04/2011,,10.01.04.03.00,321987003,Fusidic acid 1% modified-release eye drops,
+0015725,3,29/06/2006,,02.05.04.00.00,322366004,Indapamide 2.5mg tablets,1 pack of 500 mls
+1134652,3,27/05/2014,bxl1.00,10.01.01.00.00,,Dosulepin 25mg capsules,
+0169103,3,06/02/2015,di21.,,,Bisoprolol 1.25mg tablets,56 TABLET(S)
+9157817,3,14/11/2012,,02.09.02.00.00,,Atorvastatin 10mg tablets,168 tablets
+4356390,4,17/09/2007,,,,Beconase Aqueous 50micrograms/dose nasal spray (GlaxoSmithKline UK Ltd),60.000
+3794152,3,27/07/2011,m412.,06.02.01.00.00,,Betahistine 8mg tablets,28 capsule
+8184997,4,20/08/2013,,04.07.02.00.00,,Tetracycline 250mg tablets,
+2759533,3,23/03/2015,ip3e.00,020201,,Simvador 40mg tablets (Discovery Pharmaceuticals),60.000
+1055252,3,22/10/2015,,10.01.03.06.00,,Hydromol ointment (Alliance Pharmaceuticals Ltd),112.000
+3794152,3,01/10/2013,,11.08.01.00.00,,CITALOPRAM tabs 20mg,28.000
+1095400,1,09/11/2009,k8i1.,,,Aspirin 75mg gastro-resistant tablets,21.000
+1025326,3,11/06/2012,dia6.,06.02.01.00.00,,Ramipril 5mg capsules,28.00 tablet(s)
+1069839,4,16/09/2015,,01.03.05.00.00,,Bettamousse 0.1% cutaneous foam (Focus Pharmaceuticals Ltd),56 capsules
+1057974,3,09/02/2015,dnj2.00,,,Ramipril 5mg capsules,60 tabs
+3840609,3,12/08/2013,,03.02.00.00.00,322623000,,60
+0015725,3,10/02/2010,,12.03.02.00.00,,Amlodipine  Tablets  5 mg,56.000
+1133012,4,11/02/2011,,02.09.01.00.00,318980005,Lansoprazole 15mg gastro-resistant capsules,200 ml
+7049179,3,01/12/2006,,0801030P0AAAHAH,,GAVISCON ADVANCE oral suspension sugar-free [RECKITT B],56.000
+2759533,3,27/07/2015,gdew.,03.01.01.03.00,,Qvar 50 inhaler (Teva UK Ltd),7 tablet
+6339714,3,22/03/2013,b431.,11.08.01.00.00,,EZETIMIBE + SIMVASTATIN tabs 10mg + 40mg,56 tablet - 5 mg
+8132321,3,01/09/2015,,01.03.05.00.00,,Oxybutynin 2.5mg tablets,100 capsule - 10 mg
+1134652,4,04/12/2012,,03.01.05.02.00,,Opatanol 1mg/ml eye drops (Alcon Laboratories (UK) Ltd),28 tablet(s)
+1032730,4,02/04/2013,da91.,,,Hydroxychloroquine 200mg tablets,56 capsule(s)
+1064689,3,26/02/2016,ip3b.00,02.02.01.00.00,,Chloramphenicol 0.5% eye drops,1 pack of 60 gram(s)
+8379628,3,21/10/2008,,,,,56 tablet
+1085169,1,14/09/2011,,,,,
+1064689,3,22/10/2012,b211.,02.09.01.00.00,415166002,Dipyridamole 200mg modified-release capsules,28 tab
+1027742,3,22/12/2008,,02.05.05.01.00,,Ranitidine 150mg tablets,28 capsule
+5226712,3,27/07/2011,fo4y.00,02.05.05.01.00,,Calcium and Ergocalciferol tablets,10 - tablet(s)
+1073056,3,15/12/2015,,06.04.01.01.00,,Ramipril 10mg capsules,56 tablet
+1027742,3,21/04/2015,,02.12.04.00.00,,Bisoprolol 5mg tablets,28 tabs

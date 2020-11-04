@@ -52,10 +52,16 @@ class Wrapper(EtlWrapper):
 
         # python transformation:
         self.execute_transformation(covid_to_care_site)
+        self.execute_transformation(gp_clinical_to_care_site)
+        self.execute_transformation(baseline_to_care_site)
         self.execute_transformation(assessment_center_to_location)
         self.execute_transformation(baseline_to_person)
         self.execute_transformation(gp_clinical_to_visit_occurrence)
         self.execute_transformation(covid_to_observation)
+        self.execute_transformation(covid_to_visit_occurrence)
+        self.execute_transformation(gp_prescriptions_to_visit_occurrence)
+        self.execute_transformation(baseline_to_visit_occurrence)
+        self.execute_transformation(gp_registrations_to_observation_period)
 
         # sql transformation:
         # self.execute_sql_file(self.path_sql_transformations / 'sample_script.sql')

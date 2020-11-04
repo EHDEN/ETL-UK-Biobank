@@ -14,6 +14,10 @@ initFramework <- function() {
   defaults$`21000-0.0` <- '1'
   defaults$`21000-1.0` <- '1002'
   defaults$`52-0.0` <- '1'
+  defaults$`53-0.0` <- ''
+  defaults$`53-1.0` <- ''
+  defaults$`53-2.0` <- ''
+  defaults$`53-3.0` <- ''
   defaults$`54-0.0` <- '11004'
   defaults$`54-1.0` <- '11009'
   defaults$`54-2.0` <- '11014'
@@ -134,7 +138,7 @@ initFramework <- function() {
   defaults$dmd_code <- ''
   defaults$drug_name <- ''
   defaults$quantity <- ''
-  assign('gp_scripts', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_prescriptions', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- ''
@@ -156,7 +160,7 @@ initFramework <- function() {
 
 initFramework()
 
-set_defaults_baseline <- function(eid,`34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
+set_defaults_baseline <- function(eid,`34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `53-0.0`, `53-1.0`, `53-2.0`, `53-3.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
@@ -172,6 +176,18 @@ set_defaults_baseline <- function(eid,`34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.
   }
   if (!missing(`52-0.0`)) {
     defaults$`52-0.0` <- `52-0.0`
+  }
+  if (!missing(`53-0.0`)) {
+    defaults$`53-0.0` <- `53-0.0`
+  }
+  if (!missing(`53-1.0`)) {
+    defaults$`53-1.0` <- `53-1.0`
+  }
+  if (!missing(`53-2.0`)) {
+    defaults$`53-2.0` <- `53-2.0`
+  }
+  if (!missing(`53-3.0`)) {
+    defaults$`53-3.0` <- `53-3.0`
   }
   if (!missing(`54-0.0`)) {
     defaults$`54-0.0` <- `54-0.0`
@@ -483,8 +499,8 @@ set_defaults_hesin_diag <- function(eid, ins_index, arr_index, level, diag_icd9,
   invisible(defaults)
 }
 
-set_defaults_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
-  defaults <- get('gp_scripts', envir = frameworkContext$defaultValues)
+set_defaults_gp_prescriptions<- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
+  defaults <- get('gp_prescriptions', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -509,7 +525,7 @@ set_defaults_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_
   if (!missing(quantity)) {
     defaults$quantity <- quantity
   }
-  assign('gp_scripts', defaults, envir = frameworkContext$defaultValues)
+  assign('gp_prescriptions', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
@@ -574,8 +590,8 @@ get_defaults_hesin_diag <- function() {
   return(defaults)
 }
 
-get_defaults_gp_scripts <- function() {
-  defaults <- get('gp_scripts', envir = frameworkContext$defaultValues)
+get_defaults_gp_prescriptions <- function() {
+  defaults <- get('gp_prescriptions', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
@@ -589,7 +605,7 @@ declareTest <- function(id, description) {
   frameworkContext$testDescription <- description
 }
 
-add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
+add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `53-0.0`, `53-1.0`, `53-2.0`, `53-3.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
@@ -632,6 +648,38 @@ add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-
   }
   fields <- c(fields, "52-0.0")
   values <- c(values, if (is.null(`52-0.0`)) "NULL" else if (is(`52-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`52-0.0`), "'"))
+  
+  if (missing(`53-0.0`)) {
+    `53-0.0` <- defaults$`53-0.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-0.0")
+  values <- c(values, if (is.null(`53-0.0`)) "NULL" else if (is(`53-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-0.0`), "'"))
+  
+  if (missing(`53-1.0`)) {
+    `53-1.0` <- defaults$`53-1.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-1.0")
+  values <- c(values, if (is.null(`53-1.0`)) "NULL" else if (is(`53-1.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-1.0`), "'"))
+  
+  if (missing(`53-2.0`)) {
+    `53-2.0` <- defaults$`53-2.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-2.0")
+  values <- c(values, if (is.null(`53-2.0`)) "NULL" else if (is(`53-2.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-2.0`), "'"))
+  
+  if (missing(`53-3.0`)) {
+    `53-3.0` <- defaults$`53-3.0`
+  } else {
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
+  }
+  fields <- c(fields, "53-3.0")
+  values <- c(values, if (is.null(`53-3.0`)) "NULL" else if (is(`53-3.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`53-3.0`), "'"))
   
   if (missing(`54-0.0`)) {
     `54-0.0` <- defaults$`54-0.0`
@@ -1406,14 +1454,14 @@ add_hesin_diag <- function(eid, ins_index, arr_index, level, diag_icd9, diag_icd
   invisible(NULL)
 }
 
-add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
-  defaults <- get('gp_scripts', envir = frameworkContext$defaultValues)
+add_gp_prescriptions <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity) {
+  defaults <- get('gp_prescriptions', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1421,7 +1469,7 @@ add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd
   if (missing(data_provider)) {
     data_provider <- defaults$data_provider
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.data_provider')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.data_provider')
   }
   fields <- c(fields, "data_provider")
   values <- c(values, if (is.null(data_provider)) "NULL" else if (is(data_provider, "subQuery")) paste0("(", as.character(data_provider), ")") else paste0("'", as.character(data_provider), "'"))
@@ -1429,7 +1477,7 @@ add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd
   if (missing(issue_date)) {
     issue_date <- defaults$issue_date
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.issue_date')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.issue_date')
   }
   fields <- c(fields, "issue_date")
   values <- c(values, if (is.null(issue_date)) "NULL" else if (is(issue_date, "subQuery")) paste0("(", as.character(issue_date), ")") else paste0("'", as.character(issue_date), "'"))
@@ -1437,7 +1485,7 @@ add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd
   if (missing(read_2)) {
     read_2 <- defaults$read_2
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.read_2')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.read_2')
   }
   fields <- c(fields, "read_2")
   values <- c(values, if (is.null(read_2)) "NULL" else if (is(read_2, "subQuery")) paste0("(", as.character(read_2), ")") else paste0("'", as.character(read_2), "'"))
@@ -1445,7 +1493,7 @@ add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd
   if (missing(bnf_code)) {
     bnf_code <- defaults$bnf_code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.bnf_code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.bnf_code')
   }
   fields <- c(fields, "bnf_code")
   values <- c(values, if (is.null(bnf_code)) "NULL" else if (is(bnf_code, "subQuery")) paste0("(", as.character(bnf_code), ")") else paste0("'", as.character(bnf_code), "'"))
@@ -1453,7 +1501,7 @@ add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd
   if (missing(dmd_code)) {
     dmd_code <- defaults$dmd_code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.dmd_code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.dmd_code')
   }
   fields <- c(fields, "dmd_code")
   values <- c(values, if (is.null(dmd_code)) "NULL" else if (is(dmd_code, "subQuery")) paste0("(", as.character(dmd_code), ")") else paste0("'", as.character(dmd_code), "'"))
@@ -1461,7 +1509,7 @@ add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd
   if (missing(drug_name)) {
     drug_name <- defaults$drug_name
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.drug_name')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.drug_name')
   }
   fields <- c(fields, "drug_name")
   values <- c(values, if (is.null(drug_name)) "NULL" else if (is(drug_name, "subQuery")) paste0("(", as.character(drug_name), ")") else paste0("'", as.character(drug_name), "'"))
@@ -1469,12 +1517,12 @@ add_gp_scripts <- function(eid, data_provider, issue_date, read_2, bnf_code, dmd
   if (missing(quantity)) {
     quantity <- defaults$quantity
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_scripts.quantity')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'gp_prescriptions.quantity')
   }
   fields <- c(fields, "quantity")
   values <- c(values, if (is.null(quantity)) "NULL" else if (is(quantity, "subQuery")) paste0("(", as.character(quantity), ")") else paste0("'", as.character(quantity), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_scripts", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "gp_prescriptions", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
@@ -11599,7 +11647,7 @@ generateInsertSql <- function(databaseSchema = NULL) {
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death_cause;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.covid;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.hesin_diag;")
-  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_scripts;")
+  insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.gp_prescriptions;")
   insertSql <- c(insertSql, "TRUNCATE TABLE @cdm_database_schema.death;")
   createInsertStatement <- function(insert, env) {
     s <- c()
