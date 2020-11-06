@@ -23,7 +23,7 @@ import src.main.python.core.model as cdm
 logger = logging.getLogger(__name__)
 
 
-class ConceptMapper:
+class CodeMapper:
 
     def __init__(self, database):
 
