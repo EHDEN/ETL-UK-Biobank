@@ -24,6 +24,9 @@ logger = logging.getLogger(__name__)
 
 class MappingDict:
 
+    def __init__(self):
+        self.mapping_dict = {}
+
     class CodeMapping:
 
         def __init__(self):
@@ -49,6 +52,18 @@ class MappingDict:
                    f'value_comment: {self.value_comment}'
 
 
+    def add_mapping(self, row: pd.Series):
+        pass
+
+    def lookup(self, vocabulary_code: str, full_output: bool = False) -> CodeMapping:
+
+        if not targets:
+            return Target()
+        elif len(targets) > 1:
+            logger.warning(f'Multiple targets found for {variable}-{value}, returning only first.')
+
+
+
 class CodeMapper:
 
     def __init__(self, database, cdm):
@@ -56,17 +71,17 @@ class CodeMapper:
         self.db = database
         self.cdm = cdm
 
-    def nonstandard_to_standard_code_dict(self,
-                                          vocabulary_id: Union[str, List[str]],
-                                          restrict_to_codes: Optional[List[str]] = None,
-                                          invalid_reason: Optional[Union[str, List[str]]] = None,
-                                          standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
+    def generate_code_mapping_dictionary(self,
+                                         vocabulary_id: Union[str, List[str]],
+                                         restrict_to_codes: Optional[List[str]] = None,
+                                         invalid_reason: Optional[Union[str, List[str]]] = None,
+                                         standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
             -> MappingDict:
 
         """
-        Given an OMOP vocabulary containing non-standard codes,
+        Given one or more non-standard ontologies (e.g. Read, ICD10),
         retrieves the mappings to standard OMOP concept_ids (typically SNOMED);
-        the results can be restricted to a specific list of vocabulary codes to save memory.
+        the results can be restricted to a specific list of ontology codes to save memory.
 
         Source (non-standard) code matches can be filtered
         by invalid_reason and standard_concept values;
@@ -77,17 +92,20 @@ class CodeMapper:
 
         Returns a dictionary with the results of the mapping.
 
-        :param vocabulary_id:
-        :param restrict_to_codes:
-        :param invalid_reason:
-        :param standard_concept:
-        :return:
+        :param vocabulary_id: valid OMOP vocabulary_id(s) (list or string)
+        :param restrict_to_codes: (optional) subset of vocabulary codes
+        to retrieve mappings for(list)
+        :param invalid_reason: (optional) any of 'U', 'D', 'R', 'NONE' (list or string)
+        :param standard_concept: (optional) any of 'S', 'C', 'NONE' (list or string)
+        :return: MappingDict
         """
 
         mapping_df = self._map_vocabulary_codes_to_standard_concept_ids(
             vocabulary_id, restrict_to_codes, invalid_reason, standard_concept)
 
-        mapping_dict = mapping_df.set_index('source.concept_code').to_dict()['target.concept_id']
+        mapping_dict = MappingDict()
+        for _, row in mapping_df.iterrows():
+            mapping_dict.add_mapping(row)
 
         return mapping_dict
 
