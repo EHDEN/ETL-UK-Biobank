@@ -22,58 +22,81 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+class MappingDict:
+
+    class CodeMapping:
+
+        def __init__(self):
+            self.concept_id = None
+            self.value_as_concept_id = None
+            self.value_as_number = None
+            self.unit_concept_id = None
+            self.source_value = None
+            self.value_source_value = None
+
+            self.variable_comment = None
+            self.value_comment = None
+
+        def __str__(self):
+            return f'{self.source_value}-{self.value_source_value} => ' \
+                   f'concept_id: {self.concept_id}, ' \
+                   f'value_as_concept_id: {self.value_as_concept_id}, ' \
+                   f'value_as_number: {self.value_as_number}, ' \
+                   f'unit_concept_id: {self.unit_concept_id}, ' \
+                   f'source_value: {self.source_value}, ' \
+                   f'value_source_value: {self.value_source_value}, ' \
+                   f'variable_comment: {self.variable_comment}, ' \
+                   f'value_comment: {self.value_comment}'
+
+
 class CodeMapper:
 
     def __init__(self, database, cdm):
 
         self.db = database
         self.cdm = cdm
-        self.mapping_dict = {}
-
 
     def nonstandard_to_standard_code_dict(self,
-                                          source_code_list: list,
-                                          vocabulary_id: Optional[Union[str, list]] = None,
-                                          invalid_reason: Optional[Union[str, list]] = None,
-                                          standard_concept: Optional[Union[str, list]] = None) \
-            -> Dict:
+                                          vocabulary_id: Union[str, List[str]],
+                                          restrict_to_codes: Optional[List[str]] = None,
+                                          invalid_reason: Optional[Union[str, List[str]]] = None,
+                                          standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
+            -> MappingDict:
 
         """
-        Given a non-standard list of ontology codes and the vocabularies to look into,
-        retrieves the corresponding standard OMOP concept_id (typically SNOMED).
+        Given an OMOP vocabulary containing non-standard codes,
+        retrieves the mappings to standard OMOP concept_ids (typically SNOMED);
+        the results can be restricted to a specific list of vocabulary codes to save memory.
 
-        You can filter source code matches by invalid_reason and standard_concept;
-        target concept_ids are always standard and valid.
+        Source (non-standard) code matches can be filtered
+        by invalid_reason and standard_concept values;
+        target (standard) concept_ids are always standard and valid.
 
-        Note that multiple mappings from non-standard to standard concepts could exist.
+        Note that multiple mappings from non-standard codes
+        to standard concept_ids are possible.
 
         Returns a dictionary with the results of the mapping.
+
+        :param vocabulary_id:
+        :param restrict_to_codes:
+        :param invalid_reason:
+        :param standard_concept:
+        :return:
         """
 
-        mapping_df = self.map_vocabulary_codes_to_standard_concept_ids(
-            vocabulary_id, source_code_list, invalid_reason, standard_concept)
+        mapping_df = self._map_vocabulary_codes_to_standard_concept_ids(
+            vocabulary_id, restrict_to_codes, invalid_reason, standard_concept)
 
         mapping_dict = mapping_df.set_index('source.concept_code').to_dict()['target.concept_id']
 
         return mapping_dict
 
-    def map_vocabulary_codes_to_standard_concept_ids(self,
-                                    vocabulary_id: Union[str, List[str]],
-                                    restrict_to_codes: Optional[List[str]] = None,
-                                    invalid_reason: Optional[Union[str, List[str]]] = None,
-                                    standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
+    def _map_vocabulary_codes_to_standard_concept_ids(self,
+                                                      vocabulary_id: Union[str, List[str]],
+                                                      restrict_to_codes: Optional[List[str]] = None,
+                                                      invalid_reason: Optional[Union[str, List[str]]] = None,
+                                                      standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
             -> pd.DataFrame:
-
-        '''
-        Given an OMOP vocabulary name composed of non-standard codes,
-        retrieves the mappings to standard OMOP concept_id (typically SNOMED);
-        the results can be restricted to a specific list of non-standard codes to save memory.
-
-        Source (non-standard) code matches can be filterd by invalid_reason and standard_concept values;
-        target (standard) concept_ids are always standard and valid.
-
-        Note that multiple mappings from non-standard codes to standard concept_ids are possible.
-        '''
 
         source = aliased(self.cdm.Concept)
         target = aliased(self.cdm.Concept)
