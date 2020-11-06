@@ -15,9 +15,8 @@
 import pandas as pd
 from sqlalchemy import and_
 from sqlalchemy.orm import aliased
-from typing import Optional, Union, Tuple, List
+from typing import Optional, Union, List, Dict
 import logging
-import src.main.python.core.model as cdm
 
 
 logger = logging.getLogger(__name__)
@@ -25,18 +24,19 @@ logger = logging.getLogger(__name__)
 
 class CodeMapper:
 
-    def __init__(self, database):
+    def __init__(self, database, cdm):
 
         self.db = database
         self.cdm = cdm
         self.mapping_dict = {}
+
 
     def nonstandard_to_standard_code_dict(self,
                                           source_code_list: list,
                                           vocabulary_id: Optional[Union[str, list]] = None,
                                           invalid_reason: Optional[Union[str, list]] = None,
                                           standard_concept: Optional[Union[str, list]] = None) \
-            -> dict:
+            -> Dict:
 
         """
         Given a non-standard list of ontology codes and the vocabularies to look into,
@@ -75,8 +75,8 @@ class CodeMapper:
         Note that multiple mappings from non-standard codes to standard concept_ids are possible.
         '''
 
-        source = aliased(cdm.Concept)
-        target = aliased(cdm.Concept)
+        source = aliased(self.cdm.Concept)
+        target = aliased(self.cdm.Concept)
 
         source_filters = []
 
@@ -101,8 +101,9 @@ class CodeMapper:
             source_filters.append(source.standard_concept == standard_concept)
 
         target_filters = [
-            cdm.ConceptRelationship.relationship_id == 'Maps to',
-            # note: the following shouldn't be necessary given the nature of the "Maps to" relationship
+            self.cdm.ConceptRelationship.relationship_id == 'Maps to',
+            # the following shouldn't really be necessary given the nature of the "Maps to"
+            # relationships, but it doesn't hurt to be sure..
             target.standard_concept == 'S',
             target.invalid_reason == None
         ]
@@ -118,10 +119,10 @@ class CodeMapper:
             target.concept_id.label('target.concept_id'),
             target.concept_name.label('target.concept_name'),
             target.vocabulary_id.label('target.vocabulary_id')) \
-            .join(cdm.ConceptRelationship,
-                  source.concept_id == cdm.ConceptRelationship.concept_id_1) \
+            .join(self.cdm.ConceptRelationship,
+                  source.concept_id == self.cdm.ConceptRelationship.concept_id_1) \
             .join(target,
-                  target.concept_id == cdm.ConceptRelationship.concept_id_2) \
+                  target.concept_id == self.cdm.ConceptRelationship.concept_id_2) \
             .filter(and_(*source_filters)) \
             .filter(and_(*target_filters)) \
             .all()
