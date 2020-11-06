@@ -15,7 +15,7 @@
 import pandas as pd
 from sqlalchemy import and_
 from sqlalchemy.orm import aliased
-from typing import Optional, Union, Tuple
+from typing import Optional, Union, Tuple, List
 import logging
 import src.main.python.core.model as cdm
 
@@ -29,6 +29,7 @@ class ConceptMapper:
 
         self.db = database
         self.cdm = cdm
+        self.mapping_dict = {}
 
     def nonstandard_to_standard_code_dict(self,
                                           source_code_list: list,
@@ -49,79 +50,85 @@ class ConceptMapper:
         Returns a dictionary with the results of the mapping.
         """
 
-        mapping_df = self.nonstandard_to_standard_code_df(
-            source_code_list, vocabulary_id, invalid_reason, standard_concept)
+        mapping_df = self.map_vocabulary_codes_to_standard_concept_ids(
+            vocabulary_id, source_code_list, invalid_reason, standard_concept)
 
         mapping_dict = mapping_df.set_index('source.concept_code').to_dict()['target.concept_id']
 
         return mapping_dict
 
-    def nonstandard_to_standard_code_df(self,
-                                        source_code_list: list,
-                                        vocabulary_id: Optional[Union[str, list]] = None,
-                                        invalid_reason: Optional[Union[str, list]] = None,
-                                        standard_concept: Optional[Union[str, list]] = None) \
+    def map_vocabulary_codes_to_standard_concept_ids(self,
+                                    vocabulary_id: Union[str, List[str]],
+                                    restrict_to_codes: Optional[List[str]] = None,
+                                    invalid_reason: Optional[Union[str, List[str]]] = None,
+                                    standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
             -> pd.DataFrame:
-        """
-        Given a non-standard list of ontology codes and the vocabularies to look into,
-        retrieves the corresponding standard OMOP concept_id (typically SNOMED),
-        plus additional information about both source and target codes.
 
-        You can filter source code matches by invalid_reason and standard_concept;
-        target concept_ids are always standard and valid.
+        '''
+        Given an OMOP vocabulary name composed of non-standard codes,
+        retrieves the mappings to standard OMOP concept_id (typically SNOMED);
+        the results can be restricted to a specific list of non-standard codes to save memory.
 
-        Note that multiple mappings from non-standard to standard concepts could exist.
+        Source (non-standard) code matches can be filterd by invalid_reason and standard_concept values;
+        target (standard) concept_ids are always standard and valid.
 
-        Returns a dataframe with the results of the mapping.
-        """
+        Note that multiple mappings from non-standard codes to standard concept_ids are possible.
+        '''
 
-        source = aliased(self.cdm.Concept)
-        target = aliased(self.cdm.Concept)
+        source = aliased(cdm.Concept)
+        target = aliased(cdm.Concept)
 
         source_filters = []
 
+        # vocabulary: either str or list
         if type(vocabulary_id) == list:
             source_filters.append(source.vocabulary_id.in_(vocabulary_id))
-        else:
+        elif type(vocabulary_id) == str:
             source_filters.append(source.vocabulary_id == vocabulary_id)
-
+        # invalid reason: either list, str (incl. NULL), or None (in which case filter is not applied)
         if type(invalid_reason) == list:
             source_filters.append(source.invalid_reason.in_(invalid_reason))
-        else:
+        elif invalid_reason == 'NULL':
+            source_filters.append(source.invalid_reason == None)
+        elif type(invalid_reason) == str:
             source_filters.append(source.invalid_reason == invalid_reason)
-
+        # standard concept: either list, str (incl. NULL), or None (in which case filter is not applied)
         if type(standard_concept) == list:
             source_filters.append(source.standard_concept.in_(standard_concept))
-        else:
+        elif standard_concept == 'NULL':
+            source_filters.append(source.standard_concept == None)
+        elif type(standard_concept) == str:
             source_filters.append(source.standard_concept == standard_concept)
 
-        with self.db.session_scope() as session:
+        target_filters = [
+            cdm.ConceptRelationship.relationship_id == 'Maps to',
+            # note: the following shouldn't be necessary given the nature of the "Maps to" relationship
+            target.standard_concept == 'S',
+            target.invalid_reason == None
+        ]
 
-            records = session.query(
-                source.concept_code.label('source.concept_code'),
-                source.concept_id.label('source.concept_id'),
-                source.concept_name.label('source.concept_name'),
-                source.vocabulary_id.label('source.vocabulary_id'),
-                source.standard_concept.label('source.standard_concept'),
-                source.invalid_reason.label('source.invalid_reason'),
-                target.concept_code.label('target.concept_code'),
-                target.concept_id.label('target.concept_id'),
-                target.concept_name.label('target.concept_name'),
-                target.vocabulary_id.label('target.vocabulary_id')) \
-                .join(self.cdm.ConceptRelationship,
-                      source.concept_id == cdm.ConceptRelationship.concept_id_1) \
-                .join(target,
-                      target.concept_id == cdm.ConceptRelationship.concept_id_2) \
-                .filter(and_(*source_filters)) \
-                .filter(
-                cdm.ConceptRelationship.relationship_id == 'Maps to',
-                # note: the following shouldn't be necessary given the nature of the "Maps to" relationship
-                target.standard_concept == 'S',
-                target.invalid_reason == None,
-                # the most expensive filter is applied last
-                source.concept_code.in_(source_code_list)) \
-                .all()
+        records = self.db.session.query(
+            source.concept_code.label('source.concept_code'),
+            source.concept_id.label('source.concept_id'),
+            source.concept_name.label('source.concept_name'),
+            source.vocabulary_id.label('source.vocabulary_id'),
+            source.standard_concept.label('source.standard_concept'),
+            source.invalid_reason.label('source.invalid_reason'),
+            target.concept_code.label('target.concept_code'),
+            target.concept_id.label('target.concept_id'),
+            target.concept_name.label('target.concept_name'),
+            target.vocabulary_id.label('target.vocabulary_id')) \
+            .join(cdm.ConceptRelationship,
+                  source.concept_id == cdm.ConceptRelationship.concept_id_1) \
+            .join(target,
+                  target.concept_id == cdm.ConceptRelationship.concept_id_2) \
+            .filter(and_(*source_filters)) \
+            .filter(and_(*target_filters)) \
+            .all()
 
         records_df = pd.DataFrame(records)
+
+        if restrict_to_codes:
+            records_df.query('`source.concept_code` in @restrict_to_codes', inplace=True)
 
         return records_df
