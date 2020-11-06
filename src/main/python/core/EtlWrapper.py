@@ -33,6 +33,8 @@ class EtlWrapper:
     to get direct feedback if there are issues. This does make the loading step
     of the ETL significantly slower.
     """
+
+    cdm = cdm
     
     SOURCE_ROW_COUNT_FORMAT = '{:<60.60} {:>10}'
 
