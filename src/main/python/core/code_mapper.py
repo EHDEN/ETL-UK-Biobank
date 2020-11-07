@@ -108,9 +108,12 @@ class MappingDict:
 
         if hits and first_only:
             if len(hits)>1:
-                logger.warning(f'Multiple mappings found for {vocabulary_code}, '
-                               f'returning only first.')
+                logger.debug(f'Multiple mappings available for {vocabulary_code}, '
+                             f'returning only first.')
             return hits[0]
+
+        if not hits:
+            logger.debug(f'No mapping available for {vocabulary_code}')
 
         return hits
 
@@ -177,6 +180,9 @@ class CodeMapper:
         elif type(standard_concept) == str:
             source_filters.append(source.standard_concept == standard_concept)
 
+        if restrict_to_codes:
+            source_filters.append(source.concept_code.in_(restrict_to_codes))
+
         target_filters = [
             self.cdm.ConceptRelationship.relationship_id == 'Maps to',
             # the following shouldn't really be necessary given the nature of the "Maps to"
@@ -206,16 +212,12 @@ class CodeMapper:
                 .all()
 
         mapping_df = pd.DataFrame(records)
-
-        if restrict_to_codes:
-            mapping_df.query('`source.concept_code` in @restrict_to_codes', inplace=True)
-
         mapping_dict = MappingDict(mapping_df)
 
         if restrict_to_codes:
             not_found = set(restrict_to_codes) - set(mapping_dict.mapping_dict.keys())
             if not_found:
-                logger.warning(f'No mapping to standard concept id for '
+                logger.warning(f'No mapping to standard concept_id could be generated for '
                                f'{len(not_found)} / {len(restrict_to_codes)} {vocabulary_id} '
                                f'codes: {not_found}')
 
