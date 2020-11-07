@@ -3,13 +3,33 @@
 ### Reading from gp_clinical
 
 The _gp_clinical_ table contains clinical records from primary care linked data of consented UKB participants.
-The records are retrieved from four different source systems (providers); EMIS/Vision Scotland, EMIS/Vision Wales, TPP England and Vision England. (Note: EMIS England is missing)
+The variables include date and clinical code (Read v2 or CTV3 1) for primary care events, 
+such as consultations, diagnoses, history, symptoms, procedures, laboratory tests and administrative information.
+The records are retrieved from four different source systems (providers): EMIS/Vision Scotland, EMIS/Vision Wales, 
+TPP England and Vision England (Note: EMIS England is missing).
 Coded data has been obtained for just 45% of the UKB participants.
 
-Each provider stores the data in its own format. And each clinical code requires its own set of values. 
-Therefore, the meaning of `value1`, `value2` and `value3` differ per `data_provider` and per `read_code`. This makes for a complex mapping.
-
-**TODO**
+####Notes on variables:
+- `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 1 (i.e. Read v3). 
+Mappings to standard OMOP concept_ids are only available for Read v2 codes in Athena,
+but CTV3 codes that overlap with Read v2 could be also be mapped.
+- `value1`, `value2`, `value3` fields: each provider stores the data in its own format, 
+and each Read clinical code requires its own set of values. 
+Therefore, the meaning of `value1`, `value2` and `value3` differ per `data_provider` and per `read_2` / `read_3` code. 
+Provider-specific mapping logic needs to be implemented, 
+for some of the values this is available at [https://github.com/spiros/ukb-biomarker-phenotypes](
+https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
+Suppliers’ extracts contain only numeric data in one (TPP) or two (England (Vision), Wales) `value` fields.
+- `event_dt` (date) field: to protect individuals, alterations have been made to dates in relation to the participant's
+ date of birth as follows: 01/01/1901 (before birth), 02/02/1902 (on birth), 03/03/1903 (after birth), 07/07/2037 (future). 
+ 
+ 
+ ###TBD
+ - decide on date handling (`event_dt`)
+ - map Read codes to standard OMOP concept_ids
+ - map value fields based on provider/Read code-specific logic (only selected phenotypes, 
+ start with examples from [https://github.com/spiros/ukb-biomarker-phenotypes](https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
+ Ideally capture logic in a mapping table and automatically apply during ETL execution.
 
 ![](md_files/image1.png)
 
@@ -21,7 +41,7 @@ Therefore, the meaning of `value1`, `value2` and `value3` differ per `data_provi
 | start_date | event_dt | If date empty, ignore record. Capture as observation (history of) |  |
 | start_datetime | event_dt |  |  |
 | visit_occurrence_id | eid<br>event_dt | Look up visit occurrence by unique eid+event_dt<br> |  |
-| provider_id |  |  |  |
+| provider_id | data_provider | 1 = England (Vision), 2 = Scotland, 3 = England (TPP), 4 = Wales (see [here](https://biobank.ctsu.ox.ac.uk/crystal/coding.cgi?id=626)) |  |
 | concept_id | read_code | Map to OMOP standard concept |  |
 | source_value | read_code |  |  |
 | source_concept_id | read_code | As Read concept |  |
