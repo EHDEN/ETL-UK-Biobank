@@ -51,8 +51,7 @@ class MappingDict:
     def __init__(self, mapping_df):
         self.mapping_dict = self.from_mapping_df(mapping_df)
 
-    def from_mapping_df(self, mapping_df: pd.DataFrame) -> Dict[str, Union[List[CodeMapping],
-                                                                           List[str]]]:
+    def from_mapping_df(self, mapping_df: pd.DataFrame) -> Dict[str, List[CodeMapping]]:
 
         mapping_dict = {}
 
@@ -64,16 +63,44 @@ class MappingDict:
 
         return mapping_dict
 
-    def lookup(self, vocabulary_code: str, full_output: bool = False) -> Union[List[str],
-                                                                               List[CodeMapping]]:
+    def lookup(self, vocabulary_code: str,
+               first_only: bool = False,
+               full_mapping: bool = False) \
+            -> Union[List[str], List[CodeMapping], str, CodeMapping]:
 
-        if full_output:
-            return self.mapping_dict.get(vocabulary_code, []) # full mapping object
+        """
+        Given a vocabulary code, retrieves a list of all corresponding
+        standard concept_ids from the stored mapping dictionary.
+        Optionally, you can restrict the results to the first
+        available match. For reviewing purposes, you can also opt to
+        retrieve the full mapping information as a CodeMapping object.
+
+        :param vocabulary_code: string representing the code to lookup
+        :param first_only: if True, return the first available match
+        only (default False)
+        :param full_mapping: if True, return the full mapping
+        information as a CodeMapping object (default False)
+        :return: a single match or list of matches, either standard
+        concept_ids (string) or CodeMapping objects
+        """
+
+        if not self.mapping_dict:
+            logger.warning('Trying to retrieve a mapping from an empty dictionary!')
+
+        if full_mapping:
+            hits = self.mapping_dict.get(vocabulary_code, []) # full CodeMapping object
         else:
-            concept_ids = []
+            hits=[]
             for mapping in self.mapping_dict.get(vocabulary_code, []):
-                concept_ids.append(mapping.concept_id) # standard concept_id only
-            return concept_ids
+                hits.append(mapping.concept_id) # standard concept_id only
+
+        if hits and first_only:
+            if len(hits)>1:
+                logger.warning(f'Multiple mappings found for {vocabulary_code}, returning only '
+                               f'first.')
+            return hits[0]
+
+        return hits
 
 
 class CodeMapper:
@@ -91,9 +118,10 @@ class CodeMapper:
             -> MappingDict:
 
         """
-        Given one or more non-standard ontologies (e.g. Read, ICD10),
-        retrieves the mappings to standard OMOP concept_ids (typically SNOMED);
-        the results can be restricted to a specific list of ontology codes to save memory.
+        Given one or more non-standard vocabulary names (e.g. Read, ICD10),
+        creates a dictionary of mappings from the non-standard vocabulary codes
+        to standard OMOP concept_ids (typically SNOMED);
+        the results can be restricted to a specific list of vocabulary codes to save memory.
 
         Source (non-standard) code matches can be filtered
         by invalid_reason and standard_concept values;
