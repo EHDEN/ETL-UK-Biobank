@@ -186,24 +186,25 @@ class CodeMapper:
             target.invalid_reason == None
         ]
 
-        records = self.db.session.query(
-            source.concept_code.label('source.concept_code'),
-            source.concept_id.label('source.concept_id'),
-            source.concept_name.label('source.concept_name'),
-            source.vocabulary_id.label('source.vocabulary_id'),
-            source.standard_concept.label('source.standard_concept'),
-            source.invalid_reason.label('source.invalid_reason'),
-            target.concept_code.label('target.concept_code'),
-            target.concept_id.label('target.concept_id'),
-            target.concept_name.label('target.concept_name'),
-            target.vocabulary_id.label('target.vocabulary_id')) \
-            .join(self.cdm.ConceptRelationship,
-                  source.concept_id == self.cdm.ConceptRelationship.concept_id_1) \
-            .join(target,
-                  target.concept_id == self.cdm.ConceptRelationship.concept_id_2) \
-            .filter(and_(*source_filters)) \
-            .filter(and_(*target_filters)) \
-            .all()
+        with self.db.session_scope() as session:
+            records = session.query(
+                source.concept_code.label('source.concept_code'),
+                source.concept_id.label('source.concept_id'),
+                source.concept_name.label('source.concept_name'),
+                source.vocabulary_id.label('source.vocabulary_id'),
+                source.standard_concept.label('source.standard_concept'),
+                source.invalid_reason.label('source.invalid_reason'),
+                target.concept_code.label('target.concept_code'),
+                target.concept_id.label('target.concept_id'),
+                target.concept_name.label('target.concept_name'),
+                target.vocabulary_id.label('target.vocabulary_id')) \
+                .join(self.cdm.ConceptRelationship,
+                      source.concept_id == self.cdm.ConceptRelationship.concept_id_1) \
+                .join(target,
+                      target.concept_id == self.cdm.ConceptRelationship.concept_id_2) \
+                .filter(and_(*source_filters)) \
+                .filter(and_(*target_filters)) \
+                .all()
 
         mapping_df = pd.DataFrame(records)
 
