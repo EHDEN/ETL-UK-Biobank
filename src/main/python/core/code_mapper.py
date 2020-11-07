@@ -22,46 +22,58 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class MappingDict:
+class CodeMapping:
 
     def __init__(self):
-        self.mapping_dict = {}
+        self.concept_id = None
+        self.value_as_concept_id = None
+        self.value_as_number = None
+        self.unit_concept_id = None
+        self.source_value = None
+        self.value_source_value = None
 
-    class CodeMapping:
+        self.variable_comment = None
+        self.value_comment = None
 
-        def __init__(self):
-            self.concept_id = None
-            self.value_as_concept_id = None
-            self.value_as_number = None
-            self.unit_concept_id = None
-            self.source_value = None
-            self.value_source_value = None
+    def __str__(self):
+        return f'{self.source_value}-{self.value_source_value} => ' \
+               f'concept_id: {self.concept_id}, ' \
+               f'value_as_concept_id: {self.value_as_concept_id}, ' \
+               f'value_as_number: {self.value_as_number}, ' \
+               f'unit_concept_id: {self.unit_concept_id}, ' \
+               f'source_value: {self.source_value}, ' \
+               f'value_source_value: {self.value_source_value}, ' \
+               f'variable_comment: {self.variable_comment}, ' \
+               f'value_comment: {self.value_comment}'
 
-            self.variable_comment = None
-            self.value_comment = None
+class MappingDict:
 
-        def __str__(self):
-            return f'{self.source_value}-{self.value_source_value} => ' \
-                   f'concept_id: {self.concept_id}, ' \
-                   f'value_as_concept_id: {self.value_as_concept_id}, ' \
-                   f'value_as_number: {self.value_as_number}, ' \
-                   f'unit_concept_id: {self.unit_concept_id}, ' \
-                   f'source_value: {self.source_value}, ' \
-                   f'value_source_value: {self.value_source_value}, ' \
-                   f'variable_comment: {self.variable_comment}, ' \
-                   f'value_comment: {self.value_comment}'
+    def __init__(self, mapping_df):
+        self.mapping_dict = self.from_mapping_df(mapping_df)
 
+    def from_mapping_df(self, mapping_df: pd.DataFrame) -> Dict[str, Union[List[CodeMapping],
+                                                                           List[str]]]:
 
-    def add_mapping(self, row: pd.Series):
-        pass
+        mapping_dict = {}
 
-    def lookup(self, vocabulary_code: str, full_output: bool = False) -> CodeMapping:
+        for _, row in mapping_df.iterrows():
+            code = row['source.concept_code']
+            mapping = CodeMapping()
+            # TODO
+            mapping_dict[code] = mapping_dict.get(code, []).append(mapping)
 
-        if not targets:
-            return Target()
-        elif len(targets) > 1:
-            logger.warning(f'Multiple targets found for {variable}-{value}, returning only first.')
+        return mapping_dict
 
+    def lookup(self, vocabulary_code: str, full_output: bool = False) -> Union[List[str],
+                                                                               List[CodeMapping]]:
+
+        if full_output:
+            return self.mapping_dict.get(vocabulary_code, []) # full mapping object
+        else:
+            concept_ids = []
+            for mapping in self.mapping_dict.get(vocabulary_code, []):
+                concept_ids.append(mapping.concept_id) # standard concept_id only
+            return concept_ids
 
 
 class CodeMapper:
@@ -99,22 +111,6 @@ class CodeMapper:
         :param standard_concept: (optional) any of 'S', 'C', 'NONE' (list or string)
         :return: MappingDict
         """
-
-        mapping_df = self._map_vocabulary_codes_to_standard_concept_ids(
-            vocabulary_id, restrict_to_codes, invalid_reason, standard_concept)
-
-        mapping_dict = MappingDict()
-        for _, row in mapping_df.iterrows():
-            mapping_dict.add_mapping(row)
-
-        return mapping_dict
-
-    def _map_vocabulary_codes_to_standard_concept_ids(self,
-                                                      vocabulary_id: Union[str, List[str]],
-                                                      restrict_to_codes: Optional[List[str]] = None,
-                                                      invalid_reason: Optional[Union[str, List[str]]] = None,
-                                                      standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
-            -> pd.DataFrame:
 
         source = aliased(self.cdm.Concept)
         target = aliased(self.cdm.Concept)
@@ -168,9 +164,11 @@ class CodeMapper:
             .filter(and_(*target_filters)) \
             .all()
 
-        records_df = pd.DataFrame(records)
+        mapping_df = pd.DataFrame(records)
 
         if restrict_to_codes:
-            records_df.query('`source.concept_code` in @restrict_to_codes', inplace=True)
+            mapping_df.query('`source.concept_code` in @restrict_to_codes', inplace=True)
 
-        return records_df
+        mapping_dict = MappingDict(mapping_df)
+
+        return mapping_dict
