@@ -25,40 +25,53 @@ logger = logging.getLogger(__name__)
 class CodeMapping:
 
     def __init__(self):
-        self.concept_id = None
-        self.value_as_concept_id = None
-        self.value_as_number = None
-        self.unit_concept_id = None
-        self.source_value = None
-        self.value_source_value = None
-
-        self.variable_comment = None
-        self.value_comment = None
+        self.source_concept_code = None
+        self.source_concept_id = None
+        self.source_concept_name = None
+        self.source_vocabulary_id = None
+        self.source_standard_concept = None
+        self.source_invalid_reason = None
+        self.target_concept_code = None
+        self.target_concept_id = None
+        self.target_concept_name = None
+        self.target_vocabulary_id = None
 
     def __str__(self):
-        return f'{self.source_value}-{self.value_source_value} => ' \
-               f'concept_id: {self.concept_id}, ' \
-               f'value_as_concept_id: {self.value_as_concept_id}, ' \
-               f'value_as_number: {self.value_as_number}, ' \
-               f'unit_concept_id: {self.unit_concept_id}, ' \
-               f'source_value: {self.source_value}, ' \
-               f'value_source_value: {self.value_source_value}, ' \
-               f'variable_comment: {self.variable_comment}, ' \
-               f'value_comment: {self.value_comment}'
+        # note: omitting standard concept and invalid reason
+        return f'{self.source_concept_code} ' \
+               f'({self.source_vocabulary_id}) ' \
+               f'"{self.source_concept_name}" \n' \
+               f' => ' \
+               f'concept_id: {self.target_concept_id}, ' \
+               f'concept_code: {self.target_concept_code}, ' \
+               f'concept_name: "{self.target_concept_name}", ' \
+               f'vocabulary_id: {self.target_vocabulary_id}'
+
 
 class MappingDict:
 
     def __init__(self, mapping_df):
         self.mapping_dict = self.from_mapping_df(mapping_df)
 
-    def from_mapping_df(self, mapping_df: pd.DataFrame) -> Dict[str, List[CodeMapping]]:
+    @staticmethod
+    def from_mapping_df(mapping_df: pd.DataFrame) -> Dict[str, List[CodeMapping]]:
 
         mapping_dict = {}
 
         for _, row in mapping_df.iterrows():
             code = row['source.concept_code']
             mapping = CodeMapping()
-            # TODO
+            mapping.source_concept_code = code
+            mapping.source_concept_id = row['source.concept_id']
+            mapping.source_concept_name = row['source.concept_name']
+            mapping.source_vocabulary_id = row['source.vocabulary_id']
+            mapping.source_standard_concept = row['source.standard_concept']
+            mapping.source_invalid_reason = row['source.invalid_reason']
+            mapping.target_concept_code = row['target.concept_code']
+            mapping.target_concept_id = row['target.concept_id']
+            mapping.target_concept_name = row['target.concept_name']
+            mapping.target_vocabulary_id = row['target.vocabulary_id']
+
             mapping_dict[code] = mapping_dict.get(code, []).append(mapping)
 
         return mapping_dict
@@ -92,7 +105,7 @@ class MappingDict:
         else:
             hits=[]
             for mapping in self.mapping_dict.get(vocabulary_code, []):
-                hits.append(mapping.concept_id) # standard concept_id only
+                hits.append(mapping.target_concept_id) # standard concept_id only
 
         if hits and first_only:
             if len(hits)>1:
