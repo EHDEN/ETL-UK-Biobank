@@ -13,7 +13,20 @@ if TYPE_CHECKING:
 
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
-    source = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'), )
+    source = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'))
+
+    read_codes = list(filter(None, set(source['read_2']) | set(source['read_3'])))
+    read_codes = [code + '00' if code[-1] == '.' else code for code in read_codes]
+
+    read_mapper = \
+        wrapper.code_mapper.generate_code_mapping_dictionary('Read', restrict_to_codes=read_codes)
+
+    # x = read_mapper.lookup('4I16.00', full_mapping=True)
+    # for match in x:
+    #     print(match)
+    # x = read_mapper.lookup('6781.00', full_mapping=True)
+    # for match in x:
+    #     print(match)
 
     records = []
 
