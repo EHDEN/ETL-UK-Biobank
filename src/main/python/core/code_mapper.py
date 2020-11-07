@@ -40,8 +40,7 @@ class CodeMapping:
         # note: omitting standard concept and invalid reason
         return f'{self.source_concept_code} ' \
                f'({self.source_vocabulary_id}) ' \
-               f'"{self.source_concept_name}" \n' \
-               f' => ' \
+               f'"{self.source_concept_name}" => ' \
                f'concept_id: {self.target_concept_id}, ' \
                f'concept_code: {self.target_concept_code}, ' \
                f'concept_name: "{self.target_concept_name}", ' \
@@ -72,7 +71,7 @@ class MappingDict:
             mapping.target_concept_name = row['target.concept_name']
             mapping.target_vocabulary_id = row['target.vocabulary_id']
 
-            mapping_dict[code] = mapping_dict.get(code, []).append(mapping)
+            mapping_dict[code] = mapping_dict.get(code, []) + [mapping]
 
         return mapping_dict
 
@@ -109,8 +108,8 @@ class MappingDict:
 
         if hits and first_only:
             if len(hits)>1:
-                logger.warning(f'Multiple mappings found for {vocabulary_code}, returning only '
-                               f'first.')
+                logger.warning(f'Multiple mappings found for {vocabulary_code}, '
+                               f'returning only first.')
             return hits[0]
 
         return hits
@@ -212,5 +211,12 @@ class CodeMapper:
             mapping_df.query('`source.concept_code` in @restrict_to_codes', inplace=True)
 
         mapping_dict = MappingDict(mapping_df)
+
+        if restrict_to_codes:
+            not_found = set(restrict_to_codes) - set(mapping_dict.mapping_dict.keys())
+            if not_found:
+                logger.warning(f'No mapping to standard concept id for '
+                               f'{len(not_found)} / {len(restrict_to_codes)} {vocabulary_id} '
+                               f'codes: {not_found}')
 
         return mapping_dict
