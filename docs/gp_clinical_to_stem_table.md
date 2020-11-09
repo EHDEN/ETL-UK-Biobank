@@ -9,10 +9,11 @@ The records are retrieved from four different source systems (providers): EMIS/V
 TPP England and Vision England (Note: EMIS England is missing).
 Coded data has been obtained for just 45% of the UKB participants.
 
-####Notes on variables:
-- `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 1 (i.e. Read v3). 
+#### Notes on variables:
+- `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 (i.e. Read v3). 
 Mappings to standard OMOP concept_ids are only available for Read v2 codes in Athena,
 but CTV3 codes that overlap with Read v2 could be also be mapped.
+A READv2-CTV3-SNOMED mapping is available from the NHS: https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/9/subpack/9/releases
 - `value1`, `value2`, `value3` fields: each provider stores the data in its own format, 
 and each Read clinical code requires its own set of values. 
 Therefore, the meaning of `value1`, `value2` and `value3` differ per `data_provider` and per `read_2` / `read_3` code. 
@@ -24,7 +25,7 @@ Suppliers’ extracts contain only numeric data in one (TPP) or two (England (Vi
  date of birth as follows: 01/01/1901 (before birth), 02/02/1902 (on birth), 03/03/1903 (after birth), 07/07/2037 (future). 
  
  
- ###TBD
+### TBD
  - decide on date handling (`event_dt`)
  - map Read codes to standard OMOP concept_ids
  - map value fields based on provider/Read code-specific logic (only selected phenotypes, 
