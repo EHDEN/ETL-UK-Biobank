@@ -18,7 +18,7 @@ Covid is mapped as post coordinated concept.
 | observation_type_concept_id |  |  | 38000279 - Lab observation concept code result |
 | value_as_number |  |  |  |
 | value_as_string |  |  |  |
-| value_as_concept_id | result |  |  |
+| value_as_concept_id | result | the test result: 1 (Positive)-> 45884084, 0 (Negative)-> 45878583 |  |
 | qualifier_concept_id |  |  |  |
 | unit_concept_id |  |  |  |
 | provider_id |  |  |  |
