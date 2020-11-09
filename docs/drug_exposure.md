@@ -14,24 +14,24 @@ Field to field mapping to be completed.
 | drug_exposure_id |  |  |  |
 | person_id | eid |  |  |
 | drug_exposure_start_date | issue_date |  |  |
-| drug_concept_id | read_2<br>bnf_code<br>dmd_code |  |  |
+| drug_concept_id | dmd_code<br>read_2<br>drug_name | Coding priority: use dm+d, then read, then drug name. The BNF code is not complete and not specific enough. |  |
 | drug_exposure_start_datetime |  |  |  |
-| drug_exposure_end_date | issue_date | Assumption:   * See Themis convention |  |
+| drug_exposure_end_date | issue_date | No drug end date, use Themis convention: derive from the quantity (assuming 1 per day). This will be a rough estimate. |  |
 | drug_exposure_end_datetime |  |  |  |
 | verbatim_end_date |  |  |  |
 | drug_type_concept_id |  |  | 38000177 - Prescription written |
 | stop_reason |  |  |  |
 | refills |  |  |  |
-| quantity | quantity |  |  |
+| quantity | quantity | Quantity is free text field, but 60% can be parsed using a simple regex. |  |
 | days_supply |  |  |  |
 | sig |  |  |  |
 | route_concept_id |  |  |  |
 | lot_number |  |  |  |
-| provider_id |  |  |  |
+| provider_id | data_provider | 1 = England (Vision)<br>2 = Scotland<br>3 = England (TPP)<br>4 = Wales<br>(see [here](https://biobank.ctsu.ox.ac.uk/crystal/coding.cgi?id=626))  |  |
 | visit_occurrence_id |  |  |  |
 | visit_detail_id |  |  |  |
-| drug_source_value | read_2<br>bnf_code<br>dmd_code |  |  |
-| drug_source_concept_id | read_2<br>bnf_code<br>dmd_code |  |  |
+| drug_source_value | dmd_code<br>read_2<br>drug_name |  |  |
+| drug_source_concept_id | dmd_code<br>read_2<br>drug_name |  |  |
 | route_source_value |  |  |  |
 | dose_unit_source_value |  |  |  |
 
