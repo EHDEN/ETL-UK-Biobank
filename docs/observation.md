@@ -11,7 +11,7 @@ Covid is mapped as post coordinated concept.
 | --- | --- | --- | --- |
 | observation_id |  |  |  |
 | person_id | eid |  |  |
-| observation_concept_id | spectype | Codes from field 1853 (COVID19 test locations) describing where the sample for the test is taken from |  |
+| observation_concept_id | spectype | Data-coding: 1853 (https://biobank.ctsu.ox.ac.uk/crystal/coding.cgi?id=1853). Mapping to standard concept in: /resources/source_to_concept/covid_spectype.csv |  |
 | observation_date | specdate |  |  |
 | observation_datetime | specdate |  |  |
 | visit_occurrence_id | specdate<br>eid | Lookup in previously created visit occurrence by eid and specdate |  |

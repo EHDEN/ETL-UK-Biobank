@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
     source = pd.DataFrame(wrapper.get_source_data('covid.csv'))
 
-    type_vocab = pd.read_csv('./resources/baseline_field_mapping/covid_spectype.csv')
+    type_vocab = pd.read_csv('./resources/source_to_concept/covid_spectype.csv')
     type_lookup = {str(x['sourceCode']): int(x['conceptId']) for _, x in type_vocab.iterrows()}
 
     records = []
