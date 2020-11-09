@@ -155,6 +155,8 @@ class CodeMapper:
         :return: MappingDict
         """
 
+        logger.info(f'   Building mapping dictionary for vocabularies: {vocabulary_id}')
+
         source = aliased(self.cdm.Concept)
         target = aliased(self.cdm.Concept)
 
@@ -214,11 +216,13 @@ class CodeMapper:
         mapping_df = pd.DataFrame(records)
         mapping_dict = MappingDict(mapping_df)
 
+        if not mapping_dict.mapping_dict:
+            logger.warning(f'No mapping found, mapping dictionary empty')
+
         if restrict_to_codes:
             not_found = set(restrict_to_codes) - set(mapping_dict.mapping_dict.keys())
             if not_found:
                 logger.warning(f'No mapping to standard concept_id could be generated for '
-                               f'{len(not_found)} / {len(restrict_to_codes)} {vocabulary_id} '
-                               f'codes: {not_found}')
-
+                               f'{len(not_found)}/{len(restrict_to_codes)} vocabulary codes:'
+                               f' {not_found}')
         return mapping_dict

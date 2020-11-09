@@ -33,7 +33,6 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     for _, row in source.iterrows():
 
         person_id = row['eid']
-
         event_date =  get_datetime(row['event_dt'], "%d/%m/%Y")
 
         # Look up visit_id in VisitOccurrence by patient_id + visit_start_date
