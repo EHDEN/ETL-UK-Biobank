@@ -15,7 +15,9 @@ if TYPE_CHECKING:
 
 def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
     source = pd.DataFrame(wrapper.get_source_data('covid.csv'))
+
     type_vocab = pd.read_csv('./resources/baseline_field_mapping/covid_spectype.csv')
+    type_lookup = {str(x['sourceCode']): int(x['conceptId']) for _, x in type_vocab.iterrows()}
 
     records = []
     with wrapper.db.session_scope() as session:
@@ -40,11 +42,11 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
             except NoResultFound or MultipleResultsFound:
                 visit_id = None
 
-            concept_id = type_vocab[type_vocab['sourceCode'] == int(row['spectype'])]['conceptId'].values[0]
+            concept_id = type_lookup.get(row['spectype'], 0)
 
             result = {
-                '1' : 45884084, # Positive
-                '0' : 45878583 # Negative
+                '1': 45884084,  # Positive
+                '0': 45878583  # Negative
             }
 
             r = Observation(
