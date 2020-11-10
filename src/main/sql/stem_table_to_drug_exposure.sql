@@ -1,7 +1,6 @@
 
 INSERT INTO @target_schema.drug_exposure
 (
-	drug_exposure_id,
 	person_id,
 	drug_concept_id,
 	drug_exposure_start_date,
@@ -26,8 +25,6 @@ INSERT INTO @target_schema.drug_exposure
 	dose_unit_source_value
 )
 SELECT
-	stem_table.id	AS	drug_exposure_id,
-
 	stem_table.person_id	AS	person_id,
 
 	coalesce(stem_table.concept_id, 0)	AS	drug_concept_id,

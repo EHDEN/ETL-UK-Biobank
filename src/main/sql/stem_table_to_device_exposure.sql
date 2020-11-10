@@ -1,7 +1,6 @@
 
 INSERT INTO @target_schema.device_exposure
 (
-	device_exposure_id,
 	person_id,
 	device_concept_id,
 	device_exposure_start_date,
@@ -18,8 +17,6 @@ INSERT INTO @target_schema.device_exposure
 	device_source_concept_id
 )
 SELECT
-	stem_table.id	AS	device_exposure_id,
-
 	stem_table.person_id	AS	person_id,
 
 	coalesce(stem_table.concept_id, 0)	AS	device_concept_id,

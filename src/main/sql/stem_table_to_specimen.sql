@@ -1,7 +1,6 @@
 
 INSERT INTO @target_schema.specimen
 (
-	specimen_id,
 	person_id,
 	specimen_concept_id,
 	specimen_type_concept_id,
@@ -18,8 +17,6 @@ INSERT INTO @target_schema.specimen
 	disease_status_source_value
 )
 SELECT
-	stem_table.id	AS	specimen_id,
-
 	stem_table.person_id	AS	person_id,
 
 	coalesce(stem_table.concept_id, 0)	AS	specimen_concept_id,

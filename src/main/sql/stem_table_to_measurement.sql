@@ -1,12 +1,10 @@
 
 INSERT INTO @target_schema.measurement
 (
-	measurement_id,
 	person_id,
 	measurement_concept_id,
 	measurement_date,
 	measurement_datetime,
-	measurement_time,
 	measurement_type_concept_id,
 	operator_concept_id,
 	value_as_number,
@@ -23,8 +21,6 @@ INSERT INTO @target_schema.measurement
 	value_source_value
 )
 SELECT
-	stem_table.id AS measurement_id,
-
 	stem_table.person_id AS person_id,
 
     coalesce(stem_table.concept_id, 0) AS measurement_concept_id,
@@ -32,8 +28,6 @@ SELECT
 	stem_table.start_date AS measurement_date,
 
 	stem_table.start_datetime AS measurement_datetime,
-
-	NULL AS measurement_time,
 
 	stem_table.type_concept_id AS measurement_type_concept_id,
 

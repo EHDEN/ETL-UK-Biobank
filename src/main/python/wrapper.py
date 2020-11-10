@@ -75,6 +75,7 @@ class Wrapper(EtlWrapper):
     def load_from_stem_table(self):
         # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
         target_schema = 'omopcdm'  # TODO: target_schema from variable
+        # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
         self.execute_sql_file('src/main/sql/stem_table_to_observation.sql', target_schema=target_schema)
         self.execute_sql_file('src/main/sql/stem_table_to_measurement.sql', target_schema=target_schema)
         self.execute_sql_file('src/main/sql/stem_table_to_condition_occurrence.sql', target_schema=target_schema)

@@ -1,7 +1,6 @@
 
 INSERT INTO @target_schema.condition_occurrence
 (
-	condition_occurrence_id,
 	person_id,
 	condition_concept_id,
 	condition_start_date,
@@ -19,8 +18,6 @@ INSERT INTO @target_schema.condition_occurrence
 	condition_status_concept_id
 )
 SELECT
-	stem_table.id	AS	condition_occurrence_id,
-
 	stem_table.person_id	AS	person_id,
 
 	coalesce(stem_table.concept_id, 0)	AS	condition_concept_id,

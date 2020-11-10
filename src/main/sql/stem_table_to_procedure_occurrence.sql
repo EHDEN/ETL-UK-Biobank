@@ -1,7 +1,6 @@
 
 INSERT INTO @target_schema.procedure_occurrence
 (
-	procedure_occurrence_id,
 	person_id,
 	procedure_concept_id,
 	procedure_date,
@@ -17,8 +16,6 @@ INSERT INTO @target_schema.procedure_occurrence
 	modifier_source_value
 )
 SELECT
-	stem_table.id	AS	procedure_occurrence_id,
-
 	stem_table.person_id	AS	person_id,
 
 	coalesce(stem_table.concept_id, 0)	AS	procedure_concept_id,

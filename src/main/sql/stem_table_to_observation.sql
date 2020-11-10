@@ -1,7 +1,6 @@
 
 INSERT INTO @target_schema.observation
 (
-	observation_id,
 	person_id,
 	observation_concept_id,
 	observation_date,
@@ -18,14 +17,9 @@ INSERT INTO @target_schema.observation
 	observation_source_value,
 	observation_source_concept_id,
 	unit_source_value,
-	qualifier_source_value,
-	observation_event_id,
-	obs_event_field_concept_id,
-	value_as_datetime
+	qualifier_source_value
 )
 SELECT
-	stem_table.id	AS	observation_id,
-
 	stem_table.person_id	AS	person_id,
 
 	coalesce(stem_table.concept_id,0)	AS	observation_concept_id,
@@ -58,13 +52,7 @@ SELECT
 
 	stem_table.unit_source_value	AS	unit_source_value,
 
-	stem_table.qualifier_source_value	AS	qualifier_source_value,
-
-	stem_table.event_id	AS	observation_event_id,
-
-	coalesce(stem_table.event_field_concept_id, 0)	AS	obs_event_field_concept_id,
-
-	stem_table.value_as_datetime	AS	value_as_datetime
+	stem_table.qualifier_source_value	AS	qualifier_source_value
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)

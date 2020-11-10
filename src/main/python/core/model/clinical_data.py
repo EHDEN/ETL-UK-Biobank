@@ -322,7 +322,7 @@ class ProcedureOccurrence(base):
     visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     procedure_source_value = Column(String(50))
     procedure_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
-    qualifier_source_value = Column(String(50))
+    modifier_source_value = Column(String(50))
 
     modifier_concept = relationship('Concept', primaryjoin='ProcedureOccurrence.modifier_concept_id == Concept.concept_id')
     person = relationship('Person')
