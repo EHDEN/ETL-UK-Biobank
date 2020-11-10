@@ -7,17 +7,20 @@ initFramework <- function() {
   frameworkContext$testId <- -1
   frameworkContext$testDescription <- ""
   frameworkContext$defaultValues <- new.env(parent = frameworkContext)
-  
+
+  # Baseline is treated differently to allow for more flexibility in column names.
+  frameworkContext$baseline_names <- c()
+  frameworkContext$baseline <- list()
+
+  # A few defaults specific for succesfull person creation
   defaults <- list()
-  defaults$eid <- 'XXX'
-  defaults$`34-0.0` <- '1950'
-  defaults$`21000-0.0` <- '1'
-  defaults$`21000-1.0` <- '1002'
-  defaults$`52-0.0` <- '1'
-  defaults$`54-0.0` <- '11004'
-  defaults$`54-1.0` <- '11009'
-  defaults$`54-2.0` <- '11014'
+  defaults$eid <- '999'
   defaults$`31-0.0` <- '0'
+  defaults$`34-0.0` <- '1950'
+  defaults$`52-0.0` <- '1'
+  defaults$`53-0.0` <- '2000-01-01'
+  defaults$`54-0.0` <- '11004'
+  defaults$`21000-0.0` <- '1'
   assign('baseline', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
@@ -589,85 +592,24 @@ declareTest <- function(id, description) {
   frameworkContext$testDescription <- description
 }
 
-add_baseline <- function(eid, `34-0.0`, `21000-0.0`, `21000-1.0`, `52-0.0`, `54-0.0`, `54-1.0`, `54-2.0`, `31-0.0`) {
+add_baseline <- function(...) {
+  # Simplified to allow any column name.
   defaults <- get('baseline', envir = frameworkContext$defaultValues)
-  fields <- c()
-  values <- c()
-  if (missing(eid)) {
-    eid <- defaults$eid
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.eid')
+
+  kwargs <- list(...)
+
+  # Defaults
+  for (field_name in names(defaults)) {
+    if (!(field_name %in% names(kwargs))) {
+      kwargs[field_name] <- defaults[field_name]
+    } else {
+      frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, paste0('baseline.', field_name))
+    }
   }
-  fields <- c(fields, "eid")
-  values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
-  
-  if (missing(`34-0.0`)) {
-    `34-0.0` <- defaults$`34-0.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "34-0.0")
-  values <- c(values, if (is.null(`34-0.0`)) "NULL" else if (is(`34-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`34-0.0`), "'"))
-  
-  if (missing(`21000-0.0`)) {
-    `21000-0.0` <- defaults$`21000-0.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "21000-0.0")
-  values <- c(values, if (is.null(`21000-0.0`)) "NULL" else if (is(`21000-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`21000-0.0`), "'"))
-  
-  if (missing(`21000-1.0`)) {
-    `21000-1.0` <- defaults$`21000-1.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "21000-1.0")
-  values <- c(values, if (is.null(`21000-1.0`)) "NULL" else if (is(`21000-1.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`21000-1.0`), "'"))
-  
-  if (missing(`52-0.0`)) {
-    `52-0.0` <- defaults$`52-0.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "52-0.0")
-  values <- c(values, if (is.null(`52-0.0`)) "NULL" else if (is(`52-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`52-0.0`), "'"))
-  
-  if (missing(`54-0.0`)) {
-    `54-0.0` <- defaults$`54-0.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "54-0.0")
-  values <- c(values, if (is.null(`54-0.0`)) "NULL" else if (is(`54-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`54-0.0`), "'"))
-  
-  if (missing(`54-1.0`)) {
-    `54-1.0` <- defaults$`54-1.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "54-1.0")
-  values <- c(values, if (is.null(`54-1.0`)) "NULL" else if (is(`54-1.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`54-1.0`), "'"))
-  
-  if (missing(`54-2.0`)) {
-    `54-2.0` <- defaults$`54-2.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "54-2.0")
-  values <- c(values, if (is.null(`54-2.0`)) "NULL" else if (is(`54-2.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`54-2.0`), "'"))
-  
-  if (missing(`31-0.0`)) {
-    `31-0.0` <- defaults$`31-0.0`
-  } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, 'baseline.field')
-  }
-  fields <- c(fields, "31-0.0")
-  values <- c(values, if (is.null(`31-0.0`)) "NULL" else if (is(`31-0.0`, "subQuery")) paste0("(", as.character(field), ")") else paste0("'", as.character(`31-0.0`), "'"))
-  
-  
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "baseline", fields = fields, values = values)
-  frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
+
+  frameworkContext$baseline_names <- unique(c(frameworkContext$baseline_names, names(kwargs)))
+  frameworkContext$baseline[[length(frameworkContext$baseline) + 1]] <- kwargs
+
   invisible(NULL)
 }
 
@@ -11657,11 +11599,34 @@ writeSourceCsv <- function(directory = NULL, separator = ',') {
     }
     write(paste(sapply(insert$values, clean_value), collapse = separator), filename, append=T)
   }
+
+  writeBaselineToCsv(file.path(directory, 'baseline.csv'), separator)
+  seen_tables <- c(seen_tables, 'baseline')
   
   for (table_name in names(frameworkContext$defaultValues)) {
     if (!(table_name %in% seen_tables)) {
       filename <- file.path(directory, paste0(table_name, '.csv'))
       write(paste(names(frameworkContext$defaultValues[[table_name]]), collapse = separator), filename, append=F)
+    }
+  }
+}
+
+writeBaselineToCsv <- function(filename = NULL, separator = ',') {
+  # Note: outputs additional column without header
+  # TODO: escaping of comma's and quotes
+  # Header
+  cat("", file=filename)
+  for (name in frameworkContext$baseline_names) {
+    cat(name, file=filename, append=TRUE)
+    cat(",", file=filename, append=TRUE)
+  }
+
+  # Content. If name does not exist in data, outputs empty cell
+  for (row in frameworkContext$baseline) {
+    cat("\n", file=filename, append=TRUE)
+    for (name in frameworkContext$baseline_names) {
+      cat(row[[name]], file=filename, append=TRUE)
+      cat(",", file=filename, append=TRUE)
     }
   }
 }
