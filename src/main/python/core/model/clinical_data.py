@@ -20,6 +20,7 @@ class ConditionOccurrence(base):
     stop_reason = Column(String(20))
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     condition_source_value = Column(String(50))
     condition_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     condition_status_source_value = Column(String(50))
@@ -32,6 +33,7 @@ class ConditionOccurrence(base):
     person = relationship('Person')
     provider = relationship('Provider')
     visit_occurrence = relationship('VisitOccurrence')
+    visit_detail = relationship('VisitDetail')
 
 
 class DeviceExposure(base):
@@ -50,6 +52,7 @@ class DeviceExposure(base):
     quantity = Column(Integer)
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     device_source_value = Column(String(100))
     device_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
 
@@ -59,6 +62,7 @@ class DeviceExposure(base):
     person = relationship('Person')
     provider = relationship('Provider')
     visit_occurrence = relationship('VisitOccurrence')
+    visit_detail = relationship('VisitDetail')
 
 
 class DrugExposure(base):
@@ -83,6 +87,7 @@ class DrugExposure(base):
     lot_number = Column(String(50))
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     drug_source_value = Column(String(50))
     drug_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     route_source_value = Column(String(50))
@@ -95,6 +100,7 @@ class DrugExposure(base):
     provider = relationship('Provider')
     route_concept = relationship('Concept', primaryjoin='DrugExposure.route_concept_id == Concept.concept_id')
     visit_occurrence = relationship('VisitOccurrence')
+    visit_detail = relationship('VisitDetail')
 
 
 class FactRelationship(base):
@@ -128,6 +134,7 @@ class Measurement(base):
     range_high = Column(Numeric)
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     measurement_source_value = Column(String(50))
     measurement_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     unit_source_value = Column(String(50))
@@ -142,6 +149,7 @@ class Measurement(base):
     unit_concept = relationship('Concept', primaryjoin='Measurement.unit_concept_id == Concept.concept_id')
     value_as_concept = relationship('Concept', primaryjoin='Measurement.value_as_concept_id == Concept.concept_id')
     visit_occurrence = relationship('VisitOccurrence')
+    visit_detail = relationship('VisitDetail')
 
 
 class Note(base):
@@ -160,6 +168,7 @@ class Note(base):
     language_concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False)
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     note_source_value = Column(String(50))
 
     encoding_concept = relationship('Concept', primaryjoin='Note.encoding_concept_id == Concept.concept_id')
@@ -169,6 +178,7 @@ class Note(base):
     person = relationship('Person')
     provider = relationship('Provider')
     visit_occurrence = relationship('VisitOccurrence')
+    visit_detail = relationship('VisitDetail')
 
 
 class NoteNlp(base):
@@ -212,6 +222,7 @@ class Observation(base):
     unit_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     observation_source_value = Column(String(50))
     observation_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     unit_source_value = Column(String(50))
@@ -226,6 +237,7 @@ class Observation(base):
     unit_concept = relationship('Concept', primaryjoin='Observation.unit_concept_id == Concept.concept_id')
     value_as_concept = relationship('Concept', primaryjoin='Observation.value_as_concept_id == Concept.concept_id')
     visit_occurrence = relationship('VisitOccurrence')
+    visit_detail = relationship('VisitDetail')
 
 
 class ObservationPeriod(base):
@@ -307,6 +319,7 @@ class ProcedureOccurrence(base):
     quantity = Column(Integer)
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
+    visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     procedure_source_value = Column(String(50))
     procedure_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     qualifier_source_value = Column(String(50))
@@ -318,6 +331,7 @@ class ProcedureOccurrence(base):
     procedure_type_concept = relationship('Concept', primaryjoin='ProcedureOccurrence.procedure_type_concept_id == Concept.concept_id')
     provider = relationship('Provider')
     visit_occurrence = relationship('VisitOccurrence')
+    visit_detail = relationship('VisitDetail')
 
 
 class Specimen(base):
