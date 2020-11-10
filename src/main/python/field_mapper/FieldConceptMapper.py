@@ -102,10 +102,9 @@ class FieldConceptMapper:
         field_mapping = self.get_mapping(field_id)
 
         if not field_mapping:
-            logger.warning(f'Field "{field_id}" is unknown')
-            target.concept_id = 0
-            target.source_value = field_id
-            return target
+            logger.debug(f'Field "{field_id}" is unknown')
+            # Do not map fields not in the mapping tables. These are by default ignored.
+            return None
 
         if field_mapping.is_ignored():
             return None

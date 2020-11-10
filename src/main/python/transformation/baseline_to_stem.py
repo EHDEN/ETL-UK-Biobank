@@ -32,20 +32,21 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             # Date
             date_field_id = '53'  # TODO: lookup which date field to use for incoming field
             date_column_name = f'{date_field_id}-{instance}.0'
-            datetime = get_datetime(row[date_column_name], '%d/%m/%Y')
+            datetime = get_datetime(row[date_column_name])
 
             target = mapper.lookup(field_id, value)
             if target:
-                records.append(Wrapper.cdm.StemTable(
+                records.append(wrapper.cdm.StemTable(
                     person_id=eid,
-                    date=datetime.date(),
-                    datetime=datetime,
+                    start_date=datetime.date(),
+                    start_datetime=datetime,
                     concept_id=target.concept_id,
                     source_value=target.source_value,
                     value_as_concept_id=target.value_as_concept_id,
                     value_as_number=target.value_as_number,
                     unit_concept_id=target.unit_concept_id,
-                    value_as_string=target.value_as_string
+                    value_as_string=target.value_as_string,
+                    type_concept_id=32883  # Survey
                     )
                 )
 
