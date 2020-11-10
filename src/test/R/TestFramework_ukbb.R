@@ -11,7 +11,8 @@ initFramework <- function() {
   # Baseline is treated differently to allow for more flexibility in column names.
   frameworkContext$baseline_names <- c()
   frameworkContext$baseline <- list()
-  
+
+  # A few defaults specific for succesfull person creation
   defaults <- list()
   defaults$eid <- '999'
   defaults$`31-0.0` <- '0'

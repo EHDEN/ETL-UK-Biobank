@@ -27,7 +27,7 @@ source('test_cases/test_baseline_to_person.R')              # test IDs 200-299
 source('test_cases/test_gp_registrations_to_obs_period.R')  # test IDs 300-399
 source('test_cases/test_gp_clinical_to_visit_occurrence.R') # test IDs 400-499
 # source('test_cases/test_gp_clinical_to_stem_table.R')       # test IDs 500-599
-source('test_cases/test_baseline_to_stem.R') # test IDs 800-899
+source('test_cases/test_baseline_to_stem.R') # test IDs 900-999
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)
