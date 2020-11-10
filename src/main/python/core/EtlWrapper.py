@@ -129,7 +129,7 @@ class EtlWrapper:
         self.n_queries_executed += 1
         return
 
-    def execute_sql_file(self, file_path, source_schema=None, target_schema=None,
+    def execute_sql_file(self, file_path, source_schema='public', target_schema='public',
                          print_failed_query=False):
 
         # Open and read the file as a single buffer
