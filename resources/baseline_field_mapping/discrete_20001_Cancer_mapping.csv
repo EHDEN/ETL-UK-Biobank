@@ -1,0 +1,83 @@
+sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
+20001,mesothelioma,1064,mesothelioma,,6,,1.0,APPROVED,Vaclav,1604336414027,4033891,EVENT,,<auto>,1604336140174
+20001,penis cancer,1046,penis cancer,,44,,0.690782368183136,APPROVED,Vaclav,1604347501048,4181488,EVENT,,<auto>,1604336140460
+20001,non-hodgkins lymphoma,1053,non-hodgkins lymphoma,,1129,,0.9415006637573242,APPROVED,Vaclav,1604342253671,4038838,EVENT,,Vaclav,1604342251312
+20001,trachea cancer,1080,trachea cancer,,3,,0.826101541519165,APPROVED,Vaclav,1604343033001,4177112,EVENT,,<auto>,1604336140804
+20001,multiple myeloma,1050,multiple myeloma,,220,,1.0,APPROVED,Vaclav,1604341510127,437233,EVENT,,Vaclav,1604341507079
+20001,malignant melanoma,1059,malignant melanoma,,4380,,1.0,APPROVED,Vaclav,1604336431710,4299429,EVENT,,<auto>,1604336141099
+20001,lymphoma,1047,lymphoma,,178,,1.0,APPROVED,Vaclav,1604338154557,432571,EVENT,,Vaclav,1604338125270
+20001,hodgkins lymphoma / hodgkins disease,1052,hodgkins lymphoma / hodgkins disease,,526,,0.7644219398498535,APPROVED,Vaclav,1604345527600,4038835,EVENT,,Vaclav,1604345517297
+20001,non-small cell lung cancer,1028,non-small cell lung cancer,,76,,1.0,APPROVED,Vaclav,1604336443882,4115276,EVENT,,<auto>,1604336142489
+20001,thyroid cancer,1065,thyroid cancer,,550,,1.0,APPROVED,Vaclav,1604338263742,4178976,EVENT,,Vaclav,1604338257859
+20001,leukaemia,1048,leukaemia,,262,,1.0,APPROVED,Vaclav,1604336500660,317510,EVENT,,<auto>,1604336142532
+20001,chronic lymphocytic,1055,chronic lymphocytic,,376,,0.8221046924591064,FLAGGED,,0,4041666,EVENT,,<auto>,1604336142879
+20001,prostate cancer,1044,prostate cancer,,4681,,1.0,APPROVED,Vaclav,1604338317124,4116087,EVENT,,Vaclav,1604338311904
+20001,non-melanoma skin cancer,1060,non-melanoma skin cancer,,798,,0.6121578216552734,FLAGGED,,0,141232,EVENT,no clue,<auto>,1604336144656
+20001,myelofibrosis or myelodysplasia,1051,myelofibrosis or myelodysplasia,,34,,0.6864266991615295,APPROVED,Vaclav,1604347723346,133169,EVENT,,<auto>,1604336145077
+20001,thymus cancer / malignant thymoma,1081,thymus cancer / malignant thymoma,,14,,0.7551307082176208,APPROVED,Vaclav,1604345656927,40480205,EVENT,,<auto>,1604336145391
+20001,parathyroid cancer,1066,parathyroid cancer,,24,,1.0,APPROVED,Vaclav,1604336556149,4181483,EVENT,,<auto>,1604336145529
+20001,parotid gland cancer,1015,parotid gland cancer,,97,,0.8442367911338806,APPROVED,Vaclav,1604342801165,4180784,EVENT,,Vaclav,1604342768328
+20001,squamous cell carcinoma,1062,squamous cell carcinoma,,741,,1.0,APPROVED,Vaclav,1604341314440,4300118,EVENT,,Vaclav,1604341309265
+20001,ovarian cancer,1039,ovarian cancer,,938,,1.0,APPROVED,Vaclav,1604341328878,4181351,EVENT,,Vaclav,1604341325606
+20001,testicular cancer,1045,testicular cancer,,970,,0.7888720035552979,FLAGGED,,0,4083504,EVENT,,Vaclav,1604344511190
+20001,chronic myeloid,1056,chronic myeloid,,133,,0.7711716294288635,FLAGGED,,0,134603,EVENT,,Vaclav,1604345444253
+20001,basal cell carcinoma,1061,basal cell carcinoma,,5696,,1.0,FLAGGED,,0,4291148,EVENT,Could it be the Observation?,Vaclav,1604433513232
+20001,peripheral nerve/autonomic nerve cancer,1029,peripheral nerve/autonomic nerve cancer,,13,,0.6575445532798767,APPROVED,Vaclav,1604348407722,4112974,EVENT,,Vaclav,1604348403381
+20001,other salivary gland cancer,1016,other salivary gland cancer,,23,,0.8964365124702454,APPROVED,Vaclav,1604342497052,4116235,EVENT,,<auto>,1604336149520
+20001,primary bone cancer,1063,primary bone cancer,,144,,0.7826768159866333,FLAGGED,,0,35624275,EVENT,,Vaclav,1604344776374
+20001,heart / mediastinum cancer,1082,heart / mediastinum cancer,,3,,0.6503294706344604,FLAGGED,,0,4181484,EVENT,,Vaclav,1604349051322
+20001,rectal cancer,1023,rectal cancer,,371,,1.0,APPROVED,Vaclav,1604337039911,443390,EVENT,,<auto>,1604336151280
+20001,gallbladder/bile duct cancer,1025,gallbladder/bile duct cancer,,37,,0.6068696975708008,FLAGGED,,0,4181327,EVENT,,Vaclav,1604356418166
+20001,pancreas cancer,1026,pancreas cancer,,86,,1.0,APPROVED,Vaclav,1604341870801,4180793,EVENT,,Vaclav,1604341820788
+20001,tonsil cancer,1078,tonsil cancer,,43,,0.7823877334594727,APPROVED,Vaclav,1604344798624,4181339,EVENT,,Vaclav,1604344797281
+20001,uterine/endometrial cancer,1040,uterine/endometrial cancer,,1394,,0.6215184926986694,FLAGGED,,0,197230,EVENT,,Vaclav,1604349350246
+20001,oesophageal cancer,1017,oesophageal cancer,,228,,1.0,APPROVED,Vaclav,1604337061899,4181343,EVENT,,<auto>,1604336152600
+20001,other haematological malignancy,1058,other haematological malignancy,,47,,0.8390172123908997,APPROVED,Vaclav,1604342898988,4147164,EVENT,,<auto>,1604336152679
+20001,meningeal cancer / malignant meningioma,1031,meningeal cancer / malignant meningioma,,39,,0.6708923578262329,FLAGGED,,0,4082332,EVENT,,Vaclav,1604348005038
+20001,larynx/throat cancer,1006,larynx/throat cancer,,391,,0.6818909645080566,APPROVED,Vaclav,1604347528020,4178968,EVENT,,Vaclav,1604347526484
+20001,bladder cancer,1035,bladder cancer,,1369,,1.0,APPROVED,Vaclav,1604337063792,197508,EVENT,,<auto>,1604336154732
+20001,tongue cancer,1011,tongue cancer,,175,,0.8025327324867249,APPROVED,Vaclav,1604343523390,4178962,EVENT,,Vaclav,1604343520830
+20001,liver/hepatocellular cancer,1024,liver/hepatocellular cancer,,202,,0.5333205461502075,FLAGGED,,0,4001171,EVENT,,Vaclav,1604358485281
+20001,small cell lung cancer,1027,small cell lung cancer,,73,,1.0,APPROVED,Vaclav,1604337090266,4110591,EVENT,,<auto>,1604336155479
+20001,gum cancer,1012,gum cancer,,27,,0.6865725517272949,APPROVED,Vaclav,1604347504865,4178963,EVENT,,<auto>,1604336156217
+20001,skin cancer,1003,skin cancer,,1798,,1.0,APPROVED,Vaclav,1604341915992,4155297,EVENT,,Vaclav,1604341913662
+20001,oropharynx / oropharyngeal cancer,1079,oropharynx / oropharyngeal cancer,,24,,0.6957908868789673,APPROVED,Vaclav,1604347566386,4181338,EVENT,,Vaclav,1604347564999
+20001,rodent ulcer,1073,rodent ulcer,,1101,,1.0,APPROVED,Vaclav,1604337911650,4112752,EVENT,,<auto>,1604336157484
+20001,nasal cavity cancer,1007,nasal cavity cancer,,53,,0.8026499152183533,FLAGGED,,0,4177107,EVENT,,Vaclav,1604343872831
+20001,male genital tract cancer,1038,male genital tract cancer,,1,,0.6036088466644287,FLAGGED,,0,442177,EVENT,,Vaclav,1604357806007
+20001,sinus cancer,1009,sinus cancer,,15,,0.6487331390380859,FLAGGED,,0,4181486,EVENT,,Vaclav,1604349235388
+20001,fallopian tube cancer,1087,fallopian tube cancer,,12,,0.8536474704742432,FLAGGED,,0,4174891,EVENT,,Vaclav,1604345199999
+20001,other cancer of urinary tract,1036,other cancer of urinary tract,,38,,0.7093607187271118,FLAGGED,,0,40488919,EVENT,,<auto>,1604336160156
+20001,acute myeloid leukaemia,1074,acute myeloid leukaemia,,55,,1.0,APPROVED,Vaclav,1604341945265,140352,EVENT,,Vaclav,1604341943650
+20001,brain cancer / primary malignant brain tumour,1032,brain cancer / primary malignant brain tumour,,239,,0.6527824997901917,FLAGGED,,0,4116092,EVENT,,Vaclav,1604348847524
+20001,vaginal cancer,1042,vaginal cancer,,40,,0.8137611150741577,FLAGGED,,0,4177114,EVENT,,Vaclav,1604343363712
+20001,lip cancer,1010,lip cancer,,22,,0.6287141442298889,APPROVED,Vaclav,1604348466481,4180779,EVENT,,Vaclav,1604348457934
+20001,large bowel cancer/colorectal cancer,1020,large bowel cancer/colorectal cancer,,779,,0.5579909086227417,FLAGGED,,0,36683531,EVENT,"SNOMED has large bowel cancer and colorectal cancer under separate terms (443396, 36683531)",Vaclav,1604357974929
+20001,kaposis sarcoma,1076,kaposis sarcoma,,9,,0.8137509226799011,APPROVED,Vaclav,1604343397142,434584,EVENT,,Vaclav,1604343391317
+20001,ear cancer,1008,ear cancer,,28,,0.7217656970024109,FLAGGED,,0,4172522,EVENT,,Vaclav,1604347260455
+20001,malignant insulinoma,1088,malignant insulinoma,,10,,1.0,APPROVED,Vaclav,1604337543744,37017016,EVENT,,<auto>,1604336163273
+20001,cancer of lip/mouth/pharynx/oral cavity,1004,cancer of lip/mouth/pharynx/oral cavity,,117,,0.3686622381210327,FLAGGED,,0,4177243,EVENT,,Vaclav,1604359043115
+20001,vulval cancer,1043,vulval cancer,,94,,0.7908524870872498,APPROVED,Vaclav,1604343533336,4178959,EVENT,,Vaclav,1604343530756
+20001,,99999,,,746,,0.0,IGNORED,Vaclav,1604342979945,0,EVENT,,,0
+20001,mouth cancer,1077,mouth cancer,,56,,1.0,APPROVED,Vaclav,1604337530315,25189,EVENT,,<auto>,1604336164415
+20001,anal cancer,1021,anal cancer,,88,,0.8158528804779053,FLAGGED,,0,443390,EVENT,,Vaclav,1604343209924
+20001,eye and/or adnexal cancer,1030,eye and/or adnexal cancer,,156,,0.7178367376327515,FLAGGED,,0,438095,EVENT,,Vaclav,1604347431773
+20001,cervical cancer,1041,cervical cancer,,2121,,1.0,APPROVED,Vaclav,1604337301340,198984,EVENT,,<auto>,1604336166484
+20001,salivary gland cancer,1005,salivary gland cancer,,26,,1.0,APPROVED,Vaclav,1604337129738,4116235,EVENT,,<auto>,1604336166706
+20001,female genital tract cancer,1037,female genital tract cancer,,45,,0.7454813718795776,FLAGGED,,0,201240,EVENT,,Vaclav,1604357857861
+20001,retinoblastoma,1075,retinoblastoma,,9,,1.0,APPROVED,Vaclav,1604342122752,4158977,EVENT,,Vaclav,1604342120673
+20001,lung cancer,1001,lung cancer,,329,,1.0,APPROVED,Vaclav,1604342212445,258369,EVENT,,Vaclav,1604342209811
+20001,colon cancer/sigmoid cancer,1022,colon cancer/sigmoid cancer,,1677,,0.7272192239761353,APPROVED,Vaclav,1604346588097,443381,EVENT,,<auto>,1604336167899
+20001,stomach cancer,1018,stomach cancer,,201,,0.7517447471618652,APPROVED,Vaclav,1604345748661,443387,EVENT,,Vaclav,1604345746328
+20001,bone metastases / bony secondaries,1085,bone metastases / bony secondaries,,29,,0.6039352416992188,FLAGGED,,0,78097,EVENT,,Vaclav,1604357520172
+20001,spinal cord or cranial nerve cancer,1033,spinal cord or cranial nerve cancer,,46,,0.6512272357940674,FLAGGED,,0,4095302,EVENT,,Vaclav,1604348994969
+20001,breast cancer,1002,breast cancer,,13187,,1.0,APPROVED,Vaclav,1604342224174,4112853,EVENT,,Vaclav,1604342222405
+20001,adrenal cancer,1067,adrenal cancer,,27,,0.8146870732307434,FLAGGED,,0,4181328,EVENT,,Vaclav,1604343341094
+20001,"malignant lymph node, unspecified",1070,"malignant lymph node, unspecified",,146,,0.6567870378494263,FLAGGED,,0,4131931,EVENT,,Vaclav,1604348630706
+20001,appendix cancer,1086,appendix cancer,,17,,0.7446311712265015,FLAGGED,,0,433143,EVENT,,Vaclav,1604346167600
+20001,sarcoma/fibrosarcoma,1068,sarcoma/fibrosarcoma,,289,,0.6153732538223267,APPROVED,Vaclav,1604349402490,40480598,EVENT,,Vaclav,1604349397798
+20001,respiratory / intrathoracic cancer,1084,respiratory / intrathoracic cancer,,1,,0.603688657283783,FLAGGED,,0,40493428,EVENT,,Vaclav,1604357739118
+20001,metastatic cancer (unknown primary),1071,metastatic cancer (unknown primary),,45,,0.6619357466697693,APPROVED,Vaclav,1604348276059,4114221,EVENT,,<auto>,1604336172759
+20001,kidney/renal cell cancer,1034,kidney/renal cell cancer,,727,,0.539291501045227,FLAGGED,,0,196653,EVENT,,Vaclav,1604358143447
+20001,small intestine/small bowel cancer,1019,small intestine/small bowel cancer,,250,,0.5331474542617798,FLAGGED,,0,4131614,EVENT,,Vaclav,1604358891387
+20001,cin/pre-cancer cells cervix,1072,cin/pre-cancer cells cervix,,2190,,0.46568650007247925,FLAGGED,,0,198984,EVENT,no idea,<auto>,1604336174220
