@@ -1,0 +1,97 @@
+#field-table td {
+    padding: 12px 0px;
+    text-align: center;
+    background: rgb(245, 247, 249);
+}
+
+#field-table {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+#field-table {
+    font-family: aktiv-grotesk-thin,sans-serif;
+}
+
+#field-table {
+    padding: 10px !important;
+    text-align: center !important;
+}
+#field-table span {
+    display: inline-block;
+}
+#field-table span.sort {
+    font-size: 20pt;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#field-table th.dash-header, #field-table th.dash-filter, #field-table th.dash-delete-header, #field-table tr:nth-child(2) > th:nth-child(1) {
+    position: sticky !important;
+    left: 0px;
+    background-color: white !important;
+    text-transform: lowercase;
+    font-variant: all-small-caps;
+    font-color: #232323;
+    font-size: 20pt;
+    padding-bottom: 20px;
+    box-shadow: none !important;
+}
+#field-table th.dash-header, #field-table th.dash-delete-header {
+    top: -10px;
+}
+#field-table th.dash-header {
+    color: #c3c3c3;
+    font-stretch: condensed;
+}
+#field-table th.dash-header > div {
+    margin: auto;
+    display: inline-block;
+}
+#las-curves .svg-container {
+    margin: auto !important;
+}
+
+#las-curves {
+    margin-bottom: 50px;
+}
+
+#field-table ::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+    margin-right: 500px;
+    background-color: #191A1C;
+}
+#field-table ::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: #E4E4E4;
+    border-radius:15px;
+    padding-right:5px;
+}
+
+#field-table th.dash-filter, #field-table tr:nth-child(2) > th:nth-child(1) {
+    top: 50px;
+}
+
+#field-table th.dash-filter input {
+    border-bottom: solid 1px #d3d3d3;
+    font-size: 10pt;
+    text-align: center;
+}
+
+
+#field-table .dash-spreadsheet-container .dash-spreadsheet-inner td.dash-cell.column-0 {
+    width:0px !important;
+}
+
+#field-table .dash-spreadsheet-container .dash-spreadsheet-inner td.dash-cell.column-1 .dash-cell-value {
+    width: 100 !important;
+}
+
+#field-table td.dash-delete-cell {
+    width: 20px !important;
+}
+
+#field-table tr td {
+    box-shadow: inset 0px 0px 0px 0px #d3d3d3 !important;
+}
