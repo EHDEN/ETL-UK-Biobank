@@ -19,7 +19,7 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
 
         r = wrapper.cdm.VisitOccurrence(
             person_id=row['eid'],
-            visit_concept_id=0,  # 32693 Health examination, not known in vocabulary
+            visit_concept_id=32693,  # Health examination
             visit_start_date=visit_date.date(),
             visit_start_datetime=visit_date,
             visit_end_date=visit_date.date(),
