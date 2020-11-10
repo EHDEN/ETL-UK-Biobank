@@ -62,6 +62,7 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(baseline_to_visit_occurrence)
         self.execute_transformation(gp_registrations_to_observation_period)
         self.execute_transformation(covid_to_observation)
+        self.execute_transformation(baseline_to_stem)
 
         # sql transformation:
         # self.execute_sql_file(self.path_sql_transformations / 'sample_script.sql')

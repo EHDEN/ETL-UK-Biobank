@@ -31,7 +31,8 @@ class FieldConceptMapper:
     TODO: configuration file to load the baseline_field_mappings, to cover:
      - handle mappings with fixed event mappings (e.g. cancer codes or operations)
      - handle field_ids using same value mapping (opcs codes from 41256;41258;42908)
-     - mark field_id to date_field_id mapping?
+     - load field_id to date_field_id mapping?
+     - handle value as string (e.g. device_id)
     """
 
     def __init__(self, in_directory: Path = None, log_level: str = 'INFO'):
@@ -42,7 +43,7 @@ class FieldConceptMapper:
 
     def __call__(self, field_id: str, value: str) -> MappingTarget:
         # Convenience method to allow field_mapper(field_id, value)
-        return self._lookup(field_id, value)
+        return self.lookup(field_id, value)
 
     def load(self, directory: Path):
         if not directory.exists():
@@ -85,7 +86,7 @@ class FieldConceptMapper:
             n = len(self.field_mappings)
         return random.sample(list(self.field_mappings.values()), n)
 
-    def _lookup(self, field_id: str, value: str) -> Optional[MappingTarget]:
+    def lookup(self, field_id: str, value: str) -> Optional[MappingTarget]:
         """
         For given field_id/value pair, looks up the target concept_id, value_as_concept_id, value_as_number and unit_concept_id.
         The mapping can be one of two types:
@@ -115,7 +116,6 @@ class FieldConceptMapper:
             target.value_as_number = float(value)
             target.unit_concept_id = field_mapping.unit_target.concept_id
             target.source_value = field_id
-            target.value_source_value = value
             return target
 
         if field_mapping.has_values():
@@ -140,7 +140,6 @@ class FieldConceptMapper:
             if value_mapping.value_target:
                 target.value_as_concept_id = value_mapping.value_target.concept_id
             target.source_value = field_id + "|" + value
-            target.value_source_value = value
             return target
 
         raise Warning('"{field_id}-{value}" This should not happen, mapping has to be either a unit or value mapping.')

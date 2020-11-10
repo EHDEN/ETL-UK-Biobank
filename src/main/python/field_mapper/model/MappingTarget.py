@@ -22,7 +22,7 @@ class MappingTarget:
         self.value_as_number = None
         self.unit_concept_id = None
         self.source_value = None
-        self.value_source_value = None
+        self.value_as_string = None
 
     def __str__(self):
         return f'{self.source_value}-{self.value_source_value} => ' \
