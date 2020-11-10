@@ -55,6 +55,7 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(assessment_center_to_location)
         self.execute_transformation(baseline_to_person)
         self.execute_transformation(gp_clinical_to_visit_occurrence)
+        self.execute_transformation(gp_prescriptions_to_drug_exposure)
         self.execute_transformation(gp_registrations_to_observation_period)
 
         # sql transformation:
