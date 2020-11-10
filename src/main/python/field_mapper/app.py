@@ -17,11 +17,11 @@ ATHENA_CONCEPT_ID_URL = "https://athena.ohdsi.org/search-terms/terms/%s"
 
 # mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'ERROR')
 mapper = FieldConceptMapper(None, 'ERROR')
-mapper._load_usagi(Path('./resources/baseline_field_mapping/usagi_numeric_prio_fields.csv'))
+mapper.load_usagi(Path('./resources/baseline_field_mapping/usagi_numeric_prio_fields.csv'))
 
 i = 0
 data = []
-for mapping in mapper.get_random(50):
+for mapping in mapper.get_random_mappings(50):
     values = ""
     if mapping.has_values():
         map_type = '⭕️categorical'

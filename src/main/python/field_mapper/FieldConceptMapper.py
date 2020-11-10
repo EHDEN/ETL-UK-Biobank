@@ -19,7 +19,7 @@ from typing import Dict, Optional
 import logging
 
 from src.main.python.field_mapper.model.MappingTarget import MappingTarget
-from src.main.python.field_mapper.model.UsagiModel import UsagiRow
+from src.main.python.field_mapper.model.UsagiModel import UsagiRow, MappingStatus
 from src.main.python.field_mapper.model.MappingModel import FieldMapping
 from src.main.python.field_mapper.model.Validator import validator
 
@@ -50,15 +50,9 @@ class FieldConceptMapper:
 
         for usagi_path in directory.glob('*.csv'):
             logger.info(f"Loading {usagi_path.name}...")
-            self._load_usagi(usagi_path)
+            self.load_usagi(usagi_path)
 
-    @staticmethod
-    def _load_map(file_path: Path):
-        with file_path.open(encoding='ISO-8859-2') as f_in:
-            for row in csv.DictReader(f_in):
-                yield row
-
-    def _load_usagi(self, file_path: Path):
+    def load_usagi(self, file_path: Path):
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
@@ -69,12 +63,23 @@ class FieldConceptMapper:
             )
             code_mapping.add(usagi_mapping)
 
+    @staticmethod
+    def _load_map(file_path: Path):
+        with file_path.open(encoding='ISO-8859-2') as f_in:
+            for row in csv.DictReader(f_in):
+                yield row
+
     def get_mapping(self, field_id: str) -> Optional[FieldMapping]:
         if field_id in self.field_mappings:
             return self.field_mappings[field_id]
         return None
 
-    def get_random(self, n=20):
+    def get_flagged_mappings(self):
+        for mapping in self.field_mappings.values():
+            if mapping.status == MappingStatus.FLAGGED:
+                yield mapping
+
+    def get_random_mappings(self, n=20):
         import random
         if n > len(self.field_mappings):
             n = len(self.field_mappings)
@@ -156,6 +161,9 @@ if __name__ == '__main__':
     # get the mapping of a field
     # print(mapper.get_mapping('2335'))
     print(mapper.get_mapping('4041'))
+
+    print(f'{len(mapper.field_mappings):>6} field mappings loaded')
+    print(f'{sum([len(x.get_values()) for x in mapper.field_mappings.values()]):>6,} value mappings loaded')
 
     validator.print_summary()
     # validator.print_all()

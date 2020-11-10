@@ -64,6 +64,11 @@ class _AbstractMapping(ABC):
 
         self.status = status
 
+    def is_flagged(self) -> bool:
+        if self.status == MappingStatus.FLAGGED:
+            return True
+        return False
+
     def set_target(self, target: TargetMapping):
         if target.type == MappingType.EVENT:
             if self.event_target:
@@ -98,6 +103,12 @@ class FieldMapping(_AbstractMapping):
     def has_values(self) -> bool:
         # TODO: what about numeric mappings that also have a few codes (-1, -3)
         return bool(self.values)
+
+    def has_flagged_values(self) -> bool:
+        for value_mapping in self.values.values():
+            if value_mapping.status == MappingStatus.FLAGGED:
+                return True
+        return False
 
     def get_values(self) -> List[ValueMapping]:
         return list(self.values.values())
