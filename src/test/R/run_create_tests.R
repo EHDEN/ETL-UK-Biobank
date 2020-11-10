@@ -21,13 +21,16 @@ source('TestFramework_ukbb.R')
 initFramework()
 
 # Import test cases ------------------------------------------------------------
-source('test_cases/test_assessment_center_to_location.R')   # test IDs    1-99
-source('test_cases/test_covid_to_care_site.R')              # test IDs 100-199
-source('test_cases/test_baseline_to_person.R')              # test IDs 200-299
-source('test_cases/test_gp_registrations_to_obs_period.R')  # test IDs 300-399
-source('test_cases/test_gp_clinical_to_visit_occurrence.R') # test IDs 400-499
-# source('test_cases/test_gp_clinical_to_stem_table.R')       # test IDs 500-599
-source('test_cases/test_baseline_to_stem.R') # test IDs 900-999
+source('test_cases/test_assessment_center_to_location.R')              # test IDs    1-99
+# source('test_cases/test_covid_to_care_site.R')                       # test IDs 100-199
+source('test_cases/test_baseline_to_person.R')                         # test IDs 200-299
+source('test_cases/test_gp_registrations_to_obs_period.R')             # test IDs 300-399
+source('test_cases/test_gp_clinical_to_visit_occurrence.R')            # test IDs 400-499
+source('test_cases/test_covid_to_visit_occurrence.R')                  # test IDs 500-599
+source('test_cases/test_gp_prescriptions_to_visit_occurrence.R')       # test IDs 600-699
+source('test_cases/test_baseline_to_visit_occurrence.R')               # test IDs 700-799
+# source('test_cases/test_gp_clinical_to_stem_table.R')                     # test IDs 800-899
+source('test_cases/test_baseline_to_stem.R')                           # test IDs 900-999
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)
