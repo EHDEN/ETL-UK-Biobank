@@ -32,7 +32,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             # Date
             date_field_id = '53'  # TODO: lookup which date field to use for incoming field
             date_column_name = f'{date_field_id}-{instance}.0'
-            datetime = get_datetime(row[date_column_name])
+            datetime = get_datetime(row[date_column_name], '%d/%m/%Y')
 
             target = mapper.lookup(field_id, value)
             if target:
