@@ -18,7 +18,7 @@ From admission to discharge
 | visit_start_datetime | admidate |  |  |
 | visit_end_date | disdate | Maximum |  |
 | visit_end_datetime | disdate |  |  |
-| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: x - Screening (Procedure Type) |
+| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record.  For hesin: 44818517 - Visit derived from encounter on claim.  For baseline: 44818519 - Clinical Study visit.  For covid: 44818518 - Visit derived from EHR record |
 | provider_id |  |  |  |
 | care_site_id |  |  | For hesin: care site group info is present, but not granular enough. |
 | visit_source_value | admimeth |  |  |
@@ -44,7 +44,7 @@ See gp_clinical, merge the two
 | visit_start_datetime | issue_date |  |  |
 | visit_end_date | issue_date |  |  |
 | visit_end_datetime | issue_date |  |  |
-| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: x - Screening (Procedure Type) |
+| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record.  For hesin: 44818517 - Visit derived from encounter on claim.  For baseline: 44818519 - Clinical Study visit.  For covid: For covid: 44818518 - Visit derived from EHR recordFor covid: 44818518 - Visit derived from EHR record |
 | provider_id |  |  |  |
 | care_site_id |  |  | For hesin: care site group info is present, but not granular enough. |
 | visit_source_value |  |  |  |
@@ -70,7 +70,7 @@ Merge with gp_prescriptions to get all unique eid+event_dt/issue_date combinatio
 | visit_start_datetime | event_dt |  |  |
 | visit_end_date | event_dt |  |  |
 | visit_end_datetime | event_dt |  |  |
-| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: x - Screening (Procedure Type) |
+| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record.  For hesin: 44818517 - Visit derived from encounter on claim.  For baseline: 44818519 - Clinical Study visit.  For covid: 44818518 - Visit derived from EHR record |
 | provider_id |  |  |  |
 | care_site_id | data_provider | Capture in the care_site table  1 - England, Vision  2 - Scotland  3 - England, TPP  4 - Wales | Placeholder.  Note, the data_provider is not the specific care site, but what system the data what extracted from.<br>For hesin: care site group info is present, but not granular enough. |
 | visit_source_value |  |  |  |
@@ -97,7 +97,7 @@ Follow-up online or to assessment center.
 | visit_start_datetime | value | Same as mapping to visit_start_date |  |
 | visit_end_date | value | Same as mapping to visit_start_date |  |
 | visit_end_datetime | value | Same as mapping to visit_start_date |  |
-| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: x - Screening (Procedure Type) |
+| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record.  For hesin: 44818517 - Visit derived from encounter on claim.  For baseline: 44818519 - Clinical Study visit.  For covid: 44818518 - Visit derived from EHR record |
 | provider_id |  |  |  |
 | care_site_id | value | Corresponding value from field 54.x.0 | See also person to location_id mapping<br>For hesin: care site group info is present, but not granular enough. |
 | visit_source_value |  |  |  |
@@ -121,7 +121,7 @@ Follow-up online or to assessment center.
 | visit_start_datetime | specdate |  |  |
 | visit_end_date | specdate |  |  |
 | visit_end_datetime | specdate |  |  |
-| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record  For hesin: 44818517 - Visit derived from encounter on claim  For baseline: 44818519 - Clinical Study visit  For covid: 4063579 - Screening (Procedure Type) |
+| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record.  For hesin: 44818517 - Visit derived from encounter on claim.  For baseline: 44818519 - Clinical Study visit.  For covid: 44818518 - Visit derived from EHR record |
 | provider_id |  |  |  |
 | care_site_id | laboratory | Capture unique laboratories in care_site table. | For hesin: care site group info is present, but not granular enough. |
 | visit_source_value |  |  |  |

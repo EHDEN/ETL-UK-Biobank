@@ -9,17 +9,23 @@ if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-def gp_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    source = pd.DataFrame(wrapper.get_source_data('gp_prescriptions.csv'))
+def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
+    clinical = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'))
+    clinical = clinical[["eid", "event_dt", "data_provider"]].rename(columns={'event_dt': 'date'})
 
+    prescriptions = pd.DataFrame(wrapper.get_source_data('gp_prescriptions.csv'))
+    prescriptions = prescriptions[["eid", "issue_date", "data_provider"]].rename(columns={'issue_date': 'date'})
+
+    source = pd.concat([prescriptions, clinical])
+    source = source.drop_duplicates(['eid', 'date'])
     records = []
 
     for _, row in source.iterrows():
-        visit_date = get_datetime(row['issue_date'], "%d/%m/%Y")
+        visit_date = get_datetime(row['date'], "%d/%m/%Y")
 
         r = wrapper.cdm.VisitOccurrence(
             person_id=row['eid'],
-            visit_concept_id=38004453,  # Family practice
+            visit_concept_id=38004453,  # Family Practice
             visit_start_date=visit_date.date(),
             visit_start_datetime=visit_date,
             visit_end_date=visit_date.date(),

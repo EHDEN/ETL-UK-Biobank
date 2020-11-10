@@ -35,7 +35,10 @@ class UsagiRow:
 
     def __init__(self, row, filename):
         self.field_id: str = row['sourceCode'].strip()
+        self.field_description: str = row['sourceName'].strip()
         self.value_code: str = row['sourceValueCode'].strip()
+        self.value_description: str = row['sourceValueName'].strip()
+        self.unit_description: str = row['sourceUnitName'].strip()
         self.target: TargetMapping = TargetMapping(row)
         self.status: MappingStatus = MappingStatus[row['mappingStatus']]
         self.comment: str = row['comment']

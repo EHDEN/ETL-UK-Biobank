@@ -24,9 +24,6 @@ class MappingTarget:
         self.source_value = None
         self.value_source_value = None
 
-        self.variable_comment = None
-        self.value_comment = None
-
     def __str__(self):
         return f'{self.source_value}-{self.value_source_value} => ' \
                f'concept_id: {self.concept_id}, ' \
@@ -34,6 +31,4 @@ class MappingTarget:
                f'value_as_number: {self.value_as_number}, ' \
                f'unit_concept_id: {self.unit_concept_id}, ' \
                f'source_value: {self.source_value}, ' \
-               f'value_source_value: {self.value_source_value}, ' \
-               f'variable_comment: {self.variable_comment}, ' \
-               f'value_comment: {self.value_comment}'
+               f'value_source_value: {self.value_source_value}'
