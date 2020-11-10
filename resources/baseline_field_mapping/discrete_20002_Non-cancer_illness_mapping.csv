@@ -1,0 +1,447 @@
+sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
+20002,diabetes,1220,diabetes,,23996,,0.8904300332069397,APPROVED,Vaclav,1604396402676,201820,EVENT,,Vaclav,1604396395977
+20002,fracture hand,1638,fracture hand,,441,,0.8478937149047852,APPROVED,Vaclav,1604397104088,4071876,EVENT,,<auto>,1604359804705
+20002,uterine problem,1552,uterine problem,,91,,0.7672346234321594,APPROVED,Vaclav,1604404677075,4129177,EVENT,,Vaclav,1604404675001
+20002,asbestosis,1120,asbestosis,,208,,1.0,APPROVED,Vaclav,1604361691699,256450,EVENT,,<auto>,1604359804727
+20002,haemophilia,1328,haemophilia,,78,,1.0,APPROVED,Vaclav,1604361697782,4236898,EVENT,,<auto>,1604359804809
+20002,rheumatic fever,1479,rheumatic fever,,1607,,1.0,APPROVED,Vaclav,1604361707696,442313,EVENT,,<auto>,1604359804846
+20002,diabetes insipidus,1521,diabetes insipidus,,29,,1.0,APPROVED,Vaclav,1604361709835,30968,EVENT,,<auto>,1604359804924
+20002,pleural plaques (not known asbestosis),1595,pleural plaques (not known asbestosis),,88,,0.5092961192131042,FLAGGED,,0,4049971,EVENT,,<auto>,1604359805087
+20002,grave's disease,1522,grave's disease,,167,,0.6568337082862854,APPROVED,Vaclav,1604414892421,4232076,EVENT,,Vaclav,1604414885078
+20002,cervical problem,1553,cervical problem,,56,,0.6513034701347351,FLAGGED,,0,4128191,EVENT,,Vaclav,1604415091821
+20002,dermatomyositis,1480,dermatomyositis,,40,,1.0,APPROVED,Vaclav,1604361712445,80182,EVENT,,<auto>,1604359805772
+20002,fracture finger,1639,fracture finger,,984,,0.8683318495750427,APPROVED,Vaclav,1604396678995,4057580,EVENT,,<auto>,1604359805788
+20002,pulmonary fibrosis,1121,pulmonary fibrosis,,148,,1.0,APPROVED,Vaclav,1604361723999,4197819,EVENT,,<auto>,1604359805830
+20002,iron deficiency anaemia,1330,iron deficiency anaemia,,3504,,1.0,APPROVED,Vaclav,1604362630844,436659,EVENT,,<auto>,1604359805950
+20002,pleural effusion,1596,pleural effusion,,50,,1.0,APPROVED,Vaclav,1604362636305,254061,EVENT,,<auto>,1604359806032
+20002,gestational diabetes,1221,gestational diabetes,,313,,1.0,APPROVED,Vaclav,1604362742601,4024659,EVENT,,<auto>,1604359806125
+20002,polymyositis,1481,polymyositis,,73,,1.0,APPROVED,Vaclav,1604362989367,80800,EVENT,,<auto>,1604359806189
+20002,trigemminal neuralgia,1523,trigemminal neuralgia,,324,,0.8678503632545471,APPROVED,Vaclav,1604396681986,379801,EVENT,,<auto>,1604359806284
+20002,fracture thumb,1640,fracture thumb,,235,,0.9132489562034607,FLAGGED,,0,4166901,EVENT,,<auto>,1604359806595
+20002,tinnitus / tiniitis,1597,tinnitus / tiniitis,,1946,,0.5815469026565552,APPROVED,Vaclav,1604423889486,377575,EVENT,,<auto>,1604359806804
+20002,pernicious anaemia,1331,pernicious anaemia,,1674,,1.0,APPROVED,Vaclav,1604362991936,432295,EVENT,,<auto>,1604359806812
+20002,type 1 diabetes,1222,type 1 diabetes,,544,,0.7992866635322571,APPROVED,Vaclav,1604404114915,201254,EVENT,,<auto>,1604359806996
+20002,spina bifida,1524,spina bifida,,87,,1.0,APPROVED,Vaclav,1604362993394,4283381,EVENT,,<auto>,1604359807104
+20002,fibrosing alveolitis/unspecified alveolitis,1122,fibrosing alveolitis/unspecified alveolitis,,98,,0.6330997943878174,APPROVED,Vaclav,1604418720597,4025168,EVENT,,<auto>,1604359807122
+20002,chronic fatigue syndrome,1482,chronic fatigue syndrome,,2440,,1.0,APPROVED,Vaclav,1604362995720,432738,EVENT,,<auto>,1604359807304
+20002,fracture rib,1644,fracture rib,,807,,0.8554422855377197,APPROVED,Vaclav,1604397046674,4142905,EVENT,,<auto>,1604359807405
+20002,tonsiltis,1598,tonsiltis,,6555,,0.6245871782302856,APPROVED,Vaclav,1604419944992,4234533,EVENT,,<auto>,1604359807491
+20002,aplastic anaemia,1332,aplastic anaemia,,40,,1.0,APPROVED,Vaclav,1604362997584,137829,EVENT,,<auto>,1604359807564
+20002,cervical intra-epithelial neoplasia (cin) / precancerous cells cervix,1554,cervical intra-epithelial neoplasia (cin) / precancerous cells cervix,,473,,0.5252598524093628,APPROVED,Vaclav,1604427427264,198572,EVENT,,<auto>,1604359807702
+20002,sleep apnoea,1123,sleep apnoea,,1919,,1.0,APPROVED,Vaclav,1604363006562,313459,EVENT,,<auto>,1604359807753
+20002,type 2 diabetes,1223,type 2 diabetes,,4546,,0.8033038973808289,APPROVED,Vaclav,1604403993613,201826,EVENT,,<auto>,1604359807892
+20002,atrial flutter,1483,atrial flutter,,171,,1.0,APPROVED,Vaclav,1604363008255,314665,EVENT,,<auto>,1604359808082
+20002,constipation,1599,constipation,,753,,1.0,APPROVED,Vaclav,1604363009814,75860,EVENT,,<auto>,1604359808201
+20002,benign / essential tremor,1525,benign / essential tremor,,242,,0.6904712915420532,APPROVED,Vaclav,1604406540621,43531003,EVENT,,<auto>,1604359808203
+20002,fracture sternum,1645,fracture sternum,,56,,0.9323122501373291,APPROVED,Vaclav,1604395775301,4302740,EVENT,,<auto>,1604359808347
+20002,cervical polyps,1555,cervical polyps,,315,,0.8784213066101074,APPROVED,Vaclav,1604396667929,4280498,EVENT,,<auto>,1604359808401
+20002,sickle cell disease,1339,sickle cell disease,,79,,1.0,FLAGGED,,0,4213628,EVENT,,<auto>,1604359808523
+20002,respiratory failure,1124,respiratory failure,,31,,1.0,APPROVED,Vaclav,1604363044704,4256228,EVENT,,<auto>,1604359808653
+20002,polio / poliomyelitis,1526,polio / poliomyelitis,,458,,0.7821072340011597,APPROVED,Vaclav,1604404538577,378679,EVENT,,<auto>,1604359808964
+20002,thyroid problem (not cancer),1224,thyroid problem (not cancer),,1464,,0.5772638916969299,FLAGGED,,0,4178976,EVENT,,<auto>,1604359809086
+20002,wolff parkinson white / wpw syndrome,1484,wolff parkinson white / wpw syndrome,,104,,0.7252430319786072,APPROVED,Vaclav,1604405719631,4253363,EVENT,,<auto>,1604359809204
+20002,pleurisy,1125,pleurisy,,1974,,1.0,APPROVED,Vaclav,1604363146640,78786,EVENT,,<auto>,1604359809209
+20002,thalassaemia,1340,thalassaemia,,167,,1.0,APPROVED,Vaclav,1604363147963,30978,EVENT,,<auto>,1604359809263
+20002,menorrhagia (unknown cause),1556,menorrhagia (unknown cause),,1843,,0.5401946902275085,APPROVED,Vaclav,1604426921946,4302555,EVENT,,Vaclav,1604426918350
+20002,bowel / intestinal perforation,1600,bowel / intestinal perforation,,81,,0.7630630731582642,APPROVED,Vaclav,1604404836920,193242,EVENT,,<auto>,1604359809695
+20002,fracture vertebra / crush fracture / vertebral collapse,1646,fracture vertebra / crush fracture / vertebral collapse,,503,,0.675931990146637,APPROVED,Vaclav,1604414199679,4174520,EVENT,,Vaclav,1604414194100
+20002,irregular heart beat,1485,irregular heart beat,,1298,,1.0,APPROVED,Vaclav,1604363151430,4263255,EVENT,,<auto>,1604359809927
+20002,retinitis pigmentosa,1527,retinitis pigmentosa,,53,,1.0,APPROVED,Vaclav,1604363248758,4103381,EVENT,,<auto>,1604359810204
+20002,stevens johnson syndrome,1344,stevens johnson syndrome,,50,,1.0,APPROVED,Vaclav,1604363252419,141651,EVENT,,<auto>,1604359810229
+20002,hyperthyroidism/thyrotoxicosis,1225,hyperthyroidism/thyrotoxicosis,,4246,,0.6072674989700317,FLAGGED,,0,4142479,EVENT,which one?,<auto>,1604359810304
+20002,sick sinus syndrome,1486,sick sinus syndrome,,27,,1.0,APPROVED,Vaclav,1604363255813,4261842,EVENT,,<auto>,1604359810679
+20002,pelvic inflammatory disease/ pid,1557,pelvic inflammatory disease/ pid,,90,,0.8134523630142212,APPROVED,Vaclav,1604398267005,199067,EVENT,,<auto>,1604359810713
+20002,fracture pelvis,1647,fracture pelvis,,269,,0.9152604937553406,APPROVED,Vaclav,1604396097557,4300192,EVENT,,<auto>,1604359810753
+20002,spontaneous pneumothorax/recurrent pneumothorax,1126,spontaneous pneumothorax/recurrent pneumothorax,,1201,,0.6362634301185608,APPROVED,Vaclav,1604418274212,255302,EVENT,,<auto>,1604359810756
+20002,bowel / intestinal infarction,1601,bowel / intestinal infarction,,22,,0.7480786442756653,FLAGGED,,0,4319280,EVENT,Is it accute?,<auto>,1604359810789
+20002,pemphigoid/pemphigus,1345,pemphigoid/pemphigus,,73,,0.6314629316329956,FLAGGED,,0,139899,EVENT,"2 codes, which one?",<auto>,1604359810831
+20002,hypothyroidism/myxoedema,1226,hypothyroidism/myxoedema,,27850,,0.5878003239631653,FLAGGED,,0,4182596,EVENT,which one?,<auto>,1604359810967
+20002,macular degeneration,1528,macular degeneration,,591,,0.8635466694831848,FLAGGED,,0,374028,EVENT,,<auto>,1604359811297
+20002,ectopic pregnancy,1558,ectopic pregnancy,,542,,1.0,APPROVED,Vaclav,1604363259170,437611,EVENT,,<auto>,1604359811746
+20002,dry eyes,1529,dry eyes,,1356,,1.0,APPROVED,Vaclav,1604363260606,4036620,EVENT,,<auto>,1604359811788
+20002,oesophageal disorder,1134,oesophageal disorder,,327,,0.8105359673500061,FLAGGED,,0,134681,EVENT,,<auto>,1604359811818
+20002,fracture neck of femur / hip,1648,fracture neck of femur / hip,,402,,0.7966779470443726,APPROVED,Vaclav,1604404244464,433856,EVENT,,<auto>,1604359811878
+20002,svt / supraventricular tachycardia,1487,svt / supraventricular tachycardia,,404,,0.9320325255393982,APPROVED,Vaclav,1604395817215,4275423,EVENT,,<auto>,1604359811994
+20002,bowel / intestinal obstruction,1602,bowel / intestinal obstruction,,222,,0.822420597076416,APPROVED,Vaclav,1604398170907,193518,EVENT,,<auto>,1604359812098
+20002,iritis,1530,iritis,,314,,1.0,APPROVED,Vaclav,1604363261750,4274964,EVENT,,<auto>,1604359812233
+20002,thyroid radioablation therapy,1228,thyroid radioablation therapy,,113,,0.44753825664520264,FLAGGED,,0,4231548,EVENT,,<auto>,1604359812331
+20002,miscarriage,1559,miscarriage,,1701,,1.0,APPROVED,Vaclav,1604363263694,4067106,EVENT,,<auto>,1604359812393
+20002,gynaecological disorder (not cancer),1348,gynaecological disorder (not cancer),,852,,0.6550662517547607,APPROVED,Vaclav,1604414967077,443343,EVENT,,<auto>,1604359812806
+20002,stomach disorder,1135,stomach disorder,,1109,,0.7231230139732361,APPROVED,Vaclav,1604405844370,201891,EVENT,,<auto>,1604359812862
+20002,fracture shaft of femur,1649,fracture shaft of femur,,377,,0.9687988758087158,APPROVED,Vaclav,1604395607525,440825,EVENT,,<auto>,1604359813043
+20002,mitral valve prolapse,1488,mitral valve prolapse,,120,,1.0,APPROVED,Vaclav,1604363351534,4252872,EVENT,,<auto>,1604359813045
+20002,rectal prolapse,1603,rectal prolapse,,240,,1.0,APPROVED,Vaclav,1604363353073,81336,EVENT,,<auto>,1604359813068
+20002,breast fibroadenoma,1560,breast fibroadenoma,,244,,0.829477071762085,APPROVED,Vaclav,1604397753310,4116072,EVENT,,<auto>,1604359813188
+20002,post-natal depression,1531,post-natal depression,,636,,0.5852656960487366,APPROVED,Vaclav,1604423834716,4239471,EVENT,,Vaclav,1604423829690
+20002,parathyroid gland problem (not cancer),1229,parathyroid gland problem (not cancer),,179,,0.5793854594230652,FLAGGED,,0,138713,EVENT,,Vaclav,1604424007308
+20002,ovarian cyst or cysts,1349,ovarian cyst or cysts,,4525,,0.8073455691337585,APPROVED,Vaclav,1604403924662,197610,EVENT,,<auto>,1604359813736
+20002,disc problem,1532,disc problem,,587,,0.6719430088996887,FLAGGED,,0,4206460,EVENT,general problem?,<auto>,1604359813974
+20002,mitral stenosis,1489,mitral stenosis,,48,,1.0,APPROVED,Vaclav,1604363370300,315273,EVENT,,<auto>,1604359814256
+20002,fracture patella / knee,1650,fracture patella / knee,,452,,0.6189085245132446,APPROVED,Vaclav,1604422899762,4177025,EVENT,,<auto>,1604359814344
+20002,liver/biliary/pancreas problem,1136,liver/biliary/pancreas problem,,915,,0.5495084524154663,FLAGGED,,0,4113557,EVENT,,Vaclav,1604426358767
+20002,raynaud's phenomenon/disease,1561,raynaud's phenomenon/disease,,767,,0.8040763139724731,APPROVED,Vaclav,1604403991286,4143972,EVENT,,<auto>,1604359814510
+20002,alcoholic liver disease / alcoholic cirrhosis,1604,alcoholic liver disease / alcoholic cirrhosis,,80,,0.8254660964012146,APPROVED,Vaclav,1604398157655,196463,EVENT,,<auto>,1604359814685
+20002,parathyroid hyperplasia/adenoma,1230,parathyroid hyperplasia/adenoma,,139,,0.7075654864311218,FLAGGED,,0,4235273,EVENT,two diff codes for heyperplasia and adenoma,<auto>,1604359815127
+20002,polycystic ovaries/polycystic ovarian syndrome,1350,polycystic ovaries/polycystic ovarian syndrome,,698,,0.6959166526794434,APPROVED,Vaclav,1604406526581,40443308,EVENT,,<auto>,1604359815258
+20002,disc degeneration,1533,disc degeneration,,1250,,0.8087450265884399,APPROVED,Vaclav,1604403917334,80816,EVENT,,<auto>,1604359815292
+20002,aortic stenosis,1490,aortic stenosis,,138,,0.8140828013420105,FLAGGED,,0,4081037,EVENT,which one?,<auto>,1604359815335
+20002,fracture lower leg / ankle,1651,fracture lower leg / ankle,,2728,,0.6766101121902466,FLAGGED,,0,4185758,EVENT,fracture of leg or ankle?,<auto>,1604359815647
+20002,food intolerance,1562,food intolerance,,505,,0.6105309128761292,FLAGGED,,0,4010829,EVENT,,<auto>,1604359815658
+20002,other abdominal problem,1137,other abdominal problem,,598,,0.6079415678977966,FLAGGED,,0,4206460,EVENT,problem,Vaclav,1604423128369
+20002,femoral hernia,1605,femoral hernia,,156,,1.0,APPROVED,Vaclav,1604363413099,4178874,EVENT,,<auto>,1604359815807
+20002,back pain,1534,back pain,,4981,,1.0,APPROVED,Vaclav,1604363418449,134736,EVENT,,<auto>,1604359815876
+20002,brain haemorrhage,1491,brain haemorrhage,,218,,0.8831937313079834,APPROVED,Vaclav,1604396649006,4319328,EVENT,,<auto>,1604359816119
+20002,uterine fibroids,1351,uterine fibroids,,8969,,1.0,APPROVED,Vaclav,1604363526693,197236,EVENT,,<auto>,1604359816227
+20002,urticaria,1563,urticaria,,561,,1.0,APPROVED,Vaclav,1604363530822,139900,EVENT,,<auto>,1604359816263
+20002,fracture tibia,1652,fracture tibia,,827,,0.9103794693946838,APPROVED,Vaclav,1604396183472,440543,EVENT,,<auto>,1604359816602
+20002,haemochromatosis,1507,haemochromatosis,,152,,1.0,APPROVED,Vaclav,1604363539666,4163735,EVENT,,<auto>,1604359816812
+20002,disorder of adrenal gland,1232,disorder of adrenal gland,,50,,1.0,APPROVED,Vaclav,1604363546776,193165,EVENT,,<auto>,1604359817001
+20002,incisional hernia,1606,incisional hernia,,120,,1.0,APPROVED,Vaclav,1604363550312,198464,EVENT,,<auto>,1604359817120
+20002,aortic aneurysm,1492,aortic aneurysm,,128,,1.0,APPROVED,Vaclav,1604363558851,317585,EVENT,,<auto>,1604359817180
+20002,uterine polyps,1352,uterine polyps,,1640,,0.8512952327728271,APPROVED,Vaclav,1604397078979,200779,EVENT,,<auto>,1604359817211
+20002,antiphospholipid syndrome,1564,antiphospholipid syndrome,,39,,1.0,APPROVED,Vaclav,1604363566991,4098292,EVENT,,<auto>,1604359817483
+20002,gastro-oesophageal reflux (gord) / gastric reflux,1138,gastro-oesophageal reflux (gord) / gastric reflux,,25714,,0.7195196151733398,APPROVED,Vaclav,1604405956306,318800,EVENT,,<auto>,1604359817611
+20002,fracture fibula,1653,fracture fibula,,795,,0.8903433084487915,APPROVED,Vaclav,1604396405324,436209,EVENT,,<auto>,1604359817641
+20002,adrenal tumour,1233,adrenal tumour,,46,,1.0,FLAGGED,,0,4130675,EVENT,,<auto>,1604359818129
+20002,jaundice (unknown cause),1508,jaundice (unknown cause),,787,,0.5447998642921448,APPROVED,Vaclav,1604426837385,137977,EVENT,,Vaclav,1604426834274
+20002,diabetic nephropathy,1607,diabetic nephropathy,,32,,1.0,APPROVED,Vaclav,1604363652323,192279,EVENT,,<auto>,1604359818334
+20002,fracture foot,1654,fracture foot,,473,,0.8727790117263794,APPROVED,Vaclav,1604396672089,4048393,EVENT,,<auto>,1604359818680
+20002,oesophagitis/barretts oesophagus,1139,oesophagitis/barretts oesophagus,,1780,,0.632820188999176,APPROVED,Vaclav,1604418699585,26141,EVENT,,<auto>,1604359818715
+20002,vaginal prolapse/uterine prolapse,1353,vaginal prolapse/uterine prolapse,,3205,,0.5439847111701965,APPROVED,Vaclav,1604426856376,192683,EVENT,,<auto>,1604359818828
+20002,nephritis,1608,nephritis,,187,,1.0,APPROVED,Vaclav,1604363653824,193253,EVENT,,<auto>,1604359818969
+20002,other venous/lymphatic disease,1493,other venous/lymphatic disease,,34,,0.6239981055259705,FLAGGED,,0,4294167,EVENT,,<auto>,1604359819171
+20002,gastroenteritis/dysentry,1509,gastroenteritis/dysentry,,316,,0.5288498401641846,APPROVED,Vaclav,1604427284555,4101468,EVENT,,<auto>,1604359819389
+20002,oesophageal stricture,1140,oesophageal stricture,,122,,1.0,APPROVED,Vaclav,1604363666660,4268622,EVENT,,<auto>,1604359819887
+20002,glomerulnephritis,1609,glomerulnephritis,,89,,0.7853970527648926,APPROVED,Vaclav,1604404455349,4263367,EVENT,,<auto>,1604359820092
+20002,mrsa / methicillin resistant staphylococcus aureus,1566,mrsa / methicillin resistant staphylococcus aureus,,81,,0.7933255434036255,APPROVED,Vaclav,1604404377593,440940,EVENT,,<auto>,1604359820119
+20002,adrenocortical insufficiency/addison's disease,1234,adrenocortical insufficiency/addison's disease,,206,,0.5849675536155701,APPROVED,Vaclav,1604423872181,443394,EVENT,,Vaclav,1604423870673
+20002,varicose veins,1494,varicose veins,,2721,,1.0,APPROVED,Vaclav,1604363681383,312349,EVENT,,<auto>,1604359820297
+20002,housemaid's knee (prepatellar bursitis),1624,housemaid's knee (prepatellar bursitis),,119,,0.5407998561859131,APPROVED,Vaclav,1604426868996,133294,EVENT,,<auto>,1604359820595
+20002,breast disease (not cancer),1364,breast disease (not cancer),,290,,0.602218747138977,APPROVED,Vaclav,1604423177219,77030,EVENT,,<auto>,1604359820616
+20002,dyspepsia / indigestion,1510,dyspepsia / indigestion,,998,,0.7137673497200012,APPROVED,Vaclav,1604406128859,439418,EVENT,,<auto>,1604359820812
+20002,thyroid goitre,1610,thyroid goitre,,590,,1.0,FLAGGED,,0,135772,EVENT,,<auto>,1604359820862
+20002,scoliosis,1535,scoliosis,,477,,1.0,APPROVED,Vaclav,1604363798441,72418,EVENT,,<auto>,1604359821054
+20002,oesophageal varicies,1141,oesophageal varicies,,57,,0.8543886542320251,APPROVED,Vaclav,1604397069540,24966,EVENT,,<auto>,1604359821083
+20002,lymphoedema,1495,lymphoedema,,329,,1.0,APPROVED,Vaclav,1604363799880,435839,EVENT,,<auto>,1604359821161
+20002,cellulitis,1625,cellulitis,,502,,1.0,APPROVED,Vaclav,1604363801142,435613,EVENT,,<auto>,1604359821254
+20002,hyperaldosteronism/conn's syndrome,1235,hyperaldosteronism/conn's syndrome,,49,,0.6327863335609436,FLAGGED,,0,434000,EVENT,code for each,<auto>,1604359821787
+20002,fibrocystic disease,1366,fibrocystic disease,,162,,1.0,APPROVED,Vaclav,1604363836881,441267,EVENT,,<auto>,1604359821794
+20002,hyperparathyroidism,1611,hyperparathyroidism,,157,,1.0,APPROVED,Vaclav,1604363838947,133729,EVENT,,<auto>,1604359822150
+20002,abdominal hernia,1511,abdominal hernia,,432,,1.0,APPROVED,Vaclav,1604363874591,199860,EVENT,,<auto>,1604359822153
+20002,gastric/stomach ulcers,1142,gastric/stomach ulcers,,4047,,0.6386877298355103,APPROVED,Vaclav,1604415554904,4265600,EVENT,,<auto>,1604359822161
+20002,spinal stenosis,1536,spinal stenosis,,268,,1.0,APPROVED,Vaclav,1604363975414,77079,EVENT,,<auto>,1604359822249
+20002,breast cysts,1367,breast cysts,,2203,,0.7383570671081543,APPROVED,Vaclav,1604405616321,761188,EVENT,,<auto>,1604359822579
+20002,fracture skull / head,1626,fracture skull / head,,463,,0.7991389632225037,APPROVED,Vaclav,1604404153049,4324690,EVENT,,<auto>,1604359822651
+20002,pancreatitis,1165,pancreatitis,,1164,,1.0,APPROVED,Vaclav,1604363977145,4192640,EVENT,,<auto>,1604359822714
+20002,alpha-1 antitrypsin deficiency,1496,alpha-1 antitrypsin deficiency,,25,,0.798640251159668,APPROVED,Vaclav,1604404165907,192275,EVENT,,<auto>,1604359822737
+20002,joint pain,1537,joint pain,,2740,,1.0,APPROVED,Vaclav,1604363978541,77074,EVENT,,<auto>,1604359822937
+20002,umbilical hernia,1512,umbilical hernia,,651,,1.0,APPROVED,Vaclav,1604363980064,4245842,EVENT,,<auto>,1604359823167
+20002,fracture jaw,1627,fracture jaw,,264,,0.7247871160507202,FLAGGED,,0,434764,EVENT,generalized to fracture of face bones as there is not specified which jaw,Vaclav,1604405784337
+20002,sarcoidosis,1371,sarcoidosis,,1137,,1.0,APPROVED,Vaclav,1604363981213,438688,EVENT,,<auto>,1604359823505
+20002,pneumothorax,1497,pneumothorax,,291,,1.0,APPROVED,Vaclav,1604363982528,253796,EVENT,,<auto>,1604359823536
+20002,peritonitis,1190,peritonitis,,1725,,1.0,APPROVED,Vaclav,1604363985166,196152,EVENT,,<auto>,1604359823567
+20002,gastritis/gastric erosions,1143,gastritis/gastric erosions,,1010,,0.599567711353302,FLAGGED,,0,201340,EVENT,which one?,Vaclav,1604423294624
+20002,blepharitis / eyelid infection,1613,blepharitis / eyelid infection,,336,,0.6147522330284119,APPROVED,Vaclav,1604423002936,378425,EVENT,,Vaclav,1604422999465
+20002,arthritis (nos),1538,arthritis (nos),,6380,,0.523961067199707,APPROVED,Vaclav,1604427475913,4291025,EVENT,,<auto>,1604359824063
+20002,empyema,1498,empyema,,25,,1.0,APPROVED,Vaclav,1604363986265,4209859,EVENT,,<auto>,1604359824151
+20002,inguinal hernia,1513,inguinal hernia,,3185,,1.0,APPROVED,Vaclav,1604363988023,4288544,EVENT,,<auto>,1604359824233
+20002,fracture nose,1628,fracture nose,,882,,0.8441486954689026,APPROVED,Vaclav,1604397117108,4134318,EVENT,,Vaclav,1604397114880
+20002,vasculitis,1372,vasculitis,,221,,1.0,APPROVED,Vaclav,1604363989565,4137275,EVENT,,<auto>,1604359824339
+20002,stress,1614,stress,,1178,,1.0,APPROVED,Vaclav,1604363990841,4251306,EVENT,,<auto>,1604359824439
+20002,cystitis,1514,cystitis,,801,,1.0,APPROVED,Vaclav,1604363993159,195588,EVENT,,<auto>,1604359824887
+20002,irritable bowel syndrome,1154,irritable bowel syndrome,,13551,,1.0,APPROVED,Vaclav,1604364016573,75576,EVENT,,<auto>,1604359824907
+20002,gastrointestinal bleeding,1191,gastrointestinal bleeding,,194,,1.0,APPROVED,Vaclav,1604364027346,192671,EVENT,,<auto>,1604359825182
+20002,plantar fascitis,1540,plantar fascitis,,364,,0.7382625341415405,APPROVED,Vaclav,1604405649406,4002650,EVENT,,<auto>,1604359825276
+20002,labyrinthitis,1499,labyrinthitis,,416,,1.0,APPROVED,Vaclav,1604364029478,74052,EVENT,,<auto>,1604359825293
+20002,hepatitis,1155,hepatitis,,620,,1.0,FLAGGED,,0,194990,EVENT,,<auto>,1604359825558
+20002,pyelonephritis,1515,pyelonephritis,,142,,1.0,APPROVED,Vaclav,1604364042980,198199,EVENT,,<auto>,1604359825926
+20002,vertigo,1500,vertigo,,1009,,1.0,APPROVED,Vaclav,1604364044161,439383,EVENT,,<auto>,1604359825948
+20002,fracture face / orbit / eye socket,1629,fracture face / orbit / eye socket,,253,,0.6488168239593506,FLAGGED,,0,434764,EVENT,,Vaclav,1604415212960
+20002,renal/kidney failure,1192,renal/kidney failure,,269,,0.545899510383606,APPROVED,Vaclav,1604426786823,192359,EVENT,,Vaclav,1604426784923
+20002,connective tissue disorder,1373,connective tissue disorder,,209,,0.8939682245254517,FLAGGED,,0,4180645,EVENT,,Vaclav,1604396347696
+20002,carpal tunnel syndrome,1541,carpal tunnel syndrome,,1147,,1.0,APPROVED,Vaclav,1604364049312,380094,EVENT,,<auto>,1604359826560
+20002,obsessive compulsive disorder (ocd),1615,obsessive compulsive disorder (ocd),,135,,0.7529104351997375,APPROVED,Vaclav,1604405185117,440374,EVENT,,<auto>,1604359826604
+20002,infective/viral hepatitis,1156,infective/viral hepatitis,,1161,,0.5270047187805176,APPROVED,Vaclav,1604427331267,4291005,EVENT,,<auto>,1604359827037
+20002,pyloric stenosis,1501,pyloric stenosis,,151,,1.0,APPROVED,Vaclav,1604364051651,4273754,EVENT,,<auto>,1604359827178
+20002,fibromyalgia,1542,fibromyalgia,,1095,,1.0,APPROVED,Vaclav,1604364055829,40405599,EVENT,,<auto>,1604359827251
+20002,insomnia,1616,insomnia,,574,,1.0,APPROVED,Vaclav,1604364057488,436962,EVENT,,<auto>,1604359827294
+20002,fracture neck / cervical fracture,1630,fracture neck / cervical fracture,,104,,0.6231499910354614,APPROVED,Vaclav,1604422864427,4129393,EVENT,,Vaclav,1604422862251
+20002,bph / benign prostatic hypertrophy,1516,bph / benign prostatic hypertrophy,,1246,,0.7925018668174744,APPROVED,Vaclav,1604404389423,198803,EVENT,,<auto>,1604359827814
+20002,renal failure requiring dialysis,1193,renal failure requiring dialysis,,277,,0.7034799456596375,APPROVED,Vaclav,1604406412293,45757398,EVENT,,<auto>,1604359828181
+20002,allergy/hypersensitivity/anaphylaxis,1374,allergy/hypersensitivity/anaphylaxis,,3795,,0.43293169140815735,FLAGGED,,0,4070025,EVENT,,<auto>,1604359828195
+20002,osteopenia,1617,osteopenia,,1978,,1.0,APPROVED,Vaclav,1604364058772,4195039,EVENT,,<auto>,1604359828265
+20002,appendicitis,1502,appendicitis,,5580,,1.0,APPROVED,Vaclav,1604364060563,440448,EVENT,,<auto>,1604359828275
+20002,non-infective hepatitis,1157,non-infective hepatitis,,549,,0.8262532949447632,FLAGGED,,0,4055207,EVENT,acute / subacute?,<auto>,1604359828640
+20002,prostatitis,1517,prostatitis,,305,,1.0,APPROVED,Vaclav,1604364062277,194997,EVENT,,<auto>,1604359828728
+20002,dupuytren's contracture,1544,dupuytren's contracture,,600,,1.0,APPROVED,Vaclav,1604364064181,4166776,EVENT,,<auto>,1604359828762
+20002,anal problem,1503,anal problem,,108,,0.8406661748886108,FLAGGED,,0,4206460,EVENT,,<auto>,1604359829100
+20002,fracture clavicle / collar bone,1631,fracture clavicle / collar bone,,878,,0.7028024792671204,APPROVED,Vaclav,1604406424645,4237458,EVENT,,<auto>,1604359829442
+20002,neck problem/injury,1545,neck problem/injury,,616,,0.48291024565696716,FLAGGED,,0,37117208,EVENT,problem of neck or neck injury?,Vaclav,1604432639126
+20002,soft tissue inflammation,1618,soft tissue inflammation,,195,,0.7526451945304871,FLAGGED,,0,4056925,EVENT,seems to be to general,<auto>,1604359829897
+20002,liver failure/cirrhosis,1158,liver failure/cirrhosis,,375,,0.5893735289573669,FLAGGED,,0,4245975,EVENT,which one?,<auto>,1604359829898
+20002,giant cell/temporal arteritis,1376,giant cell/temporal arteritis,,118,,0.6904671788215637,APPROVED,Vaclav,1604406573753,4290976,EVENT,,<auto>,1604359830122
+20002,renal failure not requiring dialysis,1194,renal failure not requiring dialysis,,437,,0.6318327784538269,FLAGGED,,0,45757398,EVENT,no clue,<auto>,1604359830244
+20002,anal fissure,1504,anal fissure,,328,,1.0,APPROVED,Vaclav,1604364067788,76725,EVENT,,<auto>,1604359830386
+20002,erectile dysfunction / impotence,1518,erectile dysfunction / impotence,,424,,0.8167331218719482,APPROVED,Vaclav,1604398198694,4216771,EVENT,,<auto>,1604359830508
+20002,fracture shoulder / scapula,1632,fracture shoulder / scapula,,420,,0.708106279373169,FLAGGED,,0,46270317,EVENT,two diff codes for shoulder and scapula,<auto>,1604359830955
+20002,bile duct disease,1159,bile duct disease,,26,,0.6020276546478271,APPROVED,Vaclav,1604423266023,4043343,EVENT,,Vaclav,1604423243749
+20002,polymyalgia rheumatica,1377,polymyalgia rheumatica,,1286,,1.0,APPROVED,Vaclav,1604364098981,255348,EVENT,,<auto>,1604359831287
+20002,tendonitis / tendinitis / tenosynovitis,1619,tendonitis / tendinitis / tenosynovitis,,632,,0.7545893788337708,APPROVED,Vaclav,1604405125367,4195698,EVENT,,<auto>,1604359831313
+20002,essential thrombocytosis,1546,essential thrombocytosis,,65,,1.0,APPROVED,Vaclav,1604364109858,438383,EVENT,,<auto>,1604359831404
+20002,haemorrhoids / piles,1505,haemorrhoids / piles,,2109,,0.8131198287010193,APPROVED,Vaclav,1604398270875,195562,EVENT,,<auto>,1604359831411
+20002,kidney nephropathy,1519,kidney nephropathy,,103,,0.6359040141105652,APPROVED,Vaclav,1604418297946,198124,EVENT,,Vaclav,1604418296260
+20002,bursitis,1620,bursitis,,274,,1.0,APPROVED,Vaclav,1604364111178,134453,EVENT,,<auto>,1604359831948
+20002,urinary tract infection/kidney infection,1196,urinary tract infection/kidney infection,,2831,,0.630413830280304,FLAGGED,,0,192964,EVENT,which one?,<auto>,1604359832089
+20002,acne/acne vulgaris,1548,acne/acne vulgaris,,522,,0.7946778535842896,APPROVED,Vaclav,1604404321058,141095,EVENT,,<auto>,1604359832189
+20002,iga nephropathy,1520,iga nephropathy,,33,,1.0,APPROVED,Vaclav,1604364112707,4128061,EVENT,,<auto>,1604359832210
+20002,wegners granulmatosis,1378,wegners granulmatosis,,106,,0.4883040189743042,FLAGGED,,0,40480130,EVENT,,<auto>,1604359832549
+20002,primary biliary cirrhosis,1506,primary biliary cirrhosis,,113,,1.0,APPROVED,Vaclav,1604364180974,4135822,EVENT,,<auto>,1604359832615
+20002,synovitis,1621,synovitis,,30,,1.0,APPROVED,Vaclav,1604364127409,4168183,EVENT,,<auto>,1604359832648
+20002,fracture upper arm / humerus / elbow,1633,fracture upper arm / humerus / elbow,,1560,,0.5738518238067627,APPROVED,Vaclav,1604424555808,442619,EVENT,,Vaclav,1604424554017
+20002,hepatitis d,1581,hepatitis d,,1,,1.0,APPROVED,Vaclav,1604364231566,45768827,EVENT,,<auto>,1604359833155
+20002,lichen planus,1549,lichen planus,,294,,1.0,APPROVED,Vaclav,1604364233126,132703,EVENT,,<auto>,1604359833172
+20002,osteoarthritis,1465,osteoarthritis,,46007,,1.0,APPROVED,Vaclav,1604364234555,80180,EVENT,,<auto>,1604359833714
+20002,kidney stone/ureter stone/bladder stone,1197,kidney stone/ureter stone/bladder stone,,4484,,0.522077202796936,FLAGGED,,0,201620,EVENT,which one?,<auto>,1604359833771
+20002,bile duct obstruction/ascending cholangitis,1160,bile duct obstruction/ascending cholangitis,,75,,0.5945722460746765,APPROVED,Vaclav,1604423454242,4098128,EVENT,,<auto>,1604359833849
+20002,epicondylitis,1622,epicondylitis,,7,,1.0,APPROVED,Vaclav,1604364236605,4249170,EVENT,,<auto>,1604359833857
+20002,hepatitis e,1582,hepatitis e,,7,,1.0,APPROVED,Vaclav,1604364238045,45769824,EVENT,,<auto>,1604359834235
+20002,gout,1466,gout,,8146,,1.0,APPROVED,Vaclav,1604364239305,440674,EVENT,,<auto>,1604359834283
+20002,microscopic polyarteritis,1379,microscopic polyarteritis,,10,,0.8634054660797119,FLAGGED,,0,4344489,EVENT,,<auto>,1604359834295
+20002,fracture forearm / wrist,1634,fracture forearm / wrist,,1479,,0.5889025330543518,APPROVED,Vaclav,1604423603268,4278672,EVENT,,<auto>,1604359834355
+20002,lichen sclerosis,1550,lichen sclerosis,,289,,0.8414251208305359,APPROVED,Vaclav,1604397126641,4119189,EVENT,,<auto>,1604359834475
+20002,gall bladder disease,1161,gall bladder disease,,333,,0.7733319401741028,APPROVED,Vaclav,1604404627435,192353,EVENT,,<auto>,1604359835130
+20002,ovarian problem,1551,ovarian problem,,101,,0.7263273596763611,APPROVED,Vaclav,1604405700936,4129485,EVENT,,<auto>,1604359835387
+20002,ischaemic stroke,1583,ischaemic stroke,,41,,1.0,APPROVED,Vaclav,1604364241992,4310996,EVENT,,<auto>,1604359835502
+20002,fracture radius,1635,fracture radius,,410,,0.8869273066520691,APPROVED,Vaclav,1604396451290,4131595,EVENT,,<auto>,1604359835547
+20002,polyartertis nodosa,1380,polyartertis nodosa,,33,,0.9212062954902649,APPROVED,Vaclav,1604396068374,320749,EVENT,,<auto>,1604359835591
+20002,tennis elbow / lateral epicondylitis,1623,tennis elbow / lateral epicondylitis,,428,,0.7390815615653992,APPROVED,Vaclav,1604405607241,81379,EVENT,,<auto>,1604359835907
+20002,ureteric obstruction/hydronephrosis,1200,ureteric obstruction/hydronephrosis,,345,,0.638752818107605,APPROVED,Vaclav,1604415486663,36715479,EVENT,,<auto>,1604359835935
+20002,other joint disorder,1467,other joint disorder,,3087,,0.7542030811309814,APPROVED,Vaclav,1604405169124,73553,EVENT,,<auto>,1604359835982
+20002,stroke,1081,stroke,,7444,,1.0,APPROVED,Vaclav,1604364272738,381316,EVENT,,<auto>,1604359836040
+20002,fracture ulna,1636,fracture ulna,,223,,0.881191074848175,APPROVED,Vaclav,1604396664895,4182555,EVENT,,<auto>,1604359836723
+20002,cholelithiasis/gall stones,1162,cholelithiasis/gall stones,,9114,,0.5883607268333435,APPROVED,Vaclav,1604423638749,4145627,EVENT,,<auto>,1604359836842
+20002,otosclerosis,1420,otosclerosis,,259,,1.0,APPROVED,Vaclav,1604364274022,439035,EVENT,,<auto>,1604359836926
+20002,mitral valve disease,1584,mitral valve disease,,73,,1.0,APPROVED,Vaclav,1604364276260,319843,EVENT,,<auto>,1604359837037
+20002,diabetic neuropathy/ulcers,1468,diabetic neuropathy/ulcers,,161,,0.6183232069015503,APPROVED,Vaclav,1604422921873,4044391,EVENT,,<auto>,1604359837845
+20002,bladder problem (not cancer),1201,bladder problem (not cancer),,3242,,0.6565775275230408,APPROVED,Vaclav,1604414930808,4119470,EVENT,,<auto>,1604359837907
+20002,systemic lupus erythematosis/sle,1381,systemic lupus erythematosis/sle,,710,,0.7346295714378357,APPROVED,Vaclav,1604405690052,257628,EVENT,,<auto>,1604359838037
+20002,transient ischaemic attack (tia),1082,transient ischaemic attack (tia),,2237,,0.8025310039520264,APPROVED,Vaclav,1604404071260,373503,EVENT,,<auto>,1604359838060
+20002,cholecystitis,1163,cholecystitis,,540,,1.0,APPROVED,Vaclav,1604364277450,192956,EVENT,,<auto>,1604359838062
+20002,meniere's disease,1421,meniere's disease,,1551,,0.9221649169921875,APPROVED,Vaclav,1604396047306,79833,EVENT,,Vaclav,1604396039398
+20002,fracture wrist / colles fracture,1637,fracture wrist / colles fracture,,1963,,0.586926281452179,FLAGGED,,0,4015350,EVENT,,Vaclav,1604423946510
+20002,sjogren's syndrome/sicca syndrome,1382,sjogren's syndrome/sicca syndrome,,561,,0.7738233208656311,APPROVED,Vaclav,1604404608967,254443,EVENT,,<auto>,1604359839161
+20002,pancreatic disease,1164,pancreatic disease,,56,,0.684542179107666,FLAGGED,,0,4342868,EVENT,there is more pancreatic diseases,<auto>,1604359839610
+20002,mitral regurgitation / incompetence,1585,mitral regurgitation / incompetence,,209,,0.7217308282852173,APPROVED,Vaclav,1604405913698,443962,EVENT,,<auto>,1604359839662
+20002,cerebral aneurysm,1425,cerebral aneurysm,,353,,0.8895677328109741,APPROVED,Vaclav,1604396421124,4029497,EVENT,,<auto>,1604359839784
+20002,subdural haemorrhage/haematoma,1083,subdural haemorrhage/haematoma,,212,,0.769919753074646,APPROVED,Vaclav,1604404652659,439040,EVENT,,<auto>,1604359839915
+20002,urinary frequency / incontinence,1202,urinary frequency / incontinence,,3196,,0.7587436437606812,APPROVED,Vaclav,1604404962371,4012368,EVENT,,<auto>,1604359839962
+20002,post-traumatic stress disorder,1469,post-traumatic stress disorder,,419,,1.0,APPROVED,Vaclav,1604364315592,436676,EVENT,,<auto>,1604359840361
+20002,contact dermatitis,1669,contact dermatitis,,298,,1.0,APPROVED,Vaclav,1604364318191,134438,EVENT,,<auto>,1604359840428
+20002,myocarditis,1426,myocarditis,,112,,1.0,APPROVED,Vaclav,1604364319765,314383,EVENT,,<auto>,1604359840901
+20002,deliberate self-harm/suicide attempt,1290,deliberate self-harm/suicide attempt,,226,,0.660772979259491,APPROVED,Vaclav,1604414834699,4092411,EVENT,,<auto>,1604359841244
+20002,aortic valve disease,1586,aortic valve disease,,68,,1.0,APPROVED,Vaclav,1604364324444,314054,EVENT,,<auto>,1604359841245
+20002,spinal cord disorder,1251,spinal cord disorder,,507,,1.0,APPROVED,Vaclav,1604364332329,135526,EVENT,,<auto>,1604359841704
+20002,subarachnoid haemorrhage,1086,subarachnoid haemorrhage,,490,,1.0,APPROVED,Vaclav,1604364334261,432923,EVENT,,<auto>,1604359841757
+20002,polycystic kidney,1427,polycystic kidney,,388,,0.8842388987541199,FLAGGED,,0,4220238,EVENT,,<auto>,1604359842261
+20002,allergy to elastoplast,1670,allergy to elastoplast,,298,,0.5525845289230347,FLAGGED,,0,43530807,EVENT,,<auto>,1604359842302
+20002,prostate problem (not cancer),1207,prostate problem (not cancer),,895,,0.5378853678703308,APPROVED,Vaclav,1604426945226,37110260,EVENT,,<auto>,1604359842415
+20002,paraplegia,1252,paraplegia,,61,,1.0,APPROVED,Vaclav,1604364335915,192606,EVENT,,<auto>,1604359842693
+20002,thyroiditis,1428,thyroiditis,,380,,1.0,APPROVED,Vaclav,1604364339209,133444,EVENT,,<auto>,1604359843164
+20002,anorexia/bulimia/other eating disorder,1470,anorexia/bulimia/other eating disorder,,405,,0.34482359886169434,APPROVED,Vaclav,1604424741147,439002,EVENT,,<auto>,1604359843183
+20002,allergy to nickel,1671,allergy to nickel,,139,,0.7050151228904724,APPROVED,Vaclav,1604406391604,4169119,EVENT,,<auto>,1604359843485
+20002,aortic regurgitation / incompetence,1587,aortic regurgitation / incompetence,,135,,0.7636485695838928,APPROVED,Vaclav,1604404776582,315564,EVENT,,<auto>,1604359843716
+20002,leg claudication/ intermittent claudication,1087,leg claudication/ intermittent claudication,,397,,0.7949393391609192,APPROVED,Vaclav,1604404301402,442774,EVENT,,<auto>,1604359843927
+20002,mania/bipolar disorder/manic depression,1291,mania/bipolar disorder/manic depression,,1548,,0.44614458084106445,FLAGGED,,0,4287544,EVENT,,Vaclav,1604432952158
+20002,acromegaly,1429,acromegaly,,69,,1.0,APPROVED,Vaclav,1604364342317,4253197,EVENT,,<auto>,1604359844068
+20002,scrotal problem (not cancer),1210,scrotal problem (not cancer),,82,,0.42039865255355835,FLAGGED,,0,4175810,EVENT,,Vaclav,1604433120315
+20002,atrial fibrillation,1471,atrial fibrillation,,4794,,1.0,APPROVED,Vaclav,1604364343973,313217,EVENT,,<auto>,1604359844757
+20002,peripheral nerve disorder,1254,peripheral nerve disorder,,273,,0.8324430584907532,APPROVED,Vaclav,1604397720070,4117779,EVENT,,<auto>,1604359844839
+20002,varicella zoster virus,1674,varicella zoster virus,,8,,0.5502979159355164,FLAGGED,,0,4206579,EVENT,,<auto>,1604359845167
+20002,hypopituitarism,1430,hypopituitarism,,216,,1.0,APPROVED,Vaclav,1604364347473,4254542,EVENT,,<auto>,1604359845172
+20002,arterial embolism,1088,arterial embolism,,79,,1.0,APPROVED,Vaclav,1604364350076,312339,EVENT,,<auto>,1604359845282
+20002,bone disorder,1293,bone disorder,,1137,,0.7471154928207397,APPROVED,Vaclav,1604405463634,75909,EVENT,,Vaclav,1604405462180
+20002,emphysema,1472,emphysema,,217,,0.8012614250183105,FLAGGED,,0,4050734,EVENT,too generic,<auto>,1604359845649
+20002,hypertrophic cardiomyopathy (hcm / hocm),1588,hypertrophic cardiomyopathy (hcm / hocm),,127,,0.715516984462738,APPROVED,Vaclav,1604406026374,4124693,EVENT,,<auto>,1604359845935
+20002,back problem,1294,back problem,,9076,,1.0,APPROVED,Vaclav,1604364351319,132408,EVENT,,<auto>,1604359845957
+20002,giardia / giardiasis,1675,giardia / giardiasis,,32,,0.7923626899719238,APPROVED,Vaclav,1604404402468,437202,EVENT,,<auto>,1604359846119
+20002,hyperprolactinaemia,1431,hyperprolactinaemia,,83,,1.0,APPROVED,Vaclav,1604364352933,4030186,EVENT,,<auto>,1604359846441
+20002,peripheral neuropathy,1255,peripheral neuropathy,,815,,1.0,APPROVED,Vaclav,1604364365887,4117779,EVENT,,<auto>,1604359846684
+20002,pulmonary embolism +/- dvt,1093,pulmonary embolism +/- dvt,,4568,,0.5194087028503418,APPROVED,Vaclav,1604427532947,440417,EVENT,,<auto>,1604359846818
+20002,yellow fever,1676,yellow fever,,16,,1.0,APPROVED,Vaclav,1604364383859,441210,EVENT,,<auto>,1604359846850
+20002,high cholesterol,1473,high cholesterol,,71275,,1.0,APPROVED,Vaclav,1604364389363,4029305,EVENT,,<auto>,1604359846876
+20002,testicular problems (not cancer),1214,testicular problems (not cancer),,743,,0.43087485432624817,FLAGGED,,0,4276801,EVENT,,Vaclav,1604433063004
+20002,pericarditis,1589,pericarditis,,171,,1.0,APPROVED,Vaclav,1604364391291,4138837,EVENT,,<auto>,1604359847272
+20002,joint disorder,1295,joint disorder,,2395,,1.0,APPROVED,Vaclav,1604364461393,73553,EVENT,,<auto>,1604359847500
+20002,hiatus hernia,1474,hiatus hernia,,12798,,1.0,APPROVED,Vaclav,1604364464362,4224004,EVENT,,<auto>,1604359847658
+20002,head injury,1266,head injury,,1738,,1.0,APPROVED,Vaclav,1604364466663,375415,EVENT,,<auto>,1604359847956
+20002,carcinoid syndrome/tumour,1432,carcinoid syndrome/tumour,,23,,0.6853492259979248,FLAGGED,,0,199771,EVENT,two codes for syndrome and tumour,<auto>,1604359847967
+20002,scarlet fever / scarlatina,1677,scarlet fever / scarlatina,,1334,,0.784785807132721,APPROVED,Vaclav,1604404466821,141213,EVENT,,<auto>,1604359848119
+20002,deep venous thrombosis (dvt),1094,deep venous thrombosis (dvt),,10912,,0.6881182193756104,APPROVED,Vaclav,1604406596500,4133004,EVENT,,<auto>,1604359848618
+20002,pericardial effusion,1590,pericardial effusion,,14,,1.0,APPROVED,Vaclav,1604364468399,4161701,EVENT,,<auto>,1604359848779
+20002,chlamydia,1678,chlamydia,,13,,0.8008095622062683,FLAGGED,,0,4128394,EVENT,to generic,<auto>,1604359849070
+20002,muscle/soft tissue problem,1297,muscle/soft tissue problem,,4206,,0.48714134097099304,FLAGGED,,0,376208,EVENT,,Vaclav,1604432574344
+20002,spinal injury,1267,spinal injury,,837,,1.0,APPROVED,Vaclav,1604364470279,4095850,EVENT,,<auto>,1604359849225
+20002,sclerosing cholangitis,1475,sclerosing cholangitis,,53,,1.0,APPROVED,Vaclav,1604364472675,4340953,EVENT,,<auto>,1604359849239
+20002,cerebral palsy,1433,cerebral palsy,,167,,1.0,APPROVED,Vaclav,1604364475252,4134120,EVENT,,<auto>,1604359849612
+20002,asthma,1111,asthma,,65261,,1.0,APPROVED,Vaclav,1604364477138,317009,EVENT,,<auto>,1604359849623
+20002,acute infective polyneuritis/guillain-barre syndrome,1256,acute infective polyneuritis/guillain-barre syndrome,,227,,0.6387248039245605,FLAGGED,,0,4164770,EVENT,syndrome or polyneuritis,<auto>,1604359849797
+20002,osteomyelitis,1308,osteomyelitis,,847,,1.0,APPROVED,Vaclav,1604364479127,141663,EVENT,,<auto>,1604359850376
+20002,sciatica,1476,sciatica,,5890,,1.0,APPROVED,Vaclav,1604364481772,372409,EVENT,,<auto>,1604359850438
+20002,eye infection,1274,eye infection,,534,,1.0,APPROVED,Vaclav,1604364484432,4134613,EVENT,,<auto>,1604359850548
+20002,aortic aneurysm rupture,1591,aortic aneurysm rupture,,17,,0.8558098673820496,APPROVED,Vaclav,1604397030735,312343,EVENT,,<auto>,1604359850573
+20002,undescended testicle,1679,undescended testicle,,232,,1.0,APPROVED,Vaclav,1604364500159,437655,EVENT,,<auto>,1604359850580
+20002,trapped nerve/compressed nerve,1257,trapped nerve/compressed nerve,,1818,,0.6076214909553528,APPROVED,Vaclav,1604423149259,4164436,EVENT,,<auto>,1604359851298
+20002,osteoporosis,1309,osteoporosis,,9359,,1.0,APPROVED,Vaclav,1604364501670,80502,EVENT,,<auto>,1604359851379
+20002,bowen's disease,1680,bowen's disease,,82,,0.929238498210907,FLAGGED,,0,4166151,EVENT,seems that UKB term here is too general,Vaclav,1604395914063
+20002,other neurological problem,1434,other neurological problem,,2060,,0.5773565769195557,FLAGGED,,0,4011630,EVENT,,Vaclav,1604424058131
+20002,retinal problem,1275,retinal problem,,930,,0.7588383555412292,FLAGGED,,0,4206460,EVENT,general problem?,<auto>,1604359851681
+20002,psoriatic arthropathy,1477,psoriatic arthropathy,,1040,,1.0,APPROVED,Vaclav,1604364613476,81931,EVENT,,<auto>,1604359851838
+20002,aortic dissection,1592,aortic dissection,,15,,0.7798795104026794,APPROVED,Vaclav,1604404577858,4262102,EVENT,,<auto>,1604359851908
+20002,chronic obstructive airways disease/copd,1112,chronic obstructive airways disease/copd,,2084,,0.7512627840042114,APPROVED,Vaclav,1604405399304,255573,EVENT,COPD or COAD?,Vaclav,1604405352555
+20002,paget's disease,1310,paget's disease,,74,,0.9332361221313477,APPROVED,Vaclav,1604395770858,75910,EVENT,,<auto>,1604359852466
+20002,hydatiform mole,1681,hydatiform mole,,127,,0.8661507964134216,APPROVED,Vaclav,1604396754760,439083,EVENT,,<auto>,1604359852518
+20002,optic neuritis,1435,optic neuritis,,184,,1.0,APPROVED,Vaclav,1604364615519,374954,EVENT,,<auto>,1604359852799
+20002,varicose ulcer,1593,varicose ulcer,,47,,0.7638477683067322,FLAGGED,,0,4110347,EVENT,infected?,<auto>,1604359853120
+20002,diabetic eye disease,1276,diabetic eye disease,,1408,,1.0,APPROVED,Vaclav,1604364725491,443767,EVENT,,<auto>,1604359853422
+20002,cervical spondylosis,1478,cervical spondylosis,,3738,,1.0,APPROVED,Vaclav,1604364729658,4308802,EVENT,,<auto>,1604359853520
+20002,emphysema/chronic bronchitis,1113,emphysema/chronic bronchitis,,7306,,0.6743482351303101,APPROVED,Vaclav,1604414175480,255841,EVENT,,Vaclav,1604414171659
+20002,benign insulinoma,1682,benign insulinoma,,4,,1.0,APPROVED,Vaclav,1604364754491,37312396,EVENT,,<auto>,1604359853824
+20002,spine arthritis/spondylitis,1311,spine arthritis/spondylitis,,4620,,0.5890855193138123,APPROVED,Vaclav,1604423530216,4223530,EVENT,,<auto>,1604359854007
+20002,glaucoma,1277,glaucoma,,6668,,1.0,APPROVED,Vaclav,1604364762225,437541,EVENT,,<auto>,1604359854086
+20002,headaches (not migraine),1436,headaches (not migraine),,4692,,0.5087096095085144,APPROVED,Vaclav,1604431883690,378253,EVENT,,Vaclav,1604431880182
+20002,chronic/degenerative neurological problem,1258,chronic/degenerative neurological problem,,180,,0.5146583914756775,FLAGGED,,0,4316230,EVENT,,<auto>,1604359854094
+20002,eczema/dermatitis,1452,eczema/dermatitis,,15406,,0.575749397277832,APPROVED,Vaclav,1604424246847,133835,EVENT,,<auto>,1604359854712
+20002,bronchiectasis,1114,bronchiectasis,,1380,,1.0,APPROVED,Vaclav,1604364767352,256449,EVENT,,<auto>,1604359854735
+20002,cataract,1278,cataract,,11362,,1.0,APPROVED,Vaclav,1604364781601,375545,EVENT,,<auto>,1604359855012
+20002,benign neuroma,1683,benign neuroma,,214,,0.6424769163131714,FLAGGED,,0,438990,EVENT,,<auto>,1604359855064
+20002,respiratory infection,1594,respiratory infection,,203,,0.9283644556999207,FLAGGED,,0,4193169,EVENT,viral or bacterial? UKB term too general,<auto>,1604359855125
+20002,myasthenia gravis,1437,myasthenia gravis,,152,,1.0,APPROVED,Vaclav,1604364789344,76685,EVENT,,<auto>,1604359855285
+20002,prolapsed disc/slipped disc,1312,prolapsed disc/slipped disc,,9215,,0.567891001701355,APPROVED,Vaclav,1604424526548,4251304,EVENT,,<auto>,1604359855513
+20002,psoriasis,1453,psoriasis,,6532,,1.0,APPROVED,Vaclav,1604364793708,140168,EVENT,,<auto>,1604359855571
+20002,,99999,,,30213,,0.0,IGNORED,Vaclav,1604396833348,0,EVENT,,,0
+20002,motor neurone disease,1259,motor neurone disease,,68,,1.0,APPROVED,Vaclav,1604364821976,374631,EVENT,,<auto>,1604359855811
+20002,eye trauma,1279,eye trauma,,770,,0.6963527798652649,FLAGGED,,0,440921,EVENT,Trauma in general?,<auto>,1604359855885
+20002,polycythaemia vera,1438,polycythaemia vera,,229,,1.0,APPROVED,Vaclav,1604364829701,135214,EVENT,,<auto>,1604359856396
+20002,interstitial lung disease,1115,interstitial lung disease,,170,,1.0,APPROVED,Vaclav,1604364871005,4119786,EVENT,,<auto>,1604359856833
+20002,ankylosing spondylitis,1313,ankylosing spondylitis,,1505,,1.0,APPROVED,Vaclav,1604395325202,437082,EVENT,,<auto>,1604359856921
+20002,myasthenia gravis,1260,myasthenia gravis,,59,,1.0,APPROVED,Vaclav,1604395326861,76685,EVENT,,<auto>,1604359856953
+20002,hiv/aids,1439,hiv/aids,,542,,0.3655066192150116,APPROVED,Vaclav,1604424714930,4267414,EVENT,,<auto>,1604359857157
+20002,fracture metatarsal,1655,fracture metatarsal,,404,,0.8885893821716309,APPROVED,Vaclav,1604396441203,435644,EVENT,,Vaclav,1604396437933
+20002,retinal detachment,1281,retinal detachment,,1997,,1.0,APPROVED,Vaclav,1604395328410,378414,EVENT,,<auto>,1604359857458
+20002,myositis/myopathy,1322,myositis/myopathy,,206,,0.6817324161529541,FLAGGED,,0,137275,EVENT,myositis or myopathy?,Vaclav,1604414008066
+20002,blistering/desquamating skin disorder,1454,blistering/desquamating skin disorder,,829,,0.555962324142456,FLAGGED,,0,135029,EVENT,which one?,<auto>,1604359858150
+20002,fracture toe,1656,fracture toe,,671,,0.8600087761878967,APPROVED,Vaclav,1604396951425,4058637,EVENT,,<auto>,1604359858394
+20002,tuberculosis (tb),1440,tuberculosis (tb),,2810,,0.8654611706733704,APPROVED,Vaclav,1604396769061,194268,EVENT,,<auto>,1604359858412
+20002,multiple sclerosis,1261,multiple sclerosis,,1988,,1.0,APPROVED,Vaclav,1604395329836,374919,EVENT,,<auto>,1604359858593
+20002,infectious mononucleosis / glandular fever / epstein barr virus (ebv),1567,infectious mononucleosis / glandular fever / epstein barr virus (ebv),,1306,,0.5152435898780823,FLAGGED,,0,437784,EVENT,,Vaclav,1604427751335
+20002,other respiratory problems,1117,other respiratory problems,,881,,0.5024158358573914,FLAGGED,,0,320136,EVENT,,Vaclav,1604432180002
+20002,malaria,1441,malaria,,770,,1.0,APPROVED,Vaclav,1604395331138,438067,EVENT,,<auto>,1604359859182
+20002,chronic skin ulcers,1455,chronic skin ulcers,,188,,0.9646462202072144,APPROVED,Vaclav,1604395612333,134441,EVENT,,<auto>,1604359859495
+20002,septicaemia / sepsis,1657,septicaemia / sepsis,,498,,0.6416031718254089,APPROVED,Vaclav,1604415376068,132797,EVENT,,Vaclav,1604415374296
+20002,hypertension,1065,hypertension,,146825,,1.0,APPROVED,Vaclav,1604395331908,316866,EVENT,,<auto>,1604359859966
+20002,retinal artery/vein occlusion,1282,retinal artery/vein occlusion,,309,,0.6690317392349243,FLAGGED,,0,4334245,EVENT,artery or vein?,<auto>,1604359859969
+20002,parkinsons disease,1262,parkinsons disease,,1005,,1.0,APPROVED,Vaclav,1604395335579,381270,EVENT,,<auto>,1604359860021
+20002,low platelets/platelet disorder,1327,low platelets/platelet disorder,,452,,0.5580993890762329,APPROVED,Vaclav,1604424569204,4332151,EVENT,,<auto>,1604359860133
+20002,measles / morbillivirus,1568,measles / morbillivirus,,8206,,0.5479297041893005,APPROVED,Vaclav,1604426246345,4030555,EVENT,,<auto>,1604359860195
+20002,myelofibrosis,1658,myelofibrosis,,11,,1.0,APPROVED,Vaclav,1604395336814,133169,EVENT,,<auto>,1604359860567
+20002,helicobacter pylori,1442,helicobacter pylori,,1628,,0.7917081117630005,FLAGGED,,0,36717498,EVENT,infection or positive test?,<auto>,1604359860726
+20002,depression,1286,depression,,32975,,1.0,APPROVED,Vaclav,1604395338353,440383,EVENT,,<auto>,1604359860837
+20002,heart/cardiac problem,1066,heart/cardiac problem,,1821,,0.4294789731502533,FLAGGED,,0,321588,EVENT,,Vaclav,1604433106619
+20002,malabsorption/coeliac disease,1456,malabsorption/coeliac disease,,2398,,0.6277177929878235,FLAGGED,,0,194992,EVENT,which one?,<auto>,1604359861456
+20002,mumps / epidemic parotitis,1569,mumps / epidemic parotitis,,5093,,0.7250220775604248,APPROVED,Vaclav,1604405737301,4080768,EVENT,,<auto>,1604359861606
+20002,schistosomiasis/bilharzia,1443,schistosomiasis/bilharzia,,50,,0.7688040733337402,APPROVED,Vaclav,1604404661369,436038,EVENT,,<auto>,1604359861991
+20002,dementia/alzheimers/cognitive impairment,1263,dementia/alzheimers/cognitive impairment,,153,,0.5352669358253479,FLAGGED,,0,443432,EVENT,which one?,<auto>,1604359862236
+20002,anxiety/panic attacks,1287,anxiety/panic attacks,,8337,,0.648972749710083,FLAGGED,,0,4115221,EVENT,anxiety or panic,<auto>,1604359862372
+20002,meningioma / benign meningeal tumour,1659,meningioma / benign meningeal tumour,,146,,0.7053549885749817,APPROVED,Vaclav,1604406385034,37110097,EVENT,,<auto>,1604359862448
+20002,muscle or soft tissue injuries,1406,muscle or soft tissue injuries,,4343,,0.7391990423202515,FLAGGED,,0,4320821,EVENT,Two different concepts in SNOMED with different parents,Vaclav,1604405559612
+20002,duodenal ulcer,1457,duodenal ulcer,,2210,,1.0,APPROVED,Vaclav,1604395340948,4198381,EVENT,,<auto>,1604359862719
+20002,epilepsy,1264,epilepsy,,4417,,1.0,APPROVED,Vaclav,1604395342868,380378,EVENT,,<auto>,1604359862954
+20002,burns,1407,burns,,474,,0.7973020076751709,APPROVED,Vaclav,1604404193623,442013,EVENT,,Vaclav,1604404192044
+20002,rubella / german measles,1570,rubella / german measles,,2921,,0.722651481628418,APPROVED,Vaclav,1604405898692,4273323,EVENT,,<auto>,1604359863192
+20002,rosacea,1660,rosacea,,1168,,1.0,APPROVED,Vaclav,1604395352495,136773,EVENT,,<auto>,1604359863253
+20002,peripheral vascular disease,1067,peripheral vascular disease,,938,,1.0,APPROVED,Vaclav,1604395359903,321052,EVENT,,<auto>,1604359863528
+20002,nervous breakdown,1288,nervous breakdown,,766,,0.7828931212425232,FLAGGED,,0,4082582,EVENT,no idea,<auto>,1604359863529
+20002,migraine,1265,migraine,,17021,,1.0,APPROVED,Vaclav,1604395361269,318736,EVENT,,<auto>,1604359863695
+20002,chickenpox,1571,chickenpox,,10295,,1.0,APPROVED,Vaclav,1604395382753,434272,EVENT,,<auto>,1604359863934
+20002,alcohol dependency,1408,alcohol dependency,,785,,0.9169502854347229,APPROVED,Vaclav,1604396093941,435243,EVENT,,<auto>,1604359864133
+20002,vitiligo,1661,vitiligo,,253,,1.0,APPROVED,Vaclav,1604395383998,138502,EVENT,,<auto>,1604359864153
+20002,clotting disorder/excessive bleeding,1445,clotting disorder/excessive bleeding,,491,,0.518139660358429,APPROVED,Vaclav,1604427628073,432585,EVENT,,<auto>,1604359864364
+20002,schizophrenia,1289,schizophrenia,,645,,1.0,APPROVED,Vaclav,1604395385720,435783,EVENT,,<auto>,1604359864597
+20002,diverticular disease/diverticulitis,1458,diverticular disease/diverticulitis,,6425,,0.6644232869148254,APPROVED,Vaclav,1604414653414,4266809,EVENT,,<auto>,1604359864656
+20002,phaeochromocytoma,1236,phaeochromocytoma,,27,,1.0,APPROVED,Vaclav,1604395386855,4118993,EVENT,,<auto>,1604359864774
+20002,anaemia,1446,anaemia,,1254,,1.0,APPROVED,Vaclav,1604395387940,439777,EVENT,,<auto>,1604359864949
+20002,opioid dependency,1409,opioid dependency,,48,,0.922932505607605,APPROVED,Vaclav,1604396019083,438120,EVENT,,<auto>,1604359865403
+20002,venous thromboembolic disease,1068,venous thromboembolic disease,,98,,1.0,APPROVED,Vaclav,1604395392705,4327889,EVENT,,<auto>,1604359865461
+20002,cervical erosion,1662,cervical erosion,,137,,1.0,APPROVED,Vaclav,1604395396164,4266225,EVENT,,<auto>,1604359865486
+20002,whooping cough / pertussis,1572,whooping cough / pertussis,,1734,,0.7197405695915222,APPROVED,Vaclav,1604405919383,257778,EVENT,,<auto>,1604359865592
+20002,dermatopolymyositis,1383,dermatopolymyositis,,7,,0.8507246375083923,FLAGGED,,0,80800,EVENT,,<auto>,1604359865883
+20002,pancytopenia,1447,pancytopenia,,10,,1.0,APPROVED,Vaclav,1604395397604,432881,EVENT,,<auto>,1604359866032
+20002,shingles,1573,shingles,,1539,,1.0,APPROVED,Vaclav,1604395535183,443943,EVENT,,<auto>,1604359866322
+20002,colitis/not crohns or ulcerative colitis,1459,colitis/not crohns or ulcerative colitis,,1435,,0.5027041435241699,FLAGGED,,0,81893,EVENT,,<auto>,1604359866802
+20002,disorder or pituitary gland,1237,disorder or pituitary gland,,97,,0.9417911171913147,APPROVED,Vaclav,1604395662873,23986,EVENT,,<auto>,1604359866822
+20002,neutropenia/lymphopenia,1448,neutropenia/lymphopenia,,161,,0.5358287692070007,FLAGGED,,0,320073,EVENT,which one?,<auto>,1604359867177
+20002,abnormal smear (cervix),1663,abnormal smear (cervix),,871,,0.6536444425582886,APPROVED,Vaclav,1604414975286,434165,EVENT,,<auto>,1604359867195
+20002,diphtheria,1574,diphtheria,,95,,0.7565504312515259,FLAGGED,,0,4088228,EVENT,no idea,<auto>,1604359867259
+20002,other substance abuse/dependency,1410,other substance abuse/dependency,,53,,0.5906347036361694,FLAGGED,,0,4279309,EVENT,no clue,<auto>,1604359867312
+20002,essential hypertension,1072,essential hypertension,,3617,,1.0,APPROVED,Vaclav,1604395537292,320128,EVENT,,<auto>,1604359867454
+20002,scleroderma/systemic sclerosis,1384,scleroderma/systemic sclerosis,,189,,0.6639679074287415,APPROVED,Vaclav,1604414663842,134442,EVENT,,<auto>,1604359867631
+20002,dysmenorrhoea / dysmenorrhea,1664,dysmenorrhoea / dysmenorrhea,,391,,0.828329861164093,APPROVED,Vaclav,1604397765223,194696,EVENT,,<auto>,1604359868145
+20002,lung abscess,1411,lung abscess,,51,,0.8213635087013245,APPROVED,Vaclav,1604398190133,4024110,EVENT,,<auto>,1604359868146
+20002,pituitary adenoma/tumour,1238,pituitary adenoma/tumour,,375,,0.6370582580566406,FLAGGED,,0,4116211,EVENT,adenoma or tumour,<auto>,1604359868359
+20002,herpes simplex,1575,herpes simplex,,381,,1.0,APPROVED,Vaclav,1604395539868,444429,EVENT,,<auto>,1604359868377
+20002,bronchitis,1412,bronchitis,,4495,,1.0,APPROVED,Vaclav,1604395540874,256451,EVENT,,<auto>,1604359869103
+20002,rectal or colon adenoma/polyps,1460,rectal or colon adenoma/polyps,,1852,,0.387706995010376,FLAGGED,,0,4216644,EVENT,which one?,<auto>,1604359869185
+20002,dengue fever,1576,dengue fever,,42,,1.0,APPROVED,Vaclav,1604395546193,440022,EVENT,,<auto>,1604359869280
+20002,cushings syndrome,1239,cushings syndrome,,69,,0.8277856111526489,APPROVED,Vaclav,1604398106004,195212,EVENT,,Vaclav,1604398103775
+20002,myeloproliferative disorder,1449,myeloproliferative disorder,,74,,1.0,APPROVED,Vaclav,1604395548907,4175485,EVENT,,<auto>,1604359869526
+20002,menopausal symptoms / menopause,1665,menopausal symptoms / menopause,,755,,0.7981972694396973,APPROVED,Vaclav,1604404179298,4071683,EVENT,,<auto>,1604359869731
+20002,gestational hypertension/pre-eclampsia,1073,gestational hypertension/pre-eclampsia,,2095,,0.6829462051391602,FLAGGED,,0,4167493,EVENT,"again, codes for both",Vaclav,1604413947061
+20002,typhoid fever,1577,typhoid fever,,73,,1.0,APPROVED,Vaclav,1604395550131,192819,EVENT,,<auto>,1604359869916
+20002,allergy or anaphylactic reaction to food,1385,allergy or anaphylactic reaction to food,,2629,,0.8359043002128601,FLAGGED,,0,434219,EVENT,this exists as two codes in SNOMED,<auto>,1604359870091
+20002,nasal/sinus disorder,1413,nasal/sinus disorder,,2030,,0.5012207627296448,APPROVED,Vaclav,1604432458736,256440,EVENT,,<auto>,1604359870450
+20002,angina,1074,angina,,17720,,1.0,APPROVED,Vaclav,1604395552451,321318,EVENT,,<auto>,1604359870458
+20002,hepatitis a,1578,hepatitis a,,317,,1.0,APPROVED,Vaclav,1604395554755,4223947,EVENT,,<auto>,1604359870713
+20002,inflammatory bowel disease,1461,inflammatory bowel disease,,201,,1.0,APPROVED,Vaclav,1604395556667,4074815,EVENT,,<auto>,1604359870715
+20002,benign breast lump,1666,benign breast lump,,2007,,0.7377552390098572,APPROVED,Vaclav,1604405671403,80767,EVENT,,<auto>,1604359870799
+20002,neurological injury/trauma,1240,neurological injury/trauma,,130,,0.6567054986953735,APPROVED,Vaclav,1604414921473,4134134,EVENT,,<auto>,1604359870811
+20002,monoclonal gammopathy/not myeloma,1450,monoclonal gammopathy/not myeloma,,87,,0.6210848689079285,APPROVED,Vaclav,1604422881760,4002359,EVENT,,<auto>,1604359870950
+20002,hepatitis b,1579,hepatitis b,,168,,1.0,APPROVED,Vaclav,1604395558941,4281232,EVENT,,<auto>,1604359871704
+20002,eye/eyelid problem,1242,eye/eyelid problem,,4104,,0.383493572473526,FLAGGED,,0,4080849,EVENT,,Vaclav,1604433183151
+20002,crohns disease,1462,crohns disease,,1605,,1.0,APPROVED,Vaclav,1604395568869,201606,EVENT,,<auto>,1604359871819
+20002,alopecia / hair loss,1667,alopecia / hair loss,,194,,0.5398991703987122,FLAGGED,,0,133280,EVENT,which one?,<auto>,1604359871931
+20002,throat or larynx disorder,1414,throat or larynx disorder,,463,,0.6438215374946594,APPROVED,Vaclav,1604415314317,31602,EVENT,,<auto>,1604359872392
+20002,allergy or anaphylactic reaction to drug,1386,allergy or anaphylactic reaction to drug,,5601,,0.6639108657836914,FLAGGED,,0,441202,EVENT,Anaphylactic reaction in general or to substance?,<auto>,1604359872520
+20002,hepatitis c,1580,hepatitis c,,161,,1.0,APPROVED,Vaclav,1604395571077,197494,EVENT,,<auto>,1604359872587
+20002,heart attack/myocardial infarction,1075,heart attack/myocardial infarction,,12964,,0.6342291831970215,APPROVED,Vaclav,1604418666506,4329847,EVENT,,<auto>,1604359872624
+20002,ulcerative colitis,1463,ulcerative colitis,,2945,,1.0,APPROVED,Vaclav,1604395576863,81893,EVENT,,<auto>,1604359873299
+20002,psychological/psychiatric problem,1243,psychological/psychiatric problem,,492,,0.5055224895477295,FLAGGED,,0,432586,EVENT,,Vaclav,1604432168941
+20002,allergy to house dust mite,1668,allergy to house dust mite,,659,,0.6701853275299072,APPROVED,Vaclav,1604414519828,42709857,EVENT,,<auto>,1604359873409
+20002,hereditary/genetic haematological disorder,1451,hereditary/genetic haematological disorder,,456,,0.47489985823631287,FLAGGED,,0,4317258,EVENT,,<auto>,1604359873835
+20002,heart failure/pulmonary odema,1076,heart failure/pulmonary odema,,378,,0.5571132898330688,APPROVED,Vaclav,1604424595411,316139,EVENT,,<auto>,1604359874138
+20002,ear/vestibular disorder,1415,ear/vestibular disorder,,4525,,0.6470242142677307,APPROVED,Vaclav,1604415289088,81303,EVENT,,<auto>,1604359874211
+20002,hayfever/allergic rhinitis,1387,hayfever/allergic rhinitis,,33692,,0.5992798209190369,FLAGGED,,0,256439,EVENT,which one?,<auto>,1604359874229
+20002,rheumatoid arthritis,1464,rheumatoid arthritis,,6282,,1.0,APPROVED,Vaclav,1604395578691,80809,EVENT,,<auto>,1604359874536
+20002,heart arrhythmia,1077,heart arrhythmia,,2845,,0.8949288725852966,APPROVED,Vaclav,1604396203719,44784217,EVENT,,<auto>,1604359874872
+20002,infection of nervous system,1244,infection of nervous system,,55,,1.0,APPROVED,Vaclav,1604395581625,4028069,EVENT,,<auto>,1604359875116
+20002,peripheral nerve injury,1394,peripheral nerve injury,,309,,1.0,APPROVED,Vaclav,1604395585836,4248551,EVENT,,<auto>,1604359875154
+20002,chronic sinusitis,1416,chronic sinusitis,,4139,,1.0,APPROVED,Vaclav,1604395587804,257012,EVENT,,<auto>,1604359875163
+20002,heart valve problem/heart murmur,1078,heart valve problem/heart murmur,,3695,,0.5302936434745789,APPROVED,Vaclav,1604427267617,316822,EVENT,,<auto>,1604359875759
+20002,nasal polyps,1417,nasal polyps,,2346,,0.6476765871047974,APPROVED,Vaclav,1604415271475,4138403,EVENT,,<auto>,1604359875765
+20002,enlarged prostate,1396,enlarged prostate,,8816,,1.0,APPROVED,Vaclav,1604395589833,4093346,EVENT,,<auto>,1604359875889
+20002,brain abscess/intracranial abscess,1245,brain abscess/intracranial abscess,,79,,0.6977694034576416,FLAGGED,,0,435509,EVENT,two codes for brain and intracranial,<auto>,1604359876388
+20002,cardiomyopathy,1079,cardiomyopathy,,443,,1.0,APPROVED,Vaclav,1604395591414,321319,EVENT,,<auto>,1604359876550
+20002,chronic laryngitis,1418,chronic laryngitis,,62,,1.0,APPROVED,Vaclav,1604395593071,24970,EVENT,,<auto>,1604359876626
+20002,encephalitis,1246,encephalitis,,348,,1.0,APPROVED,Vaclav,1604395594289,378143,EVENT,,<auto>,1604359876972
+20002,vocal cord polyp,1419,vocal cord polyp,,226,,0.6829018592834473,APPROVED,Vaclav,1604413993182,4233816,EVENT,,<auto>,1604359877370
+20002,pericardial problem,1080,pericardial problem,,263,,0.5747470855712891,FLAGGED,,0,318772,EVENT,,Vaclav,1604424401033
+20002,meningitis,1247,meningitis,,2212,,1.0,APPROVED,Vaclav,1604395595759,435785,EVENT,,<auto>,1604359877487
+20002,other demyelinating disease (not multiple sclerosis),1397,other demyelinating disease (not multiple sclerosis),,81,,0.5503804087638855,FLAGGED,,0,4050856,EVENT,,Vaclav,1604425963588
+20002,spinal abscess,1248,spinal abscess,,44,,0.8829866647720337,FLAGGED,,0,4037877,EVENT,,Vaclav,1604396658814
+20002,pneumonia,1398,pneumonia,,8352,,1.0,APPROVED,Vaclav,1604395596968,255848,EVENT,,<auto>,1604359878050
+20002,peptic ulcer,1400,peptic ulcer,,540,,1.0,APPROVED,Vaclav,1604395598868,4027663,EVENT,,<auto>,1604359878511
+20002,cranial nerve problem/palsy,1249,cranial nerve problem/palsy,,289,,0.6480391621589661,APPROVED,Vaclav,1604415228342,441848,EVENT,,<auto>,1604359878690
+20002,endometriosis,1402,endometriosis,,4533,,1.0,APPROVED,Vaclav,1604395600509,433527,EVENT,,<auto>,1604359879127
+20002,bell's palsy/facial nerve palsy,1250,bell's palsy/facial nerve palsy,,588,,0.6373665928840637,APPROVED,Vaclav,1604417223795,374923,EVENT,,<auto>,1604359879335
+20002,female infertility,1403,female infertility,,674,,1.0,APPROVED,Vaclav,1604395603304,201909,EVENT,,<auto>,1604359879718
+20002,male infertility,1404,male infertility,,38,,1.0,APPROVED,Vaclav,1604395604447,198197,EVENT,,<auto>,1604359880370
+20002,other renal/kidney problem,1405,other renal/kidney problem,,2291,,0.47443121671676636,FLAGGED,,0,4115713,EVENT,,<auto>,1604359880975

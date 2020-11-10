@@ -35,7 +35,7 @@ expect_observation_period(person_id = 305, observation_period_start_date = '2000
 declareTest(306, 'Observation Period - Type concepts')
 add_baseline(eid = '306')
 add_gp_registrations(eid = '306')
-expect_observation_period(person_id = 306, type_concept_id = 32817)
+expect_observation_period(person_id = 306, period_type_concept_id = 32817)
 
 declareTest(307, 'Observation Period - No person')
 add_gp_registrations(eid = '307')
