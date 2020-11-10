@@ -37,7 +37,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
             visit_end_date=get_datetime(row['53-1.0']),
             visit_end_datetime=get_datetime(row['53-1.0']),
             visit_type_concept_id=44818519,  # Clinical Study Visit
-            care_site_id=row['54-0.0']
+            care_site_id=row['54-1.0']
         )
         records.append(r)
 
@@ -50,7 +50,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
             visit_end_date=get_datetime(row['53-2.0']),
             visit_end_datetime=get_datetime(row['53-2.0']),
             visit_type_concept_id=44818519,  # Clinical Study Visit
-            care_site_id=row['54-0.0']
+            care_site_id=row['54-2.0']
         )
         records.append(r)
 
@@ -63,7 +63,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
             visit_end_date=get_datetime(row['53-3.0']),
             visit_end_datetime=get_datetime(row['53-3.0']),
             visit_type_concept_id=44818519,  # Clinical Study Visit
-            care_site_id=row['54-0.0']
+            care_site_id=row['54-3.0']
         )
         records.append(r)
 
