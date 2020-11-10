@@ -51,7 +51,7 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
 
             r = Observation(
                 person_id=person_id,
-                observation_concept_id=int(concept_id),
+                observation_concept_id=type_lookup.get(row['spectype'], 0),
                 observation_date=date.date(),
                 observation_datetime=date,
                 value_as_concept_id=result.get(row['result'], None),
