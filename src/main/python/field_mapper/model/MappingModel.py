@@ -13,9 +13,10 @@
 # GNU General Public License for more details.
 
 # !/usr/bin/env python3
+from __future__ import annotations
 from abc import ABC
 from dataclasses import dataclass
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from src.main.python.field_mapper.model.UsagiModel import UsagiRow, TargetMapping, MappingType, MappingStatus
 from src.main.python.field_mapper.model.Validator import validator
 
@@ -23,7 +24,9 @@ from src.main.python.field_mapper.model.Validator import validator
 @dataclass
 class _AbstractMapping(ABC):
     field_id: str = None
+    field_description: str = None
     value_code: str = None  # Only implemented for ValueMapping
+    value_description: str = None  # Only implemented for ValueMapping
     event_target: Optional[TargetMapping] = None
     unit_target: Optional[TargetMapping] = None
     value_target: Optional[TargetMapping] = None
@@ -33,6 +36,21 @@ class _AbstractMapping(ABC):
 
     def is_ignored(self):
         return self.status == MappingStatus.IGNORED
+
+    def get_event_concept_id(self):
+        if not self.event_target:
+            return 0
+        return self.event_target.concept_id
+
+    def get_unit_concept_id(self):
+        if not self.unit_target:
+            return 0
+        return self.unit_target.concept_id
+
+    def get_value_concept_id(self):
+        if not self.value_target:
+            return 0
+        return self.value_target.concept_id
 
     def set_status(self, status: MappingStatus):
         # Although each Usagi row has a comment and status, these are given on field-value level
@@ -45,6 +63,11 @@ class _AbstractMapping(ABC):
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
         self.status = status
+
+    def is_flagged(self) -> bool:
+        if self.status == MappingStatus.FLAGGED:
+            return True
+        return False
 
     def set_target(self, target: TargetMapping):
         if target.type == MappingType.EVENT:
@@ -81,6 +104,15 @@ class FieldMapping(_AbstractMapping):
         # TODO: what about numeric mappings that also have a few codes (-1, -3)
         return bool(self.values)
 
+    def has_flagged_values(self) -> bool:
+        for value_mapping in self.values.values():
+            if value_mapping.status == MappingStatus.FLAGGED:
+                return True
+        return False
+
+    def get_values(self) -> List[ValueMapping]:
+        return list(self.values.values())
+
     def add(self, usagi_row: UsagiRow):
         """
         If value_code is given, unit mapping is ignored with warning.
@@ -94,6 +126,11 @@ class FieldMapping(_AbstractMapping):
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
             return
 
+        self.source_file_name = usagi_row.source_file_name
+        self.field_description = usagi_row.field_description
+        if usagi_row.unit_description:
+            self.field_description = f'{self.field_description} ({usagi_row.unit_description})'
+
         is_value_mapping = bool(usagi_row.value_code)
         if is_value_mapping:
             self._add_value_mapping(usagi_row)
@@ -106,8 +143,6 @@ class FieldMapping(_AbstractMapping):
         :param usagi_row:
         :return:
         """
-        self.source_file_name = usagi_row.source_file_name
-
         self.comment = usagi_row.comment
         self.set_status(usagi_row.status)
 
@@ -131,6 +166,7 @@ class FieldMapping(_AbstractMapping):
 
         # Although each Usagi row has a comment and status, these are given on field-value level in the tool.
         value_mapping.comment = usagi_row.comment
+        value_mapping.value_description = usagi_row.value_description if usagi_row.value_description else usagi_row.field_description
         value_mapping.set_status(usagi_row.status)
 
         if value_mapping.status == MappingStatus.IGNORED:
