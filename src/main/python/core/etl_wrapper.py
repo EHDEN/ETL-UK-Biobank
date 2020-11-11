@@ -34,8 +34,8 @@ class EtlWrapper:
     of the ETL significantly slower.
     """
 
-    cdm = cdm
-    
+    cdm=cdm
+
     SOURCE_ROW_COUNT_FORMAT = '{:<60.60} {:>10}'
 
     def __init__(self, database, config):
