@@ -15,7 +15,7 @@ mappingApproaches:
     expect_unit: false
     expect_value: true
   - &valueOnly
-    name: value
+    name: value_only
     expect_event: false  # Note: provide event_concept_id below
     expect_unit: false
     expect_value: true

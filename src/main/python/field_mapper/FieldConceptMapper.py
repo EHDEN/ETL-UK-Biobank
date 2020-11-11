@@ -20,7 +20,7 @@ import yaml
 import logging
 
 from src.main.python.field_mapper.model.MappingTarget import MappingTarget
-from src.main.python.field_mapper.model.UsagiModel import UsagiRow, MappingStatus
+from src.main.python.field_mapper.model.UsagiModel import UsagiRow, MappingStatus, TargetMapping
 from src.main.python.field_mapper.model.MappingModel import FieldMapping
 from src.main.python.field_mapper.model.Validator import validator
 
@@ -30,10 +30,10 @@ logger = logging.getLogger(__name__)
 class FieldConceptMapper:
     """
     TODO: configuration file to load the baseline_field_mappings, to cover:
-     - handle mappings with fixed event mappings (e.g. cancer codes or operations)
      - handle field_ids using same value mapping (opcs codes from 41256;41258;42908)
      - handle value as string (e.g. device_id)
      - handle multiple (event) target concepts for one field/value combination (see opcs)
+     - continuous fields with few categorical values (-1, -3)
     """
 
     CONFIG_FILE_NAME = 'field_mapping_config.yaml'
@@ -63,7 +63,10 @@ class FieldConceptMapper:
             if mapping_config['mappingApproach']['name'] == 'date':
                 self.load_date_mapping(directory / mapping_filename)
                 self.default_date_field = mapping_config['default_date_field']
-            else:  # TODO: handle other mapping approaches
+            elif mapping_config['mappingApproach']['name'] == 'value_only':
+                target_event_concept_id = int(mapping_config['event_concept_id'])
+                self.load_usagi(directory / mapping_filename, target_event_concept_id)
+            else:  # TODO: handle value as numeric and value as text
                 self.load_usagi(directory / mapping_filename)
 
     def load_date_mapping(self, date_mapping_file: Path):
@@ -71,17 +74,29 @@ class FieldConceptMapper:
             for row in csv.DictReader(f_in):
                 self.date_field_mapping[row['field']] = row['date_field']
 
-    def load_usagi(self, file_path: Path):
+    def load_usagi(self, file_path: Path, fixed_event_concept_id: Optional[int] = None):
         logger.info(f"Loading {file_path.name}...")
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
 
-            code_mapping = self.field_mappings.setdefault(
+            field_mapping = self.field_mappings.setdefault(
                 usagi_mapping.field_id,
                 FieldMapping(usagi_mapping.field_id)
             )
-            code_mapping.add(usagi_mapping)
+            field_mapping.add(usagi_mapping)
+
+            if fixed_event_concept_id:
+                # assume given usagi mapping is only the value mapping of the field
+                event_target = TargetMapping({
+                    'conceptId': fixed_event_concept_id,
+                    'createdBy': '<config>',
+                    'createdOn': '0',
+                    'mappingType': 'EVENT',
+                    'statusSetBy': '<config>',
+                    'statusSetOn': '0'
+                })
+                field_mapping.add_target_for_value(usagi_mapping.value_code, event_target)
 
     @staticmethod
     def _load_map(file_path: Path):
@@ -116,7 +131,6 @@ class FieldConceptMapper:
         :return: MappingTarget
         """
         target = MappingTarget()
-        target.value_source_value = value
 
         field_mapping = self.get_mapping(field_id)
 
@@ -129,6 +143,11 @@ class FieldConceptMapper:
             return None
 
         if field_mapping.has_unit():
+            if not field_mapping.is_approved():
+                logger.warning(f'Field_id "{field_id}" is not approved')
+                target.concept_id = 0
+                target.source_value = field_id + "|" + value
+                return target
             # Create numeric target
             target.concept_id = field_mapping.event_target.concept_id
             target.value_as_number = float(value)
@@ -143,11 +162,17 @@ class FieldConceptMapper:
             if not value_mapping:
                 logger.warning(f'Value "{value}" for field_id "{field_id}" is unknown')
                 target.concept_id = 0
-                target.source_value = field_id
+                target.source_value = field_id + "|" + value
                 return target
 
             if value_mapping.is_ignored():
                 return None
+
+            if not value_mapping.is_approved():
+                logger.warning(f'Value "{value}" for field_id "{field_id}" is not approved')
+                target.concept_id = 0
+                target.source_value = field_id + "|" + value
+                return target
 
             if not value_mapping.event_target:
                 target.concept_id = 0
