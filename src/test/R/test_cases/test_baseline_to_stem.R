@@ -47,4 +47,32 @@ add_baseline(eid = '910', `31-0.0`='0', `34-0.0`='1970')
 expect_no_observation(person_id = 909, observation_source_value = '31|0')
 expect_no_observation(person_id = 909, observation_source_value = '34')
 
-# TODO: tests for array numbers
+declareTest(911, 'Baseline - One to many opcs')
+add_baseline(eid = '911', `41256-0.0`='027')
+expect_observation(person_id = 911, observation_concept_id = 40770405, value_as_concept_id = 4302449)
+expect_observation(person_id = 911, observation_concept_id = 40770405, value_as_concept_id = 4222434)
+
+declareTest(912, 'Baseline - Treatment')
+add_baseline(eid = '912', `20003-0.0`='2038459704')
+expect_observation(person_id = 912, observation_concept_id = 3021806, value_as_concept_id = 740275)
+
+declareTest(913, 'Baseline - Treatment with instance and array index')
+add_baseline(eid = '913', `20003-1.15`='2038459704')
+expect_observation(person_id = 913, observation_concept_id = 3021806, value_as_concept_id = 740275)
+
+declareTest(914, 'Baseline - Age at first live birth')
+add_baseline(eid = '914', `2754-0.0`='35')
+expect_observation(person_id = 914, value_as_number = 35, unit_concept_id = 9448, observation_source_value = '2754')
+
+declareTest(915, 'Baseline - Age at first live birth not given')
+add_baseline(eid = '915', `2754-0.0`='-3')
+expect_no_observation(person_id = 915, observation_source_value = '2754')
+
+declareTest(916, 'Baseline - Systolic Blood pressure at two instances')
+add_baseline(eid = '916', `93-0.0`='80', `93-1.0`='89')
+expect_no_observation(person_id = 916, observation_concept_id = 4152194, value_as_number = 80, unit_concept_id = 8876, observation_source_value = '93')
+expect_no_observation(person_id = 916, observation_concept_id = 4152194, value_as_number = 89, unit_concept_id = 8876, observation_source_value = '93')
+
+declareTest(917, 'Baseline - Systolic Blood pressure, empty')
+add_baseline(eid = '917', `93-0.0`='')
+expect_no_observation(person_id = 917, observation_source_value = '93')
