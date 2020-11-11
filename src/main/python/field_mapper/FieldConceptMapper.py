@@ -56,7 +56,7 @@ class FieldConceptMapper:
             raise FileNotFoundError(f"No such directory: '{directory}'")
 
         with (directory / self.CONFIG_FILE_NAME).open() as config_file:
-            config = yaml.load(config_file)
+            config = yaml.full_load(config_file)
 
         for mapping_config in config['mappings']:
             mapping_filename = mapping_config['filename']
@@ -146,7 +146,8 @@ class FieldConceptMapper:
             if not field_mapping.is_approved():
                 logger.warning(f'Field_id "{field_id}" is not approved')
                 target.concept_id = 0
-                target.source_value = field_id + "|" + value
+                target.value_as_number = float(value)
+                target.source_value = field_id
                 return target
             # Create numeric target
             target.concept_id = field_mapping.event_target.concept_id

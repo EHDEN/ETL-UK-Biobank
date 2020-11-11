@@ -56,5 +56,5 @@ SELECT
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)
-WHERE concept.domain_id = 'Observation'
+WHERE concept.domain_id = 'Observation' OR concept.concept_id = 0
 ;

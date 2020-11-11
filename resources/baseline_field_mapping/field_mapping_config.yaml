@@ -26,8 +26,6 @@ mappingApproaches:
     expect_unit: false
     expect_value: false
 
-
-
 mappings:
   - filename: date_field_lookup.csv
     mappingApproach: *date
