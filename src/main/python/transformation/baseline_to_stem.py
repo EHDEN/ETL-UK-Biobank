@@ -14,7 +14,7 @@ FIELD_PATTERN = re.compile(r'(\d+)-(\d+).(\d+)')
 
 def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.get_source_data('baseline.csv')
-    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
+    field_mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
 
     records = []
     for row in source:
@@ -30,11 +30,11 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             field_id, instance, _ = match.groups()  # Array index not relevant?
 
             # Date
-            date_field_id = '53'  # TODO: lookup which date field to use for incoming field
+            date_field_id = field_mapper.lookup_date_field(field_id)
             date_column_name = f'{date_field_id}-{instance}.0'
             datetime = get_datetime(row[date_column_name])
 
-            target = mapper.lookup(field_id, value)
+            target = field_mapper.lookup(field_id, value)
             if target:
                 records.append(wrapper.cdm.StemTable(
                     person_id=eid,
