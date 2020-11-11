@@ -33,9 +33,9 @@ class EtlWrapper:
     to get direct feedback if there are issues. This does make the loading step
     of the ETL significantly slower.
     """
-    
-    cdm = cdm
-    
+
+    cdm=cdm
+
     SOURCE_ROW_COUNT_FORMAT = '{:<60.60} {:>10}'
 
     def __init__(self, database, config):
