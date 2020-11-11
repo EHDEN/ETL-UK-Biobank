@@ -16,6 +16,7 @@
 import csv
 from pathlib import Path
 from typing import Dict, Optional
+import yaml
 import logging
 
 from src.main.python.field_mapper.model.MappingTarget import MappingTarget
@@ -31,13 +32,18 @@ class FieldConceptMapper:
     TODO: configuration file to load the baseline_field_mappings, to cover:
      - handle mappings with fixed event mappings (e.g. cancer codes or operations)
      - handle field_ids using same value mapping (opcs codes from 41256;41258;42908)
-     - load field_id to date_field_id mapping?
      - handle value as string (e.g. device_id)
+     - handle multiple (event) target concepts for one field/value combination (see opcs)
     """
+
+    CONFIG_FILE_NAME = 'field_mapping_config.yaml'
 
     def __init__(self, in_directory: Path = None, log_level: str = 'INFO'):
         logger.setLevel(log_level)
         self.field_mappings: Dict[str, FieldMapping] = {}
+        self.date_field_mapping: Dict[str, str] = {}
+        self.default_date_field: Optional[str] = None
+
         if in_directory:
             self.load(in_directory)
 
@@ -49,11 +55,24 @@ class FieldConceptMapper:
         if not directory.exists():
             raise FileNotFoundError(f"No such directory: '{directory}'")
 
-        for usagi_path in directory.glob('*.csv'):
-            logger.info(f"Loading {usagi_path.name}...")
-            self.load_usagi(usagi_path)
+        with (directory / self.CONFIG_FILE_NAME).open() as config_file:
+            config = yaml.load(config_file)
+
+        for mapping_config in config['mappings']:
+            mapping_filename = mapping_config['filename']
+            if mapping_config['mappingApproach']['name'] == 'date':
+                self.load_date_mapping(directory / mapping_filename)
+                self.default_date_field = mapping_config['default_date_field']
+            else:  # TODO: handle other mapping approaches
+                self.load_usagi(directory / mapping_filename)
+
+    def load_date_mapping(self, date_mapping_file: Path):
+        with date_mapping_file.open() as f_in:
+            for row in csv.DictReader(f_in):
+                self.date_field_mapping[row['field']] = row['date_field']
 
     def load_usagi(self, file_path: Path):
+        logger.info(f"Loading {file_path.name}...")
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
@@ -143,6 +162,9 @@ class FieldConceptMapper:
 
         raise Warning('"{field_id}-{value}" This should not happen, mapping has to be either a unit or value mapping.')
 
+    def lookup_date_field(self, field_id: str) -> str:
+        return self.date_field_mapping.get(field_id, self.default_date_field)
+
 
 if __name__ == '__main__':
     mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
@@ -155,10 +177,16 @@ if __name__ == '__main__':
     print(mapper('4041', '-3'))  # Ignored
     print(mapper('41256', '0552'))  # unknown field
     print(mapper('4041', '123'))  # unknown value for categorical field
+    # field mapping
+    print(mapper('20001', '1064'))  # unknown value for categorical field
 
     # get the mapping of a field
     # print(mapper.get_mapping('2335'))
     print(mapper.get_mapping('4041'))
+
+    print('Date field lookup')
+    print(mapper.lookup_date_field('46'))  # default
+    print(mapper.lookup_date_field('30110')) # custom
 
     print(f'{len(mapper.field_mappings):>6} field mappings loaded')
     print(f'{sum([len(x.get_values()) for x in mapper.field_mappings.values()]):>6,} value mappings loaded')
