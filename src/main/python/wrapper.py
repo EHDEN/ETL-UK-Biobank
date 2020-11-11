@@ -25,8 +25,6 @@ logger = logging.getLogger(__name__)
 
 class Wrapper(EtlWrapper):
 
-    cdm=cdm
-
     def __init__(self, database, config):
         super().__init__(database, config)
         # Load config settings
