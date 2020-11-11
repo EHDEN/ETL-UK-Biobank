@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Optional, Callable
 from sqlalchemy import text
 import src.main.python.core.model as cdm
+from .code_mapper import CodeMapper
 
 
 logger = logging.getLogger(__name__)
@@ -49,6 +50,7 @@ class EtlWrapper:
         self.cwd = os.getcwd()
 
         self.debug = config['run_options']['debug_mode']
+        self.code_mapper = CodeMapper(self.db, cdm)
 
     def run(self):
         """Run ETL procedure"""
