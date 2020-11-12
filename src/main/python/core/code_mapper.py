@@ -69,8 +69,7 @@ class MappingDict:
 
         for _, row in mapping_df.iterrows():
             code = row['source.concept_code']
-            target_concept_id = 0 if pd.isnull(row['target.concept_id']) \
-                else row['target.concept_id']
+            target_concept_id = row['target.concept_id'] if row['target.concept_id'] else 0
             mapping = CodeMapping()
             mapping.source_concept_code = code
             mapping.source_concept_id = row['source.concept_id']
@@ -237,7 +236,7 @@ class CodeMapper:
                 .filter(and_(*source_filters)) \
                 .all()
 
-        mapping_df = pd.DataFrame(records)
+        mapping_df = pd.DataFrame(records, dtype='object')
         mapping_dict = MappingDict.from_mapping_df(mapping_df)
 
         if remove_dot:
