@@ -58,15 +58,16 @@ class CodeMapping:
 class MappingDict:
 
     def __init__(self, mapping_df):
-        self.mapping_dict = self.from_mapping_df(mapping_df)
+        self.mapping_dict = self._from_mapping_df(mapping_df)
 
     @staticmethod
-    def from_mapping_df(mapping_df: pd.DataFrame) -> Dict[str, List[CodeMapping]]:
+    def _from_mapping_df(mapping_df: pd.DataFrame) -> Dict[str, List[CodeMapping]]:
 
         mapping_dict = {}
 
         for _, row in mapping_df.iterrows():
             code = row['source.concept_code']
+            target_concept_id = row['target.concept_code'] if row['target.concept_code'] else 0
             mapping = CodeMapping()
             mapping.source_concept_code = code
             mapping.source_concept_id = row['source.concept_id']
@@ -75,7 +76,7 @@ class MappingDict:
             mapping.source_standard_concept = row['source.standard_concept']
             mapping.source_invalid_reason = row['source.invalid_reason']
             mapping.target_concept_code = row['target.concept_code']
-            mapping.target_concept_id = row['target.concept_id']
+            mapping.target_concept_id = target_concept_id
             mapping.target_concept_name = row['target.concept_name']
             mapping.target_vocabulary_id = row['target.vocabulary_id']
 
