@@ -143,6 +143,10 @@ class FieldConceptMapper:
             return None
 
         if field_mapping.has_unit():
+            if value == '-1' or value == '-3':
+                # Ignore instances of 'Do not know' or 'Prefer not to answer'
+                return None
+
             if not field_mapping.is_approved():
                 logger.warning(f'Field_id "{field_id}" is not approved')
                 target.concept_id = 0

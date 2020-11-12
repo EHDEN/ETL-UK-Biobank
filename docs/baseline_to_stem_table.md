@@ -23,6 +23,7 @@ Notes:
  - For numeric fields, -1 and -3 are filtered out.
  - A field can also be 'ignored' meaning it should not map to an event
  - Fields not given in the mapping tables are also ignored (these are fields not prioritised)
+ - Mappings that have not been approved will be mapped to a 0 (see the mapping status column in the mapping tables). 
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |

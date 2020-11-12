@@ -62,7 +62,7 @@ expect_observation(person_id = 913, observation_concept_id = 3021806, value_as_c
 
 declareTest(914, 'Baseline - Age at first live birth')
 add_baseline(eid = '914', `2754-0.0`='35')
-expect_observation(person_id = 914, value_as_number = 35, unit_concept_id = 9448, observation_source_value = '2754')
+expect_observation(person_id = 914, value_as_number = 35, observation_source_value = '2754')
 
 declareTest(915, 'Baseline - Age at first live birth not given')
 add_baseline(eid = '915', `2754-0.0`='-3')
