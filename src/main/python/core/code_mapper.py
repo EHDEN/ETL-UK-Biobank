@@ -214,14 +214,6 @@ class CodeMapper:
         if restrict_to_codes:
             source_filters.append(source.concept_code.in_(restrict_to_codes))
 
-        target_filters = [
-            self.cdm.ConceptRelationship.relationship_id == 'Maps to',
-            # the following shouldn't really be necessary given the nature of the "Maps to"
-            # relationships, but it doesn't hurt to be sure..
-            target.standard_concept == 'S',
-            target.invalid_reason == None
-        ]
-
         with self.db.session_scope() as session:
             records = session.query(
                 source.concept_code.label('source.concept_code'),
@@ -234,12 +226,14 @@ class CodeMapper:
                 target.concept_id.label('target.concept_id'),
                 target.concept_name.label('target.concept_name'),
                 target.vocabulary_id.label('target.vocabulary_id')) \
-                .join(self.cdm.ConceptRelationship,
-                      source.concept_id == self.cdm.ConceptRelationship.concept_id_1) \
-                .join(target,
-                      target.concept_id == self.cdm.ConceptRelationship.concept_id_2) \
+                .outerjoin(self.cdm.ConceptRelationship,
+                           and_(source.concept_id == self.cdm.ConceptRelationship.concept_id_1,
+                                self.cdm.ConceptRelationship.relationship_id == 'Maps to')) \
+                .outerjoin(target,
+                           and_(self.cdm.ConceptRelationship.concept_id_2 == target.concept_id,
+                                target.standard_concept == 'S',
+                                target.invalid_reason == None)) \
                 .filter(and_(*source_filters)) \
-                .filter(and_(*target_filters)) \
                 .all()
 
         mapping_df = pd.DataFrame(records)
