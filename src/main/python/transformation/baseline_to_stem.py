@@ -44,7 +44,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 datetime = get_datetime(row[date_column_name])
             else:
                 datetime = DEFAULT_DATETIME
-                print(f'Warning: date column "{date_column_name}" was not found in the baseline data')
+                print(f'Warning: date column "{date_column_name}" for "{column_name}" was not found in the baseline data')
 
             target = field_mapper.lookup(field_id, value)
             if target:

@@ -63,9 +63,10 @@ mappings:
     mappingApproach: *valueOnly
     event_concept_id: 4188893 # History of (SNOMED)
 
-  - filename: opcs3.csv
-    mappingApproach: *valueOnly
-    event_concept_id: 40770405 # History of procedure (LOINC)
-    # TODO: multiple fields using this same value lookup
+# TODO: OPCS3
+# TODO: multiple fields using this same value lookup
+#  - filename: opcs3.csv
+#    mappingApproach: *valueOnly
+#    event_concept_id: 40770405 # History of procedure (LOINC)
 
-  # Add refernce to new mapping files here
+  # Add reference to new mapping files here
