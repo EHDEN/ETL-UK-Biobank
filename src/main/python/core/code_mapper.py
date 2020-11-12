@@ -36,6 +36,13 @@ class CodeMapping:
         self.target_concept_name = None
         self.target_vocabulary_id = None
 
+    @staticmethod
+    def create_no_match():
+        result = CodeMapping()
+        result.source_concept_id = 0
+        result.target_concept_id = 0
+        return result
+
     def __str__(self):
         # note: omitting standard concept and invalid reason
         return f'{self.source_concept_code} ' \
@@ -99,6 +106,10 @@ class MappingDict:
         available match. For reviewing purposes, you can also opt to
         retrieve the full mapping information as a CodeMapping object.
 
+        Match for source and standard: list of one or more CodeMappings
+        Match for source (no standard): list of one CodeMapping, target_concept_id = 0
+        No Match (code not found): list of one CodeMapping, source_concept_id = 0, target_concept_id = 0
+
         :param vocabulary_code: string representing the code to lookup
         :param first_only: if True, return the first available match
         only (default False)
@@ -112,20 +123,21 @@ class MappingDict:
             logger.warning('Trying to retrieve a mapping from an empty dictionary!')
 
         if full_mapping:
-            hits = self.mapping_dict.get(vocabulary_code, []) # full CodeMapping object
+            hits = self.mapping_dict.get(vocabulary_code, [])  # full CodeMapping object
         else:
-            hits=[]
+            hits = []
             for mapping in self.mapping_dict.get(vocabulary_code, []):
-                hits.append(mapping.target_concept_id) # standard concept_id only
-
-        if hits and first_only:
-            if len(hits)>1:
-                logger.debug(f'Multiple mappings available for {vocabulary_code}, '
-                             f'returning only first.')
-            return hits[0]
+                hits.append(mapping.target_concept_id)  # standard concept_id only
 
         if not hits:
             logger.debug(f'No mapping available for {vocabulary_code}')
+            hits = [CodeMapping.create_no_match()]
+
+        if hits and first_only:
+            if len(hits) > 1:
+                logger.debug(f'Multiple mappings available for {vocabulary_code}, '
+                             f'returning only first.')
+            return hits[0]
 
         return hits
 
@@ -243,4 +255,3 @@ class CodeMapper:
                                f'{len(not_found)}/{len(restrict_to_codes)} vocabulary codes:'
                                f' {not_found}')
         return mapping_dict
-
