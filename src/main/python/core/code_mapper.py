@@ -75,6 +75,18 @@ class MappingDict:
 
         return mapping_dict
 
+    def remove_dot_from_code(self):
+        """
+        Mainly for ICD9 and ICD10 codes that are recorded in the source without a dot.
+        :return:
+        """
+        new_mapping_dict = {}
+        for key in self.mapping_dict:
+            value = self.mapping_dict.get(key)
+            key_no_dot = key.replace('.', '')
+            new_mapping_dict[key_no_dot] = value
+        self.mapping_dict = new_mapping_dict
+
     def lookup(self, vocabulary_code: str,
                first_only: bool = False,
                full_mapping: bool = False) \
@@ -129,7 +141,8 @@ class CodeMapper:
                                          vocabulary_id: Union[str, List[str]],
                                          restrict_to_codes: Optional[List[str]] = None,
                                          invalid_reason: Optional[Union[str, List[str]]] = None,
-                                         standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
+                                         standard_concept: Optional[Union[str, List[Union[str, int]]]] = None,
+                                         remove_dot: bool = False) \
             -> MappingDict:
 
         """
@@ -152,6 +165,7 @@ class CodeMapper:
         to retrieve mappings for(list)
         :param invalid_reason: (optional) any of 'U', 'D', 'R', 'NONE' (list or string)
         :param standard_concept: (optional) any of 'S', 'C', 'NONE' (list or string)
+        :param remove_dot: for e.g. icd9 and icd10 the source codes do not contain the dot separator
         :return: MappingDict
         """
 
@@ -216,6 +230,9 @@ class CodeMapper:
         mapping_df = pd.DataFrame(records)
         mapping_dict = MappingDict(mapping_df)
 
+        if remove_dot:
+            mapping_dict.remove_dot_from_code()
+
         if not mapping_dict.mapping_dict:
             logger.warning(f'No mapping found, mapping dictionary empty')
 
@@ -226,3 +243,4 @@ class CodeMapper:
                                f'{len(not_found)}/{len(restrict_to_codes)} vocabulary codes:'
                                f' {not_found}')
         return mapping_dict
+
