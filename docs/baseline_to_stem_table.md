@@ -15,7 +15,7 @@ The process is as follows:
     2. From the column name, extract `field_id` and `instance` index (we can ignore the array index)
     3. Look up `target` concepts by `field_id` and value. If target is empty (=ignored field), go to next column.
     4. Look up date_field_id by `field_id`. Create the column name, using the extracted `instance` and array '0'. (e.g. `53-1.0`, if the date_field_id is '53' and the instance is '1')
-    5. Map record to stem table according to below overview.
+    5. Map record to stem table columns according to the overview below.
 
 Notes:
  - The field is considered numeric if it has no value mappings
@@ -31,20 +31,20 @@ Notes:
 | id |  |  | Not used |
 | domain_id |  |  | Not used, the concept_id  |
 | person_id | eid |  |  |
-| start_date | `date_field` |  |  |
-| start_datetime | `date_field` |  |  |
+| start_date | `date_column` | Lookup date_field_id from field_id (step d) |  |
+| start_datetime | `date_column` | Lookup date_field_id from field_id (step d) |  |
 | end_date |  |  | One date provided |
 | end_datetime |  |  | One date provided |
 | visit_occurrence_id |  |  | TBD |
 | provider_id |  |  | Not provided |
-| concept_id | target.event_concept_id |  |  |
-| source_value |  | If value numeric: `field_id`<br>If discrete: `field_id`|`value` |  |
+| concept_id | target.event_concept_id | Lookup from field_id and value (step c) |  |
+| source_value | `field_id` value | If value numeric: `field_id`<br>If discrete: `field_id`\|`value` |  |
 | source_concept_id |  | 0 |  |
-| value_as_concept_id | target.value_as_concept_id | If discrete |  |
-| value_as_number | target.value_as_number | If numeric |  |
-| value_as_string | target.value_as_string | If text |  |
+| value_as_concept_id | target.value_as_concept_id | Lookup from field_id and value (step c) | If value has a discrete mapping |
+| value_as_number | target.value_as_number | Lookup from field_id and value (step c) | If value is numeric |
+| value_as_string | target.value_as_string | Lookup from field_id and value (step c) | If value is text |
 | value_source_value |  |  | Not used, field and value are in source_value column |
-| unit_concept_id | target.unit_concept_id | If numeric |  |
+| unit_concept_id | target.unit_concept_id | Lookup from field_id and value (step c) | If value is numeric |
 | unit_source_value |  |  | Not used, unit is directly derived from the `field_id` |
 | type_concept_id |  | 32883 | Survey |
 
