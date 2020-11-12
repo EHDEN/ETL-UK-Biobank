@@ -69,7 +69,8 @@ class MappingDict:
 
         for _, row in mapping_df.iterrows():
             code = row['source.concept_code']
-            target_concept_id = row['target.concept_id'] if row['target.concept_id'] else 0
+            target_concept_id = 0 if pd.isnull(row['target.concept_id']) \
+                else row['target.concept_id']
             mapping = CodeMapping()
             mapping.source_concept_code = code
             mapping.source_concept_id = row['source.concept_id']
