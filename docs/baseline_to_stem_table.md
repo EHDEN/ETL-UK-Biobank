@@ -2,7 +2,7 @@
 
 The Baseline table contains one row per person and a column for each field. There can be thousands of columns. Each column name is structured as `field_id-instance.array` (e.g. 53-1.0). The `field_id` encodes the variable, the `instance` indicates one of the four assessment centre visits (ranging from 0 to 3) and with the `array` index multiple values can be given for the same field_id at the same visit.
 
-To map all these columns to individual events, we map them first to a staging table: the stem table. Depending on the domain of the target concepts, the events are then mapped to their respective tables.
+To map all these columns to individual events, we map them first to a staging table: the stem table. Depending on the domain of the target concepts, the events are then mapped to their respective tables. See the [section on stem table mapping](/stem/index.md)
 
 The input for this transformation are mapping tables for given prioritised `field_id`s (n=519). Each field can have multiple values, for which a separate mapping is made. The mappings are made using a modified version of Usagi, allowing for mapping of values and having different target types. They are saved as default Usagi save files, here [resources/baseline_field_mapping](resources/baseline_field_mapping). 
 
@@ -18,6 +18,8 @@ The process is as follows:
     3. Look up date_field_id by `field_id`. Create the column name, using the extracted `instance` and array '0'. (e.g. `53-1.0`, if the date_field_id is '53' and the instance is '1')
     4. Map record to stem table according to below overview.
 
+The records in the stem table are subsequently mapped to 
+
 Notes:
  - The field is considered numeric if it has no value mappings
  - For numeric fields, -1 and -3 are filtered out.
@@ -25,6 +27,7 @@ Notes:
  - Fields not given in the mapping tables are also ignored (these are fields not prioritised)
  - Mappings that have not been approved will be mapped to a 0 (see the mapping status column in the mapping tables). 
  - If a field has no value mappings, but the value can't be converted to a float, then it is treated as free-text and populates the value_as_string field.
+ - There are some cases where instances run higher than 3. These correspond to positions in the death or cancer registry and should be handled separately. **TODO**
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |

@@ -1,15 +1,23 @@
 from __future__ import annotations
 
 import re
-from typing import List, TYPE_CHECKING
+from typing import List, Tuple, TYPE_CHECKING
 from pathlib import Path
 from ..field_mapper.FieldConceptMapper import FieldConceptMapper
-from ..util.date_functions import get_datetime
+from ..util.date_functions import get_datetime, DEFAULT_DATETIME
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 FIELD_PATTERN = re.compile(r'(\d+)-(\d+).(\d+)')
+
+
+def parse_column_name(column_name: str) -> Tuple(str):
+    match = FIELD_PATTERN.match(column_name)
+    if not match:
+        return None, None
+    field_id, instance, _ = match.groups()  # Array index not relevant
+    return field_id, instance
 
 
 def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
@@ -23,16 +31,20 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             if value == '':
                 continue
 
-            match = FIELD_PATTERN.match(column_name)
-            if not match:
+            field_id, instance = parse_column_name(column_name)
+
+            if field_id is None:
                 print(f'Warning: column "{column_name}" does not match expected field pattern. Cannot retrieve field_id and instance.')
                 continue
-            field_id, instance, _ = match.groups()  # Array index not relevant?
 
             # Date
             date_field_id = field_mapper.lookup_date_field(field_id)
             date_column_name = f'{date_field_id}-{instance}.0'
-            datetime = get_datetime(row[date_column_name])
+            if date_column_name in row:
+                datetime = get_datetime(row[date_column_name])
+            else:
+                datetime = DEFAULT_DATETIME
+                print(f'Warning: date column "{date_column_name}" was not found in the baseline data')
 
             target = field_mapper.lookup(field_id, value)
             if target:
