@@ -1,4 +1,4 @@
-# Source Data Mapping Approach to CDMV5.3.1
+# Stem table to OMOP clinical event tables
 
 ![](md_files/image8.png)
 

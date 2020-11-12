@@ -4,11 +4,6 @@
 
 ## Contents
 
-### Baseline Data
-[Baseline data ](baseline/index.md)
-
-### GP, HES, Covid
-
 [person](baseline/person.md)
 
 [observation_period](observation_period.md)
@@ -17,7 +12,7 @@
 
 [visit_detail](visit_detail.md)
 
-[stem_table](baseline_to_stem_table.md)
+[baseline_to_stem_table](baseline_to_stem_table.md)
 
 [condition_occurrence](condition_occurrence.md)
 
@@ -39,3 +34,4 @@
 
 [source_appendix](source_appendix.md)
 
+[stem to clinical_event](stem/index.md)
