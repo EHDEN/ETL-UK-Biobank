@@ -99,13 +99,13 @@ class MappingDict:
             new_mapping_dict[key_no_dot] = value
         self.mapping_dict = new_mapping_dict
 
-    def lookup(self, vocabulary_code: str,
+    def lookup(self, code: str,
                first_only: bool = False,
                full_mapping: bool = False) \
             -> Union[List[str], List[CodeMapping], str, CodeMapping]:
 
         """
-        Given a vocabulary code, retrieves a list of all corresponding
+        Given a valid vocabulary code, retrieves a list of all corresponding
         standard concept_ids from the stored mapping dictionary.
         Optionally, you can restrict the results to the first
         available match. For reviewing purposes, you can also opt to
@@ -127,24 +127,21 @@ class MappingDict:
         if not self.mapping_dict:
             logger.warning('Trying to retrieve a mapping from an empty dictionary!')
 
-        if full_mapping:
-            hits = self.mapping_dict.get(vocabulary_code, [])  # full CodeMapping object
-        else:
-            hits = []
-            for mapping in self.mapping_dict.get(vocabulary_code, []):
-                hits.append(mapping.target_concept_id)  # standard concept_id only
+        mappings = self.mapping_dict.get(code, [])  # full CodeMapping object
+        if not mappings:
+            logger.debug(f'No mapping available for {code}')
+            mappings = [CodeMapping.create_mapping_for_no_match()]
 
-        if not hits:
-            logger.debug(f'No mapping available for {vocabulary_code}')
-            hits = [CodeMapping.create_mapping_for_no_match()]
+        if not full_mapping:
+            mappings = [mapping.target_concept_id for mapping in mappings]  # standard concept_id only
 
-        if hits and first_only:
-            if len(hits) > 1:
-                logger.debug(f'Multiple mappings available for {vocabulary_code}, '
+        if first_only:
+            if len(mappings) > 1:
+                logger.debug(f'Multiple mappings available for {code}, '
                              f'returning only first.')
-            return hits[0]
+            return mappings[0]
 
-        return hits
+        return mappings
 
 
 class CodeMapper:
@@ -186,7 +183,7 @@ class CodeMapper:
         :return: MappingDict
         """
 
-        logger.info(f'   Building mapping dictionary for vocabularies: {vocabulary_id}')
+        logger.info(f'Building mapping dictionary for vocabularies: {vocabulary_id}')
 
         source = aliased(self.cdm.Concept)
         target = aliased(self.cdm.Concept)
@@ -257,6 +254,6 @@ class CodeMapper:
             not_found = set(restrict_to_codes) - set(mapping_dict.mapping_dict.keys())
             if not_found:
                 logger.warning(f'No mapping to standard concept_id could be generated for '
-                               f'{len(not_found)}/{len(restrict_to_codes)} vocabulary codes:'
+                               f'{len(not_found)}/{len(restrict_to_codes)} codes:'
                                f' {not_found}')
         return mapping_dict
