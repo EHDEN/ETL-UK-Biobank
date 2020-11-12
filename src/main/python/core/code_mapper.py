@@ -38,8 +38,9 @@ class CodeMapping:
         self.target_vocabulary_id = None
 
     @classmethod
-    def create_mapping_for_no_match(cls) -> CodeMapping:
+    def create_mapping_for_no_match(cls, source_concept_code) -> CodeMapping:
         mapping = cls()
+        mapping.source_concept_code = source_concept_code
         mapping.source_concept_id = 0
         mapping.target_concept_id = 0
         return mapping
@@ -130,7 +131,7 @@ class MappingDict:
         mappings = self.mapping_dict.get(code, [])  # full CodeMapping object
         if not mappings:
             logger.debug(f'No mapping available for {code}')
-            mappings = [CodeMapping.create_mapping_for_no_match()]
+            mappings = [CodeMapping.create_mapping_for_no_match(code)]
 
         if not full_mapping:
             mappings = [mapping.target_concept_id for mapping in mappings]  # standard concept_id only
