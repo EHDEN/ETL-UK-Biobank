@@ -37,6 +37,15 @@ class _AbstractMapping(ABC):
     def is_ignored(self):
         return self.status == MappingStatus.IGNORED
 
+    def is_flagged(self) -> bool:
+        return self.status == MappingStatus.FLAGGED
+
+    def is_unchecked(self) -> bool:
+        return self.status == MappingStatus.UNCHECKED
+
+    def is_approved(self) -> bool:
+        return self.status == MappingStatus.APPROVED
+
     def get_event_concept_id(self):
         if not self.event_target:
             return 0
@@ -63,11 +72,6 @@ class _AbstractMapping(ABC):
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
         self.status = status
-
-    def is_flagged(self) -> bool:
-        if self.status == MappingStatus.FLAGGED:
-            return True
-        return False
 
     def set_target(self, target: TargetMapping):
         if target.type == MappingType.EVENT:
@@ -118,7 +122,6 @@ class FieldMapping(_AbstractMapping):
         If value_code is given, unit mapping is ignored with warning.
         If no value_code is given, value mapping is ignored with warning.
         :param usagi_row:
-        :param source_file_name: from where the mapping is retrieved
         :return:
         """
         if usagi_row.field_id != self.field_id:
@@ -172,12 +175,26 @@ class FieldMapping(_AbstractMapping):
         if value_mapping.status == MappingStatus.IGNORED:
             return
 
+        self.add_target_for_value(usagi_row.value_code, usagi_row.target)
+
+    def add_target_for_value(self, value_code: str, target: TargetMapping):
+        """
+        Convenience method to directly add mapping on value level
+        :param value_code:
+        :param target:
+        :return:
+        """
         if self.event_target or self.unit_target or self.value_target:
             # TODO: continuous fields with few categorical values (-1, -3)
             message = f'Already mapping assigned on field level and we are trying to add a mapping of the value.'
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
-        value_mapping.set_target(usagi_row.target)
+        value_mapping = self.values.setdefault(
+            value_code,
+            ValueMapping(value_code, self)
+        )
+
+        value_mapping.set_target(target)
 
     def __str__(self):
         if self.is_ignored():

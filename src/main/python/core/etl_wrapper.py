@@ -63,28 +63,30 @@ class EtlWrapper:
         """Drops clinical tables, if they exist"""
         logger.info('Dropping OMOP CDM (non-vocabulary) tables if existing')
         self.db.base.metadata.drop_all(self.db.engine, tables=[
-            cdm.clinical_data.ConditionOccurrence.__table__,
-            cdm.clinical_data.DeviceExposure.__table__,
-            cdm.clinical_data.DrugExposure.__table__,
-            cdm.clinical_data.FactRelationship.__table__,
-            cdm.clinical_data.Measurement.__table__,
-            cdm.clinical_data.Note.__table__,
-            cdm.clinical_data.NoteNlp.__table__,
-            cdm.clinical_data.Observation.__table__,
-            cdm.clinical_data.ObservationPeriod.__table__,
-            cdm.clinical_data.Death.__table__,
-            cdm.clinical_data.ProcedureOccurrence.__table__,
-            cdm.clinical_data.Specimen.__table__,
-            cdm.clinical_data.VisitOccurrence.__table__,
-            cdm.derived_elements.DrugEra.__table__,
-            cdm.derived_elements.DoseEra.__table__,
-            cdm.derived_elements.ConditionEra.__table__,
-            cdm.health_economics.PayerPlanPeriod.__table__,
-            cdm.health_economics.Cost.__table__,
-            cdm.clinical_data.Person.__table__,
-            cdm.health_system_data.Location.__table__,
-            cdm.health_system_data.CareSite.__table__,
-            cdm.health_system_data.Provider.__table__
+            self.cdm.clinical_data.StemTable.__table__,
+            self.cdm.clinical_data.ConditionOccurrence.__table__,
+            self.cdm.clinical_data.DeviceExposure.__table__,
+            self.cdm.clinical_data.DrugExposure.__table__,
+            self.cdm.clinical_data.FactRelationship.__table__,
+            self.cdm.clinical_data.Measurement.__table__,
+            self.cdm.clinical_data.Note.__table__,
+            self.cdm.clinical_data.NoteNlp.__table__,
+            self.cdm.clinical_data.Observation.__table__,
+            self.cdm.clinical_data.ObservationPeriod.__table__,
+            self.cdm.clinical_data.Death.__table__,
+            self.cdm.clinical_data.ProcedureOccurrence.__table__,
+            self.cdm.clinical_data.Specimen.__table__,
+            self.cdm.clinical_data.VisitDetail.__table__,
+            self.cdm.clinical_data.VisitOccurrence.__table__,
+            self.cdm.derived_elements.DrugEra.__table__,
+            self.cdm.derived_elements.DoseEra.__table__,
+            self.cdm.derived_elements.ConditionEra.__table__,
+            self.cdm.health_economics.PayerPlanPeriod.__table__,
+            self.cdm.health_economics.Cost.__table__,
+            self.cdm.clinical_data.Person.__table__,
+            self.cdm.health_system_data.Location.__table__,
+            self.cdm.health_system_data.CareSite.__table__,
+            self.cdm.health_system_data.Provider.__table__
         ])
 
     def create_cdm(self) -> None:
@@ -129,7 +131,7 @@ class EtlWrapper:
         self.n_queries_executed += 1
         return
 
-    def execute_sql_file(self, file_path, source_schema=None, target_schema=None,
+    def execute_sql_file(self, file_path, source_schema='public', target_schema='public',
                          print_failed_query=False):
 
         # Open and read the file as a single buffer

@@ -22,13 +22,12 @@ class MappingTarget:
         self.value_as_number = None
         self.unit_concept_id = None
         self.source_value = None
-        self.value_source_value = None
+        self.value_as_string = None
 
     def __str__(self):
-        return f'{self.source_value}-{self.value_source_value} => ' \
+        return f'{self.source_value} => ' \
                f'concept_id: {self.concept_id}, ' \
                f'value_as_concept_id: {self.value_as_concept_id}, ' \
                f'value_as_number: {self.value_as_number}, ' \
                f'unit_concept_id: {self.unit_concept_id}, ' \
-               f'source_value: {self.source_value}, ' \
-               f'value_source_value: {self.value_source_value}'
+               f'source_value: {self.source_value}'
