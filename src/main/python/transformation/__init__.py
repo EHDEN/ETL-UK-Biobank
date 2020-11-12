@@ -8,4 +8,5 @@ from .gp_clinical_prescriptions_to_visit_occurrence import gp_clinical_prescript
 from .covid_to_visit_occurrence import covid_to_visit_occurrence
 from .baseline_to_visit_occurrence import baseline_to_visit_occurrence
 from .gp_registrations_to_observation_period import gp_registrations_to_observation_period
+from .hesin_to_visit_occurrence import hesin_to_visit_occurrence
 

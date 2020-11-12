@@ -14,7 +14,25 @@ if TYPE_CHECKING:
 
 def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
     source = pd.DataFrame(wrapper.get_source_data('hesin.csv'))
-    source = source.drop_duplicates(subset=['eid', 'ins_index', 'dsource'], keep='first')
+    source = source.drop_duplicates(subset=['eid', 'spell_index', 'dsource'], keep='first')
+
+    # TODO: Before dropping the duplicates check to keep the (eid, spell_index) with the earliest admission date and
+    #  the latest discharge date
+
+    visit_reason = pd.read_csv('./resources/mapping_tables/hesin_admimeth.csv')
+    visit_reason_lookup = visit_reason.groupby(['sourceCode', 'sourceValueName'])\
+                            .apply(lambda x: x['conceptId']\
+                            .values[0]).to_dict()
+
+    admit_reason = pd.read_csv('./resources/mapping_tables/hesin_admisorc.csv')
+    admit_reason_lookup = admit_reason.groupby(['sourceCode', 'sourceValueName'])\
+                            .apply(lambda x: x['conceptId'].values[0])\
+                            .to_dict()
+
+    dis_reason = pd.read_csv('./resources/mapping_tables/hesin_disdest.csv')
+    dis_reason_lookup = dis_reason.groupby(['sourceCode', 'sourceValueName'])\
+                            .apply(lambda x: x['conceptId'].values[0])\
+                            .to_dict()
 
     records = []
     with wrapper.db.session_scope() as session:
@@ -35,17 +53,17 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
 
             r = VisitOccurrence(
                 person_id=person_id,
-                visit_concept_id=,
+                visit_concept_id=visit_reason_lookup.get((row['dsource'], row['admimeth']), 0),
                 visit_start_date=start_date.date(),
                 visit_start_datetime=start_date,
                 visit_end_date=end_date.date(),
                 visit_end_datetime=end_date,
-                visit_type_concept_id=,
+                visit_type_concept_id=44818517, # Visit derived from encounter on claim
                 visit_source_value=row['admimeth'],
-                admitting_source_concept_id=,
-                admitting_source_value=row['admisorc'],
-                discharge_to_concept_id=,
-                discharge_to_source_value=row['disdest']
+                admitting_source_concept_id=admit_reason_lookup.get((row['dsource'], row['admisorc']), 0),
+                admitting_source_value=row['admisorc'], # TODO add text to say what is the dsource
+                discharge_to_concept_id=dis_reason_lookup.get((row['dsource'], row['disdest']), 0),
+                discharge_to_source_value=row['disdest'] # TODO add text to say what is the dsource
             )
             records.append(r)
         return records
