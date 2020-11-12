@@ -12,6 +12,7 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+from __future__ import annotations
 import pandas as pd
 from sqlalchemy import and_
 from sqlalchemy.orm import aliased
@@ -36,12 +37,12 @@ class CodeMapping:
         self.target_concept_name = None
         self.target_vocabulary_id = None
 
-    @staticmethod
-    def create_no_match():
-        result = CodeMapping()
-        result.source_concept_id = 0
-        result.target_concept_id = 0
-        return result
+    @classmethod
+    def create_mapping_for_no_match(cls) -> CodeMapping:
+        mapping = cls()
+        mapping.source_concept_id = 0
+        mapping.target_concept_id = 0
+        return mapping
 
     def __str__(self):
         # note: omitting standard concept and invalid reason
@@ -131,7 +132,7 @@ class MappingDict:
 
         if not hits:
             logger.debug(f'No mapping available for {vocabulary_code}')
-            hits = [CodeMapping.create_no_match()]
+            hits = [CodeMapping.create_mapping_for_no_match()]
 
         if hits and first_only:
             if len(hits) > 1:
