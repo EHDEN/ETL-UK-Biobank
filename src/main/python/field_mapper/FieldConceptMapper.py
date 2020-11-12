@@ -197,6 +197,7 @@ if __name__ == '__main__':
 
     # Some simple tests
     print(mapper('50', '180'))  # numeric
+    print(mapper('46', '12.5'))  # numeric
     print(mapper('30785', '8'))
     print(mapper('2443', '0'))
     print(mapper('2443', '1'))

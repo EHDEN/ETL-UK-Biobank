@@ -17,6 +17,8 @@
 
 [visit_detail](visit_detail.md)
 
+[stem_table](baseline_to_stem_table.md)
+
 [condition_occurrence](condition_occurrence.md)
 
 [drug_exposure](drug_exposure.md)

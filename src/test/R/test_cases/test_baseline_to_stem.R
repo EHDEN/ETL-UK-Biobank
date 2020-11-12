@@ -76,3 +76,10 @@ expect_no_observation(person_id = 916, observation_concept_id = 4152194, value_a
 declareTest(917, 'Baseline - Systolic Blood pressure, empty')
 add_baseline(eid = '917', `93-0.0`='')
 expect_no_observation(person_id = 917, observation_source_value = '93')
+
+declareTest(918, 'Baseline - Do not capture dates')
+add_baseline(eid = '918', `53-0.0`='2010-10-10', `30002-2.0`='2010-10-10')
+expect_no_observation(person_id = 918, observation_source_value = '53')
+expect_no_observation(person_id = 918, observation_source_value = '53|2010-10-10')
+expect_no_observation(person_id = 918, observation_source_value = '30002')
+expect_no_observation(person_id = 918, observation_source_value = '30002|2010-10-10')
