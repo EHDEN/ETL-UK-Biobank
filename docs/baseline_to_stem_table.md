@@ -6,7 +6,7 @@ To map all these columns to individual events, we map them first to a staging ta
 
 The input for this transformation are mapping tables for given prioritised `field_id`s (n=519). Each field can have multiple values, for which a separate mapping is made. The mappings are made using a modified version of Usagi, allowing for mapping of values and having different target types. They are saved as default Usagi save files, here [resources/baseline_field_mapping](resources/baseline_field_mapping). 
 
-Each field or field/value combination can have a mapping to an event, unit and/or value. Also, each field is associated to a date field_id. Based the mappings given, both the semantic mapping and structural mapping is made. The mapping target either has
+Each field or field/value combination can have a mapping to an event, unit and/or value. Also, each field is associated to a date field_id. Based the mappings given, both the semantic mapping and structural mapping is made. The field is considered discrete if it has mappings for its values, numeric if it has no values and value can be converted to float and text if the value cannot be converted to a float.
 
 The process is as follows:
 - Loop through all rows of the baseline table:
@@ -24,6 +24,7 @@ Notes:
  - A field can also be 'ignored' meaning it should not map to an event
  - Fields not given in the mapping tables are also ignored (these are fields not prioritised)
  - Mappings that have not been approved will be mapped to a 0 (see the mapping status column in the mapping tables). 
+ - If a field has no value mappings, but the value can't be converted to a float, then it is treated as free-text and populates the value_as_string field.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
@@ -39,7 +40,7 @@ Notes:
 | source_concept_id |  | 0 |  |
 | value_as_concept_id | target.value_as_concept_id | If discrete |  |
 | value_as_number | target.value_as_number | If numeric |  |
-| value_as_string | target.value_as_string |  | TBD |
+| value_as_string | target.value_as_string | If text |  |
 | value_source_value |  |  |  |
 | unit_concept_id | target.unit_concept_id | If numeric |  |
 | unit_source_value |  |  |  |

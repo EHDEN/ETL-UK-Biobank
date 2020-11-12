@@ -31,9 +31,7 @@ class FieldConceptMapper:
     """
     TODO: configuration file to load the baseline_field_mappings, to cover:
      - handle field_ids using same value mapping (opcs codes from 41256;41258;42908)
-     - handle value as string (e.g. device_id)
      - handle multiple (event) target concepts for one field/value combination (see opcs)
-     - continuous fields with few categorical values (-1, -3)
     """
 
     CONFIG_FILE_NAME = 'field_mapping_config.yaml'
@@ -142,27 +140,12 @@ class FieldConceptMapper:
         if field_mapping.is_ignored():
             return None
 
-        if field_mapping.has_unit():
-            if value == '-1' or value == '-3':
-                # Ignore instances of 'Do not know' or 'Prefer not to answer'
-                return None
+        is_discrete = field_mapping.has_values()
 
-            if not field_mapping.is_approved():
-                logger.warning(f'Field_id "{field_id}" is not approved')
-                target.concept_id = 0
-                target.value_as_number = float(value)
-                target.source_value = field_id
-                return target
-            # Create numeric target
-            target.concept_id = field_mapping.event_target.concept_id
-            target.value_as_number = float(value)
-            target.unit_concept_id = field_mapping.unit_target.concept_id
-            target.source_value = field_id
-            return target
-
-        if field_mapping.has_values():
+        if is_discrete:
             # Create categorical target
             value_mapping = field_mapping.values.get(value)
+            target.source_value = field_id + "|" + value
 
             if not value_mapping:
                 logger.warning(f'Value "{value}" for field_id "{field_id}" is unknown')
@@ -174,9 +157,8 @@ class FieldConceptMapper:
                 return None
 
             if not value_mapping.is_approved():
-                logger.warning(f'Value "{value}" for field_id "{field_id}" is not approved')
+                logger.debug(f'Value "{value}" for field_id "{field_id}" is not approved')
                 target.concept_id = 0
-                target.source_value = field_id + "|" + value
                 return target
 
             if not value_mapping.event_target:
@@ -187,10 +169,35 @@ class FieldConceptMapper:
 
             if value_mapping.value_target:
                 target.value_as_concept_id = value_mapping.value_target.concept_id
-            target.source_value = field_id + "|" + value
             return target
+        else:
+            target.source_value = field_id
+            try:
+                # Create numeric target
+                target.value_as_number = float(value)
+                is_numeric = True
+            except ValueError:
+                # Create text target
+                target.value_as_string = value
+                is_numeric = False
 
-        raise Warning('"{field_id}-{value}" This should not happen, mapping has to be either a unit or value mapping.')
+            if is_numeric and (value == '-1' or value == '-3'):
+                # Ignore instances of 'Do not know' or 'Prefer not to answer'
+                return None
+
+            if not field_mapping.is_approved():
+                logger.debug(f'Field_id "{field_id}" is not approved')
+                target.concept_id = 0
+                return target
+
+            if not field_mapping.event_target:
+                target.concept_id = 0
+                logger.warning(f'"{field_id}" does not have an event_concept_id associated')
+            else:
+                target.concept_id = field_mapping.event_target.concept_id
+
+            target.unit_concept_id = field_mapping.unit_target.concept_id if field_mapping.unit_target else 0
+            return target
 
     def lookup_date_field(self, field_id: str) -> str:
         return self.date_field_mapping.get(field_id, self.default_date_field)
