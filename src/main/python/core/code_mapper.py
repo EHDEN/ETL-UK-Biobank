@@ -57,12 +57,13 @@ class CodeMapping:
 
 class MappingDict:
 
-    def __init__(self, mapping_df):
-        self.mapping_dict = self._from_mapping_df(mapping_df)
+    def __init__(self):
+        self.mapping_dict: Dict[str, List[CodeMapping]] = {}
 
-    @staticmethod
-    def _from_mapping_df(mapping_df: pd.DataFrame) -> Dict[str, List[CodeMapping]]:
+    @classmethod
+    def from_mapping_df(cls, mapping_df: pd.DataFrame) -> MappingDict:
 
+        mapping_dict_from_df = cls()
         mapping_dict = {}
 
         for _, row in mapping_df.iterrows():
@@ -82,9 +83,11 @@ class MappingDict:
 
             mapping_dict[code] = mapping_dict.get(code, []) + [mapping]
 
-        return mapping_dict
+        mapping_dict_from_df.mapping_dict = mapping_dict
 
-    def remove_dot_from_code(self):
+        return mapping_dict_from_df
+
+    def remove_dot_from_code(self) -> None:
         """
         Mainly for ICD9 and ICD10 codes that are recorded in the source without a dot.
         :return:
@@ -242,7 +245,7 @@ class CodeMapper:
                 .all()
 
         mapping_df = pd.DataFrame(records)
-        mapping_dict = MappingDict(mapping_df)
+        mapping_dict = MappingDict.from_mapping_df(mapping_df)
 
         if remove_dot:
             mapping_dict.remove_dot_from_code()
