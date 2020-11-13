@@ -6,7 +6,7 @@ import pandas as pd
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from ..core.model import VisitOccurrence, Person
-from ..util.date_functions import get_datetime, get_end_datetime
+from ..util.date_functions import get_datetime, get_end_datetime, DEFAULT_DATETIME
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -14,6 +14,8 @@ if TYPE_CHECKING:
 
 def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
     source = pd.DataFrame(wrapper.get_source_data('hesin.csv'))
+    source['admidate'] = pd.to_datetime(source['admidate'], dayfirst=True)
+    source['disdate'] = pd.to_datetime(source['disdate'], dayfirst=True)
     source = source.sort_values(['eid', 'spell_index'])
     source = source.groupby(by=['eid', 'dsource', 'spell_index']).agg(
         {'admidate': 'min',
@@ -52,8 +54,15 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
             except NoResultFound or MultipleResultsFound:
                 continue
 
-            start_date = get_datetime(row['admidate'], "%d/%m/%Y")
-            end_date = get_end_datetime(row['disdate'], "%d/%m/%Y")
+            if pd.isna(row['admidate']):
+                start_date = DEFAULT_DATETIME
+            else:
+                start_date = row['admidate']
+
+            if pd.isna(row['disdate']):
+                end_date = DEFAULT_DATETIME
+            else:
+                end_date = row['disdate']
 
             method_source = "record origin:"+row['dsource']+"/admission method:"+row['admimeth']
             admit_source = "record origin:"+row['dsource']+"/admission source:"+row['admisorc']

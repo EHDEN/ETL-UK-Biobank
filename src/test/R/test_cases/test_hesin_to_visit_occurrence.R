@@ -72,3 +72,9 @@ add_hesin(eid = 1109, spell_index = '0', ins_index = '0', dsource = 'HES', disde
 add_hesin(eid = 1109, spell_index = '0', ins_index = '1', dsource = 'HES', disdest = '9999')
 add_hesin(eid = 1109, spell_index = '0', ins_index = '2', dsource = 'HES', disdest = '84')
 expect_visit_occurrence(person_id = 1109, discharge_to_concept_id = 38004515, discharge_to_source_value = 'record origin:HES/discharge destination:84')
+
+declareTest(1110, 'two episodes in one spell, min/max date 2')
+add_baseline(eid = 1110)
+add_hesin(eid = 1110, spell_index = '0', admidate = '30/06/2010', disdate = '30/07/2010')
+add_hesin(eid = 1110, spell_index = '0', admidate = '01/08/2010', disdate = '03/08/2010')
+expect_visit_occurrence(person_id = 1110, visit_start_date = '2010/06/30', visit_end_date = '2010/08/03')
