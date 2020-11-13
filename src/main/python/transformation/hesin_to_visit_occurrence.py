@@ -14,10 +14,15 @@ if TYPE_CHECKING:
 
 def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
     source = pd.DataFrame(wrapper.get_source_data('hesin.csv'))
-    source = source.drop_duplicates(subset=['eid', 'spell_index', 'dsource'], keep='first')
-
-    # TODO: Before dropping the duplicates check to keep the (eid, spell_index) with the earliest admission date and
-    #  the latest discharge date
+    source = source.sort_values(['eid', 'spell_index'])
+    source = source.groupby(by=['eid', 'dsource', 'spell_index']).agg(
+        {'admidate': 'min',
+         'disdate': 'max',
+         'admimeth': 'first',
+         'admisorc': 'first',
+         'disdest': 'last',
+         }
+    ).reset_index()
 
     visit_reason = pd.read_csv('./resources/mapping_tables/hesin_admimeth.csv')
     visit_reason_lookup = visit_reason.groupby(['sourceCode', 'ADD_INFO:coding_origin'])\
