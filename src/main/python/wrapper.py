@@ -63,14 +63,27 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(gp_registrations_to_observation_period)
         self.execute_transformation(covid_to_observation)
         self.execute_transformation(hesin_to_visit_occurrence)
+        self.execute_transformation(baseline_to_stem)
 
-        # sql transformation:
-        # self.execute_sql_file(self.path_sql_transformations / 'sample_script.sql')
+        # Stem table to domains
+        self.load_from_stem_table()
 
         logger.info('{:-^100}'.format(' Summary stats '))
 
         self.log_summary()
         self.log_runtime()
+
+    def load_from_stem_table(self):
+        # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
+        target_schema = 'omopcdm'  # TODO: target_schema from variable
+        # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
+        self.execute_sql_file('src/main/sql/stem_table_to_observation.sql', target_schema=target_schema)
+        self.execute_sql_file('src/main/sql/stem_table_to_measurement.sql', target_schema=target_schema)
+        self.execute_sql_file('src/main/sql/stem_table_to_condition_occurrence.sql', target_schema=target_schema)
+        self.execute_sql_file('src/main/sql/stem_table_to_procedure_occurrence.sql', target_schema=target_schema)
+        self.execute_sql_file('src/main/sql/stem_table_to_drug_exposure.sql', target_schema=target_schema)
+        self.execute_sql_file('src/main/sql/stem_table_to_device_exposure.sql', target_schema=target_schema)
+        self.execute_sql_file('src/main/sql/stem_table_to_specimen.sql', target_schema=target_schema)
 
     def get_source_data(self, source_file, custom_delimiter: Optional[str]=None):
         if custom_delimiter:
