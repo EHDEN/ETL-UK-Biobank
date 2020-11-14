@@ -156,7 +156,7 @@ class CodeMapper:
                                          restrict_to_codes: Optional[List[str]] = None,
                                          invalid_reason: Optional[Union[str, List[str]]] = None,
                                          standard_concept: Optional[Union[str, List[Union[str, int]]]] = None,
-                                         remove_dot: bool = False) \
+                                         remove_dot_from_codes: bool = False) \
             -> MappingDict:
 
         """
@@ -179,7 +179,7 @@ class CodeMapper:
         to retrieve mappings for(list)
         :param invalid_reason: (optional) any of 'U', 'D', 'R', 'NONE' (list or string)
         :param standard_concept: (optional) any of 'S', 'C', 'NONE' (list or string)
-        :param remove_dot: for e.g. icd9 and icd10 the source codes do not contain the dot separator
+        :param remove_dot_from_codes: for e.g. icd9 and icd10 the source codes do not contain the dot separator
         :return: MappingDict
         """
 
@@ -210,7 +210,7 @@ class CodeMapper:
         elif type(standard_concept) == str:
             source_filters.append(source.standard_concept == standard_concept)
 
-        if restrict_to_codes:
+        if not remove_dot_from_codes and restrict_to_codes:  # if restricted_to_codes do not contain a dot, the restriction in query will not work
             source_filters.append(source.concept_code.in_(restrict_to_codes))
 
         with self.db.session_scope() as session:
@@ -238,8 +238,13 @@ class CodeMapper:
         mapping_df = pd.DataFrame(records, dtype='object')
         mapping_dict = MappingDict.from_mapping_df(mapping_df)
 
-        if remove_dot:
+        if remove_dot_from_codes:
             mapping_dict.remove_dot_from_code()
+
+            if restrict_to_codes:  # If dot removed from codes, the restriction was not applied at the query
+                to_delete = set(mapping_dict.mapping_dict.keys()).difference(restrict_to_codes)
+                for key in to_delete:
+                    del mapping_dict.mapping_dict[key]
 
         if not mapping_dict.mapping_dict:
             logger.warning(f'No mapping found, mapping dictionary empty')
