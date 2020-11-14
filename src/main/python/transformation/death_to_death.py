@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import csv
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
@@ -30,20 +29,22 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
 
     source = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
-    # TODO: instantiate icd10 mapper
+    codes = death_cause['cause_icd10'].unique().tolist()
+    mapper = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', restrict_to_codes=codes, remove_dot=True)
 
     records = []
     for _, row in source.iterrows():
         if pd.isna(row['date_of_death']):
             continue
 
+        target = mapper.lookup(row['cause_icd10'], first_only=True)
         r = wrapper.cdm.Death(
             person_id=row['eid'],
             death_date=row['date_of_death'],
             death_datetime=row['date_of_death'],
             death_type_concept_id=type_lookup.get(row['source'], 0),
-            cause_concept_id=0,  # TODO
-            cause_source_concept_id=0,  # TODO
+            cause_concept_id=target.target_concept_id,
+            cause_source_concept_id=target.source_concept_id,
             cause_source_value=row['cause_icd10']
             # TODO: record source in separate field
         )
