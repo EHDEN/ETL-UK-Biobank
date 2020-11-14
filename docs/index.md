@@ -8,6 +8,8 @@
 
 [observation_period](observation_period.md)
 
+[death](death.md)
+
 [visit_occurrence](visit_occurrence.md)
 
 [visit_detail](visit_detail.md)
