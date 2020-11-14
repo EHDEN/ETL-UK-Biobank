@@ -102,7 +102,7 @@ class MappingDict:
 
     def lookup(self, code: str,
                first_only: bool = False,
-               full_mapping: bool = False) \
+               target_concept_id_only: bool = False) \
             -> Union[List[str], List[CodeMapping], str, CodeMapping]:
 
         """
@@ -119,8 +119,7 @@ class MappingDict:
         :param vocabulary_code: string representing the code to lookup
         :param first_only: if True, return the first available match
         only (default False)
-        :param full_mapping: if True, return the full mapping
-        information as a CodeMapping object (default False)
+        :param target_concept_id_only: if True, return the target_concept_id only
         :return: a single match or list of matches, either standard
         concept_ids (string) or CodeMapping objects
         """
@@ -133,7 +132,7 @@ class MappingDict:
             logger.debug(f'No mapping available for {code}')
             mappings = [CodeMapping.create_mapping_for_no_match(code)]
 
-        if not full_mapping:
+        if target_concept_id_only:
             mappings = [mapping.target_concept_id for mapping in mappings]  # standard concept_id only
 
         if first_only:
