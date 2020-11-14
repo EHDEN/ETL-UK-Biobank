@@ -6,7 +6,7 @@ These dedicated tables therefore contain more recent information than the field 
 We will use these tables.
 
 ### Reading from death.csv and death_cause.csv
-Join `death` and `death_cause` by eid and ins_index.
+Join `death` and `death_cause` by eid. ~and ins_index.~
 
 There are a few people with multiple records in the `death` table. 
 The OMOP death table only accepts one death. 
@@ -15,6 +15,8 @@ We will use the first death and drop duplicates.
 Also, only one cause of death is recorded in the OMOP death table. 
 The primary cause (`array_index`=0) is recorded here.
 **TODO**: The other causes of death are captured as conditions. 
+
+If the date of death is not given, no death is recorded.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |

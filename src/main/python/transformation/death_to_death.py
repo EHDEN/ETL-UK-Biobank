@@ -7,6 +7,16 @@ import pandas as pd
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
+type_lookup = {
+    '1':  32815,  # Death Certificate
+    '2':  32815,
+    '7':  32815,
+    '19': 32815,
+    '52': 32815,
+    '54': 32815,
+    '55': 32815
+}
+
 
 def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
     """
@@ -39,6 +49,7 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
             person_id=row['eid'],
             # TODO
             )
+        # TODO: record source in separate field
         records.append(r)
 
     return records
