@@ -30,7 +30,7 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
     source = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
     codes = death_cause['cause_icd10'].unique().tolist()
-    mapper = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', restrict_to_codes=codes, remove_dot=True)
+    mapper = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', restrict_to_codes=codes, remove_dot_from_codes=True)
 
     records = []
     for _, row in source.iterrows():
