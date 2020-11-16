@@ -12,6 +12,7 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+from __future__ import annotations
 import pandas as pd
 from sqlalchemy import and_
 from sqlalchemy.orm import aliased
@@ -36,6 +37,14 @@ class CodeMapping:
         self.target_concept_name = None
         self.target_vocabulary_id = None
 
+    @classmethod
+    def create_mapping_for_no_match(cls, source_concept_code) -> CodeMapping:
+        mapping = cls()
+        mapping.source_concept_code = source_concept_code
+        mapping.source_concept_id = 0
+        mapping.target_concept_id = 0
+        return mapping
+
     def __str__(self):
         # note: omitting standard concept and invalid reason
         return f'{self.source_concept_code} ' \
@@ -49,16 +58,18 @@ class CodeMapping:
 
 class MappingDict:
 
-    def __init__(self, mapping_df):
-        self.mapping_dict = self.from_mapping_df(mapping_df)
+    def __init__(self):
+        self.mapping_dict: Dict[str, List[CodeMapping]] = {}
 
-    @staticmethod
-    def from_mapping_df(mapping_df: pd.DataFrame) -> Dict[str, List[CodeMapping]]:
+    @classmethod
+    def from_mapping_df(cls, mapping_df: pd.DataFrame) -> MappingDict:
 
+        mapping_dict_from_df = cls()
         mapping_dict = {}
 
         for _, row in mapping_df.iterrows():
             code = row['source.concept_code']
+            target_concept_id = row['target.concept_id'] if row['target.concept_id'] else 0
             mapping = CodeMapping()
             mapping.source_concept_code = code
             mapping.source_concept_id = row['source.concept_id']
@@ -67,31 +78,48 @@ class MappingDict:
             mapping.source_standard_concept = row['source.standard_concept']
             mapping.source_invalid_reason = row['source.invalid_reason']
             mapping.target_concept_code = row['target.concept_code']
-            mapping.target_concept_id = row['target.concept_id']
+            mapping.target_concept_id = target_concept_id
             mapping.target_concept_name = row['target.concept_name']
             mapping.target_vocabulary_id = row['target.vocabulary_id']
 
             mapping_dict[code] = mapping_dict.get(code, []) + [mapping]
 
-        return mapping_dict
+        mapping_dict_from_df.mapping_dict = mapping_dict
 
-    def lookup(self, vocabulary_code: str,
+        return mapping_dict_from_df
+
+    def remove_dot_from_code(self) -> None:
+        """
+        Mainly for ICD9 and ICD10 codes that are recorded in the source without a dot.
+        :return:
+        """
+        new_mapping_dict = {}
+        for key in self.mapping_dict:
+            value = self.mapping_dict.get(key)
+            key_no_dot = key.replace('.', '')
+            new_mapping_dict[key_no_dot] = value
+        self.mapping_dict = new_mapping_dict
+
+    def lookup(self, code: str,
                first_only: bool = False,
-               full_mapping: bool = False) \
+               target_concept_id_only: bool = False) \
             -> Union[List[str], List[CodeMapping], str, CodeMapping]:
 
         """
-        Given a vocabulary code, retrieves a list of all corresponding
+        Given a valid vocabulary code, retrieves a list of all corresponding
         standard concept_ids from the stored mapping dictionary.
         Optionally, you can restrict the results to the first
         available match. For reviewing purposes, you can also opt to
         retrieve the full mapping information as a CodeMapping object.
 
+        Match for source and standard: list of one or more CodeMappings
+        Match for source (no standard): list of one CodeMapping, target_concept_id = 0
+        No Match (code not found): list of one CodeMapping, source_concept_id = 0, target_concept_id = 0
+
         :param vocabulary_code: string representing the code to lookup
         :param first_only: if True, return the first available match
         only (default False)
-        :param full_mapping: if True, return the full mapping
-        information as a CodeMapping object (default False)
+        :param target_concept_id_only: if True, return the target_concept_id only
         :return: a single match or list of matches, either standard
         concept_ids (string) or CodeMapping objects
         """
@@ -99,23 +127,25 @@ class MappingDict:
         if not self.mapping_dict:
             logger.warning('Trying to retrieve a mapping from an empty dictionary!')
 
-        if full_mapping:
-            hits = self.mapping_dict.get(vocabulary_code, []) # full CodeMapping object
+        if not code or pd.isna(code):
+            mappings = [CodeMapping.create_mapping_for_no_match(code)]
         else:
-            hits=[]
-            for mapping in self.mapping_dict.get(vocabulary_code, []):
-                hits.append(mapping.target_concept_id) # standard concept_id only
+            mappings = self.mapping_dict.get(code, [])  # full CodeMapping object
 
-        if hits and first_only:
-            if len(hits)>1:
-                logger.debug(f'Multiple mappings available for {vocabulary_code}, '
+        if not mappings:
+            logger.debug(f'No mapping available for {code}')
+            mappings = [CodeMapping.create_mapping_for_no_match(code)]
+
+        if target_concept_id_only:
+            mappings = [mapping.target_concept_id for mapping in mappings]  # standard concept_id only
+
+        if first_only:
+            if len(mappings) > 1:
+                logger.debug(f'Multiple mappings available for {code}, '
                              f'returning only first.')
-            return hits[0]
+            return mappings[0]
 
-        if not hits:
-            logger.debug(f'No mapping available for {vocabulary_code}')
-
-        return hits
+        return mappings
 
 
 class CodeMapper:
@@ -129,7 +159,8 @@ class CodeMapper:
                                          vocabulary_id: Union[str, List[str]],
                                          restrict_to_codes: Optional[List[str]] = None,
                                          invalid_reason: Optional[Union[str, List[str]]] = None,
-                                         standard_concept: Optional[Union[str, List[Union[str, int]]]] = None) \
+                                         standard_concept: Optional[Union[str, List[Union[str, int]]]] = None,
+                                         remove_dot_from_codes: bool = False) \
             -> MappingDict:
 
         """
@@ -152,10 +183,11 @@ class CodeMapper:
         to retrieve mappings for(list)
         :param invalid_reason: (optional) any of 'U', 'D', 'R', 'NONE' (list or string)
         :param standard_concept: (optional) any of 'S', 'C', 'NONE' (list or string)
+        :param remove_dot_from_codes: for e.g. icd9 and icd10 the source codes do not contain the dot separator
         :return: MappingDict
         """
 
-        logger.info(f'   Building mapping dictionary for vocabularies: {vocabulary_id}')
+        logger.info(f'Building mapping dictionary for vocabularies: {vocabulary_id}')
 
         source = aliased(self.cdm.Concept)
         target = aliased(self.cdm.Concept)
@@ -182,16 +214,8 @@ class CodeMapper:
         elif type(standard_concept) == str:
             source_filters.append(source.standard_concept == standard_concept)
 
-        if restrict_to_codes:
+        if not remove_dot_from_codes and restrict_to_codes:  # if restricted_to_codes do not contain a dot, the restriction in query will not work
             source_filters.append(source.concept_code.in_(restrict_to_codes))
-
-        target_filters = [
-            self.cdm.ConceptRelationship.relationship_id == 'Maps to',
-            # the following shouldn't really be necessary given the nature of the "Maps to"
-            # relationships, but it doesn't hurt to be sure..
-            target.standard_concept == 'S',
-            target.invalid_reason == None
-        ]
 
         with self.db.session_scope() as session:
             records = session.query(
@@ -205,16 +229,26 @@ class CodeMapper:
                 target.concept_id.label('target.concept_id'),
                 target.concept_name.label('target.concept_name'),
                 target.vocabulary_id.label('target.vocabulary_id')) \
-                .join(self.cdm.ConceptRelationship,
-                      source.concept_id == self.cdm.ConceptRelationship.concept_id_1) \
-                .join(target,
-                      target.concept_id == self.cdm.ConceptRelationship.concept_id_2) \
+                .outerjoin(self.cdm.ConceptRelationship,
+                           and_(source.concept_id == self.cdm.ConceptRelationship.concept_id_1,
+                                self.cdm.ConceptRelationship.relationship_id == 'Maps to')) \
+                .outerjoin(target,
+                           and_(self.cdm.ConceptRelationship.concept_id_2 == target.concept_id,
+                                target.standard_concept == 'S',
+                                target.invalid_reason == None)) \
                 .filter(and_(*source_filters)) \
-                .filter(and_(*target_filters)) \
                 .all()
 
-        mapping_df = pd.DataFrame(records)
-        mapping_dict = MappingDict(mapping_df)
+        mapping_df = pd.DataFrame(records, dtype='object')
+        mapping_dict = MappingDict.from_mapping_df(mapping_df)
+
+        if remove_dot_from_codes:
+            mapping_dict.remove_dot_from_code()
+
+            if restrict_to_codes:  # If dot removed from codes, the restriction was not applied at the query
+                to_delete = set(mapping_dict.mapping_dict.keys()).difference(restrict_to_codes)
+                for key in to_delete:
+                    del mapping_dict.mapping_dict[key]
 
         if not mapping_dict.mapping_dict:
             logger.warning(f'No mapping found, mapping dictionary empty')
@@ -223,6 +257,6 @@ class CodeMapper:
             not_found = set(restrict_to_codes) - set(mapping_dict.mapping_dict.keys())
             if not_found:
                 logger.warning(f'No mapping to standard concept_id could be generated for '
-                               f'{len(not_found)}/{len(restrict_to_codes)} vocabulary codes:'
+                               f'{len(not_found)}/{len(restrict_to_codes)} codes:'
                                f' {not_found}')
         return mapping_dict

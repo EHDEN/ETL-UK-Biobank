@@ -13,59 +13,30 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
     source = pd.DataFrame(wrapper.get_source_data('baseline.csv'))
 
     records = []
-
-    # TODO: Didn't add care_site id's for repeated visits and imaging visits, not all known in CareSite table.
-
     for _, row in source.iterrows():
-        # Date of initial assessment visit
-        r = wrapper.cdm.VisitOccurrence(
-            person_id=row['eid'],
-            visit_concept_id=44818519,  # Clinical Study Visit
-            visit_start_date=get_datetime(row['53-0.0']),
-            visit_start_datetime=get_datetime(row['53-0.0']),
-            visit_end_date=get_datetime(row['53-0.0']),
-            visit_end_datetime=get_datetime(row['53-0.0']),
-            visit_type_concept_id=44818519,  # Clinical Study Visit
-            care_site_id=row['54-0.0']
-        )
-        records.append(r)
+        # One-day visits for instances 0 to 3
+        for instance in range(4):
+            # Field_id 53 contains the date of the visit
+            date_column = f'53-{instance}.0'
+            if row[date_column] == '' or pd.isna(row[date_column]):
+                continue
 
-        # Date of repeat assessment visit
-        if row['53-1.0'] != '' and pd.notna(row['53-1.0']):
+            date = get_datetime(row[date_column])
+
+            # Field_id 54 contains the assessment centre
+            assessment_center = row.get(f'54-{instance}.0', None)
+
             r = wrapper.cdm.VisitOccurrence(
                 person_id=row['eid'],
                 visit_concept_id=44818519,  # Clinical Study Visit
-                visit_start_date=get_datetime(row['53-1.0']),
-                visit_start_datetime=get_datetime(row['53-1.0']),
-                visit_end_date=get_datetime(row['53-1.0']),
-                visit_end_datetime=get_datetime(row['53-1.0']),
-                visit_type_concept_id=44818519,  # Clinical Study Visit
-            )
-            records.append(r)
-
-        # Date of first imaging visit
-        if row['53-2.0'] != '' and pd.notna(row['53-2.0']):
-            r = wrapper.cdm.VisitOccurrence(
-                person_id=row['eid'],
-                visit_concept_id=44818519,  # Clinical Study Visit
-                visit_start_date=get_datetime(row['53-2.0']),
-                visit_start_datetime=get_datetime(row['53-2.0']),
-                visit_end_date=get_datetime(row['53-2.0']),
-                visit_end_datetime=get_datetime(row['53-2.0']),
-                visit_type_concept_id=44818519,  # Clinical Study Visit
-            )
-            records.append(r)
-
-        # Date of second imaging visit
-        if row['53-3.0'] != '' and pd.notna(row['53-3.0']):
-            r = wrapper.cdm.VisitOccurrence(
-                person_id=row['eid'],
-                visit_concept_id=44818519,  # Clinical Study Visit
-                visit_start_date=get_datetime(row['53-3.0']),
-                visit_start_datetime=get_datetime(row['53-3.0']),
-                visit_end_date=get_datetime(row['53-3.0']),
-                visit_end_datetime=get_datetime(row['53-3.0']),
-                visit_type_concept_id=44818519,  # Clinical Study Visit
+                visit_start_date=date.date(),
+                visit_start_datetime=date,
+                visit_end_date=date.date(),
+                visit_end_datetime=date,
+                visit_type_concept_id=32883,  # Survey
+                care_site_id=assessment_center or None,
+                record_source_value=f'baseline-{instance}',
+                data_source='baseline'
             )
             records.append(r)
 
