@@ -52,7 +52,8 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
                 # Visit
                 visit_lookup = session.query(wrapper.cdm.VisitOccurrence) \
-                    .filter(wrapper.cdm.VisitOccurrence == 'baseline-' + instance)
+                    .filter(wrapper.cdm.VisitOccurrence.person_id == eid,
+                            wrapper.cdm.VisitOccurrence.record_source_value == 'baseline-' + instance)
                 try:
                     visit_record = visit_lookup.one()
                     visit_occurrence_id = visit_record.visit_occurrence_id
