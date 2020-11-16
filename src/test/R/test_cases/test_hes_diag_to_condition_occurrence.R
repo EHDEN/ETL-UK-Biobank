@@ -44,7 +44,7 @@ expect_condition_occurrence(person_id = 1004, condition_concept_id = 0, conditio
 
 
 # Test if code has more > 1 code
-declareTest(1005, 'Test if code has more > 1 code')
+declareTest(1005, 'Test if code has more > 1 target concept')
 add_baseline(eid = 1005)
 add_hesin(eid = 1005, ins_index = 5, admidate = '25/08/2017')
 add_hesin_diag(eid = 1005, ins_index = 5, diag_icd10 = 'Y831', level = 1)
@@ -53,3 +53,10 @@ expect_condition_occurrence(person_id = 1005, condition_concept_id = 4320824, co
 expect_condition_occurrence(person_id = 1005, condition_concept_id = 434547, condition_start_date = '2017-08-25',
                             condition_type_concept_id = 44786627, condition_source_concept_id = 45547251)
 
+declareTest(1006, 'HES diagnosis with visit')
+add_baseline(eid = 1006)
+add_hesin(eid = 1006, ins_index = 0, admidate = '18/12/2020')
+add_hesin_diag(eid = 1006, ins_index = 0, diag_icd10 = 'I10')
+expect_visit_occurrence(person_id = 1006, visit_start_date = '2020-12-18')
+expect_condition_occurrence(person_id = 1006, condition_start_date = '2020-12-18',
+                            visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1006, visit_start_date = '2020-12-18'))

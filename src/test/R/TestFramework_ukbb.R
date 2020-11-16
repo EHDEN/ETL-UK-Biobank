@@ -116,7 +116,7 @@ initFramework <- function() {
   defaults$level <- '2'
   defaults$diag_icd9 <- ''
   defaults$diag_icd9_nb <- ''
-  defaults$diag_icd10 <- ''
+  defaults$diag_icd10 <- 'I10'
   defaults$diag_icd10_nb <- ''
   assign('hesin_diag', defaults, envir = frameworkContext$defaultValues)
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 from typing import List, TYPE_CHECKING
 import pandas as pd
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from ..util.date_functions import get_datetime
 
@@ -10,7 +11,6 @@ if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 # TODO: Add CareSite id
-# TODO: Add Visit Occurrence id
 
 
 def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
@@ -52,6 +52,9 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
             # No code given
             continue
 
+        # Visit
+        visit_occurrence_id = wrapper.lookup_visit(row['eid'], 'HES-' + row['spell_index'])
+
         for target in diag_targets:
             r = wrapper.cdm.ConditionOccurrence(
                 person_id=row['eid'],
@@ -61,7 +64,8 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
                 condition_type_concept_id=condition_type_concept_id,
                 condition_source_value=row['diag_icd9'],
                 condition_source_concept_id=target.source_concept_id,
-                # visit_occurrence_id=row['spell_index']
+                visit_occurrence_id=visit_occurrence_id,
+                data_source=f'HES-{row["dsource"]}'
             )
             records.append(r)
     return records

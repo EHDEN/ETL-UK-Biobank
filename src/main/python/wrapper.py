@@ -15,6 +15,9 @@
 from pathlib import Path
 from typing import Optional
 import logging
+
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+
 from src.main.python.core import EtlWrapper
 from src.main.python.core.source_data import SourceData
 from src.main.python.transformation import *
@@ -61,10 +64,10 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
         self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
+        self.execute_transformation(hesin_to_visit_occurrence)
         self.execute_transformation(hesin_diag_to_condition_occurrence)
         self.execute_transformation(gp_registrations_to_observation_period)
         self.execute_transformation(covid_to_observation)
-        self.execute_transformation(hesin_to_visit_occurrence)
         self.execute_transformation(baseline_to_stem)
 
         # Stem table to domains
@@ -111,3 +114,17 @@ class Wrapper(EtlWrapper):
                 else:
                     table[(row['sourceCode'], row[add_info])] = row['conceptId']
         return table
+
+    def lookup_visit(self, person_id, record_source_value) -> Optional[int]:
+        with self.db.session_scope() as session:
+            visit_lookup = session.query(self.cdm.VisitOccurrence) \
+                .filter(self.cdm.VisitOccurrence.person_id == person_id,
+                        self.cdm.VisitOccurrence.record_source_value == record_source_value)
+            try:
+                visit_record = visit_lookup.one()
+                return visit_record.visit_occurrence_id
+            except NoResultFound:
+                return None
+            except MultipleResultsFound:
+                logger.warning(f'Multiple visits found for person_id={person_id} record_source_value={record_source_value}')
+                return None
