@@ -24,7 +24,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
             date = get_datetime(row[date_column])
 
             # Field_id 54 contains the assessment centre
-            assessment_center_column = f'54-{instance}.0'
+            assessment_center = row.get(f'54-{instance}.0', None)
 
             r = wrapper.cdm.VisitOccurrence(
                 person_id=row['eid'],
@@ -34,7 +34,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                 visit_end_date=date.date(),
                 visit_end_datetime=date,
                 visit_type_concept_id=32883,  # Survey
-                care_site_id=row.get(assessment_center_column, None),
+                care_site_id=assessment_center or None,
                 record_source_value=f'baseline-{instance}',
                 data_source='baseline'
             )
