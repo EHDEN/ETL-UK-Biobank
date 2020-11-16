@@ -33,7 +33,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                 visit_start_datetime=date,
                 visit_end_date=date.date(),
                 visit_end_datetime=date,
-                visit_type_concept_id=44818519,  # Clinical Study Visit
+                visit_type_concept_id=32883,  # Survey
                 care_site_id=row.get(assessment_center_column, None),
                 record_source_value=f'baseline-{instance}',
                 data_source='baseline'
