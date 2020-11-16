@@ -97,7 +97,7 @@ Follow-up online or to assessment center.
 | visit_start_datetime | value | Same as mapping to visit_start_date |  |
 | visit_end_date | value | Same as mapping to visit_start_date |  |
 | visit_end_datetime | value | Same as mapping to visit_start_date |  |
-| visit_type_concept_id |  |  | For gp_clinical, gp_prescriptions: 44818518 - Visit derived from EHR record.  For hesin: 44818517 - Visit derived from encounter on claim.  For baseline: 44818519 - Clinical Study visit.  For covid: 44818518 - Visit derived from EHR record |
+| visit_type_concept_id |  | 32883 - Survey |  |
 | provider_id |  |  |  |
 | care_site_id | value | Corresponding value from field 54.x.0 | See also person to location_id mapping<br>For hesin: care site group info is present, but not granular enough. |
 | visit_source_value |  |  |  |

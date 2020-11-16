@@ -84,3 +84,13 @@ expect_no_observation(person_id = 918, observation_source_value = '53')
 expect_no_observation(person_id = 918, observation_source_value = '53|2010-10-10')
 expect_no_observation(person_id = 918, observation_source_value = '30002')
 expect_no_observation(person_id = 918, observation_source_value = '30002|2010-10-10')
+
+declareTest(919, 'Baseline - visit occurrence instance 0')
+add_baseline(eid = '919', `53-0.0`='2010-10-12', `47-0.0`='11.3')
+expect_observation(person_id = 919, observation_date = '2010-10-12',
+                   visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 919, visit_start_date = '2010-10-12'))
+
+declareTest(920, 'Baseline - visit occurrence instance 3')
+add_baseline(eid = '920', `53-3.0`='2010-10-13', `48-3.0`='85')
+expect_observation(person_id = 920, observation_date = '2010-10-13',
+                   visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 920, visit_start_date = '2010-10-13'))

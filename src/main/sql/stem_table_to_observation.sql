@@ -17,7 +17,8 @@ INSERT INTO @target_schema.observation
 	observation_source_value,
 	observation_source_concept_id,
 	unit_source_value,
-	qualifier_source_value
+	qualifier_source_value,
+	data_source
 )
 SELECT
 	stem_table.person_id	AS	person_id,
@@ -52,7 +53,9 @@ SELECT
 
 	stem_table.unit_source_value	AS	unit_source_value,
 
-	stem_table.qualifier_source_value	AS	qualifier_source_value
+	stem_table.qualifier_source_value	AS	qualifier_source_value,
+
+    stem_table.data_source AS data_source
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)

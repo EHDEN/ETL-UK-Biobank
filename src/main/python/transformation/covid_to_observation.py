@@ -34,7 +34,8 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
 
             query_2 = session.query(VisitOccurrence) \
                 .filter(VisitOccurrence.person_id == person_id) \
-                .filter(VisitOccurrence.visit_start_date == date)
+                .filter(VisitOccurrence.visit_start_date == date) \
+                .filter(VisitOccurrence.record_source_value == 'covid')
             try:
                 visit_record = query_2.one()
                 visit_id = visit_record.visit_occurrence_id
@@ -54,7 +55,8 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
                 value_as_concept_id=result.get(row['result'], None),
                 observation_type_concept_id=38000279,  # Lab observation concept code result
                 visit_occurrence_id=visit_id,
-                observation_source_value=row['spectype']
+                observation_source_value=row['spectype'],
+                data_source='covid'
             )
             records.append(r)
         return records
