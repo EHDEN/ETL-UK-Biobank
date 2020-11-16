@@ -36,77 +36,32 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     records = []
 
     for _, row in source.iterrows():
-        condition_type_concept_id = condition_type_concept.get(row['level'])
+        condition_type_concept_id = condition_type_concept.get(row['level'], 0)
 
         condition_date = get_datetime(row['admidate'], "%d/%m/%Y")
 
+        # Map icd10 if given. If not, map the icd9 code.
+        # If ICD code is filled, but no concept is found, then the lookup will return one target to 0
+        # It is possible that multiple concepts are found for one ICD code,
+        # loop through the lookup to retrieve all of them and save concept ID and source concept ID.
         if row['diag_icd10'] != '':
-            # If ICD10 code is filled, but no concept is found, add concept ID 0.
-            if not icd10.lookup(row['diag_icd10']):
-                target_concept_id = 0
-                condition_source_concept_id = 0
-                r = wrapper.cdm.ConditionOccurrence(
-                    person_id=row['eid'],
-                    condition_concept_id=target_concept_id,
-                    condition_start_date=condition_date,
-                    condition_start_datetime=condition_date,
-                    condition_type_concept_id=condition_type_concept_id,
-                    condition_source_value=row['diag_icd10'],
-                    condition_source_concept_id=condition_source_concept_id,
-                    # visit_occurrence_id=row['spell_index']
-                )
-                records.append(r)
-            else:
-                # It is possible that multiple concepts are found for one ICD code,
-                # loop through the lookup to retrieve all of them and save concept ID and source concept ID.
-                for x in range(len(icd10.lookup(row['diag_icd10'], full_mapping=True))):
-                    target_concept_id = icd10.lookup(row['diag_icd10'], full_mapping=True)[x].target_concept_id
-                    condition_source_concept_id = icd10.lookup(row['diag_icd10'], full_mapping=True)[x].source_concept_id
+            diag_targets = icd10.lookup(row['diag_icd10'])
+        elif row['diag_icd9'] != '':
+            diag_targets = icd9.lookup(row['diag_icd9'])
+        else:
+            # No code given
+            continue
 
-                    r = wrapper.cdm.ConditionOccurrence(
-                        person_id=row['eid'],
-                        condition_concept_id=target_concept_id,
-                        condition_start_date=condition_date,
-                        condition_start_datetime=condition_date,
-                        condition_type_concept_id=condition_type_concept_id,
-                        condition_source_value=row['diag_icd10'],
-                        condition_source_concept_id=condition_source_concept_id,
-                        # visit_occurrence_id=row['spell_index']
-                    )
-                    records.append(r)
-
-        if row['diag_icd9'] != '':
-            # If ICD9 code is filled, but no concept is found, add concept ID 0.
-            if not icd9.lookup(row['diag_icd9'], full_mapping=True):
-                target_concept_id = 0
-                condition_source_concept_id = 0
-                r = wrapper.cdm.ConditionOccurrence(
-                    person_id=row['eid'],
-                    condition_concept_id=target_concept_id,
-                    condition_start_date=condition_date,
-                    condition_start_datetime=condition_date,
-                    condition_type_concept_id=condition_type_concept_id,
-                    condition_source_value=row['diag_icd9'],
-                    condition_source_concept_id=condition_source_concept_id,
-                    # visit_occurrence_id=row['spell_index']
-                )
-                records.append(r)
-            else:
-                # It is possible that multiple concepts are found for one ICD code,
-                # loop through the lookup to retrieve all of them and save concept ID and source concept ID.
-                for x in range(len(icd9.lookup(row['diag_icd9'], full_mapping=True))):
-                    target_concept_id = icd9.lookup(row['diag_icd9'], full_mapping=True)[x].target_concept_id
-                    condition_source_concept_id = icd9.lookup(row['diag_icd9'], full_mapping=True)[x].source_concept_id
-
-                    r = wrapper.cdm.ConditionOccurrence(
-                        person_id=row['eid'],
-                        condition_concept_id=target_concept_id,
-                        condition_start_date=condition_date,
-                        condition_start_datetime=condition_date,
-                        condition_type_concept_id=condition_type_concept_id,
-                        condition_source_value=row['diag_icd9'],
-                        condition_source_concept_id=condition_source_concept_id,
-                        # visit_occurrence_id=row['spell_index']
-                    )
-                    records.append(r)
+        for target in diag_targets:
+            r = wrapper.cdm.ConditionOccurrence(
+                person_id=row['eid'],
+                condition_concept_id=target.target_concept_id,
+                condition_start_date=condition_date,
+                condition_start_datetime=condition_date,
+                condition_type_concept_id=condition_type_concept_id,
+                condition_source_value=row['diag_icd9'],
+                condition_source_concept_id=target.source_concept_id,
+                # visit_occurrence_id=row['spell_index']
+            )
+            records.append(r)
     return records
