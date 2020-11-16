@@ -391,6 +391,7 @@ class VisitOccurrence(base):
     discharge_to_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     discharge_to_source_value = Column(String(50))
     preceding_visit_occurrence_id = Column(Integer)
+    record_source_value = Column(String(50))  # For lookup
     data_source = Column(String(50))  # UKB specific for GP and HES source
 
     admitting_source_concept = relationship('Concept', primaryjoin='VisitOccurrence.admitting_source_concept_id == Concept.concept_id')
