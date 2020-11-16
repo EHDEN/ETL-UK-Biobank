@@ -64,6 +64,8 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
             else:
                 end_date = row['disdate']
 
+            # The dsource contains strings of 3-4 characters and admimeth, admisorc, disdest contrains integers of length 2.
+            # Thus the 50character cut off it is not an issue for losing data, currently.
             method_source = "record origin:"+row['dsource']+"/admission method:"+row['admimeth']
             admit_source = "record origin:"+row['dsource']+"/admission source:"+row['admisorc']
             dis_source = "record origin:"+row['dsource']+"/discharge destination:"+row['disdest']
@@ -76,11 +78,11 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
                 visit_end_date=end_date.date(),
                 visit_end_datetime=end_date,
                 visit_type_concept_id=44818517, # Visit derived from encounter on claim
-                visit_source_value=method_source[:50],
+                visit_source_value=method_source,
                 admitting_source_concept_id=admit_reason_lookup.get((row['admisorc'], row['dsource']), 0),
-                admitting_source_value=admit_source[:50],
+                admitting_source_value=admit_source,
                 discharge_to_concept_id=dis_reason_lookup.get((row['disdest'], row['dsource']), 0),
-                discharge_to_source_value=dis_source[:50]
+                discharge_to_source_value=dis_source
             )
             records.append(r)
         return records
