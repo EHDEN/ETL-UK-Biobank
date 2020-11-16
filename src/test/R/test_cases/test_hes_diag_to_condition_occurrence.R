@@ -19,13 +19,11 @@ expect_condition_occurrence(person_id = 1001, condition_concept_id = 4291005, co
 
 
 # Test ICD9 and ICD10 code
-declareTest(1002, 'Test ICD9 and ICD10 code')
+declareTest(1002, 'Test ICD9 and ICD10 code; map ICD10')
 add_baseline(eid = 1002)
 add_hesin(eid = 1002, ins_index = 2, admidate = '30/12/2019')
 add_hesin_diag(eid = 1002, ins_index = 2, diag_icd9 = '540', diag_icd10 = 'M866', level = 2)
-expect_condition_occurrence(person_id = 1002, condition_concept_id = 4310400, condition_start_date = '2019-12-30', 
-                            condition_type_concept_id = 44786629, condition_source_concept_id = 44831310)
-expect_condition_occurrence(person_id = 1002, condition_concept_id = 134735, condition_start_date = '2019-12-30', 
+expect_condition_occurrence(person_id = 1002, condition_concept_id = 134735, condition_start_date = '2019-12-30',
                             condition_type_concept_id = 44786629, condition_source_concept_id = 45596781)
 
 # Test No concept found
@@ -50,8 +48,8 @@ declareTest(1005, 'Test if code has more > 1 code')
 add_baseline(eid = 1005)
 add_hesin(eid = 1005, ins_index = 5, admidate = '25/08/2017')
 add_hesin_diag(eid = 1005, ins_index = 5, diag_icd10 = 'Y831', level = 1)
-expect_condition_occurrence(person_id = 1005, condition_concept_id = 4320824, condition_start_date = '2012-03-09', 
+expect_condition_occurrence(person_id = 1005, condition_concept_id = 4320824, condition_start_date = '2017-08-25',
                             condition_type_concept_id = 44786627, condition_source_concept_id = 45547251)
-expect_condition_occurrence(person_id = 1005, condition_concept_id = 434547, condition_start_date = '2012-03-09', 
+expect_condition_occurrence(person_id = 1005, condition_concept_id = 434547, condition_start_date = '2017-08-25',
                             condition_type_concept_id = 44786627, condition_source_concept_id = 45547251)
 
