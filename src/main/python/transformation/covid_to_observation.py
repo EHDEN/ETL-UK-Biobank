@@ -33,10 +33,10 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
             except NoResultFound or MultipleResultsFound:
                 continue
 
-            # TODO: use record_source_value
             query_2 = session.query(VisitOccurrence) \
                 .filter(VisitOccurrence.person_id == person_id) \
-                .filter(VisitOccurrence.visit_start_date == date)
+                .filter(VisitOccurrence.visit_start_date == date) \
+                .filter(VisitOccurrence.record_source_value == 'covid')
             try:
                 visit_record = query_2.one()
                 visit_id = visit_record.visit_occurrence_id
