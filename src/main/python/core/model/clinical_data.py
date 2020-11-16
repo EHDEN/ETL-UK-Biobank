@@ -427,6 +427,7 @@ class VisitDetail(base):
     discharge_to_source_value = Column(String(50))
     visit_detail_parent_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), nullable=False)
+    record_source_value = Column(String(50))  # For lookup
     data_source = Column(String(50))
 
     admitting_source_concept = relationship('Concept', primaryjoin='VisitDetail.admitting_source_concept_id == Concept.concept_id')
