@@ -31,7 +31,7 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
             visit_end_date=visit_date.date(),
             visit_end_datetime=visit_date,
             visit_type_concept_id=44818518,  # Visit derived from EHR record
-            care_site_id=row['data_provider']
+            data_source='GP' + '-' + row['data_provider']
         )
         records.append(r)
     return records

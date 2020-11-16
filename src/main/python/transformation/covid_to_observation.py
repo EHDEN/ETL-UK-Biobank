@@ -16,8 +16,7 @@ if TYPE_CHECKING:
 def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
     source = pd.DataFrame(wrapper.get_source_data('covid.csv'))
 
-    type_vocab = pd.read_csv('./resources/mapping_tables/covid_spectype.csv')
-    type_lookup = {str(x['sourceCode']): int(x['conceptId']) for _, x in type_vocab.iterrows()}
+    type_vocab = wrapper.mapping_tables_lookup('./resources/mapping_tables/covid_spectype.csv')
 
     records = []
     with wrapper.db.session_scope() as session:
@@ -35,14 +34,13 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
 
             query_2 = session.query(VisitOccurrence) \
                 .filter(VisitOccurrence.person_id == person_id) \
-                .filter(VisitOccurrence.visit_start_date == date)
+                .filter(VisitOccurrence.visit_start_date == date) \
+                .filter(VisitOccurrence.record_source_value == 'covid')
             try:
                 visit_record = query_2.one()
                 visit_id = visit_record.visit_occurrence_id
             except NoResultFound or MultipleResultsFound:
                 visit_id = None
-
-            concept_id = type_lookup.get(row['spectype'], 0)
 
             result = {
                 '1': 45884084,  # Positive
@@ -51,13 +49,14 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
 
             r = Observation(
                 person_id=person_id,
-                observation_concept_id=type_lookup.get(row['spectype'], 0),
+                observation_concept_id=type_vocab.get(row['spectype'], 0),
                 observation_date=date.date(),
                 observation_datetime=date,
                 value_as_concept_id=result.get(row['result'], None),
                 observation_type_concept_id=38000279,  # Lab observation concept code result
                 visit_occurrence_id=visit_id,
-                observation_source_value=row['spectype']
+                observation_source_value=row['spectype'],
+                data_source='covid'
             )
             records.append(r)
         return records

@@ -1,0 +1,72 @@
+%YAML 1.2
+# List mapping files and assign type of file.
+# The mapping type tells the importer what validation checks to perform.
+# TODO: current FieldConceptMapper just takes all csv files in this directory
+---
+mappingApproaches:
+  - &numeric
+    name: numeric
+    expect_event: true
+    expect_unit: true
+    expect_value: false
+  - &discrete
+    name: discrete
+    expect_event: true
+    expect_unit: false
+    expect_value: true
+  - &valueOnly
+    name: value_only
+    expect_event: false  # Note: provide event_concept_id below
+    expect_unit: false
+    expect_value: true
+    # TODO: by value as number, value as concept, value as date, value as text
+  - &date
+    name: date
+    expect_event: false
+    expect_unit: false
+    expect_value: false
+
+mappings:
+  - filename: date_field_lookup.csv
+    mappingApproach: *date
+    default_date_field: 53  # for fields not lsited in the lookup
+
+  - filename: numeric_prio_fields.csv
+    mappingApproach: *numeric
+
+  - filename: discrete_prio_fields.csv
+    mappingApproach: *discrete
+
+  - filename: discrete_boolean_prio_fields.csv
+    mappingApproach: *discrete
+
+  - filename: discrete_other_fields.csv
+    mappingApproach: *discrete
+
+  - filename: 20001_cancer.csv
+    mappingApproach: *valueOnly
+    event_concept_id: 4188893 # History of (SNOMED)
+
+  - filename: 20002_non-cancer_illness.csv
+    mappingApproach: *valueOnly
+    event_concept_id: 4188893 # History of (SNOMED)
+
+  - filename: 20003_treatment_medication.csv
+    mappingApproach: *valueOnly
+    event_concept_id: 3021806 # History of Medication use (LOINC)
+
+  - filename: 20004_operation.csv
+    mappingApproach: *valueOnly
+    event_concept_id: 40770405 # History of procedure (LOINC)
+
+  - filename: 40011_histology_cancer_tumour.csv
+    mappingApproach: *valueOnly
+    event_concept_id: 4188893 # History of (SNOMED)
+
+# TODO: OPCS3
+# TODO: multiple fields using this same value lookup
+#  - filename: opcs3.csv
+#    mappingApproach: *valueOnly
+#    event_concept_id: 40770405 # History of procedure (LOINC)
+
+  # Add reference to new mapping files here
