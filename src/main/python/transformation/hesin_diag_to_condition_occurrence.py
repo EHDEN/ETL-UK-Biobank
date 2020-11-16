@@ -22,8 +22,8 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     source = source.drop_duplicates(subset=['eid', 'admidate', 'diag_icd10', 'diag_icd9'])
 
     # Generate code mapping for ICD10 and ICD9, remove dot to get correct concept codes.
-    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', remove_dot=True)
-    icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM', remove_dot=True)
+    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', remove_dot_from_codes=True)
+    icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM', remove_dot_from_codes=True)
 
     # Use Condition type concept file to map if primary condition or secondary condition.
     with open('./resources/mapping_tables/condition_type_concepts.csv') as f_in:
@@ -42,7 +42,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
 
         if row['diag_icd10'] != '':
             # If ICD10 code is filled, but no concept is found, add concept ID 0.
-            if not icd10.lookup(row['diag_icd10'], full_mapping=True):
+            if not icd10.lookup(row['diag_icd10']):
                 target_concept_id = 0
                 condition_source_concept_id = 0
                 r = wrapper.cdm.ConditionOccurrence(
