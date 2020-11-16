@@ -34,7 +34,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         # drug mappings
         drug_concept_id = ''
         if row['dmd_code']:
-            mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True, full_mapping=True)
+            mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
             if mapping:
                 drug_concept_id = mapping.target_concept_id
                 source_concept_id = mapping.source_concept_id
