@@ -25,6 +25,7 @@ class ConditionOccurrence(base):
     condition_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     condition_status_source_value = Column(String(50))
     condition_status_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     condition_concept = relationship('Concept', primaryjoin='ConditionOccurrence.condition_concept_id == Concept.concept_id')
     condition_source_concept = relationship('Concept', primaryjoin='ConditionOccurrence.condition_source_concept_id == Concept.concept_id')
@@ -55,6 +56,7 @@ class DeviceExposure(base):
     visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     device_source_value = Column(String(100))
     device_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     device_concept = relationship('Concept', primaryjoin='DeviceExposure.device_concept_id == Concept.concept_id')
     device_source_concept = relationship('Concept', primaryjoin='DeviceExposure.device_source_concept_id == Concept.concept_id')
@@ -92,6 +94,7 @@ class DrugExposure(base):
     drug_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     route_source_value = Column(String(50))
     dose_unit_source_value = Column(String(50))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     drug_concept = relationship('Concept', primaryjoin='DrugExposure.drug_concept_id == Concept.concept_id')
     drug_source_concept = relationship('Concept', primaryjoin='DrugExposure.drug_source_concept_id == Concept.concept_id')
@@ -139,6 +142,7 @@ class Measurement(base):
     measurement_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     unit_source_value = Column(String(50))
     value_source_value = Column(String(50))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     measurement_concept = relationship('Concept', primaryjoin='Measurement.measurement_concept_id == Concept.concept_id')
     measurement_source_concept = relationship('Concept', primaryjoin='Measurement.measurement_source_concept_id == Concept.concept_id')
@@ -170,6 +174,7 @@ class Note(base):
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     note_source_value = Column(String(50))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     encoding_concept = relationship('Concept', primaryjoin='Note.encoding_concept_id == Concept.concept_id')
     language_concept = relationship('Concept', primaryjoin='Note.language_concept_id == Concept.concept_id')
@@ -227,6 +232,7 @@ class Observation(base):
     observation_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     unit_source_value = Column(String(50))
     qualifier_source_value = Column(String(50))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     observation_concept = relationship('Concept', primaryjoin='Observation.observation_concept_id == Concept.concept_id')
     observation_source_concept = relationship('Concept', primaryjoin='Observation.observation_source_concept_id == Concept.concept_id')
@@ -323,6 +329,7 @@ class ProcedureOccurrence(base):
     procedure_source_value = Column(String(50))
     procedure_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     modifier_source_value = Column(String(50))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     modifier_concept = relationship('Concept', primaryjoin='ProcedureOccurrence.modifier_concept_id == Concept.concept_id')
     person = relationship('Person')
@@ -353,6 +360,7 @@ class Specimen(base):
     unit_source_value = Column(String(50))
     anatomic_site_source_value = Column(String(50))
     disease_status_source_value = Column(String(50))
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     anatomic_site_concept = relationship('Concept', primaryjoin='Specimen.anatomic_site_concept_id == Concept.concept_id')
     disease_status_concept = relationship('Concept', primaryjoin='Specimen.disease_status_concept_id == Concept.concept_id')
@@ -383,6 +391,7 @@ class VisitOccurrence(base):
     discharge_to_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     discharge_to_source_value = Column(String(50))
     preceding_visit_occurrence_id = Column(Integer)
+    data_source = Column(String(50))  # UKB specific for GP and HES source
 
     admitting_source_concept = relationship('Concept', primaryjoin='VisitOccurrence.admitting_source_concept_id == Concept.concept_id')
     care_site = relationship('CareSite')
@@ -417,6 +426,7 @@ class VisitDetail(base):
     discharge_to_source_value = Column(String(50))
     visit_detail_parent_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), nullable=False)
+    data_source = Column(String(50))
 
     admitting_source_concept = relationship('Concept', primaryjoin='VisitDetail.admitting_source_concept_id == Concept.concept_id')
     care_site = relationship('CareSite')
@@ -485,6 +495,7 @@ class StemTable(base):
     anatomic_site_source_value = Column(String(50))
     disease_status_source_value = Column(String(50))
     modifier_source_value = Column(String(50))
+    data_source = Column(String(50))
     
     person = relationship('Person')
     provider = relationship('Provider')
