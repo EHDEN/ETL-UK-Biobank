@@ -11,8 +11,8 @@ Join hesin using ins_index
 | condition_occurrence_id |  |  | Auto-increment |
 | person_id | eid |  |  |
 | condition_concept_id | diag_icd10<br>diag_icd9 | Map to OMOP standard concept<br>Map to OMOP standard concept |  |
-| condition_start_date | ins_index | Join hesin on eid and ins_index to get admidate. | hesin.admidate<br> |
-| condition_start_datetime | ins_index | Join hesin on eid and ins_index to get admidate. | hesin.admidate<br> |
+| condition_start_date | admidate | Join hesin on eid and ins_index to get admidate. | hesin.admidate<br> |
+| condition_start_datetime | admidate | Join hesin on eid and ins_index to get admidate. | hesin.admidate<br> |
 | condition_end_date |  |  |  |
 | condition_end_datetime |  |  |  |
 | condition_type_concept_id | level | 1 - 44786627 primary condition  2 - 44786629 secondary condition  3 - 44786629 |  |
