@@ -26,6 +26,7 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
             visit_end_datetime=visit_date,
             visit_type_concept_id=44818518,  # Visit derived from EHR record
             care_site_id=row['laboratory'],
+            record_source_value='covid',
             data_source='covid'
         )
         records.append(r)

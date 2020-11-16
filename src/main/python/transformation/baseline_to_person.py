@@ -9,19 +9,8 @@ if TYPE_CHECKING:
 
 
 def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
-    with open('./resources/mapping_tables/race_mapping.csv') as f_in:
-        race_mapping = csv.DictReader(f_in, delimiter=',')
-        race = {}
-
-        for row in race_mapping:
-            race[row['sourceCode']] = row['conceptId']
-
-    with open('./resources/mapping_tables/gender_mapping.csv') as f_in:
-        gender_mapping = csv.DictReader(f_in, delimiter=',')
-        gender = {}
-
-        for row in gender_mapping:
-            gender[row['sourceCode']] = row['conceptId']
+    race = wrapper.mapping_tables_lookup('./resources/mapping_tables/race_mapping.csv')
+    gender = wrapper.mapping_tables_lookup('./resources/mapping_tables/gender_mapping.csv')
 
     source = pd.DataFrame(wrapper.get_source_data('baseline.csv'))
 
