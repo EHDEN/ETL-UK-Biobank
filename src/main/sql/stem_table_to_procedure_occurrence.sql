@@ -13,7 +13,8 @@ INSERT INTO @target_schema.procedure_occurrence
 	visit_detail_id,
 	procedure_source_value,
 	procedure_source_concept_id,
-	modifier_source_value
+	modifier_source_value,
+	data_source
 )
 SELECT
 	stem_table.person_id	AS	person_id,
@@ -40,7 +41,9 @@ SELECT
 
 	coalesce(stem_table.source_concept_id, 0)	AS	procedure_source_concept_id,
 
-	stem_table.modifier_source_value	AS	modifier_source_value
+	stem_table.modifier_source_value	AS	modifier_source_value,
+
+    stem_table.data_source AS data_source
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)

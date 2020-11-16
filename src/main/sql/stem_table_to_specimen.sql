@@ -14,7 +14,8 @@ INSERT INTO @target_schema.specimen
 	specimen_source_value,
 	unit_source_value,
 	anatomic_site_source_value,
-	disease_status_source_value
+	disease_status_source_value,
+	data_source
 )
 SELECT
 	stem_table.person_id	AS	person_id,
@@ -43,7 +44,9 @@ SELECT
 
 	stem_table.anatomic_site_source_value	AS	anatomic_site_source_value,
 
-	stem_table.disease_status_source_value	AS	disease_status_source_value
+	stem_table.disease_status_source_value	AS	disease_status_source_value,
+
+	stem_table.data_source AS data_source
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)

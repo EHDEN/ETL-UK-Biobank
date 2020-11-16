@@ -15,7 +15,8 @@ INSERT INTO @target_schema.condition_occurrence
 	condition_source_value,
 	condition_source_concept_id,
 	condition_status_source_value,
-	condition_status_concept_id
+	condition_status_concept_id,
+	data_source
 )
 SELECT
 	stem_table.person_id	AS	person_id,
@@ -46,7 +47,9 @@ SELECT
 
 	stem_table.condition_status_source_value	AS	condition_status_source_value,
 
-	coalesce(stem_table.condition_status_concept_id, 0)	AS	condition_status_concept_id
+	coalesce(stem_table.condition_status_concept_id, 0)	AS	condition_status_concept_id,
+
+    stem_table.data_source AS data_source
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)
