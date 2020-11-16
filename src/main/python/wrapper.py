@@ -18,7 +18,7 @@ import logging
 from src.main.python.core import EtlWrapper
 from src.main.python.core.source_data import SourceData
 from src.main.python.transformation import *
-
+import csv
 
 logger = logging.getLogger(__name__)
 
@@ -63,6 +63,7 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(baseline_to_visit_occurrence)
         self.execute_transformation(gp_registrations_to_observation_period)
         self.execute_transformation(covid_to_observation)
+        self.execute_transformation(hesin_to_visit_occurrence)
         self.execute_transformation(baseline_to_stem)
 
         # Stem table to domains
@@ -85,9 +86,27 @@ class Wrapper(EtlWrapper):
         self.execute_sql_file('src/main/sql/stem_table_to_device_exposure.sql', target_schema=target_schema)
         self.execute_sql_file('src/main/sql/stem_table_to_specimen.sql', target_schema=target_schema)
 
-    def get_source_data(self, source_file, custom_delimiter: Optional[str]=None):
+    def get_source_data(self, source_file, custom_delimiter: Optional[str] = None):
         if custom_delimiter:
             delimiter = custom_delimiter
         else:
             delimiter = self.source_file_delimiter
         return SourceData(self.source_folder / source_file, delimiter=delimiter)
+
+    def mapping_tables_lookup(self, mapping: str, add_info: Optional[str] = None):
+        """
+        :param mapping: path to the csv file with the mapping
+        :param add_info: for some records we needed to find the standard concept by combine two source fields.
+        If this parameter is filled the dictionary keys will be a combination of the two fields.
+        :return: the dictionary
+        """
+        with open(mapping) as f_in:
+            table_mapping = csv.DictReader(f_in, delimiter=',')
+            table = {}
+
+            for row in table_mapping:
+                if not add_info:
+                    table[row['sourceCode']] = row['conceptId']
+                else:
+                    table[(row['sourceCode'], row[add_info])] = row['conceptId']
+        return table

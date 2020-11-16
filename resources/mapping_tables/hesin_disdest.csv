@@ -1,0 +1,113 @@
+sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,ADD_INFO:coding_origin,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
+84,Non-NHS run hospital with medium secure unit,,,,-1,,HES,0.30782628059387207,UNCHECKED,,0,38004515,EVENT,,<auto>,1605201700412
+44,Obstetrics/Postnatal Cots,,,,-1,,SMR,0.08290845155715942,UNCHECKED,,0,8650,EVENT,,sofia,1605202406643
+49,NHS run High Security Psychiatric Hospital,,,,-1,,HES,0.6232949495315552,UNCHECKED,,0,38004284,EVENT,,<auto>,1605201700417
+11,Private Residence - living alone,,,,-1,,SMR,0.2864381670951843,UNCHECKED,,0,581476,EVENT,,sofia,1605202564205
+52,Surgical Specialty,,,,-1,,SMR,0.5240716338157654,UNCHECKED,,0,38004693,EVENT,,sofia,1605202597213
+55,Paediatrics,,,,-1,,SMR,0.2464233636856079,UNCHECKED,,0,38004693,EVENT,,sofia,1605202499081
+33,"Legal Establishment, including Prison",,,,-1,,SMR,0.10619626194238663,UNCHECKED,,0,38003619,EVENT,,sofia,1605202075063
+57,Hospital site within the same Trust - ward for patients who are mentally ill or have learning disabilities,,,,-1,,PEDW,0.2536953091621399,UNCHECKED,,0,38004515,EVENT,,sofia,1605202060123
+50,NHS run medium secure unit,,,,-1,,HES,0.302307665348053,UNCHECKED,,0,38004693,EVENT,,sofia,1605202168312
+4F,Orthopaedics,,,,-1,,SMR,0.209514781832695,UNCHECKED,,0,38004693,EVENT,,sofia,1605202418404
+42,Surgical Specialty,,,,-1,,SMR,0.5240716338157654,UNCHECKED,,0,38004693,EVENT,,sofia,1605202597213
+45,Paediatrics,,,,-1,,SMR,0.2464233636856079,UNCHECKED,,0,38004693,EVENT,,sofia,1605202499081
+85,Non-NHS run residential care home,,,,-1,,HES,0.24254930019378662,UNCHECKED,,0,38004307,EVENT,,<auto>,1605201700851
+12,Private Residence - living with relatives or friends,,,,-1,,SMR,0.22630241513252258,UNCHECKED,,0,581476,EVENT,,sofia,1605202564205
+22,Local Authority/Voluntary - Nursing/Residential/Hostel/Group Home,,,,-1,,SMR,0.3456905484199524,UNCHECKED,,0,581476,EVENT,,sofia,1605202083685
+86,Non-NHS run nursing home,,,,-1,,HES,0.2713257968425751,UNCHECKED,,0,8676,EVENT,,<auto>,1605201701100
+5F,Orthopaedics,,,,-1,,SMR,0.209514781832695,UNCHECKED,,0,38004693,EVENT,,sofia,1605202418404
+65,Local Authority Part 3 residential accommodation i.e. where care is provided,,,,-1,,PEDW,0.18953260779380798,UNCHECKED,,0,581476,EVENT,,sofia,1605202098784
+51,NHS run general ward or young physically disabled unit,,,,-1,,HES,0.2393658459186554,UNCHECKED,,0,38004444,EVENT,,<auto>,1605201701212
+00,Patient died,,,,-1,,SMR,0.3673669695854187,UNCHECKED,,0,434489,EVENT,,sofia,1605202511947
+39,Temporary Place of Residence - type not known,,,,-1,,SMR,0.26859208941459656,UNCHECKED,,0,581476,EVENT,,sofia,1605202610995
+10,Private Residence - no additional detail added,,,,-1,,SMR,0.2124631255865097,UNCHECKED,,0,581476,EVENT,,sofia,1605202564206
+87,Non-NHS run hospital,,,,-1,,HES,0.38282090425491333,UNCHECKED,,0,38004515,EVENT,,<auto>,1605201701410
+53,Medical Specialty,,,,-1,,SMR,0.5967494249343872,UNCHECKED,,0,38004693,EVENT,,sofia,1605202113690
+48,Other specialty not separately identified,,,,-1,,SMR,0.37450453639030457,UNCHECKED,,0,38004693,EVENT,,sofia,1605202473801
+52,NHS run maternity ward,,,,-1,,HES,0.14900612831115723,UNCHECKED,,0,8650,EVENT,,sofia,1605202153303
+01,Patient died whilst on pass,,,,-1,,SMR,0.2138744443655014,UNCHECKED,,0,434489,EVENT,,sofia,1605202511947
+66,Local authority foster care but not in Part 3 residential accommodation,,,,-1,,PEDW,0.25307393074035645,UNCHECKED,,0,581476,EVENT,,sofia,1605202098784
+18,Private Residence - other type,,,,-1,,SMR,0.2586909234523773,UNCHECKED,,0,581476,EVENT,,sofia,1605202564206
+30,"Temporary place of Residence, no additional detail added",,,,-1,,SMR,0.2620852589607239,UNCHECKED,,0,581476,EVENT,,sofia,1605202610995
+66,Local Authority foster care,,,,-1,,HES,0.40672168135643005,UNCHECKED,,0,581476,EVENT,,sofia,1605202090345
+43,Medical Specialty,,,,-1,,SMR,0.5967494249343872,UNCHECKED,,0,38004693,EVENT,,sofia,1605202113690
+56,Neonatal Paediatrics,,,,-1,,SMR,0.20677441358566284,UNCHECKED,,0,38004693,EVENT,,sofia,1605202113690
+58,Other specialty not separately identified,,,,-1,,SMR,0.37450453639030457,UNCHECKED,,0,38004693,EVENT,,sofia,1605202473801
+19,Private Residence - type not known,,,,-1,,SMR,0.21302847564220428,UNCHECKED,,0,581476,EVENT,,sofia,1605202564206
+53,NHS run mental health and learning disabilities ward,,,,-1,,HES,0.315639466047287,UNCHECKED,,0,38004693,EVENT,,sofia,1605202168312
+79,Not Applicable - Patient died or stillbirth,,,,-1,,PEDW,0.2735106945037842,UNCHECKED,,0,434489,EVENT,,sofia,1605202373844
+69,Local Authority home or care,,,,-1,,HES,0.2918783128261566,UNCHECKED,,0,581476,EVENT,,sofia,1605202098784
+4E,Psychiatry (patient on pass),,,,-1,,SMR,0.44870704412460327,UNCHECKED,,0,8971,EVENT,,<auto>,1605201702222
+21,NHS - Nursing/Residential/Hostel/Group Home,,,,-1,,SMR,0.3851695656776428,UNCHECKED,,0,581476,EVENT,,sofia,1605202127869
+34,No fixed abode,,,,-1,,SMR,0.11509265005588531,UNCHECKED,,0,38004693,EVENT,,sofia,1605202211612
+54,NHS run nursing/residential/group home,,,,-1,,HES,0.4128895401954651,UNCHECKED,,0,581476,EVENT,,sofia,1605202183307
+24,NHS Partnership Hospital,,,,-1,,SMR,0.3772035539150238,UNCHECKED,,0,38004515,EVENT,,<auto>,1605201702623
+68,Other type of discharge location,,,,-1,,SMR,0.1395699381828308,UNCHECKED,,0,38004693,EVENT,,sofia,1605202473801
+79,Not applicable: patient died or still birth,,,,-1,,HES,0.24986228346824646,UNCHECKED,,0,434489,EVENT,,sofia,1605202335607
+4D,Psychiatry (except for patient on pass),,,,-1,,SMR,0.3707696497440338,UNCHECKED,,0,8971,EVENT,,<auto>,1605201702642
+85,Non-NHS (other than local authority) run residential care home,,,,-1,,PEDW,0.18469765782356262,UNCHECKED,,0,38004307,EVENT,,sofia,1605202228825
+5E,Psychiatry (patient on pass),,,,-1,,SMR,0.44870704412460327,UNCHECKED,,0,8971,EVENT,,<auto>,1605201702749
+54,Obstetrics/Postnatal Cots,,,,-1,,SMR,0.08290845155715942,UNCHECKED,,0,8650,EVENT,,sofia,1605202406643
+65,Local Authority residential care accommodation,,,,-1,,HES,0.28477659821510315,UNCHECKED,,0,581476,EVENT,,sofia,1605202098784
+99,Not known,,,,-1,,HES,0.07067427784204483,UNCHECKED,,0,38004693,EVENT,,sofia,1605202389229
+46,Neonatal Paediatrics,,,,-1,,SMR,0.20677441358566284,UNCHECKED,,0,38004693,EVENT,,sofia,1605202113690
+86,Non-NHS (other than local authority) run nursing home,,,,-1,,PEDW,0.2449684590101242,UNCHECKED,,0,8676,EVENT,,<auto>,1605201703044
+5D,Psychiatry (except for patient on pass),,,,-1,,SMR,0.3707696497440338,UNCHECKED,,0,8971,EVENT,,<auto>,1605201703076
+32,Student Accommodation,,,,-1,,SMR,0.22650232911109924,UNCHECKED,,0,581476,EVENT,,sofia,1605202583519
+23,Private - Nursing/Residential/Hostel/Group Home,,,,-1,,SMR,0.39413610100746155,UNCHECKED,,0,581476,EVENT,,sofia,1605202552099
+38,"Other type of temporary residence (includes hospital residences, hotel facilities)",,,,-1,,SMR,0.3157045841217041,UNCHECKED,,0,581476,EVENT,,sofia,1605202484773
+87,Non-NHS run hospital,,,,-1,,PEDW,0.38282090425491333,UNCHECKED,,0,38004515,EVENT,,<auto>,1605201703318
+31,Holiday Accommodation,,,,-1,,SMR,0.14525023102760315,UNCHECKED,,0,581476,EVENT,,sofia,1605202037597
+37,Penal establishment: court,,,,-1,,HES,0.07339593023061752,UNCHECKED,,0,38003619,EVENT,,sofia,1605202524482
+61,Private Hospital,,,,-1,,SMR,0.6611027121543884,UNCHECKED,,0,38004515,EVENT,,<auto>,1605201703428
+35,Discharge of Foundling (Record Type 11 only),,,,-1,,SMR,0.13773339986801147,UNCHECKED,,0,8851,EVENT,,sofia,1605201949789
+40,"Transfer within the same Provider Unit, no additional detail added",,,,-1,,SMR,0.21894532442092896,UNCHECKED,,0,38004693,EVENT,,sofia,1605202628288
+99,Not Known [Until 20 January 2002],,,,-1,,PEDW,0.07917110621929169,UNCHECKED,,0,38004693,EVENT,,sofia,1605202394247
+19,"Usual place of residence unless listed below for example, a private dwelling, whether owner occupied, owned by local authority, housing association or private landlord. This includes wardened accommod",,,,-1,,PEDW,0.1843511313199997,UNCHECKED,,0,581476,EVENT,,sofia,1605202638000
+62,Hospice,,,,-1,,SMR,1.0,UNCHECKED,,0,8546,EVENT,,<auto>,1605201703656
+53,Other NHS Trust - ward for patients who are mentally ill or have learning disabilities,,,,-1,,PEDW,0.2526308000087738,UNCHECKED,,0,38004284,EVENT,,sofia,1605202449237
+13,Private Residence (sheltered),,,,-1,,SMR,0.33599627017974854,UNCHECKED,,0,581476,EVENT,,sofia,1605202564205
+38,Penal establishment: police station,,,,-1,,HES,0.0990200787782669,UNCHECKED,,0,38003619,EVENT,,sofia,1605202524482
+51,Accident and Emergency,,,,-1,,SMR,0.38984182476997375,UNCHECKED,,0,9203,EVENT,,sofia,1605201887613
+69,"Type of discharge location, not known",,,,-1,,SMR,0.12705005705356598,UNCHECKED,,0,38004693,EVENT,,sofia,1605202628288
+60,Discharge to Other types of Locations - no additional detail added,,,,-1,,SMR,0.13799069821834564,UNCHECKED,,0,581476,EVENT,,sofia,1605201945114
+4G,Learning Disability,,,,-1,,SMR,0.4222084581851959,UNCHECKED,,0,38004444,EVENT,,<auto>,1605201704013
+29,"Temporary place of residence when usually resident elsewhere (includes hotel, residential educational establishment)",,,,-1,,PEDW,0.18178924918174744,UNCHECKED,,0,581476,EVENT,,sofia,1605202610995
+14,Private Residence (supported),,,,-1,,SMR,0.3050042688846588,UNCHECKED,,0,581476,EVENT,,sofia,1605202564205
+54,"NHS run nursing home, group home or residential care home",,,,-1,,PEDW,0.4670935571193695,UNCHECKED,,0,581476,EVENT,,sofia,1605202191012
+39,Penal establishment: other,,,,-1,,HES,0.1610335260629654,UNCHECKED,,0,38003619,EVENT,,sofia,1605202524482
+41,Accident and Emergency,,,,-1,,SMR,0.38984182476997375,UNCHECKED,,0,9203,EVENT,,sofia,1605201887613
+4H,Transfer within the same Provider: Hospital at Home,,,,-1,,SMR,0.3051798343658447,UNCHECKED,,0,38004693,EVENT,,sofia,1605202628288
+47,GP Obstetrics/Postnatal Cots,,,,-1,,SMR,0.07550299912691116,UNCHECKED,,0,8650,EVENT,,sofia,1605201967881
+5G,Learning Disability,,,,-1,,SMR,0.4222084581851959,UNCHECKED,,0,38004444,EVENT,,<auto>,1605201704512
+5H,Transfer to other NHS Provider: Hospital at Home,,,,-1,,SMR,0.28105980157852173,UNCHECKED,,0,581476,EVENT,,sofia,1605202610995
+28,Place of Residence - Institution - other type,,,,-1,,SMR,0.3546397387981415,UNCHECKED,,0,581476,EVENT,,sofia,1605202542939
+55,Hospital site within the same Trust - ward for general patients or the younger physically disabled or A & E department,,,,-1,,PEDW,0.24339886009693146,UNCHECKED,,0,38004515,EVENT,,sofia,1605202060123
+48,"High Security Psychiatric Hospital, Scotland",,,,-1,,HES,0.6262962818145752,UNCHECKED,,0,38004284,EVENT,,<auto>,1605201704830
+57,GP Obstetrics/Postnatal Cots,,,,-1,,SMR,0.07550299912691116,UNCHECKED,,0,8650,EVENT,,sofia,1605201967881
+39,"Penal establishment, court or police station",,,,-1,,PEDW,0.16588066518306732,UNCHECKED,,0,38003619,EVENT,,sofia,1605202524482
+25,Care Home,,,,-1,,SMR,0.6498776078224182,UNCHECKED,,0,38004307,EVENT,,<auto>,1605201704885
+4B,Geriatrics (except for patient on pass),,,,-1,,SMR,0.20114398002624512,UNCHECKED,,0,38004307,EVENT,,sofia,1605201956838
+59,Transfer to other NHS Provider Unit - specialty not known,,,,-1,,SMR,0.2685239613056183,UNCHECKED,,0,38004693,EVENT,,sofia,1605202628288
+88,Non-NHS run hospice,,,,-1,,HES,0.3361091911792755,UNCHECKED,,0,8546,EVENT,,<auto>,1605201705210
+19,Usual place of residence,,,,-1,,HES,0.22480876743793488,UNCHECKED,,0,581476,EVENT,,sofia,1605202638000
+29,Place of Residence - Institution - type not known,,,,-1,,SMR,0.30523380637168884,UNCHECKED,,0,581476,EVENT,,sofia,1605202542939
+4A,GP Other than Obstetrics,,,,-1,,SMR,0.20312705636024475,UNCHECKED,,0,38004693,EVENT,,sofia,1605202025670
+88,Non-NHS (other than Local Authority) run Hospice,,,,-1,,PEDW,0.24359130859375,UNCHECKED,,0,8546,EVENT,,<auto>,1605201705232
+56,Hospital site within the same Trust - ward for maternity patients or neonates,,,,-1,,PEDW,0.29441559314727783,UNCHECKED,,0,38004515,EVENT,,sofia,1605202060123
+5B,Geriatrics (except for patient on pass),,,,-1,,SMR,0.20114398002624512,UNCHECKED,,0,38004307,EVENT,,sofia,1605201956838
+49,Special Hospital,,,,-1,,PEDW,1.0,UNCHECKED,,0,38004287,EVENT,,<auto>,1605201705609
+89,Non-NHS institution,,,,-1,,HES,0.37600773572921753,UNCHECKED,,0,38004693,EVENT,,sofia,1605202245438
+50,"Transfer to other NHS Provider Unit, no additional detail added",,,,-1,,SMR,0.1866995245218277,UNCHECKED,,0,38004693,EVENT,,sofia,1605202628288
+5A,GP Other than Obstetrics,,,,-1,,SMR,0.20312705636024475,UNCHECKED,,0,38004693,EVENT,,sofia,1605202025670
+89,"Other non NHS Hospital, Nursing Home or Residential institution",,,,-1,,PEDW,0.36155378818511963,UNCHECKED,,0,38004693,EVENT,,sofia,1605202473801
+29,Temporary place of residence,,,,-1,,HES,0.401863694190979,UNCHECKED,,0,581476,EVENT,,sofia,1605202610995
+20,"Place of residence: Institution, no additional detail added",,,,-1,,SMR,0.30746787786483765,UNCHECKED,,0,581476,EVENT,,sofia,1605202542939
+4C,Geriatrics (patient on pass),,,,-1,,SMR,0.24408310651779175,UNCHECKED,,0,38004307,EVENT,,sofia,1605201956838
+98,Not applicable,,,,-1,,HES,0.3189949095249176,UNCHECKED,,0,38004693,EVENT,,sofia,1605202287040
+30,Repatriation from High Security Psychiatric Hospital,,,,-1,,HES,0.660953164100647,UNCHECKED,,0,38004284,EVENT,,<auto>,1605201706023
+5C,Geriatrics ( patient on pass),,,,-1,,SMR,0.19675150513648987,UNCHECKED,,0,38004307,EVENT,,sofia,1605201956838
+49,Transfer within the same Provider Unit - specialty not known,,,,-1,,SMR,0.28904035687446594,UNCHECKED,,0,38004693,EVENT,,sofia,1605202628288
+98,"Not applicable - hospital provider spell not finished at episode end (i.e. not discharged, or current episode unfinished)",,,,-1,,PEDW,0.2087031602859497,UNCHECKED,,0,38004515,EVENT,,sofia,1605202354747
+51,Other NHS Trust - ward for general patients or the younger physically disabled or A & E department,,,,-1,,PEDW,0.2513623535633087,UNCHECKED,,0,38004315,EVENT,,<auto>,1605201706072
+52,Other NHS Trust - ward for maternity patients or neonates,,,,-1,,PEDW,0.16797666251659393,UNCHECKED,,0,8650,EVENT,,sofia,1605202437082
