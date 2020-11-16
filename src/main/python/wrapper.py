@@ -57,11 +57,11 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(baseline_to_care_site)
         self.execute_transformation(assessment_center_to_location)
         self.execute_transformation(baseline_to_person)
-        #self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
-        #self.execute_transformation(covid_to_visit_occurrence)
-        #self.execute_transformation(baseline_to_visit_occurrence)
-        #self.execute_transformation(gp_registrations_to_observation_period)
-        #self.execute_transformation(covid_to_observation)
+        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
+        self.execute_transformation(covid_to_visit_occurrence)
+        self.execute_transformation(baseline_to_visit_occurrence)
+        self.execute_transformation(gp_registrations_to_observation_period)
+        self.execute_transformation(covid_to_observation)
         self.execute_transformation(hesin_to_visit_occurrence)
         #self.execute_transformation(baseline_to_stem)
 
@@ -95,8 +95,8 @@ class Wrapper(EtlWrapper):
     def mapping_tables_lookup(self, mapping: str, add_info: Optional[str] = None):
         """
         :param mapping: path to the csv file with the mapping
-        :param add_info: for some records we needed to combine two fields to get the concept_id.
-        If this parameter is filled the dictionary key will be a tuple of the two fields.
+        :param add_info: for some records we needed to find the standard concept by combine two source fields.
+        If this parameter is filled the dictionary keys will be a combination of the two fields.
         :return: the dictionary
         """
         with open(mapping) as f_in:
