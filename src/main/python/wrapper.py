@@ -64,7 +64,7 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(gp_registrations_to_observation_period)
         self.execute_transformation(covid_to_observation)
         self.execute_transformation(hesin_to_visit_occurrence)
-        #self.execute_transformation(baseline_to_stem)
+        self.execute_transformation(baseline_to_stem)
 
         # Stem table to domains
         self.load_from_stem_table()
