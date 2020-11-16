@@ -33,6 +33,7 @@ source('test_cases/test_covid_to_observation.R')                       # test ID
 source('test_cases/test_baseline_to_stem.R')                           # test IDs 900-999
 source('test_cases/test_hes_diag_to_condition_occurrence.R')           # test IDs 1000-1100
 # source('test_cases/test_gp_clinical_to_stem_table.R')                
+source('test_cases/test_death_to_death.R')                             # test IDS 1400-1499
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)
