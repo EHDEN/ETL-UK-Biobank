@@ -18,7 +18,8 @@ INSERT INTO @target_schema.measurement
 	measurement_source_value,
 	measurement_source_concept_id,
 	unit_source_value,
-	value_source_value
+	value_source_value,
+	data_source
 )
 SELECT
 	stem_table.person_id AS person_id,
@@ -55,7 +56,9 @@ SELECT
 
 	stem_table.unit_source_value AS unit_source_value,
 
-	stem_table.value_source_value AS value_source_value
+	stem_table.value_source_value AS value_source_value,
+
+    stem_table.data_source AS data_source
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)

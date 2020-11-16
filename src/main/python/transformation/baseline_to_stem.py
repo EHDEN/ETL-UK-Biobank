@@ -58,7 +58,8 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                     value_as_number=target.value_as_number,
                     unit_concept_id=target.unit_concept_id,
                     value_as_string=target.value_as_string,
-                    type_concept_id=32883  # Survey
+                    type_concept_id=32883,  # Survey
+                    data_source='baseline'
                     )
                 )
 
