@@ -127,7 +127,11 @@ class MappingDict:
         if not self.mapping_dict:
             logger.warning('Trying to retrieve a mapping from an empty dictionary!')
 
-        mappings = self.mapping_dict.get(code, [])  # full CodeMapping object
+        if not code or pd.isna(code):
+            mappings = [CodeMapping.create_mapping_for_no_match(code)]
+        else:
+            mappings = self.mapping_dict.get(code, [])  # full CodeMapping object
+
         if not mappings:
             logger.debug(f'No mapping available for {code}')
             mappings = [CodeMapping.create_mapping_for_no_match(code)]
