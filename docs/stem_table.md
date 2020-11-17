@@ -50,7 +50,8 @@
 | condition_status_concept_id |  |  |  |
 | condition_status_source_value |  |  |  |
 | qualifier_concept_id |  |  |  |
-| qualifier_source_value |  |  |  |
+| qualifier_source_value |  |  |  | 
+| data_source | data_provider | Map as "GP-" + number found in data_provider, e.g. GP-1, GP-2, GP-3, or GP-4 |  |
 
 ### Reading from baseline
 
