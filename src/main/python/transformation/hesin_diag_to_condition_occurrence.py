@@ -15,10 +15,10 @@ if TYPE_CHECKING:
 def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
     hesin_diag = pd.DataFrame(wrapper.get_source_data('hesin_diag.csv'))
     hesin = pd.DataFrame(wrapper.get_source_data('hesin.csv'))
+    hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     # Merge HES diag with HES on EID and INS_INDEX to get ADMIDATE and drop duplicates.
     source = hesin_diag.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
-    source = source.drop_duplicates(subset=['eid', 'ins_index'])
 
     # Generate code mapping for ICD10 and ICD9, remove dot to get correct concept codes.
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', remove_dot_from_codes=True)
