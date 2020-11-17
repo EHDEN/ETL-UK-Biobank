@@ -32,7 +32,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         date_end = date_start + timedelta(days=1)
 
         # drug mappings
-        drug_concept_id = ''
+        drug_concept_id, source_concept_id = '', ''
         if row['dmd_code']:
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
             if mapping:
@@ -67,8 +67,8 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             quantity=None,
             drug_source_value=row[drug_col],
             drug_source_concept_id=source_concept_id,
+            data_source='GP-' + row['data_provider'],
             # TODO: see if any of the following needed
-            # provider_id=row['data_provider'],
             route_concept_id=None,
             route_source_value=None,
             dose_unit_source_value=None,
