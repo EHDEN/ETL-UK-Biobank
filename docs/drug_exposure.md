@@ -27,13 +27,14 @@ Field to field mapping to be completed.
 | sig |  |  |  |
 | route_concept_id |  |  |  |
 | lot_number |  |  |  |
-| provider_id | data_provider | 1 = England (Vision)<br>2 = Scotland<br>3 = England (TPP)<br>4 = Wales<br>(see [here](https://biobank.ctsu.ox.ac.uk/crystal/coding.cgi?id=626))  |  |
+| provider_id |  |  |  |
 | visit_occurrence_id |  |  |  |
 | visit_detail_id |  |  |  |
 | drug_source_value | dmd_code<br>read_2<br>drug_name |  |  |
 | drug_source_concept_id | dmd_code<br>read_2<br>drug_name |  |  |
 | route_source_value |  |  |  |
 | dose_unit_source_value |  |  |  |
+| data_source | data_provider | Map as "GP-" + number found in data_provider, e.g. GP-1, GP-2, GP-3, or GP-4 |  |
 
 ### Reading from stem_table
 
