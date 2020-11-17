@@ -2,6 +2,35 @@
 
 ### Reading from gp_clinical
 
+The _gp_clinical_ table contains clinical records from primary care linked data of consented UKB participants.
+The variables include date and clinical code (Read v2 or CTV3 1) for primary care events, 
+such as consultations, diagnoses, history, symptoms, procedures, laboratory tests and administrative information.
+The records are retrieved from four different source systems (providers): EMIS/Vision Scotland, EMIS/Vision Wales, 
+TPP England and Vision England (Note: EMIS England is missing).
+Coded data has been obtained for just 45% of the UKB participants.
+
+#### Notes on variables:
+- `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 (i.e. Read v3). 
+Mappings to standard OMOP concept_ids are only available for Read v2 codes in Athena,
+but CTV3 codes that overlap with Read v2 could be also be mapped.
+A READv2-CTV3-SNOMED mapping is available from the NHS: https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/9/subpack/9/releases
+- `value1`, `value2`, `value3` fields: each provider stores the data in its own format, 
+and each Read clinical code requires its own set of values. 
+Therefore, the meaning of `value1`, `value2` and `value3` differ per `data_provider` and per `read_2` / `read_3` code. 
+Provider-specific mapping logic needs to be implemented, 
+for some of the values this is available at [https://github.com/spiros/ukb-biomarker-phenotypes](
+https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
+Suppliers’ extracts contain only numeric data in one (TPP) or two (England (Vision), Wales) `value` fields.
+- `event_dt` (date) field: to protect individuals, alterations have been made to dates in relation to the participant's
+ date of birth as follows: 01/01/1901 (before birth), 02/02/1902 (on birth), 03/03/1903 (after birth), 07/07/2037 (future). 
+ 
+ 
+**TBD:**
+ - decide on date handling (`event_dt`), skip empty or not? use which dates?
+ - map value fields based on provider/Read code-specific logic (only selected phenotypes, 
+ start with examples from [https://github.com/spiros/ukb-biomarker-phenotypes](https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
+ Ideally capture logic in a mapping table and automatically apply during ETL execution.
+
 ![](md_files/image1.png)
 
 | Destination Field | Source field | Logic | Comment field |
@@ -16,7 +45,7 @@
 | concept_id | read_code | Map to OMOP standard concept |  |
 | source_value | read_code |  |  |
 | source_concept_id | read_code | As Read concept |  |
-| type_concept_id |  |  | For condition: 32020 - EHR encounter diagnosis  For meas/obs: derived from EHR |
+| type_concept_id |  |  | For condition: 32020 - EHR encounter diagnosis / For meas/obs: derived from EHR |
 | end_date |  |  |  |
 | end_datetime |  |  |  |
 | verbatim_end_date |  |  |  |
