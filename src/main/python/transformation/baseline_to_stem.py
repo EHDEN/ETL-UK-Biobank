@@ -51,17 +51,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                     print(f'Warning: date column "{date_column_name}" for "{column_name}" was not found in the baseline data')
 
                 # Visit
-                visit_lookup = session.query(wrapper.cdm.VisitOccurrence) \
-                    .filter(wrapper.cdm.VisitOccurrence.person_id == eid,
-                            wrapper.cdm.VisitOccurrence.record_source_value == 'baseline-' + instance)
-                try:
-                    visit_record = visit_lookup.one()
-                    visit_occurrence_id = visit_record.visit_occurrence_id
-                except NoResultFound:
-                    visit_occurrence_id = None
-                except MultipleResultsFound:
-                    logger.warning(f'Multiple visits found for baseline instance {instance}')
-                    visit_occurrence_id = None
+                visit_occurrence_id = wrapper.lookup_visit(eid, 'baseline-' + instance)
 
                 target = field_mapper.lookup(field_id, value)
                 if target:

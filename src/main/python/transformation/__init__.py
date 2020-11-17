@@ -1,6 +1,7 @@
 from .baseline_to_person import baseline_to_person
 from .assessment_center_to_location import assessment_center_to_location
 from .covid_to_care_site import covid_to_care_site
+from .hesin_diag_to_condition_occurrence import hesin_diag_to_condition_occurrence
 from .gp_clinical_to_care_site import gp_clinical_to_care_site
 from .baseline_to_care_site import baseline_to_care_site
 from .covid_to_observation import covid_to_observation
