@@ -32,16 +32,26 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
     for _, row in source.iterrows():
 
+        if row['read_2']:
+            read_code = row['read_2']
+            read_col = 'read_2'
+        elif row['read_3']:
+            read_code = row['read_3']
+            read_col = 'read_3'
+        else:
+            continue
+
         person_id = row['eid']
-        event_date =  get_datetime(row['event_dt'], "%d/%m/%Y")
+        event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
+        data_source = 'GP-' + row['data_provider']
 
-        # Look up visit_id in VisitOccurrence by patient_id + visit_start_date
         # TODO: ok to take first visit (asc order)?
-
+        # Look up visit_id in VisitOccurrence table
         with wrapper.db.session_scope() as session:
             query = session.query(VisitOccurrence) \
                 .filter(VisitOccurrence.person_id == person_id) \
                 .filter(VisitOccurrence.visit_start_date == event_date) \
+                .filter(VisitOccurrence.data_source == data_source) \
                 .order_by(VisitOccurrence.visit_start_date.asc()) \
                 .limit(1)  # multiple records could be found
             try:
@@ -50,80 +60,44 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             except NoResultFound:
                 continue
 
-        # TODO: implement correct logic to look up concept code.
-        #  NOTES from SQL: Deduced field, read_2 or read_3. Read v2 is subset of Read v3
-        # read_code = row['read_code']
-        read_code = 12345
+        operator = row['value1'][3:] if row['value1'].startswith('OPR') else None
 
-        # Value1: Some lookups, some corresponding with the one for Caliber.
-        # e.g. OPR = operator. Lookups not documented For now focus on the numeric values.
-        opr = row['value1'][3:] if row['value1'].startswith('OPR') else None
+        # TODO: create mapping tables and lookup for units, including those expressed as MEAxxx
+        unit = row['value3']
 
-        # Value3: Units only captured for one data_provider.
-        # MEAxxx = unit lookup (to be provided)
-        # Map to UCUM (standard OMOP unit concept)
-        # TODO: is "MEA" to be looked up in value3 or elsewhere?
-        unit = row['value3'] if row['value3'].startswith('MEA') else None
+        value1 = row['value1']
+        value2 = row['value2']
 
         # TODO: remove workaround, this should be coming from mappings
-        unit_as_concept = 12345 if unit else None
         try:
-            unit_as_number = float(unit) if unit else None
+            value1_as_number = float(value1) if value1 else None
+            value1_as_concept_id = None
         except Exception:
-            unit_as_number = 0
+            value1_as_number = None
+            value1_as_concept_id = 0
 
-
-        # TODO: this needs to be a lot more complex, placeholder for now
-        # Some lookups, some corresponding with the one for Caliber.
-        # e.g. OPR = operator Lookups not documented
-        # For now focus on the numeric values, ignore the lookups.
-        # Meaning of value depends on the read_code and data_provider.
-        # Same for value 1, 2, 3
-        value = row['value1'] if row['value1']  \
-            else row['value2'] if row['value2'] \
-            else row['value3'] if row['value3'] \
-            else None
-
-        # TODO: remove workaround, this should be coming from mappings
-        value_as_concept = 12345
         try:
-            value_as_number = float(value) if value else None
+            value2_as_number = float(value2) if value2 else None
+            value2_as_concept_id = None
         except Exception:
-            value_as_number = 0
+            value2_as_number = None
+            value2_as_concept_id = 0
 
         r = wrapper.cdm.StemTable(
-            person_id= person_id,
-            type_concept_id=32020, # TODO: this should be different depending if meas/diag/obs, see docs
-            start_date= event_date,
-            start_datetime= event_date,
-            visit_occurrence_id= visit_id,
-            concept_id= read_code,
-            source_value= read_code,
-            source_concept_id= read_code,  # Read concept code
-            operator_concept_id = opr,
-            unit_concept_id= unit_as_concept,
-            unit_source_value= unit_as_number,
-            value_as_concept_id= value_as_concept,
-            value_as_number= value_as_number,
-            data_source='GP-'+row['data_provider'],
-
-            # TODO: check if the following should also be filled
-            #  (more fields available, see StemTable definition)
-
-            domain_id=None,
-            provider_id=None,
-            days_supply=None,
-            dose_unit_source_value=None,
-            lot_number=None,
-            refills=None,
-            route_concept_id=None,
-            route_source_value=None,
-            sig=None,
-            stop_reason=None,
-            unique_device_id=None,
-            modifier_concept_id=None,
-            modifier_source_value=None,
-
+            person_id=person_id,
+            type_concept_id=32020,  # TODO: different options depending if meas/diag/obs, see docs
+            start_date=event_date,
+            start_datetime=event_date,
+            visit_occurrence_id=visit_id,
+            concept_id=12345,  # TODO: placeholder
+            source_value=read_code,
+            source_concept_id=12345,  # TODO: placeholder
+            operator_concept_id=operator,
+            unit_concept_id=12345,  # TODO: placeholder
+            unit_source_value=unit,
+            value_as_concept_id=value1_as_concept_id,
+            value_as_number=value1_as_number,
+            data_source=data_source
         )
         records.append(r)
 
