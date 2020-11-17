@@ -105,6 +105,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             unit_source_value= unit_as_number,
             value_as_concept_id= value_as_concept,
             value_as_number= value_as_number,
+            data_source='GP-'+row['data_provider'],
 
             # TODO: check if the following should also be filled
             #  (more fields available, see StemTable definition)
