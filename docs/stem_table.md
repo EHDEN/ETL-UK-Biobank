@@ -10,26 +10,27 @@ TPP England and Vision England (Note: EMIS England is missing).
 Coded data has been obtained for just 45% of the UKB participants.
 
 #### Notes on variables:
-- `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 (i.e. Read v3). 
+- `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 (i.e. Read v3) - mutually exclusive fields. 
 Mappings to standard OMOP concept_ids are only available for Read v2 codes in Athena,
-but CTV3 codes that overlap with Read v2 could be also be mapped.
-A READv2-CTV3-SNOMED mapping is available from the NHS: https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/9/subpack/9/releases
-- `value1`, `value2`, `value3` fields: each provider stores the data in its own format, 
-and each Read clinical code requires its own set of values. 
-Therefore, the meaning of `value1`, `value2` and `value3` differ per `data_provider` and per `read_2` / `read_3` code. 
+but CTV3 codes that overlap with Read v2 can be also be mapped.
+Read v2 and CTV3 mappings to SNOMED are available from the NHS: 
+https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/9/subpack/9/releases
+- `value1`, `value2`, `value3` fields: the meaning of these fields differ per `data_provider` and `read_2` / `read_3` code combination, 
+though if provided, `value3` generally seems to refer to units. 
 Provider-specific mapping logic needs to be implemented, 
 for some of the values this is available at [https://github.com/spiros/ukb-biomarker-phenotypes](
 https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
-Suppliers’ extracts contain only numeric data in one (TPP) or two (England (Vision), Wales) `value` fields.
 - `event_dt` (date) field: to protect individuals, alterations have been made to dates in relation to the participant's
  date of birth as follows: 01/01/1901 (before birth), 02/02/1902 (on birth), 03/03/1903 (after birth), 07/07/2037 (future). 
  
  
 **TBD:**
  - decide on date handling (`event_dt`), skip empty or not? use which dates?
+ - map invalid Read v2 and CTV3 codes (not found in OMOP vocabularies) to SNOMED using NHS tables, then retrieve standard OMOP concept_id for SNOMED codes
  - map value fields based on provider/Read code-specific logic (only selected phenotypes, 
  start with examples from [https://github.com/spiros/ukb-biomarker-phenotypes](https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
  Ideally capture logic in a mapping table and automatically apply during ETL execution.
+ - review `type_concept_id` (not covering all desired cases)
 
 ![](md_files/image1.png)
 
@@ -42,9 +43,9 @@ Suppliers’ extracts contain only numeric data in one (TPP) or two (England (Vi
 | start_datetime | event_dt |  |  |
 | visit_occurrence_id | eid<br>event_dt | Look up visit occurrence by unique eid+event_dt<br> |  |
 | provider_id |  |  |  |
-| concept_id | read_code | Map to OMOP standard concept |  |
-| source_value | read_code |  |  |
-| source_concept_id | read_code | As Read concept |  |
+| concept_id | read_2<br>read_3 | Either field will be available. Map code to OMOP standard concept_id |  |
+| source_value | read_2<br>read_3 | Either field will be available  |  |
+| source_concept_id | read_2<br>read_3 | Either field will be available. Use (non-standard) OMOP concept_id for Read code |  |
 | type_concept_id |  |  | For condition: 32020 - EHR encounter diagnosis / For meas/obs: derived from EHR |
 | end_date |  |  |  |
 | end_datetime |  |  |  |
@@ -67,8 +68,8 @@ Suppliers’ extracts contain only numeric data in one (TPP) or two (England (Vi
 | unique_device_id |  |  |  |
 | unit_concept_id | value3 | Map to UCUM (standard OMOP unit concept) |  |
 | unit_source_value | value3 |  |  |
-| value_as_concept_id | value1<br>value2 | Meaning of value depends on the read_code and data_provider.<br> | Same for value 1, 2, 3<br><br> |
-| value_as_number | value1<br>value2 |  |  |
+| value_as_concept_id | value1<br>value2 | Which field to use depends on the read_code and data_provider, specific mapping logic. |  |
+| value_as_number | value1<br>value2 | Which field to use depends on the read_code and data_provider, specific mapping logic. |  |
 | value_as_string |  |  |  |
 | value_source_value |  |  |  |
 | anatomic_site_concept_id |  |  |  |
