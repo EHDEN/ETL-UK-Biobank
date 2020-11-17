@@ -30,7 +30,6 @@ logger = logging.getLogger(__name__)
 class FieldConceptMapper:
     """
     TODO: configuration file to load the baseline_field_mappings, to cover:
-     - handle field_ids using same value mapping (opcs codes from 41256;41258;42908)
      - handle multiple (event) target concepts for one field/value combination (see opcs)
     """
 
@@ -69,6 +68,7 @@ class FieldConceptMapper:
             elif mapping_config['mappingApproach']['name'] == 'mapping_table':
                 # For now this is specific for opcs3
                 target_event_concept_id = int(mapping_config['event_concept_id'])
+                mapping_config['field_ids'] = [str(x) for x in mapping_config['field_ids']]
                 for field_id in mapping_config['field_ids']:  # TODO: to save memory, all these fields can refer to the same value mapping
                     self.load_file_mapping_table(mapping_path, field_id, target_event_concept_id)
             else:  # TODO: handle value as numeric and value as text
@@ -91,12 +91,12 @@ class FieldConceptMapper:
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
             self._load(usagi_mapping, fixed_event_concept_id)
 
-    def load_file_mapping_table(self, file_path: Path, fixed_field_id: int, fixed_event_concept_id: Optional[int] = None):
+    def load_file_mapping_table(self, file_path: Path, fixed_field_id: str, fixed_event_concept_id: Optional[int] = None):
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             # The value_code is in the sourceCode field, and no valueCode is given.
             usagi_mapping.value_code = usagi_mapping.field_id
-            usagi_mapping.field_id = str(fixed_field_id)
+            usagi_mapping.field_id = fixed_field_id
             usagi_mapping.value_description = usagi_mapping.field_description
             usagi_mapping.field_description = ''
 
