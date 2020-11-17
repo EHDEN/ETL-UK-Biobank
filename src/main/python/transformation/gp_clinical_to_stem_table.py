@@ -46,8 +46,10 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             continue
 
         person_id = row['eid']
+        # TODO: decide on default date? or skip record if no date?
+        #  (note that this should match VisitOccurrence date calculation)
         event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
-        data_source = 'GP-' + row['data_provider']
+        data_source = 'GP-' + row['data_provider'] if not pd.isnull(row['data_provider']) else None
 
         # TODO: ok to take first visit (asc order)?
         # Look up visit_id in VisitOccurrence table
@@ -64,16 +66,16 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             except NoResultFound:
                 continue
 
-        unit, operator = None, None
+        unit, unit_concept_id, operator = None, None, None
         if row['value3']:
             if row['value3'].startswith('OPR'):
                 operator = row['value3'][3:]
             # TODO: how to handle MEAxxx codes?
             # elif ['value3'].startswith('MEA'):
                 # do something
-            # TODO: create mapping tables and lookup for units
             else:
                 unit = row['value3']
+                unit_concept_id = 12345 # TODO: placeholder, create mapping table for units
 
         for value_col in ['value1', 'value2']:
             # for most rows only one of the two value fields will be provided,
@@ -102,7 +104,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 source_value=read_code,
                 source_concept_id=12345,  # TODO: placeholder
                 operator_concept_id=operator,
-                unit_concept_id=12345,  # TODO: placeholder
+                unit_concept_id=unit_concept_id,
                 unit_source_value=unit,
                 value_as_concept_id=value_as_concept_id,
                 value_as_number=value_as_number,
