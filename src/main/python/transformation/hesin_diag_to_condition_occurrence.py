@@ -3,7 +3,6 @@ from __future__ import annotations
 import csv
 from typing import List, TYPE_CHECKING
 import pandas as pd
-from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from ..util.date_functions import get_datetime
 
@@ -19,7 +18,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
 
     # Merge HES diag with HES on EID and INS_INDEX to get ADMIDATE and drop duplicates.
     source = hesin_diag.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
-    source = source.drop_duplicates(subset=['eid', 'admidate', 'diag_icd10', 'diag_icd9'])
+    source = source.drop_duplicates(subset=['eid', 'ins_index'])
 
     # Generate code mapping for ICD10 and ICD9, remove dot to get correct concept codes.
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', remove_dot_from_codes=True)
@@ -53,7 +52,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
             continue
 
         # Visit
-        visit_occurrence_id = wrapper.lookup_visit(row['eid'], 'HES-' + row['spell_index'])
+        visit_occurrence_id = wrapper.lookup_visit(row['eid'], 'HES-' + str(row['spell_index']))
 
         for target in diag_targets:
             r = wrapper.cdm.ConditionOccurrence(
