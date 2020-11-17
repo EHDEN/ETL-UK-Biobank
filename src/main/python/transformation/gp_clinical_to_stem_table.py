@@ -16,6 +16,9 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'))
 
     read_codes = list(filter(None, set(source['read_2']) | set(source['read_3'])))
+    # Read codes in the source are either all alphanumeric, or containing trailing dots;
+    # however in OMOP Read vocabulary, dots are always followed by cyphers.
+    # To find a mapping for the code, you need to add cyphers after the dots (by default, "00")
     read_codes = [code + '00' if code[-1] == '.' else code for code in read_codes]
 
     read_mapper = \
@@ -32,6 +35,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
     for _, row in source.iterrows():
 
+        # read_2 and read_3 should be mutually exclusive.. should
         if row['read_2']:
             read_code = row['read_2']
             read_col = 'read_2'
@@ -60,45 +64,50 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             except NoResultFound:
                 continue
 
-        operator = row['value1'][3:] if row['value1'].startswith('OPR') else None
+        unit, operator = None, None
+        if row['value3']:
+            if row['value3'].startswith('OPR'):
+                operator = row['value3'][3:]
+            # TODO: how to handle MEAxxx codes?
+            # elif ['value3'].startswith('MEA'):
+                # do something
+            # TODO: create mapping tables and lookup for units
+            else:
+                unit = row['value3']
 
-        # TODO: create mapping tables and lookup for units, including those expressed as MEAxxx
-        unit = row['value3']
+        for value_col in ['value1', 'value2']:
+            # for most rows only one of the two value fields will be provided,
+            # for some though you need to process both, therefore this loop.
+            # if value1 is empty, skip to value2;
+            # if value2 is also empty, skip record creation
+            # TODO: only map codes that have logic captured in phenotype repo for now,
+            #   decide on how to handle the rest (especially rows missing both values)
+            value = row[value_col]
+            if pd.isnull(value):
+                continue
+            try:
+                value_as_number = float(value)
+                value_as_concept_id = None
+            except Exception:
+                value_as_number = None
+                value_as_concept_id = 0
 
-        value1 = row['value1']
-        value2 = row['value2']
-
-        # TODO: remove workaround, this should be coming from mappings
-        try:
-            value1_as_number = float(value1) if value1 else None
-            value1_as_concept_id = None
-        except Exception:
-            value1_as_number = None
-            value1_as_concept_id = 0
-
-        try:
-            value2_as_number = float(value2) if value2 else None
-            value2_as_concept_id = None
-        except Exception:
-            value2_as_number = None
-            value2_as_concept_id = 0
-
-        r = wrapper.cdm.StemTable(
-            person_id=person_id,
-            type_concept_id=32020,  # TODO: different options depending if meas/diag/obs, see docs
-            start_date=event_date,
-            start_datetime=event_date,
-            visit_occurrence_id=visit_id,
-            concept_id=12345,  # TODO: placeholder
-            source_value=read_code,
-            source_concept_id=12345,  # TODO: placeholder
-            operator_concept_id=operator,
-            unit_concept_id=12345,  # TODO: placeholder
-            unit_source_value=unit,
-            value_as_concept_id=value1_as_concept_id,
-            value_as_number=value1_as_number,
-            data_source=data_source
-        )
-        records.append(r)
+            r = wrapper.cdm.StemTable(
+                person_id=person_id,
+                type_concept_id=32020,  # TODO: different options depending if meas/diag/obs, see docs
+                start_date=event_date,
+                start_datetime=event_date,
+                visit_occurrence_id=visit_id,
+                concept_id=12345,  # TODO: placeholder
+                source_value=read_code,
+                source_concept_id=12345,  # TODO: placeholder
+                operator_concept_id=operator,
+                unit_concept_id=12345,  # TODO: placeholder
+                unit_source_value=unit,
+                value_as_concept_id=value_as_concept_id,
+                value_as_number=value_as_number,
+                data_source=data_source
+            )
+            records.append(r)
 
     return records
