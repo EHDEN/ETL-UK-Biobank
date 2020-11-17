@@ -10,7 +10,7 @@ Join hesin using ins_index
 | --- | --- | --- | --- |
 | condition_occurrence_id |  |  | Auto-increment |
 | person_id | eid |  |  |
-| condition_concept_id | diag_icd10<br>diag_icd9 | Map to OMOP standard concept<br>Map to OMOP standard concept |  |
+| condition_concept_id | diag_icd10<br>diag_icd9 | If diag_icd10 is filled, map ICD10 to Standard OMOP concept. <br> If diag_icd10 is empty and diag_icd9 is filled, map ICD9 to Standard Concept.   |  |
 | condition_start_date | admidate | Join hesin on eid and ins_index to get admidate. | hesin.admidate<br> |
 | condition_start_datetime | admidate | Join hesin on eid and ins_index to get admidate. | hesin.admidate<br> |
 | condition_end_date |  |  |  |
