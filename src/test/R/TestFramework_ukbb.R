@@ -19,7 +19,13 @@ initFramework <- function() {
   defaults$`34-0.0` <- '1950'
   defaults$`52-0.0` <- '1'
   defaults$`53-0.0` <- '2000-01-01'
+  defaults$`53-1.0` <- ''
+  defaults$`53-2.0` <- ''
+  defaults$`53-3.0` <- ''
   defaults$`54-0.0` <- '11004'
+  defaults$`54-1.0` <- ''
+  defaults$`54-2.0` <- ''
+  defaults$`54-3.0` <- ''
   defaults$`21000-0.0` <- '1'
   assign('baseline', defaults, envir = frameworkContext$defaultValues)
 

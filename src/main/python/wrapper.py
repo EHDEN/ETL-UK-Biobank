@@ -15,11 +15,11 @@
 from pathlib import Path
 from typing import Optional
 import logging
+import pandas as pd
 
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from src.main.python.core import EtlWrapper
-from src.main.python.core.source_data import SourceData
 from src.main.python.transformation import *
 import csv
 
@@ -90,12 +90,9 @@ class Wrapper(EtlWrapper):
         self.execute_sql_file('src/main/sql/stem_table_to_device_exposure.sql', target_schema=target_schema)
         self.execute_sql_file('src/main/sql/stem_table_to_specimen.sql', target_schema=target_schema)
 
-    def get_source_data(self, source_file, custom_delimiter: Optional[str] = None):
-        if custom_delimiter:
-            delimiter = custom_delimiter
-        else:
-            delimiter = self.source_file_delimiter
-        return SourceData(self.source_folder / source_file, delimiter=delimiter)
+    def get_dataframe(self, source_file, use_columns: Optional[list] = None):
+        df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=str)
+        return df
 
     def mapping_tables_lookup(self, mapping: str, add_info: Optional[str] = None):
         """
