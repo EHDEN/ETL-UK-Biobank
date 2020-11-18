@@ -3,14 +3,11 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 import csv
-import logging
 from sqlalchemy.orm.exc import NoResultFound
 
 from ..util.date_functions import get_datetime
 from ..core.model import VisitOccurrence
 
-
-logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
