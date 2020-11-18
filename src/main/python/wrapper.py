@@ -15,6 +15,9 @@
 from pathlib import Path
 from typing import Optional
 import logging
+
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+
 from src.main.python.core import EtlWrapper
 from src.main.python.core.source_data import SourceData
 from src.main.python.transformation import *
@@ -36,7 +39,6 @@ class Wrapper(EtlWrapper):
         self.source_file_delimiter = ','
 
     def run(self):
-
         self.start_timing()
 
         logger.info('{:-^100}'.format(' SETUP '))
@@ -62,9 +64,10 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
         self.execute_transformation(gp_clinical_to_stem_table)
+        self.execute_transformation(hesin_to_visit_occurrence)
+        self.execute_transformation(hesin_diag_to_condition_occurrence)
         self.execute_transformation(gp_registrations_to_observation_period)
         self.execute_transformation(covid_to_observation)
-        self.execute_transformation(hesin_to_visit_occurrence)
         self.execute_transformation(baseline_to_stem)
 
         # Stem table to domains
@@ -94,20 +97,57 @@ class Wrapper(EtlWrapper):
             delimiter = self.source_file_delimiter
         return SourceData(self.source_folder / source_file, delimiter=delimiter)
 
-    def mapping_tables_lookup(self, mapping: str, add_info: Optional[str] = None):
+    def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True):
         """
-        :param mapping: path to the csv file with the mapping
+        Create a dictionary to lookup target concept_id by source code from a mapping file.
+        If mapping is not APPROVED, it is not included.
+        :param mapping_file: path to the csv file with the mapping
         :param add_info: for some records we needed to find the standard concept by combine two source fields.
-        If this parameter is filled the dictionary keys will be a combination of the two fields.
-        :return: the dictionary
+                         If this parameter is filled the dictionary keys will be a combination of the two fields.
+        :param first_only: if True, return the first available match only (default True). If False, all targets are lists of concept ids.
+        :return: the dictionary. values are either strings (first_only = True) or lists (first_only = False)
         """
-        with open(mapping) as f_in:
+        result = {}
+        with open(mapping_file) as f_in:
             table_mapping = csv.DictReader(f_in, delimiter=',')
-            table = {}
 
             for row in table_mapping:
+                if row['mappingStatus'] != 'APPROVED':
+                    continue
+
                 if not add_info:
-                    table[row['sourceCode']] = row['conceptId']
+                    key = row['sourceCode']
                 else:
-                    table[(row['sourceCode'], row[add_info])] = row['conceptId']
-        return table
+                    key = (row['sourceCode'], row[add_info])
+
+                target = row['conceptId']
+
+                if first_only:
+                    # value is string
+                    if key in result:
+                        # Skip if already exists
+                        logger.warning(f'Source code "{key}" in {mapping_file} occurs twice. Only first is taken.')
+                        continue
+                    else:
+                        result[key] = target
+                else:
+                    # value is list
+                    if key in result:
+                        result[key].append(target)
+                    else:
+                        result[key] = [target]
+        return result
+
+    def lookup_visit(self, person_id, record_source_value) -> Optional[int]:
+        with self.db.session_scope() as session:
+            visit_lookup = session.query(self.cdm.VisitOccurrence) \
+                .filter(self.cdm.VisitOccurrence.person_id == person_id,
+                        self.cdm.VisitOccurrence.record_source_value == record_source_value)
+            try:
+                visit_record = visit_lookup.one()
+                return visit_record.visit_occurrence_id
+            except NoResultFound:
+                return None
+            except MultipleResultsFound:
+                logger.warning(f'Multiple visits found for person_id={person_id} record_source_value={record_source_value}')
+                return None

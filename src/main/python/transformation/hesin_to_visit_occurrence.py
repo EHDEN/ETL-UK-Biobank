@@ -56,11 +56,14 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
             else:
                 end_date = row['disdate']
 
+            data_source = row['dsource']
+            spell_index = row['spell_index']
+
             # The dsource contains strings of 3-4 characters and admimeth, admisorc, disdest contrains integers of length 2.
             # Thus the 50character cut off it is not an issue for losing data, currently.
-            method_source = "record origin:"+row['dsource']+"/admission method:"+row['admimeth']
-            admit_source = "record origin:"+row['dsource']+"/admission source:"+row['admisorc']
-            dis_source = "record origin:"+row['dsource']+"/discharge destination:"+row['disdest']
+            method_source = "record origin:"+data_source+"/admission method:"+row['admimeth']
+            admit_source = "record origin:"+data_source+"/admission source:"+row['admisorc']
+            dis_source = "record origin:"+data_source+"/discharge destination:"+row['disdest']
 
             r = VisitOccurrence(
                 person_id=person_id,
@@ -69,12 +72,14 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
                 visit_start_datetime=start_date,
                 visit_end_date=end_date.date(),
                 visit_end_datetime=end_date,
-                visit_type_concept_id=44818517, # Visit derived from encounter on claim
+                visit_type_concept_id=44818517,  # Visit derived from encounter on claim
                 visit_source_value=method_source,
                 admitting_source_concept_id=admit_reason.get((row['admisorc'], row['dsource']), 0),
                 admitting_source_value=admit_source,
                 discharge_to_concept_id=dis_reason.get((row['disdest'], row['dsource']), 0),
-                discharge_to_source_value=dis_source
+                discharge_to_source_value=dis_source,
+                record_source_value=f'HES-{spell_index}',
+                data_source=f'HES-{data_source}'
             )
             records.append(r)
         return records

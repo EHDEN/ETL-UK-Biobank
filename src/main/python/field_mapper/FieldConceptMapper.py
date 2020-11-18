@@ -30,7 +30,6 @@ logger = logging.getLogger(__name__)
 class FieldConceptMapper:
     """
     TODO: configuration file to load the baseline_field_mappings, to cover:
-     - handle field_ids using same value mapping (opcs codes from 41256;41258;42908)
      - handle multiple (event) target concepts for one field/value combination (see opcs)
     """
 
@@ -58,43 +57,70 @@ class FieldConceptMapper:
 
         for mapping_config in config['mappings']:
             mapping_filename = mapping_config['filename']
+            mapping_path = directory / mapping_filename
+            logger.info(f"Loading {mapping_path.name}...")
             if mapping_config['mappingApproach']['name'] == 'date':
-                self.load_date_mapping(directory / mapping_filename)
+                self.load_date_mapping(mapping_path)
                 self.default_date_field = mapping_config['default_date_field']
             elif mapping_config['mappingApproach']['name'] == 'value_only':
                 target_event_concept_id = int(mapping_config['event_concept_id'])
-                self.load_usagi(directory / mapping_filename, target_event_concept_id)
+                self.load_file_value_only(mapping_path, target_event_concept_id)
+            elif mapping_config['mappingApproach']['name'] == 'mapping_table':
+                # For now this is specific for opcs3
+                target_event_concept_id = int(mapping_config['event_concept_id'])
+                mapping_config['field_ids'] = [str(x) for x in mapping_config['field_ids']]
+                for field_id in mapping_config['field_ids']:  # TODO: to save memory, all these fields can refer to the same value mapping
+                    self.load_file_mapping_table(mapping_path, field_id, target_event_concept_id)
             else:  # TODO: handle value as numeric and value as text
-                self.load_usagi(directory / mapping_filename)
+                self.load_file(mapping_path)
 
     def load_date_mapping(self, date_mapping_file: Path):
         with date_mapping_file.open() as f_in:
             for row in csv.DictReader(f_in):
                 self.date_field_mapping[row['field']] = row['date_field']
 
-    def load_usagi(self, file_path: Path, fixed_event_concept_id: Optional[int] = None):
-        logger.info(f"Loading {file_path.name}...")
+    def load_file(self, file_path: Path):
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
+            self._load(usagi_mapping)
 
-            field_mapping = self.field_mappings.setdefault(
-                usagi_mapping.field_id,
-                FieldMapping(usagi_mapping.field_id)
-            )
-            field_mapping.add(usagi_mapping)
+    def load_file_value_only(self, file_path: Path, fixed_event_concept_id: int):
+        for row in self._load_map(file_path):
+            usagi_mapping = UsagiRow(row, file_path.name)
+            logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
+            self._load(usagi_mapping, fixed_event_concept_id)
 
-            if fixed_event_concept_id:
-                # assume given usagi mapping is only the value mapping of the field
-                event_target = TargetMapping({
-                    'conceptId': fixed_event_concept_id,
-                    'createdBy': '<config>',
-                    'createdOn': '0',
-                    'mappingType': 'EVENT',
-                    'statusSetBy': '<config>',
-                    'statusSetOn': '0'
-                })
-                field_mapping.add_target_for_value(usagi_mapping.value_code, event_target)
+    def load_file_mapping_table(self, file_path: Path, fixed_field_id: str, fixed_event_concept_id: Optional[int] = None):
+        for row in self._load_map(file_path):
+            usagi_mapping = UsagiRow(row, file_path.name)
+            # The value_code is in the sourceCode field, and no valueCode is given.
+            usagi_mapping.value_code = usagi_mapping.field_id
+            usagi_mapping.field_id = fixed_field_id
+            usagi_mapping.value_description = usagi_mapping.field_description
+            usagi_mapping.field_description = ''
+
+            logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
+            self._load(usagi_mapping, fixed_event_concept_id)
+
+    def _load(self, usagi_mapping: UsagiRow, fixed_event_concept_id: Optional[int] = None):
+        field_mapping = self.field_mappings.setdefault(
+            usagi_mapping.field_id,
+            FieldMapping(usagi_mapping.field_id)
+        )
+        field_mapping.add(usagi_mapping)
+
+        if fixed_event_concept_id:
+            # assume given usagi mapping is only the value mapping of the field
+            event_target = TargetMapping({
+                'conceptId': fixed_event_concept_id,
+                'createdBy': '<config>',
+                'createdOn': '0',
+                'mappingType': 'EVENT',
+                'statusSetBy': '<config>',
+                'statusSetOn': '0'
+            })
+            field_mapping.add_target_for_value(usagi_mapping.value_code, event_target)
 
     @staticmethod
     def _load_map(file_path: Path):
@@ -217,6 +243,10 @@ if __name__ == '__main__':
     print(mapper('4041', '123'))  # unknown value for categorical field
     # field mapping
     print(mapper('20001', '1064'))  # unknown value for categorical field
+
+    # opcs3
+    print(mapper('41256', '118'))
+    print(mapper('41258', '027'))
 
     # get the mapping of a field
     # print(mapper.get_mapping('2335'))
