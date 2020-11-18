@@ -1,30 +1,22 @@
 %YAML 1.2
 # List mapping files and assign type of file.
 # The mapping type tells the importer what validation checks to perform.
-# TODO: current FieldConceptMapper just takes all csv files in this directory
+#expect_event: true
+#expect_unit: true
+#expect_value: false
 ---
 mappingApproaches:
   - &numeric
     name: numeric
-    expect_event: true
-    expect_unit: true
-    expect_value: false
   - &discrete
     name: discrete
-    expect_event: true
-    expect_unit: false
-    expect_value: true
   - &valueOnly
     name: value_only
-    expect_event: false  # Note: provide event_concept_id below
-    expect_unit: false
-    expect_value: true
-    # TODO: by value as number, value as concept, value as date, value as text
+  # TODO: by value as number, value as concept, value as date, value as text
   - &date
     name: date
-    expect_event: false
-    expect_unit: false
-    expect_value: false
+  - &mappingTable
+    name: mapping_table
 
 mappings:
   - filename: date_field_lookup.csv
@@ -63,10 +55,9 @@ mappings:
     mappingApproach: *valueOnly
     event_concept_id: 4188893 # History of (SNOMED)
 
-# TODO: OPCS3
-# TODO: multiple fields using this same value lookup
-#  - filename: opcs3.csv
-#    mappingApproach: *valueOnly
-#    event_concept_id: 40770405 # History of procedure (LOINC)
+  - filename: ../mapping_tables/opcs3.csv
+    mappingApproach: *mappingTable
+    field_ids: [41256,41258,41273]
+    event_concept_id: 40770405 # History of procedure (LOINC)
 
   # Add reference to new mapping files here

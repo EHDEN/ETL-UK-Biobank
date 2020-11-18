@@ -94,3 +94,11 @@ declareTest(920, 'Baseline - visit occurrence instance 3')
 add_baseline(eid = '920', `53-3.0`='2010-10-13', `48-3.0`='85')
 expect_observation(person_id = 920, observation_date = '2010-10-13',
                    visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 920, visit_start_date = '2010-10-13'))
+
+declareTest(921, 'Baseline - opcs3 field 41256 single target')
+add_baseline(eid = '921', `41256-0.0`='018')
+expect_observation(person_id = 921, observation_concept_id = 40770405, value_as_concept_id = 2110401)
+
+declareTest(922, 'Baseline - opcs3 field 41273 single target')
+add_baseline(eid = '922', `41273-0.0`='7002')
+expect_observation(person_id = 922, observation_concept_id = 40770405, value_as_concept_id = 4130184)
