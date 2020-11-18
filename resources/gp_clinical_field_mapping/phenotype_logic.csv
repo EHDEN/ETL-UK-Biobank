@@ -1,0 +1,8 @@
+#source: https://github.com/spiros/ukb-biomarker-phenotypes/blob/master/README.md 7d05c9f 21Aug2020
+phenotype,read_col,data_provider,value_col,source_read_code,map_as_read_code
+SBP,read_2,1,value1,246..00,2469.00
+DBP,read_2,1,value2,246..00,246A.00
+DBP,read_2,2,value1,246..00,246A.00
+SBP,read_2,2,value2,246..00,2469.00
+SBP,read_2,4,value1,246..00,2469.00
+DBP,read_2,4,value2,246..00,246A.00
