@@ -3,10 +3,14 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 import csv
+import logging
 from sqlalchemy.orm.exc import NoResultFound
 
 from ..util.date_functions import get_datetime
 from ..core.model import VisitOccurrence
+
+
+logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -32,6 +36,11 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         next(f)  # Skip the header
         reader = csv.reader(f)
         read2_dot_mappings = dict(row[1:] for row in reader if row) # skip 1st column
+
+    # load dataframe for special mapping logic (e.g. blood pressure)
+    mapping_logic_df = pd.read_csv(GP_CLINICAL_MAPPING_FOLDER + 'phenotype_logic.csv',
+                                   skiprows=1, dtype='object')
+    special_handling_codes = set(mapping_logic_df['source_read_code'])
 
     def extend_read_code(read_code: str, read2: bool = False):
         if read_code[-1] == '.':
@@ -109,16 +118,18 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
         # for most rows only one of the two value fields will be provided,
         # for some though you need to process both, therefore this loop.
-        # if value1 is empty, skip to value2;
-        # if value2 is also empty, create record without value (only concept_id)
+
+
         for value_col in ['value1', 'value2']:
             value = row[value_col]
             if pd.isnull(value):
-                if value_col == 'value1':
+                if value_col == 'value1':  # if value1 is empty, skip to value2
                     continue
-                elif pd.isnull(row['value1']):
-                    value_as_number = float(value)
+                elif pd.isnull(row['value1']): # if both value1&2 empty, create record with no value
+                    value_as_number = None
                     value_as_concept_id = None
+                else: # value2 is empty but value1 is not, so this row has already been processed and can be skipped
+                    continue
             else:
                 try:
                     value_as_number = float(value)
@@ -126,6 +137,23 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 except Exception:
                     value_as_number = None
                     value_as_concept_id = 0 # TODO: placeholder, create mapping table for alphanum codes (or always ignore?)
+
+            # apply special mapping logic to specific combinations of data provider, read code,
+            # and value column (e.g. blood pressure)
+            if read_mapping.source_concept_code in special_handling_codes:
+                # print([read_col, value_col, row['data_provider'], read_mapping.source_concept_code])
+                filter1 = mapping_logic_df['read_col'] == read_col
+                filter2 = mapping_logic_df['value_col'] == value_col
+                filter3 = mapping_logic_df['data_provider'] == row['data_provider']
+                filter4 = mapping_logic_df['source_read_code'] == read_mapping.source_concept_code
+                filtered_df = mapping_logic_df[filter1 & filter2 & filter3 & filter4]
+                n_results = len(filtered_df.index)
+                if n_results == 1: # either not found, or 1 result (no multiple mappings in source file)
+                    new_read_code = filtered_df['map_as_read_code'].iloc[0]
+                    if read_col == 'read_2':
+                        read_mapping = read2_mapper.lookup(new_read_code, first_only=True)
+                    else:
+                        read_mapping = read3_mapper.lookup(new_read_code, first_only=True)
 
             r = wrapper.cdm.StemTable(
                 person_id=person_id,
