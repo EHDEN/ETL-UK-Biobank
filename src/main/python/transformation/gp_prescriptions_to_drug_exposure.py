@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 from datetime import timedelta
+import re
 from sqlalchemy.orm.exc import NoResultFound
 from src.main.python.util import get_datetime, filter_nulls, extend_read_code
 from src.main.python.core.model import VisitOccurrence
@@ -39,12 +40,9 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         else:
             continue
 
-        date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
-        # TODO: placeholder, replace with proper end date estimate
-        date_end = date_start + timedelta(days=1)
-
         person_id = row['eid']
         data_source = 'GP-' + row['data_provider'] if row['data_provider'] else None
+        date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
         # TODO: ok to take first visit (asc order)?
         # Look up visit_id in VisitOccurrence table
@@ -61,8 +59,40 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             except NoResultFound:
                 visit_id = None
 
-        quantity = row['quantity']
-        unit = row['quantity']
+        raw_quantity = row['quantity'] if filter_nulls(['quantity']) else None
+        unit = row['quantity'] if filter_nulls(['quantity']) else None
+
+        num_quantity, multiply = None, False
+        if raw_quantity:
+            for pattern, unit in [
+                ('(\d+|\d+\.0+)\s+-*\s*[tT][aA][bB]', 'tab'),  # N tab(lets) or N - tab(lets)
+                ('(\d+|\d+\.0+)\s+-*\s*[cC][aA][pP]', 'cap'),  # N cap(sules) or N - cap(sules)
+                ('(\d+|\d+\.0+)\s+-*\s*[dD][oO][sS]', 'dos'),  # N dos(es) or N - dos(es
+                ('(\d+|\d+\.0+)\s+-*\s*[sS][tT][rR]', 'str'),  # N str(ips) or N - str(ips)
+                ('(\d+|\d+\.0+)\s+-*\s*[sS][aA][cC]', 'sac'),  # N sac(hets) or N - sac(hets)
+                ('(\d+|\d+\.0+)\s+-*\s*[pP][aA][cC]', 'pac'),  # N pac(kets) or N - pac(kets)
+                ('(\d+|\d+\.d+)\s+[gG]', 'gr'),                # N g(rams)
+                ('(\d+|\d+\.d+)\s+[mM][iI]*[lL]', 'ml'),       # N ml / mil(lliliters)
+                ('^(\d+|\d+\.0+)$', 'whole_nr'),               # whole number without unit
+                ('(\d+|\d+\.d+)', None)                        # any number
+            ]:
+                regex = re.compile(pattern)
+                match = regex.match(raw_quantity)
+                if match:
+                    match_string = match.group()
+                    try:
+                        regex = re.compile('(\d+|\d+\.0+)')  # extract only numeric part
+                        num_quantity = int(regex.match(match_string).group())
+                        print(raw_quantity,'|',num_quantity,unit)
+                        multiply = unit in ['tab','cap','dos','str','sac','whole_nr']
+                        break
+                    except:
+                        continue
+
+        if num_quantity and multiply:
+            date_end = date_start + timedelta(days=num_quantity*multiply)
+        else:
+            date_end = date_start  # TODO: ok or use date_start + 1? this way it's clear we don't know
 
         r = wrapper.cdm.DrugExposure(
             person_id=person_id,
@@ -74,7 +104,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             drug_source_concept_id=mapping.source_concept_id,
             drug_source_value=mapping.source_concept_code,
             drug_type_concept_id=38000177,  # prescription written
-            quantity=None,  # TODO: placeholder
+            quantity=num_quantity,
             dose_unit_source_value=unit,
             data_source=data_source,
             visit_occurrence_id=visit_id,
