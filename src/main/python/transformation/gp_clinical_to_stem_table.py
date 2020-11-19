@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
+import math
 import csv
 from sqlalchemy.orm.exc import NoResultFound
 
@@ -39,6 +40,12 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                                    skiprows=1, dtype='object')
     special_handling_codes = set(mapping_logic_df['source_read_code'])
 
+    def not_null(code): # TODO: integrate this with utils function in gp_presc_to_drug_exp branch
+        if pd.isnull(code) or not code or (type(code)=='float' and math.isnan(code)):
+            return False
+        else:
+            return True
+
     def extend_read_code(read_code: str, read2: bool = False):
         if read_code[-1] == '.':
             if read2:
@@ -48,8 +55,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         else:
             return read_code
 
-    read2_codes = list(filter(None, set(source['read_2'])))
-    read3_codes = list(filter(None, set(source['read_3'])))
+    read2_codes = list(filter(not_null, set(source['read_2'])))
+    read3_codes = list(filter(not_null, set(source['read_3'])))
     # Read codes in the source are either all alphanumeric, or containing trailing dots;
     # however in OMOP Read vocabulary, dots are always followed by cyphers.
     # To find a mapping for the code, you need to add cyphers after the dots (by default, "00")
@@ -68,12 +75,12 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         # read_2 and read_3 should be mutually exclusive
         # and at least one should be present for the mapping to be meaningful
         # TODO: observed multiple mappings for vaccinces to SNOMED and CVX, which is better?
-        if row['read_2']:
+        if not_null(row['read_2']):
             read_code = row['read_2']
             read_mapping = read2_mapper.lookup(extend_read_code(read_code,read2=True),
                                                first_only=True)
             read_col = 'read_2'
-        elif row['read_3']:
+        elif not_null(row['read_3']):
             read_code = row['read_3']
             read_mapping = read3_mapper.lookup(extend_read_code(read_code,read2=False),
                                                first_only=True)
@@ -103,7 +110,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 continue
 
         unit, unit_concept_id, operator = None, None, None
-        if not pd.isnull(row['value3']):
+        if not_null(row['value3']):
             if row['value3'].startswith('OPR'):
                 operator = row['value3'][3:]
             elif unit in valid_units: # this includes MEAxxx codes
@@ -119,10 +126,10 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
         for value_col in ['value1', 'value2']:
             value = row[value_col]
-            if pd.isnull(value):
+            if not not_null(value):
                 if value_col == 'value1':  # if value1 is empty, skip to value2
                     continue
-                elif pd.isnull(row['value1']): # if both value1&2 empty, create record with no value
+                elif not not_null(row['value1']): # if both value1&2 empty, create record with no value
                     value_as_number = None
                     value_as_concept_id = None
                 else: # value2 is empty but value1 is not, so this row has already been processed and can be skipped
