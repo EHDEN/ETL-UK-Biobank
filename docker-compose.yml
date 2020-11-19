@@ -1,0 +1,51 @@
+version: '2.4'
+
+services:
+  postgresql:
+    build:
+      context: ./postgres
+    mem_reservation: 4gb
+    ports:
+      - 5432:5432
+    networks:
+      - app
+    volumes:
+      - postgresql_data:/bitnami/postgresql
+      - ./postgres/vocab.zip:/vocab:ro
+      - ./postgres/CONCEPT_CPT4.csv:/CONCEPT_CPT4.csv:ro
+      - ./postgres/VOCABULARY_CPT4.csv:/VOCABULARY_CPT4.csv:ro
+      - ./postgres/postgresql.conf:/opt/bitnami/postgresql/conf/conf.d/postgresql.conf
+    environment:
+      - POSTGRESQL_POSTGRES_PASSWORD=password
+      - POSTGRESQL_USERNAME=admin
+      - POSTGRESQL_PASSWORD=secret
+      - POSTGRESQL_DATABASE=ohdsi
+      - BITNAMI_DEBUG=true
+
+  etl:
+    command: python main.py
+    build:
+      context: .
+    networks:
+      - app
+    restart: on-failure
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      - ETL_HOSTNAME=postgresql
+      - ETL_PORT=5432
+      - ETL_DATABASE=ohdsi
+      - ETL_USERNAME=admin
+      - ETL_SUPERUSER_PASSWORD=password
+      - ETL_PASSWORD=secret
+      - ETL_SOURCE=/app/resources/synthetic_data
+      - ETL_DEBUG=False
+      - ETL_SKIPVOCAB=False
+
+volumes:
+  postgresql_data:
+    driver: local
+
+networks:
+  app:
+    driver: bridge
