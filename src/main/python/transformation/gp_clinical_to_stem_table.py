@@ -18,7 +18,7 @@ GP_CLINICAL_MAPPING_FOLDER = 'resources/gp_clinical_field_mapping/'
 
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
-    source = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'))
+    source = wrapper.get_dataframe('gp_clinical.csv')
 
     # load dictionary of valid units
     with open(GP_CLINICAL_MAPPING_FOLDER + 'unit_raw_to_clean.csv') as f:
