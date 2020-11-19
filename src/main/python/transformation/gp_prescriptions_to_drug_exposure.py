@@ -27,21 +27,16 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
     for _, row in source.iterrows():
 
         # TODO: in theory read v2 > drug name, implement Read v2 mapping and invert check order
-        drug_col = None
-        mapping = CodeMapping()
         if filter_nulls(row['dmd_code']):
-            drug_col = 'dmd_code'
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
-        if filter_nulls(row['drug_name']) and not mapping.target_concept_id:
-            drug_col = 'drug_name'
+        elif filter_nulls(row['drug_name']):
             mapping = CodeMapping()
             mapping.source_concept_code = row['drug_name']
             mapping.source_concept_id = 0
             mapping.target_concept_id = 0 # TODO: placeholder, get from mapping tables
-        if filter_nulls(row['read_2']) and not mapping.target_concept_id:
-            drug_col = 'read_2'
-            mapping = read2_mapper.lookup(row['read_2'], first_only=True)
-        if not drug_col:
+        elif filter_nulls(row['read_2']):
+            mapping = read2_mapper.lookup(extend_read_code(row['read_2']), first_only=True)
+        else:
             continue
 
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
