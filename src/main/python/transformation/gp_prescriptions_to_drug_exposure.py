@@ -62,37 +62,37 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         raw_quantity = row['quantity'] if filter_nulls(row['quantity']) else None
         unit = row['quantity'] if filter_nulls(row['quantity']) else None
 
-        num_quantity, multiply = None, False
-        whole_nr  = '(\d+|\d+\.0+)'  # e.g. 20 or 20.0 (any nr of zeroes after .)
-        any_nr    = '(\d+|\d+\.d+)'  # e.g. 20 or 20.5 (any nr of cyphers after .)
-        separator = '(\s+|\s+(-|x)\s+)'  # e.g. space(s) or space(s) + -|x + space(s)
+        num_quantity, calc_end_date = None, False
+        whole_nr  = '(\d+|(\d+\.0+))'  # e.g. 20 or 20.0 (any nr of zeroes after .)
+        any_nr    = '(\d+|(\d+\.d+))'  # e.g. 20 or 20.5 (any nr of cyphers after .)
+        separator = '(\s+|(\s+(-|x)\s+))'  # e.g. space(s) or space(s) + -|x + space(s)
+        additions = '(?:dispersible\s+)?'
         if raw_quantity:
-            for pattern, is_valid_unit in [
-                (whole_nr + separator + '[tT][aA][bB]', 'tab'),  # tab(lets)
-                (whole_nr + separator + '[cC][aA][pP]', 'cap'),  # cap(sules)
-                (whole_nr + separator + '[dD][oO][sS]', 'dos'),  # dos(es)
-                (whole_nr + separator + '[sS][tT][rR]', 'str'),  # str(ips)
-                (whole_nr + separator + '[sS][aA][cC]', 'sac'),  # sac(hets)
-                (whole_nr + separator + '[pP][aA][cC]', 'pac'),  # pac(kets)
-                (any_nr + '\s+[mM]*[gG]', 'weight'),             # N (m)g(rams)
-                (any_nr + '\s+[mM][iI]*[lL]', 'volume'),         # N ml / mil(lliliters)
-                ('^' + whole_nr + '$', 'whole_nr'),              # whole number without unit
-                ('(\d+|\d+\.d+)', None)                          # any number
+            for pattern, calc_end_date in [
+                (whole_nr + separator + additions + '[tT][aA][bB]', True),      # tab(lets)
+                (whole_nr + separator + '[cC][aA][pP]', True),      # cap(sules)
+                (whole_nr + separator + '[dD][oO][sS]', True),      # dos(es)
+                (whole_nr + separator + '[sS][tT][rR]', True),      # str(ips)
+                (whole_nr + separator + '[sS][aA][cC]', True),      # sac(hets)
+                (whole_nr + separator + '[uU][nN][iI][tT]', True),  # unit(s)
+                # note: packets=blisters, uncertain how many individual doses they contain
+                (whole_nr + separator + '[pP][aA][cC]', False),  # pac(kets)
+                (any_nr + '\s+[mM]*[gG]', False),                # (m)g(rams)
+                (any_nr + '\s+[mM][iI]*[lL]', False),            # ml / mil(lliliters)
+                ('^\s*' + whole_nr + '\s*$', True),              # whole number without unit
+                (any_nr, False)                                  # any number
             ]:
                 match = re.search(pattern,raw_quantity)
                 if match:
-                    match_string = match.group()
-                    try:
-                        regex = re.compile(whole_nr)  # extract only numeric part
-                        num_quantity = int(regex.match(match_string).group())
-                        print(raw_quantity,'|',num_quantity,unit)
-                        multiply = unit in ['tab','cap','dos','str','sac','whole_nr']
-                        break
-                    except:
-                        continue
+                    num_quantity = re.search(any_nr, match.group()).group()  # extract numeric part
+                    if calc_end_date:
+                        num_quantity = int(num_quantity)
+                    break
 
-        if num_quantity and multiply:
-            date_end = date_start + timedelta(days=num_quantity*multiply)
+            # print(raw_quantity, '|', num_quantity, '|', calc_end_date)  # test parsing
+
+        if calc_end_date:
+            date_end = date_start + timedelta(days=num_quantity) # assuming 1 tab/cap/etc. per day
         else:
             date_end = date_start  # TODO: ok or use date_start + 1? this way it's clear we don't know
 
