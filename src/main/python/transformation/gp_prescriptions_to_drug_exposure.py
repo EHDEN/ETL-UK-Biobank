@@ -5,7 +5,7 @@ import pandas as pd
 from datetime import timedelta
 import re
 from sqlalchemy.orm.exc import NoResultFound
-from src.main.python.util import get_datetime, filter_nulls, extend_read_code
+from src.main.python.util import get_datetime, check_if_valid_code, extend_read_code
 from src.main.python.core.model import VisitOccurrence
 from src.main.python.core.code_mapper import CodeMapping
 
@@ -20,7 +20,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
     dmd_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=list(source['dmd_code']))
     # TODO: Read v2 codes not available in Athena & NHS, find other mapping source if possible
-    read2_codes = list(extend_read_code(code) for code in filter(filter_nulls,source['read_2']))
+    read2_codes = list(extend_read_code(code) for code in filter(check_if_valid_code, source['read_2']))
     read2_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary('Read', restrict_to_codes=read2_codes)
 
@@ -28,16 +28,16 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
     for _, row in source.iterrows():
 
         # TODO: in theory read v2 > drug name, implement Read v2 mapping and invert check order
-        if filter_nulls(row['dmd_code']):
+        if check_if_valid_code(row['dmd_code']):
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
-        elif filter_nulls(row['drug_name']):
+        elif check_if_valid_code(row['drug_name']):
             mapping = CodeMapping()
             mapping.source_concept_code = row['drug_name']
             mapping.source_concept_id = 0
             mapping.target_concept_id = 0  # TODO: placeholder, get from mapping tables
-        elif filter_nulls(row['read_2']):
+        elif check_if_valid_code(row['read_2']):
             mapping = read2_mapper.lookup(extend_read_code(row['read_2']), first_only=True)
-        elif filter_nulls(row['bnf_code']):  # TODO: remove or keep as last resort for source value?
+        elif check_if_valid_code(row['bnf_code']):  # TODO: remove or keep as last resort for source value?
             mapping = CodeMapping()
             mapping.source_concept_code = row['bnf_code']
             mapping.source_concept_id = 0
@@ -64,9 +64,9 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             except NoResultFound:
                 visit_id = None
 
-        raw_quantity = row['quantity'] if filter_nulls(row['quantity']) else None
+        raw_quantity = row['quantity'] if check_if_valid_code(row['quantity']) else None
         # TODO: ok original unit string as such (source value), or extract substring (gr,ml etc)?
-        unit = row['quantity'] if filter_nulls(row['quantity']) else None
+        unit = row['quantity'] if check_if_valid_code(row['quantity']) else None
 
         num_quantity, calc_end_date = None, False
         whole_nr  = '(\d+|(\d+\.0+))'  # e.g. 20 or 20.0 (any nr of zeroes after .)

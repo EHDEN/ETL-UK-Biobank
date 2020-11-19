@@ -13,9 +13,11 @@
 # GNU General Public License for more details.
 
 import pandas as pd
+from numpy import nan
+from typing import Union
 
 
-def filter_nulls(code: str):
+def check_if_valid_code(code: str):
     if pd.isnull(code) or not code:  # '0' string is a valid code, won't be filtered by this
         return False
     else:
