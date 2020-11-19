@@ -3,24 +3,21 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 from datetime import timedelta
-
-from src.main.python.util.date_functions import get_datetime
+from src.main.python.util import get_datetime, extend_read_code
 
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
-
 
 def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
 
     source = pd.DataFrame(wrapper.get_source_data('gp_prescriptions.csv'))
 
     # map dm+d > read v2 > drug name
-    dmd_codes = list(filter(None, set(source['dmd_code'])))
     dmd_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=dmd_codes)
-    # Read v2 drug codes not available in Athena!
-    # read2_codes = list(filter(None, set(source['read_2'])))
+        wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=list(source['dmd_code']))
+    # TODO: Read v2 codes not available in Athena & NHS, find other mapping source if possible
+    # read2_codes = list(extend_read_code(code) for code in source['read_2'])
     # read2_mapper = \
     #     wrapper.code_mapper.generate_code_mapping_dictionary('Read', restrict_to_codes=read2_codes)
 
