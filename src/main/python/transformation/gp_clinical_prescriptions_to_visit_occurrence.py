@@ -10,10 +10,10 @@ if TYPE_CHECKING:
 
 
 def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    clinical = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'))
+    clinical = wrapper.get_dataframe('gp_clinical.csv', use_columns=['eid', 'data_provider', 'event_dt'])
     clinical = clinical[["eid", "event_dt", "data_provider"]].rename(columns={'event_dt': 'date'})
 
-    prescriptions = pd.DataFrame(wrapper.get_source_data('gp_prescriptions.csv'))
+    prescriptions = wrapper.get_dataframe('gp_prescriptions.csv', use_columns=['eid', 'data_provider', 'issue_date'])
     prescriptions = prescriptions[["eid", "issue_date", "data_provider"]].rename(columns={'issue_date': 'date'})
 
     source = pd.concat([prescriptions, clinical])

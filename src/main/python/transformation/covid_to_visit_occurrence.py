@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-import pandas as pd
 
 from ..util.date_functions import get_datetime
 
@@ -10,7 +9,7 @@ if TYPE_CHECKING:
 
 
 def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    source = pd.DataFrame(wrapper.get_source_data('covid.csv'))
+    source = wrapper.get_dataframe('covid.csv', use_columns=['eid', 'specdate', 'laboratory'])
 
     records = []
 

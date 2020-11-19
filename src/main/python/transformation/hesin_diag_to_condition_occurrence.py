@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 
 def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
-    hesin_diag = pd.DataFrame(wrapper.get_source_data('hesin_diag.csv'))
-    hesin = pd.DataFrame(wrapper.get_source_data('hesin.csv'))
+    hesin_diag = wrapper.get_dataframe('hesin_diag.csv')
+    hesin = wrapper.get_dataframe('hesin.csv')
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     # Merge HES diag with HES on EID and INS_INDEX to get ADMIDATE and drop duplicates.
@@ -61,7 +61,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
                 condition_start_date=condition_date,
                 condition_start_datetime=condition_date,
                 condition_type_concept_id=condition_type_concept_id,
-                condition_source_value=row['diag_icd9'],
+                condition_source_value=row['diag_icd10'] or row['diag_icd9'],
                 condition_source_concept_id=target.source_concept_id,
                 visit_occurrence_id=visit_occurrence_id,
                 data_source=f'HES-{row["dsource"]}'

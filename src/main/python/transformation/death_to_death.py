@@ -18,12 +18,13 @@ type_lookup = {  # TODO: any other flavours?
 
 
 def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
-    death = pd.DataFrame(wrapper.get_source_data('death.csv'))
+    death = wrapper.get_dataframe('death.csv')
+
     death['date_of_death'] = pd.to_datetime(death['date_of_death'], dayfirst=True)
     death = death.sort_values(by=['eid', 'date_of_death'])
     death = death.drop_duplicates(subset='eid', keep='first')  # Only keep first date of death
 
-    death_cause = pd.DataFrame(wrapper.get_source_data('death_cause.csv'))
+    death_cause = wrapper.get_dataframe('death_cause.csv')
     death_cause = death_cause[death_cause['arr_index'] == '0']
     death_cause = death_cause.drop_duplicates(subset='eid', keep='first')  # In case multiple have arr_index 0, choose one
 

@@ -7,6 +7,7 @@ from pathlib import Path
 from ..field_mapper.FieldConceptMapper import FieldConceptMapper
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+import pandas as pd
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -24,15 +25,15 @@ def parse_column_name(column_name: str) -> Tuple(str):
 
 
 def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
-    source = wrapper.get_source_data('baseline.csv')
+    source = wrapper.get_dataframe('baseline.csv')
     field_mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
 
     records = []
     with wrapper.db.session_scope() as session:
-        for row in source:
+        for _, row in source.iterrows():
             eid = row.pop('eid')
             for column_name, value in row.items():
-                if value == '':
+                if value == '' or pd.isna(value):
                     continue
 
                 field_id, instance = parse_column_name(column_name)
