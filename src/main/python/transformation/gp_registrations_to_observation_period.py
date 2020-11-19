@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-import pandas as pd
 
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
@@ -13,7 +12,7 @@ if TYPE_CHECKING:
 
 
 def gp_registrations_to_observation_period(wrapper: Wrapper) -> List[ObservationPeriod]:
-    source = pd.DataFrame(wrapper.get_source_data('gp_registrations.csv'))
+    source = wrapper.get_dataframe('gp_registrations.csv', use_columns=['eid', 'reg_date', 'deduct_date'])
 
     records = []
     with wrapper.db.session_scope() as session:

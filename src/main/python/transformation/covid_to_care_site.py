@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 
 def covid_to_care_site(wrapper: Wrapper) -> List[CareSite]:
-    source = pd.DataFrame(wrapper.get_source_data('covid.csv'))
+    source = wrapper.get_dataframe('covid.csv', use_columns=['laboratory'])
     source = source.drop_duplicates(subset=['laboratory'])
 
     records = []

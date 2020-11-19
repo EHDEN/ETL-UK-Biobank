@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-import pandas as pd
 
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
@@ -14,7 +13,7 @@ if TYPE_CHECKING:
 
 
 def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
-    source = pd.DataFrame(wrapper.get_source_data('covid.csv'))
+    source = wrapper.get_dataframe('covid.csv')
 
     type_vocab = wrapper.mapping_tables_lookup('./resources/mapping_tables/covid_spectype.csv')
 

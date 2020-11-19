@@ -10,8 +10,8 @@ if TYPE_CHECKING:
 
 
 def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    source = pd.DataFrame(wrapper.get_source_data('baseline.csv'))
-
+    source = wrapper.get_dataframe('baseline.csv', use_columns=['eid', '54-0.0', '54-1.0', '54-2.0', '54-3.0',
+                                                                '53-0.0', '53-1.0', '53-2.0', '53-3.0'])
     records = []
     for _, row in source.iterrows():
         # One-day visits for instances 0 to 3
@@ -34,7 +34,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                 visit_end_date=date.date(),
                 visit_end_datetime=date,
                 visit_type_concept_id=32883,  # Survey
-                care_site_id=assessment_center or None,
+                care_site_id=None if pd.isna(assessment_center) else assessment_center,
                 record_source_value=f'baseline-{instance}',
                 data_source='baseline'
             )
