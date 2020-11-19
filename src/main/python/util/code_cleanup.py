@@ -12,6 +12,14 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+import pandas as pd
+
+
+def filter_nulls(code: str):
+    if pd.isnull(code) or not code:  # '0' string is a valid code, won't be filtered by this
+        return False
+    else:
+        return True
 
 def extend_read_code(read_code: str):
     if read_code[-1] == '.':

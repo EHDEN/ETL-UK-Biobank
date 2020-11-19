@@ -257,6 +257,6 @@ class CodeMapper:
             not_found = set(restrict_to_codes) - set(mapping_dict.mapping_dict.keys())
             if not_found:
                 logger.warning(f'No mapping to standard concept_id could be generated for '
-                               f'{len(not_found)}/{len(restrict_to_codes)} codes:'
+                               f'{len(not_found)}/{len(set(restrict_to_codes))} codes:'
                                f' {not_found}')
         return mapping_dict
