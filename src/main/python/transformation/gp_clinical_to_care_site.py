@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-import pandas as pd
 
 from ..core.model import CareSite
 
@@ -10,7 +9,7 @@ if TYPE_CHECKING:
 
 
 def gp_clinical_to_care_site(wrapper: Wrapper) -> List[CareSite]:
-    source = pd.DataFrame(wrapper.get_source_data('gp_clinical.csv'))
+    source = wrapper.get_dataframe('gp_clinical.csv', use_columns=['data_provider'])
     source = source.drop_duplicates(subset=['data_provider'])
 
     records = []

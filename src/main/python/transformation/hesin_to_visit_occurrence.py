@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 
 def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
-    source = pd.DataFrame(wrapper.get_source_data('hesin.csv'))
+    source = wrapper.get_dataframe('hesin.csv')
     source['admidate'] = pd.to_datetime(source['admidate'], dayfirst=True)
     source['disdate'] = pd.to_datetime(source['disdate'], dayfirst=True)
     source = source.sort_values(['eid', 'spell_index'])
@@ -57,13 +57,13 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
                 end_date = row['disdate']
 
             data_source = row['dsource']
-            spell_index = row['spell_index']
+            spell_index = str(row['spell_index'])
 
             # The dsource contains strings of 3-4 characters and admimeth, admisorc, disdest contrains integers of length 2.
             # Thus the 50character cut off it is not an issue for losing data, currently.
-            method_source = "record origin:"+data_source+"/admission method:"+row['admimeth']
-            admit_source = "record origin:"+data_source+"/admission source:"+row['admisorc']
-            dis_source = "record origin:"+data_source+"/discharge destination:"+row['disdest']
+            method_source = "record origin:"+data_source+"/admission method:"+str(row['admimeth'])
+            admit_source = "record origin:"+data_source+"/admission source:"+str(row['admisorc'])
+            dis_source = "record origin:"+data_source+"/discharge destination:"+str(row['disdest'])
 
             r = VisitOccurrence(
                 person_id=person_id,
