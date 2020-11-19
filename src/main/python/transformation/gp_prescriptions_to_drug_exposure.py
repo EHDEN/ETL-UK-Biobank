@@ -59,29 +59,31 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             except NoResultFound:
                 visit_id = None
 
-        raw_quantity = row['quantity'] if filter_nulls(['quantity']) else None
-        unit = row['quantity'] if filter_nulls(['quantity']) else None
+        raw_quantity = row['quantity'] if filter_nulls(row['quantity']) else None
+        unit = row['quantity'] if filter_nulls(row['quantity']) else None
 
         num_quantity, multiply = None, False
+        whole_nr  = '(\d+|\d+\.0+)'  # e.g. 20 or 20.0 (any nr of zeroes after .)
+        any_nr    = '(\d+|\d+\.d+)'  # e.g. 20 or 20.5 (any nr of cyphers after .)
+        separator = '(\s+|\s+(-|x)\s+)'  # e.g. space(s) or space(s) + -|x + space(s)
         if raw_quantity:
-            for pattern, unit in [
-                ('(\d+|\d+\.0+)\s+-*\s*[tT][aA][bB]', 'tab'),  # N tab(lets) or N - tab(lets)
-                ('(\d+|\d+\.0+)\s+-*\s*[cC][aA][pP]', 'cap'),  # N cap(sules) or N - cap(sules)
-                ('(\d+|\d+\.0+)\s+-*\s*[dD][oO][sS]', 'dos'),  # N dos(es) or N - dos(es
-                ('(\d+|\d+\.0+)\s+-*\s*[sS][tT][rR]', 'str'),  # N str(ips) or N - str(ips)
-                ('(\d+|\d+\.0+)\s+-*\s*[sS][aA][cC]', 'sac'),  # N sac(hets) or N - sac(hets)
-                ('(\d+|\d+\.0+)\s+-*\s*[pP][aA][cC]', 'pac'),  # N pac(kets) or N - pac(kets)
-                ('(\d+|\d+\.d+)\s+[gG]', 'gr'),                # N g(rams)
-                ('(\d+|\d+\.d+)\s+[mM][iI]*[lL]', 'ml'),       # N ml / mil(lliliters)
-                ('^(\d+|\d+\.0+)$', 'whole_nr'),               # whole number without unit
-                ('(\d+|\d+\.d+)', None)                        # any number
+            for pattern, is_valid_unit in [
+                (whole_nr + separator + '[tT][aA][bB]', 'tab'),  # tab(lets)
+                (whole_nr + separator + '[cC][aA][pP]', 'cap'),  # cap(sules)
+                (whole_nr + separator + '[dD][oO][sS]', 'dos'),  # dos(es)
+                (whole_nr + separator + '[sS][tT][rR]', 'str'),  # str(ips)
+                (whole_nr + separator + '[sS][aA][cC]', 'sac'),  # sac(hets)
+                (whole_nr + separator + '[pP][aA][cC]', 'pac'),  # pac(kets)
+                (any_nr + '\s+[mM]*[gG]', 'weight'),             # N (m)g(rams)
+                (any_nr + '\s+[mM][iI]*[lL]', 'volume'),         # N ml / mil(lliliters)
+                ('^' + whole_nr + '$', 'whole_nr'),              # whole number without unit
+                ('(\d+|\d+\.d+)', None)                          # any number
             ]:
-                regex = re.compile(pattern)
-                match = regex.match(raw_quantity)
+                match = re.search(pattern,raw_quantity)
                 if match:
                     match_string = match.group()
                     try:
-                        regex = re.compile('(\d+|\d+\.0+)')  # extract only numeric part
+                        regex = re.compile(whole_nr)  # extract only numeric part
                         num_quantity = int(regex.match(match_string).group())
                         print(raw_quantity,'|',num_quantity,unit)
                         multiply = unit in ['tab','cap','dos','str','sac','whole_nr']
