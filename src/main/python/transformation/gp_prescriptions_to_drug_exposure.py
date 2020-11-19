@@ -3,7 +3,9 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 from datetime import timedelta
+from sqlalchemy.orm.exc import NoResultFound
 from src.main.python.util import get_datetime, extend_read_code
+from ..core.model import VisitOccurrence
 
 
 if TYPE_CHECKING:
@@ -23,10 +25,6 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
 
     records = []
     for _, row in source.iterrows():
-
-        date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
-        # TODO: placeholder, replace with proper end date estimate
-        date_end = date_start + timedelta(days=1)
 
         # drug mappings
         drug_concept_id, source_concept_id = '', ''
@@ -53,23 +51,45 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         if not drug_concept_id:
             continue
 
+        date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
+        # TODO: placeholder, replace with proper end date estimate
+        date_end = date_start + timedelta(days=1)
+
+        person_id = row['eid']
+        data_source = 'GP-' + row['data_provider'] if row['data_provider'] else None
+
+        # TODO: ok to take first visit (asc order)?
+        # Look up visit_id in VisitOccurrence table
+        with wrapper.db.session_scope() as session:
+            query = session.query(VisitOccurrence) \
+                .filter(VisitOccurrence.person_id == person_id) \
+                .filter(VisitOccurrence.visit_start_date == date_start) \
+                .filter(VisitOccurrence.data_source == data_source) \
+                .order_by(VisitOccurrence.visit_start_date.asc()) \
+                .limit(1)  # multiple records could be found
+            try:
+                visit_record = query.one()
+                visit_id = visit_record.visit_occurrence_id
+            except NoResultFound:
+                visit_id = None
+
+        quantity = row['quantity']
+        unit = row['quantity']
+
         r = wrapper.cdm.DrugExposure(
-            person_id=row['eid'],
-            drug_exposure_start_date=date_start.date(),
+            person_id=person_id,
+            drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
-            drug_exposure_end_date=date_end.date(),
+            drug_exposure_end_date=date_end,
             drug_exposure_end_datetime=date_end,
             drug_concept_id=drug_concept_id,
-            drug_type_concept_id=38000177, #Prescription written
-            quantity=None,
-            drug_source_value=row[drug_col],
             drug_source_concept_id=source_concept_id,
-            data_source='GP-' + row['data_provider'],
-            # TODO: see if any of the following needed
-            route_concept_id=None,
-            route_source_value=None,
-            dose_unit_source_value=None,
-            visit_occurrence_id=None
+            drug_source_value=row[drug_col],
+            drug_type_concept_id=38000177,  # prescription written
+            quantity=None,  # TODO: placeholder
+            dose_unit_source_value=unit,
+            data_source=data_source,
+            visit_occurrence_id=visit_id,
         )
         records.append(r)
 
