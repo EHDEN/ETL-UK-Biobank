@@ -18,7 +18,7 @@ from sqlalchemy import and_
 from sqlalchemy.orm import aliased
 from typing import Optional, Union, List, Dict
 import logging
-from src.main.python.util import check_if_valid_code
+from src.main.python.util import check_if_not_null
 
 
 logger = logging.getLogger(__name__)
@@ -189,7 +189,7 @@ class CodeMapper:
         """
 
         # make sure restrict to codes contains unique and not null elements
-        restrict_to_codes = list(filter(check_if_valid_code, set(restrict_to_codes)))
+        restrict_to_codes = list(filter(check_if_not_null, set(restrict_to_codes)))
 
         logger.info(f'Building mapping dictionary for vocabularies: {vocabulary_id}')
 

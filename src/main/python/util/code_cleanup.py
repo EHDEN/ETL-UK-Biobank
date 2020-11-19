@@ -17,8 +17,8 @@ from numpy import nan
 from typing import Union
 
 
-def check_if_valid_code(code: str):
-    if pd.isnull(code) or not code:  # '0' string is a valid code, won't be filtered by this
+def check_if_not_null(value: str):
+    if pd.isnull(value) or not value:  # '0' string is a valid code, won't be filtered by this
         return False
     else:
         return True
