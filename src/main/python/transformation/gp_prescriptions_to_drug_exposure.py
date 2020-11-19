@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
 
-    source = pd.DataFrame(wrapper.get_source_data('gp_prescriptions.csv'))
+    source = wrapper.get_dataframe('gp_prescriptions.csv')
 
     dmd_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=list(source['dmd_code']))
