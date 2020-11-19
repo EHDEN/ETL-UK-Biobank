@@ -34,9 +34,14 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             mapping = CodeMapping()
             mapping.source_concept_code = row['drug_name']
             mapping.source_concept_id = 0
-            mapping.target_concept_id = 0 # TODO: placeholder, get from mapping tables
+            mapping.target_concept_id = 0  # TODO: placeholder, get from mapping tables
         elif filter_nulls(row['read_2']):
             mapping = read2_mapper.lookup(extend_read_code(row['read_2']), first_only=True)
+        elif filter_nulls(row['bnf_code']):  # TODO: remove or keep as last resort for source value?
+            mapping = CodeMapping()
+            mapping.source_concept_code = row['bnf_code']
+            mapping.source_concept_id = 0
+            mapping.target_concept_id = 0
         else:
             continue
 
@@ -60,6 +65,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
                 visit_id = None
 
         raw_quantity = row['quantity'] if filter_nulls(row['quantity']) else None
+        # TODO: ok original unit string as such (source value), or extract substring (gr,ml etc)?
         unit = row['quantity'] if filter_nulls(row['quantity']) else None
 
         num_quantity, calc_end_date = None, False
@@ -89,7 +95,8 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
                         num_quantity = int(num_quantity)
                     break
 
-            # print(raw_quantity, '|', num_quantity, '|', calc_end_date)  # test parsing
+            # quick test for parsing result
+            # print(raw_quantity, '|', num_quantity, '|', calc_end_date)
 
         if calc_end_date:
             date_end = date_start + timedelta(days=num_quantity) # assuming 1 tab/cap/etc. per day
