@@ -90,7 +90,7 @@ class DrugExposure(base):
     provider_id = Column(ForeignKey('omopcdm.provider.provider_id'))
     visit_occurrence_id = Column(ForeignKey('omopcdm.visit_occurrence.visit_occurrence_id'), index=False)
     visit_detail_id = Column(ForeignKey('omopcdm.visit_detail.visit_detail_id'))
-    drug_source_value = Column(String(50))
+    drug_source_value = Column(String(150))
     drug_source_concept_id = Column(ForeignKey('vocab.concept.concept_id'))
     route_source_value = Column(String(50))
     dose_unit_source_value = Column(String(50))
