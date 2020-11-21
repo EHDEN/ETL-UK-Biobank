@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import math
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
@@ -43,10 +44,12 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
         # If ICD code is filled, but no concept is found, then the lookup will return one target to 0
         # It is possible that multiple concepts are found for one ICD code,
         # loop through the lookup to retrieve all of them and save concept ID and source concept ID.
-        if row['diag_icd10'] != '':
-            diag_targets = icd10.lookup(row['diag_icd10'])
-        elif row['diag_icd9'] != '':
-            diag_targets = icd9.lookup(row['diag_icd9'])
+        if row['diag_icd10'] != '' and not pd.isna(row['diag_icd10']):
+            source_value = row['diag_icd10']
+            diag_targets = icd10.lookup(source_value)
+        elif row['diag_icd9'] != '' and not pd.isna(row['diag_icd9']):
+            source_value = row['diag_icd9']
+            diag_targets = icd9.lookup(source_value)
         else:
             # No code given
             continue
@@ -61,7 +64,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
                 condition_start_date=condition_date,
                 condition_start_datetime=condition_date,
                 condition_type_concept_id=condition_type_concept_id,
-                condition_source_value=row['diag_icd10'] or row['diag_icd9'],
+                condition_source_value=source_value,
                 condition_source_concept_id=target.source_concept_id,
                 visit_occurrence_id=visit_occurrence_id,
                 data_source=f'HES-{row["dsource"]}'
