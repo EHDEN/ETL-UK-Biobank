@@ -40,7 +40,7 @@ add_baseline(eid = 1004)
 add_hesin(eid = 1004, ins_index = 4, admidate = '09/03/2012')
 add_hesin_diag(eid = 1004, ins_index = 4, diag_icd10 = '45532996', level = 1)
 expect_condition_occurrence(person_id = 1004, condition_concept_id = 0, condition_start_date = '2012-03-09', 
-                            condition_type_concept_id = 44786627, condition_source_concept_id = 0)
+                            condition_type_concept_id = 44786627, condition_source_concept_id = 45532996)
 
 
 # Test if code has more > 1 code
