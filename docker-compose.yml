@@ -32,15 +32,7 @@ services:
     volumes:
       - ./logs:/app/logs
     environment:
-      - ETL_HOSTNAME=postgresql
-      - ETL_PORT=5432
-      - ETL_DATABASE=ohdsi
-      - ETL_USERNAME=admin
-      - ETL_SUPERUSER_PASSWORD=password
-      - ETL_PASSWORD=secret
-      - ETL_SOURCE=/app/resources/synthetic_data
-      - ETL_DEBUG=False
-      - ETL_SKIPVOCAB=False
+      - ETL_CONFIG=/app/config/config.yml
 
 volumes:
   postgresql_data:

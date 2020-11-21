@@ -22,6 +22,7 @@ from src.main.python.core.yaml import read_yaml_file
 from src.main.python.core import setup_logging
 from src.main.python.wrapper import Wrapper
 from src.main.python.core import Database
+from src.main.python.initialize_database import initialize_database
 
 __version__ = '0.1.0'
 
@@ -42,6 +43,9 @@ def main(config):
     debug: bool = config['run_options']['debug_mode']
     setup_logging(debug)
 
+    # Create vocabulary schema and tables
+    initialize_database()
+
     # Initialize ETL with configuration parameters
     etl = Wrapper(db, config)
 
@@ -52,4 +56,4 @@ def main(config):
     etl.run()
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(auto_envvar_prefix='ETL'))
