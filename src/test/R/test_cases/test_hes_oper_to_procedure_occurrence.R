@@ -19,21 +19,21 @@ expect_procedure_occurrence(person_id = 1501, procedure_concept_id = 4071407, pr
 
 
 # Test OPCS3 code
-#declareTest(1502, 'Test OPCS3 code')
-#add_baseline(eid = 1502)
-#add_hesin(eid = 1502, ins_index = 1)
-#add_hesin_oper(eid = 1502, ins_index = 1, opdate = '19/04/2018', oper3 = '704', oper4 = '', level = 1)
-#expect_procedure_occurrence(person_id = 1501, procedure_concept_id = 4074865, procedure_date = '2018-04-19',
-#                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 0)
+declareTest(1502, 'Test OPCS3 code')
+add_baseline(eid = 1502)
+add_hesin(eid = 1502, ins_index = 1)
+add_hesin_oper(eid = 1502, ins_index = 1, opdate = '19/04/2018', oper3 = '704', oper4 = '', level = 1)
+expect_procedure_occurrence(person_id = 1502, procedure_concept_id = 4074865, procedure_date = '2018-04-19',
+                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 0)
 
 
 # Test OPCS3 and OPCS4 code
-#declareTest(1503, 'Test OPCS3 and OPCS4 code; map OPCS4')
-#add_baseline(eid = 1503)
-#add_hesin(eid = 1503, ins_index = 2)
-#add_hesin_oper(eid = 1503, ins_index = 2, opdate = '30/12/2019', oper3 = '687', oper4 = 'X403', level = 2)
-#expect_procedure_occurrence(person_id = 1503, procedure_concept_id = 4120120, procedure_date = '2019-12-30',
-#                            procedure_type_concept_id = 44786631, procedure_source_concept_id = 44515557)
+declareTest(1503, 'Test OPCS3 and OPCS4 code; map OPCS4')
+add_baseline(eid = 1503)
+add_hesin(eid = 1503, ins_index = 2)
+add_hesin_oper(eid = 1503, ins_index = 2, opdate = '30/12/2019', oper3 = '687', oper4 = 'X403', level = 2)
+expect_procedure_occurrence(person_id = 1503, procedure_concept_id = 4120120, procedure_date = '2019-12-30',
+                            procedure_type_concept_id = 44786631, procedure_source_concept_id = 44515557)
 
 
 # Test No concept found
