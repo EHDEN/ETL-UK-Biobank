@@ -91,7 +91,7 @@ class Wrapper(EtlWrapper):
         self.execute_sql_file('src/main/sql/stem_table_to_specimen.sql', target_schema=target_schema)
 
     def get_dataframe(self, source_file, use_columns: Optional[list] = None):
-        df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=str)
+        df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=object)
         return df
 
     def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True):
