@@ -16,14 +16,14 @@ import pandas as pd
 from typing import Dict, Optional
 
 
-def not_null(value) -> bool:
+def is_null(value) -> bool:
     if pd.isnull(value) or not value:  # '0' string is a valid code, won't be filtered by this
-        return False
-    else:
         return True
+    else:
+        return False
 
 def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = None) -> str:
-    if not_null(read_code) and read_code[-1] == '.':
+    if not is_null(read_code) and read_code[-1] == '.':
         if mapping_dict:
             return mapping_dict.get(read_code, read_code + '00')
         else:
@@ -33,13 +33,13 @@ def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = Non
 
 if __name__ == '__main__':
     import numpy as np
-    print('# not_null() tests')
-    print(not_null(None))
-    print(not_null(np.nan))
-    print(not_null(''))
-    print(not_null(0))
-    print(not_null(0.0))
-    print(not_null('Hello'))
+    print('# is_null() tests')
+    print(is_null(None))
+    print(is_null(np.nan))
+    print(is_null(''))
+    print(is_null(0))
+    print(is_null(0.0))
+    print(is_null('Hello'))
     print('# extend_read_code() tests')
     mapping_dict = {'ABC.' : 'ABC.123'}
     print(extend_read_code(None))
