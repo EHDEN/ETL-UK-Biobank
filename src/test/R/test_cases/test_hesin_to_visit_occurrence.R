@@ -29,10 +29,10 @@ expect_visit_occurrence(person_id = 1102, visit_start_date = '2007/09/03', visit
 declareTest(1103, 'admission date missing')
 add_baseline(eid = 1103)
 add_hesin(eid = 1103, dsource = 'HES',
-          admidate = '', admimeth = '11', admisorc = '54',
+          admidate = '', admimeth = '11', admisorc = '39',
           disdate = '06/12/1991', disdest = '87')
 expect_visit_occurrence(person_id = 1103, visit_start_date = '1970/01/01', visit_end_date = '1991/12/06',
-                        visit_concept_id = 9201, admitting_source_concept_id = 581476,
+                        visit_concept_id = 9201, admitting_source_concept_id = 38003619,
                         discharge_to_concept_id = 38004515)
 
 declareTest(1104, 'admission date and discharge date missing')

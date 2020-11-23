@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import csv
 from typing import List, TYPE_CHECKING
-import pandas as pd
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -28,8 +26,7 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
             ethnicity_concept_id=0,
             race_concept_id=race.get(row['21000-0.0'], 0),
             race_source_value=row['21000-0.0'],
-            # TODO: use this or care_site?
-            location_id=row['54-0.0']
+            care_site_id=row['54-0.0']
             )
         records.append(r)
 

@@ -55,9 +55,7 @@ class Wrapper(EtlWrapper):
 
         # python transformation:
         self.execute_transformation(covid_to_care_site)
-        self.execute_transformation(gp_clinical_to_care_site)
-        self.execute_transformation(baseline_to_care_site)
-        self.execute_transformation(assessment_center_to_location)
+        self.execute_transformation(assessment_center_to_care_site)
         self.execute_transformation(baseline_to_person)
         self.execute_transformation(death_to_death)
         self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
@@ -69,6 +67,7 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(gp_registrations_to_observation_period)
         self.execute_transformation(covid_to_observation)
         self.execute_transformation(baseline_to_stem)
+        self.execute_transformation(hesin_oper_to_procedure_occurrence)
 
         # Stem table to domains
         self.load_from_stem_table()
@@ -91,7 +90,7 @@ class Wrapper(EtlWrapper):
         self.execute_sql_file('src/main/sql/stem_table_to_specimen.sql', target_schema=target_schema)
 
     def get_dataframe(self, source_file, use_columns: Optional[list] = None):
-        df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=str)
+        df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=object)
         return df
 
     def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True):
