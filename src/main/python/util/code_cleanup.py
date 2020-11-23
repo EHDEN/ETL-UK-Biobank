@@ -24,7 +24,7 @@ def not_null(value) -> bool:
         return True
 
 def extend_read_code(read_code: str):
-    if read_code[-1] == '.':
+    if not_null(read_code) and read_code[-1] == '.':
         return read_code + '00'
     else:
         return read_code
