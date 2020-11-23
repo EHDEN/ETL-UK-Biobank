@@ -49,14 +49,13 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         data_source = 'GP-' + row['data_provider'] if row['data_provider'] else None
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
-        # TODO: ok to take first visit (asc order)?
         # Look up visit_id in VisitOccurrence table
         with wrapper.db.session_scope() as session:
             query = session.query(VisitOccurrence) \
                 .filter(VisitOccurrence.person_id == person_id) \
                 .filter(VisitOccurrence.visit_start_date == date_start) \
                 .filter(VisitOccurrence.data_source == data_source) \
-                .order_by(VisitOccurrence.visit_start_date.asc()) \
+                .order_by(VisitOccurrence.visit_start_date) \
                 .limit(1)  # multiple records could be found
             try:
                 visit_record = query.one()
