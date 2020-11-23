@@ -15,12 +15,14 @@ if TYPE_CHECKING:
 def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
 
     source = wrapper.get_dataframe('gp_prescriptions.csv')
+    source['read_2_extended'] = source['read_2'].apply(extend_read_code)
 
     dmd_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=list(source['dmd_code']))
-    # TODO: Read v2 codes not available in Athena & NHS, find other mapping source if possible
-    read2_codes = list(extend_read_code(code) for code in filter(lambda x: not is_null(x),
-                                                                 source['read_2']))
+
+    # TODO: Read v2 codes for drugs not available in Athena & NHS, find other mapping source if possible
+    read2_codes = [code for code in filter(lambda x: not is_null(x),
+                                           set(source['read_2_extended']))]
     read2_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary('Read', restrict_to_codes=read2_codes)
 
@@ -36,7 +38,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             mapping.source_concept_id = 0
             mapping.target_concept_id = 0  # TODO: placeholder, get from mapping tables
         elif not is_null(row['read_2']):
-            mapping = read2_mapper.lookup(extend_read_code(row['read_2']), first_only=True)
+            mapping = read2_mapper.lookup(row['read_2_extended'], first_only=True)
         elif not is_null(row['bnf_code']):  # TODO: remove or keep as last resort for source value?
             mapping = CodeMapping()
             mapping.source_concept_code = row['bnf_code']
