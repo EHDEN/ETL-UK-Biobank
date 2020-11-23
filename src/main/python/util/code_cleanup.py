@@ -22,7 +22,7 @@ def not_null(value) -> bool:
     else:
         return True
 
-def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]]):
+def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = None) -> str:
     if not_null(read_code) and read_code[-1] == '.':
         if mapping_dict:
             return mapping_dict.get(read_code, read_code + '00')
