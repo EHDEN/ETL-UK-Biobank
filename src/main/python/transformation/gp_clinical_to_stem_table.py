@@ -6,7 +6,7 @@ import math
 import csv
 from sqlalchemy.orm.exc import NoResultFound
 
-from ..util.date_functions import get_datetime
+from ..util import get_datetime, extend_read_code
 from ..core.model import VisitOccurrence
 
 
@@ -46,21 +46,11 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         else:
             return True
 
-    def extend_read_code(read_code: str, read2: bool = False):
-
-        if not_null(read_code) and read_code[-1] == '.':
-            if read2:
-                return read2_dot_mappings.get(read_code, read_code + '00')
-            else:
-                return read_code + '00'
-        else:
-            return read_code
-
     # Read codes in the source are either all alphanumeric, or containing trailing dots;
     # however in OMOP Read vocabulary, dots are always followed by cyphers.
     # To find a mapping for the code, you need to add cyphers after the dots (by default, "00")
-    source['read_2_extended'] = source['read_2'].apply(extend_read_code, read2=True)
-    source['read_3_extended'] = source['read_3'].apply(extend_read_code, read2=False)
+    source['read_2_extended'] = source['read_2'].apply(extend_read_code, mapping_dict=read2_dot_mappings)
+    source['read_3_extended'] = source['read_3'].apply(extend_read_code)
 
     read2_codes = list(filter(not_null, set(source['read_2_extended'])))
     read3_codes = list(filter(not_null, set(source['read_3_extended'])))
