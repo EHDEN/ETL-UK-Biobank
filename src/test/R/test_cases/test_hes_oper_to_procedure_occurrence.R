@@ -45,21 +45,32 @@ expect_procedure_occurrence(person_id = 1504, procedure_concept_id = 0, procedur
                             procedure_type_concept_id = 44786631, procedure_source_value = 'X998')
 
 
-# Test if code has more > 1 code
-#declareTest(1505, 'Test if code has more > 1 target concept')
-#add_baseline(eid = 1505)
-#add_hesin(eid = 1505, ins_index = 5)
-#add_hesin_oper(eid = 1505, ins_index = 5, opdate = '25/08/2017', oper3 = '4011', oper4 = '', level = 1)
-#expect_procedure_occurrence(person_id = 1505, procedure_concept_id = 4073667, procedure_date = '2017-08-25',
-#                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 0)
-#expect_procedure_occurrence(person_id = 1505, procedure_concept_id = 2109458, procedure_date = '2017-08-25',
-#                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 0)
+# Test if code has more > 1 code OPCS4
+declareTest(1505, 'Test if OPCS4 code has more > 1 target concept')
+add_baseline(eid = 1505)
+add_hesin(eid = 1505, ins_index = 5)
+add_hesin_oper(eid = 1505, ins_index = 5, opdate = '31/01/2013', oper4 = 'E851', level = 1)
+expect_procedure_occurrence(person_id = 1505, procedure_concept_id = 19025274, procedure_date = '2013-01-31',
+                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 44509477)
+expect_procedure_occurrence(person_id = 1505, procedure_concept_id = 44790095, procedure_date = '2013-01-31',
+                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 44509477)
 
 
-declareTest(1506, 'HES diagnosis with visit')
+# Test if code has more > 1 code OPCS3
+declareTest(1506, 'Test if OPCS3 code has more > 1 target concept')
 add_baseline(eid = 1506)
-add_hesin(eid = 1506, ins_index = 0, admidate = '11/12/2020')
-add_hesin_oper(eid = 1506, ins_index = 0, opdate = '18/12/2020', oper4 = 'Z857')
-expect_visit_occurrence(person_id = 1506, visit_start_date = '2020-12-11')
-expect_procedure_occurrence(person_id = 1506, procedure_date = '2020-12-18',
-                            visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1506, visit_start_date = '2020-12-11'))
+add_hesin(eid = 1506, ins_index = 5)
+add_hesin_oper(eid = 1506, ins_index = 5, opdate = '25/08/2017', oper3 = '4011', oper4 = '', level = 1)
+expect_procedure_occurrence(person_id = 1506, procedure_concept_id = 4073667, procedure_date = '2017-08-25',
+                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 0)
+expect_procedure_occurrence(person_id = 1506, procedure_concept_id = 2109458, procedure_date = '2017-08-25',
+                            procedure_type_concept_id = 44786630, procedure_source_concept_id = 0)
+
+
+declareTest(1507, 'HES diagnosis with visit')
+add_baseline(eid = 1507)
+add_hesin(eid = 1507, ins_index = 0, admidate = '11/12/2020')
+add_hesin_oper(eid = 1507, ins_index = 0, opdate = '18/12/2020', oper4 = 'Z857')
+expect_visit_occurrence(person_id = 1507, visit_start_date = '2020-12-11')
+expect_procedure_occurrence(person_id = 1507, procedure_date = '2020-12-18',
+                            visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1507, visit_start_date = '2020-12-11'))
