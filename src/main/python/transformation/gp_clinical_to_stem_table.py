@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
-import math
 import csv
 from sqlalchemy.orm.exc import NoResultFound
 
