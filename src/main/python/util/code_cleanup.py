@@ -30,3 +30,19 @@ def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = Non
             return read_code + '00'
     else:
         return read_code
+
+if __name__ == '__main__':
+    import numpy as np
+    print('# not_null() tests')
+    print(not_null(None))
+    print(not_null(np.nan))
+    print(not_null(''))
+    print(not_null(0))
+    print(not_null(0.0))
+    print(not_null('Hello'))
+    print('# extend_read_code() tests')
+    mapping_dict = {'ABC.' : 'ABC.123'}
+    print(extend_read_code(None))
+    print(extend_read_code('ABC'))
+    print(extend_read_code('ABC.'))
+    print(extend_read_code('ABC.', mapping_dict))
