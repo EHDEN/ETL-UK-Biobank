@@ -106,7 +106,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 visit_record = query.one()
                 visit_id = visit_record.visit_occurrence_id
             except NoResultFound:
-                continue
+                visit_id = None
 
         unit, unit_concept_id, operator = None, None, None
         if not_null(row['value3']):
