@@ -47,7 +47,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             return True
 
     def extend_read_code(read_code: str, read2: bool = False):
-        if read_code[-1] == '.':
+
+        if not_null(read_code) and read_code[-1] == '.':
             if read2:
                 return read2_dot_mappings.get(read_code, read_code + '00')
             else:
@@ -55,13 +56,14 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         else:
             return read_code
 
-    read2_codes = list(filter(not_null, set(source['read_2'])))
-    read3_codes = list(filter(not_null, set(source['read_3'])))
     # Read codes in the source are either all alphanumeric, or containing trailing dots;
     # however in OMOP Read vocabulary, dots are always followed by cyphers.
     # To find a mapping for the code, you need to add cyphers after the dots (by default, "00")
-    read2_codes = [extend_read_code(code, read2=True) for code in read2_codes]
-    read3_codes = [extend_read_code(code, read2=False) for code in read3_codes]
+    source['read_2_extended'] = source['read_2'].apply(extend_read_code, read2=True)
+    source['read_3_extended'] = source['read_3'].apply(extend_read_code, read2=False)
+
+    read2_codes = list(filter(not_null, set(source['read_2_extended'])))
+    read3_codes = list(filter(not_null, set(source['read_3_extended'])))
 
     read2_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary('Read', restrict_to_codes=read2_codes)
@@ -77,13 +79,11 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         # TODO: observed multiple mappings for vaccinces to SNOMED and CVX, which is better?
         if not_null(row['read_2']):
             read_code = row['read_2']
-            read_mapping = read2_mapper.lookup(extend_read_code(read_code,read2=True),
-                                               first_only=True)
+            read_mapping = read2_mapper.lookup(row['read_2_extended'], first_only=True)
             read_col = 'read_2'
         elif not_null(row['read_3']):
             read_code = row['read_3']
-            read_mapping = read3_mapper.lookup(extend_read_code(read_code,read2=False),
-                                               first_only=True)
+            read_mapping = read3_mapper.lookup(row['read_3_extended'], first_only=True)
             read_col = 'read_3'
         else:
             continue
@@ -166,7 +166,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 visit_occurrence_id=visit_id,
                 concept_id=read_mapping.target_concept_id,
                 source_concept_id=read_mapping.source_concept_id,
-                source_value=read_code,
+                source_value=read_code,  # original before adding cyphers after dots
                 operator_concept_id=operator,
                 unit_concept_id=unit_concept_id,
                 unit_source_value=unit,
