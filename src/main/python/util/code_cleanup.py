@@ -17,7 +17,7 @@ from numpy import nan
 from typing import Union
 
 
-def not_null(value: str):
+def not_null(value) -> bool:
     if pd.isnull(value) or not value:  # '0' string is a valid code, won't be filtered by this
         return False
     else:
