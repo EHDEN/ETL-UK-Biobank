@@ -94,14 +94,13 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
         data_source = 'GP-' + row['data_provider'] if not pd.isnull(row['data_provider']) else None
 
-        # TODO: ok to take first visit (asc order)?
         # Look up visit_id in VisitOccurrence table
         with wrapper.db.session_scope() as session:
             query = session.query(VisitOccurrence) \
                 .filter(VisitOccurrence.person_id == person_id) \
                 .filter(VisitOccurrence.visit_start_date == event_date) \
                 .filter(VisitOccurrence.data_source == data_source) \
-                .order_by(VisitOccurrence.visit_start_date.asc()) \
+                .order_by(VisitOccurrence.visit_start_date) \
                 .limit(1)  # multiple records could be found
             try:
                 visit_record = query.one()
