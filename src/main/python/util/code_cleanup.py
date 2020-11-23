@@ -13,6 +13,7 @@
 # GNU General Public License for more details.
 
 import pandas as pd
+from typing import Dict, Optional
 
 
 def not_null(value) -> bool:
@@ -21,8 +22,11 @@ def not_null(value) -> bool:
     else:
         return True
 
-def extend_read_code(read_code: str):
+def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]]):
     if not_null(read_code) and read_code[-1] == '.':
-        return read_code + '00'
+        if mapping_dict:
+            return mapping_dict.get(read_code, read_code + '00')
+        else:
+            return read_code + '00'
     else:
         return read_code
