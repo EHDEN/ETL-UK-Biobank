@@ -13,8 +13,6 @@
 # GNU General Public License for more details.
 
 import pandas as pd
-from numpy import nan
-from typing import Union
 
 
 def not_null(value) -> bool:
