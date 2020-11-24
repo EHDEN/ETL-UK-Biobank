@@ -44,7 +44,8 @@ def main(config):
     setup_logging(debug)
 
     # Create vocabulary schema and tables
-    initialize_database()
+    if config['run_options'].get('initialize_db', False):
+        initialize_database()
 
     # Initialize ETL with configuration parameters
     etl = Wrapper(db, config)

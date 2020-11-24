@@ -1,0 +1,12 @@
+# Database connection
+database:
+  host: 'postgresql'
+  port: 5432
+  database_name: 'ohdsi'
+  username: 'admin'
+  password: 'secret'
+
+run_options:
+  source_data_folder: './resources/synthetic_data'
+  debug_mode: True
+  initialize_db: True
