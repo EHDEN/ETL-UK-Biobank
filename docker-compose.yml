@@ -1,12 +1,12 @@
-version: '2.4'
+version: '2'
 
 services:
   postgresql:
     build:
       context: ./postgres
-    mem_reservation: 4gb
+    #mem_reservation: 4gb
     ports:
-      - 5432:5432
+      - 6000:5432
     networks:
       - app
     volumes:
