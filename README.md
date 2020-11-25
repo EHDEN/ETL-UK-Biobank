@@ -21,7 +21,7 @@ To deploy the docker:
 1. Copy the vocabulary download (as zip) to `/postgres/vocab.zip`.`
 2. Run `docker-compose up -d --build`. This will build the postgres and etl containers. After building this, the etl will be started. If the vocabularies are not loaded yet, the first step will be to load these.
 3. Check the progress with `docker-compose logs -f etl`
-4. When finished, you can find the transformed files in the postgres database in the Docker that can be accessed e.g. through psql (`psql -h localhost -p 6000 -d ohdsi -U admin`). For the password see [docker-compose.yml](docker-compose.yml), line 54. 
+4. When finished, you can find the transformed files in the postgres database in the Docker that can be accessed e.g. through psql (`psql -h localhost -p 6000 -d ohdsi -U admin -W`). For the password see [docker-compose.yml](docker-compose.yml), line 54. 
 
 Note: this runs the ETL on the provided synthetic data. To run the data on your own dataset, copy the csv files to a folder in this path. In the [config-docker.yml](config/config-docker.yml), set this folder as the `source_data_folder`. Run the etl again by building it: `docker-compose up -d --build etl`.
 
