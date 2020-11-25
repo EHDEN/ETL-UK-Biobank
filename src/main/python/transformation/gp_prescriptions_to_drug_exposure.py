@@ -39,11 +39,6 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             mapping.target_concept_id = 0  # TODO: placeholder, get from mapping tables
         elif not is_null(row['read_2']):
             mapping = read2_mapper.lookup(row['read_2_extended'], first_only=True)
-        elif not is_null(row['bnf_code']):  # TODO: remove or keep as last resort for source value?
-            mapping = CodeMapping()
-            mapping.source_concept_code = row['bnf_code']
-            mapping.source_concept_id = 0
-            mapping.target_concept_id = 0
         else:
             continue
 
