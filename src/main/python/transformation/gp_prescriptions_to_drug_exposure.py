@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 from datetime import timedelta
-import re
 from sqlalchemy.orm.exc import NoResultFound
 from src.main.python.util import get_datetime, is_null, extend_read_code, \
     extract_numeric_quantity, valid_quantity_for_days_estimate
