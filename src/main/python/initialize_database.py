@@ -20,8 +20,16 @@ import glob
 logger = logging.getLogger(__name__)
 
 
-def initialize_database():
-    superuser_eng = create_engine('postgresql://postgres:%s@%s:%s/%s' % ('password', 'postgresql', '5432', 'ohdsi'))
+def initialize_database(config):
+    db_config = config['database']
+    superuser = config['run_options']['initialize_db_superuser']
+    superuser_eng = create_engine('postgresql://%s:%s@%s:%s/%s' % (
+        superuser['username'],
+        superuser['password'],
+        db_config['host'],
+        db_config['port'],
+        db_config['database_name']
+    ))
 
     # Use superuser for vocabulary loading
     connection = superuser_eng.connect()

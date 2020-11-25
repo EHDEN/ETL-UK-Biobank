@@ -45,7 +45,7 @@ def main(config):
 
     # Create vocabulary schema and tables
     if config['run_options'].get('initialize_db', False):
-        initialize_database()
+        initialize_database(config)
 
     # Initialize ETL with configuration parameters
     etl = Wrapper(db, config)

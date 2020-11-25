@@ -10,3 +10,6 @@ run_options:
   source_data_folder: './resources/synthetic_data'
   debug_mode: True
   initialize_db: True
+  initialize_db_superuser:
+    username: 'postgres'
+    password: 'password'
