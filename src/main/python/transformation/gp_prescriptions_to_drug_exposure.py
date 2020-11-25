@@ -4,13 +4,15 @@ from typing import List, TYPE_CHECKING
 from datetime import timedelta
 import re
 from sqlalchemy.orm.exc import NoResultFound
-from src.main.python.util import get_datetime, is_null, extend_read_code
+from src.main.python.util import get_datetime, is_null, extend_read_code, \
+    extract_numeric_quantity, valid_quantity_for_days_estimate
 from src.main.python.core.model import VisitOccurrence
 from src.main.python.core.code_mapper import CodeMapping
 
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
+    
 
 def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
 
@@ -61,42 +63,14 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
                 visit_id = None
 
         raw_quantity = row['quantity'] if not is_null(row['quantity']) else None
-        # TODO: ok original unit string as such (source value), or extract substring (gr,ml etc)?
         unit = row['quantity'] if not is_null(row['quantity']) else None
 
-        num_quantity, calc_end_date = None, False
-        whole_nr  = '(\d+|(\d+\.0+))'  # e.g. 20 or 20.0 (any nr of zeroes after .)
-        any_nr    = '(\d+|(\d+\.d+))'  # e.g. 20 or 20.5 (any nr of cyphers after .)
-        separator = '(\s+|(\s+(-|x)\s+))'  # e.g. space(s) or space(s) + -|x + space(s)
-        additions = '(?:dispersible\s+)?'
-        if raw_quantity:
-            for pattern, calc_end_date in [
-                (whole_nr + separator + additions + '[tT][aA][bB]', True),      # tab(lets)
-                (whole_nr + separator + '[cC][aA][pP]', True),      # cap(sules)
-                (whole_nr + separator + '[dD][oO][sS]', True),      # dos(es)
-                (whole_nr + separator + '[sS][tT][rR]', True),      # str(ips)
-                (whole_nr + separator + '[sS][aA][cC]', True),      # sac(hets)
-                (whole_nr + separator + '[uU][nN][iI][tT]', True),  # unit(s)
-                # note: packets=blisters, uncertain how many individual doses they contain
-                (whole_nr + separator + '[pP][aA][cC]', False),  # pac(kets)
-                (any_nr + '\s+[mM]*[gG]', False),                # (m)g(rams)
-                (any_nr + '\s+[mM][iI]*[lL]', False),            # ml / mil(lliliters)
-                ('^\s*' + whole_nr + '\s*$', True),              # whole number without unit
-                (any_nr, False)                                  # any number
-            ]:
-                match = re.search(pattern,raw_quantity)
-                if match:
-                    num_quantity = re.search(any_nr, match.group()).group()  # extract numeric part
-                    if calc_end_date:
-                        num_quantity = int(num_quantity)
-                    break
-
-            # quick test for parsing result
-            # print(raw_quantity, '|', num_quantity, '|', calc_end_date)
-
-        if calc_end_date:
-            date_end = date_start + timedelta(days=num_quantity) # assuming 1 tab/cap/etc. per day
+        valid_quantity = valid_quantity_for_days_estimate(raw_quantity)
+        if valid_quantity:
+            num_quantity = extract_numeric_quantity(valid_quantity)
+            date_end = date_start + timedelta(days=num_quantity)  # assuming 1 tab/cap/etc. per day
         else:
+            num_quantity = extract_numeric_quantity(raw_quantity)
             date_end = date_start
 
         r = wrapper.cdm.DrugExposure(
