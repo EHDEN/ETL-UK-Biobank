@@ -32,7 +32,7 @@ services:
     volumes:
       - ./logs:/app/logs
     environment:
-      - ETL_CONFIG=/app/config/config.yml
+      - ETL_CONFIG=/app/config/config-docker.yml
 
 volumes:
   postgresql_data:
