@@ -19,7 +19,7 @@ alter table vocab.concept owner to admin;
 
 -- Copy with FREEZE for faster loading
 -- Temporary fix to include CPT4 concepts.
-COPY vocab.CONCEPT FROM '/CONCEPT_CPT4.csv' WITH DELIMITER E'\t' CSV HEADER QUOTE E'\b' FREEZE;
+-- COPY vocab.CONCEPT FROM '/CONCEPT_CPT4.csv' WITH DELIMITER E'\t' CSV HEADER QUOTE E'\b' FREEZE;
 COPY vocab.CONCEPT FROM program 'unzip -p /vocab CONCEPT.csv' WITH DELIMITER E'\t' CSV HEADER QUOTE E'\b' FREEZE;
 
 ALTER TABLE vocab.concept ADD CONSTRAINT xpk_concept PRIMARY KEY (concept_id);
