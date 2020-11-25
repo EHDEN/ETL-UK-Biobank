@@ -102,7 +102,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         if calc_end_date:
             date_end = date_start + timedelta(days=num_quantity) # assuming 1 tab/cap/etc. per day
         else:
-            date_end = date_start  # TODO: ok or use date_start + 1? this way it's clear we don't know
+            date_end = date_start
 
         r = wrapper.cdm.DrugExposure(
             person_id=person_id,

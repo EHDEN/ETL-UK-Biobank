@@ -13,10 +13,10 @@ Field to field mapping to be completed.
 | --- | --- | --- | --- |
 | drug_exposure_id |  |  |  |
 | person_id | eid |  |  |
-| drug_exposure_start_date | issue_date |  |  |
 | drug_concept_id | dmd_code<br>read_2<br>drug_name | Coding priority: use dm+d, then read, then drug name. The BNF code is not complete and not specific enough. |  |
+| drug_exposure_start_date | issue_date |  |  |
 | drug_exposure_start_datetime |  |  |  |
-| drug_exposure_end_date | issue_date | No drug end date, use Themis convention: derive from the quantity (assuming 1 per day). This will be a rough estimate. |  |
+| drug_exposure_end_date | issue_date<br>quantity | No drug end date available, estimate using Themis convention:<br> either same as start date (if no valid quantity available), or 1 day x quantity (valid if expressed as: tablets, capsules, doses, strips, sachets, units, or a whole number without unit; other units such as volume will be ignored). |  |
 | drug_exposure_end_datetime |  |  |  |
 | verbatim_end_date |  |  |  |
 | drug_type_concept_id |  |  | 38000177 - Prescription written |
@@ -44,8 +44,8 @@ Field to field mapping to be completed.
 | --- | --- | --- | --- |
 | drug_exposure_id | id |  |  |
 | person_id | person_id |  |  |
-| drug_exposure_start_date | start_date |  |  |
 | drug_concept_id | concept_id |  |  |
+| drug_exposure_start_date | start_date |  |  |
 | drug_exposure_start_datetime | start_datetime |  |  |
 | drug_exposure_end_date | end_date |  |  |
 | drug_exposure_end_datetime | end_datetime |  |  |
