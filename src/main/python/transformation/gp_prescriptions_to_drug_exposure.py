@@ -112,7 +112,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             drug_exposure_end_datetime=date_end,
             drug_concept_id=mapping.target_concept_id,
             drug_source_concept_id=mapping.source_concept_id,
-            drug_source_value=mapping.source_concept_code,
+            drug_source_value=mapping.source_concept_code[:50],
             drug_type_concept_id=38000177,  # prescription written
             quantity=num_quantity,
             dose_unit_source_value=unit,
