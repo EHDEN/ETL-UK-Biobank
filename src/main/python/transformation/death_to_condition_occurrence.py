@@ -11,11 +11,9 @@ def death_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Conditio
     death = wrapper.get_dataframe('death.csv')
     death['date_of_death'] = pd.to_datetime(death['date_of_death'], dayfirst=True)
     death = death.sort_values(by=['eid', 'date_of_death'])
-    death = death.drop_duplicates(subset='eid', keep='first')  # Only keep first date of death
 
     death_cause = wrapper.get_dataframe('death_cause.csv')
     death_cause = death_cause[death_cause['arr_index'] != '0']
-    death_cause = death_cause.drop_duplicates(subset='eid', keep='first')
 
     source = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
