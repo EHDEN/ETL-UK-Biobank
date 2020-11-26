@@ -39,6 +39,7 @@ def initialize_database(config):
     try:
         connection.execute("SELECT * FROM vocab.concept;")
         logger.info('Vocabulary tables already loaded')
+        connection.close()
         return
     except:
         pass
