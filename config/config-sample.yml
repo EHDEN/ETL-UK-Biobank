@@ -18,3 +18,7 @@ schema_translate_map:
 run_options:
   source_data_folder: './resources/synthetic_data'
   debug_mode: False
+initialize_db: False
+initialize_db_superuser:
+  username: 'postgres'
+  password: ''
