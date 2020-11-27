@@ -7,6 +7,11 @@ database:
   # Comment out password to provide at runtime
   password: 'postgres'
 
+# Only used if initializing database here
+database_superuser:
+  username: 'postgres'
+  password: 'password'
+
 # The schema names of the OMOP CDM (target schema) and the vocabulary
 # tables. Additional key-value pairs can be added here if you have
 # custom ORM tables, for which you would like to have dynamic schema
@@ -18,7 +23,5 @@ schema_translate_map:
 run_options:
   source_data_folder: './resources/synthetic_data'
   debug_mode: False
-initialize_db: False
-initialize_db_superuser:
-  username: 'postgres'
-  password: ''
+  initialize_db: False
+  force_load_vocab: False

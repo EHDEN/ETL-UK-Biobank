@@ -20,9 +20,9 @@ import glob
 logger = logging.getLogger(__name__)
 
 
-def initialize_database(config):
+def initialize_database(config, do_force_vocab_load = False):
     db_config = config['database']
-    superuser = config['run_options']['initialize_db_superuser']
+    superuser = config['database_superuser']
     superuser_eng = create_engine('postgresql://%s:%s@%s:%s/%s' % (
         superuser['username'],
         superuser['password'],
@@ -39,8 +39,12 @@ def initialize_database(config):
     try:
         connection.execute("SELECT * FROM vocab.concept;")
         logger.info('Vocabulary tables already loaded')
-        connection.close()
-        return
+        if do_force_vocab_load:
+            logger.info('Forcing reloading of vocabularies')
+            connection.execute('DROP SCHEMA vocab CASCADE;')
+        else:
+            connection.close()
+            return
     except:
         pass
 
