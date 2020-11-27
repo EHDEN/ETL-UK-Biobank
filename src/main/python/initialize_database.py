@@ -47,8 +47,8 @@ def initialize_database(config):
     for sql_file in sorted(glob.glob('postgres/*.sql')):
         logger.info('{:-^100}'.format('Processing ' + sql_file))
         try:
-            result = connection.execute(open(sql_file, 'r').read())
+            connection.execute(open(sql_file, 'r').read())
             logger.info('Success.')
         except Exception as e:
-            print(e)
+            logger.warning(e)
     connection.close()
