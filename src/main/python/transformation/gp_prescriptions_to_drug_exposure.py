@@ -20,26 +20,30 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
 
     dmd_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=list(source['dmd_code']))
-
-    # TODO: Read v2 codes for drugs not available in Athena & NHS, find other mapping source if possible
-    read2_codes = [code for code in filter(lambda x: not is_null(x),
-                                           set(source['read_2_extended']))]
     read2_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary('Read', restrict_to_codes=read2_codes)
+        wrapper.mapping_tables_lookup(
+            './resources/mapping_tables/gp_prescriptions_drugs_Read2.csv',
+            first_only=True)
+    drug_mapper = \
+        wrapper.mapping_tables_lookup(
+            './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
+            first_only=True)
+
 
     records = []
     for _, row in source.iterrows():
-
-        # TODO: in theory read v2 > drug name, implement Read v2 mapping and invert check order
         if not is_null(row['dmd_code']):
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
+        elif not is_null(row['read_2']):
+            mapping = CodeMapping()
+            mapping.source_concept_code = row['read_2']
+            mapping.source_concept_id = 0
+            mapping.target_concept_id = read2_mapper.get(row['read_2_extended'], 0)
         elif not is_null(row['drug_name']):
             mapping = CodeMapping()
             mapping.source_concept_code = row['drug_name']
             mapping.source_concept_id = 0
-            mapping.target_concept_id = 0  # TODO: placeholder, get from mapping tables
-        elif not is_null(row['read_2']):
-            mapping = read2_mapper.lookup(row['read_2_extended'], first_only=True)
+            mapping.target_concept_id = drug_mapper.get(row['drug_name'], 0)
         else:
             continue
 
