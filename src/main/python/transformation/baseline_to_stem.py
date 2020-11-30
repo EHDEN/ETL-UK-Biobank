@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 import re
-from typing import List, Tuple, TYPE_CHECKING
+from typing import List, Tuple, TYPE_CHECKING, Optional
 from pathlib import Path
 from ..field_mapper.FieldConceptMapper import FieldConceptMapper
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 FIELD_PATTERN = re.compile(r'(\d+)-(\d+).(\d+)')
 
 
-def parse_column_name(column_name: str) -> Tuple(str):
+def parse_column_name(column_name: str) -> Tuple[Optional[str], Optional[str]]:
     match = FIELD_PATTERN.match(column_name)
     if not match:
         return None, None
@@ -54,8 +54,8 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 # Visit
                 visit_occurrence_id = wrapper.lookup_visit(eid, 'baseline-' + instance)
 
-                target = field_mapper.lookup(field_id, value)
-                if target:
+                targets = field_mapper.lookup(field_id, value)
+                for target in targets:
                     records.append(wrapper.cdm.StemTable(
                         person_id=eid,
                         start_date=datetime.date(),
