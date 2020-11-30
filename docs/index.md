@@ -12,7 +12,7 @@
 
 [visit_occurrence](visit_occurrence.md)
 
-[visit_detail](visit_detail.md)
+[hesin to visit_detail](hesin_to_visit_detail.md)
 
 [baseline_to_stem_table](baseline_to_stem_table.md)
 
