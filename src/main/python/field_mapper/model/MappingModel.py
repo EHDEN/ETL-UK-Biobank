@@ -203,6 +203,10 @@ class FieldMapping(_AbstractMapping):
             ValueMapping(value_code, self)
         )
 
+        # Prevent duplication of target events
+        if target in value_mapping.event_targets:
+            return
+
         value_mapping.set_target(target)
 
     def __str__(self):
@@ -211,9 +215,9 @@ class FieldMapping(_AbstractMapping):
 
         values = ', '.join([str(v) for k, v in self.values.items()])
         return f'{self.field_id} => ' \
-               f'event_target: [{",".join(map(str, self.event_targets))}], ' \
+               f'event_targets: [{";".join(map(str, self.event_targets))}], ' \
                f'unit_target: [{self.unit_target}], ' \
-               f'value_target: [{",".join(map(str, self.value_targets))}], ' \
+               f'value_targets: [{";".join(map(str, self.value_targets))}], ' \
                f'values ({len(self.values)}): [{values}], ' \
                f'comment: {self.comment}'
 
@@ -238,7 +242,7 @@ class ValueMapping(_AbstractMapping):
             return f'{self.value_code} => IGNORED'
 
         return f'{self.value_code} => [' \
-               f'event_target: [{",".join(map(str, self.event_targets))}], ' \
-               f'value_target: [{",".join(map(str, self.value_targets))}], ' \
+               f'event_targets: [{";".join(map(str, self.event_targets))}], ' \
+               f'value_targets: [{";".join(map(str, self.value_targets))}], ' \
                f'status: {self.status}, ' \
                f'comment: {self.comment}]'

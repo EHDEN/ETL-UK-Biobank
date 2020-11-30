@@ -21,7 +21,7 @@ import yaml
 import logging
 
 from src.main.python.field_mapper.model.MappingTarget import MappingTarget
-from src.main.python.field_mapper.model.UsagiModel import UsagiRow, MappingStatus, TargetMapping
+from src.main.python.field_mapper.model.UsagiModel import UsagiRow, MappingStatus, TargetMapping, create_fake_target_mapping
 from src.main.python.field_mapper.model.MappingModel import FieldMapping
 from src.main.python.field_mapper.model.Validator import validator
 
@@ -86,7 +86,8 @@ class FieldConceptMapper:
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
-            self._load(usagi_mapping, fixed_event_concept_id)
+            fixed_event_target = create_fake_target_mapping(fixed_event_concept_id)
+            self._load(usagi_mapping, fixed_event_target)
 
     def load_file_mapping_table(self, file_path: Path, fixed_field_id: str, fixed_event_concept_id: Optional[int] = None):
         for row in self._load_map(file_path):
@@ -98,26 +99,19 @@ class FieldConceptMapper:
             usagi_mapping.field_description = ''
 
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
-            self._load(usagi_mapping, fixed_event_concept_id)
+            fixed_event_target = create_fake_target_mapping(fixed_event_concept_id)
+            self._load(usagi_mapping, fixed_event_target)
 
-    def _load(self, usagi_mapping: UsagiRow, fixed_event_concept_id: Optional[int] = None):
+    def _load(self, usagi_mapping: UsagiRow, fixed_event_target: Optional[TargetMapping] = None):
         field_mapping = self.field_mappings.setdefault(
             usagi_mapping.field_id,
             FieldMapping(usagi_mapping.field_id)
         )
         field_mapping.add(usagi_mapping)
 
-        if fixed_event_concept_id:
+        if fixed_event_target:
             # assume given usagi mapping is only the value mapping of the field
-            event_target = TargetMapping({
-                'conceptId': fixed_event_concept_id,
-                'createdBy': '<config>',
-                'createdOn': '0',
-                'mappingType': 'EVENT',
-                'statusSetBy': '<config>',
-                'statusSetOn': '0'
-            })
-            field_mapping.add_target_for_value(usagi_mapping.value_code, event_target)
+            field_mapping.add_target_for_value(usagi_mapping.value_code, fixed_event_target)
 
     @staticmethod
     def _load_map(file_path: Path):
@@ -150,9 +144,10 @@ class FieldConceptMapper:
 
         The mappings can be one of two types:
         1. Has a value mapping. The field_id/value pair maps to a concept_id and (optionally) a value_as_concept_id.
-        There can be multiple event and value targets. All combinations are returned. However, typically there will be EITER multiple event targets OR multiple value targets
+            There can be multiple event and value targets. All combinations are returned.
+            However, typically there will be EITHER multiple event targets OR multiple value targets
         2. No value mapping. If no mapping for value found, the value is assumed to be numeric (float). Variable maps to concept_id and unit_concept_id.
-        If mapping has a unit, values of -1 and -3 are ignored. These are considered 'not known' values.
+            If mapping has a unit, values of -1 and -3 are ignored. These are considered 'not known' values.
         :param field_id: string
         :param value: string
         :return: List[MappingTarget]
@@ -272,6 +267,7 @@ if __name__ == '__main__':
     # opcs3
     _print(mapper.lookup('41256', '118'))
     _print(mapper.lookup('41258', '027'))  # one to many
+    print(mapper.get_mapping('41258').values.get('027'))
 
     # get the mapping of a field
     # print(mapper.get_mapping('2335'))
