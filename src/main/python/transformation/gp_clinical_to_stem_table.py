@@ -40,10 +40,9 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
         # read_2 and read_3 should be mutually exclusive
         # TODO: observed multiple mappings for vaccinces to SNOMED and CVX, which is better?
-        if not is_null(row['read_2']):
-            code_mapper = read2_mapper
-            read_col = 'read_2'
-        elif not is_null(row['read_3']):
+        code_mapper = read2_mapper
+        read_col = 'read_2'
+        if is_null(row['read_2']):
             code_mapper = read3_mapper
             read_col = 'read_3'
 
