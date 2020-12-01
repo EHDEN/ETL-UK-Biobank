@@ -28,19 +28,19 @@ add_baseline(eid = 1704)
 add_gp_clinical(eid = 1704, event_dt = '', read_2 = '246..')
 expect_no_measurement(person_id = 1704, measurement_source_value = '246..')
 
-declareTest(1705, 'GP clinical to stem, Serum creatinine')
+declareTest(1705, 'GP clinical to stem, Serum creatinine with value')
 add_baseline(eid = 1705)
 add_gp_clinical(eid = 1705, event_dt = '15/04/2020', read_2 = '44J3.', value1 = 12, data_provider = '1')
 expect_measurement(person_id = 1705, measurement_concept_id = 37392176, measurement_source_value = '44J3.', measurement_source_concept_id = 45461929,
                    value_as_number = 12)
 
-declareTest(1706, 'GP clinical to stem, DBP')
+declareTest(1706, 'GP clinical to stem, DBP with value')
 add_baseline(eid = 1706)
 add_gp_clinical(eid = 1706, event_dt = '16/04/2020', read_2 = '246A.', value1 = 80.7, data_provider = '2')
-expect_measurement(person_id = 1706, measurement_concept_id = 4060831, measurement_source_value = '44J3.', measurement_source_concept_id = 45468573,
+expect_measurement(person_id = 1706, measurement_concept_id = 4060831, measurement_source_value = '246A.', measurement_source_concept_id = 45468573,
                    value_as_number = 80.7)
 
-declareTest(1707, 'GP clinical to stem, DBP and SBP')
+declareTest(1707, 'GP clinical to stem, DBP and SBP with value')
 add_baseline(eid = 1707)
 add_gp_clinical(eid = 1707, event_dt = '17/04/2020', read_2 = '246..', value1 = 123, value2 = 85, data_provider = '1')
 expect_measurement(person_id = 1707, measurement_concept_id = 4060831, measurement_source_value = '246..', value_as_number = 85)
