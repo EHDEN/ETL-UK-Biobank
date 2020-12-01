@@ -45,3 +45,13 @@ add_baseline(eid = 1707)
 add_gp_clinical(eid = 1707, event_dt = '17/04/2020', read_2 = '246..', value1 = 123, value2 = 85, data_provider = '1')
 expect_measurement(person_id = 1707, measurement_concept_id = 4060831, measurement_source_value = '246..', value_as_number = 85)
 expect_measurement(person_id = 1707, measurement_concept_id = 4062019, measurement_source_value = '246..', value_as_number = 123)
+
+declareTest(1708, 'GP clinical to stem, readv3 serum urea')
+add_baseline(eid = 1708)
+add_gp_clinical(eid = 1708, event_dt = '18/04/2020', read_2 = '', read_3 = 'XM0lt')
+expect_measurement(person_id = 1708, measurement_concept_id = 37392195, measurement_source_value = 'XM0lt')
+
+declareTest(1709, 'GP clinical to stem, readv2 code in read_3 field')
+add_baseline(eid = 1709)
+add_gp_clinical(eid = 1709, event_dt = '19/04/2020', read_2 = '', read_3 = '246A.')
+expect_measurement(person_id = 1709, measurement_concept_id = 4060831, measurement_source_value = '246A.')

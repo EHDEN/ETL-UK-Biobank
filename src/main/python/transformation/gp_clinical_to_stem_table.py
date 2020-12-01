@@ -29,8 +29,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
     # Note: if we add restricting to codes, we might miss some added from the phenotype_logic
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
-    read3_mapper = read2_mapper  # TODO: separate mapping table
-    value_mapper = GpClinicalValueMapper(read2_mapper, read3_mapper)
+    read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
+    value_mapper = GpClinicalValueMapper()
 
     records = []
     for _, row in source.iterrows():
@@ -40,10 +40,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
         # read_2 and read_3 should be mutually exclusive
         # TODO: observed multiple mappings for vaccinces to SNOMED and CVX, which is better?
-        code_mapper = read2_mapper
         read_col = 'read_2'
         if is_null(row['read_2']):
-            code_mapper = read3_mapper
             read_col = 'read_3'
 
         person_id = row['eid']
@@ -79,7 +77,20 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
         for read_code, value_as_number in read_with_value:
             read_code_extended = extend_read_code(read_code)
-            read_mapping = code_mapper.lookup(read_code_extended, first_only=True)
+            target_concept_id = 0
+            source_concept_id = 0
+            if read_col == 'read_2':
+                read_mapping = read2_mapper.lookup(read_code_extended, first_only=True)
+                target_concept_id = read_mapping.target_concept_id
+                source_concept_id = read_mapping.source_concept_id
+            elif read_col == 'read_3':
+                target_concept_id = read3_lookup.get(read_code_extended, 0)
+                # If read_3 code not found in v3 mapper, use v2 mapper
+                if target_concept_id == 0:
+                    read_mapping = read2_mapper.lookup(read_code_extended, first_only=True)
+                    target_concept_id = read_mapping.target_concept_id
+                    source_concept_id = read_mapping.source_concept_id
+
             r = wrapper.cdm.StemTable(
                 person_id=person_id,
                 domain_id='Measurement',
@@ -87,8 +98,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 start_date=event_date,
                 start_datetime=event_date,
                 visit_occurrence_id=visit_id,
-                concept_id=read_mapping.target_concept_id,
-                source_concept_id=read_mapping.source_concept_id,
+                concept_id=target_concept_id,
+                source_concept_id=source_concept_id,
                 source_value=read_code,  # original before adding cyphers after dots
                 operator_concept_id=operator,
                 unit_concept_id=unit_concept_id,
