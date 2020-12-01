@@ -9,7 +9,7 @@
 ## Clinical data
 - [Person](person.md)
 - [Visit Occurrence](visit_occurrence.md)
-- [Condition Occurrence](condition_occurrence.md)
+- [Condition Occurrence](../cancer_register_to_condition_occurrence.md)
 - [Procedure Occurrence](procedure_occurrence.md)
 - [Observation](observation.md)
 - [Death](death.md)

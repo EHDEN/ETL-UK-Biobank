@@ -2,11 +2,11 @@
 
 ### Reading from stem_table
 
-![](md_files/image6.png)
+![](md_files/image21.png)
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| procedure_occurrence_id | id |  |  |
+| procedure_occurrence_id | id |  | Auto-increment |
 | person_id | person_id |  |  |
 | procedure_concept_id | concept_id |  |  |
 | procedure_date | start_date |  |  |
