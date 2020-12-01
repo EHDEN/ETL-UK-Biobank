@@ -14,18 +14,18 @@ declareTest(1702, 'GP clinical to stem, unknown read2 code')
 add_baseline(eid = 1702)
 add_gp_clinical(eid = 1702, event_dt = '03/04/2020', read_2 = '123abc')
 expect_observation(person_id = 1702, observation_date = '2020-04-03',
-                   observation_concept_id = 0, observation_source_concept_id = NULL, observation_source_value = '123abc')
+                   observation_concept_id = 0, observation_source_concept_id = 0, observation_source_value = '123abc')
 
 declareTest(1703, 'GP clinical to stem, read3 code')
 add_baseline(eid = 1703)
 add_gp_clinical(eid = 1703, event_dt = '04/04/2020', read_3 = 'XE2q5')
 expect_observation(person_id = 1703, observation_date = '2020-04-04',
-                   observation_concept_id = 0, observation_source_concept_id = NULL, observation_source_value = 'XE2q5')
+                   observation_concept_id = 0, observation_source_concept_id = 0, observation_source_value = 'XE2q5')
 
 declareTest(1704, 'GP clinical to stem, missing date')
 add_baseline(eid = 1704)
 add_gp_clinical(eid = 1704, event_dt = '', read_2 = '246..')
-expect_no_observation(person_id = 1704, observation_source_value = 'XE2q5')
+expect_no_observation(person_id = 1704, observation_source_value = '246..')
 
 declareTest(1705, 'GP clinical to stem, Serum creatinine')
 add_baseline(eid = 1705)
