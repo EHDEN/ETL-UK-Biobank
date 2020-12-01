@@ -72,14 +72,14 @@ class FieldConceptMapper:
                     self.load_file_mapping_table(mapping_path, field_id, target_event_concept_id)
             else:
                 # Numeric or text
-                self.load_file(mapping_path)
+                self.load_usagi_file(mapping_path)
 
     def load_date_mapping(self, date_mapping_file: Path):
         with date_mapping_file.open() as f_in:
             for row in csv.DictReader(f_in):
                 self.date_field_mapping[row['field']] = row['date_field']
 
-    def load_file(self, file_path: Path):
+    def load_usagi_file(self, file_path: Path):
         for row in self._load_map(file_path):
             usagi_mapping = UsagiRow(row, file_path.name)
             logger.debug(f"Loading {usagi_mapping.field_id}-{usagi_mapping.value_code}")
