@@ -143,6 +143,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             r = wrapper.cdm.StemTable(
                 person_id=person_id,
+                domain_id='Measurement',
                 type_concept_id=32817,
                 start_date=event_date,
                 start_datetime=event_date,
