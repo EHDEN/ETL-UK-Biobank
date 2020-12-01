@@ -7,7 +7,7 @@ The variables include date and clinical code (Read v2 or CTV3 1) for primary car
 such as consultations, diagnoses, history, symptoms, procedures, laboratory tests and administrative information.
 The records are retrieved from four different source systems (providers): EMIS/Vision Scotland, EMIS/Vision Wales, 
 TPP England and Vision England (Note: EMIS England is missing).
-Coded data has been obtained for just 45% of the UKB participants.
+Coded data has been obtained for 45% of the UKB participants.
 
 #### Notes on variables:
 - `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 (i.e. Read v3) - mutually exclusive fields. 
@@ -34,6 +34,8 @@ https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
 
 ![](md_files/image1.png)
 
+After mapping to the stem table, the records are mapped to their respective domains based on the domain of the `concept_id` (see [stem mapping specification](./stem/index.md)).
+
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
 | id |  |  |  |
@@ -43,10 +45,10 @@ https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
 | start_datetime | event_dt |  |  |
 | visit_occurrence_id | eid<br>event_dt | Look up visit occurrence by unique eid+event_dt<br> |  |
 | provider_id |  |  |  |
-| concept_id | read_2<br>read_3 | Either field will be available. Map code to OMOP standard concept_id |  |
+| concept_id | read_2<br>read_3 | Map read_2 code to OMOP standard concept_id, if not available map read_3 code. | Either field will be available. |
 | source_value | read_2<br>read_3 | Either field will be available  |  |
 | source_concept_id | read_2<br>read_3 | Either field will be available. Use (non-standard) OMOP concept_id for Read code |  |
-| type_concept_id |  |  | For condition: 32020 - EHR encounter diagnosis / For meas/obs: derived from EHR |
+| type_concept_id |  |  | 32817 EHR |
 | end_date |  |  |  |
 | end_datetime |  |  |  |
 | verbatim_end_date |  |  |  |
@@ -82,56 +84,3 @@ https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
 | qualifier_concept_id |  |  |  |
 | qualifier_source_value |  |  |  | 
 | data_source | data_provider | Map as "GP-" + number found in data_provider, e.g. GP-1, GP-2, GP-3, or GP-4 |  |
-
-### Reading from baseline
-
-![](md_files/image2.png)
-
-| Destination Field | Source field | Logic | Comment field |
-| --- | --- | --- | --- |
-| id |  |  |  |
-| domain_id |  |  |  |
-| person_id |  |  |  |
-| start_date |  |  |  |
-| start_datetime |  |  |  |
-| visit_occurrence_id |  |  |  |
-| provider_id |  |  |  |
-| concept_id |  |  |  |
-| source_value |  |  |  |
-| source_concept_id |  |  |  |
-| type_concept_id |  |  | For condition: 32020 - EHR encounter diagnosis  For meas/obs: derived from EHR |
-| end_date |  |  |  |
-| end_datetime |  |  |  |
-| verbatim_end_date |  |  |  |
-| days_supply |  |  |  |
-| dose_unit_source_value |  |  |  |
-| lot_number |  |  |  |
-| modifier_concept_id |  |  |  |
-| modifier_source_value |  |  |  |
-| operator_concept_id |  |  |  |
-| modifier_source_value |  |  |  |
-| quantity |  |  |  |
-| range_high |  |  |  |
-| range_low |  |  |  |
-| refills |  |  |  |
-| route_concept_id |  |  |  |
-| route_source_value |  |  |  |
-| sig |  |  |  |
-| stop_reason |  |  |  |
-| unique_device_id |  |  |  |
-| unit_concept_id |  |  |  |
-| unit_source_value |  |  |  |
-| value_as_concept_id |  |  |  |
-| value_as_number |  |  |  |
-| value_as_string |  |  |  |
-| value_source_value |  |  |  |
-| anatomic_site_concept_id |  |  |  |
-| disease_status_concept_id |  |  |  |
-| specimen_source_id |  |  |  |
-| anatomic_site_source_value |  |  |  |
-| disease_status_source_value |  |  |  |
-| condition_status_concept_id |  |  |  |
-| condition_status_source_value |  |  |  |
-| qualifier_concept_id |  |  |  |
-| qualifier_source_value |  |  |  |
-

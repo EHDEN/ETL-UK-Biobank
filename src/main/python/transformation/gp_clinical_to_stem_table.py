@@ -143,7 +143,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             r = wrapper.cdm.StemTable(
                 person_id=person_id,
-                type_concept_id=32020,  # TODO: add different options depending if meas/diag/obs
+                type_concept_id=32817,
                 start_date=event_date,
                 start_datetime=event_date,
                 visit_occurrence_id=visit_id,
