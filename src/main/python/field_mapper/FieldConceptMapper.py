@@ -30,8 +30,10 @@ logger = logging.getLogger(__name__)
 
 class FieldConceptMapper:
     """
-    TODO: configuration file to load the baseline_field_mappings, to cover:
-     - handle multiple (event) target concepts for one field/value combination (see opcs)
+    Class to semantically map the fields from the baseline table.
+    Usage:
+    mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'))
+    target = mapper.lookup('field_id', 'value')
     """
 
     CONFIG_FILE_NAME = 'field_mapping_config.yaml'
@@ -68,7 +70,8 @@ class FieldConceptMapper:
                 mapping_config['field_ids'] = [str(x) for x in mapping_config['field_ids']]
                 for field_id in mapping_config['field_ids']:  # TODO: to save memory, all these fields can refer to the same value mapping
                     self.load_file_mapping_table(mapping_path, field_id, target_event_concept_id)
-            else:  # TODO: handle value as numeric and value as text
+            else:
+                # Numeric or text
                 self.load_file(mapping_path)
 
     def load_date_mapping(self, date_mapping_file: Path):
