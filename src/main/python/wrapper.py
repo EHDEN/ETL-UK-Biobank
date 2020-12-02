@@ -38,6 +38,9 @@ class Wrapper(EtlWrapper):
         # NOTE: replace the following with project-specific source table names!
         self.source_file_delimiter = ','
 
+        # One session for all lookups done in the wrapper. Note: read_only
+        self._session_for_lookups = self.db.get_new_session()
+
     def run(self):
         self.start_timing()
 
@@ -76,6 +79,8 @@ class Wrapper(EtlWrapper):
 
         self.log_summary()
         self.log_runtime()
+
+        self._session_for_lookups.close()
 
     def load_from_stem_table(self):
         # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
@@ -147,13 +152,12 @@ class Wrapper(EtlWrapper):
         return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
 
     def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
-        with self.db.session_scope() as session:
-            query = session.query(model).filter_by(**kwargs)
-            try:
-                visit_record = query.one()
-            except NoResultFound:
-                return None
-            except MultipleResultsFound:
-                logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
-                visit_record = query.first()
+        query = self._session_for_lookups.query(model).filter_by(**kwargs)
+        try:
+            visit_record = query.one()
+        except NoResultFound:
+            return None
+        except MultipleResultsFound:
+            logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
+            visit_record = query.first()
         return visit_record[id_to_lookup]
