@@ -71,7 +71,8 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         valid_quantity = valid_quantity_for_days_estimate(raw_quantity)
         if valid_quantity:
             num_quantity = extract_numeric_quantity(valid_quantity)
-            date_end = date_start + timedelta(days=num_quantity)  # assuming 1 tab/cap/etc. per day
+            # assume 1 unit per day, starting on start day
+            date_end = date_start + timedelta(days=num_quantity-1)
         else:
             num_quantity = extract_numeric_quantity(raw_quantity)
             date_end = date_start
