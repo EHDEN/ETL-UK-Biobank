@@ -189,7 +189,8 @@ class CodeMapper:
         """
 
         # make sure restrict to codes contains unique and not null elements
-        restrict_to_codes = list(filter(lambda x: not is_null(x), set(restrict_to_codes)))
+        if restrict_to_codes:
+            restrict_to_codes = list(filter(lambda x: not is_null(x), set(restrict_to_codes)))
 
         logger.info(f'Building mapping dictionary for vocabularies: {vocabulary_id}')
 
