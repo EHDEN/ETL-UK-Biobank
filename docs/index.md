@@ -2,38 +2,61 @@
 
 ![](md_files/image25.png)
 
-## Contents
+## Clinical data
 
-[person](baseline/person.md)
+#### Person:
+- [from_baseline](baseline_to_person.md)
 
-[observation_period](observation_period.md)
+#### Observation_period: 
+- [from_gp_registrations](gp_registrations_to_observation_period.md)
 
-[death](death.md)
+#### Visit_occurrence:
+- [from_baseline](baseline_to_visit_occurrence.md)
+- [from_covid](covid_to_visit_occurrence.md)
+- [from_gp_clinical](gp_clinical_to_visit_occurrence.md)
+- [from_gp_prescriptions](gp_prescriptions_to_visit_occurrence.md)
+    
+#### Visit_detail:
+- [from_hesin](hesin_to_visit_detail.md)
 
-[visit_occurrence](visit_occurrence.md)
+#### Condition_occurrence:
+- [from_death](death_to_condition_occurrence.md)
+- [from_hesin_diag](hesin_diag_to_condition_occurrence.md)
+- [from_cancer_registry](cancer_register_to_condition_occurrence.md)
 
-[visit_detail](visit_detail.md)
+#### Drug_exposure:
+- [from_gp_prescriptions](gp_prescriptions_to_drug_exposure.md)
 
-[baseline_to_stem_table](baseline_to_stem_table.md)
+#### Procedure_occurrence:
+- [from_hesin_oper](hesin_oper_to_procedure_occurrence.md)
 
-[condition_occurrence](condition_occurrence.md)
+#### Observation:
+- [from_covid](covid_to_observation.md)
+- [from_gp_clinical](gp_clinical_to_observation.md)
 
-[drug_exposure](drug_exposure.md)
+#### Death:
+- [death](death_to_death.md)
 
-[device_exposure](device_exposure.md)
+## Health System data
 
-[measurement](measurement.md)
+#### Care_site:
+- [from_baseline](baseline_to_care_site.md)
+- [from_covid](covid_to_care_site.md)
 
-[observation](observation.md)
+## Stem_table:
+- [from_baseline](baseline_to_stem_table.md)
+- [from_gp_clinical](gp_clinical_to_stem_table.md)
 
-[procedure_occurrence](procedure_occurrence.md)
+## Stem_to_clinical_event:
+![](md_files/stem_image.png)
 
-[specimen](specimen.md)
-
-[care_site](care_site.md)
-
-[stem_table](stem_table.md)
-
-[source_appendix](source_appendix.md)
-
-[stem to clinical_event](stem/index.md)
+- [to_condition_occurrence](stem_to_condition_occurrence.md)
+- [to_drug_exposure](stem_to_drug_exposure.md)
+- [to_procedure_occurrence](stem_to_procedure_occurrence.md)
+- [to_device_exposure](stem_to_device_exposure.md)
+- [to_measurement](stem_to_measurement.md)
+- [to_specimen](stem_to_specimen.md)
+    
+## Appendix:
+- [source_appendix](source_appendix.md)
+- [baseline_appendix](baseline_source_appendix.md)
