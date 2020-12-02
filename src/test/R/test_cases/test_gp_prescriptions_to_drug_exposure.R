@@ -46,33 +46,22 @@ add_gp_prescriptions(eid = '1207', dmd_code = '324430000', issue_date = '01/01/2
 expect_drug_exposure(person_id = 1207, drug_exposure_start_date = '2020-01-01', drug_exposure_start_datetime = '2020-01-01 00:00:00',
                      drug_exposure_end_date = '2020-01-01', drug_exposure_end_datetime = '2020-01-01 00:00:00')
 
+declareTest(1208, 'Test numeric quantity extraction')
+add_baseline(eid = '1208')
+add_gp_prescriptions(eid = '1208', dmd_code = '324430000', quantity = '100 mg aspirin')
+expect_drug_exposure(person_id = 1208, quantity = 100)
 
-# add_gp_prescriptions(eid, data_provider, issue_date, read_2, bnf_code, dmd_code, drug_name, quantity)
+declareTest(1209, 'Test unit source value extraction')
+add_baseline(eid = '1209')
+add_gp_prescriptions(eid = '1209', dmd_code = '324430000', quantity = '100 mg aspirin')
+expect_drug_exposure(person_id = 1209, dose_unit_source_value = '100 mg aspirin')
 
-# expecte_drug_exposure(
-# person_id,
-# drug_exposure_start_date, drug_exposure_start_datetime, drug_exposure_end_date, drug_exposure_end_datetime,
-# drug_concept_id, drug_type_concept_id, drug_source_value, drug_source_concept_id,
-# quantity, dose_unit_source_value,
-# visit_occurrence_id, visit_detail_id)
-#
-#declareTest(1210, 'Test numeric quantity extraction')
-#add_baseline(eid = '1210')
-#add_gp_prescriptions(eid = '1210', dmd_code = '324430000')
-#expect_drug_exposure(person_id = 1210)
-#
-#declareTest(1211, 'Test unit extraction')
-#add_baseline(eid = '1211')
-#add_gp_prescriptions(eid = '1211', dmd_code = '324430000')
-#expect_drug_exposure(person_id = 1211)
-#
-#declareTest(1212, 'Test retrieving visit occurrence id')
-#add_baseline(eid = '1212')
-#add_gp_prescriptions(eid = '1212', dmd_code = '324430000')
-#expect_drug_exposure(person_id = 1212)
-#
-#declareTest(1213, 'Test long drug source value (> 50 chars)')
-#add_baseline(eid = '1213')
-#add_gp_prescriptions(eid = '1213', dmd_code = '324430000')
-#expect_drug_exposure(person_id = 1213)
+declareTest(1210, 'Test retrieving visit occurrence id')
+add_baseline(eid = '1210')
+add_gp_prescriptions(eid = '1210', dmd_code = '324430000', issue_date = '01/01/2020')
+expect_drug_exposure(person_id = 1210, visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1210, visit_start_date = '2020-01-01'))
 
+declareTest(1211, 'Test truncate long drug source value (> 50 chars)')
+add_baseline(eid = '1211')
+add_gp_prescriptions(eid = '1211', dmd_code = NULL, read_2 = NULL, drug_name = 'drug name well over the ridicolously short 50 character limit' )
+expect_drug_exposure(person_id = 1211, drug_source_value = 'drug name well over the ridicolously short 50 char')
