@@ -20,17 +20,12 @@ GP_CLINICAL_MAPPING_FOLDER = 'resources/gp_clinical_field_mapping/'
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.get_dataframe('gp_clinical.csv')
 
-    # load dictionary of valid units
-    with open(GP_CLINICAL_MAPPING_FOLDER + 'unit_raw_to_clean.csv') as f:
-        next(f)  # Skip provenance info
-        next(f)  # Skip the header
-        reader = csv.reader(f)
-        valid_units = dict(reader)
-
     # Note: if we add restricting to codes, we might miss some added from the phenotype_logic
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
     read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
     value_mapper = GpClinicalValueMapper()
+
+    valid_units = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
 
     records = []
     for _, row in source.iterrows():
@@ -66,12 +61,9 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         if not is_null(row['value3']):
             if row['value3'].startswith('OPR'):
                 operator = row['value3'][3:]
-            elif unit in valid_units: # this includes MEAxxx codes
+            else:
                 unit = row['value3']
-                if valid_units[unit]: # might still map to empty string
-                    unit_concept_id=12345 # TODO: placeholder, add mapping to standard concept_id
-                else:
-                    unit_concept_id=0
+                unit_concept_id = valid_units.get(row['value3'], 0)
 
         read_with_value = value_mapper.lookup(row, read_col)
 

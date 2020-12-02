@@ -55,3 +55,13 @@ declareTest(1709, 'GP clinical to stem, readv2 code in read_3 field')
 add_baseline(eid = 1709)
 add_gp_clinical(eid = 1709, event_dt = '19/04/2020', read_2 = '', read_3 = '246A.')
 expect_measurement(person_id = 1709, measurement_concept_id = 4060831, measurement_source_value = '246A.')
+
+declareTest(1710, 'GP clinical to stem, unit concept ID')
+add_baseline(eid = 1710)
+add_gp_clinical(eid = 1710, event_dt = '02/12/2020', read_3 = 'XE2q5', value3 = 'MEA057')
+expect_measurement(person_id = 1710, measurement_date = '2020-12-02', unit_concept_id = 8636, unit_source_value = 'MEA057')
+
+declareTest(1711, 'GP clinical to stem, unit concept ID')
+add_baseline(eid = 1711)
+add_gp_clinical(eid = 1711, event_dt = '02/12/2020', read_2 = '246..', value3 = 'x10^9/l')
+expect_measurement(person_id = 1711, measurement_date = '2020-12-02', unit_concept_id = 9444, unit_source_value = 'x10^9/l')
