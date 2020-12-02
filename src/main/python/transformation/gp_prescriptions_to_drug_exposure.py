@@ -48,7 +48,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             continue
 
         person_id = row['eid']
-        data_source = 'GP-' + row['data_provider'] if row['data_provider'] else None
+        data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
         # Look up visit_id in VisitOccurrence table
