@@ -15,8 +15,8 @@
 # !/usr/bin/env python3
 from __future__ import annotations
 from abc import ABC
-from dataclasses import dataclass
-from typing import Dict, Optional, List
+from dataclasses import dataclass, field
+from typing import Dict, Optional, List, Union
 from src.main.python.field_mapper.model.UsagiModel import UsagiRow, TargetMapping, MappingType, MappingStatus
 from src.main.python.field_mapper.model.Validator import validator
 
@@ -27,9 +27,9 @@ class _AbstractMapping(ABC):
     field_description: str = None
     value_code: str = None  # Only implemented for ValueMapping
     value_description: str = None  # Only implemented for ValueMapping
-    event_target: Optional[TargetMapping] = None
+    event_targets: List[TargetMapping] = field(default_factory=list)
+    value_targets: List[TargetMapping] = field(default_factory=list)
     unit_target: Optional[TargetMapping] = None
-    value_target: Optional[TargetMapping] = None
     comment: Optional[str] = None
     status: Optional[MappingStatus] = None
     source_file_name: Optional[str] = None
@@ -46,20 +46,36 @@ class _AbstractMapping(ABC):
     def is_approved(self) -> bool:
         return self.status == MappingStatus.APPROVED
 
-    def get_event_concept_id(self):
-        if not self.event_target:
+    def get_event_concept_ids(self) -> List[int]:
+        return _AbstractMapping._get_concept_ids(self.event_targets)
+
+    def get_value_concept_ids(self) -> List[int]:
+        return _AbstractMapping._get_concept_ids(self.value_targets)
+
+    @staticmethod
+    def _get_concept_ids(targets) -> List[int]:
+        return [x.concept_id for x in targets]
+
+    def get_event_concept_id(self) -> int:
+        return _AbstractMapping._get_concept_id(self.event_targets)
+
+    def get_value_concept_id(self) -> int:
+        return _AbstractMapping._get_concept_id(self.value_targets)
+
+    @staticmethod
+    def _get_concept_id(targets) -> int:
+        if not targets:
             return 0
-        return self.event_target.concept_id
+
+        if len(targets) > 1:
+            print('Warning: multiple target concepts, only one returned')
+
+        return targets.pop().concept_id
 
     def get_unit_concept_id(self):
         if not self.unit_target:
             return 0
         return self.unit_target.concept_id
-
-    def get_value_concept_id(self):
-        if not self.value_target:
-            return 0
-        return self.value_target.concept_id
 
     def set_status(self, status: MappingStatus):
         # Although each Usagi row has a comment and status, these are given on field-value level
@@ -67,7 +83,7 @@ class _AbstractMapping(ABC):
             message = f'Two conflicting statuses "{self.status}" and "{status}", the last is used'
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
-        if status == MappingStatus.IGNORED and (self.event_target or self.unit_target or self.value_target):
+        if status == MappingStatus.IGNORED and (self.event_targets or self.unit_target or self.value_targets):
             message = f'Ignored with target mappings. The mappings will not be used.'
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
@@ -75,20 +91,14 @@ class _AbstractMapping(ABC):
 
     def set_target(self, target: TargetMapping):
         if target.type == MappingType.EVENT:
-            if self.event_target:
-                message = f'Existing event_concept_id will be overwritten.'
-                validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
-            self.event_target = target
+            self.event_targets += [target]
         elif target.type == MappingType.UNIT:
             if self.unit_target:
                 message = f'Existing unit_concept_id will be overwritten.'
                 validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
             self.unit_target = target
         elif target.type == MappingType.VALUE:
-            if self.value_target:
-                message = f'Existing value_concept_id will be overwritten.'
-                validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
-            self.value_target = target
+            self.value_targets += [target]
         else:
             message = f'Unknown MappingType "{target.type}"'
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
@@ -96,7 +106,7 @@ class _AbstractMapping(ABC):
 
 class FieldMapping(_AbstractMapping):
     def __init__(self, field_id: str):
-        super()
+        super().__init__()  # explicit init needed to initialize new lists
         self.field_id = field_id
         self.values: Dict[str, ValueMapping] = {}
 
@@ -184,8 +194,7 @@ class FieldMapping(_AbstractMapping):
         :param target:
         :return:
         """
-        if self.event_target or self.unit_target or self.value_target:
-            # TODO: continuous fields with few categorical values (-1, -3)
+        if self.event_targets or self.unit_target or self.value_targets:
             message = f'Already mapping assigned on field level and we are trying to add a mapping of the value.'
             validator.add_warning(self.field_id, self.value_code, self.source_file_name, message)
 
@@ -193,6 +202,10 @@ class FieldMapping(_AbstractMapping):
             value_code,
             ValueMapping(value_code, self)
         )
+
+        # Prevent duplication of target events
+        if target in value_mapping.event_targets:
+            return
 
         value_mapping.set_target(target)
 
@@ -202,9 +215,9 @@ class FieldMapping(_AbstractMapping):
 
         values = ', '.join([str(v) for k, v in self.values.items()])
         return f'{self.field_id} => ' \
-               f'event_target: [{self.event_target}], ' \
+               f'event_targets: [{";".join(map(str, self.event_targets))}], ' \
                f'unit_target: [{self.unit_target}], ' \
-               f'value_target: [{self.value_target}], ' \
+               f'value_targets: [{";".join(map(str, self.value_targets))}], ' \
                f'values ({len(self.values)}): [{values}], ' \
                f'comment: {self.comment}'
 
@@ -212,6 +225,7 @@ class FieldMapping(_AbstractMapping):
 class ValueMapping(_AbstractMapping):
 
     def __init__(self, value_code: str, parent_field: FieldMapping):
+        super().__init__()  # explicit init needed to initialize new lists
         self.value_code: str = value_code
         self.field_id: str = parent_field.field_id
 
@@ -228,7 +242,7 @@ class ValueMapping(_AbstractMapping):
             return f'{self.value_code} => IGNORED'
 
         return f'{self.value_code} => [' \
-               f'event_target: [{self.event_target}], ' \
-               f'value_target: [{self.value_target}], ' \
+               f'event_targets: [{";".join(map(str, self.event_targets))}], ' \
+               f'value_targets: [{";".join(map(str, self.value_targets))}], ' \
                f'status: {self.status}, ' \
                f'comment: {self.comment}]'
