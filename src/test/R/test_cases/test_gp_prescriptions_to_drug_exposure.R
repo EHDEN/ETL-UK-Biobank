@@ -9,7 +9,7 @@ expect_no_drug_exposure(person_id = 1200)
 declareTest(1201, 'Test drug fields priority when all drug fields available')
 add_baseline(eid = '1201')
 add_gp_prescriptions(eid = '1201', dmd_code = '324430000', read_2 = 'di21.', drug_name = 'Ibuprofen 200mg tablets')
-expect_drug_exposure(person_id = 1201, drug_concept_id = 1205676, drug_source_concept_id = 21199984, drug_source_value = '324430000')#, drug_type_concept_id=38000177)
+expect_drug_exposure(person_id = 1201, drug_concept_id = 1705676, drug_source_concept_id = 21199984, drug_source_value = '324430000')#, drug_type_concept_id=38000177)
 
  # Read v2 -> Acetaminophen 500 MG Oral Tablet
 declareTest(1202, 'Test drug fields priority when only Read v2 & drug name available')
