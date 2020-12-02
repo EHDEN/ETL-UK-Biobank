@@ -7,7 +7,7 @@ expect_no_drug_exposure(person_id = 1700)
 
 declareTest(1701, 'Test dm+d > Read 2 > drug name when all drug fields available')
 add_baseline(eid = '1701')
-add_gp_prescriptions(eid = '1701', dmd_code = '21199984', read_2 = 'di21.', drug_name = 'Ibuprofen 200mg tablets')
+add_gp_prescriptions(eid = '1701', dmd_code = '324430000', read_2 = 'di21.', drug_name = 'Ibuprofen 200mg tablets')
 expect_drug_exposure(person_id = 1701, drug_concept_id = 1705676) # dm+d -> trimethoprim 100 MG Oral Tablet
 
 declareTest(1702, 'Test dm+d > Read v2 > drug name when only Read v2 & drug name available')
