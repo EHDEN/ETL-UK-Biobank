@@ -1,39 +1,79 @@
-# Source Data Mapping Approach to CDMV5.3.1
+# UK BioBank to OMOP CDM v5.3.1
 
 ![](md_files/image25.png)
 
-## Contents
+The UK BioBank data consists of five sections
+- Baseline, survey and lab results collected during visits to the assessment centres
+- Hospital Episode Statistic, inpatient care
+- General Practitioner, outpatient care
+- Covid registry
+- Death registry
 
-[person](baseline/person.md)
+Here we specify the mapping of each of these sections to the respective OMOP tables.
 
-[observation_period](observation_period.md)
+## Health System data
 
-[death](death.md)
+### Care_site
+- [From baseline](baseline_to_care_site.md)
+- [From covid](covid_to_care_site.md)
 
-[visit_occurrence](visit_occurrence.md)
+## Clinical data
 
-[hesin to visit_detail](hesin_to_visit_detail.md)
+### Person
+- [From baseline](baseline_to_person.md)
 
-[baseline_to_stem_table](baseline_to_stem_table.md)
+### Observation_period 
+- [From gp_registrations](gp_registrations_to_observation_period.md)
 
-[condition_occurrence](condition_occurrence.md)
+### Death
+- [death](death_to_death.md)
 
-[drug_exposure](drug_exposure.md)
+### Visit_occurrence
+- [From baseline](baseline_to_visit_occurrence.md)
+- [From covid](covid_to_visit_occurrence.md)
+- [From gp_clinical](gp_clinical_to_visit_occurrence.md)
+- [From gp_prescriptions](gp_prescriptions_to_visit_occurrence.md)
+    
+### Visit_detail
+- [From hesin](hesin_to_visit_detail.md)
 
-[device_exposure](device_exposure.md)
+### Condition_occurrence
+- [From death](death_to_condition_occurrence.md)
+- [From hesin_diag](hesin_diag_to_condition_occurrence.md)
+- [From cancer_registry](cancer_register_to_condition_occurrence.md)
 
-[measurement](measurement.md)
+### Drug_exposure
+- [From gp_prescriptions](gp_prescriptions_to_drug_exposure.md)
 
-[observation](observation.md)
+### Procedure_occurrence
+- [From hesin_oper](hesin_oper_to_procedure_occurrence.md)
 
-[procedure_occurrence](procedure_occurrence.md)
+### Observation
+- [From covid](covid_to_observation.md)
+- [From gp_clinical](gp_clinical_to_observation.md)
 
-[specimen](specimen.md)
+## Stem_table
+- [From baseline](baseline_to_stem_table.md)
+- [From gp_clinical](gp_clinical_to_stem_table.md)
 
-[care_site](care_site.md)
+## Stem_to_clinical_event
+![](md_files/stem_image.png)
 
-[gp_clinical to stem_table](gp_clinical_to_stem_table.md)
+The stem table is mapped to the respective OMOP domains based on the domain_id.
+The following rules are applied, in this order:
 
-[source_appendix](source_appendix.md)
+1. If `stem_table.domain_id` given, then read target domain from `stem_table.domain_id`
+2. If `stem_table.concept_id` not 0, then read target domain from `concept.domain_id`
+3. Else, the target domain is Observation.
 
-[stem to clinical_event](stem/index.md)
+- [To condition_occurrence](stem_to_condition_occurrence.md)
+- [To drug_exposure](stem_to_drug_exposure.md)
+- [To procedure_occurrence](stem_to_procedure_occurrence.md)
+- [To device_exposure](stem_to_device_exposure.md)
+- [To measurement](stem_to_measurement.md)
+- [To specimen](stem_to_specimen.md)
+    
+## Source table appendix
+- [HES, GP and covid appendix](source_appendix.md)
+- [baseline appendix](baseline_source_appendix.md)
+

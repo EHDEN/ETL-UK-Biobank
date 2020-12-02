@@ -2,19 +2,19 @@
 
 ### Reading from stem_table
 
-![](md_files/image3.png)
+![](md_files/image14.png)
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
 | drug_exposure_id | id |  |  |
 | person_id | person_id |  |  |
-| drug_concept_id | concept_id |  |  |
 | drug_exposure_start_date | start_date |  |  |
+| drug_concept_id | concept_id |  |  |
 | drug_exposure_start_datetime | start_datetime |  |  |
 | drug_exposure_end_date | end_date |  |  |
 | drug_exposure_end_datetime | end_datetime |  |  |
 | verbatim_end_date |  |  |  |
-| drug_type_concept_id | type_concept_id |  |  |
+| drug_type_concept_id | type_concept_id |  | 38000177 - Prescription written |
 | stop_reason | stop_reason |  |  |
 | refills | refills |  |  |
 | quantity | quantity |  |  |
