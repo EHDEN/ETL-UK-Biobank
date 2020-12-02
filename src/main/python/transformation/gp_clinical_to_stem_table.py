@@ -76,7 +76,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 target_concept_id = read_mapping.target_concept_id
                 source_concept_id = read_mapping.source_concept_id
             elif read_col == 'read_3':
-                target_concept_id = read3_lookup.get(read_code_extended, 0)
+                target_concept_id = read3_lookup.get(read_code, 0)
                 # If read_3 code not found in v3 mapper, use v2 mapper
                 if target_concept_id == 0:
                     read_mapping = read2_mapper.lookup(read_code_extended, first_only=True)
@@ -85,7 +85,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             r = wrapper.cdm.StemTable(
                 person_id=person_id,
-                domain_id='Measurement',
+                domain_id='Measurement',  # this always overrides concept.domain_id, also if the concept is legitimately a condition
                 type_concept_id=32817,
                 start_date=event_date,
                 start_datetime=event_date,
