@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
-import csv
 from sqlalchemy.orm.exc import NoResultFound
 
 from ..util import get_datetime
@@ -14,9 +13,6 @@ if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-GP_CLINICAL_MAPPING_FOLDER = 'resources/gp_clinical_field_mapping/'
-
-
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.get_dataframe('gp_clinical.csv')
 
@@ -25,7 +21,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
     value_mapper = GpClinicalValueMapper()
 
-    valid_units = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
+    unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
 
     records = []
     for _, row in source.iterrows():
@@ -57,13 +53,13 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             except NoResultFound:
                 visit_id = None
 
-        unit, unit_concept_id, operator = None, None, None
+        unit_source_value, unit_concept_id, operator = None, None, None
         if not is_null(row['value3']):
             if row['value3'].startswith('OPR'):
                 operator = row['value3'][3:]
             else:
-                unit = row['value3']
-                unit_concept_id = valid_units.get(row['value3'], 0)
+                unit_source_value = row['value3']
+                unit_concept_id = unit_lookup.get(row['value3'], 0)
 
         read_with_value = value_mapper.lookup(row, read_col)
 
@@ -95,7 +91,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 source_value=read_code,  # original before adding cyphers after dots
                 operator_concept_id=operator,
                 unit_concept_id=unit_concept_id,
-                unit_source_value=unit,
+                unit_source_value=unit_source_value,
                 # value_as_concept_id=value_as_concept_id,
                 value_as_number=value_as_number,
                 data_source=data_source
