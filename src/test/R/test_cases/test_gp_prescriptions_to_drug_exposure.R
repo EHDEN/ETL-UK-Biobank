@@ -63,5 +63,5 @@ expect_drug_exposure(person_id = 1210, visit_occurrence_id = lookup_visit_occurr
 
 declareTest(1211, 'Test truncate long drug source value (> 50 chars)')
 add_baseline(eid = '1211')
-add_gp_prescriptions(eid = '1211', dmd_code = NULL, read_2 = NULL, drug_name = 'drug name well over the ridicolously short 50 character limit' )
-expect_drug_exposure(person_id = 1211, drug_source_value = 'drug name well over the ridicolously short 50 char')
+add_gp_prescriptions(eid = '1211', dmd_code = NULL, read_2 = NULL, drug_name = 'drug name well over the ridiculously short 50 character limit' )
+expect_drug_exposure(person_id = 1211, drug_source_value = 'drug name well over the ridiculously short 50 char')

@@ -127,9 +127,9 @@ initFramework <- function() {
   assign('hesin_diag', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
-  defaults$eid <- '1006846'
-  defaults$data_provider <- '3'
-  defaults$issue_date <- '10/02/2014'
+  defaults$eid <- '1'
+  defaults$data_provider <- ''
+  defaults$issue_date <- ''
   defaults$read_2 <- ''
   defaults$bnf_code <- ''
   defaults$dmd_code <- ''
