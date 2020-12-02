@@ -138,25 +138,22 @@ class Wrapper(EtlWrapper):
         return self.lookup_visit_occurrence_id(person_id=person_id, record_source_value=record_source_value)
 
     def lookup_visit_occurrence_id(self, **kwargs) -> Optional[int]:
-        with self.db.session_scope() as session:
-            query = session.query(self.cdm.VisitOccurrence).filter_by(**kwargs)
-            try:
-                visit_record = query.one()
-            except NoResultFound:
-                return None
-            except MultipleResultsFound:
-                logger.warning(f'Multiple visit occurrences found for {kwargs}, returning first only')
-                visit_record = query.first()
-            return visit_record.visit_occurrence_id
+        return self.lookup_id(self.cdm.VisitOccurrence, 'visit_occurrence_id', **kwargs)
 
     def lookup_visit_detail_id(self, **kwargs) -> Optional[int]:
+        return self.lookup_id(self.cdm.VisitDetail, 'visit_detail_id', **kwargs)
+
+    def lookup_person_id(self, person_source_value) -> Optional[int]:
+        return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
+
+    def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
         with self.db.session_scope() as session:
-            query = session.query(self.cdm.VisitDetail).filter_by(**kwargs)
+            query = session.query(model).filter_by(**kwargs)
             try:
                 visit_record = query.one()
             except NoResultFound:
                 return None
             except MultipleResultsFound:
-                logger.warning(f'Multiple visit details found for {kwargs}, returning first only')
+                logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
                 visit_record = query.first()
-            return visit_record.visit_detail_id
+        return visit_record[id_to_lookup]
