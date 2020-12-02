@@ -31,9 +31,9 @@ Here we specify the mapping of each of these sections to the respective OMOP tab
 ### Visit_occurrence
 - [From baseline](baseline_to_visit_occurrence.md)
 - [From covid](covid_to_visit_occurrence.md)
-- [From gp_clinical](gp_clinical_to_visit_occurrence.md)
-- [From gp_prescriptions](gp_prescriptions_to_visit_occurrence.md)
-    
+- [From hesin](hesin_to_visit_occurrence.md)
+- [From gp_clinical and gp_prescriptions](gp_clinical_prescriptions_to_visit_occurrence.md)
+
 ### Visit_detail
 - [From hesin](hesin_to_visit_detail.md)
 
