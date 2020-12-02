@@ -17,9 +17,9 @@ The demographics recorded are gender, year of birth, month of birth, race and as
 | birth_datetime |  |  |  |
 | race_concept_id | 21000-0.0 | 1: 8527 #white<br>2: 4212311 #mixed racial group SNOMED<br>3: 8515 #asian<br>4: 38003598 #black<br>5: 38003579 #chinese | Only top level mapped. Because it is UK data, >90% is 'white british' |
 | ethnicity_concept_id |  | 0 |  |
-| location_id | 54-0.0 | Populate location table with each of the ~23 cities of the assessment centers | Another possibility is to map this to a care_site |
+| location_id | | | |
 | provider_id |  |  |  |
-| care_site_id |  |  |  |
+| care_site_id | 54-0.0 |  | Care site table is populated with all unique assessment centres, using same id. | 
 | person_source_value | eid |  |  |
 | gender_source_value | 31-0.0 |  |  |
 | gender_source_concept_id |  |  |  |
@@ -27,4 +27,3 @@ The demographics recorded are gender, year of birth, month of birth, race and as
 | race_source_concept_id |  |  |  |
 | ethnicity_source_value |  |  |  |
 | ethnicity_source_concept_id |  |  |  |
-

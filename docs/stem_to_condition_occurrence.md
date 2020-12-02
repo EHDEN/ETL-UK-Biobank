@@ -2,14 +2,14 @@
 
 ### Reading from stem_table
 
-![](md_files/image1.png)
+![](md_files/image12.png)
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| condition_occurrence_id | id |  |  |
+| condition_occurrence_id | id |  | Auto-increment |
 | person_id | person_id |  |  |
-| condition_start_date | start_date |  |  |
 | condition_concept_id | concept_id |  |  |
+| condition_start_date | start_date |  |  |
 | condition_start_datetime | start_datetime |  |  |
 | condition_end_date | end_date |  |  |
 | condition_end_datetime | end_datetime |  |  |
