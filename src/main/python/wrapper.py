@@ -160,4 +160,4 @@ class Wrapper(EtlWrapper):
         except MultipleResultsFound:
             logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
             visit_record = query.first()
-        return visit_record[id_to_lookup]
+        return getattr(visit_record, id_to_lookup)
