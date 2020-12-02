@@ -18,13 +18,9 @@ def gp_registrations_to_observation_period(wrapper: Wrapper) -> List[Observation
     with wrapper.db.session_scope() as session:
         for _, row in source.iterrows():
 
-            query = session.query(Person) \
-                .filter(Person.person_id == row['eid'])
-
-            try:
-                person_record = query.one()
-                person_id = person_record.person_id
-            except NoResultFound or MultipleResultsFound:
+            person_id = wrapper.lookup_person_id(row['eid'])
+            if not person_id:
+                # Person not found
                 continue
 
             start_date = get_datetime(row['reg_date'], "%d/%m/%Y")

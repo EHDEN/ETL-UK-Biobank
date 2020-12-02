@@ -23,23 +23,16 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
 
             date = get_datetime(row['specdate'], "%d/%m/%Y")
 
-            query_1 = session.query(Person) \
-                .filter(Person.person_id == row['eid'])
-            try:
-                person_record = query_1.one()
-                person_id = person_record.person_id
-            except NoResultFound or MultipleResultsFound:
+            person_id = wrapper.lookup_person_id(row['eid'])
+            if not person_id:
+                # Person not found
                 continue
 
-            query_2 = session.query(VisitOccurrence) \
-                .filter(VisitOccurrence.person_id == person_id) \
-                .filter(VisitOccurrence.visit_start_date == date) \
-                .filter(VisitOccurrence.record_source_value == 'covid')
-            try:
-                visit_record = query_2.one()
-                visit_id = visit_record.visit_occurrence_id
-            except NoResultFound or MultipleResultsFound:
-                visit_id = None
+            visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
+                person_id=person_id,
+                visit_start_date=date,
+                record_source_value='covid'
+            )
 
             result = {
                 '1': 45884084,  # Positive
@@ -53,7 +46,7 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
                 observation_datetime=date,
                 value_as_concept_id=result.get(row['result'], None),
                 observation_type_concept_id=38000279,  # Lab observation concept code result
-                visit_occurrence_id=visit_id,
+                visit_occurrence_id=visit_occurrence_id,
                 observation_source_value=row['spectype'],
                 data_source='covid'
             )

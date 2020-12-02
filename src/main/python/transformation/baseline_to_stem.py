@@ -32,6 +32,11 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     with wrapper.db.session_scope() as session:
         for _, row in source.iterrows():
             eid = row.pop('eid')
+            person_id = wrapper.lookup_person_id(eid)
+            if not person_id:
+                # Person not found
+                continue
+
             for column_name, value in row.items():
                 if value == '' or pd.isna(value):
                     continue
@@ -57,7 +62,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 target = field_mapper.lookup(field_id, value)
                 if target:
                     records.append(wrapper.cdm.StemTable(
-                        person_id=eid,
+                        person_id=person_id,
                         start_date=datetime.date(),
                         start_datetime=datetime,
                         concept_id=target.concept_id,
