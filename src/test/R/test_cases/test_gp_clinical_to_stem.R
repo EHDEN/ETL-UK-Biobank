@@ -1,7 +1,7 @@
 declareTest(1700, 'GP clinical to stem, readv2 code in read_3 field')
 add_baseline(eid = 1700)
-add_gp_clinical(eid = 1700, event_dt = '19/04/2020', read_2 = '', read_3 = '246A.')
-expect_measurement(person_id = 1700, measurement_concept_id = 4060831, measurement_source_value = '246A.')
+add_gp_clinical(eid = 1700, event_dt = '19/04/2020', read_2 = NULL, read_3 = '246A.', value1 = 100)
+expect_measurement(person_id = 1700, measurement_concept_id = 4060831,  measurement_source_concept_id = 45468573, measurement_source_value = '246A.')
 
 declareTest(1701, 'GP clinical to stem, visit lookup')
 add_baseline(eid = 1701)
@@ -17,13 +17,13 @@ expect_measurement(person_id = 1702, measurement_date = '2020-04-03',
 
 declareTest(1703, 'GP clinical to stem, read3 code')
 add_baseline(eid = 1703)
-add_gp_clinical(eid = 1703, event_dt = '04/04/2020', read_3 = 'XE2q5')
+add_gp_clinical(eid = 1703, event_dt = '04/04/2020', read_2 = NULL, read_3 = 'XE2q5', value1 = 100)
 expect_measurement(person_id = 1703, measurement_date = '2020-04-04',
                    measurement_concept_id = 0, measurement_source_concept_id = 0, measurement_source_value = 'XE2q5')
 
 declareTest(1704, 'GP clinical to stem, missing date')
 add_baseline(eid = 1704)
-add_gp_clinical(eid = 1704, event_dt = '', read_2 = '246..')
+add_gp_clinical(eid = 1704, event_dt = NULL, read_2 = '246..', data_provider = '3')
 expect_no_measurement(person_id = 1704, measurement_source_value = '246..')
 
 declareTest(1705, 'GP clinical to stem, Serum creatinine with value')
@@ -44,7 +44,7 @@ expect_measurement(person_id = 1707, measurement_date = '2020-12-02', unit_conce
 
 declareTest(1708, 'GP clinical to stem, readv3 serum urea')
 add_baseline(eid = 1708)
-add_gp_clinical(eid = 1708, event_dt = '18/04/2020', read_2 = '', read_3 = 'XM0lt')
+add_gp_clinical(eid = 1708, event_dt = '18/04/2020', read_2 = NULL, read_3 = 'XM0lt')
 expect_measurement(person_id = 1708, measurement_concept_id = 37392195, measurement_source_value = 'XM0lt')
 
 declareTest(1709, 'GP clinical to stem, DBP with value')
