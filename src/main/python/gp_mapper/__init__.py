@@ -1,2 +1,2 @@
-from .code_cleanup import extend_read_code, is_null
+from .code_cleanup import extend_read_code
 from .gp_clinical_value_mapper import GpClinicalValueMapper

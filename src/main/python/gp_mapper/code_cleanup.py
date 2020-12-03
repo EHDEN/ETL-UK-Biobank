@@ -13,7 +13,8 @@
 # GNU General Public License for more details.
 
 import csv
-import pandas as pd
+
+from src.main.python.util.general_functions import is_null
 
 GP_CLINICAL_MAPPING_FOLDER = 'resources/gp_clinical_field_mapping/'
 
@@ -23,13 +24,6 @@ with open(GP_CLINICAL_MAPPING_FOLDER + 'read2_alternative_dot_code_mappings.csv'
     next(f)  # Skip the header
     reader = csv.reader(f)
     mapping_dict = dict(row[1:] for row in reader if row)  # skip 1st column
-
-
-def is_null(value) -> bool:
-    if pd.isnull(value) or not value:  # '0' string is a valid code, won't be filtered by this
-        return True
-    else:
-        return False
 
 
 def extend_read_code(read_code: str) -> str:
@@ -43,14 +37,6 @@ def extend_read_code(read_code: str) -> str:
 
 
 if __name__ == '__main__':
-    import numpy as np
-    print('# is_null() tests')
-    print(is_null(None))
-    print(is_null(np.nan))
-    print(is_null(''))
-    print(is_null(0))
-    print(is_null(0.0))
-    print(is_null('Hello'))
     print('# extend_read_code() tests')
     mapping_dict = {'ABC.' : 'ABC.123'}
     print(extend_read_code(None))

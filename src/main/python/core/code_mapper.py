@@ -18,8 +18,7 @@ from sqlalchemy import and_
 from sqlalchemy.orm import aliased
 from typing import Optional, Union, List, Dict
 import logging
-from ..gp_mapper import is_null
-
+from ..util.general_functions import is_null
 
 logger = logging.getLogger(__name__)
 
