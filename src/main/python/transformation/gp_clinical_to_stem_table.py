@@ -43,7 +43,11 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         if not person_id:
             continue
 
-        event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
+        if not is_null(row['event_dt']):
+            event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
+        else:
+            continue
+
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
 
         # Look up visit_id in VisitOccurrence table
