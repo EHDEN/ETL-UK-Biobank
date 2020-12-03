@@ -124,7 +124,7 @@ class Wrapper(EtlWrapper):
                 else:
                     key = (row['sourceCode'], row[add_info])
 
-                target = row['conceptId']
+                target = int(row['conceptId'])
 
                 if first_only:
                     # value is string
