@@ -12,23 +12,12 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-import csv
 from typing import Dict, Optional
 
 from src.main.python.util.general_functions import is_null
 
 
-GP_CLINICAL_MAPPING_FOLDER = 'resources/gp_clinical_field_mapping/'
-
-# load dictionary of special Read v2 dot code mappings (i.e. alternative to adding 00)
-with open(GP_CLINICAL_MAPPING_FOLDER + 'read2_alternative_dot_code_mappings.csv') as f:
-    next(f)  # Skip provenance info
-    next(f)  # Skip the header
-    reader = csv.reader(f)
-    mapping_dict = dict(row[1:] for row in reader if row)  # skip 1st column
-
-
-def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = None) -> str:
+def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str, str]] = None) -> str:
     """
     Given a Read code, if the code ends with a dot, try extending it
     using the provided (optional) mapping dictionary, otherwise append

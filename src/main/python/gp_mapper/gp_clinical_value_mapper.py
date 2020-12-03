@@ -19,15 +19,14 @@ import logging
 
 
 logger = logging.getLogger(__name__)
-GP_CLINICAL_MAPPING_FOLDER = 'resources/gp_clinical_field_mapping/'
 
 
 class GpClinicalValueMapper:
 
     def __init__(self):
         # load dataframe for special mapping logic (e.g. blood pressure)
-        self.mapping_logic_df = pd.read_csv(GP_CLINICAL_MAPPING_FOLDER + 'phenotype_logic.csv',
-                                            skiprows=1, dtype='object')
+        self.mapping_logic_df = pd.read_csv(
+            'resources/mapping_tables/gp_clinical_phenotype_logic.csv', skiprows=1, dtype='object')
         self.special_handling_codes = set(self.mapping_logic_df['source_read_code'])
 
     def lookup(self, row, read_col) -> List[Tuple[Optional[str], float]]:

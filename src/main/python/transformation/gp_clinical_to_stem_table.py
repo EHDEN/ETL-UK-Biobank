@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
+import csv
 
 from ..util import get_datetime
 from ..gp_mapper import extend_read_code, GpClinicalValueMapper
@@ -13,6 +14,13 @@ if TYPE_CHECKING:
 
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.get_dataframe('gp_clinical.csv')
+
+    # load dictionary of special Read v2 dot code mappings (i.e. alternative to adding 00)
+    with open('resources/mapping_tables/gp_clinical_read2_alternative_dot_code_mappings.csv') as f:
+        next(f)  # Skip provenance info
+        next(f)  # Skip the header
+        reader = csv.reader(f)
+        read_v2_mapping_dict = dict(row[1:] for row in reader if row)  # skip 1st column
 
     # Note: if we add restricting to codes, we might miss some added from the phenotype_logic
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
@@ -58,7 +66,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         read_with_value = value_mapper.lookup(row, read_col)
 
         for read_code, value_as_number in read_with_value:
-            read_code_extended = extend_read_code(read_code)
+            read_code_extended = extend_read_code(read_code, read_v2_mapping_dict)
             target_concept_id = 0
             source_concept_id = 0
             if read_col == 'read_2':
