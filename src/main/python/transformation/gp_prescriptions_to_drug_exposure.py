@@ -19,15 +19,16 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
     source['read_2_extended'] = source['read_2'].apply(extend_read_code)
 
     dmd_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=list(source['dmd_code']))
+        wrapper.code_mapper.generate_code_mapping_dictionary(
+            'dm+d', restrict_to_codes=list(source['dmd_code']))
     read2_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_Read2.csv',
-            first_only=True)
+            first_only=True, approved_only=False)
     drug_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
-            first_only=True)
+            first_only=True, approved_only=False)
 
     records = []
     for _, row in source.iterrows():
