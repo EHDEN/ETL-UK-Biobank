@@ -62,23 +62,24 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 unit_source_value = row['value3']
                 unit_concept_id = unit_lookup.get(row['value3'], 0)
 
-        read_with_value = value_mapper.lookup(row, read_col)
+        source_read_code = row[read_col]
+        source_read_code_extended = extend_read_code(source_read_code, read_v2_mapping_dict)
+        source_read_mapping = read2_mapper.lookup(source_read_code_extended, first_only=True)
 
-        for read_code, value_as_number in read_with_value:
-            read_code_extended = extend_read_code(read_code, read_v2_mapping_dict)
-            target_concept_id = 0
-            source_concept_id = 0
+        map_as_read_code_and_value = value_mapper.lookup(row, read_col)
+        for map_as_read_code, value_as_number in map_as_read_code_and_value:
+            mapped_read_code_extended = extend_read_code(map_as_read_code, read_v2_mapping_dict)
+            target_read_mapping = read2_mapper.lookup(mapped_read_code_extended, first_only=True)
             if read_col == 'read_2':
-                read_mapping = read2_mapper.lookup(read_code_extended, first_only=True)
-                target_concept_id = read_mapping.target_concept_id
-                source_concept_id = read_mapping.source_concept_id
-            elif read_col == 'read_3':
-                target_concept_id = read3_lookup.get(read_code, 0)
+                target_concept_id = target_read_mapping.target_concept_id
+                source_concept_id = source_read_mapping.source_concept_id
+            else: # read_col == 'read_3'
+                target_concept_id = read3_lookup.get(map_as_read_code, 0)
+                source_concept_id = 0
                 # If read_3 code not found in v3 mapper, use v2 mapper
                 if target_concept_id == 0:
-                    read_mapping = read2_mapper.lookup(read_code_extended, first_only=True)
-                    target_concept_id = read_mapping.target_concept_id
-                    source_concept_id = read_mapping.source_concept_id
+                    target_concept_id = target_read_mapping.target_concept_id
+                    source_concept_id = source_read_mapping.source_concept_id
 
             r = wrapper.cdm.StemTable(
                 person_id=person_id,
@@ -89,7 +90,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 visit_occurrence_id=visit_id,
                 concept_id=target_concept_id,
                 source_concept_id=source_concept_id,
-                source_value=read_code,  # original before adding cyphers after dots
+                source_value=source_read_code,  # original before adding cyphers after dots
                 operator_concept_id=operator,
                 unit_concept_id=unit_concept_id,
                 unit_source_value=unit_source_value,
