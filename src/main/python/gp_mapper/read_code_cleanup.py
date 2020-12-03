@@ -43,3 +43,4 @@ if __name__ == '__main__':
     print(extend_read_code(None))
     print(extend_read_code('ABC'))
     print(extend_read_code('ABC.'))
+    print(extend_read_code('ABC.'), mapping_dict)
