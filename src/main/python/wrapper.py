@@ -139,9 +139,6 @@ class Wrapper(EtlWrapper):
                         result[key] = [target]
         return result
 
-    def lookup_visit(self, person_id, record_source_value) -> Optional[int]:
-        return self.lookup_visit_occurrence_id(person_id=person_id, record_source_value=record_source_value)
-
     def lookup_visit_occurrence_id(self, **kwargs) -> Optional[int]:
         return self.lookup_id(self.cdm.VisitOccurrence, 'visit_occurrence_id', **kwargs)
 

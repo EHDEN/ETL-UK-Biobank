@@ -49,7 +49,10 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
             continue
 
         # Visit
-        visit_occurrence_id = wrapper.lookup_visit(row['eid'], 'HES-' + str(row['spell_index']))
+        visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
+            person_id=person_id,
+            record_source_value=f'HES-{row["spell_index"]}'
+        )
 
         for target in procedure_targets:
             r = wrapper.cdm.ProcedureOccurrence(
