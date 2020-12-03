@@ -15,6 +15,7 @@
 import pandas as pd
 from typing import Optional, List, Tuple
 from ..util.general_functions import is_null
+from .read_code_cleanup import extend_read_code
 import logging
 
 
@@ -23,8 +24,9 @@ logger = logging.getLogger(__name__)
 
 class GpClinicalValueMapper:
 
-    def __init__(self):
+    def __init__(self, mapping_dict):
         # load dataframe for special mapping logic (e.g. blood pressure)
+        self.mapping_dict = mapping_dict
         self.mapping_logic_df = pd.read_csv(
             'resources/mapping_tables/gp_clinical_phenotype_logic.csv', skiprows=1, dtype='object')
         self.special_handling_codes = set(self.mapping_logic_df['source_read_code'])
@@ -52,11 +54,12 @@ class GpClinicalValueMapper:
 
             # apply special mapping logic to specific combinations of data provider, read code,
             # and value column (e.g. blood pressure)
-            if row[read_col] in self.special_handling_codes:
+            source_code_extended = extend_read_code(row[read_col], mapping_dict=self.mapping_dict)
+            if source_code_extended in self.special_handling_codes:
                 filter1 = self.mapping_logic_df['read_col'] == read_col
                 filter2 = self.mapping_logic_df['value_col'] == value_col
                 filter3 = self.mapping_logic_df['data_provider'] == row['data_provider']
-                filter4 = self.mapping_logic_df['source_read_code'] == row[read_col]
+                filter4 = self.mapping_logic_df['source_read_code'] == source_code_extended
                 filtered_df = self.mapping_logic_df[filter1 & filter2 & filter3 & filter4]
                 n_results = len(filtered_df.index)
                 if n_results == 1:  # either not found, or 1 result (no multiple mappings in source file)

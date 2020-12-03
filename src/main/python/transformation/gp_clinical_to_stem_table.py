@@ -26,7 +26,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
     read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
-    value_mapper = GpClinicalValueMapper()
+    value_mapper = GpClinicalValueMapper(mapping_dict=read_v2_mapping_dict)
 
     records = []
     for _, row in source.iterrows():
@@ -74,7 +74,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             if read_col == 'read_2':
                 target_concept_id = target_read_mapping.target_concept_id
                 source_concept_id = source_read_mapping.source_concept_id
-            else: # read_col == 'read_3'
+            else:  # read_col == 'read_3'
                 target_concept_id = read3_lookup.get(map_as_read_code, 0)
                 source_concept_id = 0
                 # If read_3 code not mapped to standard concept_id using v3 mapper, try v2 mapper
