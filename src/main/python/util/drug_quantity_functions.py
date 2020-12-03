@@ -1,7 +1,6 @@
 import re
 from typing import List, Union, Optional
-from src.main.python.util import is_null
-
+from src.main.python.util.general_functions import is_null
 
 # base patterns
 any_nr = '(?<![.\d])\.?[0-9]+(\.[0-9]+)?(?![.\d])'

@@ -2,12 +2,10 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 from datetime import timedelta
-from sqlalchemy.orm.exc import NoResultFound
-from src.main.python.util import get_datetime, is_null, extend_read_code, \
-    extract_numeric_quantity, valid_quantity_for_days_estimate
-from src.main.python.core.model import VisitOccurrence
+from src.main.python.util import get_datetime, extract_numeric_quantity, valid_quantity_for_days_estimate
 from src.main.python.core.code_mapper import CodeMapping
-
+from src.main.python.gp_mapper import extend_read_code
+from src.main.python.util.general_functions import is_null
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -19,15 +17,16 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
     source['read_2_extended'] = source['read_2'].apply(extend_read_code)
 
     dmd_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary('dm+d', restrict_to_codes=list(source['dmd_code']))
+        wrapper.code_mapper.generate_code_mapping_dictionary(
+            'dm+d', restrict_to_codes=list(source['dmd_code']))
     read2_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_Read2.csv',
-            first_only=True)
+            first_only=True, approved_only=False)
     drug_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
-            first_only=True)
+            first_only=True, approved_only=False)
 
     records = []
     for _, row in source.iterrows():

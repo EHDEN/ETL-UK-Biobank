@@ -30,9 +30,9 @@ initFramework <- function() {
   assign('baseline', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
-  defaults$eid <- '1002951'
+  defaults$eid <- ''
   defaults$data_provider <- '3'
-  defaults$event_dt <- '16/09/2014'
+  defaults$event_dt <- ''
   defaults$read_2 <- ''
   defaults$read_3 <- ''
   defaults$value1 <- ''

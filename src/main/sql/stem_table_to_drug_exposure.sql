@@ -74,5 +74,5 @@ SELECT
 
 FROM @target_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)
-WHERE concept.domain_id = 'Drug'
+WHERE (stem_table.domain_id = 'Drug') OR (stem_table.domain_id IS NULL AND concept.domain_id = 'Drug')
 ;

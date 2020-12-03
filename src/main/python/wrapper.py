@@ -66,6 +66,7 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(gp_prescriptions_to_drug_exposure)
         self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
+        self.execute_transformation(gp_clinical_to_stem_table)
         self.execute_transformation(hesin_to_visit_occurrence)
         self.execute_transformation(hesin_diag_to_condition_occurrence)
         self.execute_transformation(gp_registrations_to_observation_period)
@@ -99,7 +100,7 @@ class Wrapper(EtlWrapper):
         df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=object)
         return df
 
-    def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True):
+    def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True, approved_only: bool = True):
         """
         Create a dictionary to lookup target concept_id by source code from a mapping file.
         If mapping is not APPROVED, it is not included.
@@ -107,6 +108,7 @@ class Wrapper(EtlWrapper):
         :param add_info: for some records we needed to find the standard concept by combine two source fields.
                          If this parameter is filled the dictionary keys will be a combination of the two fields.
         :param first_only: if True, return the first available match only (default True). If False, all targets are lists of concept ids.
+        :param approved_only: if True, return only approved mappings (mappingStatus=approved)
         :return: the dictionary. values are either strings (first_only = True) or lists (first_only = False)
         """
         result = {}
@@ -114,7 +116,7 @@ class Wrapper(EtlWrapper):
             table_mapping = csv.DictReader(f_in, delimiter=',')
 
             for row in table_mapping:
-                if row['mappingStatus'] != 'APPROVED':
+                if approved_only and row['mappingStatus'] != 'APPROVED':
                     continue
 
                 if not add_info:
@@ -122,7 +124,7 @@ class Wrapper(EtlWrapper):
                 else:
                     key = (row['sourceCode'], row[add_info])
 
-                target = row['conceptId']
+                target = int(row['conceptId'])
 
                 if first_only:
                     # value is string
