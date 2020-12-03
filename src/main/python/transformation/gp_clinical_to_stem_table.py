@@ -25,9 +25,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     # TODO: observed multiple mappings for vaccines to SNOMED and CVX, which is better?
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
     read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
-    value_mapper = GpClinicalValueMapper()
-
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
+    value_mapper = GpClinicalValueMapper()
 
     records = []
     for _, row in source.iterrows():
@@ -63,21 +62,23 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 unit_concept_id = unit_lookup.get(row['value3'], 0)
 
         source_read_code = row[read_col]
+        # temporarily extract mapping as Read v2 code, might be used even if CTV3
         source_read_code_extended = extend_read_code(source_read_code, read_v2_mapping_dict)
         source_read_mapping = read2_mapper.lookup(source_read_code_extended, first_only=True)
 
         map_as_read_code_and_value = value_mapper.lookup(row, read_col)
         for map_as_read_code, value_as_number in map_as_read_code_and_value:
-            mapped_read_code_extended = extend_read_code(map_as_read_code, read_v2_mapping_dict)
-            target_read_mapping = read2_mapper.lookup(mapped_read_code_extended, first_only=True)
+            # temporarily extract mapping as Read v2 code, might be used even if CTV3
+            map_as_read_code_extended = extend_read_code(map_as_read_code, read_v2_mapping_dict)
+            target_read_mapping = read2_mapper.lookup(map_as_read_code_extended, first_only=True)
             if read_col == 'read_2':
                 target_concept_id = target_read_mapping.target_concept_id
                 source_concept_id = source_read_mapping.source_concept_id
             else: # read_col == 'read_3'
                 target_concept_id = read3_lookup.get(map_as_read_code, 0)
                 source_concept_id = 0
-                # If read_3 code not found in v3 mapper, use v2 mapper
-                if target_concept_id == 0:
+                # If read_3 code not mapped to standard concept_id using v3 mapper, try v2 mapper
+                if target_concept_id == 0 and target_read_mapping.target_concept_id != 0:
                     target_concept_id = target_read_mapping.target_concept_id
                     source_concept_id = source_read_mapping.source_concept_id
 
