@@ -35,23 +35,19 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         if is_null(row['read_2']):
             read_col = 'read_3'
 
-        person_id = row['eid']
+        person_id = wrapper.lookup_person_id(person_source_value=row['eid'])
+        if not person_id:
+            continue
+
         event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
         data_source = 'GP-' + row['data_provider'] if not pd.isnull(row['data_provider']) else None
 
         # Look up visit_id in VisitOccurrence table
-        with wrapper.db.session_scope() as session:
-            query = session.query(VisitOccurrence) \
-                .filter(VisitOccurrence.person_id == person_id) \
-                .filter(VisitOccurrence.visit_start_date == event_date) \
-                .filter(VisitOccurrence.data_source == data_source) \
-                .order_by(VisitOccurrence.visit_start_date) \
-                .limit(1)  # multiple records could be found
-            try:
-                visit_record = query.one()
-                visit_id = visit_record.visit_occurrence_id
-            except NoResultFound:
-                visit_id = None
+        visit_id = wrapper.lookup_visit_occurrence_id(
+            person_id=person_id,
+            visit_start_date=event_date,
+            data_source=data_source
+        )
 
         unit_source_value, unit_concept_id, operator = None, None, None
         if not is_null(row['value3']):
