@@ -1,6 +1,6 @@
 import re
 from typing import List, Union, Optional
-from src.main.python.util import is_null
+from ..gp_mapper import is_null
 
 
 # base patterns
