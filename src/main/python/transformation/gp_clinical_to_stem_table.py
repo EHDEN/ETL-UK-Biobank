@@ -22,6 +22,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         read_v2_mapping_dict = dict(row[1:] for row in reader if row)  # skip 1st column
 
     # Note: if we add restricting to codes, we might miss some added from the phenotype_logic
+    # TODO: observed multiple mappings for vaccines to SNOMED and CVX, which is better?
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
     read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
     value_mapper = GpClinicalValueMapper()
@@ -30,15 +31,14 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
     records = []
     for _, row in source.iterrows():
-        # at least one code should be present for the mapping to be meaningful
-        if is_null(row['read_2']) and is_null(row['read_3']):
-            continue
-
         # read_2 and read_3 should be mutually exclusive
-        # TODO: observed multiple mappings for vaccines to SNOMED and CVX, which is better?
-        read_col = 'read_2'
-        if is_null(row['read_2']):
+        if not is_null(row['read_2']):
+            read_col = 'read_2'
+        elif not is_null(row['read_3']):
             read_col = 'read_3'
+        # at least one code should be present for the mapping to be meaningful
+        else:
+            continue
 
         person_id = wrapper.lookup_person_id(person_source_value=row['eid'])
         if not person_id:
