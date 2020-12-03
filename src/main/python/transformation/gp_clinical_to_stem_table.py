@@ -2,11 +2,9 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
-from sqlalchemy.orm.exc import NoResultFound
 
 from ..util import get_datetime
 from ..gp_mapper import extend_read_code, is_null, GpClinicalValueMapper
-from ..core.model import VisitOccurrence
 
 
 if TYPE_CHECKING:
