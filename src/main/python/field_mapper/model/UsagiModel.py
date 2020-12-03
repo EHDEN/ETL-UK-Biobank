@@ -58,3 +58,23 @@ class TargetMapping:
     def __str__(self):
         return f'concept_id: {self.concept_id}, ' \
                f'type: {self.type}'
+
+    def __eq__(self, other):
+        return self.concept_id == other.concept_id and \
+               self.created_by == other.created_by and \
+               self.created_on == other.created_on and \
+               self.type == other.type and \
+               self.status_set_by == other.status_set_by and \
+               self.status_set_on == other.status_set_on
+
+
+def create_fake_target_mapping(concept_id):
+    # For use with a fixed event_concept_id
+    return TargetMapping({
+        'conceptId': concept_id,
+        'createdBy': '<config>',
+        'createdOn': '0',
+        'mappingType': 'EVENT',
+        'statusSetBy': '<config>',
+        'statusSetOn': '0'
+    })

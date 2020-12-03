@@ -17,7 +17,7 @@ ATHENA_CONCEPT_ID_URL = "https://athena.ohdsi.org/search-terms/terms/%s"
 
 # mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'ERROR')
 mapper = FieldConceptMapper(None, 'ERROR')
-mapper.load_usagi(Path('./resources/baseline_field_mapping/usagi_numeric_prio_fields.csv'))
+mapper.load_usagi_file(Path('./resources/baseline_field_mapping/numeric_prio_fields.csv'))
 
 i = 0
 data = []
@@ -102,7 +102,7 @@ def update_field_detail(rows, derived_virtual_selected_rows):
         html.Table([
                 # TODO: retrieve concept_name, domain, vocab from Athena and include link to Athena.
                 html.Tr(
-                    [html.Td(html.B("Event")), html.Td(str(field_mapping.event_target))]
+                    [html.Td(html.B("Event")), html.Td(','.join(map(str, field_mapping.event_targets)))]
                 )
                 ,html.Tr(
                     [html.Td(html.B("Unit")), html.Td(str(field_mapping.unit_target))]
