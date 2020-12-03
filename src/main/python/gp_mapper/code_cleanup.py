@@ -13,8 +13,10 @@
 # GNU General Public License for more details.
 
 import csv
+from typing import Dict, Optional
 
 from src.main.python.util.general_functions import is_null
+
 
 GP_CLINICAL_MAPPING_FOLDER = 'resources/gp_clinical_field_mapping/'
 
@@ -26,7 +28,17 @@ with open(GP_CLINICAL_MAPPING_FOLDER + 'read2_alternative_dot_code_mappings.csv'
     mapping_dict = dict(row[1:] for row in reader if row)  # skip 1st column
 
 
-def extend_read_code(read_code: str) -> str:
+def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = None) -> str:
+    """
+    Given a Read code, if the code ends with a dot, try extending it
+    using the provided (optional) mapping dictionary, otherwise append
+     "00" to it.
+    :param read_code: Read v2 code
+    :param mapping_dict: an (optional) dictionary specifying the
+    preferred extension for codes ending with a dot (e.g. alternative
+    to the default "00")
+    :return: the (extended) Read v2 code
+    """
     if not is_null(read_code) and read_code[-1] == '.':
         if mapping_dict:
             return mapping_dict.get(read_code, read_code + '00')
