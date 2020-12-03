@@ -38,6 +38,9 @@ class Wrapper(EtlWrapper):
         # NOTE: replace the following with project-specific source table names!
         self.source_file_delimiter = ','
 
+        # One session for all lookups done in the wrapper. Note: read_only
+        self._session_for_lookups = self.db.get_new_session()
+
     def run(self):
         self.start_timing()
 
@@ -76,6 +79,8 @@ class Wrapper(EtlWrapper):
 
         self.log_summary()
         self.log_runtime()
+
+        self._session_for_lookups.close()
 
     def load_from_stem_table(self):
         # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
@@ -134,16 +139,22 @@ class Wrapper(EtlWrapper):
                         result[key] = [target]
         return result
 
-    def lookup_visit(self, person_id, record_source_value) -> Optional[int]:
-        with self.db.session_scope() as session:
-            visit_lookup = session.query(self.cdm.VisitOccurrence) \
-                .filter(self.cdm.VisitOccurrence.person_id == person_id,
-                        self.cdm.VisitOccurrence.record_source_value == record_source_value)
-            try:
-                visit_record = visit_lookup.one()
-                return visit_record.visit_occurrence_id
-            except NoResultFound:
-                return None
-            except MultipleResultsFound:
-                logger.warning(f'Multiple visits found for person_id={person_id} record_source_value={record_source_value}')
-                return None
+    def lookup_visit_occurrence_id(self, **kwargs) -> Optional[int]:
+        return self.lookup_id(self.cdm.VisitOccurrence, 'visit_occurrence_id', **kwargs)
+
+    def lookup_visit_detail_id(self, **kwargs) -> Optional[int]:
+        return self.lookup_id(self.cdm.VisitDetail, 'visit_detail_id', **kwargs)
+
+    def lookup_person_id(self, person_source_value) -> Optional[int]:
+        return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
+
+    def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
+        query = self._session_for_lookups.query(model).filter_by(**kwargs)
+        try:
+            visit_record = query.one()
+        except NoResultFound:
+            return None
+        except MultipleResultsFound:
+            logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
+            visit_record = query.first()
+        return getattr(visit_record, id_to_lookup)
