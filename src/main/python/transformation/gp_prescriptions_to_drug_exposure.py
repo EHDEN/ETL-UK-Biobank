@@ -29,7 +29,6 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
             first_only=True)
 
-
     records = []
     for _, row in source.iterrows():
         if not is_null(row['dmd_code']):
@@ -47,23 +46,19 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         else:
             continue
 
-        person_id = row['eid']
+        person_id = wrapper.lookup_person_id(person_source_value=row['eid'])
+        if not person_id:
+            continue
+
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
         # Look up visit_id in VisitOccurrence table
-        with wrapper.db.session_scope() as session:
-            query = session.query(VisitOccurrence) \
-                .filter(VisitOccurrence.person_id == person_id) \
-                .filter(VisitOccurrence.visit_start_date == date_start) \
-                .filter(VisitOccurrence.data_source == data_source) \
-                .order_by(VisitOccurrence.visit_start_date) \
-                .limit(1)  # multiple records could be found
-            try:
-                visit_record = query.one()
-                visit_id = visit_record.visit_occurrence_id
-            except NoResultFound:
-                visit_id = None
+        visit_id = wrapper.lookup_visit_occurrence_id(
+            person_id=person_id,
+            visit_start_date=date_start,
+            data_source=data_source
+        )
 
         raw_quantity = row['quantity'] if not is_null(row['quantity']) else None
         unit = row['quantity'] if not is_null(row['quantity']) else None
