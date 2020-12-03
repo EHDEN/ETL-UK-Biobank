@@ -7,10 +7,10 @@ from .gp_clinical_prescriptions_to_visit_occurrence import gp_clinical_prescript
 from .covid_to_visit_occurrence import covid_to_visit_occurrence
 from .baseline_to_visit_occurrence import baseline_to_visit_occurrence
 from .gp_registrations_to_observation_period import gp_registrations_to_observation_period
+from .gp_prescriptions_to_drug_exposure import gp_prescriptions_to_drug_exposure
 from .hesin_to_visit_occurrence import hesin_to_visit_occurrence
 from .baseline_to_stem import baseline_to_stem
 from .death_to_death import death_to_death
 from .death_to_condition_occurrence import death_to_condition_occurrence
 from .hesin_oper_to_procedure_occurrence import hesin_oper_to_procedure_occurrence
 from .hesin_to_visit_detail import hesin_to_visit_detail
-

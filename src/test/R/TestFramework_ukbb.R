@@ -127,9 +127,9 @@ initFramework <- function() {
   assign('hesin_diag', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
-  defaults$eid <- '1006846'
+  defaults$eid <- ''
   defaults$data_provider <- '3'
-  defaults$issue_date <- '10/02/2014'
+  defaults$issue_date <- ''
   defaults$read_2 <- ''
   defaults$bnf_code <- ''
   defaults$dmd_code <- ''
@@ -1699,7 +1699,7 @@ expect_device_exposure <- function(device_exposure_id, person_id, device_concept
   invisible(NULL)
 }
 
-expect_drug_exposure <- function(drug_exposure_id, person_id, drug_concept_id, drug_exposure_start_date, drug_exposure_start_datetime, drug_exposure_end_date, drug_exposure_end_datetime, verbatim_end_date, drug_type_concept_id, stop_reason, refills, quantity, days_supply, sig, route_concept_id, lot_number, provider_id, visit_occurrence_id, visit_detail_id, drug_source_value, drug_source_concept_id, route_source_value, dose_unit_source_value) {
+expect_drug_exposure <- function(drug_exposure_id, person_id, drug_concept_id, drug_exposure_start_date, drug_exposure_start_datetime, drug_exposure_end_date, drug_exposure_end_datetime, verbatim_end_date, drug_type_concept_id, stop_reason, refills, quantity, days_supply, sig, route_concept_id, lot_number, provider_id, visit_occurrence_id, visit_detail_id, drug_source_value, drug_source_concept_id, route_source_value, dose_unit_source_value, data_source) {
   fields <- c()
   values <- c()
   if (!missing(drug_exposure_id)) {
@@ -1815,6 +1815,11 @@ expect_drug_exposure <- function(drug_exposure_id, person_id, drug_concept_id, d
   if (!missing(dose_unit_source_value)) {
     fields <- c(fields, "dose_unit_source_value")
     values <- c(values, if (is.null(dose_unit_source_value)) "NULL" else if (is(dose_unit_source_value, "subQuery")) paste0("(", as.character(dose_unit_source_value), ")") else paste0("'", as.character(dose_unit_source_value), "'"))
+  }
+
+  if (!missing(data_source)) {
+    fields <- c(fields, "data_source")
+    values <- c(values, if (is.null(data_source)) "NULL" else if (is(data_source, "subQuery")) paste0("(", as.character(data_source), ")") else paste0("'", as.character(data_source), "'"))
   }
 
   expects <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, type = 0, table = "drug_exposure", fields = fields, values = values)
