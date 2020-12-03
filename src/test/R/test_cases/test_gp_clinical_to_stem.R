@@ -47,20 +47,26 @@ add_baseline(eid = 1708)
 add_gp_clinical(eid = 1708, event_dt = '18/04/2020', read_2 = '', read_3 = 'XM0lt')
 expect_measurement(person_id = 1708, measurement_concept_id = 37392195, measurement_source_value = 'XM0lt')
 
-declareTest(1709, 'GP clinical to stem, read2 blood pressure')
+declareTest(1709, 'GP clinical to stem, DBP with value')
 add_baseline(eid = 1709)
-add_gp_clinical(eid = 1709, event_dt = '01/04/2020', read_2 = '246..')
-expect_measurement(person_id = 1709, measurement_date = '2020-04-01', measurement_type_concept_id = 32817,
-                   measurement_concept_id = 4061103, measurement_source_concept_id = 45471867, measurement_source_value = '246..')
-
-declareTest(1710, 'GP clinical to stem, DBP with value')
-add_baseline(eid = 1710)
-add_gp_clinical(eid = 1710, event_dt = '16/04/2020', read_2 = '246A.', value1 = 80.7, data_provider = '2')
-expect_measurement(person_id = 1710, measurement_concept_id = 4060831, measurement_source_value = '246A.', measurement_source_concept_id = 45468573,
+add_gp_clinical(eid = 1709, event_dt = '16/04/2020', read_2 = '246A.', value1 = 80.7, value2 = NULL, data_provider = '2')
+expect_measurement(person_id = 1709, measurement_concept_id = 4060831, measurement_source_value = '246A.', measurement_source_concept_id = 45468573,
                    value_as_number = 80.7)
 
-declareTest(1711, 'GP clinical to stem, DBP and SBP with value')
+declareTest(1710, 'GP clinical to stem, SBP with value')
+add_baseline(eid = 1710)
+add_gp_clinical(eid = 1710, event_dt = '16/04/2020', read_2 = '2469.', value1 = 80.7, value2 = NULL, data_provider = '2')
+expect_measurement(person_id = 1710, measurement_concept_id = 4062019, measurement_source_value = '2469.', measurement_source_concept_id = 45475200,
+                   value_as_number = 80.7)
+
+declareTest(1711, 'GP clinical to stem, generic blood pressure code with no custom logic')
 add_baseline(eid = 1711)
-add_gp_clinical(eid = 1711, event_dt = '17/04/2020', read_2 = '246..', value1 = 123, value2 = 85, data_provider = '1')
-expect_measurement(person_id = 1711, measurement_concept_id = 4060831, measurement_source_value = '246..', value_as_number = 85)
-expect_measurement(person_id = 1711, measurement_concept_id = 4062019, measurement_source_value = '246..', value_as_number = 123)
+add_gp_clinical(eid = 1711, event_dt = '01/04/2020', read_2 = '246..', data_provider = '3')
+expect_measurement(person_id = 1711, measurement_date = '2020-04-01', measurement_type_concept_id = 32817,
+                   measurement_concept_id = 4061103, measurement_source_concept_id = 45471867, measurement_source_value = '246..')
+
+declareTest(1712, 'GP clinical to stem, generic blood pressure code with values for both DBP and SBP')
+add_baseline(eid = 1712)
+add_gp_clinical(eid = 1712, event_dt = '17/04/2020', read_2 = '246..', value1 = 123, value2 = 85, data_provider = '2')
+expect_measurement(person_id = 1712, measurement_concept_id = 4060831, measurement_source_value = '246..', value_as_number = 123, measurement_source_concept_id = 45471867)
+expect_measurement(person_id = 1712, measurement_concept_id = 4062019, measurement_source_value = '246..', value_as_number = 85, measurement_source_concept_id = 45471867)
