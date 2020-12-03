@@ -16,12 +16,12 @@
 
 class MappingTarget:
 
-    def __init__(self):
-        self.concept_id = None
+    def __init__(self, concept_id=None, source_value=None):
+        self.concept_id = concept_id
         self.value_as_concept_id = None
         self.value_as_number = None
         self.unit_concept_id = None
-        self.source_value = None
+        self.source_value = source_value
         self.value_as_string = None
 
     def __str__(self):

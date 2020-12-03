@@ -28,6 +28,11 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
 
         procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")
 
+        person_id = wrapper.lookup_person_id(row['eid'])
+        if not person_id:
+            # Person not found
+            continue
+
         if not pd.isnull(row['oper4']):
             source_value = row['oper4']
             procedure_targets = oper4.lookup(row['oper4'])
@@ -44,11 +49,14 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
             continue
 
         # Visit
-        visit_occurrence_id = wrapper.lookup_visit(row['eid'], 'HES-' + str(row['spell_index']))
+        visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
+            person_id=person_id,
+            record_source_value=f'HES-{row["spell_index"]}'
+        )
 
         for target in procedure_targets:
             r = wrapper.cdm.ProcedureOccurrence(
-                person_id=row['eid'],
+                person_id=person_id,
                 procedure_concept_id=target.target_concept_id,
                 procedure_date=procedure_date,
                 procedure_datetime=procedure_date,
