@@ -12,4 +12,5 @@ from .baseline_to_stem import baseline_to_stem
 from .death_to_death import death_to_death
 from .death_to_condition_occurrence import death_to_condition_occurrence
 from .hesin_oper_to_procedure_occurrence import hesin_oper_to_procedure_occurrence
+from .hesin_to_visit_detail import hesin_to_visit_detail
 
