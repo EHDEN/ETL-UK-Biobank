@@ -34,7 +34,7 @@ class GpClinicalValueMapper:
         # for some though you need to process both, therefore this loop.
         # determine value_as_number and possibly alternative read_code
         result = []
-        read_code = row[read_col]
+        map_as_read_code = row[read_col]
         for value_col in ['value1', 'value2']:
             value = row[value_col]
             if is_null(value):
@@ -60,7 +60,7 @@ class GpClinicalValueMapper:
                 filtered_df = self.mapping_logic_df[filter1 & filter2 & filter3 & filter4]
                 n_results = len(filtered_df.index)
                 if n_results == 1:  # either not found, or 1 result (no multiple mappings in source file)
-                    read_code = filtered_df['map_as_read_code'].iloc[0]
+                    map_as_read_code = filtered_df['map_as_read_code'].iloc[0]
 
-            result.append((read_code, value_as_number))
+            result.append((map_as_read_code, value_as_number))
         return result
