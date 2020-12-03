@@ -19,7 +19,7 @@ declareTest(1703, 'GP clinical to stem, read3 code')
 add_baseline(eid = 1703)
 add_gp_clinical(eid = 1703, event_dt = '04/04/2020', read_2 = NULL, read_3 = 'XE2q5', value1 = 100)
 expect_measurement(person_id = 1703, measurement_date = '2020-04-04',
-                   measurement_concept_id = 0, measurement_source_concept_id = 0, measurement_source_value = 'XE2q5')
+                   measurement_concept_id = 37392176, measurement_source_concept_id = 0, measurement_source_value = 'XE2q5')
 
 declareTest(1704, 'GP clinical to stem, missing date')
 add_baseline(eid = 1704)
