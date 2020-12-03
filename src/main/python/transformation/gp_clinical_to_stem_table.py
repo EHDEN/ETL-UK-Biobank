@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-import pandas as pd
 import csv
 
 from ..util import get_datetime
@@ -36,7 +35,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             continue
 
         # read_2 and read_3 should be mutually exclusive
-        # TODO: observed multiple mappings for vaccinces to SNOMED and CVX, which is better?
+        # TODO: observed multiple mappings for vaccines to SNOMED and CVX, which is better?
         read_col = 'read_2'
         if is_null(row['read_2']):
             read_col = 'read_3'
@@ -46,7 +45,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             continue
 
         event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
-        data_source = 'GP-' + row['data_provider'] if not pd.isnull(row['data_provider']) else None
+        data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
 
         # Look up visit_id in VisitOccurrence table
         visit_id = wrapper.lookup_visit_occurrence_id(
