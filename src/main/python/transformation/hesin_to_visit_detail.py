@@ -56,8 +56,10 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[VisitDetail]:
             admit_source = "record origin:"+data_source+"/admission source:"+str(row['admisorc'])
             dis_source = "record origin:"+data_source+"/discharge destination:"+str(row['disdest'])
 
-            visit_occurrence_id = wrapper.lookup_visit(row['eid'], 'HES-'+spell_index)
-            print(visit_occurrence_id)
+            visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
+                person_id=person_id,
+                record_source_value=f'HES-{row["spell_index"]}'
+            )
 
             r = VisitDetail(
                 person_id=person_id,
