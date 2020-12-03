@@ -34,24 +34,21 @@ class GpClinicalValueMapper:
         # for some though you need to process both, therefore this loop.
         # determine value_as_number and possibly alternative read_code
         result = []
+        read_code = row[read_col]
         for value_col in ['value1', 'value2']:
-            read_code = row[read_col]
             value = row[value_col]
             if is_null(value):
                 if value_col == 'value1':  # if value1 is empty, skip to value2
                     continue
                 elif is_null(row['value1']):  # if both value1&2 empty, create record with no value
                     value_as_number = None
-                    value_as_concept_id = None
                 else:  # value2 is empty but value1 is not, so this row has already been processed and can be skipped
                     continue
             else:
                 try:
                     value_as_number = float(value)
-                    value_as_concept_id = None
                 except Exception:
                     value_as_number = None
-                    value_as_concept_id = 0  # TODO: placeholder, create mapping table for alphanum codes (or always ignore?)
 
             # apply special mapping logic to specific combinations of data provider, read code,
             # and value column (e.g. blood pressure)
