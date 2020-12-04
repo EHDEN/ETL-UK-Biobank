@@ -3,7 +3,6 @@
 ### Reading from hesin_c.txt
 
 Create a new field 'record_source_value' for lookup of visit_detail_id by eid and ins_index.
-record_source_value = 'HES-ins_index'
 
 Every record of hesin (episode) is a visit_detail record
 
@@ -30,4 +29,5 @@ Every record of hesin (episode) is a visit_detail record
 | discharge_to_concept_id | disdest<br>dsource |  |  |
 | preceding_visit_detail_id |  |  |  |
 | visit_detail_parent_id |  |  |  |
+| record_source_value | ins_index | HES + ins_index | The ins_index with eid is the unique key for hesin table. |
 

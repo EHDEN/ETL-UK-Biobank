@@ -19,7 +19,7 @@ Join hesin using ins_index
 | stop_reason |  |  |  |
 | provider_id |  |  |  |
 | visit_occurrence_id | ins_index | Lookup visit_occurrence_id by spell_index |  |
-| visit_detail_id |  |  |  |
+| visit_detail_id |  | Lookup by eid and ins_index |  |
 | condition_source_value | diag_icd9<br>diag_icd10 |  |  |
 | condition_source_concept_id | diag_icd9<br>diag_icd10 |  |  |
 | condition_status_source_value |  |  |  |
