@@ -66,7 +66,6 @@ expect_procedure_occurrence(person_id = 1506, procedure_concept_id = 4073667, pr
 expect_procedure_occurrence(person_id = 1506, procedure_concept_id = 2109458, procedure_date = '2017-08-25',
                             procedure_type_concept_id = 44786630, procedure_source_concept_id = 0)
 
-
 declareTest(1507, 'HES diagnosis with visit')
 add_baseline(eid = 1507)
 add_hesin(eid = 1507, ins_index = 0, admidate = '11/12/2020')
@@ -74,3 +73,11 @@ add_hesin_oper(eid = 1507, ins_index = 0, opdate = '18/12/2020', oper4 = 'Z857')
 expect_visit_occurrence(person_id = 1507, visit_start_date = '2020-12-11')
 expect_procedure_occurrence(person_id = 1507, procedure_date = '2020-12-18',
                             visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1507, visit_start_date = '2020-12-11'))
+
+declareTest(1508, 'HES diagnosis with visit detail')
+add_baseline(eid = 1508)
+add_hesin(eid = 1508, ins_index = 0, admidate = '19/12/2020')
+add_hesin_oper(eid = 1508, ins_index = 0, opdate = '19/12/2020', oper4 = 'Z857')
+expect_visit_detail(person_id = 1508, visit_detail_start_date = '2020-12-19')
+expect_procedure_occurrence(person_id = 1508, procedure_date = '2020-12-19',
+                            visit_detail_id = lookup_visit_detail('visit_detail_id', person_id = 1508, visit_detail_start_date = '2020-12-19'))

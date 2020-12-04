@@ -41,6 +41,7 @@ class Wrapper(EtlWrapper):
         # One session for all lookups done in the wrapper. Note: read_only
         self._session_for_lookups = self.db.get_new_session()
 
+    # noinspection DuplicatedCode
     def run(self):
         self.start_timing()
 
@@ -56,24 +57,33 @@ class Wrapper(EtlWrapper):
         # NOTE: replace the following with project-specific transformations from python/transformations/ or sql/ folder!
         # (make sure execution follows order of table dependencies)
 
-        # python transformation:
+        # Health system
         self.execute_transformation(covid_to_care_site)
         self.execute_transformation(assessment_center_to_care_site)
+
+        # Person and observation period
         self.execute_transformation(baseline_to_person)
+        self.execute_transformation(gp_registrations_to_observation_period)
+
+        # Death
         self.execute_transformation(death_to_death)
         self.execute_transformation(death_to_condition_occurrence)
+
+        # Visit
         self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
-        self.execute_transformation(gp_prescriptions_to_drug_exposure)
         self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
-        self.execute_transformation(gp_clinical_to_stem_table)
         self.execute_transformation(hesin_to_visit_occurrence)
-        self.execute_transformation(hesin_diag_to_condition_occurrence)
-        self.execute_transformation(gp_registrations_to_observation_period)
-        self.execute_transformation(covid_to_observation)
-        self.execute_transformation(baseline_to_stem)
-        self.execute_transformation(hesin_oper_to_procedure_occurrence)
+
         self.execute_transformation(hesin_to_visit_detail)
+
+        # Events
+        self.execute_transformation(baseline_to_stem)
+        self.execute_transformation(covid_to_observation)
+        self.execute_transformation(gp_clinical_to_stem_table)
+        self.execute_transformation(gp_prescriptions_to_drug_exposure)
+        self.execute_transformation(hesin_diag_to_condition_occurrence)
+        self.execute_transformation(hesin_oper_to_procedure_occurrence)
 
         # Stem table to domains
         self.load_from_stem_table()
