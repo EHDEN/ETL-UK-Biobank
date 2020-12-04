@@ -40,7 +40,6 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[VisitDetail]:
             end_date = row['disdate']
 
         data_source = row['dsource']
-        spell_index = str(row['spell_index'])
 
         # The dsource contains strings of 3-4 characters and admimeth, admisorc, disdest contrains integers of length 2.
         # Thus the 50character cut off it is not an issue for losing data, currently.
@@ -67,7 +66,7 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[VisitDetail]:
             discharge_to_concept_id=dis_reason.get((row['disdest'], row['dsource']), 0),
             discharge_to_source_value=dis_source,
             visit_occurrence_id=visit_occurrence_id,
-            record_source_value=f'HES-{spell_index}',
+            record_source_value=f'HES-{row["ins_index"]}',
             data_source=f'HES-{data_source}'
         )
         records.append(r)

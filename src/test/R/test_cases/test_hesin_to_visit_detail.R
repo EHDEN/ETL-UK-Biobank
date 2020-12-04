@@ -21,7 +21,7 @@ expect_visit_detail(person_id = 1800, visit_detail_start_date = '1997/01/19', vi
 
 declareTest(1801, 'admission date missing')
 add_baseline(eid = 1801)
-add_hesin(eid = 1801, dsource = 'HES', admidate = '', spell_index = 6, admimeth = '11', admisorc = '39',
+add_hesin(eid = 1801, dsource = 'HES', admidate = '', ins_index = 1, spell_index = 6, admimeth = '11', admisorc = '39',
           disdate = '06/12/1991', disdest = '87')
 expect_visit_occurrence(person_id = 1801, visit_start_date = '1970/01/01', visit_end_date = '1991/12/06',
                         record_source_value='HES-6')
