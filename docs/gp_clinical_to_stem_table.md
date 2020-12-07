@@ -3,7 +3,7 @@
 ### Reading from gp_clinical
 
 The _gp_clinical_ table contains clinical records from primary care linked data of consented UKB participants.
-The variables include date and clinical code (Read v2 or CTV3 1) for primary care events, 
+The variables include date and clinical code (Read v2 or CTV3) for primary care events, 
 such as consultations, diagnoses, history, symptoms, procedures, laboratory tests and administrative information.
 The records are retrieved from four different source systems (providers): EMIS/Vision Scotland, EMIS/Vision Wales, 
 TPP England and Vision England (Note: EMIS England is missing).
@@ -15,6 +15,9 @@ Mappings to standard OMOP concept_ids are only available for Read v2 codes in At
 but CTV3 codes that overlap with Read v2 can be also be mapped.
 Read v2 and CTV3 mappings to SNOMED are available from the NHS: 
 https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/9/subpack/9/releases
+Note that in the source data, Read v2 codes may appear with or without trailing dots (e.g. `123..` vs `123..00`).
+In the former case, before attempting to retrieve the mapping to standard concept_id, we extend the code with the missing cyphers,
+first by applying an extension vocabulary for specific curated codes, and otherwise by appending the default extension `00`.  
 - `value1`, `value2`, `value3` fields: the meaning of these fields differ per `data_provider` and `read_2` / `read_3` code combination, 
 though if provided, `value3` generally seems to refer to units. 
 Provider-specific mapping logic needs to be implemented, 
