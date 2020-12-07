@@ -43,9 +43,9 @@ After mapping to the stem table, the records are mapped to their respective doma
 | person_id | eid |  |  |
 | start_date | event_dt | If date empty, ignore record. Capture as observation (history of) |  |
 | start_datetime | event_dt |  |  |
-| visit_occurrence_id | eid<br>event_dt | Look up visit occurrence by unique eid+event_dt<br> |  |
+| visit_occurrence_id | eid<br>event_dt | Look up visit occurrence by unique eid+event_dt+data_provider<br> |  |
 | provider_id |  |  |  |
-| concept_id | read_2<br>read_3 | Map read_2 code to OMOP standard concept_id, if not available map read_3 code. | Either field will be available. |
+| concept_id | read_2<br>read_3 | Map read_2 code to OMOP standard concept_id, if not available map read_3 code. |  |
 | source_value | read_2<br>read_3 | Either field will be available  |  |
 | source_concept_id | read_2<br>read_3 | Either field will be available. Use (non-standard) OMOP concept_id for Read code |  |
 | type_concept_id |  |  | 32817 EHR |
