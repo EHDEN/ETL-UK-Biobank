@@ -57,7 +57,7 @@ After mapping to the stem table, the records are mapped to their respective doma
 | lot_number |  |  |  |
 | modifier_concept_id |  |  |  |
 | modifier_source_value |  |  |  |
-| operator_concept_id | value1 | IF prefixed with OPR |  |
+| operator_concept_id | value3 | IF prefixed with OPR |  |
 | modifier_source_value |  |  |  |
 | quantity |  |  |  |
 | range_high |  |  |  |
