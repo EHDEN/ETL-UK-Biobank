@@ -29,10 +29,6 @@ https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
  
 **TBD:**
  - decide on date handling (`event_dt`), skip empty or not? use which dates?
- - map invalid Read v2 and CTV3 codes (not found in OMOP vocabularies) to SNOMED using NHS tables, then retrieve standard OMOP concept_id for SNOMED codes
- - map value fields based on provider/Read code-specific logic (only selected phenotypes, 
- start with examples from [https://github.com/spiros/ukb-biomarker-phenotypes](https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
- Ideally capture logic in a mapping table and automatically apply during ETL execution.
  - review `type_concept_id` (not covering all desired cases)
 
 ![](md_files/image1.png)
