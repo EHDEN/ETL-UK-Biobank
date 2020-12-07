@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
-from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from ..core.model import Death
 
@@ -11,6 +10,8 @@ if TYPE_CHECKING:
 
 
 def baseline_to_death(wrapper: Wrapper) -> List[Death]:
+    # TODO: Do we want to use the '40020-0.0' column (Death record origin), values (E/W, SCOT, HES, NCIN, PEDW, SMR)
+    #  instead of concept 32815 as mentioned in the mapping document?
     source = wrapper.get_dataframe('baseline.csv', use_columns=['eid', '40000-0.0', '40001-0.0', '40020-0.0'])
 
     codes = source['40001-0.0'].dropna().unique().tolist()
