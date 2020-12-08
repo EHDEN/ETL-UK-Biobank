@@ -13,8 +13,8 @@ Coded data has been obtained for 45% of the UKB participants.
 - `read_2` and `read_3`: clinical codes, either Read v2 or CTV3 (i.e. Read v3) - mutually exclusive fields. 
 Mappings to standard OMOP concept_ids are only available for Read v2 codes in Athena,
 but CTV3 codes that overlap with Read v2 can be also be mapped.
-Read v2 and CTV3 mappings to SNOMED are available from the NHS: 
-https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/9/subpack/9/releases
+Read v2 and CTV3 mappings to SNOMED are available from the NHS ([PBCLReadSNOMEDmap20180401.txt](https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/9/subpack/9/releases)). 
+We removed CTV3 codes that were identical to a READ v2 code from the CTV3 mapping table and mapped as being a READ v2 code.
 Note that in the source data, Read v2 codes may appear with or without trailing dots (e.g. `123..` vs `123..00`).
 In the former case, before attempting to retrieve the mapping to standard concept_id, we extend the code with the missing cyphers,
 first by applying an extension vocabulary for specific curated codes, and otherwise by appending the default extension `00`.  
