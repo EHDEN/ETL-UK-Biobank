@@ -1,0 +1,32 @@
+# Use of this config file is optional. It will be needed only
+# if the transformations require reading source data from files.
+
+# Folder containing all source data files
+source_data_folder: './resources/synthetic_data'
+# For each source file, count the number of rows
+count_source_rows: False
+
+# Default options for individual source data files.
+# These can be overruled for individual files below.
+file_defaults:
+  delimiter: '\t'
+  encoding: 'utf-8'
+  quotechar: '"'
+  binary: False
+
+# The individual source files as present in the source data folder.
+# If only the file_defaults apply for a particular source file,
+# adding it here below is optional.
+# pandas dtypes can be provided on column level, if you want to
+# apply these when loading a file as a DataFrame.
+# For a full list of available dtypes see the "String Aliases" here:
+# https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#dtypes
+source_files:
+  'sample_source_table.csv':
+    delimiter: ','
+  'source_file2.tsv':
+    dtypes:
+      column_a: object
+      column_b: Int64
+      column_c: datetime64[ns]
+      column_d: float64
