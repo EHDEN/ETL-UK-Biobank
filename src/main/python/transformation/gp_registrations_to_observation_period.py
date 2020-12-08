@@ -10,10 +10,11 @@ if TYPE_CHECKING:
 
 
 def gp_registrations_to_observation_period(wrapper: Wrapper) -> List[ObservationPeriod]:
-    source = wrapper.get_dataframe('gp_registrations.csv', use_columns=['eid', 'reg_date', 'deduct_date'])
+    source = wrapper.source_data.get_source_file('gp_registrations.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
 
         person_id = wrapper.lookup_person_id(row['eid'])
         if not person_id:

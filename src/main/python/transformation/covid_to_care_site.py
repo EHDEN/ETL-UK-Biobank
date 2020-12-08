@@ -10,11 +10,12 @@ if TYPE_CHECKING:
 
 
 def covid_to_care_site(wrapper: Wrapper) -> List[CareSite]:
-    source = wrapper.get_dataframe('covid.csv', use_columns=['laboratory'])
-    source = source.drop_duplicates(subset=['laboratory'])
+    source = wrapper.source_data.get_source_file('covid.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
+    df = df.drop_duplicates(subset=['laboratory'])
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         r = CareSite(
             care_site_id=row['laboratory'],
             care_site_source_value=row['laboratory']
