@@ -39,10 +39,6 @@ class Wrapper(BaseWrapper):
         self.path_mapping_tables = Path('./resources/mapping_tables')
         self.path_sql_transformations = Path('./src/main/sql')
 
-        # One session for all lookups done in the wrapper. Note: use for read_only
-        # TODO: is still valid?
-        # self._session_for_lookups = self.db.get_new_session()
-
     def run(self):
 
         # self.start_timing()
@@ -172,14 +168,15 @@ class Wrapper(BaseWrapper):
         return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
 
     def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
-        query = self._session_for_lookups.query(model).filter_by(**kwargs)
-        try:
-            visit_record = query.one()
-        except NoResultFound:
-            return None
-        except MultipleResultsFound:
-            logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
-            visit_record = query.first()
-        return getattr(visit_record, id_to_lookup)
+        with self.db.session_scope() as session:
+            query = session.query(model).filter_by(**kwargs)
+            try:
+                visit_record = query.one()
+            except NoResultFound:
+                return None
+            except MultipleResultsFound:
+                logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
+                visit_record = query.first()
+            return getattr(visit_record, id_to_lookup)
 
 
