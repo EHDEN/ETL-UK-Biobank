@@ -14,8 +14,6 @@ from omop_etl_wrapper.cdm.cdm531.derived_elements import *
 from omop_etl_wrapper.cdm.vocabularies import *
 from omop_etl_wrapper.cdm.metadata import *
 
-from omop_etl_wrapper.cdm.cdm_extensions.oncology import *
-
 from omop_etl_wrapper.database import NAMING_CONVENTION
 
 Base = declarative_base()
@@ -33,7 +31,7 @@ class Person(BasePersonCdm531, Base):
 class ObservationPeriod(BaseObservationPeriodCdm531, Base):
     pass
 
-
+# TODO: record_source_value and data_source
 class VisitOccurrence(BaseVisitOccurrenceCdm531, Base):
     pass
 
@@ -66,8 +64,8 @@ class Observation(BaseObservationCdm531, Base):
     pass
 
 
-# class Death(BaseDeathCdm531, Base):
-#     pass
+class Death(BaseDeathCdm531, Base):
+    pass
 
 
 class Note(BaseNoteCdm531, Base):
@@ -86,10 +84,6 @@ class FactRelationship(BaseFactRelationshipCdm531, Base):
     pass
 
 
-class SurveyConduct(BaseSurveyConductCdm531, Base):
-    pass
-
-
 class StemTable(BaseStemTableCdm531, Base):
     pass
 
@@ -100,10 +94,6 @@ class StemTable(BaseStemTableCdm531, Base):
 
 
 class Location(BaseLocationCdm531, Base):
-    pass
-
-
-class LocationHistory(BaseLocationHistoryCdm531, Base):
     pass
 
 
