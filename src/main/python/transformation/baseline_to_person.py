@@ -10,9 +10,9 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
     race = wrapper.mapping_tables_lookup('./resources/mapping_tables/race_mapping.csv')
     gender = wrapper.mapping_tables_lookup('./resources/mapping_tables/gender_mapping.csv')
 
-    source = wrapper.source_data.get_source_file('sample_source_table.csv')
-    df = source.get_csv_as_df(apply_dtypes=False, use_columns=['eid', '31-0.0', '34-0.0',
-                                                               '52-0.0', '21000-0.0', '54-0.0'])
+    source = wrapper.source_data.get_source_file('baseline.csv')
+    df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '31-0.0', '34-0.0',
+                                                           '52-0.0', '21000-0.0', '54-0.0'])
 
     records = []
     for _, row in df.iterrows():
