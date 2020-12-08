@@ -3,14 +3,13 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
-from ..core.model import VisitOccurrence
 from ..util.date_functions import DEFAULT_DATETIME
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
+def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
     source = wrapper.get_dataframe('hesin.csv')
     source['admidate'] = pd.to_datetime(source['admidate'], dayfirst=True)
     source['disdate'] = pd.to_datetime(source['disdate'], dayfirst=True)
@@ -57,7 +56,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
         admit_source = "record origin:"+data_source+"/admission source:"+str(row['admisorc'])
         dis_source = "record origin:"+data_source+"/discharge destination:"+str(row['disdest'])
 
-        r = VisitOccurrence(
+        r = wrapper.cdm.VisitOccurrence(
             person_id=person_id,
             visit_concept_id=visit_reason.get((row['admimeth'], row['dsource']), 0),
             visit_start_date=start_date.date(),

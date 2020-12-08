@@ -4,13 +4,11 @@ from typing import List, TYPE_CHECKING
 
 from ..util.date_functions import get_datetime
 
-from ..core.model import Observation
-
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
+def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
     source = wrapper.get_dataframe('covid.csv')
 
     type_vocab = wrapper.mapping_tables_lookup('./resources/mapping_tables/covid_spectype.csv')
@@ -36,7 +34,7 @@ def covid_to_observation(wrapper: Wrapper) -> List[Observation]:
             '0': 45878583  # Negative
         }
 
-        r = Observation(
+        r = wrapper.cdm.Observation(
             person_id=person_id,
             observation_concept_id=type_vocab.get(row['spectype'], 0),
             observation_date=date.date(),
