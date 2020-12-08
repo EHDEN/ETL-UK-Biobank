@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 from ..util.date_functions import get_datetime
-from ..core.code_mapper import CodeMapping
+from src.main.python.util.code_mapper import CodeMapping
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
