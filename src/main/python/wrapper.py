@@ -38,6 +38,10 @@ class Wrapper(EtlWrapper):
         # NOTE: replace the following with project-specific source table names!
         self.source_file_delimiter = ','
 
+        # One session for all lookups done in the wrapper. Note: read_only
+        self._session_for_lookups = self.db.get_new_session()
+
+    # noinspection DuplicatedCode
     def run(self):
         self.start_timing()
 
@@ -53,21 +57,33 @@ class Wrapper(EtlWrapper):
         # NOTE: replace the following with project-specific transformations from python/transformations/ or sql/ folder!
         # (make sure execution follows order of table dependencies)
 
-        # python transformation:
+        # Health system
         self.execute_transformation(covid_to_care_site)
         self.execute_transformation(assessment_center_to_care_site)
+
+        # Person and observation period
         self.execute_transformation(baseline_to_person)
+        self.execute_transformation(gp_registrations_to_observation_period)
+
+        # Death
         self.execute_transformation(death_to_death)
         self.execute_transformation(death_to_condition_occurrence)
         self.execute_transformation(baseline_to_death)
+
+        # Visit
         self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
         self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
         self.execute_transformation(hesin_to_visit_occurrence)
-        self.execute_transformation(hesin_diag_to_condition_occurrence)
-        self.execute_transformation(gp_registrations_to_observation_period)
-        self.execute_transformation(covid_to_observation)
+
+        self.execute_transformation(hesin_to_visit_detail)
+
+        # Events
         self.execute_transformation(baseline_to_stem)
+        self.execute_transformation(covid_to_observation)
+        self.execute_transformation(gp_clinical_to_stem_table)
+        self.execute_transformation(gp_prescriptions_to_drug_exposure)
+        self.execute_transformation(hesin_diag_to_condition_occurrence)
         self.execute_transformation(hesin_oper_to_procedure_occurrence)
 
         # Stem table to domains
@@ -77,6 +93,8 @@ class Wrapper(EtlWrapper):
 
         self.log_summary()
         self.log_runtime()
+
+        self._session_for_lookups.close()
 
     def load_from_stem_table(self):
         # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
@@ -94,7 +112,7 @@ class Wrapper(EtlWrapper):
         df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=object)
         return df
 
-    def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True):
+    def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True, approved_only: bool = True):
         """
         Create a dictionary to lookup target concept_id by source code from a mapping file.
         If mapping is not APPROVED, it is not included.
@@ -102,6 +120,7 @@ class Wrapper(EtlWrapper):
         :param add_info: for some records we needed to find the standard concept by combine two source fields.
                          If this parameter is filled the dictionary keys will be a combination of the two fields.
         :param first_only: if True, return the first available match only (default True). If False, all targets are lists of concept ids.
+        :param approved_only: if True, return only approved mappings (mappingStatus=approved)
         :return: the dictionary. values are either strings (first_only = True) or lists (first_only = False)
         """
         result = {}
@@ -109,7 +128,7 @@ class Wrapper(EtlWrapper):
             table_mapping = csv.DictReader(f_in, delimiter=',')
 
             for row in table_mapping:
-                if row['mappingStatus'] != 'APPROVED':
+                if approved_only and row['mappingStatus'] != 'APPROVED':
                     continue
 
                 if not add_info:
@@ -117,7 +136,7 @@ class Wrapper(EtlWrapper):
                 else:
                     key = (row['sourceCode'], row[add_info])
 
-                target = row['conceptId']
+                target = int(row['conceptId'])
 
                 if first_only:
                     # value is string
@@ -135,16 +154,22 @@ class Wrapper(EtlWrapper):
                         result[key] = [target]
         return result
 
-    def lookup_visit(self, person_id, record_source_value) -> Optional[int]:
-        with self.db.session_scope() as session:
-            visit_lookup = session.query(self.cdm.VisitOccurrence) \
-                .filter(self.cdm.VisitOccurrence.person_id == person_id,
-                        self.cdm.VisitOccurrence.record_source_value == record_source_value)
-            try:
-                visit_record = visit_lookup.one()
-                return visit_record.visit_occurrence_id
-            except NoResultFound:
-                return None
-            except MultipleResultsFound:
-                logger.warning(f'Multiple visits found for person_id={person_id} record_source_value={record_source_value}')
-                return None
+    def lookup_visit_occurrence_id(self, **kwargs) -> Optional[int]:
+        return self.lookup_id(self.cdm.VisitOccurrence, 'visit_occurrence_id', **kwargs)
+
+    def lookup_visit_detail_id(self, **kwargs) -> Optional[int]:
+        return self.lookup_id(self.cdm.VisitDetail, 'visit_detail_id', **kwargs)
+
+    def lookup_person_id(self, person_source_value) -> Optional[int]:
+        return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
+
+    def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
+        query = self._session_for_lookups.query(model).filter_by(**kwargs)
+        try:
+            visit_record = query.one()
+        except NoResultFound:
+            return None
+        except MultipleResultsFound:
+            logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
+            visit_record = query.first()
+        return getattr(visit_record, id_to_lookup)

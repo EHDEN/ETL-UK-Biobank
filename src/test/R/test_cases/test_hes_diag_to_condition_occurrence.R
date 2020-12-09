@@ -60,3 +60,11 @@ add_hesin_diag(eid = 1006, ins_index = 0, diag_icd10 = 'I10')
 expect_visit_occurrence(person_id = 1006, visit_start_date = '2020-12-18')
 expect_condition_occurrence(person_id = 1006, condition_start_date = '2020-12-18',
                             visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1006, visit_start_date = '2020-12-18'))
+
+declareTest(1007, 'HES diag visit_detail_id')
+add_baseline(eid = 1007)
+add_hesin(eid = 1007, ins_index = 0, admidate = '19/12/2020')
+add_hesin_diag(eid = 1007, ins_index = 0, diag_icd10 = 'I10')
+expect_visit_detail(person_id = 1007, visit_detail_start_date = '2020-12-19')
+expect_condition_occurrence(person_id = 1007, condition_start_date = '2020-12-19',
+                            visit_detail_id = lookup_visit_detail('visit_detail_id', person_id = 1007, visit_detail_start_date = '2020-12-19'))

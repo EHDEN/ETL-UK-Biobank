@@ -1,0 +1,6 @@
+#source: https://github.com/spiros/ukb-biomarker-phenotypes/blob/master/README.md 7d05c9f 21Aug2020
+phenotype,source_read_code,target_read_code
+ALT,44G..,44G..11
+Glucose,44U..,44U..12
+HbA1c,42W..,42W..11
+Urea,44J..,44J..13

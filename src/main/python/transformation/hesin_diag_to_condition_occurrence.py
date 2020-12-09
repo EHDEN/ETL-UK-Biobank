@@ -40,6 +40,11 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
 
         condition_date = get_datetime(row['admidate'], "%d/%m/%Y")
 
+        person_id = wrapper.lookup_person_id(row['eid'])
+        if not person_id:
+            # Person not found
+            continue
+
         # Map icd10 if given. If not, map the icd9 code.
         # If ICD code is filled, but no concept is found, then the lookup will return one target to 0
         # It is possible that multiple concepts are found for one ICD code,
@@ -55,11 +60,19 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
             continue
 
         # Visit
-        visit_occurrence_id = wrapper.lookup_visit(row['eid'], 'HES-' + str(row['spell_index']))
+        visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
+            person_id=person_id,
+            record_source_value=f'HES-{row["spell_index"]}'
+        )
+
+        visit_detail_id = wrapper.lookup_visit_detail_id(
+            person_id=person_id,
+            record_source_value=f'HES-{row["ins_index"]}'
+        )
 
         for target in diag_targets:
             r = wrapper.cdm.ConditionOccurrence(
-                person_id=row['eid'],
+                person_id=person_id,
                 condition_concept_id=target.target_concept_id,
                 condition_start_date=condition_date,
                 condition_start_datetime=condition_date,
@@ -67,6 +80,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
                 condition_source_value=source_value,
                 condition_source_concept_id=target.source_concept_id,
                 visit_occurrence_id=visit_occurrence_id,
+                visit_detail_id=visit_detail_id,
                 data_source=f'HES-{row["dsource"]}'
             )
             records.append(r)
