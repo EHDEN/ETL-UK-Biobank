@@ -6,6 +6,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import get_datetime
+from ..gp_mapper import add_dot_to_icdx_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -22,8 +23,12 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     source = hesin_diag.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
 
     # Generate code mapping for ICD10 and ICD9, remove dot to get correct concept codes.
-    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', remove_dot_from_codes=True)
-    icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM', remove_dot_from_codes=True)  # TODO: should be 'regular' ICD9
+    source['diag_icd9_dot'] = source['diag_icd9'].apply(add_dot_to_icdx_code)
+    source['diag_icd10_dot'] = source['diag_icd10'].apply(add_dot_to_icdx_code)
+    icd9 = wrapper.code_mapper.generate_code_mapping_dictionary(
+        'ICD9', restrict_to_codes=list(source['diag_icd9_dot']))
+    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary(
+        'ICD10', restrict_to_codes=list(source['diag_icd10_dot']))
 
     # Use Condition type concept file to map if primary condition or secondary condition.
     with open('./resources/mapping_tables/condition_type_concepts.csv') as f_in:
@@ -51,10 +56,10 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
         # loop through the lookup to retrieve all of them and save concept ID and source concept ID.
         if row['diag_icd10'] != '' and not pd.isna(row['diag_icd10']):
             source_value = row['diag_icd10']
-            diag_targets = icd10.lookup(source_value)
+            diag_targets = icd10.lookup(row['diag_icd10_dot'])
         elif row['diag_icd9'] != '' and not pd.isna(row['diag_icd9']):
             source_value = row['diag_icd9']
-            diag_targets = icd9.lookup(source_value)
+            diag_targets = icd9.lookup(row['diag_icd9_dot'])
         else:
             # No code given
             continue
