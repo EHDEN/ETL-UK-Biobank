@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
+from ..gp_mapper import add_dot_to_icdx_code
 from ..core.model import Death
 
 if TYPE_CHECKING:
@@ -11,9 +12,11 @@ if TYPE_CHECKING:
 
 def baseline_to_death(wrapper: Wrapper) -> List[Death]:
     source = wrapper.get_dataframe('baseline.csv', use_columns=['eid', '40000-0.0', '40001-0.0'])
+    source['ICD10_dot'] = source['40001-0.0'].apply(add_dot_to_icdx_code)
 
-    codes = source['40001-0.0'].dropna().unique().tolist()
-    mapper = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', restrict_to_codes=codes, remove_dot_from_codes=True)
+    mapper = \
+        wrapper.code_mapper.generate_code_mapping_dictionary(
+            'ICD10', restrict_to_codes=list(source['ICD10_dot']))
     persons = []
 
     records = []
@@ -30,7 +33,7 @@ def baseline_to_death(wrapper: Wrapper) -> List[Death]:
                 continue
             # If the person is not in the existing death records, proceed.
             if int(row['eid']) not in persons:
-                target = mapper.lookup(row['40001-0.0'], first_only=True)
+                target = mapper.lookup(row['ICD10_dot'], first_only=True)
                 r = Death(
                     person_id=int(row['eid']),
                     death_date=row['40000-0.0'],
