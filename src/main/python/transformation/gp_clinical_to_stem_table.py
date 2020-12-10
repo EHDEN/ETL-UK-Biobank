@@ -4,8 +4,9 @@ from typing import List, TYPE_CHECKING
 import csv
 
 from ..util import get_datetime
-from ..gp_mapper import extend_read_code, GpClinicalValueMapper
+from ..gp_mapper import GpClinicalValueMapper
 from ..util.general_functions import is_null
+from ..util.code_cleanup import extend_read_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
