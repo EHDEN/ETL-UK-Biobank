@@ -1,2 +1,2 @@
-from .code_cleanup import extend_read_code
+from .code_cleanup import extend_read_code, add_dot_to_icdx_code
 from .gp_clinical_value_mapper import GpClinicalValueMapper
