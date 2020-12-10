@@ -26,7 +26,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     source['diag_icd9_dot'] = source['diag_icd9'].apply(add_dot_to_icdx_code)
     source['diag_icd10_dot'] = source['diag_icd10'].apply(add_dot_to_icdx_code)
     icd9 = wrapper.code_mapper.generate_code_mapping_dictionary(
-        'ICD9', restrict_to_codes=list(source['diag_icd9_dot']))
+        'ICD9CM', restrict_to_codes=list(source['diag_icd9_dot']))
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary(
         'ICD10', restrict_to_codes=list(source['diag_icd10_dot']))
 
