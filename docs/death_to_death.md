@@ -28,3 +28,15 @@ If the date of death is not given, no death is recorded.
 | cause_source_value | death_cause.cause_icd10 |  |  |
 | cause_source_concept_id | death_cause.cause_icd10 |  |  |
 
+### Reading Baseline
+Only include deaths not recorded in the death and death_cause table.
+
+| Destination Field | Source field | Logic | Comment field |
+| --- | --- | --- | --- |
+| person_id | eid |  |  |
+| death_date | 40000-0.0 |  | Date of death |
+| death_datetime | 40000-0.0 |  | Date of death |
+| death_type_concept_id | 40020-0.0 |  | Death record origin |
+| cause_concept_id | 40001-0.0 |  | Underlying (primary) cause of death: ICD10 |
+| cause_source_value | 40001-0.0 |  | Underlying (primary) cause of death: ICD10 |
+| cause_source_concept_id | 40001-0.0 |  | Underlying (primary) cause of death: ICD10 |

@@ -84,6 +84,7 @@ class Wrapper(BaseWrapper):
         # # Death
         # self.execute_transformation(death_to_death)
         # self.execute_transformation(death_to_condition_occurrence)
+        # self.execute_transformation(baseline_to_death)
         #
         # # Visit
         # self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
@@ -104,8 +105,8 @@ class Wrapper(BaseWrapper):
         # # Stem table to domains
         # self.load_from_stem_table()
 
+    # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
     def load_from_stem_table(self):
-        # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
         self.execute_sql_file(Path('src/main/sql/stem_table_to_observation.sql'))
         self.execute_sql_file(Path('src/main/sql/stem_table_to_measurement.sql'))
@@ -178,5 +179,3 @@ class Wrapper(BaseWrapper):
                 logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
                 visit_record = query.first()
             return getattr(visit_record, id_to_lookup)
-
-

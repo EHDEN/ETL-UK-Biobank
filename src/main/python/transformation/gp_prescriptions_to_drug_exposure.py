@@ -3,9 +3,10 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 from datetime import timedelta
 from src.main.python.util import get_datetime, extract_numeric_quantity, valid_quantity_for_days_estimate
+
 from src.main.python.util.code_mapper import CodeMapping
-from src.main.python.gp_mapper import extend_read_code
 from src.main.python.util.general_functions import is_null
+from src.main.python.util.code_cleanup import extend_read_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
