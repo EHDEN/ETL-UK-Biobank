@@ -2,9 +2,11 @@
 
 # Run this app with `python app.py` and
 # visit http://127.0.0.1:8050/ in your web browser.
+import json
 
 import dash
 import dash_table
+import requests
 from dash.dependencies import Input, Output
 import dash_html_components as html
 
@@ -21,15 +23,15 @@ mapper.load_usagi_file(Path('./resources/baseline_field_mapping/numeric_prio_fie
 
 i = 0
 data = []
-for mapping in mapper.get_random_mappings(50):
+for mapping in mapper.get_all_mappings():
     values = ""
     if mapping.has_values():
         map_type = '⭕️categorical'
         values = ','.join([x for x in mapping.values])
     elif mapping.has_unit():
-        map_type = '🔢numeric'
+        map_type = '🔢 numeric'
     elif mapping.is_ignored():
-        map_type = '❌ignored'
+        map_type = '❌ ignored'
     else:
         map_type = 'unmapped'  # TODO
 
@@ -56,7 +58,7 @@ app.layout = html.Div(children=[
         },
         style_cell_conditional=[
             {'if': {'column_id': 'field_id'},
-             'width': '80px'},
+             'width': '120px'},
             {'if': {'column_id': 'mapping_approach'},
              'width': '80px'},
         ],
@@ -91,23 +93,36 @@ def update_field_detail(rows, derived_virtual_selected_rows):
 
     selected_row = rows[derived_virtual_selected_rows[0]]
     field_mapping = mapper.get_mapping(str(selected_row['field_id']))
+    event_targets = ','.join(map(str, field_mapping.event_targets))
+    event_concept = field_mapping.get_event_concept_id()
+
+    omop_information = omop_info(event_concept)
 
     return [
-        html.H2(html.A(
-            f'{field_mapping.field_id} - {field_mapping.field_description}',
+        html.H3(html.A(
+            f'UK-Biobank: {field_mapping.field_id}',
             href=UKB_FIELD_ID_URL % field_mapping.field_id,
             target="_blank"
         )),
+
+        html.H3(html.A(
+            f'Athena: {event_concept}',
+            href=ATHENA_CONCEPT_ID_URL % event_concept,
+            target="_blank"
+        )),
+
+        html.H3(f'Description: {field_mapping.field_description}'),
+
         html.P(selected_row['approach']),
         html.Table([
                 # TODO: retrieve concept_name, domain, vocab from Athena and include link to Athena.
                 html.Tr(
-                    [html.Td(html.B("Event")), html.Td(','.join(map(str, field_mapping.event_targets)))]
+                    [html.Td(html.B("Event")), html.Td(event_targets + ','), html.Td('Domain: ' + omop_information['domain'] + ','), html.Td('Vocab: ' + omop_information['vocab'])]
                 )
-                ,html.Tr(
+                , html.Tr(
                     [html.Td(html.B("Unit")), html.Td(str(field_mapping.unit_target))]
                 )
-                ,html.Tr(
+                , html.Tr(
                     [html.Td(html.B("Comment")), html.Td(field_mapping.comment)]
                 )
             ]
@@ -115,6 +130,13 @@ def update_field_detail(rows, derived_virtual_selected_rows):
         # TODO: include list of value mappings.
         html.Code(str(field_mapping))
     ]
+
+
+def omop_info(concept_id):
+    response = requests.get(f'https://athena.ohdsi.org/api/v1/concepts/{concept_id}')
+    concept = json.loads(response.text)
+    info = {'name': concept['name'], 'vocab': concept['vocabularyId'], 'domain': concept['domainId']}
+    return info
 
 
 if __name__ == '__main__':

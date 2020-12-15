@@ -138,6 +138,10 @@ class FieldConceptMapper:
             n = len(self.field_mappings)
         return random.sample(list(self.field_mappings.values()), n)
 
+    def get_all_mappings(self):
+        for mapping in self.field_mappings.values():
+            yield mapping
+
     def lookup_one(self, field_id: str, value: str) -> Optional[MappingTarget]:
         pass
 
