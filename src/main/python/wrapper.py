@@ -87,7 +87,7 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(hesin_oper_to_procedure_occurrence)
         #
         # # Stem table to domains
-        # self.load_from_stem_table()
+        self.load_from_stem_table()
 
     # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
     def load_from_stem_table(self):
