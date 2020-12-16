@@ -4,6 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 from ..util.date_functions import get_datetime
 from ..core.code_mapper import CodeMapping
+from ..util import add_dot_to_opcsx_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -15,8 +16,9 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     source = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
+    source['oper4_dot'] = source['oper4'].apply(add_dot_to_opcsx_code)
 
-    oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4', remove_dot_from_codes=True)
+    oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4')
     oper3 = wrapper.mapping_tables_lookup('./resources/mapping_tables/opcs3.csv', first_only=False)
 
     procedure_type_concept = wrapper.mapping_tables_lookup('./resources/mapping_tables/procedure_type_concepts.csv')
@@ -35,7 +37,7 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
 
         if not pd.isnull(row['oper4']):
             source_value = row['oper4']
-            procedure_targets = oper4.lookup(row['oper4'])
+            procedure_targets = oper4.lookup(row['oper4_dot'])
         elif not pd.isnull(row['oper3']):
             source_value = row['oper3']
             procedure_targets = []
