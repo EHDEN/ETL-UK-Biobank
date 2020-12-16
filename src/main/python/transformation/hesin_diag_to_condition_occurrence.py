@@ -5,7 +5,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import get_datetime
-from ..util.code_cleanup import add_dot_to_icdx_code
+from ..util import add_dot_to_icdx_code
 
 
 if TYPE_CHECKING:
