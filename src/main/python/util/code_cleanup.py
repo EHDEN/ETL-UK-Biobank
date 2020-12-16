@@ -22,6 +22,10 @@ def add_dot_to_icdx_code(icd_code: str) -> str:
         return icd_code[:3] + '.' + icd_code[3:]
     return icd_code
 
+def add_dot_to_opcsx_code(opcs_code: str) -> str:
+    if not is_null(opcs_code) and len(opcs_code) > 3 and not '.' in opcs_code:
+        return opcs_code[:3] + '.' + opcs_code[3:]
+    return opcs_code
 
 def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str, str]] = None) -> str:
     """
