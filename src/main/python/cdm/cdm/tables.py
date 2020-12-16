@@ -20,6 +20,9 @@ Base = declarative_base()
 Base.metadata = MetaData(naming_convention=NAMING_CONVENTION)
 
 
+# NOTE: added data_source (UKB-specific for GP and HES source files)
+# and record_source_value to VisitOccurrence & VisitDetail for lookups
+
 ########################################################################
 #                            CLINICAL DATA                             #
 ########################################################################
@@ -31,37 +34,68 @@ class Person(BasePersonCdm531, Base):
 class ObservationPeriod(BaseObservationPeriodCdm531, Base):
     pass
 
-# TODO: record_source_value and data_source
 class VisitOccurrence(BaseVisitOccurrenceCdm531, Base):
-    pass
+
+    @declared_attr
+    def record_source_value(cls):
+        return Column(String(50))
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class VisitDetail(BaseVisitDetailCdm531, Base):
-    pass
+
+    @declared_attr
+    def record_source_value(cls):
+        return Column(String(50))
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class ConditionOccurrence(BaseConditionOccurrenceCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class DrugExposure(BaseDrugExposureCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class ProcedureOccurrence(BaseProcedureOccurrenceCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class DeviceExposure(BaseDeviceExposureCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class Measurement(BaseMeasurementCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class Observation(BaseObservationCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class Death(BaseDeathCdm531, Base):
@@ -69,7 +103,10 @@ class Death(BaseDeathCdm531, Base):
 
 
 class Note(BaseNoteCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class NoteNlp(BaseNoteNlpCdm531, Base):
@@ -77,7 +114,10 @@ class NoteNlp(BaseNoteNlpCdm531, Base):
 
 
 class Specimen(BaseSpecimenCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 class FactRelationship(BaseFactRelationshipCdm531, Base):
@@ -85,7 +125,10 @@ class FactRelationship(BaseFactRelationshipCdm531, Base):
 
 
 class StemTable(BaseStemTableCdm531, Base):
-    pass
+
+    @declared_attr
+    def data_source(cls):
+        return Column(String(50))
 
 
 ########################################################################
