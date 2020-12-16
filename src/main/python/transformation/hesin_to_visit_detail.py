@@ -10,9 +10,10 @@ if TYPE_CHECKING:
 
 
 def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
-    source = wrapper.get_dataframe('hesin.csv')
-    source['admidate'] = pd.to_datetime(source['admidate'], dayfirst=True)
-    source['disdate'] = pd.to_datetime(source['disdate'], dayfirst=True)
+    source = wrapper.source_data.get_source_file('hesin.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
+    df['admidate'] = pd.to_datetime(df['admidate'], dayfirst=True)
+    df['disdate'] = pd.to_datetime(df['disdate'], dayfirst=True)
 
     visit_reason = wrapper.mapping_tables_lookup('./resources/mapping_tables/hesin_admimeth.csv',
                                                  add_info='ADD_INFO:coding_origin')
@@ -22,7 +23,7 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
                                                add_info='ADD_INFO:coding_origin')
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
 
         person_id = wrapper.lookup_person_id(person_source_value=row['eid'])
         if not person_id:

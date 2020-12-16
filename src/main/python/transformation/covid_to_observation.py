@@ -9,12 +9,13 @@ if TYPE_CHECKING:
 
 
 def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
-    source = wrapper.get_dataframe('covid.csv')
+    source = wrapper.source_data.get_source_file('covid.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
 
     type_vocab = wrapper.mapping_tables_lookup('./resources/mapping_tables/covid_spectype.csv')
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
 
         date = get_datetime(row['specdate'], "%d/%m/%Y")
 

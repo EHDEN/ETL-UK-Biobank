@@ -66,7 +66,7 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(gp_registrations_to_observation_period)
 
         # # Death
-        # self.execute_transformation(death_to_death)
+        self.execute_transformation(death_to_death)
         # self.execute_transformation(death_to_condition_occurrence)
         # self.execute_transformation(baseline_to_death)
         #
@@ -75,7 +75,7 @@ class Wrapper(BaseWrapper):
         # self.execute_transformation(covid_to_visit_occurrence)
         # self.execute_transformation(baseline_to_visit_occurrence)
         # self.execute_transformation(hesin_to_visit_occurrence)
-        #
+
         # self.execute_transformation(hesin_to_visit_detail)
         #
         # # Events

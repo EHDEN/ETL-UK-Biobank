@@ -10,11 +10,12 @@ if TYPE_CHECKING:
 
 
 def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    source = wrapper.get_dataframe('hesin.csv')
-    source['admidate'] = pd.to_datetime(source['admidate'], dayfirst=True)
-    source['disdate'] = pd.to_datetime(source['disdate'], dayfirst=True)
-    source = source.sort_values(['eid', 'spell_index'])
-    source = source.groupby(by=['eid', 'dsource', 'spell_index']).agg(
+    source = wrapper.source_data.get_source_file('hesin.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
+    df['admidate'] = pd.to_datetime(df['admidate'], dayfirst=True)
+    df['disdate'] = pd.to_datetime(df['disdate'], dayfirst=True)
+    df = df.sort_values(['eid', 'spell_index'])
+    df = df.groupby(by=['eid', 'dsource', 'spell_index']).agg(
         {'admidate': 'min',
          'disdate': 'max',
          'admimeth': 'first',
@@ -31,7 +32,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
                                                add_info='ADD_INFO:coding_origin')
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         person_id = wrapper.lookup_person_id(row['eid'])
         if not person_id:
             # Person not found

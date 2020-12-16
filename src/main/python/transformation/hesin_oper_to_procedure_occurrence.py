@@ -10,11 +10,13 @@ if TYPE_CHECKING:
 
 
 def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ProcedureOccurrence]:
-    hesin_oper = wrapper.get_dataframe('hesin_oper.csv')
-    hesin = wrapper.get_dataframe('hesin.csv')
+    hesin_oper_source = wrapper.source_data.get_source_file('hesin_oper.csv')
+    hesin_oper = hesin_oper_source.get_csv_as_df(apply_dtypes=False)
+    hesin_source = wrapper.source_data.get_source_file('hesin.csv')
+    hesin = hesin_source.get_csv_as_df(apply_dtypes=False)
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
-    source = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
+    df = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
 
     oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4', remove_dot_from_codes=True)
     oper3 = wrapper.mapping_tables_lookup('./resources/mapping_tables/opcs3.csv', first_only=False)
@@ -23,7 +25,7 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
 
     records = []
 
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         procedure_type_concept_id = procedure_type_concept.get(row['level'], 0)
 
         procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")

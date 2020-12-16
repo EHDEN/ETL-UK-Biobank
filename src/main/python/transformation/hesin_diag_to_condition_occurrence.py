@@ -15,20 +15,22 @@ if TYPE_CHECKING:
 
 
 def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
-    hesin_diag = wrapper.get_dataframe('hesin_diag.csv')
-    hesin = wrapper.get_dataframe('hesin.csv')
+    hesin_diag_source = wrapper.source_data.get_source_file('hesin_diag.csv')
+    hesin_diag = hesin_diag_source.get_csv_as_df(apply_dtypes=False)
+    hesin_source = wrapper.source_data.get_source_file('hesin.csv')
+    hesin = hesin_source.get_csv_as_df(apply_dtypes=False)
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     # Merge HES diag with HES on EID and INS_INDEX to get ADMIDATE and drop duplicates.
-    source = hesin_diag.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
+    df = hesin_diag.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
 
     # Generate code mapping for ICD10 and ICD9, remove dot to get correct concept codes.
-    source['diag_icd9_dot'] = source['diag_icd9'].apply(add_dot_to_icdx_code)
-    source['diag_icd10_dot'] = source['diag_icd10'].apply(add_dot_to_icdx_code)
+    df['diag_icd9_dot'] = df['diag_icd9'].apply(add_dot_to_icdx_code)
+    df['diag_icd10_dot'] = df['diag_icd10'].apply(add_dot_to_icdx_code)
     icd9 = wrapper.code_mapper.generate_code_mapping_dictionary(
-        'ICD9CM', restrict_to_codes=list(source['diag_icd9_dot']))
+        'ICD9CM', restrict_to_codes=list(df['diag_icd9_dot']))
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary(
-        'ICD10', restrict_to_codes=list(source['diag_icd10_dot']))
+        'ICD10', restrict_to_codes=list(df['diag_icd10_dot']))
 
     # Use Condition type concept file to map if primary condition or secondary condition.
     with open('./resources/mapping_tables/condition_type_concepts.csv') as f_in:
@@ -40,7 +42,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
 
     records = []
 
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         condition_type_concept_id = condition_type_concept.get(row['level'], 0)
 
         condition_date = get_datetime(row['admidate'], "%d/%m/%Y")

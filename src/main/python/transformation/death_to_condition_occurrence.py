@@ -10,21 +10,23 @@ if TYPE_CHECKING:
 
 
 def death_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
-    death = wrapper.get_dataframe('death.csv')
+    death_source = wrapper.source_data.get_source_file('death.csv')
+    death = death_source.get_csv_as_df(apply_dtypes=False)
     death['date_of_death'] = pd.to_datetime(death['date_of_death'], dayfirst=True)
     death = death.sort_values(by=['eid', 'date_of_death'])
 
-    death_cause = wrapper.get_dataframe('death_cause.csv')
+    death_cause_source = wrapper.source_data.get_source_file('death_cause.csv')
+    death_cause = death_cause_source.get_csv_as_df(apply_dtypes=False)
     death_cause = death_cause[death_cause['arr_index'] != '0']
 
-    source = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
+    df = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
-    source['cause_icd10_dot'] = source['cause_icd10'].apply(add_dot_to_icdx_code)
+    df['cause_icd10_dot'] = df['cause_icd10'].apply(add_dot_to_icdx_code)
     mapper = wrapper.code_mapper.generate_code_mapping_dictionary(
-        'ICD10', restrict_to_codes=list(source['cause_icd10_dot']))
+        'ICD10', restrict_to_codes=list(df['cause_icd10_dot']))
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         if pd.isna(row['date_of_death']):
             continue
         if pd.isna(row['cause_icd10']):
@@ -49,4 +51,3 @@ def death_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Conditio
         )
         records.append(r)
     return records
-

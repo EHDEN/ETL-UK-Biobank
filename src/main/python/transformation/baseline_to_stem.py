@@ -24,11 +24,12 @@ def parse_column_name(column_name: str) -> Tuple[Optional[str], Optional[str]]:
 
 
 def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
-    source = wrapper.get_dataframe('baseline.csv')
+    source = wrapper.source_data.get_source_file('baseline.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
     field_mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         eid = row.pop('eid')
         person_id = wrapper.lookup_person_id(eid)
         if not person_id:

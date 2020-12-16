@@ -10,17 +10,26 @@ if TYPE_CHECKING:
 
 
 def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    clinical = wrapper.get_dataframe('gp_clinical.csv', use_columns=['eid', 'data_provider', 'event_dt'])
+    clinical_source = wrapper.source_data.get_source_file('gp_clinical.csv')
+    clinical = clinical_source.get_csv_as_df(
+        apply_dtypes=False,
+        use_columns=['eid', 'data_provider', 'event_dt']
+    )
     clinical = clinical[["eid", "event_dt", "data_provider"]].rename(columns={'event_dt': 'date'})
 
-    prescriptions = wrapper.get_dataframe('gp_prescriptions.csv', use_columns=['eid', 'data_provider', 'issue_date'])
-    prescriptions = prescriptions[["eid", "issue_date", "data_provider"]].rename(columns={'issue_date': 'date'})
+    prescriptions_source = wrapper.source_data.get_source_file('gp_prescriptions.csv')
+    prescriptions = prescriptions_source.get_csv_as_df(
+        apply_dtypes=False,
+        use_columns=['eid', 'data_provider', 'issue_date']
+    )
+    prescriptions = prescriptions[["eid", "issue_date", "data_provider"]] \
+        .rename(columns={'issue_date': 'date'})
 
-    source = pd.concat([prescriptions, clinical])
-    source = source.drop_duplicates(['eid', 'date'])
+    df = pd.concat([prescriptions, clinical])
+    df = df.drop_duplicates(['eid', 'date'])
     records = []
 
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         visit_date = get_datetime(row['date'], "%d/%m/%Y")
         person_id = wrapper.lookup_person_id(row['eid'])
         if not person_id:
