@@ -7,6 +7,9 @@ database:
   # If no password is needed, or to provide at runtime, leave blank
   password: 'postgres'
 
+# (Relative) path to the source data folder (optional)
+source_data_folder: './resources/synthetic_data'
+
 # The schema names of the OMOP CDM (target schema) and the vocabulary
 # tables. Additional key-value pairs can be added here if you have
 # custom ORM tables, for which you would like to have dynamic schema
@@ -19,9 +22,11 @@ run_options:
   # add option for loading the regular OMOP vocabularies? (not implemented yet)
   # ask for confirmation?
   skip_vocabulary_loading: True
-  # concept_id > 2b (not implemented yet)
+  # If True, all contents in resources/custom_vocabularies will be ignored,
+  # regardless of whether you call load_custom_vocabularies in your code.
   skip_custom_vocabulary_loading: False
-  # STCM files (not implemented yet)
+  # If True, all contents in resources/source_to_concept will be ignored,
+  # regardless of whether you call load_stcm in your code.
   skip_source_to_concept_map_loading: False
   # Write two additional tsv files in the logs folder, with more
   # detailed information on source data counts and ETL transformations.

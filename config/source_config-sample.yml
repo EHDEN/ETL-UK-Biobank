@@ -1,12 +1,10 @@
 # Use of this config file is optional. It will be needed only
 # if the transformations require reading source data from files.
 
-# Folder containing all source data files
-source_data_folder: './resources/synthetic_data'
 # For each source file, count the number of rows
 count_source_rows: False
 
-# Default options for individual source data files.
+# Default options for source data files.
 # These can be overruled for individual files below.
 file_defaults:
   delimiter: '\t'
