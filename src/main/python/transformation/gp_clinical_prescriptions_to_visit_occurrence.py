@@ -13,14 +13,14 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
     clinical_source = wrapper.source_data.get_source_file('gp_clinical.csv')
     clinical = clinical_source.get_csv_as_df(
         apply_dtypes=False,
-        use_columns=['eid', 'data_provider', 'event_dt']
+        usecols=['eid', 'data_provider', 'event_dt']
     )
     clinical = clinical[["eid", "event_dt", "data_provider"]].rename(columns={'event_dt': 'date'})
 
     prescriptions_source = wrapper.source_data.get_source_file('gp_prescriptions.csv')
     prescriptions = prescriptions_source.get_csv_as_df(
         apply_dtypes=False,
-        use_columns=['eid', 'data_provider', 'issue_date']
+        usecols=['eid', 'data_provider', 'issue_date']
     )
     prescriptions = prescriptions[["eid", "issue_date", "data_provider"]] \
         .rename(columns={'issue_date': 'date'})

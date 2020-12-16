@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 
 def baseline_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
     source = wrapper.source_data.get_source_file('baseline.csv')
-    df = source.get_csv_as_df(apply_dtypes=False, use_columns=['eid', '40000-0.0', '40001-0.0'])
+    df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '40000-0.0', '40001-0.0'])
     df['ICD10_dot'] = df['40001-0.0'].apply(add_dot_to_icdx_code)
 
     mapper = \

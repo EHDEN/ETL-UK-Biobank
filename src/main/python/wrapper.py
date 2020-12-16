@@ -67,24 +67,24 @@ class Wrapper(BaseWrapper):
 
         # # Death
         self.execute_transformation(death_to_death)
-        # self.execute_transformation(death_to_condition_occurrence)
-        # self.execute_transformation(baseline_to_death)
+        self.execute_transformation(death_to_condition_occurrence)
+        self.execute_transformation(baseline_to_death)
         #
         # # Visit
-        # self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
-        # self.execute_transformation(covid_to_visit_occurrence)
-        # self.execute_transformation(baseline_to_visit_occurrence)
-        # self.execute_transformation(hesin_to_visit_occurrence)
+        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
+        self.execute_transformation(covid_to_visit_occurrence)
+        self.execute_transformation(baseline_to_visit_occurrence)
+        self.execute_transformation(hesin_to_visit_occurrence)
 
-        # self.execute_transformation(hesin_to_visit_detail)
+        self.execute_transformation(hesin_to_visit_detail)
         #
         # # Events
-        # self.execute_transformation(baseline_to_stem)
-        # self.execute_transformation(covid_to_observation)
-        # self.execute_transformation(gp_clinical_to_stem_table)
-        # self.execute_transformation(gp_prescriptions_to_drug_exposure)
-        # self.execute_transformation(hesin_diag_to_condition_occurrence)
-        # self.execute_transformation(hesin_oper_to_procedure_occurrence)
+        self.execute_transformation(baseline_to_stem)
+        self.execute_transformation(covid_to_observation)
+        self.execute_transformation(gp_clinical_to_stem_table)
+        self.execute_transformation(gp_prescriptions_to_drug_exposure)
+        self.execute_transformation(hesin_diag_to_condition_occurrence)
+        self.execute_transformation(hesin_oper_to_procedure_occurrence)
         #
         # # Stem table to domains
         # self.load_from_stem_table()
