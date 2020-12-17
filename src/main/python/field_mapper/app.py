@@ -21,6 +21,8 @@ ATHENA_CONCEPT_ID_URL = "https://athena.ohdsi.org/search-terms/terms/%s"
 mapper = FieldConceptMapper(None, 'ERROR')
 mapper.load_usagi_file(Path('./resources/baseline_field_mapping/numeric_prio_fields.csv'))
 
+# TODO: Add additional column for target domain.
+# TODO: Use note instead of comment?
 i = 0
 data = []
 for mapping in mapper.get_all_mappings():
@@ -100,33 +102,36 @@ def update_field_detail(rows, derived_virtual_selected_rows):
     event_concept = field_mapping.get_event_concept_id()
 
     omop_information = omop_info(event_concept)
+    unit_information = omop_info(field_mapping.get_unit_concept_id())
+
+    if event_concept == 0:
+        event_information = [html.Td(html.B("Event: "))]
+    else:
+        event_information = [html.Td(html.B("Event: ")), html.Td(event_targets + ','), html.Td('Domain: ' + omop_information['domain'] + ','),
+            html.Td('Vocab: ' + omop_information['vocab'])]
 
     return [
         html.H3(html.A(
-            f'UK-Biobank: {field_mapping.field_id}',
+            f'UK-Biobank: {field_mapping.field_id} - {field_mapping.field_description}',
             href=UKB_FIELD_ID_URL % field_mapping.field_id,
             target="_blank"
         )),
 
         html.H3(html.A(
-            f'Athena: {event_concept}',
+            f'Athena: {event_concept} - {omop_information["name"]}',
             href=ATHENA_CONCEPT_ID_URL % event_concept,
             target="_blank"
         )),
 
-        html.H3(f'Description: {field_mapping.field_description}'),
-
         html.P(selected_row['approach']),
         html.Table([
+                html.Tr(event_information)
+                ,
                 html.Tr(
-                    [html.Td(html.B("Event")), html.Td(event_targets + ','), html.Td('Domain: ' + omop_information['domain'] + ','), html.Td('Vocab: ' + omop_information['vocab'])]
-                )
-                , html.Tr(
-                    [html.Td(html.B("Unit")), html.Td(str(field_mapping.unit_target))]
-                )
-                , html.Tr(
-                    [html.Td(html.B("Comment")), html.Td(field_mapping.comment)]
-                )
+                    [html.Td(html.B("Unit: ")), html.Td(str(field_mapping.unit_target) + ',')])
+                ,
+                html.Tr(
+                    [html.Td(html.B("Comment")), html.Td(field_mapping.comment)])
             ]
         ),
         # TODO: include list of value mappings.
