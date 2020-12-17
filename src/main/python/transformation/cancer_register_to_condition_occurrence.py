@@ -5,19 +5,24 @@ import pandas as pd
 
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
 
-from .baseline_to_stem import parse_column_name
+from ..util.code_cleanup import add_dot_to_icdx_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
-    cancer_fields = ('40005', '40006', '40011', '40012')
-    cancer_fields = ['eid']+[f'{i}-{j}.0' for i in cancer_fields for j in range(32)]
-    source = wrapper.get_dataframe('baseline.csv', use_columns=cancer_fields)
+def return_string(value):
+    if pd.isnull(value):
+        return 'NULL'
+    else:
+        return str(value)
 
-    icdo3 = wrapper.code_mapper.generate_code_mapping_dictionary('ICDO3', remove_dot_from_codes=True)
-    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', remove_dot_from_codes=True)
+
+def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
+    source = wrapper.get_dataframe('baseline.csv')
+
+    icdo3 = wrapper.code_mapper.generate_code_mapping_dictionary('ICDO3')
+    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10')
 
     records = []
     for _, row in source.iterrows():
@@ -28,22 +33,29 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
 
         for instance in range(32):
 
-            histology = row[f'40011-{instance}.0']
-            behaviour = row[f'40012-{instance}.0']
-            topography = row[f'40006-{instance}.0']
-
-            if not ((histology == '' or pd.isna(histology)) and (behaviour == '' or pd.isna(behaviour))):
-                source_code = f'{histology}/{behaviour}-{topography}'
-            elif (not (histology == '' or pd.isna(histology))) and (behaviour == '' or pd.isna(behaviour)):
-                source_code = f'{histology}/1-{topography}'
-            elif (histology == '' or pd.isna(histology)) and (behaviour == '' or pd.isna(behaviour)):
-                source_code = f'NULL-{topography}'
-            else:
+            if not f'40011-{instance}.0' in row:
                 continue
 
-            concept_id = icdo3.lookup(source_code)
-            if pd.isnull(concept_id):
-                concept_id = icd10.lookup(source_code)
+            histology = return_string(row[f'40011-{instance}.0'])
+            behaviour = return_string(row[f'40012-{instance}.0'])
+
+            topography = return_string(row[f'40006-{instance}.0'])
+            if topography != 'NULL':
+                topography = add_dot_to_icdx_code(topography)
+            # TODO: For the topography if ICD10 code is missing check if ICD9 code is present to use instead
+
+            if histology != 'NULL' and behaviour != 'NULL':
+                source_code = f'{histology}/{behaviour}-{topography}'
+            elif histology != 'NULL' and behaviour == 'NULL':
+                source_code = f'{histology}/1-{topography}'
+            elif histology == 'NULL' and behaviour == 'NULL' and topography != 'NULL':
+                source_code = f'NULL-{topography}'
+            elif histology == 'NULL' and behaviour == 'NULL' and topography == 'NULL':
+                continue
+
+            target_concept = icdo3.lookup(source_code, first_only=True)
+            if pd.isnull(target_concept):
+                target_concept = icd10.lookup(source_code, first_only=True)
 
             date_column = f'40005-{instance}.0'
             if date_column != '':
@@ -54,11 +66,12 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
 
             r = wrapper.cdm.ConditionOccurrence(
                 person_id=person_id,
-                condition_concept_id=concept_id,
+                condition_concept_id=target_concept.target_concept_id,
                 condition_start_date=datetime.date(),
                 condition_start_datetime=datetime,
+                condition_type_concept_id=32883,  # Survey
                 condition_source_value=source_code,
                 data_source='baseline'
-                )
+            )
             records.append(r)
     return records
