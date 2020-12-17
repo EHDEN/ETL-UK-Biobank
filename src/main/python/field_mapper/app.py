@@ -29,11 +29,14 @@ for mapping in mapper.get_all_mappings():
         map_type = '⭕️categorical'
         values = ','.join([x for x in mapping.values])
     elif mapping.has_unit():
-        map_type = '🔢 numeric'
+        if mapping.is_flagged():
+            map_type = '📋 unmapped'
+        else:
+            map_type = '🔢 numeric/🔠 text'
     elif mapping.is_ignored():
         map_type = '❌ ignored'
     else:
-        map_type = 'unmapped'  # TODO
+        map_type = '📋 unmapped'
 
     data.append({
         'source_file': mapping.source_file_name,
@@ -115,7 +118,6 @@ def update_field_detail(rows, derived_virtual_selected_rows):
 
         html.P(selected_row['approach']),
         html.Table([
-                # TODO: retrieve concept_name, domain, vocab from Athena and include link to Athena.
                 html.Tr(
                     [html.Td(html.B("Event")), html.Td(event_targets + ','), html.Td('Domain: ' + omop_information['domain'] + ','), html.Td('Vocab: ' + omop_information['vocab'])]
                 )
