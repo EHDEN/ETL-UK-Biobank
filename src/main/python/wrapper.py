@@ -54,8 +54,8 @@ class Wrapper(BaseWrapper):
         # Load source data
         self.transform()
 
-        # self.etl_stats.write_summary_files()
-        self.etl_stats.log_summary()
+        # Log/write overview of transformations and sources
+        self.summarize()
 
     def transform(self):
         self.execute_transformation(covid_to_care_site)
