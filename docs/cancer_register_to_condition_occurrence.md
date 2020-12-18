@@ -40,7 +40,7 @@ The second step is to lookup the concept_id of the ICDO3 code.
 | condition_start_datetime |  |  |  |
 | condition_end_date |  |  |  |
 | condition_end_datetime |  |  |  |
-| condition_type_concept_id |  |  |  |
+| condition_type_concept_id |  | 32879 | Registry |
 | stop_reason |  |  |  |
 | provider_id |  |  |  |
 | visit_occurrence_id |  |  |  |
