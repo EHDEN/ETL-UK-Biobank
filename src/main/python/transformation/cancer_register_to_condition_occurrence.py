@@ -72,6 +72,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
             r = wrapper.cdm.ConditionOccurrence(
                 person_id=person_id,
                 condition_concept_id=target_concept.target_concept_id,
+                condition_source_concept_id=target_concept.source_concept_id,
                 condition_start_date=datetime.date(),
                 condition_start_datetime=datetime,
                 condition_type_concept_id=32879,  # Registry
