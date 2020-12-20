@@ -19,7 +19,7 @@ Every record of hesin (episode) is a visit_detail record
 | visit_end_datetime | epiend |  |  |
 | visit_concept_id | admimeth<br>dsource | Map same as for visit_occurrence |  |
 | visit_source_value | dsource<br>admimeth |  |  |
-| visit_type_concept_id |  |  | 44818517  # Visit derived from encounter on claim |
+| visit_type_concept_id |  |  | 32827,  # 'EHR encounter record' |
 | provider_id |  |  | This can be retrieved from either hesin.mainspef or hesin.tretspef. Not implemented. |
 | care_site_id |  |  |  |
 | visit_source_concept_id |  |  |  |

@@ -18,7 +18,7 @@ From admission to discharge
 | visit_start_datetime | admidate |  |  |
 | visit_end_date | disdate | Maximum | Similar to admidate. For the end of the spell keep the latest date. |
 | visit_end_datetime | disdate |  |  |
-| visit_type_concept_id |  |  | 44818517 - Visit derived from encounter on claim |
+| visit_type_concept_id |  |  | 32827,  # 'EHR encounter record' |
 | provider_id |  |  |  |
 | care_site_id |  |  |  |
 | visit_source_value | dsource<br>admimeth | 'record origin:<dsource>/admission method:<admimeth>' |  |
