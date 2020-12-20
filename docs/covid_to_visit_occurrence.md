@@ -13,7 +13,7 @@
 | visit_start_datetime | specdate |  |  |
 | visit_end_date | specdate |  |  |
 | visit_end_datetime | specdate |  |  |
-| visit_type_concept_id |  |  | 44818518 - Visit derived from EHR record |
+| visit_type_concept_id |  |  | 32856 - Lab |
 | provider_id |  |  |  |
 | care_site_id | laboratory |  |  |
 | visit_source_value |  |  |  |
