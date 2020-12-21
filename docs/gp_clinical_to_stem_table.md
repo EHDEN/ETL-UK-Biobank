@@ -23,13 +23,12 @@ though if provided, `value3` generally seems to refer to units.
 Provider-specific mapping logic needs to be implemented, 
 for some of the values this is available at [https://github.com/spiros/ukb-biomarker-phenotypes](
 https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
-- `event_dt` (date) field: to protect individuals, alterations have been made to dates in relation to the participant's
+- `event_dt` (date) field: to protect individuals, UKB makes alterations to dates in relation to the participant's
  date of birth as follows: 01/01/1901 (before birth), 02/02/1902 (on birth), 03/03/1903 (after birth), 07/07/2037 (future). 
  
  
 **TBD:**
- - decide on date handling (`event_dt`), skip empty or not? use which dates?
- - review `type_concept_id` (not covering all desired cases)
+ - if date empty (`event_dt`), then capture event as 'History of' observation
 
 ![](md_files/image1.png)
 
@@ -40,7 +39,7 @@ After mapping to the stem table, the records are mapped to their respective doma
 | id |  |  |  |
 | domain_id |  |  |  |
 | person_id | eid |  |  |
-| start_date | event_dt | If date empty, ignore record. Capture as observation (history of) |  |
+| start_date | event_dt | If date empty, ignore record. |  |
 | start_datetime | event_dt |  |  |
 | visit_occurrence_id | eid<br>event_dt | Look up visit occurrence by unique eid+event_dt+data_provider<br> |  |
 | provider_id |  |  |  |
