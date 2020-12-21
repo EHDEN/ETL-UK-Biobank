@@ -452,8 +452,7 @@ class StemTable(base):
                               'The domain drives the target CDM table this event will be '
                               'recorded in. If one is not set, specify a default domain.')
     person_id = Column(ForeignKey('omopcdm.person.person_id'), nullable=False, index=True)
-    concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, 
-                       index=True)
+    concept_id = Column(ForeignKey('vocab.concept.concept_id'), nullable=False, index=True)
     start_date = Column(Date)
     start_datetime = Column(DateTime, nullable=False)
     end_date = Column(Date)

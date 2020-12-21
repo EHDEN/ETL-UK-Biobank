@@ -14,6 +14,10 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                                                                 '53-0.0', '53-1.0', '53-2.0', '53-3.0'])
     records = []
     for _, row in source.iterrows():
+        person_id = wrapper.lookup_person_id(row['eid'])
+        if not person_id:
+            # Person not found
+            continue
         # One-day visits for instances 0 to 3
         for instance in range(4):
             # Field_id 53 contains the date of the visit
@@ -27,7 +31,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
             assessment_center = row.get(f'54-{instance}.0', None)
 
             r = wrapper.cdm.VisitOccurrence(
-                person_id=row['eid'],
+                person_id=person_id,
                 visit_concept_id=44818519,  # Clinical Study Visit
                 visit_start_date=date.date(),
                 visit_start_datetime=date,

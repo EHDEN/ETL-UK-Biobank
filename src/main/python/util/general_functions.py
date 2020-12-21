@@ -12,8 +12,21 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+import pandas as pd
 
-# NOTE: sample general function, remove if unused
 
-def create_person_id_from_subject_id(subject_id: str) -> int:
-    return int(subject_id)
+def is_null(value) -> bool:
+    if pd.isnull(value) or not value:  # '0' string is a valid code, won't be filtered by this
+        return True
+    else:
+        return False
+
+if __name__ == '__main__':
+    import numpy as np
+    print('# is_null() tests')
+    print(is_null(None))
+    print(is_null(np.nan))
+    print(is_null(''))
+    print(is_null(0))
+    print(is_null(0.0))
+    print(is_null('Hello'))

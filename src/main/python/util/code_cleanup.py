@@ -12,17 +12,32 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-import pandas as pd
 from typing import Dict, Optional
 
+from src.main.python.util.general_functions import is_null
 
-def is_null(value) -> bool:
-    if pd.isnull(value) or not value:  # '0' string is a valid code, won't be filtered by this
-        return True
-    else:
-        return False
+def add_dot_to_icdx_code(icd_code: str) -> str:
+    # 45532996 =  invalid ICD10 code concept
+    if not is_null(icd_code) and len(icd_code) > 3 and not '.' in icd_code and icd_code != '45532996':
+        return icd_code[:3] + '.' + icd_code[3:]
+    return icd_code
 
-def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = None) -> str:
+def add_dot_to_opcsx_code(opcs_code: str) -> str:
+    if not is_null(opcs_code) and len(opcs_code) > 3 and not '.' in opcs_code:
+        return opcs_code[:3] + '.' + opcs_code[3:]
+    return opcs_code
+
+def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str, str]] = None) -> str:
+    """
+    Given a Read code, if the code ends with a dot, try extending it
+    using the provided (optional) mapping dictionary, otherwise append
+     "00" to it.
+    :param read_code: Read v2 code
+    :param mapping_dict: an (optional) dictionary specifying the
+    preferred extension for codes ending with a dot (e.g. alternative
+    to the default "00")
+    :return: the (extended) Read v2 code
+    """
     if not is_null(read_code) and read_code[-1] == '.':
         if mapping_dict:
             return mapping_dict.get(read_code, read_code + '00')
@@ -31,18 +46,16 @@ def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str,str]] = Non
     else:
         return read_code
 
+
 if __name__ == '__main__':
-    import numpy as np
-    print('# is_null() tests')
-    print(is_null(None))
-    print(is_null(np.nan))
-    print(is_null(''))
-    print(is_null(0))
-    print(is_null(0.0))
-    print(is_null('Hello'))
     print('# extend_read_code() tests')
     mapping_dict = {'ABC.' : 'ABC.123'}
     print(extend_read_code(None))
     print(extend_read_code('ABC'))
     print(extend_read_code('ABC.'))
-    print(extend_read_code('ABC.', mapping_dict))
+    print(extend_read_code('ABC.'), mapping_dict)
+    print('# add_dot_to_icdx_code() tests')
+    print(add_dot_to_icdx_code(None))
+    print(add_dot_to_icdx_code('J12'))
+    print(add_dot_to_icdx_code('J123'))
+    print(add_dot_to_icdx_code('J12.3'))

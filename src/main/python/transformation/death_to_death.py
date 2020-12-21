@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
+from ..util import add_dot_to_icdx_code
+
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
@@ -30,17 +32,23 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
 
     source = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
-    codes = death_cause['cause_icd10'].unique().tolist()
-    mapper = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', restrict_to_codes=codes, remove_dot_from_codes=True)
+    source['cause_icd10_dot'] = source['cause_icd10'].apply(add_dot_to_icdx_code)
+    mapper = wrapper.code_mapper.generate_code_mapping_dictionary(
+        'ICD10', restrict_to_codes=list(source['cause_icd10_dot']))
 
     records = []
     for _, row in source.iterrows():
         if pd.isna(row['date_of_death']):
             continue
 
-        target = mapper.lookup(row['cause_icd10'], first_only=True)
+        person_id = wrapper.lookup_person_id(row['eid'])
+        if not person_id:
+            # Person not found
+            continue
+
+        target = mapper.lookup(row['cause_icd10_dot'], first_only=True)
         r = wrapper.cdm.Death(
-            person_id=row['eid'],
+            person_id=person_id,
             death_date=row['date_of_death'],
             death_datetime=row['date_of_death'],
             death_type_concept_id=type_lookup.get(row['source'], 0),

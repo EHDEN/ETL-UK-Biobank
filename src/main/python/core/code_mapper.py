@@ -18,7 +18,7 @@ from sqlalchemy import and_
 from sqlalchemy.orm import aliased
 from typing import Optional, Union, List, Dict
 import logging
-
+from ..util.general_functions import is_null
 
 logger = logging.getLogger(__name__)
 
@@ -125,7 +125,7 @@ class MappingDict:
         """
 
         if not self.mapping_dict:
-            logger.warning('Trying to retrieve a mapping from an empty dictionary!')
+            logger.debug('Trying to retrieve a mapping from an empty dictionary!')
 
         if not code or pd.isna(code):
             mappings = [CodeMapping.create_mapping_for_no_match(code)]
@@ -186,6 +186,10 @@ class CodeMapper:
         :param remove_dot_from_codes: for e.g. icd9 and icd10 the source codes do not contain the dot separator
         :return: MappingDict
         """
+
+        # make sure restrict to codes contains unique and not null elements
+        if restrict_to_codes:
+            restrict_to_codes = list(filter(lambda x: not is_null(x), set(restrict_to_codes)))
 
         logger.info(f'Building mapping dictionary for vocabularies: {vocabulary_id}')
 
