@@ -22,31 +22,29 @@ _Table 1. h = 4 digit Histology, b = 1 digit Behaviour, t = ICD10 Topography.
 |0|1|1| NULL-t |
 |0|0|1| NULL-t |
 |0|1|0| not captured |
-|1|0|0| mapped using 40011_histology_cancer_tumour.csv |
+|1|0|0| mapped using 40011_histology_cancer_tumour.csv in baseline_to_stem.py|
 |0|0|0| not captured |
 
-The second step is to lookup the concept_id of the ICDO3 code.
-
-...
-
-
+The second step is to lookup the concept_id of the ICDO3 code. <br>
+There are some codes that have only topography (011, 001) that are not present in the ICDO3 vocabulary, but exist in ICD10. <br>
+We create a different record for every instance. Keep the same instance to all the fields.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
 | condition_occurrence_id |  |  |  |
 | person_id |  |  |  |
-| condition_start_date | 40005-16.0 |  |  |
-| condition_concept_id | 40006-16.0<br>40011-16.0 | Combine with 40011 (histology) to map to a SNOMED cancer condition.  - see also convention of the OHDSI oncology wg<br> |  |
+| condition_start_date | 40005-{instance}.0 |  |  |
+| condition_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Combine fields as described in table above to construct an ICDO3 code. |  |
 | condition_start_datetime |  |  |  |
 | condition_end_date |  |  |  |
 | condition_end_datetime |  |  |  |
-| condition_type_concept_id |  | 32879 | Registry |
+| condition_type_concept_id |  |  | 32879 - Registry |
 | stop_reason |  |  |  |
 | provider_id |  |  |  |
 | visit_occurrence_id |  |  |  |
 | visit_detail_id |  |  |  |
-| condition_source_value | 40006-16.0 |  |  |
-| condition_source_concept_id | 40006-16.0 |  |  |
+| condition_source_value |  | ICDO3 code as constructed above. |  |
+| condition_source_concept_id |  | Information is retrieved in the CodeMapper class (in the same object as the code for condition_concept_id). |  |
 | condition_status_source_value |  |  |  |
 | condition_status_concept_id |  |  |  |
 

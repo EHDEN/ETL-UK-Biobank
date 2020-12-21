@@ -23,6 +23,7 @@ def return_string(value):
 
 def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
     source = wrapper.get_dataframe('baseline.csv')
+    # TODO: Read only the columns we need from baseline (ie. the cancer register fields).
 
     icdo3 = wrapper.code_mapper.generate_code_mapping_dictionary('ICDO3')
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10')
@@ -49,6 +50,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
             # TODO: For the topography if ICD10 code is missing check if ICD9 code is present to use instead
 
             # Skip if topography empty and histology and behaviour not both given (000, 100, 010)
+            # Case 100 is covered in baseline_to_stem script.
             if topography == 'NULL' and (histology == 'NULL' or behaviour == 'NULL'):
                 continue
 
@@ -62,8 +64,8 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
                 source_code = f'{histology}/{behaviour}-{topography}'
 
             target_concept = icdo3.lookup(source_code, first_only=True)
-            if pd.isnull(target_concept):
-                target_concept = icd10.lookup(source_code, first_only=True)
+            if target_concept.source_concept_id == 0:
+                target_concept = icd10.lookup(topography, first_only=True)
 
             datetime = get_datetime(row[f'40005-{instance}.0'])
             if datetime == DEFAULT_DATETIME:
