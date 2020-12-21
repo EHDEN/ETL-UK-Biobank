@@ -1,0 +1,14 @@
+category_id,category_description,target_concept_id,target_concept_name,comment
+1,Population characteristics,32879,'Registry',“all obtained from local NHS Primary Care Trust registries”
+100021,UKB Assessment Centre: Recruitment,32879,'Registry',Not sure whether obtained through patient or healthcare professional?
+100025,UKB Assessment Centre: Touchscreen,32862,'Patient filled survey',
+100071,UKB Assessment Centre: Verbal interview,32851,'Healthcare professional filled survey',
+100006,UKB Assessment Centre: Physical measures,32879,'Registry',
+100026,UKB Assessment Centre: Cognitive function,32862,'Patient filled survey',
+100003,UKB Assessment Centre: Imaging,32879,'Registry',
+100001,UKB Assessment Centre: Biological sampling,32879,'Registry',
+100004,UKB Assessment Centre: Procedural metrics,32879,'Registry',
+100314,Genomics,32879,'Registry',
+100089,Online follow-up,32862,'Patient filled survey',
+113,Additional exposures: Local environment,32879,'Registry',
+1008,Additional exposures: Physical activity measurement,32865,‘Self reported’,“Measures are accurate, but might not me used correctly (e.g. in case of wrist worn accelerometer)” Better alternative (non-standard): 44802039,Remote assessment
