@@ -86,7 +86,8 @@ class EtlWrapper:
             self.cdm.clinical_data.Person.__table__,
             self.cdm.health_system_data.Location.__table__,
             self.cdm.health_system_data.CareSite.__table__,
-            self.cdm.health_system_data.Provider.__table__
+            self.cdm.health_system_data.Provider.__table__,
+            self.cdm.derived_elements.CdmSource.__table__
         ])
 
     def create_cdm(self) -> None:
