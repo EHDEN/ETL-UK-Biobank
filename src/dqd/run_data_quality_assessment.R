@@ -17,7 +17,7 @@ devtools::install_github(repo="OHDSI/DataQualityDashboard")
 setwd("~/ETL-UK-Biobank/src/dqd")
 
 # Load configuration settings
-config <- yaml.load_file('config.yml')
+config <- yaml.load_file('config_dqd.yml')
 connectionConfig <- config$connectionDetails
 
 ## Executing Data Quality Checks

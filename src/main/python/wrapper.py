@@ -87,6 +87,9 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(hesin_oper_to_procedure_occurrence)
         self.execute_transformation(cancer_register_to_condition_occurrence)
 
+        # CDM Source
+        self.execute_transformation(cdm_source)
+
         # Stem table to domains
         self.load_from_stem_table()
 
