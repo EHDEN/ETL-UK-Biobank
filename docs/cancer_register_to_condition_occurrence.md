@@ -26,16 +26,21 @@ _Table 1. h = 4 digit Histology, b = 1 digit Behaviour, t = ICD10 Topography.
 |0|0|0| not captured |
 
 The second step is to lookup the concept_id of the ICDO3 code. <br>
-There are some codes that have only topography (011, 001) that are not present in the ICDO3 vocabulary, but exist in ICD10. <br>
-We create a different record for every instance. Keep the same instance to all the fields.
+There are some codes that have only topography (011, 001) that are not present in the ICDO3 vocabulary, but exist in ICD10.
+In case the ICDO3 code cannot be found in the vocabulary, a lookup on just the topography code in the ICD10 vocabulary is done.
 
-| Destination Field | Source field | Logic | Comment field |
+The cancer registry fields can be repeated up to 16 times for a person.
+Each set of fields has an incremental instance id. 
+We create a record for every instance for which the topography is given or both the histology and behaviour are provided (As given in table 1, this means skipping 010, 100, 000).
+Keep the same instance to all the fields mapped to one record.
+
+| Destination Field | Source field | Logic | Comment |
 | --- | --- | --- | --- |
 | condition_occurrence_id |  |  |  |
-| person_id |  |  |  |
+| person_id | eid |  |  |
+| condition_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Combine fields as described in table above to construct an ICDO3 code, for which the standard concept is looked up in the OMOP vocabulary. |  |
 | condition_start_date | 40005-{instance}.0 |  |  |
-| condition_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Combine fields as described in table above to construct an ICDO3 code. |  |
-| condition_start_datetime |  |  |  |
+| condition_start_datetime | 40005-{instance}.0 | as datetime |  |
 | condition_end_date |  |  |  |
 | condition_end_datetime |  |  |  |
 | condition_type_concept_id |  |  | 32879 - Registry |
@@ -43,8 +48,9 @@ We create a different record for every instance. Keep the same instance to all t
 | provider_id |  |  |  |
 | visit_occurrence_id |  |  |  |
 | visit_detail_id |  |  |  |
-| condition_source_value |  | ICDO3 code as constructed above. |  |
-| condition_source_concept_id |  | Information is retrieved in the CodeMapper class (in the same object as the code for condition_concept_id). |  |
+| condition_source_value | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | ICDO3 code as constructed above. |  |
+| condition_source_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Information is retrieved in the CodeMapper class (in the same object as the code for condition_concept_id). |  |
 | condition_status_source_value |  |  |  |
 | condition_status_concept_id |  |  |  |
+| data_source |  | 'baseline' |  |
 

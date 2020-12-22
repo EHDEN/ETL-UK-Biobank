@@ -64,7 +64,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
                 source_code = f'{histology}/{behaviour}-{topography}'
 
             target_concept = icdo3.lookup(source_code, first_only=True)
-            if target_concept.source_concept_id == 0:
+            if target_concept.source_concept_id == 0:  # If no ICDO3 code found, try to lookup by just ICD10 topography
                 target_concept = icd10.lookup(topography, first_only=True)
 
             datetime = get_datetime(row[f'40005-{instance}.0'])
