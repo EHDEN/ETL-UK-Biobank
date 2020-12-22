@@ -77,3 +77,5 @@ The following rules are applied, in this order:
 - [HES, GP and covid appendix](source_appendix.md)
 - [baseline appendix](baseline_source_appendix.md)
 
+# Metadta
+- [CDM Source](cdm_source.md)
