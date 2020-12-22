@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 import logging
+import re
 
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
 
@@ -22,14 +23,30 @@ def return_string(value):
 
 
 def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
-    source = wrapper.get_dataframe('baseline.csv')
-    # TODO: Read only the columns we need from baseline (ie. the cancer register fields).
+    source = wrapper.source_data.get_source_file('baseline.csv')
+
+    # To reduce memory, identify which columsn from the baseline table should be used
+    # The topography columns are used to restrict the number of ICD10 codes that need to be looked up.
+    columns_to_use = []
+    topography_columns = []
+    columns_available = next(source.get_csv_as_generator_of_dicts()).keys()
+    pattern = re.compile(r'eid|40005|40006|40011|40012')  # only these five field_ids are needed
+    pattern_topography = re.compile(r'40006')
+    for column_name in columns_available:
+        if pattern.match(column_name):
+            columns_to_use.append(column_name)
+        if pattern_topography.match(column_name):
+            topography_columns.append(column_name)
+
+    df = source.get_csv_as_df(apply_dtypes=False, usecols=columns_to_use)
+
+    df[topography_columns] = df[topography_columns].applymap(add_dot_to_icdx_code)
 
     icdo3 = wrapper.code_mapper.generate_code_mapping_dictionary('ICDO3')
-    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10')
+    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', restrict_to_codes=df[topography_columns].stack().tolist())
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         person_id = wrapper.lookup_person_id(row['eid'])
         if not person_id:
             # Person not found
@@ -45,8 +62,6 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
             behaviour = return_string(row.get(f'40012-{instance}.0'))
             topography = return_string(row.get(f'40006-{instance}.0'))
 
-            if topography != 'NULL':
-                topography = add_dot_to_icdx_code(topography)
             # TODO: For the topography if ICD10 code is missing check if ICD9 code is present to use instead
 
             # Skip if topography empty and histology and behaviour not both given (000, 100, 010)
@@ -69,7 +84,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
 
             datetime = get_datetime(row[f'40005-{instance}.0'])
             if datetime == DEFAULT_DATETIME:
-                logger.warning('Date was not found in the cancer registry date field 40005 of baseline data')
+                logger.warning(f'Date field 40005-{instance}.0 was not found in the cancer registry of baseline data')
 
             r = wrapper.cdm.ConditionOccurrence(
                 person_id=person_id,

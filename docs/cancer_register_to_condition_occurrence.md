@@ -9,7 +9,7 @@ The Cancer registry is acquired from national registries.
 The first step is to combine histology (40011), behaviour (40012) and topography (40006) to an ICDO3 code.
 If all three codes are given, they are combined to `histology/behaviour-topography` (e.g. 8050/3-C80.9).
 If a codes is absent, they are replaced by a default or the record is skipped (Table 1).
-Note that histology is also mapped independently using the mapping given in [40011_histology_cancer_tumour.csv](resources/baseline_field_mapping/40011_histology_cancer_tumour.csv). 
+Note that histology is also mapped independently using the mapping given in [40011_histology_cancer_tumour.csv](../resources/baseline_field_mapping/40011_histology_cancer_tumour.csv). 
 
 _Table 1. h = 4 digit Histology, b = 1 digit Behaviour, t = ICD10 Topography. 
 1 = code given, 0 = code absent._
@@ -36,7 +36,7 @@ Keep the same instance to all the fields mapped to one record.
 
 | Destination Field | Source field | Logic | Comment |
 | --- | --- | --- | --- |
-| condition_occurrence_id |  |  |  |
+| condition_occurrence_id |  | Auto-increment |  |
 | person_id | eid |  |  |
 | condition_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Combine fields as described in table above to construct an ICDO3 code, for which the standard concept is looked up in the OMOP vocabulary. |  |
 | condition_start_date | 40005-{instance}.0 |  |  |
