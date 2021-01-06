@@ -13,7 +13,7 @@ We assume that a person can have only one gp visit per day. To get all the visit
 | visit_start_datetime | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |
 | visit_end_date | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |
 | visit_end_datetime | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |
-| visit_type_concept_id |  |  | 44818518 - Visit derived from EHR record |
+| visit_type_concept_id |  |  | 32827 - 'EHR encounter record' |
 | provider_id |  |  |  |
 | care_site_id |  |  |  |
 | visit_source_value |  |  |  |

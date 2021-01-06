@@ -30,19 +30,8 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary(
         'ICD10', restrict_to_codes=list(source['diag_icd10_dot']))
 
-    # Use Condition type concept file to map if primary condition or secondary condition.
-    with open('./resources/mapping_tables/condition_type_concepts.csv') as f_in:
-        condition_type = csv.DictReader(f_in, delimiter=',')
-        condition_type_concept = {}
-
-        for row in condition_type:
-            condition_type_concept[row['sourceCode']] = row['conceptId']
-
     records = []
-
     for _, row in source.iterrows():
-        condition_type_concept_id = condition_type_concept.get(row['level'], 0)
-
         condition_date = get_datetime(row['admidate'], "%d/%m/%Y")
 
         person_id = wrapper.lookup_person_id(row['eid'])
@@ -75,17 +64,21 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
             record_source_value=f'HES-{row["ins_index"]}'
         )
 
+        condition_status_concept_id = 32902 if row['level'] == '1' else 32908  # Primary, else Secondary diagnosis
+
         for target in diag_targets:
             r = wrapper.cdm.ConditionOccurrence(
                 person_id=person_id,
                 condition_concept_id=target.target_concept_id,
                 condition_start_date=condition_date,
                 condition_start_datetime=condition_date,
-                condition_type_concept_id=condition_type_concept_id,
+                condition_type_concept_id=32817,  # - 'EHR'
                 condition_source_value=source_value,
                 condition_source_concept_id=target.source_concept_id,
                 visit_occurrence_id=visit_occurrence_id,
                 visit_detail_id=visit_detail_id,
+                condition_status_concept_id=condition_status_concept_id,
+                condition_status_source_value=row['level'],
                 data_source=f'HES-{row["dsource"]}'
             )
             records.append(r)

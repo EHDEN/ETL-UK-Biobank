@@ -64,7 +64,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[VisitOccurrence]:
             visit_start_datetime=start_date,
             visit_end_date=end_date.date(),
             visit_end_datetime=end_date,
-            visit_type_concept_id=44818517,  # Visit derived from encounter on claim
+            visit_type_concept_id=32827,  # 'EHR encounter record'
             visit_source_value=method_source,
             admitting_source_concept_id=admit_reason.get((row['admisorc'], row['dsource']), 0),
             admitting_source_value=admit_source,

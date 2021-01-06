@@ -21,19 +21,15 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
     oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4')
     oper3 = wrapper.mapping_tables_lookup('./resources/mapping_tables/opcs3.csv', first_only=False)
 
-    procedure_type_concept = wrapper.mapping_tables_lookup('./resources/mapping_tables/procedure_type_concepts.csv')
-
     records = []
 
     for _, row in source.iterrows():
-        procedure_type_concept_id = procedure_type_concept.get(row['level'], 0)
-
-        procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")
-
         person_id = wrapper.lookup_person_id(row['eid'])
         if not person_id:
             # Person not found
             continue
+
+        procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")
 
         if not pd.isnull(row['oper4']):
             source_value = row['oper4']
@@ -67,7 +63,7 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
                 procedure_concept_id=target.target_concept_id,
                 procedure_date=procedure_date,
                 procedure_datetime=procedure_date,
-                procedure_type_concept_id=procedure_type_concept_id,
+                procedure_type_concept_id=32817,  # EHR
                 procedure_source_value=source_value,
                 procedure_source_concept_id=target.source_concept_id,
                 visit_occurrence_id=visit_occurrence_id,

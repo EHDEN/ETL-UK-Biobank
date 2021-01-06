@@ -12,11 +12,11 @@ expect_visit_occurrence(person_id = 1800, visit_start_date = '1997/01/13', visit
                         record_source_value='HES-1')
 expect_visit_detail(person_id = 1800, visit_detail_start_date = '1997/01/13', visit_detail_end_date = '1997/03/30',
                     visit_detail_concept_id = 9203, visit_detail_source_value = 'record origin:HES/admission method:2D',
-                    visit_detail_type_concept_id = 44818517, discharge_to_concept_id = 0,
+                    visit_detail_type_concept_id = 32827, discharge_to_concept_id = 0,
                             visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1800, record_source_value = 'HES-1'))
 expect_visit_detail(person_id = 1800, visit_detail_start_date = '1997/01/19', visit_detail_end_date = '1997/04/05',
                     visit_detail_concept_id = 9203, visit_detail_source_value = 'record origin:HES/admission method:2D',
-                    visit_detail_type_concept_id = 44818517, discharge_to_concept_id = 0,
+                    visit_detail_type_concept_id = 32827, discharge_to_concept_id = 0,
                             visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1800, record_source_value = 'HES-1'))
 
 declareTest(1801, 'admission date missing')

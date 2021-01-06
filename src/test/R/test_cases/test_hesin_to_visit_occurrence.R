@@ -7,7 +7,7 @@ add_hesin(eid = 1100, dsource = 'HES',
           disdate = '30/03/1997', disdest = '')
 expect_visit_occurrence(person_id = 1100, visit_start_date = '1997/01/13', visit_end_date = '1997/03/30',
                         visit_concept_id = 9203, visit_source_value = 'record origin:HES/admission method:2D',
-                        visit_type_concept_id = 44818517, discharge_to_concept_id = 0)
+                        visit_type_concept_id = 32827, discharge_to_concept_id = 0)
 
 declareTest(1101, 'admission source Hospice SMR/62')
 add_baseline(eid = 1101)

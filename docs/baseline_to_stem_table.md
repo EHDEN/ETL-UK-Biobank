@@ -46,7 +46,7 @@ Notes:
 | value_source_value |  |  | Not used, field and value are in source_value column |
 | unit_concept_id | target.unit_concept_id | Lookup from field_id and value (step c) | If value is numeric |
 | unit_source_value |  |  | Not used, unit is directly derived from the `field_id` |
-| type_concept_id |  | 32883 | Survey |
+| type_concept_id |  | Mapping given in [field_id_to_type_concept_id.csv](./resources/baseline_field_mapping/field_id_to_type_concept_id.csv) | Depending on the category of the field_id one of:<br>- 32862 Patient filled survey<br>- 32851 Healthcare professional filled survey<br>- 32879 Registry<br>- 32856 Lab<br>- 32817 EHR |
 
 There are 26 more columns in the stem table, each corresponding to columns in the event tables. These are not used and omitted for brevity.
 
@@ -100,6 +100,4 @@ Loop through columns:
 | value_as_string |  |  |
 | value_source_value |  |  |
 | unit_concept_id | [9529](https://athena.ohdsi.org/search-terms/terms/9529) |  |
-| type_concept_id | [32883](https://athena.ohdsi.org/search-terms/terms/32883) | [32883](https://athena.ohdsi.org/search-terms/terms/32883) |
-
- **TODO**: text example
+| type_concept_id | [32879](https://athena.ohdsi.org/search-terms/terms/32879) | [32862](https://athena.ohdsi.org/search-terms/terms/32862) |
