@@ -93,6 +93,11 @@ class Wrapper(EtlWrapper):
         # Stem table to domains
         self.load_from_stem_table()
 
+        # Post process
+        logger.info('Creating eras...')
+        self.execute_sql_file('src/main/sql/drug_era.sql')
+        self.execute_sql_file('src/main/sql/condition_era.sql')
+
         logger.info('{:-^100}'.format(' Summary stats '))
 
         self.log_summary()
