@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Date, ForeignKey, Integer, Numeric
+from sqlalchemy import Column, Date, DateTime, ForeignKey, Integer, Numeric, String, Text, Table
 from sqlalchemy.orm import relationship
 from src.main.python.core.database import base
 
@@ -80,3 +80,31 @@ class DrugEra(base):
 
     drug_concept = relationship('Concept')
     person = relationship('Person')
+
+class CdmSource(base):
+    __tablename__ = 'cdm_source'
+    __table_args__ = {'schema': f'omopcdm'}
+
+    cdm_source_name = Column(String(255), primary_key=True)
+    cdm_source_abbreviation = Column(String(25))
+    cdm_holder = Column(String(255))
+    source_description = Column(Text)
+    source_documentation_reference = Column(String(255))
+    cdm_etl_reference = Column(String(255))
+    source_release_date = Column(Date)
+    cdm_release_date = Column(Date)
+    cdm_version = Column(String(10))
+    vocabulary_version = Column(String(20))
+
+
+t_metadata = Table(
+    'metadata', metadata,
+    Column('metadata_concept_id', Integer, nullable=False, index=True),
+    Column('metadata_type_concept_id', Integer, nullable=False),
+    Column('name', String(250), nullable=False),
+    Column('value_as_string', Text),
+    Column('value_as_concept_id', Integer),
+    Column('metadata_date', Date),
+    Column('metadata_datetime', DateTime),
+    schema=f'omopcdm'
+)

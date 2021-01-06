@@ -7,7 +7,7 @@ This repository will host the ETL code, Mapping Files, Test code, and ETL Docume
 
 ### Prepare the target database
 - Create an empty database.
-- OMOP vocabulary tables should be pre-loaded to a schema named `vocab`. The following vocabularies are needed on top of the default selected ones: READ (17), ICD10 (34), HES Specialty (57), OPCS4 (55), dm+d (75), ICDO3 (90)
+- OMOP vocabulary tables should be pre-loaded to a schema named `vocab`. The following vocabularies are needed on top of the default selected ones: READ (17), ICD10 (34), HES Specialty (57), OPCS4 (55), dm+d (75), ICDO3 (90), UKB (144)
 - Create an empty schema `omopcdm`; the ETL will automatically load the CDM 5.3.1 tables to this schema.
 
 ### Customize configuration
