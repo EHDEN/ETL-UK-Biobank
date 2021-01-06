@@ -6,7 +6,7 @@ add_baseline(eid = 1000)
 add_hesin(eid = 1000, ins_index = 0, admidate = '01/04/2016')
 add_hesin_diag(eid = 1000, ins_index = 0, diag_icd10 = 'J459', level = 1)
 expect_condition_occurrence(person_id = 1000, condition_concept_id = 317009, condition_start_date = '2016-04-01', 
-                            condition_type_concept_id = 44786627, condition_source_concept_id = 45562456)
+                            condition_type_concept_id = 32817, condition_source_concept_id = 45562456)
 
 
 # Test ICD9 code
