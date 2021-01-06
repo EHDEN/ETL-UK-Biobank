@@ -51,10 +51,6 @@ mappings:
     mappingApproach: *valueOnly
     event_concept_id: 40770405 # History of procedure (LOINC)
 
-  - filename: 40011_histology_cancer_tumour.csv
-    mappingApproach: *valueOnly
-    event_concept_id: 4188893 # History of (SNOMED)
-
   - filename: ../mapping_tables/opcs3.csv
     mappingApproach: *mappingTable
     field_ids: [41256,41258,41273]
