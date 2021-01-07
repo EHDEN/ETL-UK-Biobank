@@ -41,6 +41,7 @@ source('test_cases/test_gp_clinical_to_stem.R')                        # test ID
 source('test_cases/test_hesin_to_visit_detail.R')                      # test IDs 1800-1899
 source('test_cases/test_baseline_to_death.R')                          # test IDs 1900-1999
 source('test_cases/test_cancer_register_to_condition_occurrence.R')    # test IDs 2000-2099
+source('test_cases/test_drug_era.R')                                   # test IDs 2100-2199
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)
