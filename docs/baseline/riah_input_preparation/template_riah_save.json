@@ -80124,7 +80124,7 @@
           "@type":"java.util.HashMap"
         },
         "comment":"",
-        "logic":"When event_dt is empty, capture 'history of'",
+        "logic":"When event_dt is empty, capture 'history of clinical finding in subject'",
         "isCompleted":false
       }
     ]
@@ -82265,7 +82265,7 @@
               "@type":"java.util.HashMap"
             },
             "comment":"",
-            "logic":"If date empty, ignore record. Capture as observation (history of)",
+            "logic":"If date empty, ignore record. Capture as observation (history of clinical finding in subject)",
             "isCompleted":false
           },
           {
