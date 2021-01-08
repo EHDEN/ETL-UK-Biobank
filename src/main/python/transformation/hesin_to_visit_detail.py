@@ -59,7 +59,7 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
             visit_detail_start_datetime=start_date,
             visit_detail_end_date=end_date.date(),
             visit_detail_end_datetime=end_date,
-            visit_detail_type_concept_id=44818517,  # Visit derived from encounter on claim
+            visit_detail_type_concept_id=32827,  # 'EHR encounter record'
             visit_detail_source_value=method_source,
             admitting_source_concept_id=admit_reason.get((row['admisorc'], row['dsource']), 0),
             admitting_source_value=admit_source,

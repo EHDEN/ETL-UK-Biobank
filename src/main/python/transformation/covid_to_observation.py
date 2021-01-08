@@ -41,7 +41,7 @@ def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
             observation_date=date.date(),
             observation_datetime=date,
             value_as_concept_id=result.get(row['result'], None),
-            observation_type_concept_id=38000279,  # Lab observation concept code result
+            observation_type_concept_id=32856,  # Lab
             visit_occurrence_id=visit_occurrence_id,
             observation_source_value=row['spectype'],
             data_source='covid'

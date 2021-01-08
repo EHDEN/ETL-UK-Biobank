@@ -28,4 +28,4 @@ covid,care_site,,"Unique laboratory values
 Get laboratory names from dictionary",0
 baseline,care_site,,"For all unique assessment centres (field 54)
 See data dictionary: https://biobank.ctsu.ox.ac.uk/crystal/field.cgi?id=54",0
-gp_clinical,observation,,"When event_dt is empty, capture 'history of'",0
+gp_clinical,observation,,"When event_dt is empty, capture 'history of clinical finding in subject'",0

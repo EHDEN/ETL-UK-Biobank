@@ -101,3 +101,15 @@ expect_observation(person_id = 921, observation_concept_id = 40770405, value_as_
 declareTest(922, 'Baseline - opcs3 field 41273 single target')
 add_baseline(eid = '922', `41273-0.0`='7002')
 expect_observation(person_id = 922, observation_concept_id = 40770405, value_as_concept_id = 4130184)
+
+declareTest(923, 'Baseline - type registry')
+add_baseline(eid = '923', `47-0.0`='7002')
+expect_observation(person_id = 923, observation_source_value = '47', observation_type_concept_id = 32879)
+
+declareTest(924, 'Baseline - type patient filled survey')
+add_baseline(eid = '924', `1558-0.0`='1')
+expect_observation(person_id = 924, observation_source_value = '1558|1', observation_type_concept_id = 32862)
+
+declareTest(925, 'Baseline - type professional filled survey')
+add_baseline(eid = '925', `20002-0.0`='1220')
+expect_observation(person_id = 925, observation_source_value = '20002|1220', observation_type_concept_id = 32851)

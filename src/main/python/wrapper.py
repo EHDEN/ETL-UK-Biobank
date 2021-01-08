@@ -87,10 +87,24 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(hesin_oper_to_procedure_occurrence)
         self.execute_transformation(cancer_register_to_condition_occurrence)
 
-        # Stem table to domains
-        self.load_from_stem_table()
+        # CDM Source
+        self.execute_transformation(cdm_source)
 
-    # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
+        # Stem table to domains
+        self.load_from_stem_table()  # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
+
+        # Post process
+        logger.info('Creating eras...')
+        self.execute_sql_file('src/main/sql/drug_era.sql')
+        self.execute_sql_file('src/main/sql/condition_era.sql')
+
+        logger.info('{:-^100}'.format(' Summary stats '))
+
+        self.log_summary()
+        self.log_runtime()
+
+        self._session_for_lookups.close()
+
     def load_from_stem_table(self):
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
         self.execute_sql_file(Path('src/main/sql/stem_table_to_observation.sql'))

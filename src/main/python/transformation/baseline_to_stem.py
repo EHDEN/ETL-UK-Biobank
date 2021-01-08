@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import logging
 import re
 from typing import List, Tuple, TYPE_CHECKING, Optional
@@ -27,6 +28,10 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.source_data.get_source_file('baseline.csv')
     df = source.get_csv_as_df(apply_dtypes=False)
     field_mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
+
+    with open('./resources/baseline_field_mapping/field_id_to_type_concept_id.csv') as f_in:
+        csv_in = csv.DictReader(f_in)
+        type_concept_lookup = {x['field_id']: x['type_concept_id'] for x in csv_in}
 
     records = []
     for _, row in df.iterrows():
@@ -70,7 +75,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                     value_as_number=target.value_as_number,
                     unit_concept_id=target.unit_concept_id,
                     value_as_string=target.value_as_string,
-                    type_concept_id=32883,  # Survey
+                    type_concept_id=type_concept_lookup[field_id],  # Survey
                     visit_occurrence_id=visit_occurrence_id,
                     data_source='baseline'
                     )

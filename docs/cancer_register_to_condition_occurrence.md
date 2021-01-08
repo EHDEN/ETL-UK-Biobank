@@ -6,12 +6,11 @@
 
 The Cancer registry is acquired from national registries.
 
-The first step is to combine histology (40011), behaviour (40012) and topography (40006) to an ICDO3 code.
+- The first step is to combine histology (40011), behaviour (40012) and topography (40006) to an ICDO3 code.
 If all three codes are given, they are combined to `histology/behaviour-topography` (e.g. 8050/3-C80.9).
 If a codes is absent, they are replaced by a default or the record is skipped (Table 1).
-Note that histology is also mapped independently using the mapping given in [40011_histology_cancer_tumour.csv](../resources/baseline_field_mapping/40011_histology_cancer_tumour.csv). 
 
-_Table 1. h = 4 digit Histology, b = 1 digit Behaviour, t = ICD10 Topography. 
+_Table 1. h = 4 digit Histology, b = 1 digit Behaviour, t = ICD10 Topography, t9 = ICD9 Topography. 
 1 = code given, 0 = code absent._
 
 | h | b | t | ICDOO3 code |
@@ -19,15 +18,16 @@ _Table 1. h = 4 digit Histology, b = 1 digit Behaviour, t = ICD10 Topography.
 |1|1|1| h/b-t |
 |1|1|0| h/b-NULL |
 |1|0|1| h/1-t |
+|1|0|0| h/1-NULL |
 |0|1|1| NULL-t |
 |0|0|1| NULL-t |
 |0|1|0| not captured |
-|1|0|0| mapped using 40011_histology_cancer_tumour.csv in baseline_to_stem.py|
 |0|0|0| not captured |
 
-The second step is to lookup the concept_id of the ICDO3 code. <br>
-There are some codes that have only topography (011, 001) that are not present in the ICDO3 vocabulary, but exist in ICD10.
-In case the ICDO3 code cannot be found in the vocabulary, a lookup on just the topography code in the ICD10 vocabulary is done.
+- Then lookup the concept_id of the ICDO3 code.
+- If the code is not present in the ICDO3 vocabulary look if the topology code exists. 
+There are two fields in baseline for topology. Field 40011, used above, consisting of ICD10 codes and field 40013 filled with ICD9 codes (there is no overlap between the two).
+First look if the topography code in the ICD10 vocabulary exists. If not try the ICD9 code.
 
 The cancer registry fields can be repeated up to 16 times for a person.
 Each set of fields has an incremental instance id. 
