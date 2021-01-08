@@ -18,7 +18,7 @@ expect_measurement(person_id = 903, measurement_date = '2020-11-01', measurement
 
 declareTest(904, 'Baseline - Field 20002, Diabetes Mellitus')
 add_baseline(eid = '904', `53-0.0`='2020-11-02', `20002-0.0`='1220', `30002-0.0`='2020-11-01')
-expect_observation(person_id = 904, observation_date = '2020-11-02', observation_concept_id = 4188893, value_as_concept_id = 201820)
+expect_observation(person_id = 904, observation_date = '2020-11-02', observation_concept_id = 4214956, value_as_concept_id = 201820)
 
 declareTest(905, 'Baseline - Chestpain absent, with source value')
 add_baseline(eid = '905', `53-0.0`='2010-10-10', `2335-0.0`='0')
@@ -27,20 +27,20 @@ expect_observation(person_id = 905, observation_date = '2010-10-10', observation
 
 declareTest(906, 'Baseline - Chestpain present, repeat visit')
 add_baseline(eid = '906', `53-1.0`='2013-12-11', `2335-1.0`='1')
-expect_observation(person_id = 906, observation_date = '2013-12-11', observation_concept_id = 4188893,
+expect_observation(person_id = 906, observation_date = '2013-12-11', observation_concept_id = 4214956,
                    value_as_concept_id = 4133044)
 
 declareTest(907, 'Baseline - Chestpain present, imaging visit')
 add_baseline(eid = '907', `53-2.0`='2014-12-11', `2335-2.0`='1')
-expect_observation(person_id = 907, observation_date = '2014-12-11', observation_concept_id = 4188893)
+expect_observation(person_id = 907, observation_date = '2014-12-11', observation_concept_id = 4214956)
 
 declareTest(908, 'Baseline - Chestpain present, imaging repeat visit')
 add_baseline(eid = '908', `53-3.0`='2015-12-11', `2335-3.0`='1')
-expect_observation(person_id = 908, observation_date = '2015-12-11', observation_concept_id = 4188893)
+expect_observation(person_id = 908, observation_date = '2015-12-11', observation_concept_id = 4214956)
 
 declareTest(909, 'Baseline - Chestpain ignored')
 add_baseline(eid = '909', `53-0.0`='2013-09-05', `2335-0.0`='-1')
-expect_no_observation(person_id = 909, observation_date = '2013-9-5', observation_concept_id = 4188893)
+expect_no_observation(person_id = 909, observation_date = '2013-9-5', observation_concept_id = 4214956)
 
 declareTest(910, 'Baseline - Do not map year of birth or gender')
 add_baseline(eid = '910', `31-0.0`='0', `34-0.0`='1970')
@@ -49,16 +49,16 @@ expect_no_observation(person_id = 909, observation_source_value = '34')
 
 declareTest(911, 'Baseline - One to many opcs')
 add_baseline(eid = '911', `41256-0.0`='027')
-expect_observation(person_id = 911, observation_concept_id = 40770405, value_as_concept_id = 4302449)
-expect_observation(person_id = 911, observation_concept_id = 40770405, value_as_concept_id = 4222434)
+expect_observation(person_id = 911, observation_concept_id = 4215685, value_as_concept_id = 4302449)
+expect_observation(person_id = 911, observation_concept_id = 4215685, value_as_concept_id = 4222434)
 
 declareTest(912, 'Baseline - Treatment')
 add_baseline(eid = '912', `20003-0.0`='2038459704')
-expect_observation(person_id = 912, observation_concept_id = 3021806, value_as_concept_id = 740275)
+expect_observation(person_id = 912, observation_concept_id = 4059354, value_as_concept_id = 740275)
 
 declareTest(913, 'Baseline - Treatment with instance and array index')
 add_baseline(eid = '913', `20003-1.15`='2038459704')
-expect_observation(person_id = 913, observation_concept_id = 3021806, value_as_concept_id = 740275)
+expect_observation(person_id = 913, observation_concept_id = 4059354, value_as_concept_id = 740275)
 
 declareTest(914, 'Baseline - Age at first live birth')
 add_baseline(eid = '914', `2754-0.0`='35')
@@ -96,11 +96,11 @@ expect_observation(person_id = 920, observation_date = '2010-10-13',
 
 declareTest(921, 'Baseline - opcs3 field 41256 single target')
 add_baseline(eid = '921', `41256-0.0`='018')
-expect_observation(person_id = 921, observation_concept_id = 40770405, value_as_concept_id = 2110401)
+expect_observation(person_id = 921, observation_concept_id = 4215685, value_as_concept_id = 2110401)
 
 declareTest(922, 'Baseline - opcs3 field 41273 single target')
 add_baseline(eid = '922', `41273-0.0`='7002')
-expect_observation(person_id = 922, observation_concept_id = 40770405, value_as_concept_id = 4130184)
+expect_observation(person_id = 922, observation_concept_id = 4215685, value_as_concept_id = 4130184)
 
 declareTest(923, 'Baseline - type registry')
 add_baseline(eid = '923', `47-0.0`='7002')
