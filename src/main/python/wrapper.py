@@ -15,8 +15,8 @@
 import logging
 from pathlib import Path
 
-from omop_etl_wrapper import Wrapper as BaseWrapper
-from omop_etl_wrapper.config.models import MainConfig
+from delphyne import Wrapper as BaseWrapper
+from delphyne.config.models import MainConfig
 
 from src.main.python.transformation import *
 from src.main.python import cdm

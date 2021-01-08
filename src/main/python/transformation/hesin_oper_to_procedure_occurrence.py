@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
-from omop_etl_wrapper.model.mapping.code_mapper import CodeMapping
+from delphyne.model.mapping.code_mapper import CodeMapping
 
 from ..util import get_datetime
 from ..util import add_dot_to_opcsx_code

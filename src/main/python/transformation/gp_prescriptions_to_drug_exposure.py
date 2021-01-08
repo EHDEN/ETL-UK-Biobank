@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 from datetime import timedelta
-from omop_etl_wrapper.model.mapping.code_mapper import CodeMapping
+from delphyne.model.mapping.code_mapper import CodeMapping
 
 from src.main.python.util import get_datetime, extract_numeric_quantity, valid_quantity_for_days_estimate
 from src.main.python.util.general_functions import is_null
