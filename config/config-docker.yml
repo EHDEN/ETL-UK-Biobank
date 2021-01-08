@@ -10,8 +10,19 @@ database_superuser:
   username: 'postgres'
   password: 'password'
 
+source_data_folder: './resources/synthetic_data'  # To be replaced by actual path to data
+
+# The schema names of the OMOP CDM (target schema) and the vocabulary
+# tables. Additional key-value pairs can be added here if you have
+# custom ORM tables, for which you would like to have dynamic schema
+# names.
+schema_translate_map:
+  cdm_schema: 'omopcdm'
+  vocabulary_schema: 'vocab'
+
 run_options:
-  source_data_folder: './resources/synthetic_data'
-  debug_mode: True
-  initialize_db: True
+  skip_vocabulary_loading: True
+  skip_custom_vocabulary_loading: True
+  skip_source_to_concept_map_loading: True
+  write_reports: True
   force_load_vocab: False

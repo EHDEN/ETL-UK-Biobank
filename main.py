@@ -29,6 +29,7 @@ def main(config):
     config = MainConfig(**read_yaml_file(Path(config)))
 
     # Create vocabulary schema and tables
+    # TODO: use delphynes methods to initialize vocabularies
     if config['run_options'].get('initialize_db', False):
         initialize_database(config, config['run_options'].get('force_load_vocab', False))
 
