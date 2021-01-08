@@ -22,7 +22,7 @@ expect_observation(person_id = 904, observation_date = '2020-11-02', observation
 
 declareTest(905, 'Baseline - Chestpain absent, with source value')
 add_baseline(eid = '905', `53-0.0`='2010-10-10', `2335-0.0`='0')
-expect_observation(person_id = 905, observation_date = '2010-10-10', observation_concept_id = 4211787,
+expect_observation(person_id = 905, observation_date = '2010-10-10', observation_concept_id = 40481925,
                    value_as_concept_id = 4133044, observation_source_value = '2335|0')
 
 declareTest(906, 'Baseline - Chestpain present, repeat visit')
