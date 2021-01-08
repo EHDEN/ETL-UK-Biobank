@@ -14,21 +14,23 @@
 
 # !/usr/bin/env python3
 import logging
+
+from delphyne.config.models import MainConfig
 from sqlalchemy import create_engine
 import glob
 
 logger = logging.getLogger(__name__)
 
 
-def initialize_database(config, do_force_vocab_load = False):
-    db_config = config['database']
-    superuser = config['database_superuser']
+def initialize_database(config: MainConfig, do_force_vocab_load = False):
+    db_config = config.database
+    # superuser = config
     superuser_eng = create_engine('postgresql://%s:%s@%s:%s/%s' % (
-        superuser['username'],
-        superuser['password'],
-        db_config['host'],
-        db_config['port'],
-        db_config['database_name']
+        db_config.username,
+        db_config.password.get_secret_value(),
+        db_config.host,
+        db_config.port,
+        db_config.database_name
     ))
 
     # Use superuser for vocabulary loading
