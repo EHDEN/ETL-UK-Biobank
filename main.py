@@ -5,9 +5,9 @@ from pathlib import Path
 
 import click
 import sys
-from omop_etl_wrapper.config.models import MainConfig
-from omop_etl_wrapper.log.setup_logging import setup_logging
-from omop_etl_wrapper.util.io import read_yaml_file
+from delphyne.config.models import MainConfig
+from delphyne.log.setup_logging import setup_logging
+from delphyne.util.io import read_yaml_file
 
 from src.main.python.wrapper import Wrapper
 

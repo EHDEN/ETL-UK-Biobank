@@ -3,6 +3,12 @@ ETL of UK-Biobank to OMOP CDM version 5.3.1.
 
 This repository will host the ETL code, Mapping Files, Test code, and ETL Documentation.
 
+## Requirements
+All python dependencies can be installed with `pip install -r requirements.txt`
+
+The ETL is based on [delphyne](https://github.com/thehyve/delphyne), the python OMOP ETL wrapper build by The Hyve.
+Please refer to the delphyne documentation for further information on how the ETL is structured.
+
 ## Getting Started
 
 ### Prepare the target database
