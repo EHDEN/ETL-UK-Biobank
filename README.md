@@ -3,14 +3,22 @@ ETL of UK-Biobank to OMOP CDM version 5.3.1.
 
 This repository will host the ETL code, Mapping Files, Test code, and ETL Documentation.
 
-## Vocabularies
+## Requirements
+### Python
+All python dependencies can be installed with `pip install -r requirements.txt`
+
+The ETL is based on [delphyne](https://github.com/thehyve/delphyne), the python OMOP ETL wrapper build by The Hyve.
+Please refer to the delphyne documentation for further information on the ETL structure.
+
+### OMOP Vocabularies
 In order to run the ETL, you have to download the OMOP standard vocabulary from [Athena](athena.ohdsi.org). Keep the default selection of vocabularies and in addition select:
-- READ (#17) 
+- READ (#17)
 - ICD10 (#34)
 - OPCS4 (#55)
 - HES Specialty (#57)
-- dm+d (#75) 
+- dm+d (#75)
 - ICDO3 (#90)
+- UK Biobank (#144)
 
 ## Getting Started
 There are two ways to run the ETL. The first is by using Docker to set up the environment. The second is by manually setting up the environment.
@@ -36,7 +44,7 @@ The docker images (postgres and etl) can be stopped with: `docker-compose down -
 
 #### Prepare the target database
 - Create an empty database.
-- OMOP vocabulary tables should be pre-loaded to a schema named `vocab`. The following vocabularies are needed on top of the default selected ones: READ (17), ICD10 (34), HES Specialty (57), OPCS4 (55), dm+d (75), ICDO3 (90)
+- OMOP vocabulary tables should be pre-loaded to a schema named `vocab`. The following vocabularies are needed on top of the default selected ones: READ (17), ICD10 (34), HES Specialty (57), OPCS4 (55), dm+d (75), ICDO3 (90), UKB (144)
 - Create an empty schema `omopcdm`; the ETL will automatically load the CDM 5.3.1 tables to this schema.
 
 #### Customize configuration

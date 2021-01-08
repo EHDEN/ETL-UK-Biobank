@@ -16,3 +16,5 @@ from .death_to_condition_occurrence import death_to_condition_occurrence
 from .hesin_oper_to_procedure_occurrence import hesin_oper_to_procedure_occurrence
 from .baseline_to_death import baseline_to_death
 from .hesin_to_visit_detail import hesin_to_visit_detail
+from .cancer_register_to_condition_occurrence import cancer_register_to_condition_occurrence
+from .cdm_source import cdm_source

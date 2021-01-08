@@ -12,52 +12,52 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-from pathlib import Path
-from typing import Optional
 import logging
-import pandas as pd
+from pathlib import Path
 
-from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+from delphyne import Wrapper as BaseWrapper
+from delphyne.config.models import MainConfig
 
-from src.main.python.core import EtlWrapper
 from src.main.python.transformation import *
+from src.main.python import cdm
+
+from typing import Optional
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 import csv
 
 logger = logging.getLogger(__name__)
 
 
-class Wrapper(EtlWrapper):
+class Wrapper(BaseWrapper):
+    cdm = cdm
 
-    def __init__(self, database, config):
-        super().__init__(database, config)
+    def __init__(self, config: MainConfig):
+        super().__init__(config, cdm)
+
         # Load config settings
-        self.source_folder = Path(config['run_options']['source_data_folder'])
         self.path_mapping_tables = Path('./resources/mapping_tables')
         self.path_sql_transformations = Path('./src/main/sql')
 
-        # NOTE: replace the following with project-specific source table names!
-        self.source_file_delimiter = ','
-
-        # One session for all lookups done in the wrapper. Note: read_only
-        self._session_for_lookups = self.db.get_new_session()
-
-    # noinspection DuplicatedCode
     def run(self):
-        self.start_timing()
 
-        logger.info('{:-^100}'.format(' SETUP '))
-
+        # Prepare source
+        self.create_schemas()
         self.drop_cdm()
         self.create_cdm()
 
-        # TRANSFORMATIONS
+        # Load custom vocabularies
+        self.vocab_manager.load_custom_vocabularies()
 
-        logger.info('{:-^100}'.format(' ETL '))
+        # Load source to concept mappings
+        self.vocab_manager.load_stcm()
 
-        # NOTE: replace the following with project-specific transformations from python/transformations/ or sql/ folder!
-        # (make sure execution follows order of table dependencies)
+        # Load source data
+        self.transform()
 
-        # Health system
+        # Log/write overview of transformations and sources
+        self.summarize()
+
+    def transform(self):
         self.execute_transformation(covid_to_care_site)
         self.execute_transformation(assessment_center_to_care_site)
 
@@ -65,53 +65,52 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(baseline_to_person)
         self.execute_transformation(gp_registrations_to_observation_period)
 
-        # Death
+        # # Death
         self.execute_transformation(death_to_death)
         self.execute_transformation(death_to_condition_occurrence)
         self.execute_transformation(baseline_to_death)
-
-        # Visit
+        #
+        # # Visit
         self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
         self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
         self.execute_transformation(hesin_to_visit_occurrence)
 
         self.execute_transformation(hesin_to_visit_detail)
-
-        # Events
+        #
+        # # Events
         self.execute_transformation(baseline_to_stem)
         self.execute_transformation(covid_to_observation)
         self.execute_transformation(gp_clinical_to_stem_table)
         self.execute_transformation(gp_prescriptions_to_drug_exposure)
         self.execute_transformation(hesin_diag_to_condition_occurrence)
         self.execute_transformation(hesin_oper_to_procedure_occurrence)
+        self.execute_transformation(cancer_register_to_condition_occurrence)
+
+        # CDM Source
+        self.execute_transformation(cdm_source)
 
         # Stem table to domains
-        self.load_from_stem_table()
+        self.load_from_stem_table()  # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
+
+        # Post process
+        logger.info('Creating eras...')
+        self.execute_sql_file(self.path_sql_transformations / 'drug_era.sql')
+        self.execute_sql_file(self.path_sql_transformations / 'condition_era.sql')
 
         logger.info('{:-^100}'.format(' Summary stats '))
 
-        self.log_summary()
-        self.log_runtime()
-
-        self._session_for_lookups.close()
-
     def load_from_stem_table(self):
-        # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
-        target_schema = 'omopcdm'  # TODO: target_schema from variable
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
-        self.execute_sql_file('src/main/sql/stem_table_to_observation.sql', target_schema=target_schema)
-        self.execute_sql_file('src/main/sql/stem_table_to_measurement.sql', target_schema=target_schema)
-        self.execute_sql_file('src/main/sql/stem_table_to_condition_occurrence.sql', target_schema=target_schema)
-        self.execute_sql_file('src/main/sql/stem_table_to_procedure_occurrence.sql', target_schema=target_schema)
-        self.execute_sql_file('src/main/sql/stem_table_to_drug_exposure.sql', target_schema=target_schema)
-        self.execute_sql_file('src/main/sql/stem_table_to_device_exposure.sql', target_schema=target_schema)
-        self.execute_sql_file('src/main/sql/stem_table_to_specimen.sql', target_schema=target_schema)
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_observation.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_measurement.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_condition_occurrence.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_procedure_occurrence.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_drug_exposure.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_device_exposure.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_specimen.sql'))
 
-    def get_dataframe(self, source_file, use_columns: Optional[list] = None):
-        df = pd.read_csv(self.source_folder / source_file, usecols=use_columns, dtype=object)
-        return df
-
+    # TODO: check support for below functions in omop-etl-wrapper
     def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True, approved_only: bool = True):
         """
         Create a dictionary to lookup target concept_id by source code from a mapping file.
@@ -164,12 +163,13 @@ class Wrapper(EtlWrapper):
         return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
 
     def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
-        query = self._session_for_lookups.query(model).filter_by(**kwargs)
-        try:
-            visit_record = query.one()
-        except NoResultFound:
-            return None
-        except MultipleResultsFound:
-            logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
-            visit_record = query.first()
-        return getattr(visit_record, id_to_lookup)
+        with self.db.session_scope() as session:
+            query = session.query(model).filter_by(**kwargs)
+            try:
+                visit_record = query.one()
+            except NoResultFound:
+                return None
+            except MultipleResultsFound:
+                logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
+                visit_record = query.first()
+            return getattr(visit_record, id_to_lookup)

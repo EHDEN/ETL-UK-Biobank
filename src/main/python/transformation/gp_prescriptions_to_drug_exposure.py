@@ -2,8 +2,9 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 from datetime import timedelta
+from delphyne.model.mapping.code_mapper import CodeMapping
+
 from src.main.python.util import get_datetime, extract_numeric_quantity, valid_quantity_for_days_estimate
-from src.main.python.core.code_mapper import CodeMapping
 from src.main.python.util.general_functions import is_null
 from src.main.python.util.code_cleanup import extend_read_code
 
@@ -13,12 +14,13 @@ if TYPE_CHECKING:
 
 def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
 
-    source = wrapper.get_dataframe('gp_prescriptions.csv')
-    source['read_2_extended'] = source['read_2'].apply(extend_read_code)
+    source = wrapper.source_data.get_source_file('gp_prescriptions.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
+    df['read_2_extended'] = df['read_2'].apply(extend_read_code)
 
     dmd_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary(
-            'dm+d', restrict_to_codes=list(source['dmd_code']))
+            'dm+d', restrict_to_codes=list(df['dmd_code']))
     read2_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_Read2.csv',
@@ -29,7 +31,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             first_only=True, approved_only=False)
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         if not is_null(row['dmd_code']):
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
         elif not is_null(row['read_2']):
@@ -80,7 +82,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             drug_concept_id=mapping.target_concept_id,
             drug_source_concept_id=mapping.source_concept_id,
             drug_source_value=mapping.source_concept_code[:50],
-            drug_type_concept_id=38000177,  # prescription written
+            drug_type_concept_id=32838,  # 'EHR prescription'
             quantity=num_quantity,
             dose_unit_source_value=unit,
             data_source=data_source,
