@@ -95,25 +95,20 @@ class Wrapper(BaseWrapper):
 
         # Post process
         logger.info('Creating eras...')
-        self.execute_sql_file('src/main/sql/drug_era.sql')
-        self.execute_sql_file('src/main/sql/condition_era.sql')
+        self.execute_sql_file(self.path_sql_transformations / 'drug_era.sql')
+        self.execute_sql_file(self.path_sql_transformations / 'condition_era.sql')
 
         logger.info('{:-^100}'.format(' Summary stats '))
 
-        self.log_summary()
-        self.log_runtime()
-
-        self._session_for_lookups.close()
-
     def load_from_stem_table(self):
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
-        self.execute_sql_file(Path('src/main/sql/stem_table_to_observation.sql'))
-        self.execute_sql_file(Path('src/main/sql/stem_table_to_measurement.sql'))
-        self.execute_sql_file(Path('src/main/sql/stem_table_to_condition_occurrence.sql'))
-        self.execute_sql_file(Path('src/main/sql/stem_table_to_procedure_occurrence.sql'))
-        self.execute_sql_file(Path('src/main/sql/stem_table_to_drug_exposure.sql'))
-        self.execute_sql_file(Path('src/main/sql/stem_table_to_device_exposure.sql'))
-        self.execute_sql_file(Path('src/main/sql/stem_table_to_specimen.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_observation.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_measurement.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_condition_occurrence.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_procedure_occurrence.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_drug_exposure.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_device_exposure.sql'))
+        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_specimen.sql'))
 
     # TODO: check support for below functions in omop-etl-wrapper
     def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True, approved_only: bool = True):

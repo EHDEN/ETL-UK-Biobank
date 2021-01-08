@@ -28,7 +28,8 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
     # To reduce memory, identify which columns from the baseline table should be used
     # The topography columns are used to restrict the number of ICD10 codes that need to be looked up.
     columns_to_use = []
-    topography_columns = {'icd10': [], 'icd9': []}
+    topography10_columns = []
+    topography9_columns = []
     columns_available = next(source.get_csv_as_generator_of_dicts()).keys()
     pattern = re.compile(r'eid|40005|40006|40011|40012|40013')  # only these five field_ids are needed
     pattern_topography10 = re.compile(r'40006')
@@ -37,19 +38,19 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
         if pattern.match(column_name):
             columns_to_use.append(column_name)
         if pattern_topography10.match(column_name):
-            topography_columns['icd10'].append(column_name)
+            topography10_columns.append(column_name)
         if pattern_topography9.match(column_name):
-            topography_columns['icd9'].append(column_name)
+            topography9_columns.append(column_name)
 
     df = source.get_csv_as_df(apply_dtypes=False, usecols=columns_to_use)
-    all_topography_columns = sum(list(topography_columns.values()))
-    df[all_topography_columns] = df[all_topography_columns].applymap(lambda x: x if x == 'NULL' else add_dot_to_icdx_code(x))
+    df[topography10_columns] = df[topography10_columns].applymap(lambda x: x if x == 'NULL' else add_dot_to_icdx_code(x))
+    df[topography9_columns] = df[topography9_columns].applymap(lambda x: x if x == 'NULL' else add_dot_to_icdx_code(x))
 
     icdo3 = wrapper.code_mapper.generate_code_mapping_dictionary('ICDO3')
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10',
-                                restrict_to_codes=df[topography_columns['icd10']].stack().tolist())
+                                restrict_to_codes=df[topography10_columns].stack().tolist())
     icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM',
-                                restrict_to_codes=df[topography_columns['icd9']].stack().tolist())
+                                restrict_to_codes=df[topography9_columns].stack().tolist())
 
     records = []
     for _, row in df.iterrows():
