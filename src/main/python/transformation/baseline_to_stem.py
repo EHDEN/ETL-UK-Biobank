@@ -47,7 +47,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             field_id, instance = parse_column_name(column_name)
 
             if field_id is None:
-                print(f'Warning: column "{column_name}" does not match expected field pattern. Cannot retrieve field_id and instance.')
+                logger.warning(f'Column "{column_name}" does not match expected field pattern. Cannot retrieve field_id and instance.')
                 continue
 
             # Date
@@ -57,7 +57,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 datetime = get_datetime(row[date_column_name])
             else:
                 datetime = DEFAULT_DATETIME
-                print(f'Warning: date column "{date_column_name}" for "{column_name}" was not found in the baseline data')
+                logger.warning(f'Date column "{date_column_name}" for "{column_name}" was not found in the baseline data')
 
             # Visit
             visit_occurrence_id = wrapper.lookup_visit_occurrence_id(person_id=person_id, record_source_value=f'baseline-{instance}')
