@@ -12,9 +12,9 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-# !/usr/bin/env python3
-import logging
 from __future__ import annotations
+
+import logging
 from abc import ABC
 from dataclasses import dataclass, field
 from typing import Dict, Optional, List, Union
