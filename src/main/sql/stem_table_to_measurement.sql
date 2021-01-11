@@ -1,5 +1,5 @@
 
-INSERT INTO @target_schema.measurement
+INSERT INTO @cdm_schema.measurement
 (
 	person_id,
 	measurement_concept_id,
@@ -60,7 +60,7 @@ SELECT
 
     stem_table.data_source AS data_source
 
-FROM @target_schema.stem_table
+FROM @cdm_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)
 WHERE (stem_table.domain_id = 'Measurement') OR (stem_table.domain_id IS NULL AND concept.domain_id = 'Measurement')
 ;

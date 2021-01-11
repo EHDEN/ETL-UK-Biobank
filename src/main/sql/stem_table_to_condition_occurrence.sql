@@ -1,5 +1,5 @@
 
-INSERT INTO @target_schema.condition_occurrence
+INSERT INTO @cdm_schema.condition_occurrence
 (
 	person_id,
 	condition_concept_id,
@@ -51,7 +51,7 @@ SELECT
 
     stem_table.data_source AS data_source
 
-FROM @target_schema.stem_table
+FROM @cdm_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)
 WHERE (stem_table.domain_id = 'Condition') OR (stem_table.domain_id IS NULL AND concept.domain_id = 'Condition')
 ;

@@ -1,5 +1,5 @@
 
-INSERT INTO @target_schema.observation
+INSERT INTO @cdm_schema.observation
 (
 	person_id,
 	observation_concept_id,
@@ -57,7 +57,7 @@ SELECT
 
     stem_table.data_source AS data_source
 
-FROM @target_schema.stem_table
+FROM @cdm_schema.stem_table
     LEFT JOIN vocab.concept USING (concept_id)
 WHERE (stem_table.domain_id = 'Observation') OR (stem_table.domain_id IS NULL AND (concept.domain_id = 'Observation' OR concept.concept_id = 0))
 ;

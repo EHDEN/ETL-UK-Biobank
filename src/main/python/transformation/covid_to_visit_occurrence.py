@@ -9,11 +9,12 @@ if TYPE_CHECKING:
 
 
 def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    source = wrapper.get_dataframe('covid.csv', use_columns=['eid', 'specdate', 'laboratory'])
+    source = wrapper.source_data.get_source_file('covid.csv')
+    df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'specdate', 'laboratory'])
 
     records = []
 
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         visit_date = get_datetime(row['specdate'], "%d/%m/%Y")
 
         person_id = wrapper.lookup_person_id(row['eid'])

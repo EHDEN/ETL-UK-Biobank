@@ -13,7 +13,8 @@ if TYPE_CHECKING:
 
 
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
-    source = wrapper.get_dataframe('gp_clinical.csv')
+    source = wrapper.source_data.get_source_file('gp_clinical.csv')
+    df = source.get_csv_as_df(apply_dtypes=False)
 
     # load dictionary of special Read v2 dot code mappings (i.e. alternative to adding 00)
     with open('resources/mapping_tables/gp_clinical_read2_alternative_dot_code_mappings.csv') as f:
@@ -30,7 +31,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     value_mapper = GpClinicalValueMapper(mapping_dict=read_v2_mapping_dict)
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         # read_2 and read_3 should be mutually exclusive
         if not is_null(row['read_2']):
             read_col = 'read_2'

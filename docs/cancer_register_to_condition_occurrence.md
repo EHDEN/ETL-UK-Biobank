@@ -36,7 +36,7 @@ Keep the same instance to all the fields mapped to one record.
 
 | Destination Field | Source field | Logic | Comment |
 | --- | --- | --- | --- |
-| condition_occurrence_id |  |  |  |
+| condition_occurrence_id |  | Auto-increment |  |
 | person_id | eid |  |  |
 | condition_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Combine fields as described in table above to construct an ICDO3 code, for which the standard concept is looked up in the OMOP vocabulary. |  |
 | condition_start_date | 40005-{instance}.0 |  |  |

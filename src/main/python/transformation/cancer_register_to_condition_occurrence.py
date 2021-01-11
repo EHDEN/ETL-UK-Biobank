@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 import logging
+import re
 
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
 
@@ -22,15 +23,37 @@ def return_string(value):
 
 
 def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
-    source = wrapper.get_dataframe('baseline.csv')
-    # TODO: Read only the columns we need from baseline (ie. the cancer register fields).
+    source = wrapper.source_data.get_source_file('baseline.csv')
+
+    # To reduce memory, identify which columns from the baseline table should be used
+    # The topography columns are used to restrict the number of ICD10 codes that need to be looked up.
+    columns_to_use = []
+    topography10_columns = []
+    topography9_columns = []
+    columns_available = next(source.get_csv_as_generator_of_dicts()).keys()
+    pattern = re.compile(r'eid|40005|40006|40011|40012|40013')  # only these five field_ids are needed
+    pattern_topography10 = re.compile(r'40006')
+    pattern_topography9 = re.compile(r'40013')
+    for column_name in columns_available:
+        if pattern.match(column_name):
+            columns_to_use.append(column_name)
+        if pattern_topography10.match(column_name):
+            topography10_columns.append(column_name)
+        if pattern_topography9.match(column_name):
+            topography9_columns.append(column_name)
+
+    df = source.get_csv_as_df(apply_dtypes=False, usecols=columns_to_use)
+    df[topography10_columns] = df[topography10_columns].applymap(lambda x: x if x == 'NULL' else add_dot_to_icdx_code(x))
+    df[topography9_columns] = df[topography9_columns].applymap(lambda x: x if x == 'NULL' else add_dot_to_icdx_code(x))
 
     icdo3 = wrapper.code_mapper.generate_code_mapping_dictionary('ICDO3')
-    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10')
-    icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM')
+    icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10',
+                                restrict_to_codes=df[topography10_columns].stack().tolist())
+    icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM',
+                                restrict_to_codes=df[topography9_columns].stack().tolist())
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         person_id = wrapper.lookup_person_id(row['eid'])
         if not person_id:
             # Person not found
@@ -46,9 +69,6 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
             behaviour = return_string(row.get(f'40012-{instance}.0'))
             topography = return_string(row.get(f'40006-{instance}.0'))
             topography9 = return_string(row.get(f'40013-{instance}.0'))
-
-            if topography != 'NULL':
-                topography = add_dot_to_icdx_code(topography)
 
             if histology == 'NULL' and topography == 'NULL' and topography9 == 'NULL':
                 # Case 000, 010: Skip if topography empty for both ICD9 and ICD10 codes and histology not given
@@ -73,13 +93,12 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
                 target_concept = icd10.lookup(topography, first_only=True)
             elif target_concept.source_concept_id == 0 and topography9 != 'NULL':
                 # If no ICD10 code try look with the ICD9 code
-                topography9 = add_dot_to_icdx_code(topography9)
                 source_code = f'{topography9}'
                 target_concept = icd9.lookup(topography9, first_only=True)
 
             datetime = get_datetime(row[f'40005-{instance}.0'])
             if datetime == DEFAULT_DATETIME:
-                logger.warning('Date was not found in the cancer registry date field 40005 of baseline data')
+                logger.warning(f'Date field 40005-{instance}.0 was not found in the cancer registry of baseline data')
 
             r = wrapper.cdm.ConditionOccurrence(
                 person_id=person_id,

@@ -20,24 +20,25 @@ type_lookup = {  # TODO: any other flavours?
 
 
 def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
-    death = wrapper.get_dataframe('death.csv')
-
+    death_source = wrapper.source_data.get_source_file('death.csv')
+    death = death_source.get_csv_as_df(apply_dtypes=False)
     death['date_of_death'] = pd.to_datetime(death['date_of_death'], dayfirst=True)
     death = death.sort_values(by=['eid', 'date_of_death'])
     death = death.drop_duplicates(subset='eid', keep='first')  # Only keep first date of death
 
-    death_cause = wrapper.get_dataframe('death_cause.csv')
+    death_cause_source = wrapper.source_data.get_source_file('death_cause.csv')
+    death_cause = death_cause_source.get_csv_as_df(apply_dtypes=False)
     death_cause = death_cause[death_cause['arr_index'] == '0']
     death_cause = death_cause.drop_duplicates(subset='eid', keep='first')  # In case multiple have arr_index 0, choose one
 
-    source = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
+    df = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
-    source['cause_icd10_dot'] = source['cause_icd10'].apply(add_dot_to_icdx_code)
+    df['cause_icd10_dot'] = df['cause_icd10'].apply(add_dot_to_icdx_code)
     mapper = wrapper.code_mapper.generate_code_mapping_dictionary(
-        'ICD10', restrict_to_codes=list(source['cause_icd10_dot']))
+        'ICD10', restrict_to_codes=list(df['cause_icd10_dot']))
 
     records = []
-    for _, row in source.iterrows():
+    for _, row in df.iterrows():
         if pd.isna(row['date_of_death']):
             continue
 
