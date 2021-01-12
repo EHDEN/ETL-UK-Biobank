@@ -31,13 +31,9 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
 
     for _, row in df.iterrows():
         visit_date = get_datetime(row['date'], "%d/%m/%Y")
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
 
         r = wrapper.cdm.VisitOccurrence(
-            person_id=person_id,
+            person_id=row['eid'],
             visit_concept_id=38004453,  # Family Practice
             visit_start_date=visit_date.date(),
             visit_start_datetime=visit_date,
