@@ -57,3 +57,15 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 2784,Ever taken oral contraceptive pill,-3,Prefer not to answer,,309808,,Female-specific factors,ACE touchscreen question ''Have you ever taken the contraceptive pill? (include the 'mini-pill')'',0.7538747787475586,IGNORED,,0,0,EVENT,,,1610120855660
 2834,Bilateral oophorectomy (both ovaries removed),1,Yes,,309808,,Female-specific factors,"ACE touchscreen question ''Have you had BOTH ovaries removed?'' If the participant activated the Help button they were shown the message: Only enter Yes if you have had both ovaries removed. If you have only had one ovary removed you will be able to let the interviewer know later in the visit. If you are unsure of whether both ovaries have been removed, select Do not know. ",0.6687980890274048,APPROVED,sofia,1610120735293,4297990,VALUE,,,1610119527486
 2834,Bilateral oophorectomy (both ovaries removed),1,Yes,,309808,,Female-specific factors,"ACE touchscreen question ''Have you had BOTH ovaries removed?'' If the participant activated the Help button they were shown the message: Only enter Yes if you have had both ovaries removed. If you have only had one ovary removed you will be able to let the interviewer know later in the visit. If you are unsure of whether both ovaries have been removed, select Do not know. ",0.6687980890274048,APPROVED,sofia,1610120735293,4214956,EVENT,,sofia,1610120732555
+2345,Ever had bowel cancer screening,-1,Do not know,,573745,,Cancer screening,0.0,IGNORED,Maxim,1610452540237,0,EVENT,,,0
+2345,Ever had bowel cancer screening,-3,Prefer not to answer,,573745,,Cancer screening,0.0,IGNORED,Maxim,1610452541102,0,EVENT,,,0
+2345,Ever had bowel cancer screening,0,No,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452676934,4211787,EVENT,,Maxim,1610452564873
+2345,Ever had bowel cancer screening,0,No,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452676934,4175226,VALUE,,Maxim,1610452633591
+2345,Ever had bowel cancer screening,1,Yes,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452677311,4188893,EVENT,,Maxim,1610452607816
+2345,Ever had bowel cancer screening,1,Yes,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452677311,4175226,VALUE,,Maxim,1610452636185
+2365,Ever had prostate specific antigen (PSA) test,-1,Do not know,,573745,,Cancer screening,0.0,IGNORED,Maxim,1610452545060,0,EVENT,,,0
+2365,Ever had prostate specific antigen (PSA) test,-3,Prefer not to answer,,573745,,Cancer screening,0.0,IGNORED,Maxim,1610452545397,0,EVENT,,,0
+2365,Ever had prostate specific antigen (PSA) test,0,No,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452679544,4211787,EVENT,,Maxim,1610452578487
+2365,Ever had prostate specific antigen (PSA) test,0,No,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452679544,2617206,VALUE,,Maxim,1610452670153
+2365,Ever had prostate specific antigen (PSA) test,1,Yes,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452679896,4188893,EVENT,,Maxim,1610452612058
+2365,Ever had prostate specific antigen (PSA) test,1,Yes,,573745,,Cancer screening,0.0,APPROVED,Maxim,1610452679896,2617206,VALUE,,Maxim,1610452672634
