@@ -35,11 +35,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
     records = []
     for _, row in df.iterrows():
-        eid = row.pop('eid')
-        person_id = wrapper.lookup_person_id(eid)
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         for column_name, value in row.items():
             if value == '' or pd.isna(value):

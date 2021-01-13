@@ -17,10 +17,7 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
     for _, row in df.iterrows():
         visit_date = get_datetime(row['specdate'], "%d/%m/%Y")
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         r = wrapper.cdm.VisitOccurrence(
             person_id=person_id,

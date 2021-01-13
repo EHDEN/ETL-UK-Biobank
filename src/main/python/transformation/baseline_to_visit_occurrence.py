@@ -16,10 +16,8 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                                            '53-0.0', '53-1.0', '53-2.0', '53-3.0'])
     records = []
     for _, row in df.iterrows():
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
+
         # One-day visits for instances 0 to 3
         for instance in range(4):
             # Field_id 53 contains the date of the visit

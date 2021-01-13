@@ -19,10 +19,7 @@ def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
 
         date = get_datetime(row['specdate'], "%d/%m/%Y")
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
             person_id=person_id,

@@ -28,10 +28,7 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
     records = []
 
     for _, row in df.iterrows():
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")
 

@@ -54,10 +54,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
 
     records = []
     for _, row in df.iterrows():
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         for instance in range(32):
             # Check that the instance exists in the data.

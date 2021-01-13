@@ -42,10 +42,7 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
         if pd.isna(row['date_of_death']):
             continue
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         target = mapper.lookup(row['cause_icd10_dot'], first_only=True)
         r = wrapper.cdm.Death(

@@ -25,9 +25,7 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
     records = []
     for _, row in df.iterrows():
 
-        person_id = wrapper.lookup_person_id(person_source_value=row['eid'])
-        if not person_id:
-            continue
+        person_id = row['eid']
 
         if pd.isna(row['admidate']):
             start_date = DEFAULT_DATETIME

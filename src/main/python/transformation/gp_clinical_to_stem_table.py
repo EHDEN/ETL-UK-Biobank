@@ -41,9 +41,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         else:
             continue
 
-        person_id = wrapper.lookup_person_id(person_source_value=row['eid'])
-        if not person_id:
-            continue
+        person_id = row['eid']
 
         if not is_null(row['event_dt']):
             event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
