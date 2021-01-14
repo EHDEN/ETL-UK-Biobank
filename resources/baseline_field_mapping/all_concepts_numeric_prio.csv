@@ -1,0 +1,161 @@
+field_id,field_name,a8_concept,a8_concept_details,a8_unit,a8_unit_details,hv_concept,hv_concept_details,hv_unit,hv_unit_details,concept_match,unit_match
+30850,Testosterone,3017446,"('Measurement', 'LOINC')",8736,"('Unit', 'UCUM')",4020107,"('Measurement', 'SNOMED')",8736,"('Unit', 'UCUM')",False,True
+30720,Cystatin C,3030366,"('Measurement', 'LOINC')",8751,"('Unit', 'UCUM')",44789161,"('Measurement', 'SNOMED')",8748,"('Unit', 'UCUM')",False,False
+30250,Reticulocyte count,40763528,"('Measurement', 'LOINC')",44777575,"('Unit', 'UCUM')",4263581,"('Measurement', 'SNOMED')",4079010,"('Observation', 'SNOMED')",False,False
+2744,Birth weight of first child,35810314,"('Observation', 'UK Biobank')",8739,"('Unit', 'UCUM')",0,"('Metadata', 'None')",8739,"('Unit', 'UCUM')",False,True
+30150,Eosinophill count,3028615,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",4216098,"('Measurement', 'SNOMED')",4175206,"('Observation', 'SNOMED')",False,False
+30050,Mean corpuscular haemoglobin,3012030,"('Measurement', 'LOINC')",8564,"('Unit', 'UCUM')",4182871,"('Measurement', 'SNOMED')",8564,"('Unit', 'UCUM')",False,True
+30650,Aspartate aminotransferase,3013721,"('Measurement', 'LOINC')",8645,"('Unit', 'UCUM')",4263457,"('Measurement', 'SNOMED')",8645,"('Unit', 'UCUM')",False,True
+30324,Volume of EDTA1 red cells held by UKB,4105828,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+30860,Total protein,3020630,"('Measurement', 'LOINC')",8636,"('Unit', 'UCUM')",4119650,"('Measurement', 'SNOMED')",8636,"('Unit', 'UCUM')",False,True
+2754,Age at first live birth,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",True,True
+30011,Red blood cell (erythrocyte) count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4030871,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30111,Platelet distribution width freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4097620,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30730,Gamma glutamyltransferase,3026910,"('Measurement', 'LOINC')",8645,"('Unit', 'UCUM')",4289475,"('Measurement', 'SNOMED')",8645,"('Unit', 'UCUM')",False,True
+30251,Reticulocyte count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4263581,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+3546,Age last used hormone-replacement therapy (HRT),35810380,"('Observation', 'UK Biobank')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+30424,Total volume of saliva samples held by UKB,4001062,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+30151,Eosinophill count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4216098,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30740,Glucose,3013826,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",3004501,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",False,True
+30051,Mean corpuscular haemoglobin freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4182871,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30870,Triglycerides,3025839,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4032789,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+30660,Direct bilirubin,3028638,"('Measurement', 'LOINC')",8749,"('Unit', 'UCUM')",37398377,"('Observation', 'SNOMED')",8749,"('Unit', 'UCUM')",False,True
+30120,Lymphocyte count,3004327,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",4254663,"('Measurement', 'SNOMED')",4175206,"('Observation', 'SNOMED')",False,False
+2764,Age at last live birth,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",True,True
+30880,Urate,3026493,"('Measurement', 'LOINC')",8749,"('Unit', 'UCUM')",4313992,"('Measurement', 'SNOMED')",8749,"('Unit', 'UCUM')",False,True
+30670,Urea,3020779,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4215465,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+30160,Basophill count,3013429,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",4172647,"('Measurement', 'SNOMED')",4175206,"('Observation', 'SNOMED')",False,False
+30700,Creatinine,3020564,"('Measurement', 'LOINC')",8749,"('Unit', 'UCUM')",4324383,"('Measurement', 'SNOMED')",8749,"('Unit', 'UCUM')",False,True
+30260,Mean reticulocyte volume,3049858,"('Measurement', 'LOINC')",8583,"('Unit', 'UCUM')",3049858,"('Measurement', 'LOINC')",8583,"('Unit', 'UCUM')",True,True
+3786,Age asthma diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+30500,Microalbumin in urine,3000034,"('Measurement', 'LOINC')",8751,"('Unit', 'UCUM')",3000034,"('Measurement', 'LOINC')",8751,"('Unit', 'UCUM')",True,True
+30334,Volume of EDTA1 buffy held by UKB,4122286,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+30020,Haemoglobin concentration,3000963,"('Measurement', 'LOINC')",8713,"('Unit', 'UCUM')",40480067,"('Measurement', 'SNOMED')",8713,"('Unit', 'UCUM')",False,True
+30680,Calcium,3015377,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4216722,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+30890,Vitamin D,3011391,"('Measurement', 'LOINC')",8736,"('Unit', 'UCUM')",4308739,"('Measurement', 'SNOMED')",8736,"('Unit', 'UCUM')",False,True
+30121,Lymphocyte count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4254663,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30140,Neutrophill count,3013650,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",4148615,"('Measurement', 'SNOMED')",4175206,"('Observation', 'SNOMED')",False,False
+30690,Cholesterol,3020564,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4299360,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+30710,C-reactive protein,3010156,"('Measurement', 'LOINC')",8751,"('Unit', 'UCUM')",4208414,"('Measurement', 'SNOMED')",8751,"('Unit', 'UCUM')",False,True
+30820,Rheumatoid factor,3021614,"('Measurement', 'LOINC')",8985,"('Unit', 'UCUM')",4204380,"('Measurement', 'SNOMED')",8985,"('Unit', 'UCUM')",False,True
+30130,Monocyte count,3033575,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",4194332,"('Measurement', 'SNOMED')",4175206,"('Observation', 'SNOMED')",False,False
+30770,IGF-1,3014326,"('Measurement', 'LOINC')",8736,"('Unit', 'UCUM')",4198110,"('Measurement', 'SNOMED')",8736,"('Unit', 'UCUM')",False,True
+30060,Mean corpuscular haemoglobin concentration,3009744,"('Measurement', 'LOINC')",8713,"('Unit', 'UCUM')",4290193,"('Measurement', 'SNOMED')",8713,"('Unit', 'UCUM')",False,True
+3894,Age heart attack diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+30240,Reticulocyte percentage,3007124,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4197837,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+30830,SHBG,3004248,"('Measurement', 'LOINC')",8736,"('Unit', 'UCUM')",4082602,"('Measurement', 'SNOMED')",8736,"('Unit', 'UCUM')",False,True
+30510,Creatinine (enzymatic) in urine,3009508,"('Measurement', 'LOINC')",8749,"('Unit', 'UCUM')",3017250,"('Measurement', 'LOINC')",0,"('Metadata', 'None')",False,False
+30344,Volume of EDTA2 plasma held by UKB,45769404,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+30780,LDL direct,42870529,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4012479,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+30021,Haemoglobin concentration freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",40480067,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+189,Townsend deprivation index at recruitment,0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,True
+30620,Alanine aminotransferase,3006923,"('Measurement', 'LOINC')",8645,"('Unit', 'UCUM')",4146380,"('Measurement', 'SNOMED')",8645,"('Unit', 'UCUM')",False,True
+30141,Neutrophill count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4148615,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30840,Total bilirubin,3006140,"('Measurement', 'LOINC')",8749,"('Unit', 'UCUM')",4230543,"('Measurement', 'SNOMED')",8749,"('Unit', 'UCUM')",False,True
+30131,Monocyte count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4194332,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30040,Mean corpuscular volume,3023599,"('Measurement', 'LOINC')",8583,"('Unit', 'UCUM')",37393851,"('Observation', 'SNOMED')",8583,"('Unit', 'UCUM')",False,True
+30790,Lipoprotein A,3046664,"('Measurement', 'LOINC')",8736,"('Unit', 'UCUM')",4197857,"('Measurement', 'SNOMED')",8736,"('Unit', 'UCUM')",False,True
+30520,Potassium in urine,3016038,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4173269,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+30630,Apolipoprotein A,3018876,"('Measurement', 'LOINC')",8636,"('Unit', 'UCUM')",4014902,"('Measurement', 'SNOMED')",8636,"('Unit', 'UCUM')",False,True
+30800,Oestradiol,3026725,"('Measurement', 'LOINC')",8729,"('Unit', 'UCUM')",4292703,"('Measurement', 'SNOMED')",8729,"('Unit', 'UCUM')",False,True
+3992,Age emphysema/chronic bronchitis diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+30241,Reticulocyte percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",37393631,"('Observation', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30030,Haematocrit percentage,42869588,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4151358,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+30354,Volume of EDTA2 buffy held by UKB,4122286,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+2734,Number of live births,0,"('Metadata', 'None')",32912,"('Unit', 'UCUM')",45770046,"('Observation', 'SNOMED')",0,"('Metadata', 'None')",False,False
+30530,Sodium in urine,3003181,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4020682,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+30810,Phosphate,3003458,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",3011904,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",False,True
+30750,Glycated haemoglobin (HbA1c),3005673,"('Measurement', 'LOINC')",9579,"('Unit', 'UCUM')",4184637,"('Measurement', 'SNOMED')",9579,"('Unit', 'UCUM')",False,True
+30640,Apolipoprotein B,3014791,"('Measurement', 'LOINC')",8636,"('Unit', 'UCUM')",4017617,"('Measurement', 'SNOMED')",8636,"('Unit', 'UCUM')",False,True
+30041,Mean corpuscular volume freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4016239,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30600,Albumin,40763912,"('Measurement', 'LOINC')",8636,"('Unit', 'UCUM')",4097664,"('Measurement', 'SNOMED')",8636,"('Unit', 'UCUM')",False,True
+30100,Mean platelet (thrombocyte) volume,3043111,"('Measurement', 'LOINC')",8583,"('Unit', 'UCUM')",4039428,"('Spec Anatomic Site', 'SNOMED')",8583,"('Unit', 'UCUM')",False,True
+30031,Haematocrit freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4151358,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30171,Nucleated red blood cell count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",37399327,"('Observation', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30760,HDL cholesterol,3023602,"('Measurement', 'LOINC')",8753,"('Unit', 'UCUM')",4101713,"('Measurement', 'SNOMED')",8753,"('Unit', 'UCUM')",False,True
+2824,Age at hysterectomy,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",True,True
+30364,Volume of EDTA2 red cells held by UKB,4105828,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+30271,Mean sphered cell volume freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3039385,"('Measurement', 'LOINC')",0,"('Metadata', 'None')",False,True
+30090,Platelet crit,3039312,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4097621,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+30610,Alkaline phosphatase,3035995,"('Measurement', 'LOINC')",8645,"('Unit', 'UCUM')",4230636,"('Measurement', 'SNOMED')",8645,"('Unit', 'UCUM')",False,True
+30180,Lymphocyte percentage,3037511,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4156652,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+4012,"Age deep-vein thrombosis (DVT, blood clot in leg) diagnosed",4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+2966,Age high blood pressure diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",40761397,"('Observation', 'LOINC')",9448,"('Unit', 'UCUM')",False,True
+30000,White blood cell (leukocyte) count,3000905,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",3010813,"('Measurement', 'LOINC')",4175206,"('Observation', 'SNOMED')",False,False
+41149,Records in HES inpatient operations dataset,0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,True
+50,Standing height,0,"('Metadata', 'None')",8582,"('Unit', 'UCUM')",40765042,"('Measurement', 'LOINC')",8582,"('Unit', 'UCUM')",False,True
+30394,Total volume of urine samples held by UKB,4046280,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",4196844,"('Measurement', 'SNOMED')",9665,"('Unit', 'UCUM')",False,True
+30280,Immature reticulocyte fraction,3046000,"('Measurement', 'LOINC')",8523,"('Unit', 'UCUM')",4135655,"('Measurement', 'SNOMED')",8523,"('Unit', 'UCUM')",False,True
+30091,Platelet crit freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4097621,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+3064,Peak expiratory flow (PEF),0,"('Metadata', 'None')",8698,"('Unit', 'UCUM')",4087260,"('Measurement', 'SNOMED')",8698,"('Unit', 'UCUM')",False,True
+51,Seated height,0,"('Metadata', 'None')",8582,"('Unit', 'UCUM')",4093976,"('Observation', 'SNOMED')",8582,"('Unit', 'UCUM')",False,True
+30300,High light scatter reticulocyte count,3038466,"('Measurement', 'LOINC')",44777575,"('Unit', 'UCUM')",3038466,"('Measurement', 'LOINC')",4079010,"('Observation', 'SNOMED')",True,False
+30101,Mean platelet (thrombocyte) volume freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4192368,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+2976,Age diabetes diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",40768838,"('Observation', 'LOINC')",9448,"('Unit', 'UCUM')",False,True
+30181,Lymphocyte percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4156652,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30071,Red blood cell (erythrocyte) distribution width freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3002385,"('Measurement', 'LOINC')",0,"('Metadata', 'None')",False,True
+4689,Age glaucoma diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+30404,Volume of ACD held by UKB,4001225,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",3036603,"('Measurement', 'LOINC')",9665,"('Unit', 'UCUM')",False,True
+3160,"Weight, manual entry",0,"('Metadata', 'None')",9529,"('Unit', 'UCUM')",3025315,"('Measurement', 'LOINC')",9529,"('Unit', 'UCUM')",False,True
+30001,White blood cell (leukocyte) count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3010813,"('Measurement', 'LOINC')",0,"('Metadata', 'None')",False,True
+30080,Platelet count,3024929,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",4267147,"('Measurement', 'SNOMED')",4175206,"('Observation', 'SNOMED')",False,False
+41234,Records in HES inpatient diagnoses dataset,0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,True
+4700,Age cataract diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+30110,Platelet distribution width,3039417,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4097620,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+30161,Basophill count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4172647,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30281,Immature reticulocyte fraction freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4135655,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30414,Volume of RNA held by UKB,40480050,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+93,"Systolic blood pressure, manual reading",0,"('Metadata', 'None')",8876,"('Unit', 'UCUM')",4152194,"('Measurement', 'SNOMED')",8876,"('Unit', 'UCUM')",False,True
+30301,High light scatter reticulocyte count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3038466,"('Measurement', 'LOINC')",0,"('Metadata', 'None')",False,True
+41235,Spells in hospital,0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,True
+30081,Platelet count freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4267147,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30010,Red blood cell (erythrocyte) count,3020416,"('Measurement', 'LOINC')",44777575,"('Unit', 'UCUM')",3026361,"('Measurement', 'LOINC')",4079010,"('Observation', 'SNOMED')",False,False
+2794,Age started oral contraceptive pill,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",True,True
+3536,Age started hormone-replacement therapy (HRT),0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",True,True
+30170,Nucleated red blood cell count,3007238,"('Measurement', 'LOINC')",44777588,"('Unit', 'UCUM')",4012826,"('Measurement', 'SNOMED')",4175206,"('Observation', 'SNOMED')",False,False
+30261,Mean reticulocyte volume freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3049858,"('Measurement', 'LOINC')",0,"('Metadata', 'None')",False,True
+30374,Volume of Li-Hep plasma held by UKB,44808074,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+30211,Eosinophill percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4149456,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30314,Volume of EDTA1 plasma held by UKB,45769404,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+20006,Interpolated Year when cancer first diagnosed,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",True,True
+94,"Diastolic blood pressure, manual reading",0,"('Metadata', 'None')",8876,"('Unit', 'UCUM')",4154790,"('Measurement', 'SNOMED')",8876,"('Unit', 'UCUM')",False,True
+41259,Records in HES inpatient main dataset,0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,True
+30220,Basophill percentage,3013869,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4156653,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+3062,Forced vital capacity (FVC),0,"('Metadata', 'None')",8519,"('Unit', 'UCUM')",4248526,"('Measurement', 'SNOMED')",8519,"('Unit', 'UCUM')",False,True
+30270,Mean sphered cell volume,3039385,"('Measurement', 'LOINC')",8583,"('Unit', 'UCUM')",3039385,"('Measurement', 'LOINC')",8583,"('Unit', 'UCUM')",True,True
+30061,Mean corpuscular haemoglobin concentration freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4290193,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+30384,Volume of serum held by UKB,4001181,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+4079,"Diastolic blood pressure, automated reading",0,"('Metadata', 'None')",8876,"('Unit', 'UCUM')",4154790,"('Measurement', 'SNOMED')",8876,"('Unit', 'UCUM')",False,True
+2804,Age when last used oral contraceptive pill,35810320,"('Observation', 'UK Biobank')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+102,"Pulse rate, automated reading",0,"('Metadata', 'None')",8483,"('Unit', 'UCUM')",4301868,"('Measurement', 'SNOMED')",8541,"('Unit', 'UCUM')",False,False
+30290,High light scatter reticulocyte percentage,3041522,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",3041522,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",True,True
+30200,Neutrophill percentage,3008342,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4153001,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+41261,Records in HES inpatient maternity dataset,0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,True
+30221,Basophill percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4156653,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+40008,Age at cancer diagnosis,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3007016,"('Measurement', 'LOINC')",9448,"('Unit', 'UCUM')",False,False
+47,Hand grip strength (right),0,"('Metadata', 'None')",9529,"('Unit', 'UCUM')",44805438,"('Observation', 'SNOMED')",9529,"('Unit', 'UCUM')",False,True
+20009,Interpolated Age of participant when non-cancer illness first diagnosed,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",40766624,"('Observation', 'LOINC')",9448,"('Unit', 'UCUM')",False,True
+3063,Forced expiratory volume in 1-second (FEV1),0,"('Metadata', 'None')",8519,"('Unit', 'UCUM')",40766743,"('Observation', 'LOINC')",8519,"('Unit', 'UCUM')",False,True
+34,Year of birth,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,False
+4080,"Systolic blood pressure, automated reading",0,"('Metadata', 'None')",8876,"('Unit', 'UCUM')",4152194,"('Measurement', 'SNOMED')",8876,"('Unit', 'UCUM')",False,True
+20007,Interpolated Age of participant when cancer first diagnosed,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",40766624,"('Observation', 'LOINC')",9448,"('Unit', 'UCUM')",False,True
+48,Waist circumference,0,"('Metadata', 'None')",8582,"('Unit', 'UCUM')",4172830,"('Observation', 'SNOMED')",8582,"('Unit', 'UCUM')",False,True
+30070,Red blood cell (erythrocyte) distribution width,3019897,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",3002385,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",False,True
+4194,Pulse rate,0,"('Metadata', 'None')",8483,"('Unit', 'UCUM')",4301868,"('Measurement', 'SNOMED')",8541,"('Unit', 'UCUM')",False,False
+40009,Reported occurrences of cancer,0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",True,True
+49,Hip circumference,0,"('Metadata', 'None')",8582,"('Unit', 'UCUM')",4111665,"('Observation', 'SNOMED')",8582,"('Unit', 'UCUM')",False,True
+4022,Age pulmonary embolism (blood clot in lung) diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+30201,Neutrophill percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4153001,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
+46,Hand grip strength (left),0,"('Metadata', 'None')",9529,"('Unit', 'UCUM')",44805437,"('Observation', 'SNOMED')",9529,"('Unit', 'UCUM')",False,True
+30230,Nucleated red blood cell percentage,40761514,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4016227,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+30291,High light scatter reticulocyte percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3038466,"('Measurement', 'LOINC')",0,"('Metadata', 'None')",False,True
+30190,Monocyte percentage,3011948,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4150335,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+4056,Age stroke diagnosed,4214956,"('Observation', 'SNOMED')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",False,True
+40425,Volume of DNA held by UKB,4120355,"('Specimen', 'SNOMED')",9665,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9665,"('Unit', 'UCUM')",False,True
+30210,Eosinophill percentage,3010457,"('Measurement', 'LOINC')",8554,"('Unit', 'UCUM')",4149456,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,True
+20010,Interpolated Year when operation took place,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",True,True
+30897,Estimated sample dilution factor,36660310,"('Measurement', 'LOINC')",8523,"('Unit', 'UCUM')",0,"('Metadata', 'None')",0,"('Metadata', 'None')",False,False
+20008,Interpolated Year when non-cancer illness first diagnosed,0,"('Metadata', 'None')",9448,"('Unit', 'UCUM')",40766630,"('Observation', 'LOINC')",9448,"('Unit', 'UCUM')",False,True
+30191,Monocyte percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4150335,"('Measurement', 'SNOMED')",8554,"('Unit', 'UCUM')",False,False
+40007,Age at death,0,"('Metadata', 'None')",0,"('Metadata', 'None')",3038421,"('Observation', 'LOINC')",9448,"('Unit', 'UCUM')",False,False
+30231,Nucleated red blood cell percentage freeze-thaw cycles,0,"('Metadata', 'None')",0,"('Metadata', 'None')",4016227,"('Measurement', 'SNOMED')",0,"('Metadata', 'None')",False,True
