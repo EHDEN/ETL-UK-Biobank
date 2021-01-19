@@ -80,6 +80,7 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(baseline_to_visit_occurrence)
         self.execute_transformation(hesin_to_visit_occurrence)
 
+        # Add index to the Visit Occurrence table to speed up the Visit Occurrence lookup in later transformations.
         self.db.constraint_manager.add_table_constraints('visit_occurrence', add_constraint=False)
 
         self.execute_transformation(hesin_to_visit_detail)
