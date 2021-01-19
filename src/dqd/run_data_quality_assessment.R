@@ -17,7 +17,7 @@ devtools::install_github(repo="OHDSI/DataQualityDashboard")
 setwd("~/ETL-UK-Biobank/src/dqd")
 
 # Load configuration settings
-config <- yaml.load_file('config_dqd.yml')
+config <- yaml.load_file('config.yml')
 connectionConfig <- config$connectionDetails
 
 ## Executing Data Quality Checks
@@ -33,7 +33,7 @@ connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = connectio
 
 
 cdmDatabaseSchema <- connectionConfig$schema # the fully qualified database schema name of the CDM
-resultsDatabaseSchema <- paste0(connectionConfig$schema, "_results") # the fully qualified database schema name of the results schema (that you can write to)
+resultsDatabaseSchema <- paste0(connectionConfig$schema, "_results_dqd") # the fully qualified database schema name of the results schema (that you can write to)
 cdmSourceName <- config$cdmSourceName
 
 # determine how many threads (concurrent SQL sessions) to use ----------------------------------------
@@ -43,7 +43,7 @@ numThreads <- 1 # on Redshift, 3 seems to work well
 sqlOnly <- FALSE # set to TRUE if you just want to get the SQL scripts and not actually run the queries
 
 # where should the logs go? -------------------------------------------------------------------------
-outputFolder <- "output"
+outputFolder <- "output_dqd"
 
 # logging type -------------------------------------------------------------------------------------
 verboseMode <- TRUE # set to TRUE if you want to see activity written to the console
