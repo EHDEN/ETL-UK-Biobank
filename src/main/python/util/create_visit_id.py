@@ -25,8 +25,8 @@ def create_baseline_visit_occurrence_id(eid: str, instance: str):
     return create_visit_occurrence_id(BASELINE_PREFIX, eid, instance)
 
 
-def create_covid_visit_occurrence_id(eid: str) -> str:
-    return create_visit_occurrence_id(COVID_PREFIX, eid, '0')
+def create_covid_visit_occurrence_id(eid: str, date: datetime) -> str:
+    return create_visit_occurrence_id(COVID_PREFIX, eid, date.strftime('%Y%m%d'))
 
 
 def create_hes_visit_occurrence_id(eid: str, spell_index: str) -> str:

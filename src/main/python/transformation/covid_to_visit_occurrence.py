@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 
-from ..util.date_functions import get_datetime
+from ..util import get_datetime, create_covid_visit_occurrence_id
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -20,6 +20,7 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
         person_id = row['eid']
 
         r = wrapper.cdm.VisitOccurrence(
+            visit_occurrence_id=create_covid_visit_occurrence_id(row['eid'], visit_date),
             person_id=person_id,
             visit_concept_id=32693,  # Health examination
             visit_start_date=visit_date.date(),
