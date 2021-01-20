@@ -1,0 +1,71 @@
+DBMS:
+postgresql
+
+Error:
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "."
+  Position: 385
+
+SQL:
+
+/*********
+IS_FOREIGN_KEY
+Foreign key check
+
+Parameters used in this template:
+cdmDatabaseSchema = omopcdm
+vocabDatabaseSchema = 
+cdmTableName = COST
+cdmFieldName = paid_patient_copay
+fkTableName = CONCEPT
+fkFieldName = CONCEPT_ID
+
+**********/
+
+
+SELECT num_violated_rows, CASE WHEN denominator.num_rows = 0 THEN 0 ELSE 1.0*num_violated_rows/denominator.num_rows END  AS pct_violated_rows, 
+  denominator.num_rows as num_denominator_rows
+FROM
+(
+	SELECT COUNT(violated_rows.violating_field) AS num_violated_rows
+	FROM
+	(
+		SELECT 'COST.paid_patient_copay' AS violating_field, cdmTable.* 
+		FROM omopcdm.COST cdmTable
+		
+		LEFT JOIN .CONCEPT fkTable
+		ON cdmTable.paid_patient_copay = fkTable.CONCEPT_ID
+		WHERE fkTable.CONCEPT_ID IS NULL AND cdmTable.paid_patient_copay IS NOT NULL 
+	) violated_rows
+) violated_row_count,
+( 
+	SELECT COUNT(*) AS num_rows
+	FROM omopcdm.COST cdmTable
+	
+) denominator
+;
+
+R version:
+R version 4.0.2 (2020-06-22)
+
+Platform:
+x86_64-apple-darwin17.0
+
+Attached base packages:
+- stats
+- graphics
+- grDevices
+- utils
+- datasets
+- methods
+- base
+
+Other attached packages:
+- DT (0.15)
+- shiny (1.5.0)
+- magrittr (2.0.1)
+- yaml (2.2.1)
+- rJava (0.9-13)
+- SqlRender (1.6.8)
+- DatabaseConnector (3.0.0)
+- devtools (2.3.1)
+- usethis (1.6.1)
