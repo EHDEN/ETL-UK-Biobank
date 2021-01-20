@@ -21,6 +21,7 @@ def is_null(value) -> bool:
     else:
         return False
 
+
 if __name__ == '__main__':
     import numpy as np
     print('# is_null() tests')
