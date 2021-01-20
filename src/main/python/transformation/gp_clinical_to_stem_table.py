@@ -3,10 +3,8 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import csv
 
-from ..util import get_datetime
+from ..util import get_datetime, is_null, extend_read_code, create_gp_visit_occurrence_id
 from ..gp_mapper import GpClinicalValueMapper
-from ..util.general_functions import is_null
-from ..util.code_cleanup import extend_read_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -51,11 +49,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
 
         # Look up visit_id in VisitOccurrence table
-        visit_id = wrapper.lookup_visit_occurrence_id(
-            person_id=person_id,
-            visit_start_date=event_date,
-            data_source=data_source
-        )
+        visit_id = create_gp_visit_occurrence_id(row['eid'], event_date)
 
         unit_source_value, unit_concept_id, operator = None, None, None
         if not is_null(row['value3']):
