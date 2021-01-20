@@ -63,7 +63,6 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
             discharge_to_concept_id=dis_reason.get((row['disdest'], row['dsource']), 0),
             discharge_to_source_value=dis_source,
             visit_occurrence_id=visit_occurrence_id,
-            record_source_value=f'HES-{row["ins_index"]}',
             data_source=f'HES-{data_source}'
         )
         records.append(r)

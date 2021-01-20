@@ -3,7 +3,7 @@
 # customize if needed. See the documentation on defining your CDM for
 # more info.
 
-from sqlalchemy import MetaData
+from sqlalchemy import MetaData, BigInteger
 from sqlalchemy.ext.declarative import declarative_base
 
 from delphyne.cdm.cdm531.clinical_data import *
@@ -20,9 +20,9 @@ Base = declarative_base()
 Base.metadata = MetaData(naming_convention=NAMING_CONVENTION)
 
 
-# NOTE: added data_source (UKB-specific for GP and HES source files)
-# and record_source_value to VisitOccurrence & VisitDetail for lookups
-
+# Changed compared to cdm5.3.1:
+# - added data_source (UKB-specific for GP and HES source files)
+# - visit ids types BigIntegers
 ########################################################################
 #                            CLINICAL DATA                             #
 ########################################################################
@@ -34,7 +34,12 @@ class Person(BasePersonCdm531, Base):
 class ObservationPeriod(BaseObservationPeriodCdm531, Base):
     pass
 
+
 class VisitOccurrence(BaseVisitOccurrenceCdm531, Base):
+
+    @declared_attr
+    def visit_occurrence_id(cls):
+        return Column(BigInteger, primary_key=True)
 
     @declared_attr
     def record_source_value(cls):
@@ -46,6 +51,10 @@ class VisitOccurrence(BaseVisitOccurrenceCdm531, Base):
 
 
 class VisitDetail(BaseVisitDetailCdm531, Base):
+
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(BigInteger, primary_key=True)
 
     @declared_attr
     def record_source_value(cls):
