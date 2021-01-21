@@ -29,12 +29,31 @@ Here we specify the mapping of each of these sections to the respective OMOP tab
 - [death](death_to_death.md)
 
 ### Visit_occurrence
+We use a heuristic to 'calculate' a unique 16 digit visit_occurrence_id for each of the sources.
+The id is a concatenation of a source digit (1 digit), the `eid` (7 digits) and an index unique within the patient (filled to 8 digits).
+What field is used as the index is specific to the source table, see overview below.
+Note that the visit_occurence_id has to be a Big Integer to be able to hold 16 digits.
+
+From baseline: `1<eid><instance>`, e.g. 1_9876543_00000001
+
+From covid: `2<eid><date>`, e.g. 2_9876543_20201231
+
+From hesin: `3<eid><spell_index>`, e.g. 3_9876543_00000012
+
+From gp_clinical and gp_prescriptions: `4<eid><date>`, e.g. 4_9876543_20201231
+
 - [From baseline](baseline_to_visit_occurrence.md)
 - [From covid](covid_to_visit_occurrence.md)
 - [From hesin](hesin_to_visit_occurrence.md)
 - [From gp_clinical and gp_prescriptions](gp_clinical_prescriptions_to_visit_occurrence.md)
 
 ### Visit_detail
+We use a heuristic to 'calculate' a unique 11 digit visit_detail_id.
+As the hesin table is the only source for visit details, 
+we only need to concatenate the `eid` and an index (the `ins_index`).
+
+From hesin: `<eid><ins_index>`, e.g. 9876543_0084
+
 - [From hesin](hesin_to_visit_detail.md)
 
 ### Condition_occurrence

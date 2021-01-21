@@ -6,7 +6,7 @@ We assume that a person can have only one gp visit per day. To get all the visit
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| visit_occurrence_id |  |  | Auto-increment |
+| visit_occurrence_id | eid<br>gp_clinical.event_dt<br>gp_prescriptions.issue_date | Concatenate '4', eid and the date in YYYYMMDD format |  |
 | person_id | eid |  |  |
 | visit_concept_id |  |  | 38004453 - Family Practice |
 | visit_start_date | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |

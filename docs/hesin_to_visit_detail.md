@@ -10,7 +10,7 @@ Every record of hesin (episode) is a visit_detail record
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| visit_detail_id |  |  | Auto-increment |
+| visit_detail_id | eid<br>ins_index | Concatenate eid and ins_index | |
 | person_id | eid |  |  |
 | visit_occurrence_id | eid<br>spell_index | Lookup vist_occurrence_id by eid and spellindex  eid=visit_occurrence.person_id  'HES-spell_index'=visit_occurrence.record_source_value<br> |  |
 | visit_start_date | epistart |  |  |
