@@ -67,18 +67,18 @@ class Wrapper(BaseWrapper):
 
         # Person and observation period
         self.execute_transformation(baseline_to_person)
-        # self.execute_transformation(gp_registrations_to_observation_period)
+        self.execute_transformation(gp_registrations_to_observation_period)
 
-        # # Death
-        # self.execute_transformation(death_to_death)
-        # self.execute_transformation(death_to_condition_occurrence)
-        # self.execute_transformation(baseline_to_death)
-        # #
-        # # # Visit
-        # self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
-        # self.execute_transformation(covid_to_visit_occurrence)
+        # Death
+        self.execute_transformation(death_to_death)
+        self.execute_transformation(death_to_condition_occurrence)
+        self.execute_transformation(baseline_to_death)
+
+        # Visit
+        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
+        self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
-        # self.execute_transformation(hesin_to_visit_occurrence)
+        self.execute_transformation(hesin_to_visit_occurrence)
 
         # Add index to the Visit Occurrence table to speed up the Visit Occurrence lookup in later transformations.
         self.db.constraint_manager.add_table_constraints('visit_occurrence', add_constraint=False)

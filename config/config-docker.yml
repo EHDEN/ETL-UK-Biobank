@@ -6,7 +6,7 @@ database:
   username: 'admin'
   password: 'secret'
 
-source_data_folder: './resources/synthetic_data'  # To be replaced by actual path to data
+source_data_folder: './resources/synthetic_data/small_set'  # To be replaced by actual path to data
 
 # The schema names of the OMOP CDM (target schema) and the vocabulary
 # tables. Additional key-value pairs can be added here if you have
