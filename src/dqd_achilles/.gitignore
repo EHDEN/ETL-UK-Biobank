@@ -1,0 +1,6 @@
+*.yml
+!config_template.yml
+errorReportSql.txt
+output_dqd/
+output_achilles/
+output/

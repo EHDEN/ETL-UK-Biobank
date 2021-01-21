@@ -37,10 +37,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     for _, row in df.iterrows():
         condition_date = get_datetime(row['admidate'], "%d/%m/%Y")
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         # Map icd10 if given. If not, map the icd9 code.
         # If ICD code is filled, but no concept is found, then the lookup will return one target to 0

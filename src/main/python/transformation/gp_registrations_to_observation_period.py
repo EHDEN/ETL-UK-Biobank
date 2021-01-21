@@ -15,16 +15,11 @@ def gp_registrations_to_observation_period(wrapper: Wrapper) -> List[Wrapper.cdm
     records = []
     for _, row in df.iterrows():
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
-
         start_date = get_datetime(row['reg_date'], "%d/%m/%Y")
         end_date = get_end_datetime(row['deduct_date'], "%d/%m/%Y")
 
         r = wrapper.cdm.ObservationPeriod(
-            person_id=person_id,
+            person_id=row['eid'],
             observation_period_start_date=start_date.date(),
             observation_period_end_date=end_date.date(),
             period_type_concept_id=32817  # EHR

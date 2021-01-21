@@ -33,10 +33,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
 
     records = []
     for _, row in df.iterrows():
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         if pd.isna(row['admidate']):
             start_date = DEFAULT_DATETIME

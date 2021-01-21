@@ -8,14 +8,14 @@ database:
   password: 'postgres'
 
 # (Relative) path to the source data folder (optional)
-source_data_folder: './resources/synthetic_data'
+source_data_folder: './resources/synthetic_data/small_set'
 
 # The schema names of the OMOP CDM (target schema) and the vocabulary
 # tables. Additional key-value pairs can be added here if you have
 # custom ORM tables, for which you would like to have dynamic schema
 # names.
 schema_translate_map:
-  cdm_schema: 'cdm'
+  cdm_schema: 'omopcdm'
   vocabulary_schema: 'vocab'
 
 run_options:
@@ -24,10 +24,10 @@ run_options:
   skip_vocabulary_loading: True
   # If True, all contents in resources/custom_vocabularies will be ignored,
   # regardless of whether you call load_custom_vocabularies in your code.
-  skip_custom_vocabulary_loading: False
+  skip_custom_vocabulary_loading: True
   # If True, all contents in resources/source_to_concept will be ignored,
   # regardless of whether you call load_stcm in your code.
-  skip_source_to_concept_map_loading: False
+  skip_source_to_concept_map_loading: True
   # Write two additional tsv files in the logs folder, with more
   # detailed information on source data counts and ETL transformations.
   write_reports: False

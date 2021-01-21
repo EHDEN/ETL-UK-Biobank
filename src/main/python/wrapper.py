@@ -51,8 +51,12 @@ class Wrapper(BaseWrapper):
         # Load source to concept mappings
         self.vocab_manager.load_stcm()
 
+        self.db.constraint_manager.drop_cdm_constraints()
+
         # Load source data
         self.transform()
+
+        self.db.constraint_manager.add_cdm_constraints()
 
         # Log/write overview of transformations and sources
         self.summarize()
@@ -76,9 +80,12 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(baseline_to_visit_occurrence)
         # self.execute_transformation(hesin_to_visit_occurrence)
 
-        # self.execute_transformation(hesin_to_visit_detail)
-        #
-        # # Events
+        # Add index to the Visit Occurrence table to speed up the Visit Occurrence lookup in later transformations.
+        self.db.constraint_manager.add_table_constraints('visit_occurrence', add_constraint=False)
+
+        self.execute_transformation(hesin_to_visit_detail)
+
+        # Events
         self.execute_transformation(baseline_to_stem)
         self.execute_transformation(covid_to_observation)
         self.execute_transformation(gp_clinical_to_stem_table)

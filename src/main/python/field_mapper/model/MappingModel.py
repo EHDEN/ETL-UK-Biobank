@@ -12,13 +12,17 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-# !/usr/bin/env python3
 from __future__ import annotations
+
+import logging
 from abc import ABC
 from dataclasses import dataclass, field
 from typing import Dict, Optional, List, Union
 from src.main.python.field_mapper.model.UsagiModel import UsagiRow, TargetMapping, MappingType, MappingStatus
 from src.main.python.field_mapper.model.Validator import validator
+
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -68,7 +72,7 @@ class _AbstractMapping(ABC):
             return 0
 
         if len(targets) > 1:
-            print('Warning: multiple target concepts, only one returned')
+            logger.warning('Multiple target concepts, only one returned')
 
         return targets.pop().concept_id
 

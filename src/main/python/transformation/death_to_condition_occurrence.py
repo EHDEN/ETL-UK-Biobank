@@ -32,10 +32,7 @@ def death_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Conditio
         if pd.isna(row['cause_icd10']):
             continue
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
         target = mapper.lookup(row['cause_icd10_dot'], first_only=True)
 
