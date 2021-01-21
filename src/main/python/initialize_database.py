@@ -26,8 +26,8 @@ def initialize_database(config: MainConfig, do_force_vocab_load = False):
     db_config = config.database
     # superuser = config
     superuser_eng = create_engine('postgresql://%s:%s@%s:%s/%s' % (
-        db_config.username,
-        db_config.password.get_secret_value(),
+        'postgres',
+        'password',
         db_config.host,
         db_config.port,
         db_config.database_name

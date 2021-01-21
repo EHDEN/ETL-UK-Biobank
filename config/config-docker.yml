@@ -6,10 +6,6 @@ database:
   username: 'admin'
   password: 'secret'
 
-database_superuser:
-  username: 'postgres'
-  password: 'password'
-
 source_data_folder: './resources/synthetic_data'  # To be replaced by actual path to data
 
 # The schema names of the OMOP CDM (target schema) and the vocabulary
