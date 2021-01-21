@@ -22,7 +22,7 @@ cdmDatabaseSchema <- connectionConfig$schema # the fully qualified database sche
 resultsDatabaseSchema <- paste0(connectionConfig$schema, "_results_achilles") # the fully qualified database schema name of the results schema (that you can write to)
 cdmSourceName <- config$cdmSourceName
 
-outputPath <- "c:/myPath/output_achilles"
+outputPath <- "output_achilles"
 
 cdmVersion = config$cdmVersion
 
