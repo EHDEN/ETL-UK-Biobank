@@ -1,8 +1,0 @@
-2021-01-19 17:19:04	[Main thread]	INFO	Achilles	achillesHeel	Beginning single-threaded execution
-2021-01-19 17:19:04	[Main thread]	WARN	DatabaseConnector	connect	The schema argument is deprecated. Please use fully specified table names in your SQL statement, for example 'SELECT * FROM my_schema.my_table;'
-2021-01-19 17:19:04	[Main thread]	INFO	Achilles	achillesHeel	Executing Achilles Heel. This could take a while
-2021-01-19 17:19:04	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error: Error executing SQL: org.postgresql.util.PSQLException: ERROR: syntax error at or near "."   Position: 649 An error report has been created at  /Users/sofiabazakou/IdeaProjects/ETL-UK-Biobank/src/dqd/errorReportSql.txt 
-2021-01-19 17:19:17	[Main thread]	WARN	DatabaseConnector	connect	The schema argument is deprecated. Please use fully specified table names in your SQL statement, for example 'SELECT * FROM my_schema.my_table;'
-2021-01-19 17:19:17	[Main thread]	FATAL	SqlRender	render	Error in lapply(list(...), function(x) { :    object 'vocabDatabaseSchema' not found 
-2021-01-19 17:20:31	[Main thread]	WARN	DatabaseConnector	connect	The schema argument is deprecated. Please use fully specified table names in your SQL statement, for example 'SELECT * FROM my_schema.my_table;'
-2021-01-19 17:20:31	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error: Error executing SQL: org.postgresql.util.PSQLException: ERROR: relation "omopcdm.concept" does not exist   Position: 1245 An error report has been created at  /Users/sofiabazakou/IdeaProjects/ETL-UK-Biobank/src/dqd/errorReportSql.txt 
