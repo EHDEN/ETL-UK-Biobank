@@ -46,3 +46,6 @@ exportToJson(connectionDetails = connectionDetails,
              resultsDatabaseSchema = resultsDatabaseSchema,
              outputPath = outputPath,
              compressIntoOneFile = TRUE)
+
+# To see the results in AchillesWeb check the instructions on the repo:
+# https://github.com/OHDSI/AchillesWeb
