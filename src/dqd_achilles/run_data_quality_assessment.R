@@ -14,7 +14,7 @@ library(yaml)
 devtools::install_github(repo="OHDSI/DataQualityDashboard")
 
 # Set working directory to directory of this R script
-setwd("c:/myPath/dqd")
+setwd("c:/myPath/dqd_achilles")
 
 # Load configuration settings
 config <- yaml.load_file('config.yml')
