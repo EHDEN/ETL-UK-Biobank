@@ -48,13 +48,16 @@ def initialize_database(config: MainConfig, do_force_vocab_load = False):
             connection.close()
             return
     except:
-        pass
+        # If selecting failed, load the vocabulary.
+        for sql_file in sorted(glob.glob('postgres/*.sql')):
+            logger.info('{:-^100}'.format('Processing ' + sql_file))
+            try:
+                connection.execute(open(sql_file, 'r').read())
+                logger.info('Success.')
+            except Exception as e:
+                logger.warning(e)
 
-    for sql_file in sorted(glob.glob('postgres/*.sql')):
-        logger.info('{:-^100}'.format('Processing ' + sql_file))
-        try:
-            connection.execute(open(sql_file, 'r').read())
-            logger.info('Success.')
-        except Exception as e:
-            logger.warning(e)
+    logger.info(connection.execute("SELECT vocabulary_version FROM vocab.vocabulary WHERE vocabulary_id = 'None';"))
+    logger.info(connection.execute("SELECT count(*) FROM vocab.vocabulary;"))
+
     connection.close()
