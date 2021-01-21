@@ -14,7 +14,7 @@ library(yaml)
 devtools::install_github(repo="OHDSI/DataQualityDashboard")
 
 # Set working directory to directory of this R script
-setwd("~/ETL-UK-Biobank/src/dqd")
+setwd("c:/myPath/dqd")
 
 # Load configuration settings
 config <- yaml.load_file('config.yml')
