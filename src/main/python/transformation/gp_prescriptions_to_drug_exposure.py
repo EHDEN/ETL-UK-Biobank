@@ -60,7 +60,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         )
 
         raw_quantity = row['quantity'] if not is_null(row['quantity']) else None
-        unit = row['quantity'] if not is_null(row['quantity']) else None
+        unit = row['quantity'][:50] if not is_null(row['quantity']) else None
 
         valid_quantity = valid_quantity_for_days_estimate(raw_quantity)
         if valid_quantity:
