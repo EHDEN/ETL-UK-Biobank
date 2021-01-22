@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-import csv
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import get_datetime
-from ..util import add_dot_to_icdx_code
+from ..util import add_dot_to_icdx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id
 
 
 if TYPE_CHECKING:
@@ -54,15 +53,8 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
             continue
 
         # Visit
-        visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
-            person_id=person_id,
-            record_source_value=f'HES-{row["spell_index"]}'
-        )
-
-        visit_detail_id = wrapper.lookup_visit_detail_id(
-            person_id=person_id,
-            record_source_value=f'HES-{row["ins_index"]}'
-        )
+        visit_occurrence_id = create_hes_visit_occurrence_id(row['eid'], row['spell_index'])
+        visit_detail_id = create_hes_visit_detail_id(row['eid'], row['ins_index'])
 
         condition_status_concept_id = 32902 if row['level'] == '1' else 32908  # Primary, else Secondary diagnosis
 

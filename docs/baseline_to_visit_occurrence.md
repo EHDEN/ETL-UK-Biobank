@@ -9,7 +9,7 @@ Follow-up online or to assessment center.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| visit_occurrence_id |  |  | Auto-increment |
+| visit_occurrence_id | eid<br>instance | Concatenate 1, eid and instance |  |
 | person_id | eid |  |  |
 | visit_concept_id |  |  | 44818519 - Clinical Study visit |
 | visit_start_date | 53-<instance>.0 | Field 53-0.0 -> date of initial assessment visit  Field 53-1.0 -> date of repeat assessment visit  Field 53-2.0 -> date of first imaging visit  Field 53-3.0 -> date of second imaging visit | Capture different record for each instance<br> |

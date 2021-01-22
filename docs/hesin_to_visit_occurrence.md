@@ -11,7 +11,7 @@ From admission to discharge
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| visit_occurrence_id | spell_index | Capture eid+spell_index as unique lookup key for the visit | Auto-increment |
+| visit_occurrence_id | eid<br>spell_index | concatenate '3', eid, spell_index | |
 | person_id | eid |  |  |
 | visit_concept_id | dsource<br>admimeth | Map combination of dsource(record origin) and Grouping to higher level - planned = inpatient visit (9201) - unplanned = emergency room visit (9203) <br> Mapping to standard concept in: /resources/mapping_tables/hesin_admimeth.csv |  |
 | visit_start_date | admidate | Minimum | Patients can have different episodes within the same spell, resulting to more than one admidate records for the same eid+spell_index (see: https://biobank.ndph.ox.ac.uk/showcase/showcase/docs/HospitalEpisodeStatistics.pdf). For the beginning of the spell keep the earliest date.|

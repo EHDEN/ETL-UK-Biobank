@@ -4,6 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import DEFAULT_DATETIME
+from ..util import create_hes_visit_occurrence_id
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -46,7 +47,6 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
             end_date = row['disdate']
 
         data_source = row['dsource']
-        spell_index = str(row['spell_index'])
 
         # The dsource contains strings of 3-4 characters and admimeth, admisorc, disdest contrains integers of length 2.
         # Thus the 50character cut off it is not an issue for losing data, currently.
@@ -55,6 +55,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
         dis_source = "record origin:"+data_source+"/discharge destination:"+str(row['disdest'])
 
         r = wrapper.cdm.VisitOccurrence(
+            visit_occurrence_id=create_hes_visit_occurrence_id(row['eid'], row['spell_index']),
             person_id=person_id,
             visit_concept_id=visit_reason.get((row['admimeth'], row['dsource']), 0),
             visit_start_date=start_date.date(),
@@ -67,7 +68,6 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
             admitting_source_value=admit_source,
             discharge_to_concept_id=dis_reason.get((row['disdest'], row['dsource']), 0),
             discharge_to_source_value=dis_source,
-            record_source_value=f'HES-{spell_index}',
             data_source=f'HES-{data_source}'
         )
         records.append(r)

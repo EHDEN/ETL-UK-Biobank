@@ -4,9 +4,8 @@ from typing import List, TYPE_CHECKING
 from datetime import timedelta
 from delphyne.model.mapping.code_mapper import CodeMapping
 
-from src.main.python.util import get_datetime, extract_numeric_quantity, valid_quantity_for_days_estimate
-from src.main.python.util.general_functions import is_null
-from src.main.python.util.code_cleanup import extend_read_code
+from src.main.python.util import get_datetime, extract_numeric_quantity, valid_quantity_for_days_estimate, \
+    create_gp_visit_occurrence_id, is_null, extend_read_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -53,11 +52,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
         # Look up visit_id in VisitOccurrence table
-        visit_id = wrapper.lookup_visit_occurrence_id(
-            person_id=person_id,
-            visit_start_date=date_start,
-            data_source=data_source
-        )
+        visit_id = create_gp_visit_occurrence_id(row['eid'], date_start)
 
         raw_quantity = row['quantity'] if not is_null(row['quantity']) else None
         unit = row['quantity'][:50] if not is_null(row['quantity']) else None

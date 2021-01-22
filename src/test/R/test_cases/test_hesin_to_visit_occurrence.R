@@ -42,14 +42,14 @@ expect_visit_occurrence(person_id = 1104, visit_start_date = '1970/01/01', visit
 
 declareTest(1105, 'two episodes in one spell, min/max date')
 add_baseline(eid = 1105)
-add_hesin(eid = 1105, spell_index = '0', admidate = '01/01/2010', disdate = '01/02/2010')
-add_hesin(eid = 1105, spell_index = '0', admidate = '01/02/2010', disdate = '01/03/2010')
+add_hesin(eid = 1105, spell_index = '0', admidate = '01/01/2010', disdate = '01/02/2010', ins_index = 1)
+add_hesin(eid = 1105, spell_index = '0', admidate = '01/02/2010', disdate = '01/03/2010', ins_index = 2)
 expect_visit_occurrence(person_id = 1105, visit_start_date = '2010/01/01', visit_end_date = '2010/03/01')
 
 declareTest(1106, 'two spells for one person results in two visits')
 add_baseline(eid = 1106)
-add_hesin(eid = 1106, spell_index = '0')
-add_hesin(eid = 1106, spell_index = '1')
+add_hesin(eid = 1106, spell_index = '0', ins_index = 1)
+add_hesin(eid = 1106, spell_index = '1', ins_index = 2)
 expect_count_visit_occurrence(2, person_id = 1106, visit_concept_id = 9201)
 
 declareTest(1107, 'Multiple episodes in one spell, first admimeth')
@@ -75,6 +75,6 @@ expect_visit_occurrence(person_id = 1109, discharge_to_concept_id = 38004515, di
 
 declareTest(1110, 'two episodes in one spell, min/max date 2')
 add_baseline(eid = 1110)
-add_hesin(eid = 1110, spell_index = '0', admidate = '30/06/2010', disdate = '30/07/2010')
-add_hesin(eid = 1110, spell_index = '0', admidate = '01/08/2010', disdate = '03/08/2010')
+add_hesin(eid = 1110, spell_index = '0', admidate = '30/06/2010', disdate = '30/07/2010', ins_index = 1)
+add_hesin(eid = 1110, spell_index = '0', admidate = '01/08/2010', disdate = '03/08/2010', ins_index = 2)
 expect_visit_occurrence(person_id = 1110, visit_start_date = '2010/06/30', visit_end_date = '2010/08/03')

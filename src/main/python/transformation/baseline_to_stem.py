@@ -7,6 +7,7 @@ from typing import List, Tuple, TYPE_CHECKING, Optional
 from pathlib import Path
 from ..field_mapper.FieldConceptMapper import FieldConceptMapper
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
+from ..util import create_baseline_visit_occurrence_id
 import pandas as pd
 
 if TYPE_CHECKING:
@@ -35,7 +36,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
     records = []
     for _, row in df.iterrows():
-        person_id = row['eid']
+        person_id = row.pop('eid')
 
         for column_name, value in row.items():
             if value == '' or pd.isna(value):
@@ -57,7 +58,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 logger.warning(f'Date column "{date_column_name}" for "{column_name}" was not found in the baseline data')
 
             # Visit
-            visit_occurrence_id = wrapper.lookup_visit_occurrence_id(person_id=person_id, record_source_value=f'baseline-{instance}')
+            visit_occurrence_id = create_baseline_visit_occurrence_id(person_id, instance)
 
             targets = field_mapper.lookup(field_id, value)
             for target in targets:
