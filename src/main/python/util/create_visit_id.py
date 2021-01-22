@@ -13,6 +13,9 @@
 # GNU General Public License for more details.
 
 from datetime import datetime
+from typing import Optional
+
+from ..util import is_null
 
 
 BASELINE_PREFIX = '1'
@@ -21,27 +24,31 @@ HES_PREFIX = '3'
 GP_PREFIX = '4'
 
 
-def create_baseline_visit_occurrence_id(eid: str, instance: str):
+def create_baseline_visit_occurrence_id(eid: str, instance: str) -> Optional[str]:
     return create_visit_occurrence_id(BASELINE_PREFIX, eid, instance)
 
 
-def create_covid_visit_occurrence_id(eid: str, date: datetime) -> str:
+def create_covid_visit_occurrence_id(eid: str, date: datetime) -> Optional[str]:
     return create_visit_occurrence_id(COVID_PREFIX, eid, date.strftime('%Y%m%d'))
 
 
-def create_hes_visit_occurrence_id(eid: str, spell_index: str) -> str:
+def create_hes_visit_occurrence_id(eid: str, spell_index: str) -> Optional[str]:
     return create_visit_occurrence_id(HES_PREFIX, eid, spell_index)
 
 
-def create_gp_visit_occurrence_id(eid: str, date: datetime) -> str:
+def create_gp_visit_occurrence_id(eid: str, date: datetime) -> Optional[str]:
     return create_visit_occurrence_id(GP_PREFIX, eid, date.strftime('%Y%m%d'))
 
 
-def create_visit_occurrence_id(source_prefix: str, eid: str, index: str) -> str:
+def create_visit_occurrence_id(source_prefix: str, eid: str, index: str) -> Optional[str]:
+    if is_null(index):
+        return None
     return f'{source_prefix}{eid:>07}{index:>08}'
 
 
-def create_hes_visit_detail_id(eid: str, ins_index: str) -> str:
+def create_hes_visit_detail_id(eid: str, ins_index: str) -> Optional[str]:
+    if is_null(ins_index):
+        return None
     return f'{eid:>07}{ins_index:>04}'
 
 
