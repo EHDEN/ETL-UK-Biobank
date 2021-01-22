@@ -62,7 +62,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             targets = field_mapper.lookup(field_id, value)
             for target in targets:
-                source_concept_id = wrapper.lookup_ukb_vocab(target.source_value.split("|")[0])
+                source_concept_id = wrapper.lookup_ukb_vocab(field_id)
                 records.append(wrapper.cdm.StemTable(
                     person_id=person_id,
                     start_date=datetime.date(),
