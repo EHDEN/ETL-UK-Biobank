@@ -52,12 +52,17 @@ class Wrapper(BaseWrapper):
         # Load source to concept mappings
         self.vocab_manager.load_stcm()
 
+        # Remove constraints and indexes to improve performance
         self.db.constraint_manager.drop_cdm_constraints()
 
         # Load source data
         self.transform()
 
-        self.db.constraint_manager.add_cdm_constraints()
+        # Add constraints and indexes
+        try:
+            self.db.constraint_manager.add_cdm_constraints()
+        except IntegrityError as e:
+            logger.error(f'Constraints could not be applied {e.args}')
 
         # Log/write overview of transformations and sources
         self.summarize()
