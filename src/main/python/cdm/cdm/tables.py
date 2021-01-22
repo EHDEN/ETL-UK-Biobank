@@ -71,12 +71,20 @@ class ConditionOccurrence(BaseConditionOccurrenceCdm531, Base):
     def data_source(cls):
         return Column(String(50))
 
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(ForeignKey(f'{CDM_SCHEMA}.visit_detail.visit_detail_id'), index=True)
+
 
 class DrugExposure(BaseDrugExposureCdm531, Base):
 
     @declared_attr
     def data_source(cls):
         return Column(String(50))
+
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(ForeignKey(f'{CDM_SCHEMA}.visit_detail.visit_detail_id'), index=True)
 
 
 class ProcedureOccurrence(BaseProcedureOccurrenceCdm531, Base):
@@ -85,12 +93,20 @@ class ProcedureOccurrence(BaseProcedureOccurrenceCdm531, Base):
     def data_source(cls):
         return Column(String(50))
 
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(ForeignKey(f'{CDM_SCHEMA}.visit_detail.visit_detail_id'), index=True)
+
 
 class DeviceExposure(BaseDeviceExposureCdm531, Base):
 
     @declared_attr
     def data_source(cls):
         return Column(String(50))
+
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(ForeignKey(f'{CDM_SCHEMA}.visit_detail.visit_detail_id'), index=True)
 
 
 class Measurement(BaseMeasurementCdm531, Base):
@@ -99,12 +115,20 @@ class Measurement(BaseMeasurementCdm531, Base):
     def data_source(cls):
         return Column(String(50))
 
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(ForeignKey(f'{CDM_SCHEMA}.visit_detail.visit_detail_id'), index=True)
+
 
 class Observation(BaseObservationCdm531, Base):
 
     @declared_attr
     def data_source(cls):
         return Column(String(50))
+
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(ForeignKey(f'{CDM_SCHEMA}.visit_detail.visit_detail_id'), index=True)
 
 
 class Death(BaseDeathCdm531, Base):
@@ -116,6 +140,10 @@ class Note(BaseNoteCdm531, Base):
     @declared_attr
     def data_source(cls):
         return Column(String(50))
+
+    @declared_attr
+    def visit_detail_id(cls):
+        return Column(ForeignKey(f'{CDM_SCHEMA}.visit_detail.visit_detail_id'), index=True)
 
 
 class NoteNlp(BaseNoteNlpCdm531, Base):
