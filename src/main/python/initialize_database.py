@@ -37,17 +37,21 @@ def initialize_database(config: MainConfig, do_force_vocab_load = False):
     connection = superuser_eng.connect()
 
     logger.info('{:-^100}'.format('Vocabulary loading'))
+
     # Check if concept table exists. If so, assume vocab schema is loaded.
     try:
         connection.execute("SELECT * FROM vocab.concept;")
-        logger.info('Vocabulary tables already loaded')
-        if do_force_vocab_load:
-            logger.info('Forcing reloading of vocabularies')
-            connection.execute('DROP SCHEMA vocab CASCADE;')
-        else:
-            connection.close()
-            return
+        logger.info('Vocabulary tables already loaded.')
+        vocabularies_loaded = True
     except:
+        logger.info('Vocabulary concept table not found, starting loading vocabularies...')
+        vocabularies_loaded = False
+
+    if vocabularies_loaded and do_force_vocab_load:
+        logger.info('Forcing reloading of vocabularies')
+        connection.execute('DROP SCHEMA vocab CASCADE;')
+
+    if not vocabularies_loaded or do_force_vocab_load:
         # If selecting failed, load the vocabulary.
         for sql_file in sorted(glob.glob('postgres/*.sql')):
             logger.info('{:-^100}'.format('Processing ' + sql_file))
