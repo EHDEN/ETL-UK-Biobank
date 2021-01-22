@@ -45,8 +45,8 @@ expect_no_observation(person_id = 909, observation_date = '2013-9-5', observatio
 
 declareTest(910, 'Baseline - Do not map year of birth or gender')
 add_baseline(eid = '910', `31-0.0`='0', `34-0.0`='1970')
-expect_no_observation(person_id = 909, observation_source_value = '31|0')
-expect_no_observation(person_id = 909, observation_source_value = '34')
+expect_no_observation(person_id = 910, observation_source_value = '31|0')
+expect_no_observation(person_id = 910, observation_source_value = '34')
 
 declareTest(911, 'Baseline - One to many opcs')
 add_baseline(eid = '911', `41256-0.0`='027')
