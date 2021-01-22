@@ -14,7 +14,7 @@ expect_no_observation(person_id = 902, observation_concept_id = 4052351)
 declareTest(903, 'Baseline - White blood cell count (alternate date field)')
 add_baseline(eid = '903', `30000-0.0`='5.55', `30002-0.0`='2020-11-01')
 expect_measurement(person_id = 903, measurement_date = '2020-11-01', measurement_concept_id = 3010813,
-                   unit_concept_id = 4175206, value_as_number = 5.55)
+                   unit_concept_id = 44777588, value_as_number = 5.55)
 
 declareTest(904, 'Baseline - Field 20002, Diabetes Mellitus')
 add_baseline(eid = '904', `53-0.0`='2020-11-02', `20002-0.0`='1220', `30002-0.0`='2020-11-01')
@@ -23,7 +23,8 @@ expect_observation(person_id = 904, observation_date = '2020-11-02', observation
 declareTest(905, 'Baseline - Chestpain absent, with source value')
 add_baseline(eid = '905', `53-0.0`='2010-10-10', `2335-0.0`='0')
 expect_observation(person_id = 905, observation_date = '2010-10-10', observation_concept_id = 40481925,
-                   value_as_concept_id = 4133044, observation_source_value = '2335|0')
+                   value_as_concept_id = 4133044, observation_source_value = '2335|0',
+                   observation_source_concept_id = 35810289)
 
 declareTest(906, 'Baseline - Chestpain present, repeat visit')
 add_baseline(eid = '906', `53-1.0`='2013-12-11', `2335-1.0`='1')
@@ -62,7 +63,8 @@ expect_observation(person_id = 913, observation_concept_id = 4059354, value_as_c
 
 declareTest(914, 'Baseline - Age at first live birth')
 add_baseline(eid = '914', `2754-0.0`='35')
-expect_observation(person_id = 914, value_as_number = 35, observation_source_value = '2754')
+expect_observation(person_id = 914, value_as_number = 35, observation_source_value = '2754',
+                   observation_source_concept_id = 35810315)
 
 declareTest(915, 'Baseline - Age at first live birth not given')
 add_baseline(eid = '915', `2754-0.0`='-3')
@@ -104,12 +106,15 @@ expect_observation(person_id = 922, observation_concept_id = 4215685, value_as_c
 
 declareTest(923, 'Baseline - type registry')
 add_baseline(eid = '923', `47-0.0`='7002')
-expect_observation(person_id = 923, observation_source_value = '47', observation_type_concept_id = 32879)
+expect_observation(person_id = 923, observation_source_value = '47', observation_type_concept_id = 32879,
+                   observation_source_concept_id = 35810113)
 
 declareTest(924, 'Baseline - type patient filled survey')
 add_baseline(eid = '924', `1558-0.0`='1')
-expect_observation(person_id = 924, observation_source_value = '1558|1', observation_type_concept_id = 32862)
+expect_observation(person_id = 924, observation_source_value = '1558|1', observation_type_concept_id = 32862,
+                   observation_source_concept_id = 35810226)
 
 declareTest(925, 'Baseline - type professional filled survey')
 add_baseline(eid = '925', `20002-0.0`='1220')
-expect_observation(person_id = 925, observation_source_value = '20002|1220', observation_type_concept_id = 32851)
+expect_observation(person_id = 925, observation_source_value = '20002|1220', observation_type_concept_id = 32851,
+                   observation_source_concept_id = 35810059)
