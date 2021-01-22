@@ -24,8 +24,8 @@ HES_PREFIX = '3'
 GP_PREFIX = '4'
 
 
-def create_baseline_visit_occurrence_id(eid: str, instance: str) -> Optional[str]:
-    return create_visit_occurrence_id(BASELINE_PREFIX, eid, instance)
+def create_baseline_visit_occurrence_id(eid: str, instance: int) -> Optional[str]:
+    return create_visit_occurrence_id(BASELINE_PREFIX, eid, str(instance))
 
 
 def create_covid_visit_occurrence_id(eid: str, date: datetime) -> Optional[str]:
