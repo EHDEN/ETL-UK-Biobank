@@ -17,6 +17,7 @@ from pathlib import Path
 
 from delphyne import Wrapper as BaseWrapper
 from delphyne.config.models import MainConfig
+from sqlalchemy.exc import IntegrityError
 
 from src.main.python.transformation import *
 from src.main.python import cdm
@@ -51,12 +52,17 @@ class Wrapper(BaseWrapper):
         # Load source to concept mappings
         self.vocab_manager.load_stcm()
 
+        # Remove constraints and indexes to improve performance
         self.db.constraint_manager.drop_cdm_constraints()
 
         # Load source data
         self.transform()
 
-        self.db.constraint_manager.add_cdm_constraints()
+        # Add constraints and indexes
+        try:
+            self.db.constraint_manager.add_cdm_constraints()
+        except IntegrityError as e:
+            logger.error(f'Constraints could not be applied {e.args}')
 
         # Log/write overview of transformations and sources
         self.summarize()
@@ -79,10 +85,6 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(covid_to_visit_occurrence)
         self.execute_transformation(baseline_to_visit_occurrence)
         self.execute_transformation(hesin_to_visit_occurrence)
-
-        # Add index to the Visit Occurrence table to speed up the Visit Occurrence lookup in later transformations.
-        self.db.constraint_manager.add_table_constraints('visit_occurrence', add_constraint=False)
-
         self.execute_transformation(hesin_to_visit_detail)
 
         # Events

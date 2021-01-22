@@ -4,8 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 from delphyne.model.mapping.code_mapper import CodeMapping
 
-from ..util import get_datetime
-from ..util import add_dot_to_opcsx_code
+from ..util import get_datetime, add_dot_to_opcsx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id
 
 
 if TYPE_CHECKING:
@@ -48,15 +47,8 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
             continue
 
         # Visit
-        visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
-            person_id=person_id,
-            record_source_value=f'HES-{row["spell_index"]}'
-        )
-
-        visit_detail_id = wrapper.lookup_visit_detail_id(
-            person_id=person_id,
-            record_source_value=f'HES-{row["ins_index"]}'
-        )
+        visit_occurrence_id = create_hes_visit_occurrence_id(row['eid'], row['spell_index'])
+        visit_detail_id = create_hes_visit_detail_id(row['eid'], row['ins_index'])
 
         for target in procedure_targets:
             r = wrapper.cdm.ProcedureOccurrence(

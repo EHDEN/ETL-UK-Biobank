@@ -4,6 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import DEFAULT_DATETIME
+from ..util import create_hes_visit_detail_id, create_hes_visit_occurrence_id
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -45,12 +46,10 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
         admit_source = "record origin:"+data_source+"/admission source:"+str(row['admisorc'])
         dis_source = "record origin:"+data_source+"/discharge destination:"+str(row['disdest'])
 
-        visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
-            person_id=person_id,
-            record_source_value=f'HES-{row["spell_index"]}'
-        )
+        visit_occurrence_id = create_hes_visit_occurrence_id(row['eid'], row['spell_index'])
 
         r = wrapper.cdm.VisitDetail(
+            visit_detail_id=create_hes_visit_detail_id(row['eid'], row['ins_index']),
             person_id=person_id,
             visit_detail_concept_id=visit_reason.get((row['admimeth'], row['dsource']), 0),
             visit_detail_start_date=start_date.date(),
@@ -64,7 +63,6 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
             discharge_to_concept_id=dis_reason.get((row['disdest'], row['dsource']), 0),
             discharge_to_source_value=dis_source,
             visit_occurrence_id=visit_occurrence_id,
-            record_source_value=f'HES-{row["ins_index"]}',
             data_source=f'HES-{data_source}'
         )
         records.append(r)
