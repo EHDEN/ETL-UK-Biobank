@@ -171,6 +171,9 @@ class Wrapper(BaseWrapper):
     def lookup_person_id(self, person_source_value) -> Optional[int]:
         return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
 
+    def lookup_ukb_vocab(self, source_code) -> Optional[int]:
+        return self.lookup_id(self.cdm.Concept, 'concept_id', concept_code=source_code, vocabulary_id='UK Biobank')
+
     def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
         with self.db.session_scope() as session:
             query = session.query(model).filter_by(**kwargs)
