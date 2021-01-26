@@ -26,7 +26,12 @@ https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
 See also: [data quality notes](./data_quality/gp_clinical.md)
 - `event_dt` (date) field: to protect individuals, UKB makes alterations to dates in relation to the participant's
  date of birth as follows: 01/01/1901 (before birth), 02/02/1902 (on birth), 03/03/1903 (after birth), 07/07/2037 (future). 
-
+- In [the subsequent mapping step from stem to domain table](index.md#Stem_to_clinical_event), 
+  we force these records to be mapped to the Measurement domain. 
+  Some READ codes map to SNOMED concepts from the condition domain (e.g. Blood pressure reading).
+  We would lose the numeric value if we map from the stem table to the condition domain.
+  Therefore, we choose not to follow the concept domain, but always map to the Measurement table.
+  
 
 ![](md_files/image1.png)
 
@@ -35,7 +40,7 @@ After mapping to the stem table, the records are mapped to their respective doma
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
 | id |  |  |  |
-| domain_id |  |  |  |
+| domain_id |  | 'Measurement' | All records from gp_clinical will be inserted in the measurement table |
 | person_id | eid |  |  |
 | start_date | event_dt | If date empty, ignore record. Only 0.1% of the records have an empty date |  |
 | start_datetime | event_dt |  |  |
