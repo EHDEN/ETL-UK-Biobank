@@ -6,7 +6,7 @@
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| visit_occurrence_id | eid<>specdate | Concatenate '2', eid and specdate in YYYYMMDD format|  |
+| visit_occurrence_id | eid<br>specdate | Concatenate '2', eid and specdate in YYYYMMDD format|  |
 | person_id | eid |  |  |
 | visit_concept_id |  |  | 32693 - Health examination |
 | visit_start_date | specdate |  |  |
