@@ -14,5 +14,5 @@ expect_visit_occurrence(person_id = 601, visit_concept_id=38004453, visit_start_
 
 declareTest(602, 'GP prescriptions to visit occurrence - no visit without date')
 add_baseline(eid = 602)
-add_gp_clinical(eid = 602, issue_date = '')
+add_gp_prescriptions(eid = 602, issue_date = '')
 expect_no_visit_occurrence(person_id = 602, visit_concept_id=38004453)
