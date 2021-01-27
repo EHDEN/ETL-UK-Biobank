@@ -51,17 +51,14 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             # Date
             date_field_id = field_mapper.lookup_date_field(field_id)
             date_column_name = f'{date_field_id}-{instance}.0'
-            fallback_date_field = field_mapper.default_date_field
-            fallback_column_name = f'{fallback_date_field}-{instance}.0'
-            if date_column_name in row:
-                if date_column_name == fallback_column_name:
-                    datetime = get_datetime(row[date_column_name])
-                else:
-                    if not is_null(row[date_column_name]):
-                        datetime = get_datetime(row[date_column_name])
-                    elif fallback_column_name in row:
-                        datetime = get_datetime(row[fallback_column_name])
+            fallback_column_name = f'{field_mapper.default_date_field}-{instance}.0'
+            if date_column_name in row and not is_null(row[date_column_name]):
+                datetime = get_datetime(row[date_column_name])
+            elif fallback_column_name in row and not is_null(row[fallback_column_name]):
+                # If date column is not given, fall back to the default date field (53)
+                datetime = get_datetime(row[fallback_column_name])
             else:
+                # No date could be retrieved
                 datetime = DEFAULT_DATETIME
                 logger.warning(f'Date column "{date_column_name}" for "{column_name}" was not found in the baseline data')
 
