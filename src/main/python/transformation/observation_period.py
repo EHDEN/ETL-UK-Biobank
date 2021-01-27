@@ -10,12 +10,11 @@ if TYPE_CHECKING:
 
 def observation_period(wrapper: Wrapper) -> List[Wrapper.cdm.ObservationPeriod]:
     gp_registrations_source = wrapper.source_data.get_source_file('gp_registrations.csv')
-    gp_registrations = gp_registrations_source.get_csv_as_df(apply_dtypes=False).rename(columns={'reg_date': 'start_date', 'deduct_date': 'end_date'})\
-        .fillna('01/01/1970')
+    gp_registrations = gp_registrations_source.get_csv_as_df(apply_dtypes=False).rename(columns={'reg_date': 'start_date', 'deduct_date': 'end_date'})
 
     hesin_source = wrapper.source_data.get_source_file('hesin.csv')
     hesin = hesin_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'epistart', 'epiend']).\
-        rename(columns={'epistart': 'start_date', 'epiend': 'end_date'}).fillna('01/01/1970')
+        rename(columns={'epistart': 'start_date', 'epiend': 'end_date'})
 
     covid_source = wrapper.source_data.get_source_file('covid.csv')
     covid = covid_source.get_csv_as_df(apply_dtypes=False).rename(columns={'specdate': 'start_date'})
@@ -23,14 +22,14 @@ def observation_period(wrapper: Wrapper) -> List[Wrapper.cdm.ObservationPeriod]:
 
     baseline_source = wrapper.source_data.get_source_file('baseline.csv')
     baseline = baseline_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '53-0.0', '53-1.0', '53-2.0', '53-3.0']).\
-        rename(columns={'53-0.0': 'start_date'}).fillna('01/01/1970')
+        rename(columns={'53-0.0': 'start_date'})
 
-    baseline['end_date'] = baseline[['start_date', '53-1.0', '53-2.0', '53-3.0']].max(axis=1)
+    baseline['end_date'] = baseline[['start_date', '53-1.0', '53-2.0', '53-3.0']].astype('datetime64[ns]').fillna('1970-01-01').max(axis=1)
 
     df = pd.concat([gp_registrations, hesin, covid, baseline])
 
-    df['start_date'] = df['start_date'].astype('datetime64[ns]')
-    df['end_date'] = df['end_date'].astype('datetime64[ns]')
+    df['start_date'] = df['start_date'].fillna('1970-01-01').astype('datetime64[ns]')
+    df['end_date'] = df['end_date'].fillna('1970-01-01').astype('datetime64[ns]')
 
     records = []
 
