@@ -2,7 +2,9 @@
 
 ### Reading from gp_clinical and gp_prescriptions
 
-We assume that a person can have only one gp visit per day. To get all the visits, we take the union of gp_clinical and gp_prescriptions. Then we map each unique combination of eid and event_dt/issue_date as visit.
+We assume that a person can have only one gp visit per day. 
+To get all the visits, we take the union of gp_clinical and gp_prescriptions. Then we map each unique combination of eid and event_dt/issue_date as visit.
+If the `event_dt` or `issue_date` is not given, no visit is created.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
