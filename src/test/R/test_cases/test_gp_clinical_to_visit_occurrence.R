@@ -12,3 +12,8 @@ add_baseline(eid = 401)
 add_gp_clinical(eid = 401, event_dt = '02/12/2015')
 expect_visit_occurrence(person_id = 401, visit_concept_id=38004453, visit_start_date = '2015-12-02', visit_end_date = '2015-12-02',
                         visit_type_concept_id = 32827)
+
+declareTest(402, 'GP clinical to visit occurrence - no visit without date')
+add_baseline(eid = 402)
+add_gp_clinical(eid = 402, event_dt = '')
+expect_no_visit_occurrence(person_id = 402, visit_concept_id=38004453)
