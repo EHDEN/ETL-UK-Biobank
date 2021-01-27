@@ -29,24 +29,19 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.source_data.get_source_file('baseline.csv')
     df = source.get_csv_as_df(apply_dtypes=False)
 
-    # create dict column : (field_id, instance) to speed up lookup
+    # check for invalid columns and drop them
     cols_to_drop = []
-    col_mapping_dict = {}
     for col in list(df.columns)[1:]:  # skip eid
         field_id, instance = parse_column_name(col)
-        # check for invalid columns, they should not be processed
         if field_id is None:
             logger.warning(f'Column "{col}" does not match expected field pattern. '
                            f'Cannot retrieve field_id and instance, hence column will be '
                            f'dropped.')
             cols_to_drop.append(col)
-        else:
-            col_mapping_dict[col] = field_id, instance
-    # drop invalid columns
     df.drop(columns=cols_to_drop, inplace=True)
 
     # load mappings from UKB code to standard concept_id
-    field_ids = [col_mapping_dict[col_name][0] for col_name in list(df.columns)[1:]]
+    field_ids = [parse_column_name(col_name)[0] for col_name in df.columns]
     field_to_concept_id_dict = wrapper.generate_code_to_concept_id_dict(
         field_ids, vocabulary_id='UK Biobank')
 
@@ -64,7 +59,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             if value == '' or pd.isna(value):
                 continue
 
-            field_id, instance = col_mapping_dict[column_name]
+            field_id, instance = parse_column_name(column_name)
 
             # Date
             date_field_id = field_mapper.lookup_date_field(field_id)
