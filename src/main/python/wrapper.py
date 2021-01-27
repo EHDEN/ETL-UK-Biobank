@@ -97,7 +97,7 @@ class Wrapper(BaseWrapper):
         self.load_from_stem_table()  # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
 
         # Post process
-        logger.info('Observation Period')
+        logger.info('Observation Period...')
         self.execute_sql_file(self.path_sql_transformations / 'observation_period.sql')
         logger.info('Creating eras...')
         self.execute_sql_file(self.path_sql_transformations / 'drug_era.sql')
