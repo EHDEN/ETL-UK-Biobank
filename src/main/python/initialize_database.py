@@ -61,7 +61,7 @@ def initialize_database(config: MainConfig, do_force_vocab_load = False):
             except Exception as e:
                 logger.warning(e)
 
-    logger.info(connection.execute("SELECT vocabulary_version FROM vocab.vocabulary WHERE vocabulary_id = 'None';"))
-    logger.info(connection.execute("SELECT count(*) FROM vocab.vocabulary;"))
+    logger.info(connection.execute("SELECT vocabulary_version FROM vocab.vocabulary WHERE vocabulary_id = 'None';").first())
+    logger.info(connection.execute("SELECT count(*) FROM vocab.vocabulary;").first())
 
     connection.close()
