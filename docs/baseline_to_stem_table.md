@@ -24,7 +24,9 @@ Notes:
  - Fields not given in the mapping tables are also ignored (these are fields not prioritised)
  - Mappings that have not been approved will be mapped to a 0 (see the mapping status column in the mapping tables). 
  - If a field has no value mappings, but the value can't be converted to a float, then it is treated as free-text and populates the value_as_string field.
- - There are some cases where instances run higher than 3. These correspond to positions in the death or cancer registry and should be handled separately. **TODO**
+ - There are some cases where instances run higher than 3. These correspond to positions in the death or cancer registry and are handled separately.
+ - Waist and Hip circumference (fields 48 and 49) are mapped to observation concepts ([4172830](https://athena.ohdsi.org/search-terms/terms/4172830) [4111665](https://athena.ohdsi.org/search-terms/terms/4111665), respectively).
+   There does not exist an equivalent target concept for both in the measurement domain (see also issue #176).
 
 | Destination Field | Source field | Logic | Comment |
 | --- | --- | --- | --- |

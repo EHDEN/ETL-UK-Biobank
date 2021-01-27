@@ -118,3 +118,23 @@ declareTest(925, 'Baseline - type professional filled survey')
 add_baseline(eid = '925', `20002-0.0`='1220')
 expect_observation(person_id = 925, observation_source_value = '20002|1220', observation_type_concept_id = 32851,
                    observation_source_concept_id = 35810059)
+
+declareTest(926, 'Baseline - date field related to concept field, instance 0')
+add_baseline(eid = '926', `30140-0.0` = '3.8', `30142-0.0` = '2018-09-11')
+expect_measurement(person_id = 926, measurement_date = '2018-09-11')
+
+declareTest(927, 'Baseline - date field related to concept field, instance 2')
+add_baseline(eid = '927', `30080-2.0` = '235.7', `30082-2.0` = '1999-02-08')
+expect_measurement(person_id = 927, measurement_date = '1999-02-08')
+
+declareTest(928, 'Baseline - realetd date field is empty backup (53) taken')
+add_baseline(eid = 928, `30080-3.0` = '228',`30082-3.0` = '', `53-3.0` = '2019-03-16')
+expect_measurement(person_id = 928, measurement_date = '2019-03-16')
+
+declareTest(929, 'Baseline - no related date field use field 53')
+add_baseline(eid = '929', `4080-1.0` = '137', `53-1.0` = '2017-09-13')
+expect_measurement(person_id = 929, measurement_date = '2017-09-13')
+
+declareTest(930, 'Baseline - empty date field use default date')
+add_baseline(eid = '930', `4079-3.0` = '81', `53-3.0` = '')
+expect_measurement(person_id = 930, measurement_date = '1970-01-01')

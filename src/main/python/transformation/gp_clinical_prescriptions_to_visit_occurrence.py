@@ -31,7 +31,11 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
 
     for _, row in df.iterrows():
         person_id = row['eid']
-        visit_date = get_datetime(row['date'], "%d/%m/%Y")
+        visit_date = get_datetime(row['date'], "%d/%m/%Y", default_date=None)
+
+        # Do not create a visit without a visit date. Otherwise duplicate visits are created.
+        if not visit_date:
+            continue
 
         r = wrapper.cdm.VisitOccurrence(
             visit_occurrence_id=create_gp_visit_occurrence_id(row['eid'], visit_date),

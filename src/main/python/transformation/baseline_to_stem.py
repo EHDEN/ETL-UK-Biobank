@@ -7,7 +7,7 @@ from typing import List, Tuple, TYPE_CHECKING, Optional
 from pathlib import Path
 from ..field_mapper.FieldConceptMapper import FieldConceptMapper
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
-from ..util import create_baseline_visit_occurrence_id
+from ..util import create_baseline_visit_occurrence_id, is_null
 import pandas as pd
 
 if TYPE_CHECKING:
@@ -64,9 +64,14 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             # Date
             date_field_id = field_mapper.lookup_date_field(field_id)
             date_column_name = f'{date_field_id}-{instance}.0'
-            try:
+            fallback_column_name = f'{field_mapper.default_date_field}-{instance}.0'
+            if date_column_name in row and not is_null(row[date_column_name]):
                 datetime = get_datetime(row[date_column_name])
-            except:
+            elif fallback_column_name in row and not is_null(row[fallback_column_name]):
+                # If date column is not given, fall back to the default date field (53)
+                datetime = get_datetime(row[fallback_column_name])
+            else:
+                # No date could be retrieved
                 datetime = DEFAULT_DATETIME
                 logger.warning(f'Date column "{date_column_name}" for "{column_name}" '
                                f'was not found in the baseline data')

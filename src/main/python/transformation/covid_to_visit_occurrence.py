@@ -11,6 +11,7 @@ if TYPE_CHECKING:
 def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
     source = wrapper.source_data.get_source_file('covid.csv')
     df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'specdate', 'laboratory'])
+    df = df.drop_duplicates(['eid', 'specdate'])
 
     records = []
 
