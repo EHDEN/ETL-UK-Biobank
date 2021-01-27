@@ -65,3 +65,9 @@ declareTest(1211, 'Test truncate long drug source value (> 50 chars)')
 add_baseline(eid = '1211')
 add_gp_prescriptions(eid = '1211', dmd_code = NULL, read_2 = NULL, drug_name = 'drug name well over the ridiculously short 50 character limit' )
 expect_drug_exposure(person_id = 1211, drug_source_value = 'drug name well over the ridiculously short 50 char')
+
+declareTest(1212, 'GP clinical to stem, no date no visit')
+add_baseline(eid = 1212)
+add_gp_prescriptions(eid = 1212, issue_date = '', dmd_code = '324430000')
+expect_drug_exposure(person_id = 1212,
+                     visit_occurrence_id = NULL)

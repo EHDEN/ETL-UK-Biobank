@@ -48,7 +48,6 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
 
-        # Look up visit_id in VisitOccurrence table
         visit_id = create_gp_visit_occurrence_id(row['eid'], event_date)
 
         unit_source_value, unit_concept_id, operator = None, None, None
