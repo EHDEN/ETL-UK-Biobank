@@ -51,8 +51,10 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
-        # Look up visit_id in VisitOccurrence table
-        visit_id = create_gp_visit_occurrence_id(row['eid'], date_start)
+        if is_null(row['issue_date']):
+            visit_id = None
+        else:
+            visit_id = create_gp_visit_occurrence_id(row['eid'], date_start)
 
         raw_quantity = row['quantity'] if not is_null(row['quantity']) else None
         unit = row['quantity'][:50] if not is_null(row['quantity']) else None
