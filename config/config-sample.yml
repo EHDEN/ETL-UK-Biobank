@@ -8,7 +8,7 @@ database:
   password: 'postgres'
 
 # (Relative) path to the source data folder (optional)
-source_data_folder: './src/test/R/test_intermediates/source_data'
+source_data_folder: './resources/synthetic_data/small_set'
 
 # The schema names of the OMOP CDM (target schema) and the vocabulary
 # tables. Additional key-value pairs can be added here if you have

@@ -71,9 +71,8 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(covid_to_care_site)
         self.execute_transformation(assessment_center_to_care_site)
 
-        # Person and observation period
+        # Person
         self.execute_transformation(baseline_to_person)
-        self.execute_transformation(observation_period)
 
         # Visit
         self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
@@ -98,6 +97,8 @@ class Wrapper(BaseWrapper):
         self.load_from_stem_table()  # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
 
         # Post process
+        logger.info('Observation Period')
+        self.execute_sql_file(self.path_sql_transformations / 'observation_period.sql')
         logger.info('Creating eras...')
         self.execute_sql_file(self.path_sql_transformations / 'drug_era.sql')
         self.execute_sql_file(self.path_sql_transformations / 'condition_era.sql')
