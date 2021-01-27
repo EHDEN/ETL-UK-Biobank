@@ -74,6 +74,11 @@ class Wrapper(BaseWrapper):
         # Person
         self.execute_transformation(baseline_to_person)
 
+        # Death
+        self.execute_transformation(death_to_death)
+        self.execute_transformation(death_to_condition_occurrence)
+        self.execute_transformation(baseline_to_death)
+
         # Visit
         self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
         self.execute_transformation(covid_to_visit_occurrence)
