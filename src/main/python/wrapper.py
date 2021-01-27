@@ -12,19 +12,18 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+import csv
 import logging
 from pathlib import Path
+from typing import Dict, List, Optional
 
 from delphyne import Wrapper as BaseWrapper
 from delphyne.config.models import MainConfig
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from src.main.python.transformation import *
 from src.main.python import cdm
-
-from typing import Optional
-from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
-import csv
 
 logger = logging.getLogger(__name__)
 
@@ -185,3 +184,27 @@ class Wrapper(BaseWrapper):
                 logger.warning(f'Multiple {id_to_lookup}\'s found for {kwargs}, returning first only')
                 visit_record = query.first()
             return getattr(visit_record, id_to_lookup)
+
+    def generate_code_to_concept_id_dict(self, vocabulary_codes: List[str], vocabulary_id: str) \
+            -> Dict[str, int]:
+
+        vocabulary_codes = list(set(vocabulary_codes))  # remove redundant codes
+
+        with self.db.session_scope() as session:
+            records = session.query(
+                self.cdm.Concept.concept_id,
+                self.cdm.Concept.concept_code) \
+                .filter(self.cdm.Concept.vocabulary_id == vocabulary_id) \
+                .filter(self.cdm.Concept.concept_code.in_(vocabulary_codes)) \
+                .all()
+
+        mapping_dict = {}
+        for record in records:
+            mapping_dict[record.concept_code] = record.concept_id
+
+        not_found = set(vocabulary_codes) - set(mapping_dict.keys())
+        if not_found:
+            logger.warning(f'No mapping to concept_id could be generated for '
+                           f'{len(not_found)}/{len(vocabulary_codes)} vocabulary codes:'
+                           f' {not_found}')
+        return mapping_dict
