@@ -65,6 +65,11 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             field_id = column_name_to_field_id.get(column_name)
             instance = column_name_to_instance.get(column_name)
 
+            # Lookup the mapping. If not targets defined (or ignored), skip it before calculating other things.
+            targets = field_mapper.lookup(field_id, value)
+            if not targets:
+                continue
+
             # Date
             date_field_id = field_mapper.lookup_date_field(field_id)
             date_column_name = f'{date_field_id}-{instance}.0'
@@ -83,9 +88,8 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             # Visit
             visit_occurrence_id = create_baseline_visit_occurrence_id(person_id, instance)
 
-            targets = field_mapper.lookup(field_id, value)
+            source_concept_id = field_to_concept_id_dict.get(field_id, None)
             for target in targets:
-                source_concept_id = field_to_concept_id_dict.get(field_id, None)
                 records.append(wrapper.cdm.StemTable(
                     person_id=person_id,
                     start_date=datetime.date(),
