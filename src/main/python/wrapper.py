@@ -15,7 +15,7 @@
 import csv
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Iterable
 
 from delphyne import Wrapper as BaseWrapper
 from delphyne.config.models import MainConfig
@@ -186,7 +186,7 @@ class Wrapper(BaseWrapper):
                 visit_record = query.first()
             return getattr(visit_record, id_to_lookup)
 
-    def generate_code_to_concept_id_dict(self, vocabulary_codes: List[str], vocabulary_id: str) \
+    def generate_code_to_concept_id_dict(self, vocabulary_codes: Iterable[str], vocabulary_id: str) \
             -> Dict[str, int]:
 
         vocabulary_codes = list(set(vocabulary_codes))  # remove redundant codes

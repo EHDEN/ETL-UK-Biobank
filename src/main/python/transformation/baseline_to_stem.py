@@ -31,8 +31,12 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
     # check for invalid columns and drop them
     cols_to_drop = []
+    column_name_to_field_id = {}
+    column_name_to_instance = {}
     for col in list(df.columns)[1:]:  # skip eid
         field_id, instance = parse_column_name(col)
+        column_name_to_field_id[col] = field_id
+        column_name_to_instance[col] = instance
         if field_id is None:
             logger.warning(f'Column "{col}" does not match expected field pattern. '
                            f'Cannot retrieve field_id and instance, hence column will be '
@@ -41,9 +45,8 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     df.drop(columns=cols_to_drop, inplace=True)
 
     # load mappings from UKB code to standard concept_id
-    field_ids = [parse_column_name(col_name)[0] for col_name in df.columns]
     field_to_concept_id_dict = wrapper.generate_code_to_concept_id_dict(
-        field_ids, vocabulary_id='UK Biobank')
+        column_name_to_field_id.values(), vocabulary_id='UK Biobank')
 
     field_mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
 
@@ -59,7 +62,8 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             if value == '' or pd.isna(value):
                 continue
 
-            field_id, instance = parse_column_name(column_name)
+            field_id = column_name_to_field_id.get(column_name)
+            instance = column_name_to_instance.get(column_name)
 
             # Date
             date_field_id = field_mapper.lookup_date_field(field_id)
