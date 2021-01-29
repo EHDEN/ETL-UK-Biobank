@@ -138,3 +138,7 @@ expect_measurement(person_id = 929, measurement_date = '2017-09-13')
 declareTest(930, 'Baseline - empty date field use default date')
 add_baseline(eid = '930', `4079-3.0` = '81', `53-3.0` = '')
 expect_measurement(person_id = 930, measurement_date = '1970-01-01')
+
+declareTest(931, 'Baseline - datetime format')
+add_baseline(eid = '931', `30070-0.0` = '123', `30072-0.0` = '2010-07-08T07:39:23')
+expect_measurement(person_id = 931, measurement_date = '2010-07-08')
