@@ -142,3 +142,8 @@ expect_measurement(person_id = 930, measurement_date = '1970-01-01')
 declareTest(931, 'Baseline - datetime format')
 add_baseline(eid = '931', `30070-0.0` = '123', `30072-0.0` = '2010-07-08T07:39:23')
 expect_measurement(person_id = 931, measurement_date = '2010-07-08')
+
+declareTest(932, 'Baseline - truncate long value')
+# additional quotes around string value needed to escape comma's
+add_baseline(eid = '932', `53-0.0` = '2020-02-01', `40010-0.0` = '"Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) Metastatic Renal Carcinoma (Spinal Metastasis), Four Level Vertebrae Resection, Dural Resection with Dural Patch Bilateral Thoracotomies - all for Tumour Resection."')
+expect_observation(person_id = 932, observation_date = '2020-02-01', value_as_string = 'Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) M')
