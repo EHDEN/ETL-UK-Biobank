@@ -67,35 +67,35 @@ class Wrapper(BaseWrapper):
         self.summarize()
 
     def transform(self):
-        self.execute_transformation(covid_to_care_site)
-        self.execute_transformation(assessment_center_to_care_site)
+        self.execute_transformation(covid_to_care_site, bulk=True)
+        self.execute_transformation(assessment_center_to_care_site, bulk=True)
 
         # Person
-        self.execute_transformation(baseline_to_person)
+        self.execute_transformation(baseline_to_person, bulk=True)
 
         # Death
-        self.execute_transformation(death_to_death)
-        self.execute_transformation(death_to_condition_occurrence)
-        self.execute_transformation(baseline_to_death)
+        self.execute_transformation(death_to_death, bulk=True)
+        self.execute_transformation(death_to_condition_occurrence, bulk=True)
+        self.execute_transformation(baseline_to_death, bulk=True)
 
         # Visit
-        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
-        self.execute_transformation(covid_to_visit_occurrence)
-        self.execute_transformation(baseline_to_visit_occurrence)
-        self.execute_transformation(hesin_to_visit_occurrence)
-        self.execute_transformation(hesin_to_visit_detail)
+        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True)
+        self.execute_transformation(covid_to_visit_occurrence, bulk=True)
+        self.execute_transformation(baseline_to_visit_occurrence, bulk=True)
+        self.execute_transformation(hesin_to_visit_occurrence, bulk=True)
+        self.execute_transformation(hesin_to_visit_detail, bulk=True)
 
         # Events
         self.execute_transformation(baseline_to_stem, bulk=True)
-        self.execute_transformation(covid_to_observation)
-        self.execute_transformation(gp_clinical_to_stem_table)
-        self.execute_transformation(gp_prescriptions_to_drug_exposure)
-        self.execute_transformation(hesin_diag_to_condition_occurrence)
-        self.execute_transformation(hesin_oper_to_procedure_occurrence)
-        self.execute_transformation(cancer_register_to_condition_occurrence)
+        self.execute_transformation(covid_to_observation, bulk=True)
+        self.execute_transformation(gp_clinical_to_stem_table, bulk=True)
+        self.execute_transformation(gp_prescriptions_to_drug_exposure, bulk=True)
+        self.execute_transformation(hesin_diag_to_condition_occurrence, bulk=True)
+        self.execute_transformation(hesin_oper_to_procedure_occurrence, bulk=True)
+        self.execute_transformation(cancer_register_to_condition_occurrence, bulk=True)
 
         # CDM Source
-        self.execute_transformation(cdm_source)
+        self.execute_transformation(cdm_source, bulk=True)
 
         # Stem table to domains
         self.load_from_stem_table()  # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
