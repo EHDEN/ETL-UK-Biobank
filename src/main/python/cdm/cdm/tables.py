@@ -269,6 +269,10 @@ class SourceToConceptMap(BaseSourceToConceptMap, Base):
     pass
 
 
+class SourceToConceptMapVersion(BaseSourceToConceptMapVersion, Base):
+    pass
+
+
 class DrugStrength(BaseDrugStrength, Base):
     pass
 
