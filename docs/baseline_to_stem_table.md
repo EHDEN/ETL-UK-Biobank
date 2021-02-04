@@ -40,11 +40,11 @@ Notes:
 | visit_occurrence_id |  |  | TBD |
 | provider_id |  |  | Not provided |
 | concept_id | target.event_concept_id | Lookup from field_id and value (step c) |  |
-| source_value | `field_id` value | If value numeric: `field_id`<br>If discrete: `field_id`\|`value` |  |
+| source_value | `field_id` value | If value numeric: `field_id`<br>If discrete: `field_id`\|`value`. Truncated to 50 characters. |  |
 | source_concept_id | `field_id` value | Use `field_id` to find the UK Biobank vocabulary concept_id | UK Biobank has it is own vocabulary in Athena |
 | value_as_concept_id | target.value_as_concept_id | Lookup from field_id and value (step c) | If value has a discrete mapping |
 | value_as_number | target.value_as_number | Lookup from field_id and value (step c) | If value is numeric |
-| value_as_string | target.value_as_string | Lookup from field_id and value (step c) | If value is text |
+| value_as_string | target.value_as_string | Lookup from field_id and value (step c). Truncated to 50 characters. | If value is text |
 | value_source_value |  |  | Not used, field and value are in source_value column |
 | unit_concept_id | target.unit_concept_id | Lookup from field_id and value (step c) | If value is numeric |
 | unit_source_value |  |  | Not used, unit is directly derived from the `field_id` |
