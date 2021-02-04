@@ -45,14 +45,9 @@ class Wrapper(BaseWrapper):
         self.drop_cdm()
         self.create_cdm()
 
-        # Load custom vocabularies
-        self.vocab_manager.load_custom_vocabularies()
-
-        # Load source to concept mappings
-        self.vocab_manager.load_stcm()
-
-        # Remove constraints and indexes to improve performance
-        self.db.constraint_manager.drop_cdm_constraints()
+        # Load (custom) vocabularies and source_to_concept_map tables
+        self.vocab_manager.standard_vocabularies.load()
+        self.vocab_manager.load_custom_vocab_and_stcm_tables()
 
         # Load source data
         self.transform()
