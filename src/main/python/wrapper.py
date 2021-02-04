@@ -19,7 +19,6 @@ from typing import Dict, Optional, Iterable
 
 from delphyne import Wrapper as BaseWrapper
 from delphyne.config.models import MainConfig
-from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from src.main.python.transformation import *
@@ -48,14 +47,14 @@ class Wrapper(BaseWrapper):
         self.vocab_manager.standard_vocabularies.load()
         self.vocab_manager.load_custom_vocab_and_stcm_tables()
 
+        # Remove constraints and indexes to improve performance
+        self.db.constraint_manager.drop_cdm_constraints()
+
         # Load source data
         self.transform()
 
         # Add constraints and indexes
-        try:
-            self.db.constraint_manager.add_cdm_constraints()
-        except IntegrityError as e:
-            logger.error(f'Constraints could not be applied {e.args}')
+        self.db.constraint_manager.add_cdm_constraints(errors='ignore')
 
         # Log/write overview of transformations and sources
         self.summarize()
