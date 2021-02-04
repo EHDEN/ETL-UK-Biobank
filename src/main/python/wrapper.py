@@ -15,7 +15,7 @@
 import csv
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, Iterable
+from typing import Dict, Optional, Iterable
 
 from delphyne import Wrapper as BaseWrapper
 from delphyne.config.models import MainConfig
@@ -36,7 +36,6 @@ class Wrapper(BaseWrapper):
 
         # Load config settings
         self.path_mapping_tables = Path('./resources/mapping_tables')
-        self.path_sql_transformations = Path('./src/main/sql')
 
     def run(self):
 
@@ -97,22 +96,22 @@ class Wrapper(BaseWrapper):
 
         # Post process
         logger.info('Observation Period...')
-        self.execute_sql_file(self.path_sql_transformations / 'observation_period.sql')
+        self.execute_sql_file('observation_period.sql')
         logger.info('Creating eras...')
-        self.execute_sql_file(self.path_sql_transformations / 'drug_era.sql')
-        self.execute_sql_file(self.path_sql_transformations / 'condition_era.sql')
+        self.execute_sql_file('drug_era.sql')
+        self.execute_sql_file('condition_era.sql')
 
         logger.info('{:-^100}'.format(' Summary stats '))
 
     def load_from_stem_table(self):
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_observation.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_measurement.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_condition_occurrence.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_procedure_occurrence.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_drug_exposure.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_device_exposure.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_specimen.sql'))
+        self.execute_sql_file('stem_table_to_observation.sql')
+        self.execute_sql_file('stem_table_to_measurement.sql')
+        self.execute_sql_file('stem_table_to_condition_occurrence.sql')
+        self.execute_sql_file('stem_table_to_procedure_occurrence.sql')
+        self.execute_sql_file('stem_table_to_drug_exposure.sql')
+        self.execute_sql_file('stem_table_to_device_exposure.sql')
+        self.execute_sql_file('stem_table_to_specimen.sql')
 
     # TODO: check support for below functions in omop-etl-wrapper
     def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True, approved_only: bool = True):
