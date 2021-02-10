@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
-from ..util import add_dot_to_icdx_code
+from ..util import add_dot_to_icdx_code, refactor_icdx_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -33,7 +33,9 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
 
     df = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
-    df['cause_icd10_dot'] = df['cause_icd10'].apply(add_dot_to_icdx_code)
+    df['cause_icd10_dot'] = df['cause_icd10'].apply(refactor_icdx_code)
+
+    df['cause_icd10_dot'] = df['cause_icd10_dot'].apply(add_dot_to_icdx_code)
     mapper = wrapper.code_mapper.generate_code_mapping_dictionary(
         'ICD10', restrict_to_codes=list(df['cause_icd10_dot']))
 

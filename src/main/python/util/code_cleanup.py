@@ -16,16 +16,31 @@ from typing import Dict, Optional
 
 from src.main.python.util.general_functions import is_null
 
+
 def add_dot_to_icdx_code(icd_code: str) -> str:
     # 45532996 =  invalid ICD10 code concept
     if not is_null(icd_code) and len(icd_code) > 3 and not '.' in icd_code and icd_code != '45532996':
         return icd_code[:3] + '.' + icd_code[3:]
     return icd_code
 
+
 def add_dot_to_opcsx_code(opcs_code: str) -> str:
     if not is_null(opcs_code) and len(opcs_code) > 3 and not '.' in opcs_code:
         return opcs_code[:3] + '.' + opcs_code[3:]
     return opcs_code
+
+
+def refactor_icdx_code(icd_code: str) -> str:
+    if not is_null(icd_code) and '.' not in icd_code:
+        if not is_null(icd_code) and icd_code[0] not in ['E', 'V']:
+            return icd_code[:3]
+        elif not is_null(icd_code) and icd_code[0] == 'E' and len(icd_code) > 4:
+            return icd_code[:4] + '.' + icd_code[4]
+        elif not is_null(icd_code) and icd_code[0] == 'V':
+            return icd_code[:3] + '.' + icd_code[3]
+        else:
+            return icd_code
+
 
 def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str, str]] = None) -> str:
     """
