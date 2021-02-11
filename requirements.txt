@@ -1,4 +1,4 @@
-delphyne == 0.1.0a2
+delphyne == 0.1.0a3
 click == 7.1.1
 numpy == 1.18.1
 pandas == 1.0.1
