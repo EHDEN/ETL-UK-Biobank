@@ -160,20 +160,20 @@ initFramework <- function() {
   defaults$code <- '-99'
   defaults$value <- '-9999999'
   defaults$unit <- '-9999999'
-  assign('0_covid19_emis_gp_clinical.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('0_covid19_emis_gp_clinical', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1000040'
   defaults$issue_date <- '10/04/2018'
   defaults$dmd_code <- '317291008'
-  assign('1_covid19_tpp_gp_scripts.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('1_covid19_tpp_gp_scripts', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1000163'
   defaults$issue_date <- '09/01/2020'
   defaults$code_type <- '6'
   defaults$code <- '322236009'
-  assign('2_covid19_emis_gp_scripts.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('2_covid19_emis_gp_scripts', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1000154'
@@ -181,7 +181,7 @@ initFramework <- function() {
   defaults$code_type <- '0'
   defaults$code <- '246A.'
   defaults$value <- '0'
-  assign('3_covid19_tpp_gp_clinical.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('3_covid19_tpp_gp_clinical', defaults, envir = frameworkContext$defaultValues)
 
   frameworkContext$sourceFieldsMapped <- c()
   frameworkContext$targetFieldsMapped <- c()
@@ -581,8 +581,8 @@ set_defaults_death_c <- function(eid, ins_index, dsource, source, date_of_death)
   invisible(defaults)
 }
 
-set_defaults_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code, value, unit) {
-  defaults <- get('0_covid19_emis_gp_clinical.txt.gz', envir = frameworkContext$defaultValues)
+set_defaults_0_covid19_emis_gp_clinical <- function(eid, event_dt, code_type, code, value, unit) {
+  defaults <- get('0_covid19_emis_gp_clinical', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -601,12 +601,12 @@ set_defaults_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_t
   if (!missing(unit)) {
     defaults$unit <- unit
   }
-  assign('0_covid19_emis_gp_clinical.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('0_covid19_emis_gp_clinical', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_1_covid19_tpp_gp_scripts.txt.gz <- function(eid, issue_date, dmd_code) {
-  defaults <- get('1_covid19_tpp_gp_scripts.txt.gz', envir = frameworkContext$defaultValues)
+set_defaults_1_covid19_tpp_gp_scripts <- function(eid, issue_date, dmd_code) {
+  defaults <- get('1_covid19_tpp_gp_scripts', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -616,12 +616,12 @@ set_defaults_1_covid19_tpp_gp_scripts.txt.gz <- function(eid, issue_date, dmd_co
   if (!missing(dmd_code)) {
     defaults$dmd_code <- dmd_code
   }
-  assign('1_covid19_tpp_gp_scripts.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('1_covid19_tpp_gp_scripts', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_2_covid19_emis_gp_scripts.txt.gz <- function(eid, issue_date, code_type, code) {
-  defaults <- get('2_covid19_emis_gp_scripts.txt.gz', envir = frameworkContext$defaultValues)
+set_defaults_2_covid19_emis_gp_scripts <- function(eid, issue_date, code_type, code) {
+  defaults <- get('2_covid19_emis_gp_scripts', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -634,12 +634,12 @@ set_defaults_2_covid19_emis_gp_scripts.txt.gz <- function(eid, issue_date, code_
   if (!missing(code)) {
     defaults$code <- code
   }
-  assign('2_covid19_emis_gp_scripts.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('2_covid19_emis_gp_scripts', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
-set_defaults_3_covid19_tpp_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code, value) {
-  defaults <- get('3_covid19_tpp_gp_clinical.txt.gz', envir = frameworkContext$defaultValues)
+set_defaults_3_covid19_tpp_gp_clinical <- function(eid, event_dt, code_type, code, value) {
+  defaults <- get('3_covid19_tpp_gp_clinical', envir = frameworkContext$defaultValues)
   if (!missing(eid)) {
     defaults$eid <- eid
   }
@@ -655,7 +655,7 @@ set_defaults_3_covid19_tpp_gp_clinical.txt.gz <- function(eid, event_dt, code_ty
   if (!missing(value)) {
     defaults$value <- value
   }
-  assign('3_covid19_tpp_gp_clinical.txt.gz', defaults, envir = frameworkContext$defaultValues)
+  assign('3_covid19_tpp_gp_clinical', defaults, envir = frameworkContext$defaultValues)
   invisible(defaults)
 }
 
@@ -709,23 +709,23 @@ get_defaults_death_c <- function() {
   return(defaults)
 }
 
-get_defaults_0_covid19_emis_gp_clinical.txt.gz <- function() {
-  defaults <- get('0_covid19_emis_gp_clinical.txt.gz', envir = frameworkContext$defaultValues)
+get_defaults_0_covid19_emis_gp_clinical <- function() {
+  defaults <- get('0_covid19_emis_gp_clinical', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_1_covid19_tpp_gp_scripts.txt.gz <- function() {
-  defaults <- get('1_covid19_tpp_gp_scripts.txt.gz', envir = frameworkContext$defaultValues)
+get_defaults_1_covid19_tpp_gp_scripts <- function() {
+  defaults <- get('1_covid19_tpp_gp_scripts', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_2_covid19_emis_gp_scripts.txt.gz <- function() {
-  defaults <- get('2_covid19_emis_gp_scripts.txt.gz', envir = frameworkContext$defaultValues)
+get_defaults_2_covid19_emis_gp_scripts <- function() {
+  defaults <- get('2_covid19_emis_gp_scripts', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
-get_defaults_3_covid19_tpp_gp_clinical.txt.gz <- function() {
-  defaults <- get('3_covid19_tpp_gp_clinical.txt.gz', envir = frameworkContext$defaultValues)
+get_defaults_3_covid19_tpp_gp_clinical <- function() {
+  defaults <- get('3_covid19_tpp_gp_clinical', envir = frameworkContext$defaultValues)
   return(defaults)
 }
 
@@ -1613,14 +1613,14 @@ add_death <- function(eid, ins_index, dsource, source, date_of_death) {
   invisible(NULL)
 }
 
-add_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code, value, unit) {
-  defaults <- get('0_covid19_emis_gp_clinical.txt.gz', envir = frameworkContext$defaultValues)
+add_0_covid19_emis_gp_clinical <- function(eid, event_dt, code_type, code, value, unit) {
+  defaults <- get('0_covid19_emis_gp_clinical', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.txt.gz.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1628,7 +1628,7 @@ add_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code
   if (missing(event_dt)) {
     event_dt <- defaults$event_dt
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.txt.gz.event_dt')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.event_dt')
   }
   fields <- c(fields, "event_dt")
   values <- c(values, if (is.null(event_dt)) "NULL" else if (is(event_dt, "subQuery")) paste0("(", as.character(event_dt), ")") else paste0("'", as.character(event_dt), "'"))
@@ -1636,7 +1636,7 @@ add_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code
   if (missing(code_type)) {
     code_type <- defaults$code_type
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.txt.gz.code_type')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.code_type')
   }
   fields <- c(fields, "code_type")
   values <- c(values, if (is.null(code_type)) "NULL" else if (is(code_type, "subQuery")) paste0("(", as.character(code_type), ")") else paste0("'", as.character(code_type), "'"))
@@ -1644,7 +1644,7 @@ add_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code
   if (missing(code)) {
     code <- defaults$code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.txt.gz.code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.code')
   }
   fields <- c(fields, "code")
   values <- c(values, if (is.null(code)) "NULL" else if (is(code, "subQuery")) paste0("(", as.character(code), ")") else paste0("'", as.character(code), "'"))
@@ -1652,7 +1652,7 @@ add_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code
   if (missing(value)) {
     value <- defaults$value
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.txt.gz.value')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.value')
   }
   fields <- c(fields, "value")
   values <- c(values, if (is.null(value)) "NULL" else if (is(value, "subQuery")) paste0("(", as.character(value), ")") else paste0("'", as.character(value), "'"))
@@ -1660,24 +1660,24 @@ add_0_covid19_emis_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code
   if (missing(unit)) {
     unit <- defaults$unit
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.txt.gz.unit')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '0_covid19_emis_gp_clinical.unit')
   }
   fields <- c(fields, "unit")
   values <- c(values, if (is.null(unit)) "NULL" else if (is(unit, "subQuery")) paste0("(", as.character(unit), ")") else paste0("'", as.character(unit), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[0_covid19_emis_gp_clinical.txt.gz]", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[0_covid19_emis_gp_clinical]", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_1_covid19_tpp_gp_scripts.txt.gz <- function(eid, issue_date, dmd_code) {
-  defaults <- get('1_covid19_tpp_gp_scripts.txt.gz', envir = frameworkContext$defaultValues)
+add_1_covid19_tpp_gp_scripts <- function(eid, issue_date, dmd_code) {
+  defaults <- get('1_covid19_tpp_gp_scripts', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '1_covid19_tpp_gp_scripts.txt.gz.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '1_covid19_tpp_gp_scripts.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1685,7 +1685,7 @@ add_1_covid19_tpp_gp_scripts.txt.gz <- function(eid, issue_date, dmd_code) {
   if (missing(issue_date)) {
     issue_date <- defaults$issue_date
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '1_covid19_tpp_gp_scripts.txt.gz.issue_date')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '1_covid19_tpp_gp_scripts.issue_date')
   }
   fields <- c(fields, "issue_date")
   values <- c(values, if (is.null(issue_date)) "NULL" else if (is(issue_date, "subQuery")) paste0("(", as.character(issue_date), ")") else paste0("'", as.character(issue_date), "'"))
@@ -1693,24 +1693,24 @@ add_1_covid19_tpp_gp_scripts.txt.gz <- function(eid, issue_date, dmd_code) {
   if (missing(dmd_code)) {
     dmd_code <- defaults$dmd_code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '1_covid19_tpp_gp_scripts.txt.gz.dmd_code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '1_covid19_tpp_gp_scripts.dmd_code')
   }
   fields <- c(fields, "dmd_code")
   values <- c(values, if (is.null(dmd_code)) "NULL" else if (is(dmd_code, "subQuery")) paste0("(", as.character(dmd_code), ")") else paste0("'", as.character(dmd_code), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[1_covid19_tpp_gp_scripts.txt.gz]", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[1_covid19_tpp_gp_scripts]", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_2_covid19_emis_gp_scripts.txt.gz <- function(eid, issue_date, code_type, code) {
-  defaults <- get('2_covid19_emis_gp_scripts.txt.gz', envir = frameworkContext$defaultValues)
+add_2_covid19_emis_gp_scripts <- function(eid, issue_date, code_type, code) {
+  defaults <- get('2_covid19_emis_gp_scripts', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.txt.gz.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1718,7 +1718,7 @@ add_2_covid19_emis_gp_scripts.txt.gz <- function(eid, issue_date, code_type, cod
   if (missing(issue_date)) {
     issue_date <- defaults$issue_date
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.txt.gz.issue_date')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.issue_date')
   }
   fields <- c(fields, "issue_date")
   values <- c(values, if (is.null(issue_date)) "NULL" else if (is(issue_date, "subQuery")) paste0("(", as.character(issue_date), ")") else paste0("'", as.character(issue_date), "'"))
@@ -1726,7 +1726,7 @@ add_2_covid19_emis_gp_scripts.txt.gz <- function(eid, issue_date, code_type, cod
   if (missing(code_type)) {
     code_type <- defaults$code_type
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.txt.gz.code_type')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.code_type')
   }
   fields <- c(fields, "code_type")
   values <- c(values, if (is.null(code_type)) "NULL" else if (is(code_type, "subQuery")) paste0("(", as.character(code_type), ")") else paste0("'", as.character(code_type), "'"))
@@ -1734,24 +1734,24 @@ add_2_covid19_emis_gp_scripts.txt.gz <- function(eid, issue_date, code_type, cod
   if (missing(code)) {
     code <- defaults$code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.txt.gz.code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '2_covid19_emis_gp_scripts.code')
   }
   fields <- c(fields, "code")
   values <- c(values, if (is.null(code)) "NULL" else if (is(code, "subQuery")) paste0("(", as.character(code), ")") else paste0("'", as.character(code), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[2_covid19_emis_gp_scripts.txt.gz]", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[2_covid19_emis_gp_scripts]", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
 
-add_3_covid19_tpp_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code, value) {
-  defaults <- get('3_covid19_tpp_gp_clinical.txt.gz', envir = frameworkContext$defaultValues)
+add_3_covid19_tpp_gp_clinical <- function(eid, event_dt, code_type, code, value) {
+  defaults <- get('3_covid19_tpp_gp_clinical', envir = frameworkContext$defaultValues)
   fields <- c()
   values <- c()
   if (missing(eid)) {
     eid <- defaults$eid
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.txt.gz.eid')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.eid')
   }
   fields <- c(fields, "eid")
   values <- c(values, if (is.null(eid)) "NULL" else if (is(eid, "subQuery")) paste0("(", as.character(eid), ")") else paste0("'", as.character(eid), "'"))
@@ -1759,7 +1759,7 @@ add_3_covid19_tpp_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code,
   if (missing(event_dt)) {
     event_dt <- defaults$event_dt
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.txt.gz.event_dt')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.event_dt')
   }
   fields <- c(fields, "event_dt")
   values <- c(values, if (is.null(event_dt)) "NULL" else if (is(event_dt, "subQuery")) paste0("(", as.character(event_dt), ")") else paste0("'", as.character(event_dt), "'"))
@@ -1767,7 +1767,7 @@ add_3_covid19_tpp_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code,
   if (missing(code_type)) {
     code_type <- defaults$code_type
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.txt.gz.code_type')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.code_type')
   }
   fields <- c(fields, "code_type")
   values <- c(values, if (is.null(code_type)) "NULL" else if (is(code_type, "subQuery")) paste0("(", as.character(code_type), ")") else paste0("'", as.character(code_type), "'"))
@@ -1775,7 +1775,7 @@ add_3_covid19_tpp_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code,
   if (missing(code)) {
     code <- defaults$code
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.txt.gz.code')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.code')
   }
   fields <- c(fields, "code")
   values <- c(values, if (is.null(code)) "NULL" else if (is(code, "subQuery")) paste0("(", as.character(code), ")") else paste0("'", as.character(code), "'"))
@@ -1783,12 +1783,12 @@ add_3_covid19_tpp_gp_clinical.txt.gz <- function(eid, event_dt, code_type, code,
   if (missing(value)) {
     value <- defaults$value
   } else {
-    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.txt.gz.value')
+    frameworkContext$sourceFieldsTested <- c(frameworkContext$sourceFieldsTested, '3_covid19_tpp_gp_clinical.value')
   }
   fields <- c(fields, "value")
   values <- c(values, if (is.null(value)) "NULL" else if (is(value, "subQuery")) paste0("(", as.character(value), ")") else paste0("'", as.character(value), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[3_covid19_tpp_gp_clinical.txt.gz]", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "[3_covid19_tpp_gp_clinical]", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
