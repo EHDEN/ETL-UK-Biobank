@@ -7,7 +7,7 @@ import re
 
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
 
-from ..util.code_cleanup import add_dot_to_icdx_code, refactor_icdx_code
+from ..util.code_cleanup import refactor_icdx_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -46,9 +46,6 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
 
     df[topography10_columns] = df[topography10_columns].applymap(lambda x: x if x == 'NULL' else refactor_icdx_code(x))
     df[topography9_columns] = df[topography9_columns].applymap(lambda x: x if x == 'NULL' else refactor_icdx_code(x))
-
-    df[topography10_columns] = df[topography10_columns].applymap(lambda x: x if x == 'NULL' else add_dot_to_icdx_code(x))
-    df[topography9_columns] = df[topography9_columns].applymap(lambda x: x if x == 'NULL' else add_dot_to_icdx_code(x))
 
     icdo3 = wrapper.code_mapper.generate_code_mapping_dictionary('ICDO3')
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10',

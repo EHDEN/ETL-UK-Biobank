@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
-from ..util import add_dot_to_icdx_code, refactor_icdx_code
+from ..util import refactor_icdx_code
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -14,7 +14,6 @@ def baseline_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
     df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '40000-0.0', '40001-0.0'])
 
     df['ICD10_dot'] = df['40001-0.0'].apply(refactor_icdx_code)
-    df['ICD10_dot'] = df['ICD10_dot'].apply(add_dot_to_icdx_code)
 
     mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary(
