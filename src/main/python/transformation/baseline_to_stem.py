@@ -27,26 +27,29 @@ def parse_column_name(column_name: str) -> Tuple[Optional[str], Optional[int]]:
 
 def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.source_data.get_source_file('baseline.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
 
     # check for invalid columns and drop them
-    cols_to_drop = []
-    column_name_to_field_id = {}
-    column_name_to_instance = {}
-    for col in list(df.columns)[1:]:  # skip eid
+    row = next(rows)
+    cols_to_skip = []
+    col_to_field_id = {}
+    col_to_instance = {}
+    for col in row.keys():
+        # skip eid
+        if col == 'eid':
+            continue
         field_id, instance = parse_column_name(col)
-        column_name_to_field_id[col] = field_id
-        column_name_to_instance[col] = instance
+        col_to_field_id[col] = field_id
+        col_to_instance[col] = instance
         if field_id is None:
             logger.warning(f'Column "{col}" does not match expected field pattern. '
                            f'Cannot retrieve field_id and instance, hence column will be '
                            f'dropped.')
-            cols_to_drop.append(col)
-    df.drop(columns=cols_to_drop, inplace=True)
+            cols_to_skip.append(col)
 
     # load mappings from UKB code to standard concept_id
     field_to_concept_id_dict = wrapper.generate_code_to_concept_id_dict(
-        column_name_to_field_id.values(), vocabulary_id='UK Biobank')
+        col_to_field_id.values(), vocabulary_id='UK Biobank')
 
     field_mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
 
@@ -54,16 +57,17 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         csv_in = csv.DictReader(f_in)
         type_concept_lookup = {x['field_id']: x['type_concept_id'] for x in csv_in}
 
-    records = []
-    for _, row in df.iterrows():
+    while True:
         person_id = row.pop('eid')
 
-        for column_name, value in row.items():
+        for col, value in row.items():
+            if col in cols_to_skip:
+                continue
             if value == '' or pd.isna(value):
                 continue
 
-            field_id = column_name_to_field_id.get(column_name)
-            instance = column_name_to_instance.get(column_name)
+            field_id = col_to_field_id.get(col)
+            instance = col_to_instance.get(col)
 
             # Lookup the mapping. If not targets defined (or ignored), skip it before calculating other things.
             targets = field_mapper.lookup(field_id, value)
@@ -82,7 +86,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
             else:
                 # No date could be retrieved
                 datetime = DEFAULT_DATETIME
-                logger.warning(f'Date column "{date_column_name}" for "{column_name}" '
+                logger.warning(f'Date column "{date_column_name}" for "{col}" '
                                f'was not found in the baseline data')
 
             # Visit
@@ -90,7 +94,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             source_concept_id = field_to_concept_id_dict.get(field_id, None)
             for target in targets:
-                records.append(wrapper.cdm.StemTable(
+                yield wrapper.cdm.StemTable(
                     person_id=person_id,
                     start_date=datetime.date(),
                     start_datetime=datetime,
@@ -104,6 +108,8 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                     type_concept_id=type_concept_lookup[field_id],  # Survey
                     visit_occurrence_id=visit_occurrence_id,
                     data_source='baseline'
-                    )
                 )
-    return records
+        try:
+            row = next(rows)
+        except StopIteration:
+            break
