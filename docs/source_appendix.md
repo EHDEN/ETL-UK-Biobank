@@ -1,3 +1,15 @@
+---
+layout: default
+title: Source Appendix
+nav_order: 26
+---
+
+---
+layout: default
+title: Source Appendix
+nav_order: 25
+---
+
 # Appendix: source tables
 
 ### Table: stem_table

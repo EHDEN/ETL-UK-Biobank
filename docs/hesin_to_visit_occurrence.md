@@ -1,3 +1,15 @@
+---
+layout: default
+title: Hesin To Visit Occurrence
+nav_order: 8
+---
+
+---
+layout: default
+title: Hesin To Visit Occurrence
+nav_order: 8
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from hesin

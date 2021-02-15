@@ -1,0 +1,17 @@
+remote_theme: pmarsceill/just-the-docs
+
+title: EHDEN ETL UK-Biobank
+description: Documentation of the ETL of UK-Biobank data to OMOP
+
+# Enable or disable the site search
+search_enabled: true
+
+# Aux links for the upper right navigation
+aux_links:
+  "Source code (private)":
+    - "//github.com/EHDEN/ETL-UK-Biobank"
+
+# Color scheme currently only supports "dark" or nil (default)
+color_scheme: nil
+
+footer_content: "EHDEN ETL UKB v0.1 | Copyright &copy; The Hyve</a>"

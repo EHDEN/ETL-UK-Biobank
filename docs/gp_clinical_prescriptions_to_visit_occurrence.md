@@ -1,3 +1,15 @@
+---
+layout: default
+title: Gp Clinical Prescriptions To Visit Occurrence
+nav_order: 9
+---
+
+---
+layout: default
+title: Gp Clinical Prescriptions To Visit Occurrence
+nav_order: 9
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from gp_clinical and gp_prescriptions

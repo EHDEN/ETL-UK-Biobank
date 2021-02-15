@@ -1,3 +1,15 @@
+---
+layout: default
+title: Cdm Source
+nav_order: 28
+---
+
+---
+layout: default
+title: Cdm Source
+nav_order: 27
+---
+
 ## Table name: cdm_source
 
 | Destination Field | Value |

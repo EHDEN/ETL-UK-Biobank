@@ -1,3 +1,15 @@
+---
+layout: default
+title: Stem To Measurement
+nav_order: 24
+---
+
+---
+layout: default
+title: Stem To Measurement
+nav_order: 23
+---
+
 ## Table name: measurement
 
 ### Reading from stem_table
