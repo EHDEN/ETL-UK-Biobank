@@ -1,3 +1,15 @@
+---
+layout: default
+title: Stem To Specimen
+nav_order: 25
+---
+
+---
+layout: default
+title: Stem To Specimen
+nav_order: 24
+---
+
 ## Table name: specimen
 
 ### Reading from stem_table

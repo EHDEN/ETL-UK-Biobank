@@ -1,3 +1,15 @@
+---
+layout: default
+title: Death To Death
+nav_order: 5
+---
+
+---
+layout: default
+title: Death To Death
+nav_order: 5
+---
+
 ## Table name: death
 
 Deaths are recorded both in the baseline table (fields `40000` and `40001`) and in separate death tables; `death` and `death_cause`. 

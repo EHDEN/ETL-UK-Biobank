@@ -1,3 +1,15 @@
+---
+layout: default
+title: Covid To Visit Occurrence
+nav_order: 7
+---
+
+---
+layout: default
+title: Covid To Visit Occurrence
+nav_order: 7
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from covid

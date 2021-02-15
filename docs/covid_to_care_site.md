@@ -1,3 +1,15 @@
+---
+layout: default
+title: Covid To Care Site
+nav_order: 2
+---
+
+---
+layout: default
+title: Covid To Care Site
+nav_order: 2
+---
+
 ## Table name: care_site
 
 ### Reading from covid

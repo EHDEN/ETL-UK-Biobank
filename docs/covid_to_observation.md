@@ -1,3 +1,15 @@
+---
+layout: default
+title: Covid To Observation
+nav_order: 16
+---
+
+---
+layout: default
+title: Covid To Observation
+nav_order: 16
+---
+
 ## Table name: observation
 
 ### Reading from covid

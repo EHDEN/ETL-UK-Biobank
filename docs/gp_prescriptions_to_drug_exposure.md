@@ -1,3 +1,15 @@
+---
+layout: default
+title: Gp Prescriptions To Drug Exposure
+nav_order: 14
+---
+
+---
+layout: default
+title: Gp Prescriptions To Drug Exposure
+nav_order: 14
+---
+
 ## Table name: drug_exposure
 
 ### Reading from gp_prescriptions

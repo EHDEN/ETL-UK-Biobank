@@ -1,3 +1,15 @@
+---
+layout: default
+title: Gp Registrations To Observation Period
+nav_order: 4
+---
+
+---
+layout: default
+title: Gp Registrations To Observation Period
+nav_order: 4
+---
+
 ## Table name: observation_period
 
 ### Reading from gp_registrations

@@ -1,3 +1,15 @@
+---
+layout: default
+title: Baseline To Visit Occurrence
+nav_order: 6
+---
+
+---
+layout: default
+title: Baseline To Visit Occurrence
+nav_order: 6
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from baseline

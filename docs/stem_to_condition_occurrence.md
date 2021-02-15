@@ -1,3 +1,15 @@
+---
+layout: default
+title: Stem To Condition Occurrence
+nav_order: 20
+---
+
+---
+layout: default
+title: Stem To Condition Occurrence
+nav_order: 19
+---
+
 ## Table name: condition_occurrence
 
 ### Reading from stem_table

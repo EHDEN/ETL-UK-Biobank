@@ -1,3 +1,15 @@
+---
+layout: default
+title: Stem To Drug Exposure
+nav_order: 21
+---
+
+---
+layout: default
+title: Stem To Drug Exposure
+nav_order: 20
+---
+
 ## Table name: drug_exposure
 
 ### Reading from stem_table

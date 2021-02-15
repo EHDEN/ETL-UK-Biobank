@@ -1,3 +1,15 @@
+---
+layout: default
+title: Gp Clinical To Stem Table
+nav_order: 18
+---
+
+---
+layout: default
+title: Gp Clinical To Stem Table
+nav_order: 18
+---
+
 ## Table name: stem_table
 
 ### Reading from gp_clinical
@@ -26,7 +38,7 @@ https://github.com/spiros/ukb-biomarker-phenotypes#implementation-25).
 See also: [data quality notes](./data_quality/gp_clinical.md)
 - `event_dt` (date) field: to protect individuals, UKB makes alterations to dates in relation to the participant's
  date of birth as follows: 01/01/1901 (before birth), 02/02/1902 (on birth), 03/03/1903 (after birth), 07/07/2037 (future). 
-- In [the subsequent mapping step from stem to domain table](index.md#Stem_to_clinical_event), 
+- In [the subsequent mapping step from stem to domain table](Readme.md#Stem_to_clinical_event), 
   we force these records to be mapped to the Measurement domain. 
   Some READ codes map to SNOMED concepts from the condition domain (e.g. Blood pressure reading).
   We would lose the numeric value if we map from the stem table to the condition domain.

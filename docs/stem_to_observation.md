@@ -1,3 +1,9 @@
+---
+layout: default
+title: Stem To Observation
+nav_order: 19
+---
+
 ## Table name: observation
 
 ### Reading from stem_table

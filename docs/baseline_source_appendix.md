@@ -1,3 +1,21 @@
+---
+layout: default
+title: Baseline Source Appendix
+nav_order: 27
+---
+
+---
+layout: default
+title: Baseline Source Appendix
+nav_order: 26
+---
+
+---
+layout: default
+title: Baseline Source Appendix
+nav_order: 1
+---
+
 # Appendix: source tables
 
 ### Table: Baseline characteristics

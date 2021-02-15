@@ -1,3 +1,15 @@
+---
+layout: default
+title: Hesin To Visit Detail
+nav_order: 10
+---
+
+---
+layout: default
+title: Hesin To Visit Detail
+nav_order: 10
+---
+
 ## Table name: visit_detail
 
 ### Reading from hesin_c.txt
