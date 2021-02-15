@@ -69,33 +69,56 @@ expect_visit_detail(person_id = 1007, visit_detail_start_date = '2020-12-19')
 expect_condition_occurrence(person_id = 1007, condition_start_date = '2020-12-19',
                             visit_detail_id = lookup_visit_detail('visit_detail_id', person_id = 1007, visit_detail_start_date = '2020-12-19'))
 
-declareTest(1008, 'ICD code expections: ICD10 code starting with W, X, Y map to one letter and two numbers')
+declareTest(1008, 'ICD code exceptions: ICD10 code starting with W, X, Y map to one letter and two numbers')
 add_baseline(eid = 1008)
 add_hesin(eid = 1008, ins_index = 1, admidate = '11/02/2021')
 add_hesin_diag(eid = 1008, ins_index = 1, diag_icd10 = 'W316')
 expect_condition_occurrence(person_id = 1008, condition_start_date = '2021-02-11', condition_concept_id = 4035493, condition_source_concept_id = 45756284)
 
 
-declareTest(1009, 'ICD code expections: ICD9 4 or 5 number codes map to the 3 first numbers.')
+declareTest(1009, 'ICD code exceptions: ICD9 4 or 5 number codes map to the 3 first numbers.')
 add_baseline(eid = 1009)
 add_hesin(eid = 1009, ins_index = 2, admidate = '10/02/2021')
 add_hesin_diag(eid = 1009, ins_index = 2, diag_icd9 = '2179', diag_icd10 = '')
 expect_condition_occurrence(person_id = 1009, condition_start_date = '2021-02-10', condition_concept_id = 72576, condition_source_concept_id = 44835731)
 
 
-declareTest(1010, 'ICD code expections: E chapters map to format EXXX.X')
+declareTest(1010, 'ICD code exceptions: E chapters map to format EXXX.X')
 add_baseline(eid = 1010)
 add_hesin(eid = 1010, ins_index = 3, admidate = '09/02/2021')
 add_hesin_diag(eid = 1010, ins_index = 3, diag_icd9 = 'E8429', diag_icd10 = '')
 expect_condition_occurrence(person_id = 1010, condition_start_date = '2021-02-09', condition_concept_id = 434542, condition_source_concept_id = 44820303)
 expect_condition_occurrence(person_id = 1010, condition_start_date = '2021-02-09', condition_concept_id = 440931, condition_source_concept_id = 44820303)
 
-declareTest(1011, 'ICD code expections: V chapters map to format VXX.X')
+declareTest(1011, 'ICD code exceptions: V chapters map to format VXX.X')
 add_baseline(eid = 1011)
 add_hesin(eid = 1011, ins_index = 4, admidate = '08/02/2021')
 add_hesin_diag(eid = 1011, ins_index = 4, diag_icd9 = 'V6601', diag_icd10 = '')
 expect_condition_occurrence(person_id = 1011, condition_start_date = '2021-02-08', condition_concept_id = 4083043, condition_source_concept_id = 44834330)
 
 
+declareTest(1012, 'ICD code expections: V chapters map to format VXX.X')
+add_baseline(eid = 1012)
+add_hesin(eid = 1012, ins_index = 1, admidate = '07/02/2021')
+add_hesin_diag(eid = 1012, ins_index = 1, diag_icd9 = '', diag_icd10 = 'E831')
+expect_condition_occurrence(person_id = 1012, condition_start_date = '2021-02-07', condition_concept_id = 434614, condition_source_concept_id = 45552418)
 
+declareTest(1013, 'ICD code expections: ICD10 > 3')
+add_baseline(eid = 1013)
+add_hesin(eid = 1013, ins_index = 1, admidate = '06/02/2021')
+add_hesin_diag(eid = 1013, ins_index = 1, diag_icd9 = '', diag_icd10 = 'M7702')
+expect_condition_occurrence(person_id = 1013, condition_start_date = '2021-02-06', condition_concept_id = 80187, condition_source_concept_id = 45557989)
+
+declareTest(1014, 'ICD code expections: A few specific exceptions who need a refactoring to XXX.X')
+add_baseline(eid = 1014)
+add_hesin(eid = 1014, ins_index = 1, admidate = '05/02/2021')
+add_hesin_diag(eid = 1014, ins_index = 1, diag_icd9 = '72744', diag_icd10 = '')
+expect_condition_occurrence(person_id = 1014, condition_start_date = '2021-02-05', condition_concept_id = 4209224, condition_source_concept_id = 44824525)
+expect_condition_occurrence(person_id = 1014, condition_start_date = '2021-02-05', condition_concept_id = 4116964, condition_source_concept_id = 44824525)
+
+declareTest(1015, 'ICD code expections: A few specific exceptions who need a refactoring to XXX.X')
+add_baseline(eid = 1015)
+add_hesin(eid = 1015, ins_index = 1, admidate = '04/02/2021')
+add_hesin_diag(eid = 1015, ins_index = 1, diag_icd9 = '73346', diag_icd10 = '')
+expect_condition_occurrence(person_id = 1015, condition_start_date = '2021-02-04', condition_concept_id = 77650, condition_source_concept_id = 44830364)
 

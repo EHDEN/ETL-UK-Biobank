@@ -27,7 +27,8 @@ def refactor_icdx_code(icd_code: str) -> str:
     # Skip empty values
     if not is_null(icd_code):
         # A few specific exceptions who need a refactoring to XXX.X
-        if icd_code in ['2331', 'Y831']:
+        if icd_code in ['2331', 'Y831', '72744', '72747', '75250', '72894', '73346', '75761', '75768',
+                        '49399', '25009', '59979', '38019', '62609', '72959', '79993', '71409']:
             return icd_code[:3] + '.' + icd_code[3:4]
         # Keep only the first three characters for ICD10 codes starting with W, X or Y.
         # ICD9CM 4 or 5 number codes map to the 3 first numbers.
