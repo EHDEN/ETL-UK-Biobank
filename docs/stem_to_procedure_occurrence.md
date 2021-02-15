@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Stem To Procedure Occurrence
-nav_order: 22
----
-
----
-layout: default
-title: Stem To Procedure Occurrence
-nav_order: 21
+nav_order: 23
 ---
 
 ## Table name: procedure_occurrence

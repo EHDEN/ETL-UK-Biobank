@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Stem To Specimen
-nav_order: 25
----
-
----
-layout: default
-title: Stem To Specimen
-nav_order: 24
+nav_order: 26
 ---
 
 ## Table name: specimen

@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Baseline To Stem Table
-nav_order: 17
----
-
----
-layout: default
-title: Baseline To Stem Table
-nav_order: 17
+nav_order: 18
 ---
 
 ## Baseline to stem table

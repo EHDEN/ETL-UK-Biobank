@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Death To Death
-nav_order: 5
----
-
----
-layout: default
-title: Death To Death
-nav_order: 5
+nav_order: 6
 ---
 
 ## Table name: death

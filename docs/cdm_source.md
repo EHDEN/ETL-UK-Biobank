@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Cdm Source
-nav_order: 28
----
-
----
-layout: default
-title: Cdm Source
-nav_order: 27
+nav_order: 29
 ---
 
 ## Table name: cdm_source

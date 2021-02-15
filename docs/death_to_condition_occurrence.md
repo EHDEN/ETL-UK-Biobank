@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Death To Condition Occurrence
-nav_order: 11
----
-
----
-layout: default
-title: Death To Condition Occurrence
-nav_order: 11
+nav_order: 12
 ---
 
 ## Table name: condition_occurrence

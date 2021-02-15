@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Gp Clinical To Stem Table
-nav_order: 18
----
-
----
-layout: default
-title: Gp Clinical To Stem Table
-nav_order: 18
+nav_order: 19
 ---
 
 ## Table name: stem_table

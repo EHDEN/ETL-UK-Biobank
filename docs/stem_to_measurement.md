@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Stem To Measurement
-nav_order: 24
----
-
----
-layout: default
-title: Stem To Measurement
-nav_order: 23
+nav_order: 25
 ---
 
 ## Table name: measurement

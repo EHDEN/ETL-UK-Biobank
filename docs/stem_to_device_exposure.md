@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Stem To Device Exposure
-nav_order: 23
----
-
----
-layout: default
-title: Stem To Device Exposure
-nav_order: 22
+nav_order: 24
 ---
 
 ## Table name: device_exposure

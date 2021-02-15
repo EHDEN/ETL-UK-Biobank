@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Hesin Diag To Condition Occurrence
-nav_order: 12
----
-
----
-layout: default
-title: Hesin Diag To Condition Occurrence
-nav_order: 12
+nav_order: 13
 ---
 
 ## Table name: condition_occurrence

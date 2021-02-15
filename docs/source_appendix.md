@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Source Appendix
-nav_order: 26
----
-
----
-layout: default
-title: Source Appendix
-nav_order: 25
+nav_order: 27
 ---
 
 # Appendix: source tables

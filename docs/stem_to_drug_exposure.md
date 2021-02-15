@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Stem To Drug Exposure
-nav_order: 21
----
-
----
-layout: default
-title: Stem To Drug Exposure
-nav_order: 20
+nav_order: 22
 ---
 
 ## Table name: drug_exposure

@@ -1,13 +1,8 @@
 ---
 layout: default
 title: Baseline To Person
-nav_order: 3
----
-
----
-layout: default
-title: Baseline To Person
-nav_order: 3
+parent: Person
+nav_order: 1
 ---
 
 ## Table name: person

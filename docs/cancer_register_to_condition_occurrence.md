@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Cancer Register To Condition Occurrence
-nav_order: 13
----
-
----
-layout: default
-title: Cancer Register To Condition Occurrence
-nav_order: 13
+nav_order: 14
 ---
 
 ## Table name: condition_occurrence

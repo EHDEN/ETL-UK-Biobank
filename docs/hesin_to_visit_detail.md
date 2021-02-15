@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Hesin To Visit Detail
-nav_order: 10
----
-
----
-layout: default
-title: Hesin To Visit Detail
-nav_order: 10
+nav_order: 11
 ---
 
 ## Table name: visit_detail

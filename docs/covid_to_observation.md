@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Covid To Observation
-nav_order: 16
----
-
----
-layout: default
-title: Covid To Observation
-nav_order: 16
+nav_order: 17
 ---
 
 ## Table name: observation

@@ -1,13 +1,7 @@
 ---
 layout: default
 title: Hesin Oper To Procedure Occurrence
-nav_order: 15
----
-
----
-layout: default
-title: Hesin Oper To Procedure Occurrence
-nav_order: 15
+nav_order: 16
 ---
 
 ## Table name: procedure_occurrence
