@@ -79,7 +79,7 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(hesin_to_visit_detail, bulk=True)
 
         # Events
-        self.execute_transformation(baseline_to_stem, bulk=True)
+        self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
         self.execute_transformation(covid_to_observation, bulk=True)
         self.execute_transformation(gp_clinical_to_stem_table, bulk=True)
         self.execute_transformation(gp_prescriptions_to_drug_exposure, bulk=True)
