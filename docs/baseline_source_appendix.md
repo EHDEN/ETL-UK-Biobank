@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Baseline Source Appendix
-nav_order: 28
+title: baseline appendix
+parent: appendix
+nav_order: 1
 ---
 
 # Appendix: source tables

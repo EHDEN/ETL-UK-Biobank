@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Hesin Diag To Condition Occurrence
-nav_order: 13
+title: hesin_diag to condition_occurrence
+parent: hospital episode statistic
+nav_order: 3
 ---
 
 ## Table name: condition_occurrence

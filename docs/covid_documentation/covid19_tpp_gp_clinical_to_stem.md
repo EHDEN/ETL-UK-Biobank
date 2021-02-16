@@ -1,3 +1,10 @@
+---
+layout: default
+title: tpp gp_clinical
+parent: Additional covid19
+nav_order: 3
+---
+
 ## Table name: stem_table
 
 ### Reading from 3_covid19_tpp_gp_clinical.txt.gz.pure

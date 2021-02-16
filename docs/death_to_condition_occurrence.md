@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Death To Condition Occurrence
-nav_order: 12
+title: death to condition_occurrence
+parent: death registry
+nav_order: 2
 ---
 
 ## Table name: condition_occurrence

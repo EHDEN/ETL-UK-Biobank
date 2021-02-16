@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Stem To Condition Occurrence
-nav_order: 21
+title: stem_table to condition_occurrence
+parent: stem table
+nav_order: 1
 ---
 
 ## Table name: condition_occurrence

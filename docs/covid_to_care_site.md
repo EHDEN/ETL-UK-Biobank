@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Covid To Care Site
-nav_order: 3
+title: covid to care_site
+parent: covid19 registry
+nav_order: 1
 ---
 
 ## Table name: care_site

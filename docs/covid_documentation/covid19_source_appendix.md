@@ -1,3 +1,10 @@
+---
+layout: default
+title: covid19_gp appendix
+parent: appendix
+nav_order: 3
+---
+
 # Appendix: source tables
 
 ### Table: stem_table

@@ -1,3 +1,10 @@
+---
+layout: default
+title: tpp gp_scripts
+parent: Additional covid19
+nav_order: 4
+---
+
 ## Table name: drug_exposure
 
 ### Reading from 1_covid19_tpp_gp_scripts.txt.gz.pure

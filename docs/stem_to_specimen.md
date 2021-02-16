@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Stem To Specimen
-nav_order: 26
+title: stem_table to speciment
+parent: stem table
+nav_order: 7
 ---
 
 ## Table name: specimen

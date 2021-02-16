@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Death To Death
-nav_order: 6
+title: death to death
+parent: death registry
+nav_order: 1
 ---
 
 ## Table name: death

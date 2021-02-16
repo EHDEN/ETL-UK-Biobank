@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Source Appendix
-nav_order: 27
+title: hes, gp & covid appendix
+parent: appendix
+nav_order: 2
 ---
 
 # Appendix: source tables

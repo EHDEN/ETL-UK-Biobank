@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Stem To Device Exposure
-nav_order: 24
+title: stem_table to device_exposure
+parent: stem table
+nav_order: 6
 ---
 
 ## Table name: device_exposure

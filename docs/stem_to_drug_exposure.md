@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Stem To Drug Exposure
-nav_order: 22
+title: stem_table to drug_exposure
+parent: stem table
+nav_order: 2
 ---
 
 ## Table name: drug_exposure

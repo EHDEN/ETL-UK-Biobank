@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Covid To Visit Occurrence
-nav_order: 8
+title: covid to visit_occurrence
+parent: covid19 registry
+nav_order: 2
 ---
 
 ## Table name: visit_occurrence

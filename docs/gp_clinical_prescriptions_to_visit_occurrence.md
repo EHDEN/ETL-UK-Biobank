@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Gp Clinical Prescriptions To Visit Occurrence
-nav_order: 10
+title: gp_clinical & gp_prescriptions to visit_occurrence
+parent: general practitioner
+nav_order: 2
 ---
 
 ## Table name: visit_occurrence

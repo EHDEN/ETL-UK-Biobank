@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Gp Registrations To Observation Period
-nav_order: 5
+title: gp_registrations to observation_period
+parent: general practitioner
+nav_order: 1
 ---
 
 ## Table name: observation_period

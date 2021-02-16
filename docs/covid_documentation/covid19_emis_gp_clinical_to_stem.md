@@ -1,3 +1,10 @@
+---
+layout: default
+title: emis gp_clinical
+parent: Additional covid19
+nav_order: 1
+---
+
 ## Table name: stem_table
 
 ### Reading from 0_covid19_emis_gp_clinical.txt.gz.pure

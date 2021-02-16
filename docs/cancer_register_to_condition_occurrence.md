@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Cancer Register To Condition Occurrence
-nav_order: 14
+title: cancer_register to condition_occurrence
+parent: assessment centre
+nav_order: 5
 ---
 
 ## Table name: condition_occurrence

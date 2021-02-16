@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Stem To Measurement
-nav_order: 25
+title: stem_table to measurement
+parent: stem table
+nav_order: 5
 ---
 
 ## Table name: measurement

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Cdm Source
-nav_order: 29
+title: metadata
+nav_order: 10
+has_children: false
 ---
 
 ## Table name: cdm_source

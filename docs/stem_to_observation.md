@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Stem To Observation
-nav_order: 20
+title: stem_table to observation
+parent: stem table
+nav_order: 4
 ---
 
 ## Table name: observation

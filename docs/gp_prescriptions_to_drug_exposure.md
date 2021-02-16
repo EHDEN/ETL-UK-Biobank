@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Gp Prescriptions To Drug Exposure
-nav_order: 15
+title: gp_prescriptions to drug_exposure
+parent: general practitioner
+nav_order: 3
 ---
 
 ## Table name: drug_exposure

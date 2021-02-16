@@ -1,3 +1,10 @@
+---
+layout: default
+title: emis gp_scripts
+parent: Additional covid19
+nav_order: 2
+---
+
 ## Table name: drug_exposure
 
 ### Reading from 2_covid19_emis_gp_scripts.txt.gz.pure

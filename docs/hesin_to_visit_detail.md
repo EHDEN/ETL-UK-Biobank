@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Hesin To Visit Detail
-nav_order: 11
+title: hesin to visit_detail
+parent: hospital episode statistic
+nav_order: 2
 ---
 
 ## Table name: visit_detail

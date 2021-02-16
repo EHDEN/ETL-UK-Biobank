@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Hesin To Visit Occurrence
-nav_order: 9
+title: hesin to visit_occurrence
+parent: hospital episode statistic
+nav_order: 1
 ---
 
 ## Table name: visit_occurrence

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Readme
+title: Home
 nav_order: 1
 ---
 

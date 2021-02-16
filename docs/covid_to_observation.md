@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Covid To Observation
-nav_order: 17
+title: covid to observation
+parent: covid19 registry
+nav_order: 3
 ---
 
 ## Table name: observation

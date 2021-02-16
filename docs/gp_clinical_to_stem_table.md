@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Gp Clinical To Stem Table
-nav_order: 19
+title: gp_clinical to stem_table
+parent: general practitioner
+nav_order: 4
 ---
 
 ## Table name: stem_table
