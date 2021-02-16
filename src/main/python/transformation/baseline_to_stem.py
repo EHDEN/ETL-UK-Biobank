@@ -38,16 +38,20 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         # skip eid
         if col == 'eid':
             continue
+
         field_id, instance = parse_column_name(col)
-        col_to_field_id[col] = field_id
-        col_to_instance[col] = instance
+
         if field_id is None:
             logger.warning(f'Column "{col}" does not match expected field pattern. '
                            f'Cannot retrieve field_id and instance, hence column will be '
                            f'dropped.')
             cols_to_skip.append(col)
+        else:
+            col_to_field_id[col] = field_id
+            col_to_instance[col] = instance
 
     # load mappings from UKB code to standard concept_id
+    # `generate_code_to_concept_id_dict` will create a unique set out of given field_ids
     field_to_concept_id_dict = wrapper.generate_code_to_concept_id_dict(
         col_to_field_id.values(), vocabulary_id='UK Biobank')
 
@@ -63,6 +67,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         for col, value in row.items():
             if col in cols_to_skip:
                 continue
+
             if value == '' or pd.isna(value):
                 continue
 
