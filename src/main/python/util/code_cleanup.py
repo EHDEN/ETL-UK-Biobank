@@ -11,21 +11,41 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-
+import re
 from typing import Dict, Optional
 
 from src.main.python.util.general_functions import is_null
 
-def add_dot_to_icdx_code(icd_code: str) -> str:
-    # 45532996 =  invalid ICD10 code concept
-    if not is_null(icd_code) and len(icd_code) > 3 and not '.' in icd_code and icd_code != '45532996':
-        return icd_code[:3] + '.' + icd_code[3:]
-    return icd_code
 
 def add_dot_to_opcsx_code(opcs_code: str) -> str:
     if not is_null(opcs_code) and len(opcs_code) > 3 and not '.' in opcs_code:
         return opcs_code[:3] + '.' + opcs_code[3:]
     return opcs_code
+
+
+def refactor_icdx_code(icd_code: str) -> str:
+    # Skip empty values
+    if not is_null(icd_code):
+        # A few specific exceptions who need a refactoring to XXX.X
+        if icd_code in ['2331', 'Y831', '72744', '72747', '75250', '72894', '73346', '75761', '75768',
+                        '49399', '25009', '59979', '38019', '62609', '72959', '79993', '71409']:
+            return icd_code[:3] + '.' + icd_code[3:4]
+        # Keep only the first three characters for ICD10 codes starting with W, X or Y.
+        # ICD9CM 4 or 5 number codes map to the 3 first numbers.
+        elif icd_code[0] in ['W', 'X', 'Y'] or (re.match(r'^([\d]+)$', icd_code) and len(icd_code) < 6):
+            return icd_code[:3]
+        # E chapters map to format EXXX.X
+        elif icd_code[0] == 'E' and len(icd_code) > 4:
+            return icd_code[:4] + '.' + icd_code[4]
+        # V chapters map to format VXX.X
+        elif icd_code[0] == 'V':
+            return icd_code[:3] + '.' + icd_code[3]
+        # General rule for remaining ICD codes is map to format XXX.X
+        elif len(icd_code) > 3 and not '.' in icd_code and icd_code != '45532996':
+            return icd_code[:3] + '.' + icd_code[3:4]
+        else:
+            return icd_code
+
 
 def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str, str]] = None) -> str:
     """
@@ -55,7 +75,3 @@ if __name__ == '__main__':
     print(extend_read_code('ABC.'))
     print(extend_read_code('ABC.'), mapping_dict)
     print('# add_dot_to_icdx_code() tests')
-    print(add_dot_to_icdx_code(None))
-    print(add_dot_to_icdx_code('J12'))
-    print(add_dot_to_icdx_code('J123'))
-    print(add_dot_to_icdx_code('J12.3'))

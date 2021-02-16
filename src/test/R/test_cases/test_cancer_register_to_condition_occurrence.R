@@ -92,3 +92,18 @@ declareTest(2013, 'Instance 0 - No concept found; use code ICD9(40013) instead')
 add_baseline(eid = 2013, `40005-0.0` = '1995-03-19', `40013-0.0` = '2331')
 expect_condition_occurrence(person_id = 2013, condition_start_date = '1995-03-19', condition_start_datetime = '1995-03-19',
                             condition_concept_id = 194611, condition_source_value = '233.1')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
