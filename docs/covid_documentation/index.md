@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Additional covid19
+title: covid19 general practitioner
 nav_order: 2
 has_children: true
 ---
