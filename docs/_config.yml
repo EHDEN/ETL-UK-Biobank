@@ -9,7 +9,7 @@ search_enabled: true
 # Aux links for the upper right navigation
 aux_links:
   "Source code (private)":
-    - "//github.com/EHDEN/ETL-UK-Biobank"
+    - "//github.com/EHDEN/ETL-UK-Biobank/"
 
 # Color scheme currently only supports "dark" or nil (default)
 color_scheme: nil
