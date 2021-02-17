@@ -1,3 +1,9 @@
+---
+layout: default
+title: 404
+nav_exclude: true
+---
+
 ## Table name: location
 
 The location table is a list of unique assessment centers that are part of the study.

@@ -19,7 +19,7 @@ nav_order: 4
 | observation_date | start_date |  |  |
 | observation_datetime | start_datetime |  |  |
 | visit_occurrence_id | visit_occurrence_id |  |  |
-| observation_type_concept_id | type_concept_id |  | 38000279 - Lab observation concept code result |
+| observation_type_concept_id | type_concept_id |  |  |
 | value_as_number | value_as_number |  |  |
 | value_as_string | value_as_string |  |  |
 | value_as_concept_id | value_as_concept_id |  |  |
