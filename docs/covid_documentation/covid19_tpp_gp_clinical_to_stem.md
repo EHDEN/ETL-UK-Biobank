@@ -1,7 +1,7 @@
 ---
 layout: default
 title: tpp gp_clinical
-parent: Additional covid19
+parent: covid19 general practitioner
 nav_order: 3
 ---
 

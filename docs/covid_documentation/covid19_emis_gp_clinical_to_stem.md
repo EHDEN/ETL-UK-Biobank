@@ -1,7 +1,7 @@
 ---
 layout: default
 title: emis gp_clinical
-parent: Additional covid19
+parent: covid19 general practitioner
 nav_order: 1
 ---
 
