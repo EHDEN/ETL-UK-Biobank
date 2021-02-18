@@ -17,11 +17,11 @@ from typing import Optional
 
 from ..util import is_null
 
-
 BASELINE_PREFIX = '1'
 COVID_PREFIX = '2'
 HES_PREFIX = '3'
 GP_PREFIX = '4'
+GP_COVID_PREFIX = '5'
 
 
 def create_baseline_visit_occurrence_id(eid: str, instance: int) -> Optional[str]:
@@ -38,6 +38,10 @@ def create_hes_visit_occurrence_id(eid: str, spell_index: str) -> Optional[str]:
 
 def create_gp_visit_occurrence_id(eid: str, date: datetime) -> Optional[str]:
     return create_visit_occurrence_id(GP_PREFIX, eid, date.strftime('%Y%m%d'))
+
+
+def create_gp_covid_visit_occurrence_id(eid: str, date: datetime) -> Optional[str]:
+    return create_visit_occurrence_id(GP_COVID_PREFIX, eid, date.strftime('%Y%m%d'))
 
 
 def create_visit_occurrence_id(source_prefix: str, eid: str, index: str) -> Optional[str]:
