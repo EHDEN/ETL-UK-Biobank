@@ -23,16 +23,14 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
     for _, row in df.iterrows():
         if row['code_type'] == '6':
             mapping = dmd_mapper.lookup(row['code'], first_only=True)
-        # TODO: elif row['code_type'] == 3
         else:
             continue
 
         person_id = row['eid']
 
-        data_source = 'covid19 gp emis'
+        data_source = 'covid19 gp_emis'
 
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
-        date_end = date_start + timedelta(days=29)
 
         if is_null(row['issue_date']):
             visit_id = None
@@ -43,11 +41,11 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
             person_id=person_id,
             drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
-            drug_exposure_end_date=date_end,
-            drug_exposure_end_datetime=date_end,
+            drug_exposure_end_date=date_start,
+            drug_exposure_end_datetime=date_start,
             drug_concept_id=mapping.target_concept_id,
             drug_source_concept_id=mapping.source_concept_id,
-            drug_source_value=mapping.source_concept_code[:50],
+            drug_source_value=mapping.source_concept_code,
             drug_type_concept_id=32838,  # 'EHR prescription'
             data_source=data_source,
             visit_occurrence_id=visit_id,
