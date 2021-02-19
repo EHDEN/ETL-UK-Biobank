@@ -43,7 +43,9 @@ add_covid19_emis_gp_scripts(eid = '2305', code = '322503009')
 expect_no_drug_exposure(person_id = 2305, drug_concept_id = 21274334)
 
 
-declareTest(2306, 'If code_type 3 (local emis code) skip')
+declareTest(2306, 'code_type 3 (local emis code)')
 add_baseline(eid = '2306')
-add_covid19_emis_gp_scripts(eid = '2306', code_type = '3', code = 'PECA2194')
-expect_no_drug_exposure(person_id = 2306)
+add_covid19_emis_gp_scripts(eid = '2306', code_type = '3', code = 'PECA2194', issue_date = '23/01/2021')
+expect_drug_exposure(person_id = 2306, drug_concept_id = 0,
+                     drug_exposure_start_datetime = '2021/01/23',
+                     drug_source_concept_id = 0, drug_source_value = 'PECA2194')
