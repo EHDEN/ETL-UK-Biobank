@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-from datetime import timedelta
-from delphyne.model.mapping.code_mapper import CodeMapping
 
 from src.main.python.util import get_datetime, create_gp_covid_visit_occurrence_id, is_null
 
@@ -12,24 +10,25 @@ if TYPE_CHECKING:
 
 def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
 
-    source = wrapper.source_data.get_source_file('covid19_emis_gp_scripts.csv')
+    source = wrapper.source_data.get_source_file('covid19_tpp_gp_scripts.csv')
     df = source.get_csv_as_df(apply_dtypes=False)
 
     dmd_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary(
-            'dm+d', restrict_to_codes=list(df['code']))
+            'dm+d', restrict_to_codes=list(df['dmd_code']))
 
     records = []
     for _, row in df.iterrows():
-        if row['code_type'] == '6':
-            mapping = dmd_mapper.lookup(row['code'], first_only=True)
+        if row['dmd_code'] == '-1': # -1: No dm+d code
+            continue
+        elif not is_null(row['dmd_code']):
+            mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
         else:
             continue
 
         person_id = row['eid']
 
-        data_source = 'covid19 gp_emis'
-
+        data_source = 'covid19 gp_tpp'
         date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
         if is_null(row['issue_date']):
@@ -48,7 +47,7 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
             drug_source_value=mapping.source_concept_code,
             drug_type_concept_id=32838,  # 'EHR prescription'
             data_source=data_source,
-            visit_occurrence_id=visit_id,
+            visit_occurrence_id=visit_id
         )
         records.append(r)
 
