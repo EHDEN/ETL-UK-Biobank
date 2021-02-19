@@ -18,8 +18,8 @@ nav_order: 4
 | drug_concept_id | dmd_code | Look up standard concept via "maps to" relationship. |  |
 | drug_exposure_start_date | issue_date |  |  |
 | drug_exposure_start_datetime | issue_date |  |  |
-| drug_exposure_end_date | issue_date | The data is prescription level and according to omop conventions the end date is start_date+29 days. |  |
-| drug_exposure_end_datetime | issue_date | start_date+29 days |  |
+| drug_exposure_end_date | issue_date | use the same as the start date |  |
+| drug_exposure_end_datetime | issue_date |  |  |
 | verbatim_end_date |  |  |  |
 | drug_type_concept_id |  |  | 32838 - ‘EHR prescription’ |
 | stop_reason |  |  |  |
@@ -31,8 +31,9 @@ nav_order: 4
 | lot_number |  |  |  |
 | provider_id |  |  |  |
 | visit_occurrence_id |  |  |  |
-| visit_detail_id |  |  |  |
+| visit_detail_id |  |  | visit_id from 'eid' & 'date' |
 | drug_source_value | dmd_code |  |  |
 | drug_source_concept_id | dmd_code | Look up source concept via "maps to" relationship. |  |
 | route_source_value |  |  |  |
 | dose_unit_source_value |  |  |  |
+| data_source |  |  | covid19 gp_tpp |
