@@ -1698,7 +1698,7 @@ add_covid19_tpp_gp_scripts <- function(eid, issue_date, dmd_code) {
   fields <- c(fields, "dmd_code")
   values <- c(values, if (is.null(dmd_code)) "NULL" else if (is(dmd_code, "subQuery")) paste0("(", as.character(dmd_code), ")") else paste0("'", as.character(dmd_code), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid19_tpp_gp_scripts]", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid19_tpp_gp_scripts", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
@@ -1788,7 +1788,7 @@ add_covid19_tpp_gp_clinical <- function(eid, event_dt, code_type, code, value) {
   fields <- c(fields, "value")
   values <- c(values, if (is.null(value)) "NULL" else if (is(value, "subQuery")) paste0("(", as.character(value), ")") else paste0("'", as.character(value), "'"))
 
-  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid19_tpp_gp_clinical]", fields = fields, values = values)
+  inserts <- list(testId = frameworkContext$testId, testDescription = frameworkContext$testDescription, table = "covid19_tpp_gp_clinical", fields = fields, values = values)
   frameworkContext$inserts[[length(frameworkContext$inserts) + 1]] <- inserts
   invisible(NULL)
 }
