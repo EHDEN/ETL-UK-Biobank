@@ -23,6 +23,7 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
     for _, row in df.iterrows():
         if row['code_type'] == '6':
             mapping = dmd_mapper.lookup(row['code'], first_only=True)
+            # dm+d codes have one to one mappings to standard concepts: first_only parameter doesn't change the outcome
         elif row['code_type'] == '3':
             mapping = CodeMapping()
             mapping.source_concept_code = row['code']
