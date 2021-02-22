@@ -15,7 +15,7 @@ nav_order: 4
 | --- | --- | --- | --- |
 | drug_exposure_id |  |  | Auto-increment |
 | person_id | eid |  |  |
-| drug_concept_id | dmd_code | Look up standard concept via "maps to" relationship. |  |
+| drug_concept_id | dmd_code | Look up standard concept via "maps to" relationship. | code -1 (no dm+d code) is skipped  |
 | drug_exposure_start_date | issue_date |  |  |
 | drug_exposure_start_datetime | issue_date |  |  |
 | drug_exposure_end_date | issue_date | use the same as the start date |  |
