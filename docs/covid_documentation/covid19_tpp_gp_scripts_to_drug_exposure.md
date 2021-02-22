@@ -30,8 +30,8 @@ nav_order: 4
 | route_concept_id |  |  |  |
 | lot_number |  |  |  |
 | provider_id |  |  |  |
-| visit_occurrence_id |  |  |  |
-| visit_detail_id |  |  | visit_id from 'eid' & 'date' |
+| visit_occurrence_id |  |  | visit_id from 'eid' & 'date' |
+| visit_detail_id |  |  |  |
 | drug_source_value | dmd_code |  |  |
 | drug_source_concept_id | dmd_code | Look up source concept via "maps to" relationship. |  |
 | route_source_value |  |  |  |
