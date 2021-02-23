@@ -1,0 +1,46 @@
+# Connection details for the postgres instance in the Docker
+connectionDetails:
+  dbms: 'postgresql'
+  user: 'admin'
+  password: 'secret'
+  server: 'postgresql/ohdsi'
+  port: 5432
+  schema: 'omopcdm'
+  vocabDatabaseSchema: 'vocab'
+
+# DQD Parameters
+tableCheckThresholdLoc: 'DQD_Table_Level_v5.3.1_UKB.csv'
+fieldCheckThresholdLoc: 'DQD_Field_Level_v5.3.1_UKB.csv'
+conceptCheckThresholdLoc: 'DQD_Concept_Level_v5.3.1_UKB.csv'
+checkLevels: # which DQ check levels to run (table, field, concept)
+  - TABLE
+  - FIELD
+  - CONCEPT
+checkNames: # which checks to run. Names can be found in inst/csv/OMOP_CDM_v5.3.1_Check_Desciptions.csv
+  - measurePersonCompleteness
+  - cdmField
+  - isRequired
+  - cdmDatatype
+  - isPrimaryKey
+  - isForeignKey
+  - fkDomain
+  - fkClass
+  - isStandardValidCOncept
+  - measureValueCompleteness
+  - standardConceptRecordCompleteness
+  - sourceConceptRecordCompleteness
+  - sourceValueCompleteness
+  - plausibleValueLow
+  - plausibleValueHigh
+  - plausibleTemporalAfter
+  - plausibleDuringLife
+  - plausibleValueLow
+  - plausibleValueHigh
+  - plausibleGender
+cdmVersion: '5.3.1'
+cdmSourceName: 'UK Biobank'
+numThreads: 1
+sqlOnly: false # set to TRUE if you just want to get the SQL scripts and not actually run the queries
+outputFolder: 'output_dqd' # where should the logs go?
+verboseMode: true # set to TRUE if you want to see activity written to the console
+writeToTable: true # set to FALSE if you want to skip writing to a SQL table in the results schema
