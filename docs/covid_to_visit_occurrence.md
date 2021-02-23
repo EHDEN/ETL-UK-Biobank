@@ -1,3 +1,10 @@
+---
+layout: default
+title: covid to visit_occurrence
+parent: covid19 registry
+nav_order: 2
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from covid

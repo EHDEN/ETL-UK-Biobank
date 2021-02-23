@@ -1,3 +1,9 @@
+---
+layout: default
+title: 404
+nav_exclude: true
+---
+
 ## Table name: observation
 
 ### Reading from Baseline characteristics

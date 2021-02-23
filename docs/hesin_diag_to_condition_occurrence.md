@@ -1,3 +1,10 @@
+---
+layout: default
+title: hesin_diag to condition_occurrence
+parent: hospital episode statistic
+nav_order: 3
+---
+
 ## Table name: condition_occurrence
 
 ### Reading from hesin_diag

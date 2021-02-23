@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to condition_occurrence
+parent: stem table
+nav_order: 1
+---
+
 ## Table name: condition_occurrence
 
 ### Reading from stem_table

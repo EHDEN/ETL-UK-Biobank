@@ -1,3 +1,10 @@
+---
+layout: default
+title: metadata
+nav_order: 10
+has_children: false
+---
+
 ## Table name: cdm_source
 
 | Destination Field | Value |

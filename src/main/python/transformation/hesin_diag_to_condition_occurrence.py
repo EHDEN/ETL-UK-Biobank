@@ -4,7 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import get_datetime
-from ..util import add_dot_to_icdx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id
+from ..util import create_hes_visit_occurrence_id, create_hes_visit_detail_id, refactor_icdx_code
 
 
 if TYPE_CHECKING:
@@ -24,8 +24,9 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     df = hesin_diag.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
 
     # Generate code mapping for ICD10 and ICD9, remove dot to get correct concept codes.
-    df['diag_icd9_dot'] = df['diag_icd9'].apply(add_dot_to_icdx_code)
-    df['diag_icd10_dot'] = df['diag_icd10'].apply(add_dot_to_icdx_code)
+    df['diag_icd9_dot'] = df['diag_icd9'].apply(refactor_icdx_code)
+    df['diag_icd10_dot'] = df['diag_icd10'].apply(refactor_icdx_code)
+
     icd9 = wrapper.code_mapper.generate_code_mapping_dictionary(
         'ICD9CM', restrict_to_codes=list(df['diag_icd9_dot']))
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary(

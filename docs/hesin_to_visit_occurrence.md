@@ -1,3 +1,10 @@
+---
+layout: default
+title: hesin to visit_occurrence
+parent: hospital episode statistic
+nav_order: 1
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from hesin

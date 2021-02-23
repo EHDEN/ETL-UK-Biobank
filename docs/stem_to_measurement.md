@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to measurement
+parent: stem table
+nav_order: 5
+---
+
 ## Table name: measurement
 
 ### Reading from stem_table

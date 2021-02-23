@@ -1,3 +1,10 @@
+---
+layout: default
+title: covid to care_site
+parent: covid19 registry
+nav_order: 1
+---
+
 ## Table name: care_site
 
 ### Reading from covid

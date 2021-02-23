@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to procedure_occurrence
+parent: stem table
+nav_order: 3
+---
+
 ## Table name: procedure_occurrence
 
 ### Reading from stem_table

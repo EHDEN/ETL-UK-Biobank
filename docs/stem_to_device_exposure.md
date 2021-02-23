@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to device_exposure
+parent: stem table
+nav_order: 6
+---
+
 ## Table name: device_exposure
 
 ### Reading from stem_table

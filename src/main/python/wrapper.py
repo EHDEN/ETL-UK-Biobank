@@ -15,11 +15,10 @@
 import csv
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, Iterable
+from typing import Dict, Optional, Iterable
 
 from delphyne import Wrapper as BaseWrapper
 from delphyne.config.models import MainConfig
-from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from src.main.python.transformation import *
@@ -36,7 +35,6 @@ class Wrapper(BaseWrapper):
 
         # Load config settings
         self.path_mapping_tables = Path('./resources/mapping_tables')
-        self.path_sql_transformations = Path('./src/main/sql')
 
     def run(self):
 
@@ -45,11 +43,9 @@ class Wrapper(BaseWrapper):
         self.drop_cdm()
         self.create_cdm()
 
-        # Load custom vocabularies
-        self.vocab_manager.load_custom_vocabularies()
-
-        # Load source to concept mappings
-        self.vocab_manager.load_stcm()
+        # Load (custom) vocabularies and source_to_concept_map tables
+        self.vocab_manager.standard_vocabularies.load()
+        self.vocab_manager.load_custom_vocab_and_stcm_tables()
 
         # Remove constraints and indexes to improve performance
         self.db.constraint_manager.drop_cdm_constraints()
@@ -58,66 +54,67 @@ class Wrapper(BaseWrapper):
         self.transform()
 
         # Add constraints and indexes
-        try:
-            self.db.constraint_manager.add_cdm_constraints()
-        except IntegrityError as e:
-            logger.error(f'Constraints could not be applied {e.args}')
+        self.db.constraint_manager.add_cdm_constraints(errors='ignore')
 
         # Log/write overview of transformations and sources
         self.summarize()
 
     def transform(self):
-        self.execute_transformation(covid_to_care_site)
-        self.execute_transformation(assessment_center_to_care_site)
+        self.execute_transformation(covid_to_care_site, bulk=True)
+        self.execute_transformation(assessment_center_to_care_site, bulk=True)
 
         # Person
-        self.execute_transformation(baseline_to_person)
+        self.execute_transformation(baseline_to_person, bulk=True)
 
         # Death
-        self.execute_transformation(death_to_death)
-        self.execute_transformation(death_to_condition_occurrence)
-        self.execute_transformation(baseline_to_death)
+        self.execute_transformation(death_to_death, bulk=True)
+        self.execute_transformation(death_to_condition_occurrence, bulk=True)
+        self.execute_transformation(baseline_to_death, bulk=True)
 
         # Visit
-        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence)
-        self.execute_transformation(covid_to_visit_occurrence)
-        self.execute_transformation(baseline_to_visit_occurrence)
-        self.execute_transformation(hesin_to_visit_occurrence)
-        self.execute_transformation(hesin_to_visit_detail)
+        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True)
+        self.execute_transformation(covid_to_visit_occurrence, bulk=True)
+        self.execute_transformation(baseline_to_visit_occurrence, bulk=True)
+        self.execute_transformation(hesin_to_visit_occurrence, bulk=True)
+        self.execute_transformation(hesin_to_visit_detail, bulk=True)
 
         # Events
-        self.execute_transformation(baseline_to_stem, bulk=True)
-        self.execute_transformation(covid_to_observation)
-        self.execute_transformation(gp_clinical_to_stem_table)
-        self.execute_transformation(gp_prescriptions_to_drug_exposure)
-        self.execute_transformation(hesin_diag_to_condition_occurrence)
-        self.execute_transformation(hesin_oper_to_procedure_occurrence)
-        self.execute_transformation(cancer_register_to_condition_occurrence)
+        self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
+        self.execute_transformation(covid_to_observation, bulk=True)
+        self.execute_transformation(gp_clinical_to_stem_table, bulk=True)
+        self.execute_transformation(gp_prescriptions_to_drug_exposure, bulk=True)
+        self.execute_transformation(hesin_diag_to_condition_occurrence, bulk=True)
+        self.execute_transformation(hesin_oper_to_procedure_occurrence, bulk=True)
+        self.execute_transformation(cancer_register_to_condition_occurrence, bulk=True)
+
+        # New sets
+        self.execute_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True)
+        self.execute_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True)
 
         # CDM Source
-        self.execute_transformation(cdm_source)
+        self.execute_transformation(cdm_source, bulk=True)
 
         # Stem table to domains
         self.load_from_stem_table()  # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
 
         # Post process
         logger.info('Observation Period...')
-        self.execute_sql_file(self.path_sql_transformations / 'observation_period.sql')
+        self.execute_sql_file('observation_period.sql')
         logger.info('Creating eras...')
-        self.execute_sql_file(self.path_sql_transformations / 'drug_era.sql')
-        self.execute_sql_file(self.path_sql_transformations / 'condition_era.sql')
+        self.execute_sql_file('drug_era.sql')
+        self.execute_sql_file('condition_era.sql')
 
         logger.info('{:-^100}'.format(' Summary stats '))
 
     def load_from_stem_table(self):
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_observation.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_measurement.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_condition_occurrence.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_procedure_occurrence.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_drug_exposure.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_device_exposure.sql'))
-        self.execute_sql_file(Path(self.path_sql_transformations / 'stem_table_to_specimen.sql'))
+        self.execute_sql_file('stem_table_to_observation.sql')
+        self.execute_sql_file('stem_table_to_measurement.sql')
+        self.execute_sql_file('stem_table_to_condition_occurrence.sql')
+        self.execute_sql_file('stem_table_to_procedure_occurrence.sql')
+        self.execute_sql_file('stem_table_to_drug_exposure.sql')
+        self.execute_sql_file('stem_table_to_device_exposure.sql')
+        self.execute_sql_file('stem_table_to_specimen.sql')
 
     # TODO: check support for below functions in omop-etl-wrapper
     def mapping_tables_lookup(self, mapping_file: str, add_info: Optional[str] = None, first_only: bool = True, approved_only: bool = True):

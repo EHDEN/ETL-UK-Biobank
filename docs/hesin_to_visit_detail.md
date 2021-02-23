@@ -1,3 +1,10 @@
+---
+layout: default
+title: hesin to visit_detail
+parent: hospital episode statistic
+nav_order: 2
+---
+
 ## Table name: visit_detail
 
 ### Reading from hesin_c.txt

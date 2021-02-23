@@ -1,3 +1,10 @@
+---
+layout: default
+title: baseline to stem table
+parent: assessment centre
+nav_order: 4
+---
+
 ## Baseline to stem table
 
 The Baseline table contains one row per person and a column for each field. There can be thousands of columns. Each column name is structured as `field_id-instance.array` (e.g. `20001-1.15`). The `field_id` encodes the variable, the `instance` indicates one of the four assessment centre visits (ranging from 0 to 3) and with the `array` index multiple values can be given for the same field_id at the same visit.
@@ -40,11 +47,11 @@ Notes:
 | visit_occurrence_id |  |  | TBD |
 | provider_id |  |  | Not provided |
 | concept_id | target.event_concept_id | Lookup from field_id and value (step c) |  |
-| source_value | `field_id` value | If value numeric: `field_id`<br>If discrete: `field_id`\|`value` |  |
+| source_value | `field_id` value | If value numeric: `field_id`<br>If discrete: `field_id`\|`value`. Truncated to 50 characters. |  |
 | source_concept_id | `field_id` value | Use `field_id` to find the UK Biobank vocabulary concept_id | UK Biobank has it is own vocabulary in Athena |
 | value_as_concept_id | target.value_as_concept_id | Lookup from field_id and value (step c) | If value has a discrete mapping |
 | value_as_number | target.value_as_number | Lookup from field_id and value (step c) | If value is numeric |
-| value_as_string | target.value_as_string | Lookup from field_id and value (step c) | If value is text |
+| value_as_string | target.value_as_string | Lookup from field_id and value (step c). Truncated to 50 characters. | If value is text |
 | value_source_value |  |  | Not used, field and value are in source_value column |
 | unit_concept_id | target.unit_concept_id | Lookup from field_id and value (step c) | If value is numeric |
 | unit_source_value |  |  | Not used, unit is directly derived from the `field_id` |

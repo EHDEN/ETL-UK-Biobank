@@ -1,3 +1,10 @@
+---
+layout: default
+title: gp_clinical & gp_prescriptions to visit_occurrence
+parent: general practitioner
+nav_order: 2
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from gp_clinical and gp_prescriptions

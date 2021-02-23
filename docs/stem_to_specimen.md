@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to speciment
+parent: stem table
+nav_order: 7
+---
+
 ## Table name: specimen
 
 ### Reading from stem_table
