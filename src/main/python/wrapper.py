@@ -90,7 +90,6 @@ class Wrapper(BaseWrapper):
         # New sets
         self.execute_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True)
         self.execute_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True)
-        self.execute_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True)
 
         # CDM Source
         self.execute_transformation(cdm_source, bulk=True)
