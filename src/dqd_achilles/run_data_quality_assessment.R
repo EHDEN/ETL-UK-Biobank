@@ -26,8 +26,7 @@ connectionConfig <- config$connectionDetails
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = connectionConfig$dbms, 
                                                                 server = connectionConfig$server,
                                                                 user = connectionConfig$user,
-                                                                password = connectionConfig$password, 
-                                                                schema = connectionConfig$schema,
+                                                                password = connectionConfig$password,
                                                                 port = connectionConfig$port,
                                                                 extraSettings = "")
 
@@ -50,20 +49,16 @@ DataQualityDashboard::executeDqChecks(connectionDetails = connectionDetails,
                                       checkLevels = config$checkLevels,
                                       checkNames = config$checkNames,
                                       cdmVersion = config$cdmVersion)
-
-# inspect logs ----------------------------------------------------------------------------
-ParallelLogger::launchLogViewer(logFileName = file.path(config$outputFolder, config$cdmSourceName,
-                                                        sprintf("log_DqDashboard_%s.txt", config$cdmSourceName)))
-
-# (OPTIONAL) if you want to write the JSON file to the results table separately -----------------------------
-jsonFilePath <- ""
-DataQualityDashboard::writeJsonResultsToTable(connectionDetails = connectionDetails, 
-                                              resultsDatabaseSchema = resultsDatabaseSchema, 
-                                              jsonFilePath = jsonFilePath)
-
 ## Viewing Results
 # Launching Dashboard as Shiny App
 DataQualityDashboard::viewDqDashboard(jsonPath = file.path(getwd(), config$outputFolder, config$cdmSourceName, sprintf("results_%s.json", config$cdmSourceName)))
 
-# View Checks
-View(read.csv(system.file("csv","OMOP_CDMv5.3.1_Check_Descriptions.csv",package="DataQualityDashboard"),as.is=T))
+# inspect logs ----------------------------------------------------------------------------
+# ParallelLogger::launchLogViewer(logFileName = file.path(config$outputFolder, config$cdmSourceName,
+#                                                        sprintf("log_DqDashboard_%s.txt", config$cdmSourceName)))
+
+# (OPTIONAL) if you want to write the JSON file to the results table separately -----------------------------
+# jsonFilePath <- ""
+# DataQualityDashboard::writeJsonResultsToTable(connectionDetails = connectionDetails,
+#                                               resultsDatabaseSchema = resultsDatabaseSchema,
+#                                               jsonFilePath = jsonFilePath)

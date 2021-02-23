@@ -43,4 +43,4 @@ numThreads: 1
 sqlOnly: false # set to TRUE if you just want to get the SQL scripts and not actually run the queries
 outputFolder: 'output_dqd' # where should the logs go?
 verboseMode: true # set to TRUE if you want to see activity written to the console
-writeToTable: true # set to FALSE if you want to skip writing to a SQL table in the results schema
+writeToTable: false # set to FALSE if you want to skip writing to a SQL table in the results schema
