@@ -20,9 +20,9 @@ Ignore rows were "value" = -1 or -2
 | visit_occurrence_id |  |  |  |
 | provider_id |  |  |  |
 | id |  |  | Not used. |
-| concept_id | code_type<br>code | Combine the "code_type" with the "code" to use the correct lookup. If "code_type" = "0" use CTV3 lookup. If "code_type' = "1" use Local TPP lookup. https://biobank.ndph.ox.ac.uk/showcase/coding.cgi?id=3175<br> |  |
+| concept_id | code_type<br>code | Combine the "code_type" with the "code" to use the correct lookup. If "code_type" = "0" use CTV3 lookup. If "code_type" = "1" use Local TPP lookup. If "code_type" = "-1" OR "-2", discard that record. https://biobank.ndph.ox.ac.uk/showcase/coding.cgi?id=3175<br> |  |
 | source_value | code |  |  |
-| source_concept_id | code_type<br>code |  |  |
+| source_concept_id | code_type<br>code | ATHENA codes are not available for these CVT3 nor local TPP codes. All values are set to 0, as in gp_clinical_to_stem transformation. |  |
 | type_concept_id |  |  | 32817: EHR |
 | start_date | event_dt |  |  |
 | start_datetime | event_dt |  |  |
