@@ -13,7 +13,7 @@
 # GNU General Public License for more details.
 
 library(yaml)
-config <- yaml.load_file('config.yml')
+config <- yaml.load_file('config-elena.yml')
 
 # Initialize the framework once -------------------------------------------
 # NOTE: remove initFramework() from TestFramework.R, otherwise it resets with every import!
@@ -45,6 +45,7 @@ source('test_cases/test_drug_era.R')                                   # test ID
 source('test_cases/test_observation_period.R')                         # test IDs 2200-2299
 source('test_cases/test_covid19_emis_gp_scripts_to_drug_exposure.R')   # test IDs 2300-2399
 source('test_cases/test_covid19_tpp_gp_scripts_to_drug_exposure.R')    # test IDs 2400-2499
+source('test_cases/test_covid19_tpp_gp_clinical_to_stem.R')            # test IDs 2500-2599
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)
