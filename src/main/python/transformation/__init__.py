@@ -16,4 +16,5 @@ from .hesin_oper_to_procedure_occurrence import hesin_oper_to_procedure_occurren
 from .baseline_to_death import baseline_to_death
 from .hesin_to_visit_detail import hesin_to_visit_detail
 from .cancer_register_to_condition_occurrence import cancer_register_to_condition_occurrence
+from .covid19_emis_gp_clinical_to_stem_table import covid19_emis_gp_clinical_to_stem_table
 from .cdm_source import cdm_source
