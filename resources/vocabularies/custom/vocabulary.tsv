@@ -1,4 +1,13 @@
 vocabulary_id	vocabulary_name	vocabulary_reference	vocabulary_version	vocabulary_concept_id
 BASELINE_GENDER	Baseline gender	Baseline table	v0.1	0
 BASELINE_RACE	Baseline race	Baseline table	v0.1	0
-SOURCE_VOCAB	Source concept vocabulary	See mapping_tables folder	v0.1	0
+COVID_EMIS_UNITS	Covid emis units	Covid	v0.1	0
+COVID_SPECTYPE	Covid spectype	Covid	v0.1	0
+CTV3	CTV3	CTV3	v0.1	0
+GP_CLINICAL_COVID	GP Clinical COVID	GP clinical	v0.1	0
+GP_CLINICAL_UNITS	GP Clinical units	GP clinical	v0.1	0
+GP_PRESC_READ2	GP Prescriptions Read2	GP prescriptions	v0.1	0
+HESIN_ADMIMETH	HESIN admimeth	Hesin	v0.1	0
+HESIN_ADMISORC	HESIN admisorc	Hesin	v0.1	0
+HESIN_DISDEST	HESIN disdest	Hesin	v0.1	0
+OPCS3	OPCS3	OPCS3	OPCS3	v0.1	0
