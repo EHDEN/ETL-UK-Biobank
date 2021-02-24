@@ -1,2 +1,4 @@
 source_vocabulary_id	stcm_version
+BASELINE_GENDER	0.1
+BASELINE_RACE	0.1
 SOURCE_VOCAB	0.1

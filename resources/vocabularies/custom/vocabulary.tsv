@@ -1,2 +1,4 @@
 vocabulary_id	vocabulary_name	vocabulary_reference	vocabulary_version	vocabulary_concept_id
+BASELINE_GENDER	Baseline gender	Baseline table	v0.1	0
+BASELINE_RACE	Baseline race	Baseline table	v0.1	0
 SOURCE_VOCAB	Source concept vocabulary	See mapping_tables folder	v0.1	0
