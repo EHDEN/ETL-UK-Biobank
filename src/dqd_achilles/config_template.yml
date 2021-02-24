@@ -1,9 +1,10 @@
 connectionDetails:
-  dbms: 
+  dbms:
   user:
   password:  
   server: 
   port: 
   schema:
+  vocabDatabaseSchema:
 cdmVersion:
 cdmSourceName:
