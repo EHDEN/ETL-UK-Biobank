@@ -24,7 +24,7 @@ Ignore rows were "value" = -1 or -2
 | source_value | code |  |  |
 | source_concept_id | code_type<br>code | ATHENA codes are not available for these CVT3 nor local TPP codes. All values are set to 0, as in gp_clinical_to_stem transformation. |  |
 | type_concept_id |  |  | 32817: EHR |
-| start_date | event_dt |  |  |
+| start_date | event_dt | Fill with event date. If missing, it uses the default date 01/01/1970. |  |
 | start_datetime | event_dt |  |  |
 | end_date |  |  |  |
 | end_datetime |  |  |  |
