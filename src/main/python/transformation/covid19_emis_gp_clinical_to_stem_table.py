@@ -33,7 +33,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         if re.match(r'^(-[\d])', row['value']):
             continue
 
-        if row['code'] in ['-99', '-1']:
+        if row['code'] in ['-99', '-1', '-4']:
             continue
         mapping = snomed_mapper.lookup(row['code'], first_only=True)
 
