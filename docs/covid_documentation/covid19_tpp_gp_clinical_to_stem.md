@@ -2,7 +2,7 @@
 layout: default
 title: tpp gp_clinical
 parent: covid19 general practitioner
-nav_order: 3
+nav_order: 4
 ---
 
 ## Table name: stem_table
