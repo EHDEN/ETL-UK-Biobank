@@ -13,7 +13,7 @@
 # GNU General Public License for more details.
 
 library(yaml)
-config <- yaml.load_file('config-elena.yml')
+config <- yaml.load_file('config.yml')
 
 # Initialize the framework once -------------------------------------------
 # NOTE: remove initFramework() from TestFramework.R, otherwise it resets with every import!
