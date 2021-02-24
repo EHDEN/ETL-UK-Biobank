@@ -1,10 +1,8 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-import csv
 
 from ..util import get_datetime, is_null, extend_read_code, create_gp_visit_occurrence_id
-from ..gp_mapper import GpClinicalValueMapper
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -25,13 +23,16 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
         # If 'code_type' = '0'   use CTV3 lookup. 
         # If 'code_type’ = '1'   use Local TPP lookup. 
         # If 'code_type' = '-1', '-2' or other, discard record from the table 
-        if not is_null(row['code']):
-            if row["code_type"]=='0':
-                target_concept_id = ctv3_lookup.get(row['code'], 0)
-            elif row["code_type"]=='1':
-                target_concept_id = local_tpp_lookup.get(row['code'], 0)
-            else:
-                continue
+        if is_null(row['code']):
+            continue
+
+        if is_null(row['event_dt']):
+            continue
+
+        if row["code_type"] == '0':
+            target_concept_id = ctv3_lookup.get(row['code'], 0)
+        elif row["code_type"] == '1':
+            target_concept_id = local_tpp_lookup.get(row['code'], 0)
         else:
             continue
 
@@ -39,7 +40,6 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
         person_id = row['eid']
         source_code = row['code']
         value_as_number = row['value']
-        source_concept_id = '0'  # as in gp_clinical_to_stem_table (no code available in ATHENA)
 
         # Date
         event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
@@ -49,7 +49,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
             person_id=person_id,
             concept_id=target_concept_id,
             source_value=source_code,  
-            source_concept_id=source_concept_id,
+            source_concept_id=0,
             start_date=event_date,
             start_datetime=event_date,
             value_as_number=value_as_number,
