@@ -45,6 +45,10 @@ source('test_cases/test_drug_era.R')                                   # test ID
 source('test_cases/test_observation_period.R')                         # test IDs 2200-2299
 source('test_cases/test_covid19_emis_gp_scripts_to_drug_exposure.R')   # test IDs 2300-2399
 source('test_cases/test_covid19_tpp_gp_scripts_to_drug_exposure.R')    # test IDs 2400-2499
+source('test_cases/test_covid19_emis_gp_clinical_to_visit_occurrence.R') # test IDs 2700-2799
+source('test_cases/test_covid19_emis_gp_scripts_to_visit-occurrence.R')  # test IDs 2800-2899
+source('test_cases/test_covid19_tpp_gp_clinical_to_visit_occurrence.R')  # test IDs 2900-2999
+source('test_cases/test_covid19_tpp_gp_scripts_to_visit_occurrence.R')   # test IDs 3000-3099
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)
