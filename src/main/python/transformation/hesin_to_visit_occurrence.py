@@ -4,7 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import DEFAULT_DATETIME
-from ..util import create_hes_visit_occurrence_id
+from ..util import create_hes_visit_occurrence_id, is_null
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -36,13 +36,13 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
     for _, row in df.iterrows():
         person_id = row['eid']
 
-        if pd.isna(row['admidate']):
+        if is_null(row['admidate']):
             start_date = DEFAULT_DATETIME
         else:
             start_date = row['admidate']
 
-        if pd.isna(row['disdate']):
-            end_date = DEFAULT_DATETIME
+        if is_null(row['disdate']):
+            end_date = start_date
         else:
             end_date = row['disdate']
 
