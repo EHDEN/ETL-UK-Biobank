@@ -76,7 +76,7 @@ expect_procedure_occurrence(person_id = 1507, procedure_date = '2020-12-18',
 
 declareTest(1508, 'HES diagnosis with visit detail')
 add_baseline(eid = 1508)
-add_hesin(eid = 1508, ins_index = 0, admidate = '19/12/2020')
+add_hesin(eid = 1508, ins_index = 0, epistart = '19/12/2020', admidate = '19/12/2020')
 add_hesin_oper(eid = 1508, ins_index = 0, opdate = '19/12/2020', oper4 = 'Z857')
 expect_visit_detail(person_id = 1508, visit_detail_start_date = '2020-12-19')
 expect_procedure_occurrence(person_id = 1508, procedure_date = '2020-12-19',
