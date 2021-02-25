@@ -17,7 +17,7 @@ Ignore rows were "value" = -1 or -2
 | --- | --- | --- | --- |
 | domain_id |  |  | All records from covid19_gp_clinical will be inserted in the measurement table. |
 | person_id | eid |  |  |
-| visit_occurrence_id | eid<br>event_dt | Create a new visit id string with the form: 'covid prefix'(500)+'eid'+'event_dt' |  |
+| visit_occurrence_id | eid<br>event_dt | Create a new visit id string with the form: 'covid prefix'(5000)+'eid'+'event_dt' |  |
 | provider_id |  |  |  |
 | id |  |  | Not used. |
 | concept_id | code_type<br>code | Combine the "code_type" with the "code" to use the correct lookup. If "code_type" = "0" use CTV3 lookup. If "code_type" = "1" use Local TPP lookup. If "code_type" = "-1" OR "-2", discard that record. https://biobank.ndph.ox.ac.uk/showcase/coding.cgi?id=3175<br> |  |

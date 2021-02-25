@@ -62,7 +62,8 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
             value_as_number=value_as_number,
             visit_occurrence_id=visit_id,
             domain_id='Measurement',  # this always overrides concept.domain_id, also if the concept is legitimately a condition
-            type_concept_id=32817     # 32817: EHR
+            type_concept_id=32817,     # 32817: EHR
+            data_source='covid19 gp_tpp'
         )
         records.append(r)
 
