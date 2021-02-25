@@ -35,15 +35,22 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
 
         if row['code'] in ['-99', '-1', '-4']:
             continue
-        mapping = snomed_mapper.lookup(row['code'], first_only=True)
 
-        # If the concept is not found in the SNOMED vocabulary, check mapping of local codes.
-        if mapping.target_concept_id == 0:
-            mapping.target_concept_id = mapping_lookup.get(row['code'], 0)
+        # SNOMED codes
+        if row['code_type'] == '2':
+            mapping = snomed_mapper.lookup(row['code'], first_only=True)
+            target_concept_id = mapping.target_concept_id
+            source_concept_id = mapping.source_concept_id
+        # Local EMIS code
+        elif row['code_type'] == '3':
+            target_concept_id = mapping_lookup.get(row['code'], 0)
+            source_concept_id = 0
+        else:
+            continue
 
         visit_id = create_covid_visit_occurrence_id(row['eid'], event_date)
 
-        if pd.notna(row['unit']) and re.match(r'^(-[\d])', row['unit']):
+        if pd.isna(row['unit']) or re.match(r'^(-[\d])', row['unit']):
             unit_concept_id, unit_source_value = None, None
         else:
             unit_concept_id = unit_lookup.get(row['unit'], 0)
@@ -56,13 +63,13 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             start_date=event_date,
             start_datetime=event_date,
             visit_occurrence_id=visit_id,
-            concept_id=mapping.target_concept_id,
-            source_concept_id=mapping.source_concept_id,
+            concept_id=target_concept_id,
+            source_concept_id=source_concept_id,
             source_value=row['code'],
             unit_concept_id=unit_concept_id,
             unit_source_value=unit_source_value,
             value_as_number=row['value'],
-            data_source='GP-COVID19'
+            data_source='covid19 gp_emis'
         )
         records.append(r)
     return records
