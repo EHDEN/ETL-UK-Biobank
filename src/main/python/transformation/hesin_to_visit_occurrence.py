@@ -25,12 +25,23 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
          }
     ).reset_index()
 
-    visit_reason = wrapper.mapping_tables_lookup('./resources/mapping_tables/hesin_admimeth.csv',
-                                                 add_info='ADD_INFO:coding_origin')
-    admit_reason = wrapper.mapping_tables_lookup('./resources/mapping_tables/hesin_admisorc.csv',
-                                                 add_info='ADD_INFO:coding_origin')
-    dis_reason = wrapper.mapping_tables_lookup('./resources/mapping_tables/hesin_disdest.csv',
-                                               add_info='ADD_INFO:coding_origin')
+    visit_reason, admit_reason, dis_reason = {}, {}, {}
+    for origin in ['HES', 'PEDW', 'SMR']:
+        visit_reason.update(
+            wrapper.mapping_tables_lookup(
+                f'./resources/mapping_tables/hesin_admimeth_{origin}.csv',
+                add_info='ADD_INFO:coding_origin')
+        )
+        admit_reason.update(
+            wrapper.mapping_tables_lookup(
+                f'./resources/mapping_tables/hesin_admisorc_{origin}.csv',
+                add_info='ADD_INFO:coding_origin')
+        )
+        dis_reason.update(
+            wrapper.mapping_tables_lookup(
+                f'./resources/mapping_tables/hesin_disdest_{origin}.csv',
+                add_info='ADD_INFO:coding_origin')
+        )
 
     records = []
     for _, row in df.iterrows():
