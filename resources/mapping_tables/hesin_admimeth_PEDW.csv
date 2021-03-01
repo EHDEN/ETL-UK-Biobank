@@ -1,72 +1,19 @@
 sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,ADD_INFO:coding_origin,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
 98,Not Applicable,,,,-1,,PEDW,0.31899407505989075,UNCHECKED,,0,9201,EVENT,,,1605630916872
 11,Elective: Waiting list,,,,-1,,PEDW,0.11107988655567169,APPROVED,sofia,1605630983169,9201,EVENT,,,1605630916873
-5,Emergency - Road Traffic Accident,,,,-1,,SMR,0.3805104196071625,APPROVED,sofia,1605630998905,9203,EVENT,,,1605630916874
-10,"Routine Admission,no additional detail added",,,,-1,,SMR,0.09732140600681305,APPROVED,sofia,1605631080216,9201,EVENT,,,1605630916874
-36,"Patient Non-Injury (e.g. stroke,MI,Ruptured Appendix)",,,,-1,,SMR,0.1324312537908554,APPROVED,sofia,1605631074505,9203,EVENT,,,1605630916875
-24,"Emergency: Consultant clinic of this or another health care provider (formerly \Emergency: via outpatients\ prior to Financial Year 2015/16)",,,,-1,,HES,0.2178659588098526,APPROVED,sofia,1605630985747,9203,EVENT,,,1605630916875
-25,"Admission via Mental Health Crisis Resolution Team (available from 2013/14. Prior to this date a value of 25 represented \Emergency - domiciliary visit by consultant\)",,,,-1,,HES,0.20221161842346191,APPROVED,sofia,1605630969203,9203,EVENT,,,1605630916877
-22,"Hospital delay (for administrative or clinical reasons e.g. arranging appropriate facilities,for test to be carried out,specialist equipment,etc.)",,,,-1,,SMR,0.22502556443214417,APPROVED,sofia,1605631026464,9201,EVENT,,,1605630916877
 99,Not Known,,,,-1,,PEDW,0.07066985219717026,UNCHECKED,,0,9201,EVENT,,,1605630916878
 12,Elective: Booked,,,,-1,,PEDW,0.15112018585205078,APPROVED,sofia,1605630981972,9201,EVENT,,,1605630916878
-38,Other Emergency Admission (including emergency transfers),,,,-1,,SMR,0.2719743251800537,APPROVED,sofia,1605631061105,9203,EVENT,,,1605630916879
-2D,Emergency: other,,,,-1,,HES,0.3020963966846466,APPROVED,sofia,1605630987297,9203,EVENT,,,1605630916879
-6,Emergency - Home Accident (includes Accidental Poisoning in the home),,,,-1,,SMR,0.34395933151245117,APPROVED,sofia,1605630996873,9203,EVENT,,,1605630916880
-11,"Routine elective (i.e. from waiting list as planned,excludes planned transfers)",,,,-1,,SMR,0.08795297890901566,APPROVED,sofia,1605631083414,9201,EVENT,,,1605630916880
-84,From the admission panel of a High Security Psychiatric Hospital,,,,-1,,HES,0.5670592188835144,UNCHECKED,,0,8971,EVENT,,,1605630916881
-30,"Emergency Admission,no additional detail added",,,,-1,,SMR,0.2718183696269989,APPROVED,sofia,1605630994431,9203,EVENT,,,1605630916881
-21,Emergency: via A&E,,,,-1,,HES,0.24697063863277435,APPROVED,sofia,1605630990149,9203,EVENT,,,1605630916882
-3,Transfer,,,,-1,,SMR,0.1513516753911972,APPROVED,sofia,1605631096102,9201,EVENT,,,1605630916883
-1,Waiting List/Diary/Booked,,,,-1,,SMR,0.12472901493310928,APPROVED,sofia,1605631104866,9201,EVENT,,,1605630916884
-39,"Emergency Admission,type not known",,,,-1,,SMR,0.2548017203807831,APPROVED,sofia,1605630995306,9203,EVENT,,,1605630916884
 14,Elective: Activity under the Welsh Assembly Government 2nd Offer Scheme (Originating Provider),,,,-1,,PEDW,0.1475002020597458,APPROVED,sofia,1605630980880,9201,EVENT,,,1605630916885
-23,Emergency: via Bed Bureau,,,,-1,,HES,0.2906551659107208,APPROVED,sofia,1605630991426,9203,EVENT,,,1605630916886
-12,"Patient admitted on same day or following day as Attendance at Outpatients,not for medical reasons,but because suitable resources are available",,,,-1,,SMR,0.24086056649684906,APPROVED,sofia,1605631065235,9201,EVENT,,,1605630916887
-2A,Emergency: via A&E of another hospital provider,,,,-1,,HES,0.2942214608192444,APPROVED,sofia,1605630990767,9203,EVENT,,,1605630916887
-32,Patient Injury - Road Traffic Accident (RTA),,,,-1,,SMR,0.14913243055343628,APPROVED,sofia,1605631071315,9203,EVENT,,,1605630916888
-4,Emergency - Deliberate Self Injury or Poisoning,,,,-1,,SMR,0.2949334979057312,APPROVED,sofia,1605630996159,9203,EVENT,,,1605630916888
-2,Repeat Admissions,,,,-1,,SMR,0.14194129407405853,APPROVED,sofia,1605631077748,9201,EVENT,,,1605630916889
-34,Patient Injury - Accident at Work,,,,-1,,SMR,0.19640271365642548,APPROVED,sofia,1605631069066,9203,EVENT,,,1605630916889
-22,Emergency: via GP,,,,-1,,HES,0.31562095880508423,APPROVED,sofia,1605630992020,9203,EVENT,,,1605630916890
 15,Elective: Activity under the Welsh Assembly Government 2nd Offer Scheme (Receiving Provider),,,,-1,,PEDW,0.14405933022499084,APPROVED,sofia,1605630981507,9201,EVENT,,,1605630916891
-7,Emergency - Other Injury (includes Accidental Poisoning other than in the home),,,,-1,,SMR,0.2732177972793579,APPROVED,sofia,1605630998238,9203,EVENT,,,1605630916891
-28,Emergency: other means,,,,-1,,HES,0.27758288383483887,APPROVED,sofia,1605630988503,9203,EVENT,,,1605630916892
-33,Patient Injury - Home Accident (including Accidental Poisoning in the home),,,,-1,,SMR,0.19442440569400787,APPROVED,sofia,1605631069766,9203,EVENT,,,1605630916892
-20,"Urgent Admission,no additional detail added",,,,-1,,SMR,0.1551285833120346,APPROVED,sofia,1605631103372,9203,EVENT,,,1605630916893
-0,Deferred Admission,,,,-1,,SMR,0.09648030996322632,APPROVED,sofia,1605630978628,9201,EVENT,,,1605630916893
-32,Maternity: baby delivered before admission,,,,-1,,HES,0.20003251731395721,APPROVED,sofia,1605631032349,8650,EVENT,,,1605630916894
-35,Patient Injury - Other Injury (including Accidental Poisoning other than in the home) - not elsewhere classified,,,,-1,,SMR,0.15156231820583344,APPROVED,sofia,1605631070304,9203,EVENT,,,1605630916895
 13,Elective: Planned,,,,-1,,PEDW,0.13185644149780273,APPROVED,sofia,1605630982655,9201,EVENT,,,1605630916895
-8,Emergency - Other (excludes Accidental Poisoning),,,,-1,,SMR,0.2773765027523041,APPROVED,sofia,1605630997547,9203,EVENT,,,1605630916895
-13,Elective: planned,,,,-1,,HES,0.13185644149780273,APPROVED,sofia,1605630982405,9201,EVENT,,,1605630916895
-31,Patient Injury - Self Inflicted (Injury or Poisoning),,,,-1,,SMR,0.1948394477367401,APPROVED,sofia,1605631071885,9203,EVENT,,,1605630916896
-21,"Patient delay (for domestic,legal or other practical reasons)",,,,-1,,SMR,0.14400900900363922,APPROVED,sofia,1605631067661,9201,EVENT,,,1605630916896
-98,Not applicable,,,,-1,,HES,0.31899407505989075,UNCHECKED,,0,9201,EVENT,,,1605630916897
 82,The birth of a baby in this health care provider,,,,-1,,PEDW,0.3068487048149109,UNCHECKED,,0,9201,EVENT,,,1605630916897
-83,Other: babies born outside Health Care Provider,,,,-1,,HES,0.23695696890354156,UNCHECKED,,0,8650,EVENT,,,1605630916897
-42,Maternity Admission (Record Type 02 only),,,,-1,,SMR,0.10241671651601791,APPROVED,sofia,1605631032842,8650,EVENT,,,1605630916898
-2B,Emergency: Transfer from another hospital provider,,,,-1,,HES,0.3884115517139435,APPROVED,sofia,1605630989603,9203,EVENT,,,1605630916898
-12,Elective: booked,,,,-1,,HES,0.15112018585205078,APPROVED,sofia,1605630981747,9201,EVENT,,,1605630916899
-99,Not known,,,,-1,,HES,0.07066985219717026,UNCHECKED,,0,9201,EVENT,,,1605630916899
-18,Planned transfers,,,,-1,,SMR,0.15981429815292358,APPROVED,sofia,1605631076188,9201,EVENT,,,1605630916900
 25,Emergency: Domiciliary visit by Consultant,,,,-1,,PEDW,0.3544340133666992,APPROVED,sofia,1605630986277,9203,EVENT,,,1605630916900
-81,Transfer from another hospital provider,,,,-1,,HES,0.40241920948028564,APPROVED,sofia,1605631099065,9201,EVENT,,,1605630916901
-89,From the admissions waiting list of a High Security Psychiatric Hospital,,,,-1,,HES,0.5258135199546814,APPROVED,sofia,1605631020797,8971,EVENT,,,1605630916901
 83,Baby born outside the health care provider (except when born at home as intended. In this case the baby is an emergency admission. e.g. if midwife's decision to admit the baby use Admission Method 28),,,,-1,,PEDW,0.2038128674030304,UNCHECKED,,0,9203,EVENT,,,1605630916901
-43,Neonatal Admission (Record Type 11 only),,,,-1,,SMR,0.08313561230897903,APPROVED,sofia,1605631035276,8650,EVENT,,,1605630916902
-11,Elective: from waiting list,,,,-1,,HES,0.11133716255426407,APPROVED,sofia,1605630982205,9201,EVENT,,,1605630916902
-2C,Other: babies born at home,,,,-1,,HES,0.13919056951999664,APPROVED,sofia,1605631046291,581476,EVENT,,,1605630916905
-19,"Routine Admission,type not known",,,,-1,,SMR,0.05819658562541008,APPROVED,sofia,1605631081213,9201,EVENT,,,1605630916906
 27,Emergency: Via NHS Direct Services,,,,-1,,PEDW,0.24522830545902252,APPROVED,sofia,1605630992896,9203,EVENT,,,1605630916906
 23,Emergency: Bed bureau,,,,-1,,PEDW,0.2725696563720703,APPROVED,sofia,1605630984791,9203,EVENT,,,1605630916906
-40,"Other admission types,no additional detail added",,,,-1,,SMR,0.10776391625404358,UNCHECKED,,0,9201,EVENT,,,1605630916907
-48,Other,,,,-1,,SMR,0.374957799911499,UNCHECKED,,0,9201,EVENT,,,1605630916908
 32,Maternity: Admitted post-partum,,,,-1,,PEDW,0.18167869746685028,APPROVED,sofia,1605631031227,8650,EVENT,,,1605630916908
-31,Maternity: baby delivered after admission,,,,-1,,HES,0.20082610845565796,APPROVED,sofia,1605631031798,8650,EVENT,,,1605630916909
-82,Other: babies born in Health Care Provider,,,,-1,,HES,0.2751677930355072,UNCHECKED,,0,8650,EVENT,,,1605630916909
 29,Emergency: Other,,,,-1,,PEDW,0.3020963966846466,APPROVED,sofia,1605630987948,9203,EVENT,,,1605630916909
 21,Emergency: A & E or dental casualty department of the health care provider,,,,-1,,PEDW,0.2776168882846832,APPROVED,sofia,1605630984132,9203,EVENT,,,1605630916910
-41,Home Birth (Record Type 02 only),,,,-1,,SMR,0.23518596589565277,APPROVED,sofia,1605631024094,581476,EVENT,,,1605630916910
 24,Emergency: Consultant clinic of this or another health care provider,,,,-1,,PEDW,0.31213629245758057,APPROVED,sofia,1605630985297,9203,EVENT,,,1605630916910
 28,"Emergency: Other means,including admitted from the A & E department of another provider where they had not been admitted",,,,-1,,PEDW,0.20690162479877472,APPROVED,sofia,1605630989113,9203,EVENT,,,1605630916911
 81,Transfer of any admitted patient from other hospital provider. May be used for an elective or emergency transfer from other hospital provider.,,,,-1,,PEDW,0.3185383677482605,APPROVED,sofia,1605631101974,9201,EVENT,,,1605630916911
