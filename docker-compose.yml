@@ -11,9 +11,6 @@ services:
       - app
     volumes:
       - postgresql_data:/bitnami/postgresql
-      - ./postgres/vocab.zip:/vocab:ro
-      - ./postgres/CONCEPT_CPT4.csv:/CONCEPT_CPT4.csv:ro
-      - ./postgres/VOCABULARY_CPT4.csv:/VOCABULARY_CPT4.csv:ro
       - ./postgres/postgresql.conf:/opt/bitnami/postgresql/conf/conf.d/postgresql.conf
     environment:
       - POSTGRESQL_POSTGRES_PASSWORD=password
