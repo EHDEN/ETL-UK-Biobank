@@ -4,7 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 
 from ..util.date_functions import DEFAULT_DATETIME
-from ..util import create_hes_visit_occurrence_id
+from ..util import create_hes_visit_occurrence_id, is_null
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -25,24 +25,35 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
          }
     ).reset_index()
 
-    visit_reason = wrapper.mapping_tables_lookup('./resources/mapping_tables/hesin_admimeth.csv',
-                                                 add_info='ADD_INFO:coding_origin')
-    admit_reason = wrapper.mapping_tables_lookup('./resources/mapping_tables/hesin_admisorc.csv',
-                                                 add_info='ADD_INFO:coding_origin')
-    dis_reason = wrapper.mapping_tables_lookup('./resources/mapping_tables/hesin_disdest.csv',
-                                               add_info='ADD_INFO:coding_origin')
+    visit_reason, admit_reason, dis_reason = {}, {}, {}
+    for origin in ['HES', 'PEDW', 'SMR']:
+        visit_reason.update(
+            wrapper.mapping_tables_lookup(
+                f'./resources/mapping_tables/hesin_admimeth_{origin}.csv',
+                add_info='ADD_INFO:coding_origin')
+        )
+        admit_reason.update(
+            wrapper.mapping_tables_lookup(
+                f'./resources/mapping_tables/hesin_admisorc_{origin}.csv',
+                add_info='ADD_INFO:coding_origin')
+        )
+        dis_reason.update(
+            wrapper.mapping_tables_lookup(
+                f'./resources/mapping_tables/hesin_disdest_{origin}.csv',
+                add_info='ADD_INFO:coding_origin')
+        )
 
     records = []
     for _, row in df.iterrows():
         person_id = row['eid']
 
-        if pd.isna(row['admidate']):
+        if is_null(row['admidate']):
             start_date = DEFAULT_DATETIME
         else:
             start_date = row['admidate']
 
-        if pd.isna(row['disdate']):
-            end_date = DEFAULT_DATETIME
+        if is_null(row['disdate']):
+            end_date = start_date
         else:
             end_date = row['disdate']
 
