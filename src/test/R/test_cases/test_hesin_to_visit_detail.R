@@ -19,8 +19,8 @@ expect_visit_detail(person_id = 1802, visit_detail_start_date = '2017/12/09',
 declareTest(1803, 'Missing episode enddate')
 add_baseline(eid = 1803)
 add_hesin(eid = 1803, epistart = '09/12/2017', epiend = '', ins_index = 1)
-expect_visit_detail(person_id = 1802, visit_detail_start_date = '2017/12/09',
-                    visit_detail_end_date = '2017/12/2017')
+expect_visit_detail(person_id = 1803, visit_detail_start_date = '2017/12/09',
+                    visit_detail_end_date = '2017/12/09')
 
 declareTest(1804, 'Create two episodes for one person (only start dates)')
 add_baseline(eid = 1804)
@@ -34,7 +34,7 @@ declareTest(1805, 'Create two episodes in one spell for a person (only start dat
 add_baseline(eid = 1805)
 add_hesin(eid = 1805, epistart = '22/08/1999', admidate = '21/08/1999', ins_index = 0, spell_index = 1)
 add_hesin(eid = 1805, epistart = '23/08/1999', admidate = '21/08/1999', ins_index = 1, spell_index = 1)
-expect_count_visit_occurrence(1, person_id = 1805, visit_start_date = '1997/01/21')
+expect_count_visit_occurrence(1, person_id = 1805, visit_start_date = '1999/08/21')
 expect_count_visit_detail(2, person_id = 1805)
 expect_visit_detail(person_id = 1805, visit_detail_start_date = '1999/08/22',
                     visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1805, visit_start_date = '1999/08/21'))
