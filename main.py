@@ -28,14 +28,9 @@ def main(config):
     # Load configuration
     config = MainConfig(**read_yaml_file(Path(config)))
 
-    # Create vocabulary schema and tables (note: this uses the superuser and password)
-    # TODO: use delphynes methods to initialize vocabularies
-    initialize_database(config)  #, config['run_options'].get('force_load_vocab', False))
-
     # Initialize ETL with configuration parameters
     etl = Wrapper(config)
 
-    # TODO: ok to log this here? shall we log it next to wrapper version info?
     logger.info('ETL version {}'.format(__version__))
 
     # Run ETL
