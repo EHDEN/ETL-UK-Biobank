@@ -1,0 +1,11 @@
+source_code,source_concept_id,source_vocabulary_id,source_code_description,target_concept_id,target_vocabulary_id,valid_start_date,valid_end_date,invalid_reason
+1,0,BASELINE_RACE,White,35827394,UK Biobank,1970-01-01,2099-12-31,
+2,0,BASELINE_RACE,Mixed,35826472,UK Biobank,1970-01-01,2099-12-31,
+3,0,BASELINE_RACE,Asian or Asian British,35825508,UK Biobank,1970-01-01,2099-12-31,
+4,0,BASELINE_RACE,Black or Black British,35825567,UK Biobank,1970-01-01,2099-12-31,
+5,0,BASELINE_RACE,Chinese,35825724,UK Biobank,1970-01-01,2099-12-31,
+6,0,BASELINE_RACE,Other ethnic group,35826615,UK Biobank,1970-01-01,2099-12-31,
+1001,0,BASELINE_RACE,British,35825612,UK Biobank,1970-01-01,2099-12-31,
+1002,0,BASELINE_RACE,Irish,35826265,UK Biobank,1970-01-01,2099-12-31,
+1003,0,BASELINE_RACE,Any other white background,35825478,UK Biobank,1970-01-01,2099-12-31,
+3004,0,BASELINE_RACE,Any other Asian background,35825475,UK Biobank,1970-01-01,2099-12-31,

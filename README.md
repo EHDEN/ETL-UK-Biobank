@@ -13,7 +13,9 @@ Please refer to the delphyne documentation for further information on how the ET
 
 ### Prepare the target database
 - Create an empty database.
-- OMOP vocabulary tables should be pre-loaded to a schema named `vocab`. The following vocabularies are needed on top of the default selected ones: READ (17), ICD10 (34), HES Specialty (57), OPCS4 (55), dm+d (75), ICDO3 (90), UKB (144)
+- OMOP vocabulary tables should be pre-loaded to a schema named `vocab`. 
+  The following vocabularies are needed on top of the default selected ones: 
+  READ (17), ICD10 (34), ICD10PCS (35), OPCS4 (55), HES Specialty (57), dm+d (75), ICDO3 (90), UKB (144)
 - Create an empty schema `omopcdm`; the ETL will automatically load the CDM 5.3.1 tables to this schema.
 
 ### Customize configuration
