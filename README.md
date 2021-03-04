@@ -27,7 +27,7 @@ There are two ways to run the ETL. The first is by using Docker to set up the en
 The ETL can be run with Docker. The only requirement is to install Docker and download the OMOP standard vocabulary from [Athena](athena.ohdsi.org).
 
 To deploy the docker:
-1. Copy the vocabulary download (as zip) to `/postgres/vocab.zip`.`
+1. Unzip the vocabulary download and move the files to `/resources/vocabularies/standard`.
 2. Run `docker-compose up -d --build`. This will build the postgres and etl containers. After building this, the etl will be started. If the vocabularies are not loaded yet, the first step will be to load these.
 3. Check the progress with `docker-compose logs -f etl`. Or look at the files in the _logs_ folder. The etl image will keep retrying to run the etl until it finishes successfully.
 4. When finished, you can find the transformed files in the postgres database in the Docker that can be accessed e.g. through psql (`psql -h localhost -p 6000 -d ohdsi -U admin -W`). For the password see [docker-compose.yml](docker-compose.yml), line 54. 
