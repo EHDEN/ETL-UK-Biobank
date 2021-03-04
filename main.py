@@ -10,7 +10,6 @@ from delphyne.log.setup_logging import setup_logging
 from delphyne.util.io import read_yaml_file
 
 from src.main.python.wrapper import Wrapper
-from src.main.python.initialize_database import initialize_database
 
 __version__ = '0.2.0'
 
