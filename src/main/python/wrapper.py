@@ -44,8 +44,16 @@ class Wrapper(BaseWrapper):
         self.create_cdm()
 
         # Load (custom) vocabularies and source_to_concept_map tables
-        self.vocab_manager.standard_vocabularies.load()
-        self.vocab_manager.load_custom_vocab_and_stcm_tables()
+        try:
+            self.vocab_manager.standard_vocabularies.load()
+        except ValueError:
+            logger.warning('std vocab loading failed')
+            pass
+        try:
+            self.vocab_manager.load_custom_vocab_and_stcm_tables()
+        except:
+            logger.warning('custom and stcm loading failed')
+            pass
 
         # Remove constraints and indexes to improve performance
         self.db.constraint_manager.drop_cdm_constraints()
