@@ -1,0 +1,254 @@
+"ID","DESCRIPTION","TEST","STATUS"
+1,Add care site,Expect care_site,PASS
+200,Test black female,Expect person,PASS
+201,Test mixed race male,Expect person,PASS
+400,GP clinical to visit occurrence 1,Expect visit_occurrence,PASS
+401,GP clinical to visit occurrence 2,Expect visit_occurrence,PASS
+402,GP clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
+500,Covid to visit occurrence 1,Expect visit_occurrence,PASS
+501,Covid to visit occurrence 2,Expect visit_occurrence,PASS
+502,Two covid records on the same date,Expect 1 visit_occurrence,PASS
+600,GP prescriptions to visit occurrence 1,Expect visit_occurrence,PASS
+601,GP prescriptions to visit occurrence 2,Expect visit_occurrence,PASS
+602,GP prescriptions to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
+700,baseline to visit occurrence,Expect 4 visit_occurrence,PASS
+700,baseline to visit occurrence,Expect visit_occurrence,PASS
+700,baseline to visit occurrence,Expect visit_occurrence,PASS
+700,baseline to visit occurrence,Expect visit_occurrence,PASS
+700,baseline to visit occurrence,Expect visit_occurrence,PASS
+701,baseline to visit occurrence with missing dates,Expect 2 visit_occurrence,PASS
+701,baseline to visit occurrence with missing dates,Expect visit_occurrence,PASS
+701,baseline to visit occurrence with missing dates,Expect visit_occurrence,PASS
+702,baseline to visit occurrence with multiple centre of cares,Expect 2 visit_occurrence,PASS
+702,baseline to visit occurrence with multiple centre of cares,Expect visit_occurrence,PASS
+702,baseline to visit occurrence with multiple centre of cares,Expect visit_occurrence,PASS
+800,Test nasopharyngeal swab, positive,Expect observation,PASS
+801,Test tissue, negative,Expect observation,PASS
+802,Test blood, missing date,Expect observation,PASS
+803,Test visit_id, wound (surgical),Expect visit_occurrence,PASS
+803,Test visit_id, wound (surgical),Expect observation,PASS
+900,Baseline - Hand grip,Expect observation,PASS
+901,Baseline - Alcohol use, daily to observation,Expect observation,PASS
+902,Baseline - Alcohol use, not answered,Expect No observation,PASS
+903,Baseline - White blood cell count (alternate date field),Expect measurement,PASS
+904,Baseline - Field 20002, Diabetes Mellitus,Expect observation,PASS
+905,Baseline - Chestpain absent, with source value,Expect observation,PASS
+906,Baseline - Chestpain present, repeat visit,Expect observation,PASS
+907,Baseline - Chestpain present, imaging visit,Expect observation,PASS
+908,Baseline - Chestpain present, imaging repeat visit,Expect observation,PASS
+909,Baseline - Chestpain ignored,Expect No observation,PASS
+910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
+910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
+911,Baseline - One to many opcs,Expect observation,PASS
+911,Baseline - One to many opcs,Expect observation,PASS
+912,Baseline - Treatment,Expect observation,PASS
+913,Baseline - Treatment with instance and array index,Expect observation,PASS
+914,Baseline - Age at first live birth,Expect observation,PASS
+915,Baseline - Age at first live birth not given,Expect No observation,PASS
+916,Baseline - Systolic Blood pressure at two instances,Expect No observation,PASS
+916,Baseline - Systolic Blood pressure at two instances,Expect No observation,PASS
+917,Baseline - Systolic Blood pressure, empty,Expect No observation,PASS
+918,Baseline - Do not capture dates,Expect No observation,PASS
+918,Baseline - Do not capture dates,Expect No observation,PASS
+918,Baseline - Do not capture dates,Expect No observation,PASS
+918,Baseline - Do not capture dates,Expect No observation,PASS
+919,Baseline - visit occurrence instance 0,Expect observation,PASS
+920,Baseline - visit occurrence instance 3,Expect observation,PASS
+921,Baseline - opcs3 field 41256 single target,Expect observation,PASS
+922,Baseline - opcs3 field 41273 single target,Expect observation,PASS
+923,Baseline - type registry,Expect observation,PASS
+924,Baseline - type patient filled survey,Expect observation,PASS
+925,Baseline - type professional filled survey,Expect observation,PASS
+926,Baseline - date field related to concept field, instance 0,Expect measurement,PASS
+927,Baseline - date field related to concept field, instance 2,Expect measurement,PASS
+928,Baseline - realetd date field is empty backup (53) taken,Expect measurement,PASS
+929,Baseline - no related date field use field 53,Expect measurement,PASS
+930,Baseline - empty date field use default date,Expect measurement,PASS
+931,Baseline - datetime format,Expect measurement,PASS
+932,Baseline - truncate long value,Expect observation,PASS
+933,Baseline - age at cancer diagnosis,Expect measurement,PASS
+934,Baseline - behaviour of cancer tumour,Expect observation,PASS
+935,Baseline - cancer record format,Expect observation,PASS
+936,Baseline - cancer record origin,Expect observation,PASS
+1000,Test ICD10 code,Expect condition_occurrence,PASS
+1001,Test ICD9 code,Expect condition_occurrence,PASS
+1002,Test ICD9 and ICD10 code; map ICD10,Expect condition_occurrence,PASS
+1003,No concept found,Expect condition_occurrence,PASS
+1004,Test Source id but no target ID,Expect condition_occurrence,PASS
+1005,Test if code has more > 1 target concept,Expect condition_occurrence,PASS
+1005,Test if code has more > 1 target concept,Expect condition_occurrence,PASS
+1006,HES diagnosis with visit,Expect visit_occurrence,PASS
+1006,HES diagnosis with visit,Expect condition_occurrence,PASS
+1007,HES diag visit_detail_id,Expect visit_detail,PASS
+1007,HES diag visit_detail_id,Expect condition_occurrence,PASS
+1008,ICD code exceptions: ICD10 code starting with W, X, Y map to one letter and two numbers,Expect condition_occurrence,PASS
+1009,ICD code exceptions: ICD9 4 or 5 number codes map to the 3 first numbers.,Expect condition_occurrence,PASS
+1010,ICD code exceptions: E chapters map to format EXXX.X,Expect condition_occurrence,PASS
+1010,ICD code exceptions: E chapters map to format EXXX.X,Expect condition_occurrence,PASS
+1011,ICD code exceptions: V chapters map to format VXX.X,Expect condition_occurrence,PASS
+1012,ICD code exceptions: V chapters map to format VXX.X,Expect condition_occurrence,PASS
+1013,ICD code exceptions: ICD10 > 3,Expect condition_occurrence,PASS
+1014,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
+1014,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
+1015,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
+1100,emergency admission HES/2D,Expect visit_occurrence,PASS
+1101,admission source Hospice SMR/62,Expect visit_occurrence,PASS
+1102,discharged to special hospital PEDW/49,Expect visit_occurrence,PASS
+1103,admission date missing,Expect visit_occurrence,PASS
+1104,admission date and discharge date missing,Expect visit_occurrence,PASS
+1105,two episodes in one spell, min/max date,Expect visit_occurrence,PASS
+1106,two spells for one person results in two visits,Expect 2 visit_occurrence,PASS
+1107,Multiple episodes in one spell, first admimeth,Expect visit_occurrence,PASS
+1108,Multiple episodes in one spell, take first admisorc,Expect visit_occurrence,PASS
+1109,Multiple episodes in one spell, take last disdest,Expect visit_occurrence,PASS
+1110,two episodes in one spell, min/max date 2,Expect visit_occurrence,PASS
+1200,Test no drug exposure if no drug fields available,Expect No drug_exposure,PASS
+1201,Test drug fields priority when all drug fields available,Expect drug_exposure,PASS
+1202,Test drug fields priority when only Read v2 & drug name available,Expect drug_exposure,PASS
+1203,Test drug fields priority when only drug name available,Expect drug_exposure,PASS
+1204,Test data source code creation,Expect drug_exposure,PASS
+1205,Test end date same as start date if no quantity,Expect drug_exposure,PASS
+1206,Test inferred end date if valid daily quantity (tablets),Expect drug_exposure,PASS
+1207,Test end date same as start date if invalid daily quantity (packets),Expect drug_exposure,PASS
+1208,Test numeric quantity extraction,Expect drug_exposure,PASS
+1209,Test unit source value extraction,Expect drug_exposure,PASS
+1210,Test retrieving visit occurrence id,Expect drug_exposure,PASS
+1211,Test truncate long drug source value (> 50 chars),Expect drug_exposure,PASS
+1212,GP clinical to stem, no date no visit,Expect drug_exposure,PASS
+1400,Death date,Expect death,PASS
+1401,Death type,Expect death,PASS
+1402,Multiple deaths,Expect 1 death,PASS
+1402,Multiple deaths,Expect death,PASS
+1403,Cause of death,Expect death,PASS
+1404,Multiple causes of death, only primary cause,Expect death,PASS
+1405,Empty death date not recorded,Expect No death,PASS
+1500,Test OPCS4 code - standard,Expect procedure_occurrence,PASS
+1501,Test OPCS4 code - non standard,Expect procedure_occurrence,PASS
+1502,Test OPCS3 code,Expect procedure_occurrence,PASS
+1503,Test OPCS3 and OPCS4 code; map OPCS4,Expect procedure_occurrence,PASS
+1504,No concept found,Expect procedure_occurrence,PASS
+1505,Test if OPCS4 code has more > 1 target concept,Expect procedure_occurrence,PASS
+1505,Test if OPCS4 code has more > 1 target concept,Expect procedure_occurrence,PASS
+1506,Test if OPCS3 code has more > 1 target concept,Expect procedure_occurrence,PASS
+1506,Test if OPCS3 code has more > 1 target concept,Expect procedure_occurrence,PASS
+1507,HES diagnosis with visit,Expect visit_occurrence,PASS
+1507,HES diagnosis with visit,Expect procedure_occurrence,PASS
+1508,HES diagnosis with visit detail,Expect visit_detail,PASS
+1508,HES diagnosis with visit detail,Expect procedure_occurrence,PASS
+1600,Death to condition occurrence,Expect condition_occurrence,PASS
+1601,Death to condition occurrence 2,Expect condition_occurrence,PASS
+1602,Death to condition occurrence - No death date,Expect No condition_occurrence,PASS
+1603,Death to condition occurrence - No cause icd10 code,Expect No condition_occurrence,PASS
+1604,Death to condition occurrence - arr_index is 0,Expect No condition_occurrence,PASS
+1605,Death to condition occurrence - 2 death causes,Expect condition_occurrence,PASS
+1605,Death to condition occurrence - 2 death causes,Expect condition_occurrence,PASS
+1606,Death to condition occurrence - 4 death causes,Expect condition_occurrence,PASS
+1606,Death to condition occurrence - 4 death causes,Expect condition_occurrence,PASS
+1606,Death to condition occurrence - 4 death causes,Expect condition_occurrence,PASS
+1606,Death to condition occurrence - 4 death causes,Expect condition_occurrence,PASS
+1700,GP clinical to stem, readv2 code in read_3 field,Expect measurement,PASS
+1701,GP clinical to stem, visit lookup,Expect measurement,PASS
+1702,GP clinical to stem, unknown read2 code,Expect measurement,PASS
+1703,GP clinical to stem, read3 code,Expect measurement,PASS
+1704,GP clinical to stem, missing date,Expect No measurement,PASS
+1705,GP clinical to stem, Serum creatinine with value,Expect measurement,PASS
+1706,GP clinical to stem, unit concept ID (MEA code),Expect measurement,PASS
+1707,GP clinical to stem, unit concept ID (unit symbol),Expect measurement,PASS
+1708,GP clinical to stem, readv3 serum urea,Expect measurement,PASS
+1709,GP clinical to stem, DBP with value,Expect measurement,PASS
+1710,GP clinical to stem, SBP with value,Expect measurement,PASS
+1711,GP clinical to stem, generic blood pressure code with no custom logic,Expect measurement,PASS
+1712,GP clinical to stem, generic blood pressure code with values for both DBP and SBP (code ending in dot),Expect measurement,PASS
+1712,GP clinical to stem, generic blood pressure code with values for both DBP and SBP (code ending in dot),Expect measurement,PASS
+1713,GP clinical to stem, generic blood pressure code with values for both DBP and SBP (code ending in 00),Expect measurement,PASS
+1713,GP clinical to stem, generic blood pressure code with values for both DBP and SBP (code ending in 00),Expect measurement,PASS
+1800,Episode startdate,Expect visit_detail,PASS
+1801,Missing episode startdate,Expect visit_detail,PASS
+1802,Episode start/end date,Expect visit_detail,PASS
+1803,Missing episode enddate,Expect visit_detail,PASS
+1804,Create two episodes for one person (only start dates),Expect 2 visit_detail,PASS
+1804,Create two episodes for one person (only start dates),Expect visit_detail,PASS
+1804,Create two episodes for one person (only start dates),Expect visit_detail,PASS
+1805,Create two episodes in one spell for a person (only start dates),Expect 1 visit_occurrence,PASS
+1805,Create two episodes in one spell for a person (only start dates),Expect 2 visit_detail,PASS
+1805,Create two episodes in one spell for a person (only start dates),Expect visit_detail,PASS
+1805,Create two episodes in one spell for a person (only start dates),Expect visit_detail,PASS
+1806,Create an episode - spell missing admission date,Expect 1 visit_occurrence,PASS
+1806,Create an episode - spell missing admission date,Expect visit_detail,PASS
+1807,Admition method,Expect visit_detail,PASS
+1808,Admition source,Expect visit_detail,PASS
+1809,Discharge destination,Expect visit_detail,PASS
+1810,Type concept id,Expect visit_detail,PASS
+1900,Baseline to death,Expect death,PASS
+1901,Baseline to death, no date,Expect No death,PASS
+1902,Baseline to death, no ICD10 code,Expect No death,PASS
+1903,Baseline to death 2,Expect death,PASS
+1904,Baseline to death - already in Death table,Expect No death,PASS
+2000,Instance 0 - ICDO3 code type 111,Expect condition_occurrence,PASS
+2001,Instance 0 - ICDO3 code type 111 (Without non-standard-to-standard map),Expect condition_occurrence,PASS
+2002,Instance 0 - ICDO3 code type 001,Expect condition_occurrence,PASS
+2003,Instance 0 - ICDO3 code type 101 & Instance 2 - ICDO3 code type 100,Expect 2 condition_occurrence,PASS
+2003,Instance 0 - ICDO3 code type 101 & Instance 2 - ICDO3 code type 100,Expect condition_occurrence,PASS
+2003,Instance 0 - ICDO3 code type 101 & Instance 2 - ICDO3 code type 100,Expect condition_occurrence,PASS
+2004,Instance 0 & 1 - ICDO3 code type 110,Expect 2 condition_occurrence,PASS
+2004,Instance 0 & 1 - ICDO3 code type 110,Expect condition_occurrence,PASS
+2004,Instance 0 & 1 - ICDO3 code type 110,Expect condition_occurrence,PASS
+2005,Instance 0 - ICDO3 code type 011,Expect condition_occurrence,PASS
+2006,Instance 0 - ICDO3 code type 010,Expect No condition_occurrence,PASS
+2007,Instance 0 - ICDO3 code type 100,Expect condition_occurrence,PASS
+2008,Instance 0 - ICDO3 code type 000,Expect No condition_occurrence,PASS
+2009,Instance 0 - Date missing,Expect condition_occurrence,PASS
+2010,Instance 0 - ICDO3 code type 100 (histology/1 does not exist),Expect condition_occurrence,PASS
+2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect 4 condition_occurrence,PASS
+2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect condition_occurrence,PASS
+2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect condition_occurrence,PASS
+2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect No condition_occurrence,PASS
+2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect condition_occurrence,PASS
+2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect condition_occurrence,PASS
+2012,Instance 0 - ICDO3 code type 001 (C-code not included in ICDO3),Expect condition_occurrence,PASS
+2013,Instance 0 - No concept found; use code ICD9(40013) instead,Expect condition_occurrence,PASS
+2100,Test one exposure to drug era,Expect drug_era,PASS
+2101,Test two exposure to one drug era,Expect 1 drug_era,PASS
+2101,Test two exposure to one drug era,Expect drug_era,PASS
+2200,Take minimum and maximum date - one date for each, baseline is min, hes is max,Expect observation_period,PASS
+2201,Take minimum and maximum date - one date for each, covid is min, baseline is max,Expect observation_period,PASS
+2202,Take minimum and maximum date - one date for each, baseline is min and max,Expect observation_period,PASS
+2300,dm+d code: Paracetamol 500mg tablets,Expect drug_exposure,PASS
+2301,dm+d long code: Otomize ear spray,Expect drug_exposure,PASS
+2302,start and end date same,Expect drug_exposure,PASS
+2303,data source,Expect drug_exposure,PASS
+2304,visit id,Expect drug_exposure,PASS
+2305,if no code_type skip,Expect No drug_exposure,PASS
+2306,code_type 3 (local emis code),Expect drug_exposure,PASS
+2400,dm+d code: Ramipril 10mg capsules,Expect drug_exposure,PASS
+2401,dmd code: -1,Expect No drug_exposure,PASS
+2402,start and end date same,Expect drug_exposure,PASS
+2403,data source,Expect drug_exposure,PASS
+2404,visit id,Expect drug_exposure,PASS
+2405,if no dmd code skip,Expect No drug_exposure,PASS
+2500,Covid19 TPP GP clinical to stem, correct date,Expect measurement,PASS
+2501,Covid19 TPP GP clinical to stem, missing date,Expect No measurement,PASS
+2502,Covid19 TPP GP clinical to stem, CTV3 code,Expect measurement,PASS
+2503,Covid19 TPP GP clinical to stem, local TPP code,Expect measurement,PASS
+2504,Covid19 TPP GP clinical to stem, code_type is -1,Expect No measurement,PASS
+2505,Covid19 TPP GP clinical to stem, missing code,Expect No measurement,PASS
+2506,Covid19 TPP GP clinical to stem, value,Expect measurement,PASS
+2507,Covid19 TPP GP clinical to stem, visit_occurrence_id,Expect measurement,PASS
+2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
+2601,No Event date,Expect No measurement,PASS
+2602,Value is -9000001.0,Expect No measurement,PASS
+2603,Code is -99,Expect No measurement,PASS
+2604,Local code: Suspected 2019-nCoV (novel coronavirus) infection,Expect measurement,PASS
+2605,Unit is -9999999,Expect measurement,PASS
+2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
+2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
+2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
+2800,covid19 emis gp scripts to visit occurrence 1,Expect visit_occurrence,PASS
+2801,covid19 emis gp scripts to visit occurrence 2,Expect visit_occurrence,PASS
+2802,covid19 emis gp scripts to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
+2900,covid19 tpp gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
+2901,covid19 tpp gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
+2902,covid19 tpp gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
+3000,covid19 tpp gp scripts to visit occurrence 1,Expect visit_occurrence,PASS
+3001,covid19 tpp gp scripts to visit occurrence 2,Expect visit_occurrence,PASS
+3002,covid19 tpp gp scripts to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
