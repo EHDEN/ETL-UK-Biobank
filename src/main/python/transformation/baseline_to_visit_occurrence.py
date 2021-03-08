@@ -17,7 +17,6 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
     records = []
     for _, row in df.iterrows():
         person_id = row['eid']
-
         # One-day visits for instances 0 to 3
         for instance in range(4):
             # Field_id 53 contains the date of the visit

@@ -1,8 +1,8 @@
 # Database connection
 database:
   host: 'localhost'
-  port: 6000
-  database_name: 'ukb'
+  port: 5432
+  database_name: 'ohdsi'
   username: 'postgres'
   # If no password is needed, or to provide at runtime, leave blank
   password: 'postgres'

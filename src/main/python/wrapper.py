@@ -44,8 +44,16 @@ class Wrapper(BaseWrapper):
         self.create_cdm()
 
         # Load (custom) vocabularies and source_to_concept_map tables
-        self.vocab_manager.standard_vocabularies.load()
-        self.vocab_manager.load_custom_vocab_and_stcm_tables()
+        try:
+            self.vocab_manager.standard_vocabularies.load()
+        except ValueError:
+            logger.warning('std vocab loading failed')
+            pass
+        try:
+            self.vocab_manager.load_custom_vocab_and_stcm_tables()
+        except:
+            logger.warning('custom and stcm loading failed')
+            pass
 
         # Remove constraints and indexes to improve performance
         self.db.constraint_manager.drop_cdm_constraints()
@@ -57,6 +65,7 @@ class Wrapper(BaseWrapper):
         self.db.constraint_manager.add_cdm_constraints(errors='ignore')
 
         # Log/write overview of transformations and sources
+        logger.info('{:-^100}'.format(' Summary stats '))
         self.summarize()
 
     def transform(self):
@@ -107,8 +116,6 @@ class Wrapper(BaseWrapper):
         logger.info('Creating eras...')
         self.execute_sql_file('drug_era.sql')
         self.execute_sql_file('condition_era.sql')
-
-        logger.info('{:-^100}'.format(' Summary stats '))
 
     def load_from_stem_table(self):
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
