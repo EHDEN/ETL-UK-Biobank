@@ -65,6 +65,7 @@ class Wrapper(BaseWrapper):
         self.db.constraint_manager.add_cdm_constraints(errors='ignore')
 
         # Log/write overview of transformations and sources
+        logger.info('{:-^100}'.format(' Summary stats '))
         self.summarize()
 
     def transform(self):
@@ -115,8 +116,6 @@ class Wrapper(BaseWrapper):
         logger.info('Creating eras...')
         self.execute_sql_file('drug_era.sql')
         self.execute_sql_file('condition_era.sql')
-
-        logger.info('{:-^100}'.format(' Summary stats '))
 
     def load_from_stem_table(self):
         # Note: the stem_table.id is not used, we use the auto-increment of the domain tables itself.
