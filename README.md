@@ -34,7 +34,7 @@ To deploy the docker:
 
 Note: this runs the ETL on the provided synthetic data. To run the data on your own dataset, add your csv files to a new folder here. In the [config-docker.yml](config/config-docker.yml), set this folder as the `source_data_folder`. Run the etl again by building it: `docker-compose up -d --build etl`.
 
-The docker images (postgres and etl) can be stopped with: `docker-compose down -v`.
+The docker images (postgres and etl) can be stopped with: `docker-compose down`.
 
 ### Manual setup
 
