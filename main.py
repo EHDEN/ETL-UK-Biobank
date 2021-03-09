@@ -11,7 +11,7 @@ from delphyne.util.io import read_yaml_file
 
 from src.main.python.wrapper import Wrapper
 
-__version__ = '1.0.1'
+__version__ = '1.1.0-SNAPSHOT'
 
 logger = logging.getLogger(__name__)
 
