@@ -21,9 +21,9 @@ From admission to discharge
 | visit_occurrence_id | eid<br>spell_index | concatenate '3', eid, spell_index | |
 | person_id | eid |  |  |
 | visit_concept_id | dsource<br>admimeth | Map combination of dsource(record origin) and Grouping to higher level - planned = inpatient visit (9201) - unplanned = emergency room visit (9203) <br> Mapping to standard concept in: /resources/mapping_tables/hesin_admimeth.csv |  |
-| visit_start_date | admidate | Minimum | Patients can have different episodes within the same spell, resulting to more than one admidate records for the same eid+spell_index (see: https://biobank.ndph.ox.ac.uk/showcase/showcase/docs/HospitalEpisodeStatistics.pdf). For the beginning of the spell keep the earliest date.|
+| visit_start_date | admidate | Minimum <br> If the admission date is missing use the episode start date "epistart". Otherwise use the default date 01/01/1970 | Patients can have different episodes within the same spell, resulting to more than one admidate records for the same eid+spell_index (see: https://biobank.ndph.ox.ac.uk/showcase/showcase/docs/HospitalEpisodeStatistics.pdf). For the beginning of the spell keep the earliest date.|
 | visit_start_datetime | admidate |  |  |
-| visit_end_date | disdate | Maximum | Similar to admidate. For the end of the spell keep the latest date. |
+| visit_end_date | disdate | Maximum <br> If disdate is missing use the start date. | Similar to admidate. For the end of the spell keep the latest date. |
 | visit_end_datetime | disdate |  |  |
 | visit_type_concept_id |  |  | 32827,  # 'EHR encounter record' |
 | provider_id |  |  |  |

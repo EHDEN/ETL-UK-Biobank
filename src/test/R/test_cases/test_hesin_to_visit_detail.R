@@ -5,9 +5,14 @@ add_baseline(eid = 1800)
 add_hesin(eid = 1800, epistart = '12/11/2010', ins_index = 1)
 expect_visit_detail(person_id = 1800, visit_detail_start_date = '2010/11/12')
 
-declareTest(1801, 'Missing episode startdate')
+declareTest(1811, 'Missing episode startdate but have admission date')
+add_baseline(eid = 1811)
+add_hesin(eid = 1811, epistart = '', admidate = '13/09/1999', ins_index = 2)
+expect_visit_detail(person_id = 1811, visit_detail_start_date = '1999/09/13')
+
+declareTest(1801, 'Missing episode start and admission date')
 add_baseline(eid = 1801)
-add_hesin(eid = 1801, epistart = '', ins_index = 2)
+add_hesin(eid = 1801, epistart = '', admidate = '', ins_index = 2)
 expect_visit_detail(person_id = 1801, visit_detail_start_date = '1970/01/01')
 
 declareTest(1802, 'Episode start/end date')
@@ -44,9 +49,9 @@ expect_visit_detail(person_id = 1805, visit_detail_start_date = '1999/08/23',
 declareTest(1806, 'Create an episode - spell missing admission date')
 add_baseline(eid = 1806)
 add_hesin(eid = 1806, epistart = '22/08/1999', admidate = '', ins_index = 0, spell_index = 1)
-expect_count_visit_occurrence(1, person_id = 1806, visit_start_date = '1970/01/01')
+expect_count_visit_occurrence(1, person_id = 1806, visit_start_date = '1999/08/22')
 expect_visit_detail(person_id = 1806, visit_detail_start_date = '1999/08/22',
-                    visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1806, visit_start_date = '1970/01/01'))
+                    visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 1806, visit_start_date = '1999/08/22'))
 
 declareTest(1807, 'Admition method')
 add_baseline(eid = 1807)
