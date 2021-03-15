@@ -15,6 +15,7 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
     df = source.get_csv_as_df(apply_dtypes=False)
     df['epistart'] = pd.to_datetime(df['epistart'], dayfirst=True)
     df['epiend'] = pd.to_datetime(df['epiend'], dayfirst=True)
+    df['admidate'] = pd.to_datetime(df['admidate'], dayfirst=True)
 
     visit_reason, admit_reason, dis_reason = {}, {}, {}
     for origin in ['HES', 'PEDW', 'SMR']:
@@ -39,10 +40,12 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
 
         person_id = row['eid']
 
-        if is_null(row['epistart']):
-            start_date = DEFAULT_DATETIME
-        else:
+        if not is_null(row['epistart']):
             start_date = row['epistart']
+        elif not is_null(row['admidate']):
+            start_date = row['admidate']
+        else:
+            start_date = DEFAULT_DATETIME
 
         if is_null(row['epiend']):
             end_date = start_date

@@ -26,6 +26,16 @@ expect_visit_occurrence(person_id = 1102, visit_start_date = '2007/09/03', visit
                         visit_concept_id = 0, discharge_to_concept_id = 38004287,
                         discharge_to_source_value = 'record origin:PEDW/discharge destination:49')
 
+declareTest(1111, 'admission date missing but episode date exists')
+add_baseline(eid = 1111)
+add_hesin(eid = 1111, dsource = 'HES',
+          admidate = '', epistart = '03/11/1991',
+          admimeth = '11', admisorc = '39',
+          disdate = '06/12/1991', disdest = '87')
+expect_visit_occurrence(person_id = 1111, visit_start_date = '1991/11/03', visit_end_date = '1991/12/06',
+                        visit_concept_id = 9201, admitting_source_concept_id = 38003619,
+                        discharge_to_concept_id = 38004515)
+
 declareTest(1103, 'admission date missing')
 add_baseline(eid = 1103)
 add_hesin(eid = 1103, dsource = 'HES',

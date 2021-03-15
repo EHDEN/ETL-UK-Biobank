@@ -94,6 +94,7 @@
 1100,emergency admission HES/2D,Expect visit_occurrence,PASS
 1101,admission source Hospice SMR/62,Expect visit_occurrence,PASS
 1102,discharged to special hospital PEDW/49,Expect visit_occurrence,PASS
+1111,admission date missing but episode date exists,Expect visit_occurrence,PASS
 1103,admission date missing,Expect visit_occurrence,PASS
 1104,admission date and discharge date missing,Expect visit_occurrence,PASS
 1105,two episodes in one spell, min/max date,Expect visit_occurrence,PASS
@@ -163,7 +164,8 @@
 1713,GP clinical to stem, generic blood pressure code with values for both DBP and SBP (code ending in 00),Expect measurement,PASS
 1713,GP clinical to stem, generic blood pressure code with values for both DBP and SBP (code ending in 00),Expect measurement,PASS
 1800,Episode startdate,Expect visit_detail,PASS
-1801,Missing episode startdate,Expect visit_detail,PASS
+1811,Missing episode startdate but have admission date,Expect visit_detail,PASS
+1801,Missing episode start and admission date,Expect visit_detail,PASS
 1802,Episode start/end date,Expect visit_detail,PASS
 1803,Missing episode enddate,Expect visit_detail,PASS
 1804,Create two episodes for one person (only start dates),Expect 2 visit_detail,PASS

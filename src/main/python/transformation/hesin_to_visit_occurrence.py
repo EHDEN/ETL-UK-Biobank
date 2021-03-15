@@ -15,6 +15,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
     df = source.get_csv_as_df(apply_dtypes=False)
     df['admidate'] = pd.to_datetime(df['admidate'], dayfirst=True)
     df['disdate'] = pd.to_datetime(df['disdate'], dayfirst=True)
+    df['epistart'] = pd.to_datetime(df['epistart'], dayfirst=True)
     df = df.sort_values(['eid', 'spell_index'])
     df = df.groupby(by=['eid', 'dsource', 'spell_index']).agg(
         {'admidate': 'min',
@@ -22,6 +23,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
          'admimeth': 'first',
          'admisorc': 'first',
          'disdest': 'last',
+         'epistart': 'min'
          }
     ).reset_index()
 
@@ -47,10 +49,12 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
     for _, row in df.iterrows():
         person_id = row['eid']
 
-        if is_null(row['admidate']):
-            start_date = DEFAULT_DATETIME
-        else:
+        if not is_null(row['admidate']):
             start_date = row['admidate']
+        elif not is_null(row['epistart']):
+            start_date = row['epistart']
+        else:
+            start_date = DEFAULT_DATETIME
 
         if is_null(row['disdate']):
             end_date = start_date
