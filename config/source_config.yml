@@ -2,7 +2,7 @@
 # if the transformations require reading source data from files.
 
 # For each source file, count the number of rows
-count_source_rows: False
+count_source_rows: True
 
 # Default options for source data files.
 # These can be overruled for individual files below.
