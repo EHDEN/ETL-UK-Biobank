@@ -29,15 +29,15 @@ for index, row in df_changes.iterrows():
     # only one row edited
     if len(selection) != 1:
         continue
-    print(selection)
 
     # Edit threshold
     df_DQD.loc[selection, f"{col_check}Threshold"] = int(float(row['New_Threshold'].strip('%')))
 
     # Edit Notes
     note = f"{row['Date_Of_DQD_Execution']} | {row['`% Rows Violated`']} | {row['Comment']}"
-    df_DQD.loc[selection,(col_check+"Notes")] = df_DQD.loc[selection,(col_check+"Notes")] + "\n" + note
-
+    if pd.isna(df_DQD.loc[selection,f"{col_check}Notes"]).tolist():
+        df_DQD.loc[selection,f"{col_check}Notes"] = note
+    else:
+        df_DQD.loc[selection,f"{col_check}Notes"] = f"{df_DQD.loc[selection,(col_check+'Notes')]} \n {note}"
 # save
-# DQD_file2 = "src/dqd_achilles/DQD_Field_Level_v5.3.1_UKB_2.csv"
-# df_DQD.to_csv(DQD_file, index=False)
+df_DQD.to_csv(DQD_file, index=False)
