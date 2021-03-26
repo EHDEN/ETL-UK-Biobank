@@ -1,18 +1,14 @@
-# Trick: open this file using Excel,,,,,,,,
-# Column names of (first 4 cols of) this table are the ones from the DQD,,,,,,,,
-"# Third_Variable refers to possible third variables in the check. Eg for fkDomain, it is the expected domain",,,,,,,,
-,,,,,,,,
-Table,Field,Name,Third_Variable,`% Rows Violated`,Old_Threshold,New_Threshold,Date_Of_DQD_Execution,Comment
-PERSON,RACE_CONCEPT_ID,fkDomain,RACE,97.07%,0.00%,100.00%,20210316,Mapping to UKB values from observation domain
-DRUG_EXPOSURE,DRUG_CONCEPT_ID,standardConceptRecordCompleteness,-,14.04%,10.00%,15.00%,20210316,We expect non-existing source dm+d codes’
-MEASUREMENT,MEASUREMENT_CONCEPT_ID,fkDomain,MEASUREMENT,53.40%,0.00%,0.00%,20210316,Unchanged.
-VISIT_OCCURRENCE,VISIT_CONCEPT_ID,fkDomain,VISIT,0.53%,0.00%,1.00%,20210316,"Some mapped to 0 in hesin to visit_occurrence. Identify the cause, and increase threshold."
-CONDITION_OCCURRENCE,CONDITION_CONCEPT_ID,fkDomain,CONDITION,20.24%,0.00%,0.00%,20210316,Unchanged.
-CONDITION_ERA,CONDITION_CONCEPT_ID,fkDomain,CONDITION_ERA,17.69%,0.00%,0.00%,20210316,Unchanged.
-CONDITION_ERA,CONDITION_CONCEPT_ID,standardConceptRecordCompleteness,-,0.06%,0.00%,0.00%,20210316,Unchanged.
-OBSERVATION_PERIOD,OBSERVATION_PERIOD_END_DATE,plausibleValueHigh,-,4.20%,1.00%,0.00%,20210316,Observation period takes the max of these dates as the end date.
-DRUG_EXPOSURE,DRUG_EXPOSURE_START_DATE,plausibleValueHigh,-,0.10%,1.00%,0.00%,20210316,Investigate why dates are in the future.
-DRUG_EXPOSURE,DRUG_EXPOSURE_END_DATE,plausibleValueHigh,-,0.10%,1.00%,0.00%,20210316,Investigate why dates are in the future.
-VISIT_OCCURRENCE,VISIT_START_DATE,plausibleValueHigh,-,0.02%,1.00%,0.00%,20210316,Investigate why dates are in the future.
-VISIT_OCCURRENCE,VISIT_END_DATE,plausibleValueHigh,-,0.02%,1.00%,0.00%,20210316,Investigate why dates are in the future.
-PROCEDURE_OCCURRENCE,PROCEDURE_CONCEPT_ID,fkDomain,PROCEDURE,2.85%,0.00%,3.00%,20210316,
+Check_level,Table_name,Field_name,Check,%_Rows_violated,Old_Threshold,New_Threshold,Date_Of_DQD_Execution,Comment
+field,PERSON,RACE_CONCEPT_ID,fkDomain,97.07%,0.00%,100%,20210316,Mapping to UKB values from observation domain
+field,DRUG_EXPOSURE,DRUG_CONCEPT_ID,standardConceptRecordCompleteness,14.04%,10.00%,15,20210316,We expect non-existing source dm+d codes
+field,MEASUREMENT,MEASUREMENT_CONCEPT_ID,fkDomain,53.40%,0.00%,0,20210316,Unchanged.
+field,VISIT_OCCURRENCE,VISIT_CONCEPT_ID,fkDomain,0.53%,0.00%,1,20210316,Some mapped to 0 in hesin to visit_occurrence.
+field,CONDITION_OCCURRENCE,CONDITION_CONCEPT_ID,fkDomain,20.24%,0.00%,0,20210316,Unchanged.
+field,CONDITION_ERA,CONDITION_CONCEPT_ID,fkDomain,17.69%,0.00%,0,20210316,Unchanged.
+field,CONDITION_ERA,CONDITION_CONCEPT_ID,standardConceptRecordCompleteness,0.06%,0.00%,0,20210316,Unchanged.
+field,OBSERVATION_PERIOD,OBSERVATION_PERIOD_END_DATE,plausibleValueHigh,4.20%,1.00%,0,20210316,Observation period should take the max of these dates as the end date.
+field,DRUG_EXPOSURE,DRUG_EXPOSURE_START_DATE,plausibleValueHigh,0.03%,1.00%,0,20210316,Investigate why dates are in the future.
+field,DRUG_EXPOSURE,DRUG_EXPOSURE_END_DATE,plausibleValueHigh,0.04%,1.00%,0,20210316,Investigate why dates are in the future.
+field,VISIT_OCCURRENCE,VISIT_START_DATE,plausibleValueHigh,0.02%,1.00%,0,20210316,Investigate why dates are in the future.
+field,VISIT_OCCURRENCE,VISIT_END_DATE,plausibleValueHigh,0.02%,1.00%,0,20210316,Investigate why dates are in the future.
+field,PROCEDURE_OCCURRENCE,PROCEDURE_CONCEPT_ID,fkDomain,2.85%,0.00%,3%,20210316,Expected.

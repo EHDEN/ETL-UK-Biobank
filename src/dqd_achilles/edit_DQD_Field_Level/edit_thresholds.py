@@ -8,36 +8,33 @@ DQD_file = "src/dqd_achilles/DQD_Field_Level_v5.3.1_UKB.csv"
 df_DQD = pd.read_csv(DQD_file)
 
 # Read changes file
-df_changes = pd.read_csv("src/dqd_achilles/edit_DQD_Field_Level/thresholds_to_edit.csv", header=4)
+df_changes = pd.read_csv("src/dqd_achilles/edit_DQD_Field_Level/thresholds_to_edit.csv", header=0)
 
 # Go over each row, which indicate each alteration
 for index, row in df_changes.iterrows():
 
+    # Name of check
+    col_check = row['Check']
+
     # Subset row
-    col_check = row['Name']
+    selection = df_DQD.index[
+        (df_DQD['cdmTableName'].str.lower() == row['Table_name'].lower()) & \
+        (df_DQD['cdmFieldName'].str.lower() == row['Field_name'].lower())]  \
+        .tolist()
 
-    if col_check == 'fkDomain':
-        selection = df_DQD.index[
-            (df_DQD['cdmTableName']==row['Table']) & \
-            (df_DQD['cdmFieldName']==row['Field'].lower()) & \
-            (df_DQD[col_check]==row['Third_Variable'].capitalize())].tolist()
-    else:
-        selection = df_DQD.index[
-            (df_DQD['cdmTableName']==row['Table']) & \
-            (df_DQD['cdmFieldName']==row['Field'].lower())].tolist()
-
-    # only one row edited
+    # Check only one row edited
     if len(selection) != 1:
         continue
 
-    # Edit threshold
-    df_DQD.loc[selection, f"{col_check}Threshold"] = int(float(row['New_Threshold'].strip('%')))
+    # Edit <...>Threshold
+    df_DQD.loc[selection, f"{col_check}Threshold"] = \
+        int(float(row['New_Threshold'].strip('%')))
 
-    # Edit Notes
-    note = f"{row['Date_Of_DQD_Execution']} | {row['`% Rows Violated`']} | {row['Comment']}"
+    # Edit <...>Notes
+    note = f"{row['Date_Of_DQD_Execution']} | {row['%_Rows_violated']} | {row['Comment']}"
     if pd.isna(df_DQD.loc[selection,f"{col_check}Notes"]).tolist():
         df_DQD.loc[selection,f"{col_check}Notes"] = note
     else:
         df_DQD.loc[selection,f"{col_check}Notes"] = f"{df_DQD.loc[selection,(col_check+'Notes')]} \n {note}"
-# save
+# Save
 df_DQD.to_csv(DQD_file, index=False)
