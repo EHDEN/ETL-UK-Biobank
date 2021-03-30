@@ -30,7 +30,7 @@ Here we specify the mapping of each of these sections to the respective OMOP tab
 - [From baseline](baseline_to_person.md)
 
 ### Observation_period 
-- [From gp_registrations](gp_registrations_to_observation_period.md)
+- [From observation_period](observation_period.md)
 
 ### Death
 - [death](death_to_death.md)
