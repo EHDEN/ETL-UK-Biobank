@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
-from ..util import get_datetime, create_gp_covid_visit_occurrence_id
+from ..util import get_datetime, create_gp_emis_visit_occurrence_id
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -31,7 +31,7 @@ def covid19_emis_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Li
             continue
 
         r = wrapper.cdm.VisitOccurrence(
-            visit_occurrence_id=create_gp_covid_visit_occurrence_id(row['eid'], visit_date),
+            visit_occurrence_id=create_gp_emis_visit_occurrence_id(row['eid'], visit_date),
             person_id=person_id,
             visit_concept_id=38004453,  # Family Practice
             visit_start_date=visit_date.date(),

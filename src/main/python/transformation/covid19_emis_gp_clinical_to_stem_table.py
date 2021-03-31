@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-from ..util import get_datetime, is_null, create_covid_visit_occurrence_id
+from ..util import get_datetime, is_null, create_gp_emis_visit_occurrence_id
 import re
 import pandas as pd
 
@@ -48,7 +48,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         else:
             continue
 
-        visit_id = create_covid_visit_occurrence_id(row['eid'], event_date)
+        visit_id = create_gp_emis_visit_occurrence_id(row['eid'], event_date)
 
         if pd.isna(row['unit']) or re.match(r'^(-[\d])', row['unit']):
             unit_concept_id, unit_source_value = None, None

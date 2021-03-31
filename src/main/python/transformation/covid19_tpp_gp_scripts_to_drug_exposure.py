@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 
-from src.main.python.util import get_datetime, create_gp_covid_visit_occurrence_id, is_null
+from src.main.python.util import get_datetime, create_gp_tpp_visit_occurrence_id, is_null
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -19,7 +19,7 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
 
     records = []
     for _, row in df.iterrows():
-        if row['dmd_code'] == '-1': # -1: No dm+d code
+        if row['dmd_code'] == '-1':  # -1: No dm+d code
             continue
         elif not is_null(row['dmd_code']):
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
@@ -34,7 +34,7 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
         if is_null(row['issue_date']):
             visit_id = None
         else:
-            visit_id = create_gp_covid_visit_occurrence_id(row['eid'], date_start)
+            visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], date_start)
 
         r = wrapper.cdm.DrugExposure(
             person_id=person_id,
