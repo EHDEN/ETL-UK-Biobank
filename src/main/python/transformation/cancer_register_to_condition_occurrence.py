@@ -7,7 +7,7 @@ import re
 
 from ..util.date_functions import get_datetime, DEFAULT_DATETIME
 
-from ..util.code_cleanup import refactor_icdx_code
+from ..util.code_cleanup import refactor_icdx_code, icd_code_map
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -53,6 +53,9 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
     icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM',
                                 restrict_to_codes=df[topography9_columns].stack().tolist())
 
+    icd10_to_o3 = pd.read_csv("./resources/encodings/Table_B_(ICD-10).csv")
+    icd10_to_o3_dict = icd10_to_o3.set_index('ICD-O-3 TOPO').T.to_dict('list')
+
     records = []
     for _, row in df.iterrows():
         person_id = row['eid']
@@ -65,34 +68,36 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
 
             histology = return_string(row.get(f'40011-{instance}.0'))
             behaviour = return_string(row.get(f'40012-{instance}.0'))
-            topography = return_string(row.get(f'40006-{instance}.0'))
-            topography9 = return_string(row.get(f'40013-{instance}.0'))
+            topo_icd10 = return_string(row.get(f'40006-{instance}.0'))
+            topo_icd9 = return_string(row.get(f'40013-{instance}.0'))
 
-            if histology == 'NULL' and topography == 'NULL' and topography9 == 'NULL':
+            topo_icdo3 = icd_code_map(icd10_to_o3_dict, topo_icd10)
+
+            if histology == 'NULL' and topo_icd10 == 'NULL' and topo_icd9 == 'NULL':
                 # Case 000, 010: Skip if topography empty for both ICD9 and ICD10 codes and histology not given
                 continue
 
             if histology != 'NULL' and behaviour == 'NULL':
                 # 101, 100: no behaviour given, default to uncertain behaviour
-                source_code = f'{histology}/1-{topography}'
+                source_code = f'{histology}/1-{topo_icdo3}'
             elif histology == 'NULL':
                 # 001, 011: without histology, the behaviour is useless
-                source_code = f'NULL-{topography}'
+                source_code = f'NULL-{topo_icdo3}'
             else:
                 # 111, 110
-                source_code = f'{histology}/{behaviour}-{topography}'
+                source_code = f'{histology}/{behaviour}-{topo_icdo3}'
 
             target_concept = icdo3.lookup(source_code, first_only=True)
 
             # If no ICDO3 code found
-            if target_concept.source_concept_id == 0 and topography != 'NULL':
+            if target_concept.source_concept_id == 0 and topo_icd10 != 'NULL':
                 # Try to lookup by just ICD10 topography
-                source_code = f'{topography}'
-                target_concept = icd10.lookup(topography, first_only=True)
-            elif target_concept.source_concept_id == 0 and topography9 != 'NULL':
+                source_code = f'{topo_icd10}'
+                target_concept = icd10.lookup(topo_icd10, first_only=True)
+            elif target_concept.source_concept_id == 0 and topo_icd9 != 'NULL':
                 # If no ICD10 code try look with the ICD9 code
-                source_code = f'{topography9}'
-                target_concept = icd9.lookup(topography9, first_only=True)
+                source_code = f'{topo_icd9}'
+                target_concept = icd9.lookup(topo_icd9, first_only=True)
 
             datetime = get_datetime(row[f'40005-{instance}.0'])
             if datetime == DEFAULT_DATETIME:
