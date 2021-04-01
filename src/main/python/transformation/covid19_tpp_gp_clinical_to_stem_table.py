@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 
-from src.main.python.util import get_datetime, create_gp_covid_visit_occurrence_id, is_null
+from src.main.python.util import get_datetime, create_gp_tpp_visit_occurrence_id, is_null
 
 
 if TYPE_CHECKING:
@@ -49,7 +49,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
 
         # Date and visit id
         event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
-        visit_id = create_gp_covid_visit_occurrence_id(row['eid'], event_date)
+        visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], event_date)
 
         # Insert terms in stem_table
         r = wrapper.cdm.StemTable(

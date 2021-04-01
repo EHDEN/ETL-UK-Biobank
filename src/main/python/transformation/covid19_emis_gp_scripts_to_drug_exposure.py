@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-from datetime import timedelta
 from delphyne.model.mapping.code_mapper import CodeMapping
 
-from src.main.python.util import get_datetime, create_gp_covid_visit_occurrence_id, is_null
+from src.main.python.util import get_datetime, create_gp_emis_visit_occurrence_id, is_null
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
@@ -41,7 +40,7 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
         if is_null(row['issue_date']):
             visit_id = None
         else:
-            visit_id = create_gp_covid_visit_occurrence_id(row['eid'], date_start)
+            visit_id = create_gp_emis_visit_occurrence_id(row['eid'], date_start)
 
         r = wrapper.cdm.DrugExposure(
             person_id=person_id,
