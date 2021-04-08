@@ -53,7 +53,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
     icd9 = wrapper.code_mapper.generate_code_mapping_dictionary('ICD9CM',
                                 restrict_to_codes=df[topography9_columns].stack().tolist())
 
-    icd10_to_o3 = pd.read_csv("./resources/encodings/Table_B_(ICD-10).csv")
+    icd10_to_o3 = pd.read_csv("./resources/encodings/icd10_to_icdo3_one_to_one_mappings.csv")
     icd10_to_o3_dict = icd10_to_o3.set_index('ICD-O-3 TOPO').T.to_dict('list')
 
     records = []
