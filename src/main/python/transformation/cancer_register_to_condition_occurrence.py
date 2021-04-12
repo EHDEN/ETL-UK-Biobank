@@ -54,7 +54,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
                                 restrict_to_codes=df[topography9_columns].stack().tolist())
 
     icd10_to_o3 = pd.read_csv("./resources/encodings/icd10_to_icdo3_one_to_one_mappings.csv")
-    icd10_to_o3_dict = icd10_to_o3.set_index('ICD-O-3 TOPO').T.to_dict('list')
+    icd10_to_o3_dict = icd10_to_o3.set_index('ICDO3').T.to_dict('list')
 
     records = []
     for _, row in df.iterrows():
