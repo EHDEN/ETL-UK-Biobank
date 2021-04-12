@@ -7,3 +7,4 @@ connectionDetails: # target database for the transformed test data (should match
 cdmSchema: # target schema for the transformed data (should match the ETL target)
 sourceDataDir: 'test_intermediates/source_data/' # location where the test data (csv) will be stored
 testQueryFileName: 'test_intermediates/test_query.sql' # location of the automatically generated test queries
+pathToDriver: # location of the JDBC driver JAR files. See DatabaseConnector documentation.

@@ -67,6 +67,14 @@ def extend_read_code(read_code: str, mapping_dict: Optional[Dict[str, str]] = No
         return read_code
 
 
+def icd_code_map(dict_name: dict, val: str):
+    out = 'NULL'
+    for key, value in dict_name.items():
+        if val in value:
+            out = key
+    return out
+
+
 if __name__ == '__main__':
     print('# extend_read_code() tests')
     mapping_dict = {'ABC.' : 'ABC.123'}
