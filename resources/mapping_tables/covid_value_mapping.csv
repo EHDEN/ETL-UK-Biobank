@@ -1,0 +1,4 @@
+sourceCode,sourceName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,mappingStatus,equivalence,statusSetBy,statusSetOn,conceptId,conceptName,mappingType,comment,createdBy,createdOn,assignedReviewer
+EMISNQCO303,Confirmed 2019-nCoV (novel coronavirus) infection,74,,0.39,APPROVED,EQUIVALENT,Maxim,1613654832299,4126681,Detected,VALUE,"Event = Measurement .., Value_as_concept = Detected",Maxim,1613654811509,
+Y20d2,Severe acute respiratory syndrome coronavirus 2 not detected (finding),160,,0.76,APPROVED,EQUIVALENT,Maxim,1613653537178,9190,Not detected,VALUE,"Event = Measurement .., Value_as_concept = Not detected",Maxim,1613653482386,
+Y23f7,SARS-CoV-2 (severe acute respiratory syndrome coronavirus 2) detection result positive,3,,0.54,APPROVED,EQUIVALENT,Maxim,1613658817382,9191,Positive,VALUE,Value_as_concept = Positive,Maxim,1613658799098,
