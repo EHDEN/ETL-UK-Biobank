@@ -5,10 +5,10 @@ add_baseline(eid = 2000, `40005-0.0` = '2013-06-04', `40011-0.0` = 8140, `40012-
 expect_condition_occurrence(person_id = 2000, condition_start_date = '2013-06-04', condition_start_datetime = '2013-06-04',
                             condition_concept_id = 44501483, condition_source_value = '8140/3-C50.9')
 
-declareTest(2001, 'Instance 0 - ICDO3 code type 111 (Without non-standard-to-standard map)')
+declareTest(2001, 'Instance 0 - ICDO3 code type 111 (three digit icd10)')
 add_baseline(eid = 2001, `40005-0.0` = '2011-08-31', `40011-0.0` = 8000, `40012-0.0` = 1, `40006-0.0` = 'C20')
 expect_condition_occurrence(person_id = 2001, condition_start_date = '2011-08-31', condition_start_datetime = '2011-08-31',
-                            condition_concept_id = 0, condition_source_value = '8000/1-C20')
+                            condition_concept_id = 442141, condition_source_value = '8000/1-C20.9')
 
 declareTest(2002, 'Instance 0 - ICDO3 code type 001')
 add_baseline(eid = 2002, `40005-0.0` = '2010-11-17', `40011-0.0` = '', `40012-0.0` = '', `40006-0.0` = 'C509')
@@ -61,7 +61,7 @@ add_baseline(eid = 2010, `40005-0.0` = '2007-04-23', `40011-0.0` = '8077', `4001
 expect_condition_occurrence(person_id = 2010, condition_start_date = '2007-04-23', condition_start_datetime = '2007-04-23',
                             condition_concept_id = 0, condition_source_value = '8077/1-NULL')
 
-# Instance 0 - ICDO3 code type 001(D-code not included in ICDO3) &
+# Instance 0 - ICDO3 code type 001 (code not included in ICD10 to ICDO3 mapping) &
 # Instance 1 - ICDO3 code type 001 &
 # Instance 2 - ICDO3 code type 000 &
 # Instance 4 - ICDO3 code type 111 &
@@ -83,7 +83,7 @@ expect_condition_occurrence(person_id = 2011, condition_start_date = '2018-09-11
 expect_condition_occurrence(person_id = 2011, condition_start_date = '1970-01-01', condition_start_datetime = '1970-01-01',
                             condition_concept_id = 36526003, condition_source_value = '8263/3-C53.0')
 
-declareTest(2012, 'Instance 0 - ICDO3 code type 001 (C-code not included in ICDO3)')
+declareTest(2012, 'Instance 0 - ICDO3 code type 001 (code not included in ICD10 to ICDO3 mapping)')
 add_baseline(eid = 2012, `40005-0.0` = '2013-07-31', `40011-0.0` = '', `40012-0.0` = '', `40006-0.0` = 'C833')
 expect_condition_occurrence(person_id = 2012, condition_start_date = '2013-07-31', condition_start_datetime = '2013-07-31',
                             condition_concept_id = 4300704, condition_source_value = 'C83.3')
