@@ -187,7 +187,7 @@
 1903,Baseline to death 2,Expect death,PASS
 1904,Baseline to death - already in Death table,Expect No death,PASS
 2000,Instance 0 - ICDO3 code type 111,Expect condition_occurrence,PASS
-2001,Instance 0 - ICDO3 code type 111 (Without non-standard-to-standard map),Expect condition_occurrence,PASS
+2001,Instance 0 - ICDO3 code type 111 (three digit icd10),Expect condition_occurrence,PASS
 2002,Instance 0 - ICDO3 code type 001,Expect condition_occurrence,PASS
 2003,Instance 0 - ICDO3 code type 101 & Instance 2 - ICDO3 code type 100,Expect 2 condition_occurrence,PASS
 2003,Instance 0 - ICDO3 code type 101 & Instance 2 - ICDO3 code type 100,Expect condition_occurrence,PASS
@@ -207,7 +207,7 @@
 2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect No condition_occurrence,PASS
 2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect condition_occurrence,PASS
 2011,Instance 0,1,2,4,13 - Four valid and one skipped,Expect condition_occurrence,PASS
-2012,Instance 0 - ICDO3 code type 001 (C-code not included in ICDO3),Expect condition_occurrence,PASS
+2012,Instance 0 - ICDO3 code type 001 (code not included in ICD10 to ICDO3 mapping),Expect condition_occurrence,PASS
 2013,Instance 0 - No concept found; use code ICD9(40013) instead,Expect condition_occurrence,PASS
 2100,Test one exposure to drug era,Expect drug_era,PASS
 2101,Test two exposure to one drug era,Expect 1 drug_era,PASS
@@ -236,12 +236,14 @@
 2505,Covid19 TPP GP clinical to stem, missing code,Expect No measurement,PASS
 2506,Covid19 TPP GP clinical to stem, value,Expect measurement,PASS
 2507,Covid19 TPP GP clinical to stem, visit_occurrence_id,Expect measurement,PASS
+2508,Covid19 TPP GP clinical to stem, local code with value,Expect measurement,PASS
 2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
 2601,No Event date,Expect No measurement,PASS
 2602,Value is -9000001.0,Expect No measurement,PASS
 2603,Code is -99,Expect No measurement,PASS
 2604,Local code: Suspected 2019-nCoV (novel coronavirus) infection,Expect measurement,PASS
 2605,Unit is -9999999,Expect measurement,PASS
+2606,Covid19 TPP GP clinical to stem, EMISNQCO303 with value mapping,Expect measurement,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS

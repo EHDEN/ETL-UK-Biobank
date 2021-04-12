@@ -12,8 +12,9 @@ nav_order: 5
 ![](baseline/md_files/image1.png)
 
 The Cancer registry is acquired from national registries.
-
-- The first step is to combine histology (40011), behaviour (40012) and topography (40006) to an ICDO3 code.
+- The first step is to map the ICD10 topography code (40006) to the corresponding ICDO3 code and use it as the topography of the cancer.
+We do this according to the [conversion table](https://seer.cancer.gov/tools/conversion/ICD03toICD9CM-ICD10-ICD10CM.xls) provided by SEER.
+- Next is combining histology (40011), behaviour (40012) and topography to an ICDO3 code.
 If all three codes are given, they are combined to `histology/behaviour-topography` (e.g. 8050/3-C80.9).
 If a codes is absent, they are replaced by a default or the record is skipped (Table 1).
 
@@ -45,7 +46,7 @@ Keep the same instance to all the fields mapped to one record.
 | --- | --- | --- | --- |
 | condition_occurrence_id |  | Auto-increment |  |
 | person_id | eid |  |  |
-| condition_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Combine fields as described in table above to construct an ICDO3 code, for which the standard concept is looked up in the OMOP vocabulary. |  |
+| condition_concept_id | 40011-{instance}.0<br>40012-{instance}.0<br>40006-{instance}.0 | Combine fields as described in table above to construct an ICDO3 code, for which the standard concept is looked up in the OMOP vocabulary. | For the mapping from ICD10 to ICDO3 only the 1-1 relations are used. |
 | condition_start_date | 40005-{instance}.0 |  |  |
 | condition_start_datetime | 40005-{instance}.0 | as datetime |  |
 | condition_end_date |  |  |  |
