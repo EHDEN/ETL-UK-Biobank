@@ -52,9 +52,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
         event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
         visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], event_date)
 
-        value_as_concept_id = None
-        if value_mapping_lookup.get(row['code']):
-            value_as_concept_id = value_mapping_lookup.get(row['code'])
+        value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
         # Insert terms in stem_table
         r = wrapper.cdm.StemTable(

@@ -57,9 +57,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             unit_concept_id = unit_lookup.get(row['unit'], 0)
             unit_source_value = row['unit']
 
-        value_as_concept_id = None
-        if value_mapping_lookup.get(row['code']):
-            value_as_concept_id = value_mapping_lookup.get(row['code'])
+        value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
         r = wrapper.cdm.StemTable(
             person_id=person_id,
