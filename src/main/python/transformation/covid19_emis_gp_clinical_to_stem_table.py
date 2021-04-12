@@ -31,7 +31,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             continue
 
         # Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001, -9999999, -9000099
-        if re.match(r'^(-[\d])', row['value']):
+        if re.match(r'^-\d', str(row['value'])):
             continue
 
         if row['code'] in ['-99', '-1', '-4']:
