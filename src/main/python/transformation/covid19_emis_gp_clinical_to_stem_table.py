@@ -14,6 +14,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
     df = source.get_csv_as_df(apply_dtypes=False)
     mapping_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_covid.csv')
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/covid19_emis_units.csv')
+    value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv")
 
     snomed_mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary(
@@ -30,7 +31,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             continue
 
         # Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001, -9999999, -9000099
-        if re.match(r'^(-[\d])', row['value']):
+        if re.match(r'^-\d', str(row['value'])):
             continue
 
         if row['code'] in ['-99', '-1', '-4']:
@@ -56,6 +57,8 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             unit_concept_id = unit_lookup.get(row['unit'], 0)
             unit_source_value = row['unit']
 
+        value_as_concept_id = value_mapping_lookup.get(row['code'], None)
+
         r = wrapper.cdm.StemTable(
             person_id=person_id,
             domain_id='Measurement',
@@ -68,6 +71,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             source_value=row['code'],
             unit_concept_id=unit_concept_id,
             unit_source_value=unit_source_value,
+            value_as_concept_id=value_as_concept_id,
             value_as_number=row['value'],
             data_source='covid19 gp_emis'
         )

@@ -34,7 +34,7 @@ declareTest(2304, 'visit id')
 add_baseline(eid = '2304')
 add_covid19_emis_gp_scripts(eid = '2304', code_type = '6', code = '322503009', issue_date = '21/04/2019')
 expect_drug_exposure(person_id = 2304, drug_concept_id = 40223112,
-                     drug_exposure_end_date = '2019/04/21', visit_occurrence_id = '5000230420190421')
+                     drug_exposure_end_date = '2019/04/21', visit_occurrence_id = '6000230420190421')
 
 
 declareTest(2305, 'if no code_type skip')

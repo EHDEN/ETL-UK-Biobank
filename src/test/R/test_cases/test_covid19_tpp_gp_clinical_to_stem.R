@@ -37,3 +37,8 @@ declareTest(2507, 'Covid19 TPP GP clinical to stem, visit_occurrence_id')
 add_baseline(eid = 2507)
 add_covid19_tpp_gp_clinical(eid = 2507, event_dt = '12/03/1999', code_type = 1, code = '242..', value = 10.0)
 expect_measurement(person_id = 2507, visit_occurrence_id="5000250719990312")
+
+declareTest(2508, 'Covid19 TPP GP clinical to stem, local code with value')
+add_baseline(eid = 2508)
+add_covid19_tpp_gp_clinical(eid = 2508, event_dt = '20/03/2021', code_type = 1, code = 'Y20d2', value = '')
+expect_measurement(person_id = 2508, measurement_concept_id = 756065, value_as_concept_id = 9190)
