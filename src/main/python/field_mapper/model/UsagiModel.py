@@ -15,6 +15,8 @@
 # !/usr/bin/env python3
 from enum import Enum
 from datetime import datetime
+from typing import Any
+
 from src.main.python.field_mapper.util.type_conversion import to_int
 
 
@@ -29,6 +31,17 @@ class MappingType(Enum):
     EVENT = 1
     VALUE = 2
     UNIT = 3
+
+    @classmethod
+    def get(cls, value):
+        # Translate new MAPS_TO relationships to old names
+        if value == 'MAPS_TO':
+            value = 'EVENT'
+        elif value == 'MAPS_TO_VALUE':
+            value = 'VALUE'
+        elif value == 'MAPS_TO_UNIT':
+            value = 'UNIT'
+        return cls[value]
 
 
 class UsagiRow:
@@ -51,7 +64,7 @@ class TargetMapping:
         self.concept_id: int = int(row['conceptId'])
         self.created_by: str = row['createdBy']
         self.created_on: datetime = datetime.fromtimestamp(to_int(row['createdOn'])/1000)
-        self.type: MappingType = MappingType[row['mappingType']]
+        self.type: MappingType = MappingType.get(row['mappingType'])
         self.status_set_by: str = row['statusSetBy']
         self.status_set_on: datetime = datetime.fromtimestamp(to_int(row['statusSetOn'])/1000)
 
