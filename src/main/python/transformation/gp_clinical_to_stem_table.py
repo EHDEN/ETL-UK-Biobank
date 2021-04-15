@@ -28,7 +28,6 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
     value_mapper = GpClinicalValueMapper(mapping_dict=read_v2_mapping_dict)
 
-    records = []
     for _, row in df.iterrows():
         # read_2 and read_3 should be mutually exclusive
         if not is_null(row['read_2']):
@@ -79,7 +78,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                     target_concept_id = target_read_mapping.target_concept_id
                     source_concept_id = source_read_mapping.source_concept_id
 
-            r = wrapper.cdm.StemTable(
+            yield wrapper.cdm.StemTable(
                 person_id=person_id,
                 domain_id='Measurement',  # this always overrides concept.domain_id, also if the concept is legitimately a condition
                 type_concept_id=32817,
@@ -95,6 +94,3 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 value_as_number=value_as_number,
                 data_source=data_source
             )
-            records.append(r)
-
-    return records
