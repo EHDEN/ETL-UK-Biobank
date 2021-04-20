@@ -19,8 +19,8 @@ WITH
                          drug_exposure_start_date + days_supply * INTERVAL '1 day',
                          drug_exposure_start_date + INTERVAL '1 day') AS drug_exposure_end_date
             FROM @cdm_schema.drug_exposure d
-                     JOIN vocab.concept_ancestor ca ON ca.descendant_concept_id = d.drug_concept_id
-                     JOIN vocab.concept c ON ca.ancestor_concept_id = c.concept_id
+                     JOIN @vocabulary_schemaconcept_ancestor ca ON ca.descendant_concept_id = d.drug_concept_id
+                     JOIN @vocabulary_schemaconcept c ON ca.ancestor_concept_id = c.concept_id
             WHERE c.vocabulary_id = 'RxNorm'
               AND c.concept_class_id = 'Ingredient'
         ),
