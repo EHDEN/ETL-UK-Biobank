@@ -10,7 +10,7 @@
 ---can filter out unmapped condition_concept_id's /*see comment in code*/
 --------------------------------------------------------------------------------------------------------------
 
-TRUNCATE omopcdm.condition_era;
+TRUNCATE @cdm_schema.condition_era;
 
 WITH cteConditionTarget (condition_occurrence_id, person_id, condition_concept_id, condition_start_date, condition_end_date) AS
          (
@@ -20,7 +20,7 @@ WITH cteConditionTarget (condition_occurrence_id, person_id, condition_concept_i
                   , co.condition_concept_id
                   , co.condition_start_date
                   , COALESCE(NULLIF(co.condition_end_date,NULL), condition_start_date + INTERVAL '1 day') AS condition_end_date
-             FROM omopcdm.condition_occurrence co
+             FROM @cdm_schema.condition_occurrence co
              /* Depending on the needs of your data, you can put more filters on to your code. We assign 0 to our unmapped condition_concept_id's,
               * and since we don't want different conditions put in the same era, we put in the filter below.
                */
@@ -85,7 +85,7 @@ WITH cteConditionTarget (condition_occurrence_id, person_id, condition_concept_i
                     , c.condition_start_date
          )
 --------------------------------------------------------------------------------------------------------------
-INSERT INTO omopcdm.condition_era(person_id, condition_concept_id, condition_era_start_date, condition_era_end_date, condition_occurrence_count)
+INSERT INTO @cdm_schema.condition_era(person_id, condition_concept_id, condition_era_start_date, condition_era_end_date, condition_occurrence_count)
 SELECT
     person_id
      , condition_concept_id

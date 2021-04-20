@@ -42,6 +42,7 @@ class Wrapper(BaseWrapper):
         self.create_schemas()
         self.drop_cdm()
         self.create_cdm()
+        self.execute_sql_file('add_vocabulary_views.sql')
 
         # Load (custom) vocabularies and source_to_concept_map tables
         try:

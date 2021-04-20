@@ -18,9 +18,9 @@ WITH
                 COALESCE(drug_exposure_end_date,
                          drug_exposure_start_date + days_supply * INTERVAL '1 day',
                          drug_exposure_start_date + INTERVAL '1 day') AS drug_exposure_end_date
-            FROM omopcdm.drug_exposure d
-                     JOIN vocab.concept_ancestor ca ON ca.descendant_concept_id = d.drug_concept_id
-                     JOIN vocab.concept c ON ca.ancestor_concept_id = c.concept_id
+            FROM @cdm_schema.drug_exposure d
+                     JOIN @vocabulary_schemaconcept_ancestor ca ON ca.descendant_concept_id = d.drug_concept_id
+                     JOIN @vocabulary_schemaconcept c ON ca.ancestor_concept_id = c.concept_id
             WHERE c.vocabulary_id = 'RxNorm'
               AND c.concept_class_id = 'Ingredient'
         ),
@@ -97,7 +97,7 @@ WITH
                 d.drug_type_concept_id,
                 d.drug_exposure_start_date
         )
-INSERT INTO omopcdm.drug_era (
+INSERT INTO @cdm_schema.drug_era (
     drug_era_id,
     person_id,
     drug_concept_id,
