@@ -32,7 +32,7 @@ SELECT
 
 	stem_table.type_concept_id	AS	device_type_concept_id,
 
-	stem_table.unique_device_id	AS	unique_device_id,
+	stem_table.unique_device_id	AS	COALESCE(unique_device_id, value_as_string),
 
 	stem_table.quantity	AS	quantity,
 
