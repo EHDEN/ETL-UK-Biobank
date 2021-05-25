@@ -51,7 +51,6 @@ The docker images (postgres and etl) can be stopped with: `docker-compose down`.
 In `config/`:
 - Copy and rename `config-sample.yml`, and edit the options to enable a successful connection to your target database. 
 You can create multiple configurations, for example one for a local test database and one for a remote database, without name restrictions. 
-- Copy and rename `logging-sample.yml` to `logging.yml` to customize the logging behavior (`logging.yml` is the only file name that will be recognized by the ETL).
 
 #### Running the ETL
 
