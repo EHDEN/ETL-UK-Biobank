@@ -59,6 +59,6 @@ You can create multiple configurations, for example one for a local test databas
 
 To run the ETL, execute the following from the root:
 ```bash
-main.py -c <custom_config.yml>
+python main.py -c <custom_config.yml>
 ```
 A log of the run will be written to `logs/<timestamp><version>.log`
