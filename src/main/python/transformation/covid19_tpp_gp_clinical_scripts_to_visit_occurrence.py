@@ -41,5 +41,4 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
             visit_type_concept_id=32827,  # 'EHR encounter record'
             data_source='covid19 gp_tpp'
         )
-        records.append(r)
-    return records
+        yield r

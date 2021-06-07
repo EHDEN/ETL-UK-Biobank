@@ -96,16 +96,17 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(hesin_diag_to_condition_occurrence, bulk=True)
         self.execute_transformation(hesin_oper_to_procedure_occurrence, bulk=True)
         self.execute_transformation(cancer_register_to_condition_occurrence, bulk=True)
-        self.execute_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True)
+        self.execute_batch_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
 
         # New sets
-        self.execute_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True)
-        self.execute_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True)
-        self.execute_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True)
-        self.execute_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True)
-        self.execute_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True)
+        self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
 
-        # CDM Source
+
+    # CDM Source
         self.execute_transformation(cdm_source, bulk=True)
 
         # Stem table to domains

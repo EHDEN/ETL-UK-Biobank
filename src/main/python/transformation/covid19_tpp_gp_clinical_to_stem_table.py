@@ -69,6 +69,4 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
             type_concept_id=32817,     # 32817: EHR
             data_source='covid19 gp_tpp'
         )
-        records.append(r)
-
-    return records
+        yield r
