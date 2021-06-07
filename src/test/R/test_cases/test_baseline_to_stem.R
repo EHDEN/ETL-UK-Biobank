@@ -167,3 +167,7 @@ declareTest(936, 'Baseline - cancer record origin')
 add_baseline(eid = '936', `40005-11.0` = '2017-04-07', `40021-11.0` = 'NCIN')
 expect_observation(person_id = 936, observation_date = '2017-04-07',
                    observation_concept_id = 4299598)
+
+declareTest(937, 'Baseline - device id')
+add_baseline(eid = '937', `30003-0.0` = 'ABC123')
+expect_device_exposure(person_id = 937, device_concept_id = 4272314, unique_device_id = 'ABC123')
