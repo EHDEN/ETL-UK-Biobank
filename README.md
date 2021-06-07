@@ -41,24 +41,21 @@ The docker images (postgres and etl) can be stopped with: `docker-compose down`.
 #### Dependencies
 - postgresql database
 - python 3.7
+- `pip install -r requirements.txt`
 
 #### Prepare the target database
 - Create an empty database.
-- OMOP vocabulary tables should be pre-loaded to a schema named `vocab`. 
-  The following vocabularies are needed on top of the default selected ones: 
-  READ (17), ICD10 (34), ICD10PCS (35), OPCS4 (55), HES Specialty (57), dm+d (75), ICDO3 (90), UKB (144)
-- Create an empty schema `omopcdm`; the ETL will automatically load the CDM 5.3.1 tables to this schema.
+- Add standard vocabularies, unzipped, `to resources/vocabularies/standard` (see also [delphyne documentation](https://delphyne.readthedocs.io/en/latest/standard_vocab.html))
 
 #### Customize configuration
 In `config/`:
 - Copy and rename `config-sample.yml`, and edit the options to enable a successful connection to your target database. 
 You can create multiple configurations, for example one for a local test database and one for a remote database, without name restrictions. 
-- Copy and rename `logging-sample.yml` to `logging.yml` to customize the logging behavior (`logging.yml` is the only file name that will be recognized by the ETL).
 
 #### Running the ETL
 
 To run the ETL, execute the following from the root:
 ```bash
-main.py -c <custom_config.yml>
+python main.py -c <custom_config.yml>
 ```
 A log of the run will be written to `logs/<timestamp><version>.log`

@@ -41,5 +41,4 @@ def covid19_emis_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Li
             visit_type_concept_id=32827,  # 'EHR encounter record'
             data_source='covid19 gp_emis'
         )
-        records.append(r)
-    return records
+        yield r

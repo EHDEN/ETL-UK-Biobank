@@ -49,6 +49,4 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
             data_source=data_source,
             visit_occurrence_id=visit_id
         )
-        records.append(r)
-
-    return records
+        yield r
