@@ -75,7 +75,4 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             value_as_number=row['value'],
             data_source='covid19 gp_emis'
         )
-        records.append(r)
-    return records
-
-
+        yield r
