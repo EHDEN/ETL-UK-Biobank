@@ -70,6 +70,7 @@
 934,Baseline - behaviour of cancer tumour,Expect observation,PASS
 935,Baseline - cancer record format,Expect observation,PASS
 936,Baseline - cancer record origin,Expect observation,PASS
+937,Baseline - device id,Expect device_exposure,PASS
 1000,Test ICD10 code,Expect condition_occurrence,PASS
 1001,Test ICD9 code,Expect condition_occurrence,PASS
 1002,Test ICD9 and ICD10 code; map ICD10,Expect condition_occurrence,PASS
