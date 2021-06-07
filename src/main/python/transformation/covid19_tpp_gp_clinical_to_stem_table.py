@@ -18,8 +18,6 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
     local_tpp_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/gp_clinical_covid.csv", approved_only=False)
     value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv")
 
-    # For each record...
-    records = []
     for _, row in df.iterrows():
  
         if is_null(row['code']):
@@ -55,7 +53,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
         value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
         # Insert terms in stem_table
-        r = wrapper.cdm.StemTable(
+        yield wrapper.cdm.StemTable(
             person_id=person_id,
             concept_id=target_concept_id,
             source_value=source_code,  
@@ -69,4 +67,3 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
             type_concept_id=32817,     # 32817: EHR
             data_source='covid19 gp_tpp'
         )
-        yield r
