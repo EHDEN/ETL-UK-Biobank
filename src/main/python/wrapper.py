@@ -30,11 +30,13 @@ logger = logging.getLogger(__name__)
 class Wrapper(BaseWrapper):
     cdm = cdm
 
-    def __init__(self, config: MainConfig):
+    def __init__(self, config: MainConfig, load_gp_regular: bool, load_gp_covid19: bool):
         super().__init__(config, cdm)
 
         # Load config settings
         self.path_mapping_tables = Path('./resources/mapping_tables')
+        self.load_gp_regular = load_gp_regular
+        self.load_gp_covid19 = load_gp_covid19
 
     def run(self):
 
@@ -81,29 +83,35 @@ class Wrapper(BaseWrapper):
         self.execute_transformation(death_to_condition_occurrence, bulk=True)
         self.execute_transformation(baseline_to_death, bulk=True)
 
-        # Visit
-        self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True)
-        self.execute_transformation(covid_to_visit_occurrence, bulk=True)
+        # Baseline
         self.execute_transformation(baseline_to_visit_occurrence, bulk=True)
-        self.execute_transformation(hesin_to_visit_occurrence, bulk=True)
-        self.execute_transformation(hesin_to_visit_detail, bulk=True)
-
-        # Events
         self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
-        self.execute_transformation(covid_to_observation, bulk=True)
-        self.execute_batch_transformation(gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-        self.execute_transformation(gp_prescriptions_to_drug_exposure, bulk=True)
-        self.execute_transformation(hesin_diag_to_condition_occurrence, bulk=True)
-        self.execute_transformation(hesin_oper_to_procedure_occurrence, bulk=True)
         self.execute_transformation(cancer_register_to_condition_occurrence, bulk=True)
 
+        # Covid tests
+        self.execute_transformation(covid_to_visit_occurrence, bulk=True)
+        self.execute_transformation(covid_to_observation, bulk=True)
+
+        # HES
+        self.execute_transformation(hesin_to_visit_occurrence, bulk=True)
+        self.execute_transformation(hesin_to_visit_detail, bulk=True)
+        self.execute_transformation(hesin_diag_to_condition_occurrence, bulk=True)
+        self.execute_transformation(hesin_oper_to_procedure_occurrence, bulk=True)
+
+        # GP
+        if self.load_gp_regular:
+            self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True)
+            self.execute_batch_transformation(gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+            self.execute_transformation(gp_prescriptions_to_drug_exposure, bulk=True)
+
         # COVID-19 GP tables
-        self.execute_batch_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+        if self.load_gp_covid19:
+            self.execute_batch_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
 
         # CDM Source
         self.execute_transformation(cdm_source, bulk=True)
