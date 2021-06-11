@@ -17,6 +17,4 @@ def assessment_center_to_care_site(wrapper: Wrapper) -> List[Wrapper.cdm.CareSit
                 care_site_name=row['meaning'],
                 care_site_source_value=row['coding']
             )
-            records.append(r)
-
-    return records
+        yield r

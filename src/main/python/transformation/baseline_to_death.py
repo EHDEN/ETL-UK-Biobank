@@ -45,6 +45,4 @@ def baseline_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
                     cause_source_concept_id=target.source_concept_id,
                     cause_source_value=row['40001-0.0']
                 )
-                records.append(r)
-
-        return records
+                yield r

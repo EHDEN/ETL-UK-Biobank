@@ -48,5 +48,4 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
             visit_type_concept_id=32827,  # 'EHR encounter record'
             data_source='GP' + '-' + row['data_provider']
         )
-        records.append(r)
-    return records
+        yield r

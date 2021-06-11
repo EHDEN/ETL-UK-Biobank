@@ -33,5 +33,4 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
             record_source_value='covid',
             data_source='covid'
         )
-        records.append(r)
-    return records
+        yield r

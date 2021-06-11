@@ -47,5 +47,4 @@ def death_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Conditio
             condition_source_concept_id=target.source_concept_id,
             data_source=f'death-{row["dsource"]}'
         )
-        records.append(r)
-    return records
+        yield r

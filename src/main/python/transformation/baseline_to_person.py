@@ -29,6 +29,4 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
             race_source_value=row['21000-0.0'],
             care_site_id=row['54-0.0']
             )
-        records.append(r)
-
-    return records
+        yield r

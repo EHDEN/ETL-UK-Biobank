@@ -63,5 +63,4 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
                 visit_detail_id=visit_detail_id,
                 data_source=f'HES-{row["dsource"]}'
             )
-            records.append(r)
-    return records
+            yield r

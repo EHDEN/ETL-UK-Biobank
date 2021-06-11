@@ -74,5 +74,4 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
                 condition_status_source_value=row['level'],
                 data_source=f'HES-{row["dsource"]}'
             )
-            records.append(r)
-    return records
+            yield r

@@ -42,6 +42,4 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                 record_source_value=f'baseline-{instance}',
                 data_source='baseline'
             )
-            records.append(r)
-
-    return records
+            yield r

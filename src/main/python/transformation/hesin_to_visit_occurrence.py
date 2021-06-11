@@ -85,5 +85,4 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
             discharge_to_source_value=dis_source,
             data_source=f'HES-{data_source}'
         )
-        records.append(r)
-    return records
+        yield r

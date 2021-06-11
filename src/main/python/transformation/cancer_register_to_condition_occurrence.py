@@ -113,5 +113,4 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
                 condition_source_value=source_code,
                 data_source='baseline'
             )
-            records.append(r)
-    return records
+            yield r

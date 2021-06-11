@@ -39,5 +39,4 @@ def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
             observation_source_value=row['spectype'],
             data_source='covid'
         )
-        records.append(r)
-    return records
+        yield r

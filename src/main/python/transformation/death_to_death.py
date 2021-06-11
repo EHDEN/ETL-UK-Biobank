@@ -56,6 +56,4 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
             cause_source_value=row['cause_icd10']
             # TODO: record source in separate field
         )
-        records.append(r)
-
-    return records
+        yield r
