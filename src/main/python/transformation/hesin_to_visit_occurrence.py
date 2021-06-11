@@ -69,7 +69,7 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
         admit_source = "record origin:"+data_source+"/admission source:"+str(row['admisorc'])
         dis_source = "record origin:"+data_source+"/discharge destination:"+str(row['disdest'])
 
-        r = wrapper.cdm.VisitOccurrence(
+        yield wrapper.cdm.VisitOccurrence(
             visit_occurrence_id=create_hes_visit_occurrence_id(row['eid'], row['spell_index']),
             person_id=person_id,
             visit_concept_id=visit_reason.get((row['admimeth'], row['dsource']), 0),
@@ -85,4 +85,3 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
             discharge_to_source_value=dis_source,
             data_source=f'HES-{data_source}'
         )
-        yield r

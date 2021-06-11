@@ -37,7 +37,7 @@ def death_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Conditio
 
         target = mapper.lookup(row['cause_icd10_dot'], first_only=True)
 
-        r = wrapper.cdm.ConditionOccurrence(
+        yield wrapper.cdm.ConditionOccurrence(
             person_id=person_id,
             condition_concept_id=target.target_concept_id,
             condition_start_date=row['date_of_death'],
@@ -47,4 +47,3 @@ def death_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Conditio
             condition_source_concept_id=target.source_concept_id,
             data_source=f'death-{row["dsource"]}'
         )
-        yield r

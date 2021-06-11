@@ -46,7 +46,7 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
         person_id = row['eid']
 
         target = mapper.lookup(row['cause_icd10_dot'], first_only=True)
-        r = wrapper.cdm.Death(
+        yield wrapper.cdm.Death(
             person_id=person_id,
             death_date=row['date_of_death'],
             death_datetime=row['date_of_death'],
@@ -56,4 +56,3 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
             cause_source_value=row['cause_icd10']
             # TODO: record source in separate field
         )
-        yield r

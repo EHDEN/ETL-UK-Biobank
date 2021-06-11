@@ -28,7 +28,7 @@ def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
             '0': 45878583  # Negative
         }
 
-        r = wrapper.cdm.Observation(
+        yield wrapper.cdm.Observation(
             person_id=person_id,
             observation_concept_id=type_vocab.get(row['spectype'], 0),
             observation_date=date.date(),
@@ -39,4 +39,3 @@ def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
             observation_source_value=row['spectype'],
             data_source='covid'
         )
-        yield r

@@ -68,7 +68,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             num_quantity = extract_numeric_quantity(raw_quantity)
             date_end = date_start
 
-        r = wrapper.cdm.DrugExposure(
+        yield wrapper.cdm.DrugExposure(
             person_id=person_id,
             drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
@@ -83,4 +83,3 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             data_source=data_source,
             visit_occurrence_id=visit_id,
         )
-        yield r

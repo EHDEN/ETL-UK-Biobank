@@ -20,7 +20,7 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
 
         person_id = row['eid']
 
-        r = wrapper.cdm.VisitOccurrence(
+        yield wrapper.cdm.VisitOccurrence(
             visit_occurrence_id=create_covid_visit_occurrence_id(row['eid'], visit_date),
             person_id=person_id,
             visit_concept_id=32693,  # Health examination
@@ -33,4 +33,3 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
             record_source_value='covid',
             data_source='covid'
         )
-        yield r

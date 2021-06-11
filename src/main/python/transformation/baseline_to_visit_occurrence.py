@@ -29,7 +29,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
             # Field_id 54 contains the assessment centre
             assessment_center = row.get(f'54-{instance}.0', None)
 
-            r = wrapper.cdm.VisitOccurrence(
+            yield wrapper.cdm.VisitOccurrence(
                 visit_occurrence_id=create_baseline_visit_occurrence_id(row['eid'], instance),
                 person_id=person_id,
                 visit_concept_id=44818519,  # Clinical Study Visit
@@ -42,4 +42,3 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                 record_source_value=f'baseline-{instance}',
                 data_source='baseline'
             )
-            yield r
