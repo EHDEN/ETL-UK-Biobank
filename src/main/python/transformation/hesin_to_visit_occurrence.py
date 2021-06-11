@@ -45,7 +45,6 @@ def hesin_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
                 add_info='ADD_INFO:coding_origin')
         )
 
-    records = []
     for _, row in df.iterrows():
         person_id = row['eid']
 

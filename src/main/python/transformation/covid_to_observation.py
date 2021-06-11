@@ -14,7 +14,6 @@ def covid_to_observation(wrapper: Wrapper) -> List[Wrapper.cdm.Observation]:
 
     type_vocab = wrapper.mapping_tables_lookup('./resources/mapping_tables/covid_spectype.csv')
 
-    records = []
     for _, row in df.iterrows():
 
         date = get_datetime(row['specdate'], "%d/%m/%Y")

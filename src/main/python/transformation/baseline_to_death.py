@@ -20,7 +20,6 @@ def baseline_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
             'ICD10', restrict_to_codes=list(df['ICD10_dot']))
     persons = []
 
-    records = []
     with wrapper.db.session_scope() as session:
         # Get the existing death records and check if they are in baseline, if so they are added to the persons list.
         query_1 = session.query(wrapper.cdm.Death) \

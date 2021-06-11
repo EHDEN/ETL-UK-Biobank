@@ -29,7 +29,6 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
             first_only=True, approved_only=False)
 
-    records = []
     for _, row in df.iterrows():
         if not is_null(row['dmd_code']):
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)

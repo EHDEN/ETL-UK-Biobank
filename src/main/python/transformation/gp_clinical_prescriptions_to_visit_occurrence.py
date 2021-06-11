@@ -27,7 +27,6 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
 
     df = pd.concat([prescriptions, clinical])
     df = df.drop_duplicates(['eid', 'date'])
-    records = []
 
     for _, row in df.iterrows():
         person_id = row['eid']

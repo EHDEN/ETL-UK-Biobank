@@ -13,8 +13,6 @@ def covid_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurre
     df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'specdate', 'laboratory'])
     df = df.drop_duplicates(['eid', 'specdate'])
 
-    records = []
-
     for _, row in df.iterrows():
         visit_date = get_datetime(row['specdate'], "%d/%m/%Y")
 

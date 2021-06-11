@@ -14,7 +14,6 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
     df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '31-0.0', '34-0.0',
                                                            '52-0.0', '21000-0.0', '54-0.0'])
 
-    records = []
     for _, row in df.iterrows():
         # TODO: check correct visit number for fields with multiple visits
         yield wrapper.cdm.Person(

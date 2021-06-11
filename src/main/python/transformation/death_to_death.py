@@ -38,7 +38,6 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
     mapper = wrapper.code_mapper.generate_code_mapping_dictionary(
         'ICD10', restrict_to_codes=list(df['cause_icd10_dot']))
 
-    records = []
     for _, row in df.iterrows():
         if pd.isna(row['date_of_death']):
             continue

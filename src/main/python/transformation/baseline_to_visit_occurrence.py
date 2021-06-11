@@ -14,7 +14,6 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
     df = source.get_csv_as_df(apply_dtypes=False,
                               usecols=['eid', '54-0.0', '54-1.0', '54-2.0', '54-3.0',
                                        '53-0.0', '53-1.0', '53-2.0', '53-3.0'])
-    records = []
     for _, row in df.iterrows():
         person_id = row['eid']
         # One-day visits for instances 0 to 3
