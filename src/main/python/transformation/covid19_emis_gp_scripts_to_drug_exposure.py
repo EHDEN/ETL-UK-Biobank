@@ -18,7 +18,6 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
         wrapper.code_mapper.generate_code_mapping_dictionary(
             'dm+d', restrict_to_codes=list(df['code']))
 
-    records = []
     for _, row in df.iterrows():
         if row['code_type'] == '6':
             mapping = dmd_mapper.lookup(row['code'], first_only=True)
@@ -42,7 +41,7 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
         else:
             visit_id = create_gp_emis_visit_occurrence_id(row['eid'], date_start)
 
-        r = wrapper.cdm.DrugExposure(
+        yield wrapper.cdm.DrugExposure(
             person_id=person_id,
             drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
@@ -55,4 +54,3 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
             data_source=data_source,
             visit_occurrence_id=visit_id,
         )
-        yield r

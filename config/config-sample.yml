@@ -31,6 +31,12 @@ run_options:
   # Write two additional tsv files in the logs folder, with more
   # detailed information on source data counts and ETL transformations.
   write_reports: False
+  # Load gp_clinical and gp_prescription tables
+  # Both load_gp_regular and load_gp_covid19 can be set to True, but this can result in duplicated data loaded.
+  load_gp_regular: True
+  # Load covid19_emis_clinical covid19_emis_scripts,
+  # covid19_tpp_clinical and covid19_tpp_scripts tables
+  load_gp_covid19: True
 
 # sql_parameters are optional. They can be used together with parameterized
 # raw SQL queries, of which the placeholders (e.g. schema names, values)

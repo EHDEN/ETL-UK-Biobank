@@ -20,7 +20,6 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
 
     df = pd.concat([scripts, clinical])
     df = df.drop_duplicates(['eid', 'date'])
-    records = []
 
     for _, row in df.iterrows():
         person_id = row['eid']
@@ -30,7 +29,7 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
         if not visit_date:
             continue
 
-        r = wrapper.cdm.VisitOccurrence(
+        yield wrapper.cdm.VisitOccurrence(
             visit_occurrence_id=create_gp_tpp_visit_occurrence_id(row['eid'], visit_date),
             person_id=person_id,
             visit_concept_id=38004453,  # Family Practice
@@ -41,4 +40,3 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
             visit_type_concept_id=32827,  # 'EHR encounter record'
             data_source='covid19 gp_tpp'
         )
-        yield r

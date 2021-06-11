@@ -20,8 +20,6 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         wrapper.code_mapper.generate_code_mapping_dictionary(
             'SNOMED', restrict_to_codes=list(df['code']))
 
-    records = []
-
     for _, row in df.iterrows():
         person_id = row['eid']
 
@@ -59,7 +57,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
 
         value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
-        r = wrapper.cdm.StemTable(
+        yield wrapper.cdm.StemTable(
             person_id=person_id,
             domain_id='Measurement',
             type_concept_id=32817,
@@ -75,4 +73,3 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             value_as_number=row['value'],
             data_source='covid19 gp_emis'
         )
-        yield r

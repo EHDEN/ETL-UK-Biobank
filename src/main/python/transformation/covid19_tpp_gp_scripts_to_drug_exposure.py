@@ -17,7 +17,6 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
         wrapper.code_mapper.generate_code_mapping_dictionary(
             'dm+d', restrict_to_codes=list(df['dmd_code']))
 
-    records = []
     for _, row in df.iterrows():
         if row['dmd_code'] == '-1':  # -1: No dm+d code
             continue
@@ -36,7 +35,7 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
         else:
             visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], date_start)
 
-        r = wrapper.cdm.DrugExposure(
+        yield wrapper.cdm.DrugExposure(
             person_id=person_id,
             drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
@@ -49,4 +48,3 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
             data_source=data_source,
             visit_occurrence_id=visit_id
         )
-        yield r

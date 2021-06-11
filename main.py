@@ -11,7 +11,7 @@ from delphyne.util.io import read_yaml_file
 
 from src.main.python.wrapper import Wrapper
 
-__version__ = '1.1.1-SNAPSHOT'
+__version__ = '1.2.0'
 
 logger = logging.getLogger(__name__)
 
@@ -25,10 +25,13 @@ def main(config):
     setup_logging()
 
     # Load configuration
-    config = MainConfig(**read_yaml_file(Path(config)))
+    config_yaml = read_yaml_file(Path(config))
+    config = MainConfig(**config_yaml)
 
     # Initialize ETL with configuration parameters
-    etl = Wrapper(config)
+    etl = Wrapper(config,
+                  load_gp_regular=config_yaml['run_options'].get('load_gp_regular', True),
+                  load_gp_covid19=config_yaml['run_options'].get('load_gp_covid19', True))
 
     logger.info('ETL version {}'.format(__version__))
 
