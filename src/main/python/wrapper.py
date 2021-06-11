@@ -84,25 +84,25 @@ class Wrapper(BaseWrapper):
         self.execute_batch_transformation(baseline_to_death, bulk=True, batch_size=100000)
 
         # Baseline
-        self.execute_transformation(baseline_to_visit_occurrence, bulk=True)
+        self.execute_batch_transformation(baseline_to_visit_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
-        self.execute_transformation(cancer_register_to_condition_occurrence, bulk=True)
+        self.execute_batch_transformation(cancer_register_to_condition_occurrence, bulk=True, batch_size=100000)
 
         # Covid tests
-        self.execute_transformation(covid_to_visit_occurrence, bulk=True)
-        self.execute_transformation(covid_to_observation, bulk=True)
+        self.execute_batch_transformation(covid_to_visit_occurrence, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(covid_to_observation, bulk=True, batch_size=100000)
 
         # HES
-        self.execute_transformation(hesin_to_visit_occurrence, bulk=True)
-        self.execute_transformation(hesin_to_visit_detail, bulk=True)
-        self.execute_transformation(hesin_diag_to_condition_occurrence, bulk=True)
-        self.execute_transformation(hesin_oper_to_procedure_occurrence, bulk=True)
+        self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
 
         # GP
         if self.load_gp_regular:
-            self.execute_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True)
+            self.execute_batch_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True, batch_size=100000)
             self.execute_batch_transformation(gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-            self.execute_transformation(gp_prescriptions_to_drug_exposure, bulk=True)
+            self.execute_batch_transformation(gp_prescriptions_to_drug_exposure, bulk=True, batch_size=100000)
 
         # COVID-19 GP tables
         if self.load_gp_covid19:
