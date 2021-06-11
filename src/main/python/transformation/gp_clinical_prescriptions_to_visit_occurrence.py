@@ -27,7 +27,6 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
 
     df = pd.concat([prescriptions, clinical])
     df = df.drop_duplicates(['eid', 'date'])
-    records = []
 
     for _, row in df.iterrows():
         person_id = row['eid']
@@ -37,7 +36,7 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
         if not visit_date:
             continue
 
-        r = wrapper.cdm.VisitOccurrence(
+        yield wrapper.cdm.VisitOccurrence(
             visit_occurrence_id=create_gp_visit_occurrence_id(row['eid'], visit_date),
             person_id=person_id,
             visit_concept_id=38004453,  # Family Practice
@@ -48,5 +47,3 @@ def gp_clinical_prescriptions_to_visit_occurrence(wrapper: Wrapper) -> List[Wrap
             visit_type_concept_id=32827,  # 'EHR encounter record'
             data_source='GP' + '-' + row['data_provider']
         )
-        records.append(r)
-    return records

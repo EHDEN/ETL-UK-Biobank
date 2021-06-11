@@ -29,7 +29,6 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
             first_only=True, approved_only=False)
 
-    records = []
     for _, row in df.iterrows():
         if not is_null(row['dmd_code']):
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
@@ -68,7 +67,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             num_quantity = extract_numeric_quantity(raw_quantity)
             date_end = date_start
 
-        r = wrapper.cdm.DrugExposure(
+        yield wrapper.cdm.DrugExposure(
             person_id=person_id,
             drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
@@ -83,6 +82,3 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             data_source=data_source,
             visit_occurrence_id=visit_id,
         )
-        records.append(r)
-
-    return records

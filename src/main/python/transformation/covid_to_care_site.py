@@ -11,11 +11,8 @@ def covid_to_care_site(wrapper: Wrapper) -> List[Wrapper.cdm.CareSite]:
     df = source.get_csv_as_df(apply_dtypes=False)
     df = df.drop_duplicates(subset=['laboratory'])
 
-    records = []
     for _, row in df.iterrows():
-        r = wrapper.cdm.CareSite(
+        yield wrapper.cdm.CareSite(
             care_site_id=row['laboratory'],
             care_site_source_value=row['laboratory']
         )
-        records.append(r)
-    return records

@@ -20,7 +20,6 @@ def baseline_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
             'ICD10', restrict_to_codes=list(df['ICD10_dot']))
     persons = []
 
-    records = []
     with wrapper.db.session_scope() as session:
         # Get the existing death records and check if they are in baseline, if so they are added to the persons list.
         query_1 = session.query(wrapper.cdm.Death) \
@@ -36,7 +35,7 @@ def baseline_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
             # If the person is not in the existing death records, proceed.
             if int(row['eid']) not in persons:
                 target = mapper.lookup(row['ICD10_dot'], first_only=True)
-                r = wrapper.cdm.Death(
+                yield wrapper.cdm.Death(
                     person_id=int(row['eid']),
                     death_date=row['40000-0.0'],
                     death_datetime=row['40000-0.0'],
@@ -45,6 +44,3 @@ def baseline_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
                     cause_source_concept_id=target.source_concept_id,
                     cause_source_value=row['40001-0.0']
                 )
-                records.append(r)
-
-        return records

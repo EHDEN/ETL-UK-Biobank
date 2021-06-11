@@ -14,10 +14,9 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
     df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '31-0.0', '34-0.0',
                                                            '52-0.0', '21000-0.0', '54-0.0'])
 
-    records = []
     for _, row in df.iterrows():
         # TODO: check correct visit number for fields with multiple visits
-        r = wrapper.cdm.Person(
+        yield wrapper.cdm.Person(
             person_id=row['eid'],
             person_source_value=row['eid'],
             gender_concept_id=gender.get(row['31-0.0'], 0),
@@ -29,6 +28,3 @@ def baseline_to_person(wrapper: Wrapper) -> List[Wrapper.cdm.Person]:
             race_source_value=row['21000-0.0'],
             care_site_id=row['54-0.0']
             )
-        records.append(r)
-
-    return records

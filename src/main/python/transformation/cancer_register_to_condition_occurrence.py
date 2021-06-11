@@ -56,7 +56,6 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
     icd10_to_o3 = pd.read_csv("./resources/encodings/icd10_to_icdo3_one_to_one_mappings.csv")
     icd10_to_o3_dict = icd10_to_o3.set_index('ICDO3').T.to_dict('list')
 
-    records = []
     for _, row in df.iterrows():
         person_id = row['eid']
 
@@ -103,7 +102,7 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
             if datetime == DEFAULT_DATETIME:
                 logger.warning(f'Date field 40005-{instance}.0 was not found in the cancer registry of baseline data')
 
-            r = wrapper.cdm.ConditionOccurrence(
+            yield wrapper.cdm.ConditionOccurrence(
                 person_id=person_id,
                 condition_concept_id=target_concept.target_concept_id,
                 condition_source_concept_id=target_concept.source_concept_id,
@@ -113,5 +112,3 @@ def cancer_register_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cd
                 condition_source_value=source_code,
                 data_source='baseline'
             )
-            records.append(r)
-    return records

@@ -32,8 +32,6 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
     icd10 = wrapper.code_mapper.generate_code_mapping_dictionary(
         'ICD10', restrict_to_codes=list(df['diag_icd10_dot']))
 
-    records = []
-
     for _, row in df.iterrows():
         condition_date = get_datetime(row['admidate'], "%d/%m/%Y")
 
@@ -60,7 +58,7 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
         condition_status_concept_id = 32902 if row['level'] == '1' else 32908  # Primary, else Secondary diagnosis
 
         for target in diag_targets:
-            r = wrapper.cdm.ConditionOccurrence(
+            yield wrapper.cdm.ConditionOccurrence(
                 person_id=person_id,
                 condition_concept_id=target.target_concept_id,
                 condition_start_date=condition_date,
@@ -74,5 +72,3 @@ def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Con
                 condition_status_source_value=row['level'],
                 data_source=f'HES-{row["dsource"]}'
             )
-            records.append(r)
-    return records

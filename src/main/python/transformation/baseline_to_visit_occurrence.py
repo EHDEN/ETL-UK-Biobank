@@ -14,7 +14,6 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
     df = source.get_csv_as_df(apply_dtypes=False,
                               usecols=['eid', '54-0.0', '54-1.0', '54-2.0', '54-3.0',
                                        '53-0.0', '53-1.0', '53-2.0', '53-3.0'])
-    records = []
     for _, row in df.iterrows():
         person_id = row['eid']
         # One-day visits for instances 0 to 3
@@ -29,7 +28,7 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
             # Field_id 54 contains the assessment centre
             assessment_center = row.get(f'54-{instance}.0', None)
 
-            r = wrapper.cdm.VisitOccurrence(
+            yield wrapper.cdm.VisitOccurrence(
                 visit_occurrence_id=create_baseline_visit_occurrence_id(row['eid'], instance),
                 person_id=person_id,
                 visit_concept_id=44818519,  # Clinical Study Visit
@@ -42,6 +41,3 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                 record_source_value=f'baseline-{instance}',
                 data_source='baseline'
             )
-            records.append(r)
-
-    return records

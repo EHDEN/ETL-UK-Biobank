@@ -35,7 +35,6 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
                 add_info='ADD_INFO:coding_origin')
         )
 
-    records = []
     for _, row in df.iterrows():
 
         person_id = row['eid']
@@ -62,7 +61,7 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
 
         visit_occurrence_id = create_hes_visit_occurrence_id(row['eid'], row['spell_index'])
 
-        r = wrapper.cdm.VisitDetail(
+        yield wrapper.cdm.VisitDetail(
             visit_detail_id=create_hes_visit_detail_id(row['eid'], row['ins_index']),
             person_id=person_id,
             visit_detail_concept_id=visit_reason.get((row['admimeth'], row['dsource']), 0),
@@ -79,5 +78,3 @@ def hesin_to_visit_detail(wrapper: Wrapper) -> List[Wrapper.cdm.VisitDetail]:
             visit_occurrence_id=visit_occurrence_id,
             data_source=f'HES-{data_source}'
         )
-        records.append(r)
-    return records

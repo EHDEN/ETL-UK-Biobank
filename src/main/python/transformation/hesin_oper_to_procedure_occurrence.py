@@ -24,8 +24,6 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
     oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4')
     oper3 = wrapper.mapping_tables_lookup('./resources/mapping_tables/opcs3.csv', first_only=False)
 
-    records = []
-
     for _, row in df.iterrows():
         person_id = row['eid']
 
@@ -51,7 +49,7 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
         visit_detail_id = create_hes_visit_detail_id(row['eid'], row['ins_index'])
 
         for target in procedure_targets:
-            r = wrapper.cdm.ProcedureOccurrence(
+            yield wrapper.cdm.ProcedureOccurrence(
                 person_id=person_id,
                 procedure_concept_id=target.target_concept_id,
                 procedure_date=procedure_date,
@@ -63,5 +61,3 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
                 visit_detail_id=visit_detail_id,
                 data_source=f'HES-{row["dsource"]}'
             )
-            records.append(r)
-    return records
