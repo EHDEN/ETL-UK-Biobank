@@ -10,17 +10,13 @@ if TYPE_CHECKING:
 
 
 def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
-
     source = wrapper.source_data.get_source_file('covid19_emis_gp_scripts.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
 
-    dmd_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary(
-            'dm+d', restrict_to_codes=list(df['code']))
-
+    dmd_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('dm+d')
     emis_script_mapper = wrapper.mapping_tables_lookup('./resources/mapping_tables/gp_emis_script.csv')
 
-    for _, row in df.iterrows():
+    for row in rows:
         if row['code_type'] == '6':
             # dm+d codes have one to one mappings to standard concepts: first_only parameter doesn't change the outcome
             mapping = dmd_mapper.lookup(row['code'], first_only=True)

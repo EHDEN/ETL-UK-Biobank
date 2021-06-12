@@ -11,16 +11,14 @@ if TYPE_CHECKING:
 
 def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.source_data.get_source_file('covid19_emis_gp_clinical.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
     mapping_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_covid.csv')
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/covid19_emis_units.csv')
     value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv")
 
-    snomed_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary(
-            'SNOMED', restrict_to_codes=list(df['code']))
+    snomed_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('SNOMED')
 
-    for _, row in df.iterrows():
+    for row in rows:
         event_date = wrapper.get_gp_datetime(row['event_dt'],
                                              person_source_value=row['eid'],
                                              format="%d/%m/%Y",

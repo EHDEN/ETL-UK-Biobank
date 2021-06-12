@@ -9,15 +9,12 @@ if TYPE_CHECKING:
 
 
 def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
-
     source = wrapper.source_data.get_source_file('covid19_tpp_gp_scripts.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
 
-    dmd_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary(
-            'dm+d', restrict_to_codes=list(df['dmd_code']))
+    dmd_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('dm+d')
 
-    for _, row in df.iterrows():
+    for row in rows:
         if row['dmd_code'] == '-1':  # -1: No dm+d code
             continue
         elif not is_null(row['dmd_code']):
