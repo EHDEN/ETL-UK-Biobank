@@ -225,8 +225,9 @@
 2303,data source,Expect drug_exposure,PASS
 2304,visit id,Expect drug_exposure,PASS
 2305,if no code_type skip,Expect No drug_exposure,PASS
-2306,code_type 3 (local emis code),Expect drug_exposure,PASS
-2307,emis script to drug - skip 2037 date,Expect No drug_exposure,PASS
+2306,code_type 3 and unmapped local emis code),Expect drug_exposure,PASS
+2307,code_type 3 and mapped local emis code),Expect drug_exposure,PASS
+2308,emis script to drug - skip 2037 date,Expect No drug_exposure,PASS
 2400,dm+d code: Ramipril 10mg capsules,Expect drug_exposure,PASS
 2401,dmd code: -1,Expect No drug_exposure,PASS
 2402,start and end date same,Expect drug_exposure,PASS

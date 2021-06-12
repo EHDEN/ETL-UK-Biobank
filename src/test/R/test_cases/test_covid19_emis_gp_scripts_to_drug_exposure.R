@@ -37,14 +37,21 @@ add_baseline(eid = '2305')
 add_covid19_emis_gp_scripts(eid = '2305', code = '322503009')
 expect_no_drug_exposure(person_id = 2305, drug_concept_id = 21274334)
 
-declareTest(2306, 'code_type 3 (local emis code)')
+declareTest(2306, 'code_type 3 and unmapped local emis code)')
 add_baseline(eid = '2306')
 add_covid19_emis_gp_scripts(eid = '2306', code_type = '3', code = 'PECA2194', issue_date = '23/01/2021')
 expect_drug_exposure(person_id = 2306, drug_concept_id = 0,
                      drug_exposure_start_datetime = '2021/01/23',
                      drug_source_concept_id = 0, drug_source_value = 'PECA2194')
 
-declareTest(2307, 'emis script to drug - skip 2037 date')
+declareTest(2307, 'code_type 3 and mapped local emis code)')
 add_baseline(eid = '2307')
-add_covid19_emis_gp_scripts(eid = '2307', issue_date = '01/07/2037', code = '322236009')
-expect_no_drug_exposure(person_id = 2307)
+add_covid19_emis_gp_scripts(eid = '2307', code_type = '3', code = 'PACA12515NEMIS', issue_date = '23/01/2021')
+expect_drug_exposure(person_id = 2307, drug_concept_id = 19020053,
+                     drug_exposure_start_datetime = '2021/01/23',
+                     drug_source_concept_id = 0, drug_source_value = 'PACA12515NEMIS')
+
+declareTest(2308, 'emis script to drug - skip 2037 date')
+add_baseline(eid = '2308')
+add_covid19_emis_gp_scripts(eid = '2308', issue_date = '01/07/2037', code = '322236009')
+expect_no_drug_exposure(person_id = 2308)
