@@ -244,6 +244,8 @@
 2507,Covid19 TPP GP clinical to stem, visit_occurrence_id,Expect measurement,PASS
 2508,Covid19 TPP GP clinical to stem, local code with value,Expect measurement,PASS
 2509,Covid19 TPP GP clinical to stem, no meas when future date,Expect No measurement,PASS
+2510,Covid19 TPP GP clinical read v2 code no trailing zeros,Expect measurement,PASS
+2511,Covid19 TPPk GP clinical read v2 code no trailing zeros 2,Expect measurement,PASS
 2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
 2601,No Event date,Expect No measurement,PASS
 2602,Value is -9000001.0,Expect No measurement,PASS

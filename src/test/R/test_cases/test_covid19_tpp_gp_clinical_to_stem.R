@@ -16,7 +16,7 @@ expect_measurement(person_id = 2502, measurement_concept_id = 4200295,  measurem
 declareTest(2503, 'Covid19 TPP GP clinical to stem, local TPP code')
 add_baseline(eid = 2503)
 add_covid19_tpp_gp_clinical(eid = 2503, event_dt = '12/03/1999', code_type = 1, code = '242..', value = 10.0)
-expect_measurement(person_id = 2503, measurement_concept_id = 0,  measurement_source_concept_id = 0, measurement_source_value = '242..')
+expect_measurement(person_id = 2503, measurement_concept_id = 4060733,  measurement_source_concept_id = 45431729, measurement_source_value = '242..')
 
 declareTest(2504, 'Covid19 TPP GP clinical to stem, code_type is -1')
 add_baseline(eid = 2504)
@@ -47,3 +47,13 @@ declareTest(2509, 'Covid19 TPP GP clinical to stem, no meas when future date')
 add_baseline(eid = 2509)
 add_covid19_tpp_gp_clinical(eid = 2509, event_dt = '01/07/2037', code=1018251000000107)
 expect_no_measurement(person_id = 2509, measurement_date = '2037-07-01')
+
+declareTest(2510, 'Covid19 TPP GP clinical read v2 code no trailing zeros')
+add_baseline(eid = 2510)
+add_covid19_tpp_gp_clinical(eid = 2510, code_type = 0, code='2469.')
+expect_measurement(person_id = 2510, measurement_concept_id = 4062019)
+
+declareTest(2511, 'Covid19 TPPk GP clinical read v2 code no trailing zeros 2')
+add_baseline(eid = 2511)
+add_covid19_tpp_gp_clinical(eid = 2511, code_type = 0, code='42P..')
+expect_measurement(person_id = 2511, measurement_concept_id = 37393863)
