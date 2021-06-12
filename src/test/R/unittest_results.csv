@@ -246,13 +246,13 @@
 2509,Covid19 TPP GP clinical to stem, no meas when future date,Expect No measurement,PASS
 2510,Covid19 TPP GP clinical read v2 code no trailing zeros,Expect measurement,PASS
 2511,Covid19 TPPk GP clinical read v2 code no trailing zeros 2,Expect measurement,PASS
-2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,FAIL
+2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
 2601,No Event date,Expect No measurement,PASS
 2602,Value is -9000001.0,Expect No measurement,PASS
 2603,Code is -99,Expect No measurement,PASS
-2604,Local code: Suspected 2019-nCoV (novel coronavirus) infection,Expect measurement,FAIL
-2605,Unit is -9999999,Expect measurement,FAIL
-2606,Covid19 EMIS GP clinical to stem, EMISNQCO303 with value mapping,Expect measurement,FAIL
+2604,Local code: Suspected 2019-nCoV (novel coronavirus) infection,Expect measurement,PASS
+2605,Unit is -9999999,Expect measurement,PASS
+2606,Covid19 EMIS GP clinical to stem, EMISNQCO303 with value mapping,Expect measurement,PASS
 2607,Covid19 EMIS GP clinical to stem, no meas when future date,Expect No measurement,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
