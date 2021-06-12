@@ -66,11 +66,10 @@ add_baseline(eid = '1211')
 add_gp_prescriptions(eid = '1211', dmd_code = NULL, read_2 = NULL, drug_name = 'drug name well over the ridiculously short 50 character limit' )
 expect_drug_exposure(person_id = 1211, drug_source_value = 'drug name well over the ridiculously short 50 char')
 
-declareTest(1212, 'GP prescription, no date no visit')
+declareTest(1212, 'GP prescription, no date skip record')
 add_baseline(eid = 1212)
 add_gp_prescriptions(eid = 1212, issue_date = '', dmd_code = '324430000')
-expect_drug_exposure(person_id = 1212,
-                     visit_occurrence_id = NULL)
+expect_no_drug_exposure(person_id = 1212)
 
 declareTest(1213, 'GP prescription 1903/03/03 to yob-07-01')
 add_baseline(eid = 1213, `34-0.0` = '1991')

@@ -9,6 +9,7 @@ nav_order: 4
 
 ### Reading from 3_covid19_tpp_gp_clinical.txt.gz.pure
 
+If date empty or in 2037, skip the record.
 Ignore rows were "value" = -1 or -2
 
 ![](md_files/image2.png)
@@ -24,7 +25,7 @@ Ignore rows were "value" = -1 or -2
 | source_value | code |  |  |
 | source_concept_id | code_type<br>code | ATHENA codes are not available for these CVT3 nor local TPP codes. All values are set to 0, as in gp_clinical_to_stem transformation. |  |
 | type_concept_id |  |  | 32817: EHR |
-| start_date | event_dt | Fill with event date. If missing, discard the row. |  |
+| start_date | event_dt | Fill with event date. If missing, discard the row. If 1902-02-02 or 1903-03-3, set date to yob-07-01 (field 34 in baseline)|  |
 | start_datetime | event_dt |  |  |
 | end_date |  |  |  |
 | end_datetime |  |  |  |

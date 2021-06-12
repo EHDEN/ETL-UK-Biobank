@@ -5,7 +5,7 @@ expect_measurement(person_id = 2500, measurement_date='2020-04-19')
 
 declareTest(2501, 'Covid19 TPP GP clinical to stem, missing date')
 add_baseline(eid = 2501)
-add_covid19_tpp_gp_clinical(eid = 2501, code_type = 0, code = 'XaF8d', value = 0.0)
+add_covid19_tpp_gp_clinical(eid = 2501, event_dt = '', code_type = 0, code = 'XaF8d', value = 0.0)
 expect_no_measurement(person_id = 2501, measurement_concept_id=4200295)
 
 declareTest(2502, 'Covid19 TPP GP clinical to stem, CTV3 code')

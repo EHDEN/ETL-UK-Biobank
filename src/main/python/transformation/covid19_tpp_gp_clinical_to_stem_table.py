@@ -19,11 +19,15 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
     value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv")
 
     for _, row in df.iterrows():
- 
         if is_null(row['code']):
             continue
 
-        if is_null(row['event_dt']):
+        # Date
+        event_date = wrapper.get_gp_datetime(row['event_dt'],
+                                             person_source_value=row['eid'],
+                                             format="%d/%m/%Y",
+                                             default_date=None)
+        if not event_date:
             continue
 
         # If 'code_type' = '0'   use CTV3 lookup. 
@@ -42,28 +46,23 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
         except:
             value_as_number = None
 
-        # Add the direct codes
-        person_id = row['eid']
-        source_code = row['code']
-
-        # Date and visit id
-        event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
         visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], event_date)
 
         value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
         # Insert terms in stem_table
         yield wrapper.cdm.StemTable(
-            person_id=person_id,
+            person_id=row['eid'],
             concept_id=target_concept_id,
-            source_value=source_code,  
+            source_value=row['code'],
             source_concept_id=0,
             start_date=event_date,
             start_datetime=event_date,
             value_as_number=value_as_number,
             visit_occurrence_id=visit_id,
             value_as_concept_id=value_as_concept_id,
-            domain_id='Measurement',  # this always overrides concept.domain_id, also if the concept is legitimately a condition
+            # this always overrides concept.domain_id, also if the concept is legitimately a condition
+            domain_id='Measurement',
             type_concept_id=32817,     # 32817: EHR
             data_source='covid19 gp_tpp'
         )

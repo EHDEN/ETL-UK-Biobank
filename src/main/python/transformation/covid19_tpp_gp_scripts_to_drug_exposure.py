@@ -25,18 +25,17 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
         else:
             continue
 
-        person_id = row['eid']
+        date_start = wrapper.get_gp_datetime(row['issue_date'],
+                                             person_source_value=row['eid'],
+                                             format="%d/%m/%Y",
+                                             default_date=None)
+        if not date_start:
+            continue
 
-        data_source = 'covid19 gp_tpp'
-        date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
-
-        if is_null(row['issue_date']):
-            visit_id = None
-        else:
-            visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], date_start)
+        visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], date_start)
 
         yield wrapper.cdm.DrugExposure(
-            person_id=person_id,
+            person_id=row['eid'],
             drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
             drug_exposure_end_date=date_start,
@@ -45,6 +44,6 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
             drug_source_concept_id=mapping.source_concept_id,
             drug_source_value=mapping.source_concept_code,
             drug_type_concept_id=32838,  # 'EHR prescription'
-            data_source=data_source,
+            data_source='covid19 gp_tpp',
             visit_occurrence_id=visit_id
         )

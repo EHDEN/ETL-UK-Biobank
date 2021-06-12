@@ -129,7 +129,7 @@ initFramework <- function() {
   defaults <- list()
   defaults$eid <- ''
   defaults$data_provider <- '3'
-  defaults$issue_date <- ''
+  defaults$issue_date <- '03/03/1999'
   defaults$read_2 <- ''
   defaults$bnf_code <- ''
   defaults$dmd_code <- ''
@@ -155,7 +155,7 @@ initFramework <- function() {
 
   defaults <- list()
   defaults$eid <- '1000015'
-  defaults$event_dt <- ''
+  defaults$event_dt <- '03/03/1999'
   defaults$code_type <- '2'
   defaults$code <- '-99'
   defaults$value <- '-9999999'
@@ -164,20 +164,20 @@ initFramework <- function() {
 
   defaults <- list()
   defaults$eid <- '1000040'
-  defaults$issue_date <- ''
+  defaults$issue_date <- '03/03/1999'
   defaults$dmd_code <- ''
   assign('covid19_tpp_gp_scripts', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1000163'
-  defaults$issue_date <- ''
+  defaults$issue_date <- '03/03/1999'
   defaults$code_type <- '6'
   defaults$code <- ''
   assign('covid19_emis_gp_scripts', defaults, envir = frameworkContext$defaultValues)
 
   defaults <- list()
   defaults$eid <- '1000154'
-  defaults$event_dt <- ''
+  defaults$event_dt <- '03/03/1999'
   defaults$code_type <- ''
   defaults$code <- ''
   defaults$value <- '0'

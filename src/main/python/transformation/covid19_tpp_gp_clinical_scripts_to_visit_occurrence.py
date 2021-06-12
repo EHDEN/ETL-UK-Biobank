@@ -22,8 +22,10 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
     df = df.drop_duplicates(['eid', 'date'])
 
     for _, row in df.iterrows():
-        person_id = row['eid']
-        visit_date = get_datetime(row['date'], "%d/%m/%Y", default_date=None)
+        visit_date = wrapper.get_gp_datetime(row['date'],
+                                             person_source_value=row['eid'],
+                                             format="%d/%m/%Y",
+                                             default_date=None)
 
         # Do not create a visit without a visit date. Otherwise duplicate visits are created.
         if not visit_date:
@@ -31,7 +33,7 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
 
         yield wrapper.cdm.VisitOccurrence(
             visit_occurrence_id=create_gp_tpp_visit_occurrence_id(row['eid'], visit_date),
-            person_id=person_id,
+            person_id=row['eid'],
             visit_concept_id=38004453,  # Family Practice
             visit_start_date=visit_date.date(),
             visit_start_datetime=visit_date,

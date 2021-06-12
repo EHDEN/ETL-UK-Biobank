@@ -18,9 +18,9 @@ If the `event_dt` or `issue_date` is not given, no visit is created.
 | visit_occurrence_id | eid<br>covia19_tpp_gp_clinical.event_dt<br>covia19_tpp_gp_scripts.issue_date | Concatenate '5', eid and the date in YYYYMMDD format |  |
 | person_id | eid |  |  |
 | visit_concept_id |  |  | 38004453 - Family Practice |
-| visit_start_date | covia19_tpp_gp_clinical.event_dt<br>covia19_tpp_gp_scripts.issue_date |  |  |
+| visit_start_date | covia19_tpp_gp_clinical.event_dt<br>covia19_tpp_gp_scripts.issue_date | If 1902-02-02 or 1903-03-3, set date to yob-07-01 (field 34 in baseline) |  |
 | visit_start_datetime | covia19_tpp_gp_clinical.event_dt<br>covia19_tpp_gp_scripts.issue_date |  |  |
-| visit_end_date | covia19_tpp_gp_clinical.event_dt<br>covia19_tpp_gp_scripts.issue_date |  |  |
+| visit_end_date | covia19_tpp_gp_clinical.event_dt<br>covia19_tpp_gp_scripts.issue_date | If 1902-02-02 or 1903-03-3, set date to yob-07-01 (field 34 in baseline) |  |
 | visit_end_datetime | covia19_tpp_gp_clinical.event_dt<br>covia19_tpp_gp_scripts.issue_date |  |  |
 | visit_type_concept_id |  |  | 32827 - 'EHR encounter record' |
 | provider_id |  |  |  |

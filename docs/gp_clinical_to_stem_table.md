@@ -44,12 +44,14 @@ See also: [data quality notes](./data_quality/gp_clinical.md)
 
 After mapping to the stem table, the records are mapped to their respective domains based on the domain of the `concept_id` (see [stem mapping specification](./stem/index.md)).
 
+If date in 2037, skip the record.
+
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
 | id |  |  |  |
 | domain_id |  | 'Measurement' | All records from gp_clinical will be inserted in the measurement table |
 | person_id | eid |  |  |
-| start_date | event_dt | If date empty, ignore record. Only 0.1% of the records have an empty date |  |
+| start_date | event_dt | If date empty, ignore record. Only 0.1% of the records have an empty date<br>If 1902-02-02 or 1903-03-3, set date to yob-07-01 (field 34 in baseline)  |  |
 | start_datetime | event_dt |  |  |
 | visit_occurrence_id | eid<br>event_dt | Look up visit occurrence by unique eid+event_dt+data_provider<br> |  |
 | provider_id |  |  |  |

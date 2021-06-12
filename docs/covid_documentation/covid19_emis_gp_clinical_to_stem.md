@@ -10,7 +10,7 @@ nav_order: 1
 ### Reading from 0_covid19_emis_gp_clinical.txt.gz.pure
 
 Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001
-
+If date empty or in 2037, skip the record.
 ![](md_files/image1.png)
 
 | Destination Field | Source field | Logic | Comment field |
@@ -24,7 +24,7 @@ Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001
 | source_value | code |  |  |
 | source_concept_id | code_type<br>code |  |  |
 | type_concept_id |  |  | 32817: EHR |
-| start_date | event_dt |  |  |
+| start_date | event_dt | If 1902-02-02 or 1903-03-3, set date to yob-07-01 (field 34 in baseline) |  |
 | start_datetime | event_dt |  |  |
 | end_date |  |  |  |
 | end_datetime |  |  |  |
