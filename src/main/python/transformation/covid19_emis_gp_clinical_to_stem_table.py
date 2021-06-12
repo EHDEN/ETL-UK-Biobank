@@ -46,6 +46,12 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         else:
             continue
 
+        # Add value, only if numeric
+        try:
+            value_as_number = float(row['value'])
+        except ValueError:
+            value_as_number = None
+
         visit_id = create_gp_emis_visit_occurrence_id(row['eid'], event_date)
 
         if pd.isna(row['unit']) or re.match(r'^(-[\d])', row['unit']):
@@ -69,6 +75,6 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             unit_concept_id=unit_concept_id,
             unit_source_value=unit_source_value,
             value_as_concept_id=value_as_concept_id,
-            value_as_number=row['value'],
+            value_as_number=value_as_number,
             data_source='covid19 gp_emis'
         )
