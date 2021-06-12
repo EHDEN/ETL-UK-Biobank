@@ -94,12 +94,6 @@ class Wrapper(BaseWrapper):
         self.execute_batch_transformation(covid_to_visit_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(covid_to_observation, bulk=True, batch_size=100000)
 
-        # HES
-        self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
-
         # GP
         if self.load_gp_regular:
             self.execute_batch_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True, batch_size=100000)
@@ -114,6 +108,12 @@ class Wrapper(BaseWrapper):
             self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
             self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
             self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+
+        # HES
+        self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
 
         # CDM Source
         self.execute_transformation(cdm_source, bulk=True)

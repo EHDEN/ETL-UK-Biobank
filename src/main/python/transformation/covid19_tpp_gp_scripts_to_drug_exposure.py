@@ -2,22 +2,19 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 
-from src.main.python.util import get_datetime, create_gp_tpp_visit_occurrence_id, is_null
+from src.main.python.util import create_gp_tpp_visit_occurrence_id, is_null
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
 def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
-
     source = wrapper.source_data.get_source_file('covid19_tpp_gp_scripts.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
 
-    dmd_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary(
-            'dm+d', restrict_to_codes=list(df['dmd_code']))
+    dmd_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('dm+d')
 
-    for _, row in df.iterrows():
+    for row in rows:
         if row['dmd_code'] == '-1':  # -1: No dm+d code
             continue
         elif not is_null(row['dmd_code']):

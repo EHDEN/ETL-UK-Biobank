@@ -4,7 +4,7 @@ from typing import List, TYPE_CHECKING
 from datetime import timedelta
 from delphyne.model.mapping.code_mapper import CodeMapping
 
-from src.main.python.util import get_datetime, extract_numeric_quantity, valid_quantity_for_days_estimate, \
+from src.main.python.util import extract_numeric_quantity, valid_quantity_for_days_estimate, \
     create_gp_visit_occurrence_id, is_null, extend_read_code
 
 if TYPE_CHECKING:
@@ -12,14 +12,10 @@ if TYPE_CHECKING:
     
 
 def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.DrugExposure]:
-
     source = wrapper.source_data.get_source_file('gp_prescriptions.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
-    df['read_2_extended'] = df['read_2'].apply(extend_read_code)
+    rows = source.get_csv_as_generator_of_dicts()
 
-    dmd_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary(
-            'dm+d', restrict_to_codes=list(df['dmd_code']))
+    dmd_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('dm+d')
     read2_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_Read2.csv',
@@ -29,14 +25,15 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
             first_only=True, approved_only=False)
 
-    for _, row in df.iterrows():
+    for row in rows:
         if not is_null(row['dmd_code']):
             mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
         elif not is_null(row['read_2']):
+            read_2_extended = extend_read_code(row['read_2'])
             mapping = CodeMapping()
             mapping.source_concept_code = row['read_2']
             mapping.source_concept_id = 0
-            mapping.target_concept_id = read2_mapper.get(row['read_2_extended'], 0)
+            mapping.target_concept_id = read2_mapper.get(read_2_extended, 0)
         elif not is_null(row['drug_name']):
             mapping = CodeMapping()
             mapping.source_concept_code = row['drug_name']

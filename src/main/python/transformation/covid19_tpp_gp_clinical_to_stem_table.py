@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 
 def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.source_data.get_source_file('covid19_tpp_gp_clinical.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
 
     # Load the vocabulary mapping tables
     # load dictionary of special Read v2 dot code mappings (i.e. alternative to adding 00)
@@ -28,7 +28,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
     local_tpp_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/gp_clinical_covid.csv", approved_only=False)
     value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv")
 
-    for _, row in df.iterrows():
+    for row in rows:
         if is_null(row['code']):
             continue
 

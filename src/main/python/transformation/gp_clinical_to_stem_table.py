@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import csv
 
-from ..util import get_datetime, is_null, extend_read_code, create_gp_visit_occurrence_id
+from ..util import is_null, extend_read_code, create_gp_visit_occurrence_id
 from ..gp_mapper import GpClinicalValueMapper
 
 if TYPE_CHECKING:
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.source_data.get_source_file('gp_clinical.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
 
     # load dictionary of special Read v2 dot code mappings (i.e. alternative to adding 00)
     with open('resources/mapping_tables/gp_clinical_read2_alternative_dot_code_mappings.csv') as f:
@@ -28,7 +28,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
     value_mapper = GpClinicalValueMapper(mapping_dict=read_v2_mapping_dict)
 
-    for _, row in df.iterrows():
+    for row in rows:
         # read_2 and read_3 should be mutually exclusive
         if not is_null(row['read_2']):
             read_col = 'read_2'

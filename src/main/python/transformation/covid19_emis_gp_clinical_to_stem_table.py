@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-from ..util import get_datetime, is_null, create_gp_emis_visit_occurrence_id
+from ..util import create_gp_emis_visit_occurrence_id
 import re
 import pandas as pd
 
@@ -11,16 +11,14 @@ if TYPE_CHECKING:
 
 def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     source = wrapper.source_data.get_source_file('covid19_emis_gp_clinical.csv')
-    df = source.get_csv_as_df(apply_dtypes=False)
+    rows = source.get_csv_as_generator_of_dicts()
     mapping_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_covid.csv')
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/covid19_emis_units.csv')
     value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv")
 
-    snomed_mapper = \
-        wrapper.code_mapper.generate_code_mapping_dictionary(
-            'SNOMED', restrict_to_codes=list(df['code']))
+    snomed_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('SNOMED')
 
-    for _, row in df.iterrows():
+    for row in rows:
         event_date = wrapper.get_gp_datetime(row['event_dt'],
                                              person_source_value=row['eid'],
                                              format="%d/%m/%Y",
@@ -48,6 +46,12 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         else:
             continue
 
+        # Add value, only if numeric
+        try:
+            value_as_number = float(row['value'])
+        except ValueError:
+            value_as_number = None
+
         visit_id = create_gp_emis_visit_occurrence_id(row['eid'], event_date)
 
         if pd.isna(row['unit']) or re.match(r'^(-[\d])', row['unit']):
@@ -71,6 +75,6 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             unit_concept_id=unit_concept_id,
             unit_source_value=unit_source_value,
             value_as_concept_id=value_as_concept_id,
-            value_as_number=row['value'],
+            value_as_number=value_as_number,
             data_source='covid19 gp_emis'
         )
