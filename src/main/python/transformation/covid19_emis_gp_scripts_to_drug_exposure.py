@@ -18,14 +18,17 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
         wrapper.code_mapper.generate_code_mapping_dictionary(
             'dm+d', restrict_to_codes=list(df['code']))
 
+    emis_script_mapper = wrapper.mapping_tables_lookup('./resources/mapping_tables/gp_emis_script.csv')
+
     for _, row in df.iterrows():
         if row['code_type'] == '6':
-            mapping = dmd_mapper.lookup(row['code'], first_only=True)
             # dm+d codes have one to one mappings to standard concepts: first_only parameter doesn't change the outcome
+            mapping = dmd_mapper.lookup(row['code'], first_only=True)
         elif row['code_type'] == '3':
+            # Emis codes
             mapping = CodeMapping()
             mapping.source_concept_code = row['code']
-            mapping.target_concept_id = 0
+            mapping.target_concept_id = emis_script_mapper.get(row['code'], 0)
             mapping.source_concept_id = 0
         else:
             continue
