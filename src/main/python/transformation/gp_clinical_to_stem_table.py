@@ -38,11 +38,12 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         else:
             continue
 
-        person_id = row['eid']
+        event_date = wrapper.get_gp_datetime(row['event_dt'],
+                                             person_source_value=row['eid'],
+                                             format="%d/%m/%Y",
+                                             default_date=None)
 
-        if not is_null(row['event_dt']):
-            event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
-        else:
+        if not event_date:
             continue
 
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
@@ -79,8 +80,9 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                     source_concept_id = source_read_mapping.source_concept_id
 
             yield wrapper.cdm.StemTable(
-                person_id=person_id,
-                domain_id='Measurement',  # this always overrides concept.domain_id, also if the concept is legitimately a condition
+                person_id=row['eid'],
+                # Always override concept.domain_id, also if the concept is legitimately a condition
+                domain_id='Measurement',
                 type_concept_id=32817,
                 start_date=event_date,
                 start_datetime=event_date,

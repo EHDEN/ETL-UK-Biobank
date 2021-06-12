@@ -21,11 +21,12 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             'SNOMED', restrict_to_codes=list(df['code']))
 
     for _, row in df.iterrows():
-        person_id = row['eid']
+        event_date = wrapper.get_gp_datetime(row['event_dt'],
+                                             person_source_value=row['eid'],
+                                             format="%d/%m/%Y",
+                                             default_date=None)
 
-        if not is_null(row['event_dt']):
-            event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
-        else:
+        if not event_date:
             continue
 
         # Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001, -9999999, -9000099
@@ -58,7 +59,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
         yield wrapper.cdm.StemTable(
-            person_id=person_id,
+            person_id=row['eid'],
             domain_id='Measurement',
             type_concept_id=32817,
             start_date=event_date,

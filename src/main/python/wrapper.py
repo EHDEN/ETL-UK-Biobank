@@ -20,6 +20,8 @@ from typing import Dict, Optional, Iterable
 from delphyne import Wrapper as BaseWrapper
 from delphyne.config.models import MainConfig
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+import src.main.python.util.date_functions as date_util
+import datetime
 
 from src.main.python.transformation import *
 from src.main.python import cdm
@@ -180,18 +182,24 @@ class Wrapper(BaseWrapper):
         return result
 
     def lookup_visit_occurrence_id(self, **kwargs) -> Optional[int]:
-        return self.lookup_id(self.cdm.VisitOccurrence, 'visit_occurrence_id', **kwargs)
+        return self.lookup_field_from_model(self.cdm.VisitOccurrence, 'visit_occurrence_id', **kwargs)
 
     def lookup_visit_detail_id(self, **kwargs) -> Optional[int]:
-        return self.lookup_id(self.cdm.VisitDetail, 'visit_detail_id', **kwargs)
+        return self.lookup_field_from_model(self.cdm.VisitDetail, 'visit_detail_id', **kwargs)
 
     def lookup_person_id(self, person_source_value) -> Optional[int]:
-        return self.lookup_id(self.cdm.Person, 'person_id', person_source_value=person_source_value)
+        return self.lookup_field_from_model(self.cdm.Person, 'person_id',
+                                            person_source_value=person_source_value)
+
+    def lookup_person_yob(self, person_source_value) -> Optional[int]:
+        return self.lookup_field_from_model(self.cdm.Person, 'year_of_birth',
+                                            person_source_value=person_source_value)
 
     def lookup_ukb_vocab(self, source_code) -> Optional[int]:
-        return self.lookup_id(self.cdm.Concept, 'concept_id', concept_code=source_code, vocabulary_id='UK Biobank')
+        return self.lookup_field_from_model(self.cdm.Concept, 'concept_id',
+                                            concept_code=source_code, vocabulary_id='UK Biobank')
 
-    def lookup_id(self, model, id_to_lookup, **kwargs) -> Optional[int]:
+    def lookup_field_from_model(self, model, id_to_lookup, **kwargs) -> Optional[int]:
         with self.db.session_scope() as session:
             query = session.query(model).filter_by(**kwargs)
             try:
@@ -226,3 +234,24 @@ class Wrapper(BaseWrapper):
                            f'{len(not_found)}/{len(vocabulary_codes)} vocabulary codes:'
                            f' {not_found}')
         return mapping_dict
+
+    def get_gp_datetime(self, date: str, person_source_value: str, format='%Y-%m-%d', default_date=None) \
+            -> Optional[datetime.datetime]:
+        """
+        Resolves placeholder dates in GP data
+        """
+        gp_datetime = date_util.get_datetime(date, format, default_date)
+
+        if not gp_datetime:
+            return default_date
+
+        # 1902-02-02 and 1903-03-03 are placeholder dates for events happening around birth
+        if gp_datetime == datetime.datetime(1902, 2, 2) or gp_datetime == datetime.datetime(1903, 3, 3):
+            year_of_birth = self.lookup_person_yob(person_source_value)
+            return datetime.datetime(year_of_birth, 7, 1)
+
+        # Dates in year 2037 are placeholder for unknown date
+        if gp_datetime.year == 2037:
+            return default_date
+
+        return gp_datetime

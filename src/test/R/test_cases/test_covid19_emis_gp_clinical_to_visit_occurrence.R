@@ -17,3 +17,8 @@ declareTest(2702, 'covid19 emis gp clinical to visit occurrence - no visit witho
 add_baseline(eid = 2702)
 add_covid19_emis_gp_clinical(eid = 2702, event_dt = '')
 expect_no_visit_occurrence(person_id = 2702, visit_concept_id=38004453)
+
+declareTest(2703, 'covid19 emis gp clinical to visit occurrence - no visit when future date')
+add_baseline(eid = 2703)
+add_covid19_emis_gp_clinical(eid = 2703, event_dt = '01/07/2037')
+expect_no_visit_occurrence(person_id = 2703, visit_start_date = '2037-01-01')

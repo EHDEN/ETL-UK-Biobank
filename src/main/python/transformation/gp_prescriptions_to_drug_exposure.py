@@ -45,15 +45,17 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
         else:
             continue
 
-        person_id = row['eid']
-
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
-        date_start = get_datetime(row['issue_date'], format='%d/%m/%Y')
 
-        if is_null(row['issue_date']):
-            visit_id = None
-        else:
-            visit_id = create_gp_visit_occurrence_id(row['eid'], date_start)
+        date_start = wrapper.get_gp_datetime(row['issue_date'],
+                                             person_source_value=row['eid'],
+                                             format="%d/%m/%Y",
+                                             default_date=None)
+
+        if not date_start:
+            continue
+
+        visit_id = create_gp_visit_occurrence_id(row['eid'], date_start)
 
         raw_quantity = row['quantity'] if not is_null(row['quantity']) else None
         unit = row['quantity'][:50] if not is_null(row['quantity']) else None
@@ -68,7 +70,7 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             date_end = date_start
 
         yield wrapper.cdm.DrugExposure(
-            person_id=person_id,
+            person_id=row['eid'],
             drug_exposure_start_date=date_start,
             drug_exposure_start_datetime=date_start,
             drug_exposure_end_date=date_end,
