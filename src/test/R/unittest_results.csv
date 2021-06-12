@@ -117,7 +117,7 @@
 1209,Test unit source value extraction,Expect drug_exposure,PASS
 1210,Test retrieving visit occurrence id,Expect drug_exposure,PASS
 1211,Test truncate long drug source value (> 50 chars),Expect drug_exposure,PASS
-1212,GP prescription, no date no visit,Expect drug_exposure,FAIL
+1212,GP prescription, no date skip record,Expect No drug_exposure,PASS
 1213,GP prescription 1903/03/03 to yob-07-01,Expect drug_exposure,PASS
 1400,Death date,Expect death,PASS
 1401,Death type,Expect death,PASS
@@ -219,15 +219,15 @@
 2200,Take minimum and maximum date - one date for each, baseline is min, hes is max,Expect observation_period,PASS
 2201,Take minimum and maximum date - one date for each, covid is min, baseline is max,Expect observation_period,PASS
 2202,Take minimum and maximum date - one date for each, baseline is min and max,Expect observation_period,PASS
-2300,dm+d code: Paracetamol 500mg tablets,Expect drug_exposure,FAIL
-2301,dm+d long code: Otomize ear spray,Expect drug_exposure,FAIL
+2300,dm+d code: Paracetamol 500mg tablets,Expect drug_exposure,PASS
+2301,dm+d long code: Otomize ear spray,Expect drug_exposure,PASS
 2302,start and end date same,Expect drug_exposure,PASS
 2303,data source,Expect drug_exposure,PASS
 2304,visit id,Expect drug_exposure,PASS
 2305,if no code_type skip,Expect No drug_exposure,PASS
 2306,code_type 3 (local emis code),Expect drug_exposure,PASS
 2307,emis script to drug - skip 2037 date,Expect No drug_exposure,PASS
-2400,dm+d code: Ramipril 10mg capsules,Expect drug_exposure,FAIL
+2400,dm+d code: Ramipril 10mg capsules,Expect drug_exposure,PASS
 2401,dmd code: -1,Expect No drug_exposure,PASS
 2402,start and end date same,Expect drug_exposure,PASS
 2403,data source,Expect drug_exposure,PASS
@@ -254,7 +254,7 @@
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
-2703,covid19 emis gp clinical to visit occurrence - no visit when future date,Expect No visit_occurrence,FAIL
+2703,covid19 emis gp clinical to visit occurrence - no visit when future date,Expect No visit_occurrence,PASS
 2800,covid19 emis gp scripts to visit occurrence 1,Expect visit_occurrence,PASS
 2801,covid19 emis gp scripts to visit occurrence 2,Expect visit_occurrence,PASS
 2802,covid19 emis gp scripts to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
