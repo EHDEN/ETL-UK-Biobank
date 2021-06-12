@@ -16,3 +16,8 @@ declareTest(602, 'GP prescriptions to visit occurrence - no visit without date')
 add_baseline(eid = 602)
 add_gp_prescriptions(eid = 602, issue_date = '')
 expect_no_visit_occurrence(person_id = 602, visit_concept_id=38004453)
+
+declareTest(603, 'GP prescriptions to visit occurrence - 020202 to yob-07-01')
+add_baseline(eid = 603, `34-0.0` = '1983')
+add_gp_prescriptions(eid = 603, issue_date = '02/02/1902')
+expect_visit_occurrence(person_id = 603, visit_start_date = '1983-07-01')

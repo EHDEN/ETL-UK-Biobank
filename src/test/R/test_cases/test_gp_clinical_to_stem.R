@@ -76,3 +76,8 @@ add_baseline(eid = 1713)
 add_gp_clinical(eid = 1713, event_dt = '17/04/2020', read_2 = '246..00', value1 = 123, value2 = 85, data_provider = '2')
 expect_measurement(person_id = 1713, measurement_concept_id = 4060831, measurement_source_value = '246..00', value_as_number = 123, measurement_source_concept_id = 45471867)
 expect_measurement(person_id = 1713, measurement_concept_id = 4062019, measurement_source_value = '246..00', value_as_number = 85, measurement_source_concept_id = 45471867)
+
+declareTest(1714, 'GP clinical 1902/02/02 to yob-07-01')
+add_baseline(eid = 1714, `34-0.0` = '1991')
+add_gp_clinical(eid = 1714, event_dt = '02/02/1902', read_2 = NULL, read_3 = '246A.')
+expect_measurement(person_id = 1714, measurement_date='1991-07-01')

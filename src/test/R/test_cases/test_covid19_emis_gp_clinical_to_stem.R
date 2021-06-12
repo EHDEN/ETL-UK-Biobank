@@ -30,7 +30,12 @@ add_baseline(eid = 2605)
 add_covid19_emis_gp_clinical(eid = 2506, event_dt = '24/02/2020', code_type = '3', code = 'EMISNQTE31', value = '467', unit = '-9999999')
 expect_measurement(person_id = 2506, measurement_concept_id = 756055, measurement_date = '2020-02-24', value_as_number = 467, unit_concept_id = NULL)
 
-declareTest(2606, 'Covid19 TPP GP clinical to stem, EMISNQCO303 with value mapping')
+declareTest(2606, 'Covid19 EMIS GP clinical to stem, EMISNQCO303 with value mapping')
 add_baseline(eid = 2606)
 add_covid19_emis_gp_clinical(eid = 2606, event_dt = '01/04/2021', code_type = 3, code = 'EMISNQCO303', value = '')
 expect_measurement(person_id = 2606, measurement_concept_id = 756065, value_as_concept_id = 4126681)
+
+declareTest(2607, 'Covid19 EMIS GP clinical to stem, no meas when future date')
+add_baseline(eid = 2607)
+add_covid19_emis_gp_clinical(eid = 2607, event_dt = '01/07/2037', code=1018251000000107)
+expect_no_measurement(person_id = 2607, measurement_date = '2037-07-01')
