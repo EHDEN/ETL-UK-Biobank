@@ -106,14 +106,17 @@ class Wrapper(BaseWrapper):
             self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
             self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
             self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
 
         # HES
         self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
+
+        if self.load_gp_covid19:
+            # these are expected to be the most memory heavy transformations. Execut last
+            self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
 
         # CDM Source
         self.execute_transformation(cdm_source, bulk=True)
