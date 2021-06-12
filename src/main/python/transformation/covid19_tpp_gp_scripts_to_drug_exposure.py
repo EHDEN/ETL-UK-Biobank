@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 
-from src.main.python.util import get_datetime, create_gp_tpp_visit_occurrence_id, is_null
+from src.main.python.util import create_gp_tpp_visit_occurrence_id, is_null
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper

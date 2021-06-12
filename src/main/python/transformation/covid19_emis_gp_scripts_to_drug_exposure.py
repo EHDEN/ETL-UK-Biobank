@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 from delphyne.model.mapping.code_mapper import CodeMapping
 
-from src.main.python.util import get_datetime, create_gp_emis_visit_occurrence_id, is_null
+from src.main.python.util import create_gp_emis_visit_occurrence_id
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper

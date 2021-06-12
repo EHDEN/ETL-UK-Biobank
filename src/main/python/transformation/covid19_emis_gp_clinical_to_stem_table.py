@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
-from ..util import get_datetime, is_null, create_gp_emis_visit_occurrence_id
+from ..util import create_gp_emis_visit_occurrence_id
 import re
 import pandas as pd
 
