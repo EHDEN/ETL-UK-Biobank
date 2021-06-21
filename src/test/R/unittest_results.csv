@@ -2,6 +2,7 @@
 1,Add care site,Expect care_site,PASS
 200,Test black female,Expect person,PASS
 201,Test mixed race male,Expect person,PASS
+202,Test skip when empty year of birth,Expect No person,PASS
 400,GP clinical to visit occurrence 1,Expect visit_occurrence,PASS
 401,GP clinical to visit occurrence 2,Expect visit_occurrence,PASS
 402,GP clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
@@ -156,6 +157,7 @@
 1703,GP clinical to stem, read3 code,Expect measurement,PASS
 1704,GP clinical to stem, missing date,Expect No measurement,PASS
 1705,GP clinical to stem, Serum creatinine with value,Expect measurement,PASS
+2404,visit id,Expect drug_exposure,PASS
 1706,GP clinical to stem, unit concept ID (MEA code),Expect measurement,PASS
 1707,GP clinical to stem, unit concept ID (unit symbol),Expect measurement,PASS
 1708,GP clinical to stem, readv3 serum urea,Expect measurement,PASS
@@ -232,7 +234,6 @@
 2401,dmd code: -1,Expect No drug_exposure,PASS
 2402,start and end date same,Expect drug_exposure,PASS
 2403,data source,Expect drug_exposure,PASS
-2404,visit id,Expect drug_exposure,PASS
 2405,if no dmd code skip,Expect No drug_exposure,PASS
 2500,Covid19 TPP GP clinical to stem, correct date,Expect measurement,PASS
 2501,Covid19 TPP GP clinical to stem, missing date,Expect No measurement,PASS
