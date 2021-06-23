@@ -122,3 +122,12 @@ add_hesin(eid = 1015, ins_index = 1, admidate = '04/02/2021')
 add_hesin_diag(eid = 1015, ins_index = 1, diag_icd9 = '73346', diag_icd10 = '')
 expect_condition_occurrence(person_id = 1015, condition_start_date = '2021-02-04', condition_concept_id = 77650, condition_source_concept_id = 44830364)
 
+# Test small ICD10 code with V
+declareTest(1016, 'Test ICD10 code')
+add_baseline(eid = 1016)
+add_hesin(eid = 1016, ins_index = 1, admidate = '03/02/2021')
+add_hesin_diag(eid = 1016, ins_index = 1, diag_icd10 = 'V12')
+expect_condition_occurrence(person_id = 1016, condition_start_date = '2021-02-03', condition_concept_id = 433099, condition_source_concept_id = 45756179)
+
+
+

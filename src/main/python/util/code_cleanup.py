@@ -26,8 +26,11 @@ def add_dot_to_opcsx_code(opcs_code: str) -> str:
 def refactor_icdx_code(icd_code: str) -> str:
     # Skip empty values
     if not is_null(icd_code):
+        # If code has 3 or less characters, return directly
+        if len(icd_code) <= 3:
+            return icd_code
         # A few specific exceptions who need a refactoring to XXX.X
-        if icd_code in ['2331', 'Y831', '72744', '72747', '75250', '72894', '73346', '75761', '75768',
+        elif icd_code in ['2331', 'Y831', '72744', '72747', '75250', '72894', '73346', '75761', '75768',
                         '49399', '25009', '59979', '38019', '62609', '72959', '79993', '71409']:
             return icd_code[:3] + '.' + icd_code[3:4]
         # Keep only the first three characters for ICD10 codes starting with W, X or Y.
@@ -41,7 +44,7 @@ def refactor_icdx_code(icd_code: str) -> str:
         elif icd_code[0] == 'V':
             return icd_code[:3] + '.' + icd_code[3]
         # General rule for remaining ICD codes is map to format XXX.X
-        elif len(icd_code) > 3 and not '.' in icd_code and icd_code != '45532996':
+        elif (not '.' in icd_code) and icd_code != '45532996':
             return icd_code[:3] + '.' + icd_code[3:4]
         else:
             return icd_code
