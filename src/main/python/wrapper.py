@@ -43,25 +43,25 @@ class Wrapper(BaseWrapper):
     def run(self):
 
         # Prepare source
-        self.create_schemas()
-        self.drop_cdm()
-        self.create_cdm()
-        self.execute_sql_file('add_vocabulary_views.sql')
-
-        # Load (custom) vocabularies and source_to_concept_map tables
-        try:
-            self.vocab_manager.standard_vocabularies.load()
-        except ValueError:
-            logger.warning('std vocab loading failed')
-            pass
-        try:
-            self.vocab_manager.load_custom_vocab_and_stcm_tables()
-        except:
-            logger.warning('custom and stcm loading failed')
-            pass
-
-        # Remove constraints and indexes to improve performance
-        self.db.constraint_manager.drop_cdm_constraints()
+        # self.create_schemas()
+        # self.drop_cdm()
+        # self.create_cdm()
+        # self.execute_sql_file('add_vocabulary_views.sql')
+        #
+        # # Load (custom) vocabularies and source_to_concept_map tables
+        # try:
+        #     self.vocab_manager.standard_vocabularies.load()
+        # except ValueError:
+        #     logger.warning('std vocab loading failed')
+        #     pass
+        # try:
+        #     self.vocab_manager.load_custom_vocab_and_stcm_tables()
+        # except:
+        #     logger.warning('custom and stcm loading failed')
+        #     pass
+        #
+        # # Remove constraints and indexes to improve performance
+        # self.db.constraint_manager.drop_cdm_constraints()
 
         # Load source data
         self.transform()
@@ -74,42 +74,42 @@ class Wrapper(BaseWrapper):
         self.summarize()
 
     def transform(self):
-        self.execute_batch_transformation(covid_to_care_site, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(assessment_center_to_care_site, bulk=True, batch_size=100000)
-
-        # Person
-        self.execute_batch_transformation(baseline_to_person, bulk=True, batch_size=100000)
-
-        # Death
-        self.execute_batch_transformation(death_to_death, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(death_to_condition_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(baseline_to_death, bulk=True, batch_size=100000)
-
-        # Baseline
-        self.execute_batch_transformation(baseline_to_visit_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(cancer_register_to_condition_occurrence, bulk=True, batch_size=100000)
-
-        # Covid tests
-        self.execute_batch_transformation(covid_to_visit_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(covid_to_observation, bulk=True, batch_size=100000)
-
-        # GP
-        if self.load_gp_regular:
-            self.execute_batch_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(gp_prescriptions_to_drug_exposure, bulk=True, batch_size=100000)
-
-        # COVID-19 GP tables
-        if self.load_gp_covid19:
-            self.execute_batch_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-
-        # HES
-        self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(covid_to_care_site, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(assessment_center_to_care_site, bulk=True, batch_size=100000)
+        #
+        # # Person
+        # self.execute_batch_transformation(baseline_to_person, bulk=True, batch_size=100000)
+        #
+        # # Death
+        # self.execute_batch_transformation(death_to_death, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(death_to_condition_occurrence, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(baseline_to_death, bulk=True, batch_size=100000)
+        #
+        # # Baseline
+        # self.execute_batch_transformation(baseline_to_visit_occurrence, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(cancer_register_to_condition_occurrence, bulk=True, batch_size=100000)
+        #
+        # # Covid tests
+        # self.execute_batch_transformation(covid_to_visit_occurrence, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(covid_to_observation, bulk=True, batch_size=100000)
+        #
+        # # GP
+        # if self.load_gp_regular:
+        #     self.execute_batch_transformation(gp_clinical_prescriptions_to_visit_occurrence, bulk=True, batch_size=100000)
+        #     self.execute_batch_transformation(gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+        #     self.execute_batch_transformation(gp_prescriptions_to_drug_exposure, bulk=True, batch_size=100000)
+        #
+        # # COVID-19 GP tables
+        # if self.load_gp_covid19:
+        #     self.execute_batch_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+        #     self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+        #     self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+        #     self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+        #
+        # # HES
+        # self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
 
