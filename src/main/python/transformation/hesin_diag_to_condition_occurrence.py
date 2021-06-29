@@ -14,10 +14,14 @@ if TYPE_CHECKING:
 
 
 def hesin_diag_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
+    # Load hesin and hesin_diag tables, with selected columns to avoid memory failures
     hesin_diag_source = wrapper.source_data.get_source_file('hesin_diag.csv')
-    hesin_diag = hesin_diag_source.get_csv_as_df(apply_dtypes=False)
+    hesin_diag = hesin_diag_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'ins_index',
+                                                                              'diag_icd9', 'diag_icd10',
+                                                                              'level'])
     hesin_source = wrapper.source_data.get_source_file('hesin.csv')
-    hesin = hesin_source.get_csv_as_df(apply_dtypes=False)
+    hesin = hesin_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'ins_index', 'spell_index',
+                                                                    'admidate', 'dsource'])
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     # Merge HES diag with HES on EID and INS_INDEX to get ADMIDATE and drop duplicates.
