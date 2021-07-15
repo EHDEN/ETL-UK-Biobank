@@ -110,8 +110,8 @@ class Wrapper(BaseWrapper):
         # # HES
         # self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
         # self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
 
         if self.load_gp_covid19:
             # these are expected to be the most memory heavy transformations. Execute last

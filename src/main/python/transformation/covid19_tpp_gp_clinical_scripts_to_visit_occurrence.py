@@ -10,18 +10,21 @@ if TYPE_CHECKING:
 
 
 def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    clinical_source = wrapper.source_data.get_source_file('covid19_tpp_gp_clinical.csv')
-    clinical = clinical_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'event_dt'])
+    source = wrapper.source_data._source_dir
+    clinical = pd.read_csv(source / 'covid19_tpp_gp_clinical.csv', usecols=['eid', 'event_dt'],
+                           dtype={'eid': 'Int32', 'event_id': 'datetime64'})
     clinical = clinical[["eid", "event_dt"]].rename(columns={'event_dt': 'date'})
 
-    scripts_source = wrapper.source_data.get_source_file('covid19_tpp_gp_scripts.csv')
-    scripts = scripts_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'issue_date'])
+    scripts = pd.read_csv(source / 'covid19_tpp_gp_scripts.csv', usecols=['eid', 'issue_date'],
+                          dtype={'eid': 'Int32', 'event_id': 'datetime64'})
     scripts = scripts[["eid", "issue_date"]].rename(columns={'issue_date': 'date'})
 
-    df = pd.concat([scripts, clinical])
-    df = df.drop_duplicates(['eid', 'date'])
+    clinical = clinical.append(scripts)
+    del scripts
 
-    for _, row in df.iterrows():
+    clinical = clinical.drop_duplicates(['eid', 'date'])
+
+    for _, row in clinical.iterrows():
         visit_date = wrapper.get_gp_datetime(row['date'],
                                              person_source_value=row['eid'],
                                              format="%d/%m/%Y",
