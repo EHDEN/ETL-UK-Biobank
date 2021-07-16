@@ -25,8 +25,14 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
     clinical = clinical.drop_duplicates(['eid', 'date'])
 
     for _, row in clinical.iterrows():
-        visit_date = wrapper.get_gp_datetime(row['date'],
-                                             person_source_value=row['eid'],
+        if row.isnull().any():
+            continue
+        eid = row['eid']
+        eid_str = str(eid)
+        date = row['date']
+
+        visit_date = wrapper.get_gp_datetime(date,
+                                             person_source_value=eid_str,
                                              format="%d/%m/%Y",
                                              default_date=None)
 
@@ -35,8 +41,8 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
             continue
 
         yield wrapper.cdm.VisitOccurrence(
-            visit_occurrence_id=create_gp_tpp_visit_occurrence_id(row['eid'], visit_date),
-            person_id=row['eid'],
+            visit_occurrence_id=create_gp_tpp_visit_occurrence_id(eid_str, visit_date),
+            person_id=eid,
             visit_concept_id=38004453,  # Family Practice
             visit_start_date=visit_date.date(),
             visit_start_datetime=visit_date,
