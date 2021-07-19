@@ -66,8 +66,8 @@ class Wrapper(BaseWrapper):
         # Load source data
         self.transform()
 
-        # Add constraints and indexes
-        self.db.constraint_manager.add_cdm_constraints(errors='ignore')
+        # # Add constraints and indexes
+        # self.db.constraint_manager.add_cdm_constraints(errors='ignore')
 
         # Log/write overview of transformations and sources
         logger.info('{:-^100}'.format(' Summary stats '))
@@ -113,23 +113,23 @@ class Wrapper(BaseWrapper):
         # self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
         # self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
 
-        if self.load_gp_covid19:
-            # these are expected to be the most memory heavy transformations. Execute last
-            self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
-
-        # CDM Source
-        self.execute_transformation(cdm_source, bulk=True)
-
-        # Stem table to domains
-        self.load_from_stem_table()
-
-        # Post process
-        logger.info('Observation Period...')
-        self.execute_sql_file('observation_period.sql')
+        # if self.load_gp_covid19:
+        #     # these are expected to be the most memory heavy transformations. Execute last
+        #     self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+        #     self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+        #
+        # # CDM Source
+        # self.execute_transformation(cdm_source, bulk=True)
+        #
+        # # Stem table to domains
+        # self.load_from_stem_table()
+        #
+        # # Post process
+        # logger.info('Observation Period...')
+        # self.execute_sql_file('observation_period.sql')
         logger.info('Creating eras...')
         self.execute_sql_file('drug_era.sql')
-        self.execute_sql_file('condition_era.sql')
+        # self.execute_sql_file('condition_era.sql')
 
     def load_from_stem_table(self):
         # TODO: check whether any values cannot be mapped to corresponding domain (e.g. value_as_string to measurement)
