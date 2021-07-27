@@ -66,8 +66,8 @@ class Wrapper(BaseWrapper):
         # Load source data
         self.transform()
 
-        # # Add constraints and indexes
-        # self.db.constraint_manager.add_cdm_constraints(errors='ignore')
+        # Add constraints and indexes
+        self.db.constraint_manager.add_cdm_constraints(errors='ignore')
 
         # Log/write overview of transformations and sources
         logger.info('{:-^100}'.format(' Summary stats '))
