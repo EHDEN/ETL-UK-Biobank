@@ -62,9 +62,14 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
 
         value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
+        # override the target domain (concept.domain_id) to be 'Measurement' if necessary
+        domain_id = None
+        if (value_as_number is not None and value_as_number != 0) or (value_as_concept_id is not None):
+            domain_id = 'Measurement'
+
         yield wrapper.cdm.StemTable(
             person_id=row['eid'],
-            domain_id='Measurement',
+            domain_id=domain_id,
             type_concept_id=32817,
             start_date=event_date,
             start_datetime=event_date,

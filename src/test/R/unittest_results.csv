@@ -94,6 +94,7 @@
 1014,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
 1014,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
 1015,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
+1016,Test ICD10 code,Expect condition_occurrence,PASS
 1100,emergency admission HES/2D,Expect visit_occurrence,PASS
 1101,admission source Hospice SMR/62,Expect visit_occurrence,PASS
 1102,discharged to special hospital PEDW/49,Expect visit_occurrence,PASS
@@ -157,7 +158,6 @@
 1703,GP clinical to stem, read3 code,Expect measurement,PASS
 1704,GP clinical to stem, missing date,Expect No measurement,PASS
 1705,GP clinical to stem, Serum creatinine with value,Expect measurement,PASS
-2404,visit id,Expect drug_exposure,PASS
 1706,GP clinical to stem, unit concept ID (MEA code),Expect measurement,PASS
 1707,GP clinical to stem, unit concept ID (unit symbol),Expect measurement,PASS
 1708,GP clinical to stem, readv3 serum urea,Expect measurement,PASS
@@ -234,10 +234,11 @@
 2401,dmd code: -1,Expect No drug_exposure,PASS
 2402,start and end date same,Expect drug_exposure,PASS
 2403,data source,Expect drug_exposure,PASS
+2404,visit id,Expect drug_exposure,PASS
 2405,if no dmd code skip,Expect No drug_exposure,PASS
 2500,Covid19 TPP GP clinical to stem, correct date,Expect measurement,PASS
 2501,Covid19 TPP GP clinical to stem, missing date,Expect No measurement,PASS
-2502,Covid19 TPP GP clinical to stem, CTV3 code,Expect measurement,PASS
+2502,Covid19 TPP GP clinical to stem, CTV3 code measurement with value,Expect measurement,PASS
 2503,Covid19 TPP GP clinical to stem, local TPP code,Expect measurement,PASS
 2504,Covid19 TPP GP clinical to stem, code_type is -1,Expect No measurement,PASS
 2505,Covid19 TPP GP clinical to stem, missing code,Expect No measurement,PASS
@@ -247,6 +248,13 @@
 2509,Covid19 TPP GP clinical to stem, no meas when future date,Expect No measurement,PASS
 2510,Covid19 TPP GP clinical read v2 code no trailing zeros,Expect measurement,PASS
 2511,Covid19 TPPk GP clinical read v2 code no trailing zeros 2,Expect measurement,PASS
+2512,Covid19 TPP GP clinical to stem, domain_id=Measure when value_as_number > 0,Expect measurement,PASS
+2513,Covid19 TPP GP clinical to stem, domain_id=Measure when value_as_concept_id != None,Expect measurement,PASS
+2514,Covid19 TPP GP clinical to stem, domain_id=None when value_as_number == 0,Expect No measurement,PASS
+2514,Covid19 TPP GP clinical to stem, domain_id=None when value_as_number == 0,Expect condition_occurrence,PASS
+2515,Covid19 TPP GP clinical to stem, G801. to condition,Expect condition_occurrence,PASS
+2516,Covid19 TPP GP clinical to stem, CTV3 code to observation,Expect observation,PASS
+2517,Covid19 TPP GP clinical to stem, CTV3 code measurement without value,Expect measurement,PASS
 2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
 2601,No Event date,Expect No measurement,PASS
 2602,Value is -9000001.0,Expect No measurement,PASS
@@ -255,6 +263,9 @@
 2605,Unit is -9999999,Expect measurement,PASS
 2606,Covid19 EMIS GP clinical to stem, EMISNQCO303 with value mapping,Expect measurement,PASS
 2607,Covid19 EMIS GP clinical to stem, no meas when future date,Expect No measurement,PASS
+2608,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_number > 0,Expect measurement,PASS
+2609,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_concept_id != None,Expect measurement,PASS
+2610,Covid19 EMIS GP clinical to stem, domain_id=Condition when value_as_number == 0,Expect No measurement,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS

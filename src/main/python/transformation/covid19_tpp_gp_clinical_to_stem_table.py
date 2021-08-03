@@ -69,6 +69,11 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
 
         value_as_concept_id = value_mapping_lookup.get(row['code'], None)
 
+        # override the target domain (concept.domain_id) to be 'Measurement' if necessary
+        domain_id = None
+        if (value_as_number is not None and value_as_number != 0.0) or (value_as_concept_id is not None):
+            domain_id = 'Measurement'
+
         # Insert terms in stem_table
         yield wrapper.cdm.StemTable(
             person_id=row['eid'],
@@ -80,8 +85,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
             value_as_number=value_as_number,
             visit_occurrence_id=visit_id,
             value_as_concept_id=value_as_concept_id,
-            # this always overrides concept.domain_id, also if the concept is legitimately a condition
-            domain_id='Measurement',
+            domain_id=domain_id,
             type_concept_id=32817,     # 32817: EHR
             data_source='covid19 gp_tpp'
         )
