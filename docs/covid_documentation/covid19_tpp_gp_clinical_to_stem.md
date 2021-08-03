@@ -16,7 +16,7 @@ Ignore rows were "value" = -1 or -2
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| domain_id |  |  | The records from covid19_gp_clinical will be inserted in the measurement table, only if they have a value_as_number !=0 or if they have a value_as_concept_id. |
+| domain_id |  |  'Measurement' if the record has a value_as_number (which is not 0) or a value_as_concept_id. | As values can only be stored in the measurement (and observation) table, we enforce the domain if a value is given from the source. In other cases, the domain_id of the target `concept_id` will be used to determine the target table as per OMOP conventions. |
 | person_id | eid |  |  |
 | visit_occurrence_id | eid<br>event_dt | Create a new visit id string with the form: 'covid prefix'(5000)+'eid'+'event_dt' |  |
 | provider_id |  |  |  |
@@ -61,4 +61,3 @@ Ignore rows were "value" = -1 or -2
 | condition_status_source_value |  |  |  |
 | qualifier_concept_id |  |  |  |
 | qualifier_source_value |  |  |  |
-
