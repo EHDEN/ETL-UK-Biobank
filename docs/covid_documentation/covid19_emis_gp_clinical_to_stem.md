@@ -15,7 +15,7 @@ If date empty or in 2037, skip the record.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| domain_id |  |  | All records from covid19_gp_clinical will be inserted in the measurement table. |
+| domain_id |  |  | The records from covid19_gp_clinical will be inserted in the measurement table, only if they have a value_as_number !=0 or if they have a value_as_concept_id. |
 | person_id | eid |  |  |
 | visit_occurrence_id |  |  |  |
 | provider_id |  |  |  |

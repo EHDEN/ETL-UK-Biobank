@@ -16,7 +16,7 @@ Ignore rows were "value" = -1 or -2
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| domain_id |  |  | All records from covid19_gp_clinical will be inserted in the measurement table. |
+| domain_id |  |  | The records from covid19_gp_clinical will be inserted in the measurement table, only if they have a value_as_number !=0 or if they have a value_as_concept_id. |
 | person_id | eid |  |  |
 | visit_occurrence_id | eid<br>event_dt | Create a new visit id string with the form: 'covid prefix'(5000)+'eid'+'event_dt' |  |
 | provider_id |  |  |  |
