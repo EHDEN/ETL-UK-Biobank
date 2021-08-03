@@ -71,9 +71,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
 
         # override the target domain (concept.domain_id) to be 'Measurement' if necessary
         domain_id = None
-        if value_as_number is not None and value_as_number != 0:
-            domain_id = 'Measurement'
-        elif value_as_concept_id is not None:
+        if (value_as_number is not None and value_as_number != 0.0) or (value_as_concept_id is not None):
             domain_id = 'Measurement'
 
         # Insert terms in stem_table

@@ -1,16 +1,16 @@
 declareTest(2500, 'Covid19 TPP GP clinical to stem, correct date')
 add_baseline(eid = 2500)
-add_covid19_tpp_gp_clinical(eid = 2500, event_dt = '19/04/2020', code_type = 0, code = '5372.', value = 0.0)
+add_covid19_tpp_gp_clinical(eid = 2500, event_dt = '19/04/2020', code_type = 1, code = '242..', value = 10.0)
 expect_measurement(person_id = 2500, measurement_date='2020-04-19')
 
 declareTest(2501, 'Covid19 TPP GP clinical to stem, missing date')
 add_baseline(eid = 2501)
-add_covid19_tpp_gp_clinical(eid = 2501, event_dt = '', code_type = 0, code = 'XaF8d', value = 0.0)
+add_covid19_tpp_gp_clinical(eid = 2501, event_dt = '', code_type = 1, code = '242..', value = 10.0)
 expect_no_measurement(person_id = 2501, measurement_concept_id=4200295)
 
 declareTest(2502, 'Covid19 TPP GP clinical to stem, CTV3 code')
 add_baseline(eid = 2502)
-add_covid19_tpp_gp_clinical(eid = 2502, event_dt = '05/04/1995', code_type = 0, code = 'XaF8d', value = 0.0)
+add_covid19_tpp_gp_clinical(eid = 2502, event_dt = '05/04/1995', code_type = 0, code = 'XaF8d', value=10.0)
 expect_measurement(person_id = 2502, measurement_concept_id = 4200295,  measurement_source_concept_id = 0, measurement_source_value = 'XaF8d')
 
 declareTest(2503, 'Covid19 TPP GP clinical to stem, local TPP code')
@@ -50,10 +50,27 @@ expect_no_measurement(person_id = 2509, measurement_date = '2037-07-01')
 
 declareTest(2510, 'Covid19 TPP GP clinical read v2 code no trailing zeros')
 add_baseline(eid = 2510)
-add_covid19_tpp_gp_clinical(eid = 2510, code_type = 0, code='2469.')
+add_covid19_tpp_gp_clinical(eid = 2510, code_type = 0, code='2469.', value=10.0)
 expect_measurement(person_id = 2510, measurement_concept_id = 4062019)
 
 declareTest(2511, 'Covid19 TPPk GP clinical read v2 code no trailing zeros 2')
 add_baseline(eid = 2511)
-add_covid19_tpp_gp_clinical(eid = 2511, code_type = 0, code='42P..')
+add_covid19_tpp_gp_clinical(eid = 2511, code_type = 0, code='42P..', value=10.0)
 expect_measurement(person_id = 2511, measurement_concept_id = 37393863)
+
+# new ----
+declareTest(2512, 'Covid19 TPP GP clinical to stem, domain_id=Measure when value_as_number > 0')
+add_baseline(eid = 2512)
+add_covid19_tpp_gp_clinical(eid = 2512, event_dt = '01/07/2017', code_type = 1, code='242..', value=23.0)
+expect_measurement(person_id = 2512, measurement_date = '2017-07-01')
+
+declareTest(2513, 'Covid19 TPP GP clinical to stem, domain_id=Measure when value_as_concept_id != None')
+add_baseline(eid = 2513)
+add_covid19_tpp_gp_clinical(eid = 2513, event_dt = '01/07/2017', code_type=1, code='Y20d2', value='')
+expect_measurement(person_id = 2513, measurement_date = '2017-07-01')
+
+declareTest(2514, 'Covid19 TPP GP clinical to stem, domain_id=None when value_as_number == 0')
+add_baseline(eid = 2514)
+add_covid19_tpp_gp_clinical(eid = 2514, event_dt = '01/07/2017', code_type=1, code='242..', value=0.0)
+expect_no_measurement(person_id = 2514, measurement_date = '2017-07-01')
+expect_condition_occurrence(person_id = 2514, condition_start_date='2017-07-01', condition_concept_id=4060733)

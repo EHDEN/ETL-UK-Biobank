@@ -39,3 +39,18 @@ declareTest(2607, 'Covid19 EMIS GP clinical to stem, no meas when future date')
 add_baseline(eid = 2607)
 add_covid19_emis_gp_clinical(eid = 2607, event_dt = '01/07/2037', code=1018251000000107)
 expect_no_measurement(person_id = 2607, measurement_date = '2037-07-01')
+
+declareTest(2608, 'Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_number > 0')
+add_baseline(eid = 2608)
+add_covid19_emis_gp_clinical(eid = 2608, event_dt = '01/07/2017', code=163020007, value=23.0)
+expect_measurement(person_id = 2608, measurement_date = '2017-07-01')
+
+declareTest(2609, 'Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_concept_id != None')
+add_baseline(eid = 2609)
+add_covid19_emis_gp_clinical(eid = 2609, event_dt = '01/07/2017', code_type=3, code='EMISNQCO303', value='')
+expect_measurement(person_id = 2609, measurement_date = '2017-07-01')
+
+declareTest(2610, 'Covid19 EMIS GP clinical to stem, domain_id=Condition when value_as_number == 0')
+add_baseline(eid = 2610)
+add_covid19_emis_gp_clinical(eid = 2610, event_dt = '01/07/2017', code=1018251000000107, value=0.0)
+expect_no_measurement(person_id = 2610, measurement_date = '2017-07-01')
