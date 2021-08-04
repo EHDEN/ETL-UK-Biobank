@@ -20,7 +20,7 @@ def covid19_tpp_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Lis
     scripts = scripts[["eid", "issue_date"]].rename(columns={'issue_date': 'date'})
 
     clinical = clinical.append(scripts)
-    del scripts
+    del scripts  # to reduce memory use
 
     clinical = clinical.drop_duplicates(['eid', 'date'])
 
