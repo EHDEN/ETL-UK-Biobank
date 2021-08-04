@@ -12,10 +12,14 @@ if TYPE_CHECKING:
 
 
 def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ProcedureOccurrence]:
+    # Load hesin and hesin_oper tables, with selected columns to avoid memory failures
     hesin_oper_source = wrapper.source_data.get_source_file('hesin_oper.csv')
-    hesin_oper = hesin_oper_source.get_csv_as_df(apply_dtypes=False)
+    hesin_oper = hesin_oper_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'ins_index',
+                                                                              'oper4', 'oper3',
+                                                                              'opdate', 'level'])
     hesin_source = wrapper.source_data.get_source_file('hesin.csv')
-    hesin = hesin_source.get_csv_as_df(apply_dtypes=False)
+    hesin = hesin_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'ins_index', 'spell_index',
+                                                                   'dsource'])
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     df = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))

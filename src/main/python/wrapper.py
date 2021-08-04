@@ -114,7 +114,7 @@ class Wrapper(BaseWrapper):
         self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
 
         if self.load_gp_covid19:
-            # these are expected to be the most memory heavy transformations. Execut last
+            # these are expected to be the most memory heavy transformations. Execute last
             self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
             self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
 

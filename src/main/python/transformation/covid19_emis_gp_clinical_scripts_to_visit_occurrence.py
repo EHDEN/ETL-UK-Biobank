@@ -10,20 +10,28 @@ if TYPE_CHECKING:
 
 
 def covid19_emis_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccurrence]:
-    clinical_source = wrapper.source_data.get_source_file('covid19_emis_gp_clinical.csv')
-    clinical = clinical_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'event_dt'])
+    source = wrapper.source_data._source_dir
+    clinical = pd.read_csv(source / 'covid19_emis_gp_clinical.csv', usecols=['eid', 'event_dt'],
+                           dtype={'eid': 'Int32', 'event_id': 'datetime64'})
     clinical = clinical[["eid", "event_dt"]].rename(columns={'event_dt': 'date'})
 
-    scripts_source = wrapper.source_data.get_source_file('covid19_emis_gp_scripts.csv')
-    scripts = scripts_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'issue_date'])
+    scripts = pd.read_csv(source / 'covid19_emis_gp_scripts.csv', usecols=['eid', 'issue_date'],
+                          dtype={'eid': 'Int32', 'event_id': 'datetime64'})
     scripts = scripts[["eid", "issue_date"]].rename(columns={'issue_date': 'date'})
 
-    df = pd.concat([scripts, clinical])
-    df = df.drop_duplicates(['eid', 'date'])
+    clinical = clinical.append(scripts)
+    del scripts  # to reduce memory use
 
-    for _, row in df.iterrows():
-        visit_date = wrapper.get_gp_datetime(row['date'],
-                                             person_source_value=row['eid'],
+    clinical = clinical.drop_duplicates(['eid', 'date'])
+
+    for _, row in clinical.iterrows():
+        if row.isnull().any():
+            continue
+        eid = row['eid']
+        eid_str = str(eid)
+        date = row['date']
+        visit_date = wrapper.get_gp_datetime(date,
+                                             person_source_value=eid_str,
                                              format="%d/%m/%Y",
                                              default_date=None)
 
@@ -32,8 +40,8 @@ def covid19_emis_gp_clinical_scripts_to_visit_occurrence(wrapper: Wrapper) -> Li
             continue
 
         yield wrapper.cdm.VisitOccurrence(
-            visit_occurrence_id=create_gp_emis_visit_occurrence_id(row['eid'], visit_date),
-            person_id=row['eid'],
+            visit_occurrence_id=create_gp_emis_visit_occurrence_id(eid_str, visit_date),
+            person_id=eid,
             visit_concept_id=38004453,  # Family Practice
             visit_start_date=visit_date.date(),
             visit_start_datetime=visit_date,
