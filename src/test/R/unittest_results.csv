@@ -73,12 +73,14 @@
 935,Baseline - cancer record format,Expect observation,PASS
 936,Baseline - cancer record origin,Expect observation,PASS
 937,Baseline - device id,Expect device_exposure,PASS
+938,Baseline - Age Glaucoma: unit and concept mapping,Expect observation,PASS
 1000,Test ICD10 code,Expect condition_occurrence,PASS
 1001,Test ICD9 code,Expect condition_occurrence,PASS
 1002,Test ICD9 and ICD10 code; map ICD10,Expect condition_occurrence,PASS
 1003,No concept found,Expect condition_occurrence,PASS
 1004,Test Source id but no target ID,Expect condition_occurrence,PASS
 1005,Test if code has more > 1 target concept,Expect condition_occurrence,PASS
+1704,GP clinical to stem, missing date,Expect No measurement,PASS
 1005,Test if code has more > 1 target concept,Expect condition_occurrence,PASS
 1006,HES diagnosis with visit,Expect visit_occurrence,PASS
 1006,HES diagnosis with visit,Expect condition_occurrence,PASS
@@ -156,7 +158,6 @@
 1701,GP clinical to stem, visit lookup,Expect measurement,PASS
 1702,GP clinical to stem, unknown read2 code,Expect measurement,PASS
 1703,GP clinical to stem, read3 code,Expect measurement,PASS
-1704,GP clinical to stem, missing date,Expect No measurement,PASS
 1705,GP clinical to stem, Serum creatinine with value,Expect measurement,PASS
 1706,GP clinical to stem, unit concept ID (MEA code),Expect measurement,PASS
 1707,GP clinical to stem, unit concept ID (unit symbol),Expect measurement,PASS

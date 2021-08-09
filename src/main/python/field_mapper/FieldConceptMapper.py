@@ -225,6 +225,7 @@ class FieldConceptMapper:
                 return [template_target]
 
             template_target.unit_concept_id = field_mapping.unit_target.concept_id if field_mapping.unit_target else 0
+            template_target.value_as_concept_id = field_mapping.get_value_concept_id() if field_mapping.value_targets else None
 
             if not field_mapping.event_targets:
                 logger.warning(f'"{field_id}" does not have an event_concept_id associated')
@@ -244,6 +245,8 @@ class FieldConceptMapper:
 
 if __name__ == '__main__':
     mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'INFO')
+    validator.print_summary()
+    # validator.print_all()
 
     def _print(targets):
         if len(targets) == 0:
@@ -283,5 +286,5 @@ if __name__ == '__main__':
     print(f'{len(mapper.field_mappings):>6} field mappings loaded')
     print(f'{sum([len(x.get_values()) for x in mapper.field_mappings.values()]):>6,} value mappings loaded')
 
-    validator.print_summary()
-    # validator.print_all()
+    # Glaucoma with unit and value mapping
+    _print(mapper.lookup('4689', '56'))

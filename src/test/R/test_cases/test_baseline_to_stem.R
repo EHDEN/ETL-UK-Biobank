@@ -171,3 +171,8 @@ expect_observation(person_id = 936, observation_date = '2017-04-07',
 declareTest(937, 'Baseline - device id')
 add_baseline(eid = '937', `30003-0.0` = 'ABC123')
 expect_device_exposure(person_id = 937, device_concept_id = 4272314, unique_device_id = 'ABC123')
+
+declareTest(938, 'Baseline - Age Glaucoma: unit and concept mapping')
+add_baseline(eid = '938', `4689-0.0` = 67)
+expect_observation(person_id = 938, observation_concept_id = 4214956,
+                   value_as_number = 67, unit_concept_id = 9448, value_as_concept_id = 437541)
