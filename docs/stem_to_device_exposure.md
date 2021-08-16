@@ -15,7 +15,7 @@ nav_order: 6
 | --- | --- | --- | --- |
 | device_exposure_id | id |  |  |
 | person_id | person_id |  |  |
-| device_concept_id | concept_id |  |  |
+| device_concept_id | concept_id |  0 if `concept_id` is empty |  |
 | device_exposure_start_date | start_date |  |  |
 | device_exposure_start_datetime | start_datetime |  |  |
 | device_exposure_end_date | end_date |  |  |

@@ -15,7 +15,7 @@ nav_order: 5
 | --- | --- | --- | --- |
 | measurement_id | id |  |  |
 | person_id | person_id |  |  |
-| measurement_concept_id | concept_id |  |  |
+| measurement_concept_id | concept_id |  0 if `concept_id` is empty |  |
 | measurement_date | start_date |  |  |
 | measurement_datetime | start_datetime |  |  |
 | measurement_time |  |  |  |
