@@ -88,3 +88,11 @@ declareTest(2517, 'Covid19 TPP GP clinical to stem, CTV3 code measurement withou
 add_baseline(eid = 2517)
 add_covid19_tpp_gp_clinical(eid = 2517, event_dt = '01/07/2020', code_type = 0, code = 'XaJVi', value=NULL)
 expect_measurement(person_id = 2517, measurement_concept_id = 4136881,  value_as_number = NULL, measurement_source_value = 'XaJVi')
+
+declareTest(2518, 'Covid19 TPP GP clinical to stem, CTV3 code drug')
+add_baseline(eid = 2518)
+add_covid19_tpp_gp_clinical(eid = 2518, event_dt = '01/01/2005', code_type = 1, code = '65KZ.', value=NULL)
+expect_drug_exposure(person_id = 2518, drug_exposure_start_date = '2005-01-01', drug_exposure_end_date = '2005-01-01',
+                     drug_concept_id = 529411,  drug_source_value = '65KZ.', drug_source_concept_id = 45482248)
+expect_drug_era(person_id = 2518, drug_concept_id = 529411)
+
