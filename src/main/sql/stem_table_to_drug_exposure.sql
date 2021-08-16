@@ -34,9 +34,9 @@ SELECT
 
 	stem_table.start_datetime	AS	drug_exposure_start_datetime,
 
-	stem_table.end_date	AS	drug_exposure_end_date,
+    coalesce(stem_table.end_date, stem_table.start_date)	AS	drug_exposure_end_date,
 
-	stem_table.end_datetime	AS	drug_exposure_end_datetime,
+    coalesce(stem_table.end_datetime, stem_table.start_datetime)	AS	drug_exposure_end_datetime,
 
 	stem_table.verbatim_end_date	AS	verbatim_end_date,
 

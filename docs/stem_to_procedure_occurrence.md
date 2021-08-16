@@ -15,7 +15,7 @@ nav_order: 3
 | --- | --- | --- | --- |
 | procedure_occurrence_id | id |  | Auto-increment |
 | person_id | person_id |  |  |
-| procedure_concept_id | concept_id |  |  |
+| procedure_concept_id | concept_id |  0 if `concept_id` is empty |  |
 | procedure_date | start_date |  |  |
 | procedure_datetime | start_datetime |  |  |
 | procedure_type_concept_id | type_concept_id |  |  |

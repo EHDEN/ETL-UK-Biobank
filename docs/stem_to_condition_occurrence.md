@@ -15,7 +15,7 @@ nav_order: 1
 | --- | --- | --- | --- |
 | condition_occurrence_id | id |  | Auto-increment |
 | person_id | person_id |  |  |
-| condition_concept_id | concept_id |  |  |
+| condition_concept_id | concept_id |  0 if `concept_id` is empty |  |
 | condition_start_date | start_date |  |  |
 | condition_start_datetime | start_datetime |  |  |
 | condition_end_date | end_date |  |  |

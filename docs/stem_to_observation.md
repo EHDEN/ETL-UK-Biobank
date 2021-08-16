@@ -15,7 +15,7 @@ nav_order: 4
 | --- | --- | --- | --- |
 | observation_id | id |  |  |
 | person_id | person_id |  |  |
-| observation_concept_id | concept_id |  |  |
+| observation_concept_id | concept_id |  0 if `concept_id` is empty |  |
 | observation_date | start_date |  |  |
 | observation_datetime | start_datetime |  |  |
 | visit_occurrence_id | visit_occurrence_id |  |  |
