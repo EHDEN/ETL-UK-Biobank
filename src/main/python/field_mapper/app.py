@@ -7,7 +7,7 @@ import json
 import dash
 import dash_table
 import requests
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import dash_html_components as html
 
 from pathlib import Path
@@ -75,7 +75,7 @@ app.layout = html.Div(children=[
             {'if': {'column_id': 'mapping_approach'},
              'width': '80px'},
         ],
-        row_selectable='single',
+        # row_selectable='single',
         sort_action='native',
         filter_action='native',
         page_action='native',
@@ -93,13 +93,14 @@ app.layout = html.Div(children=[
 
 @app.callback(
     Output('field-detail-container', "children"),
-    [Input('field-table', "derived_virtual_data"),
-     Input('field-table', "derived_virtual_selected_rows")])
-def update_field_detail(rows, derived_virtual_selected_rows):
-    if not derived_virtual_selected_rows:
+    [Input('field-table', 'active_cell')],
+    [State('field-table', 'data')]
+)
+def update_field_detail(active_cell, table_data):
+    if not active_cell:
         return []
 
-    selected_row = rows[derived_virtual_selected_rows[0]]
+    selected_row = table_data[active_cell['row']]
     field_mapping = mapper.get_mapping(str(selected_row['field_id']))
     event_targets = ','.join(map(str, field_mapping.event_targets))
     event_concept = field_mapping.get_event_concept_id()
