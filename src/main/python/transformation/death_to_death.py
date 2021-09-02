@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import pandas as pd
 
+from ..util import refactor_icdx_code
+
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
@@ -18,33 +20,32 @@ type_lookup = {  # TODO: any other flavours?
 
 
 def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
-    death = wrapper.get_dataframe('death.csv')
-
+    death_source = wrapper.source_data.get_source_file('death.csv')
+    death = death_source.get_csv_as_df(apply_dtypes=False)
     death['date_of_death'] = pd.to_datetime(death['date_of_death'], dayfirst=True)
     death = death.sort_values(by=['eid', 'date_of_death'])
     death = death.drop_duplicates(subset='eid', keep='first')  # Only keep first date of death
 
-    death_cause = wrapper.get_dataframe('death_cause.csv')
+    death_cause_source = wrapper.source_data.get_source_file('death_cause.csv')
+    death_cause = death_cause_source.get_csv_as_df(apply_dtypes=False)
     death_cause = death_cause[death_cause['arr_index'] == '0']
     death_cause = death_cause.drop_duplicates(subset='eid', keep='first')  # In case multiple have arr_index 0, choose one
 
-    source = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
+    df = death.merge(death_cause, on='eid', how='left', suffixes=('', 'y_'))
 
-    codes = death_cause['cause_icd10'].unique().tolist()
-    mapper = wrapper.code_mapper.generate_code_mapping_dictionary('ICD10', restrict_to_codes=codes, remove_dot_from_codes=True)
+    df['cause_icd10_dot'] = df['cause_icd10'].apply(refactor_icdx_code)
 
-    records = []
-    for _, row in source.iterrows():
+    mapper = wrapper.code_mapper.generate_code_mapping_dictionary(
+        'ICD10', restrict_to_codes=list(df['cause_icd10_dot']))
+
+    for _, row in df.iterrows():
         if pd.isna(row['date_of_death']):
             continue
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
+        person_id = row['eid']
 
-        target = mapper.lookup(row['cause_icd10'], first_only=True)
-        r = wrapper.cdm.Death(
+        target = mapper.lookup(row['cause_icd10_dot'], first_only=True)
+        yield wrapper.cdm.Death(
             person_id=person_id,
             death_date=row['date_of_death'],
             death_datetime=row['date_of_death'],
@@ -54,6 +55,3 @@ def death_to_death(wrapper: Wrapper) -> List[Wrapper.cdm.Death]:
             cause_source_value=row['cause_icd10']
             # TODO: record source in separate field
         )
-        records.append(r)
-
-    return records

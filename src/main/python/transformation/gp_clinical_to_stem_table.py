@@ -3,16 +3,16 @@ from __future__ import annotations
 from typing import List, TYPE_CHECKING
 import csv
 
-from ..util import get_datetime
-from ..gp_mapper import extend_read_code, GpClinicalValueMapper
-from ..util.general_functions import is_null
+from ..util import is_null, extend_read_code, create_gp_visit_occurrence_id
+from ..gp_mapper import GpClinicalValueMapper
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
 def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
-    source = wrapper.get_dataframe('gp_clinical.csv')
+    source = wrapper.source_data.get_source_file('gp_clinical.csv')
+    rows = source.get_csv_as_generator_of_dicts()
 
     # load dictionary of special Read v2 dot code mappings (i.e. alternative to adding 00)
     with open('resources/mapping_tables/gp_clinical_read2_alternative_dot_code_mappings.csv') as f:
@@ -28,8 +28,7 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
     value_mapper = GpClinicalValueMapper(mapping_dict=read_v2_mapping_dict)
 
-    records = []
-    for _, row in source.iterrows():
+    for row in rows:
         # read_2 and read_3 should be mutually exclusive
         if not is_null(row['read_2']):
             read_col = 'read_2'
@@ -39,23 +38,17 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         else:
             continue
 
-        person_id = wrapper.lookup_person_id(person_source_value=row['eid'])
-        if not person_id:
-            continue
+        event_date = wrapper.get_gp_datetime(row['event_dt'],
+                                             person_source_value=row['eid'],
+                                             format="%d/%m/%Y",
+                                             default_date=None)
 
-        if not is_null(row['event_dt']):
-            event_date = get_datetime(row['event_dt'], "%d/%m/%Y")
-        else:
+        if not event_date:
             continue
 
         data_source = 'GP-' + row['data_provider'] if not is_null(row['data_provider']) else None
 
-        # Look up visit_id in VisitOccurrence table
-        visit_id = wrapper.lookup_visit_occurrence_id(
-            person_id=person_id,
-            visit_start_date=event_date,
-            data_source=data_source
-        )
+        visit_id = create_gp_visit_occurrence_id(row['eid'], event_date)
 
         unit_source_value, unit_concept_id, operator = None, None, None
         if not is_null(row['value3']):
@@ -86,9 +79,10 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                     target_concept_id = target_read_mapping.target_concept_id
                     source_concept_id = source_read_mapping.source_concept_id
 
-            r = wrapper.cdm.StemTable(
-                person_id=person_id,
-                domain_id='Measurement',  # this always overrides concept.domain_id, also if the concept is legitimately a condition
+            yield wrapper.cdm.StemTable(
+                person_id=row['eid'],
+                # Always override concept.domain_id, also if the concept is legitimately a condition
+                domain_id='Measurement',
                 type_concept_id=32817,
                 start_date=event_date,
                 start_datetime=event_date,
@@ -102,6 +96,3 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 value_as_number=value_as_number,
                 data_source=data_source
             )
-            records.append(r)
-
-    return records

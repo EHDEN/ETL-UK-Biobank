@@ -1,0 +1,45 @@
+connectionDetails:
+  dbms:
+  user:
+  password:  
+  server: 
+  port: 
+  schema:
+  vocabDatabaseSchema:
+
+# DQD Parameters
+cdmSourceName: ''
+cdmVersion: '5.3.1'
+tableCheckThresholdLoc: 'default'
+fieldCheckThresholdLoc: 'default'
+conceptCheckThresholdLoc: 'default'
+checkLevels: # which DQ check levels to run (table, field, concept)
+  - TABLE
+  - FIELD
+  - CONCEPT
+checkNames: # which checks to run. Names can be found in inst/csv/OMOP_CDM_v5.3.1_Check_Desciptions.csv
+  - measurePersonCompleteness
+  - cdmField
+  - isRequired
+  - cdmDatatype
+  - isPrimaryKey
+  - isForeignKey
+  - fkDomain
+  - fkClass
+  - isStandardValidCOncept
+  - measureValueCompleteness
+  - standardConceptRecordCompleteness
+  - sourceConceptRecordCompleteness
+  - sourceValueCompleteness
+  - plausibleValueLow
+  - plausibleValueHigh
+  - plausibleTemporalAfter
+  - plausibleDuringLife
+  - plausibleValueLow
+  - plausibleValueHigh
+  - plausibleGender
+numThreads: 1
+sqlOnly: false # set to TRUE if you just want to get the SQL scripts and not actually run the queries
+outputFolder: 'output_dqd' # where should the logs go?
+verboseMode: true # set to TRUE if you want to see activity written to the console
+writeToTable: true # set to FALSE if you want to skip writing to a SQL table in the results schema

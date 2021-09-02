@@ -1,3 +1,10 @@
+---
+layout: default
+title: baseline to stem table
+parent: assessment centre
+nav_order: 4
+---
+
 ## Baseline to stem table
 
 The Baseline table contains one row per person and a column for each field. There can be thousands of columns. Each column name is structured as `field_id-instance.array` (e.g. `20001-1.15`). The `field_id` encodes the variable, the `instance` indicates one of the four assessment centre visits (ranging from 0 to 3) and with the `array` index multiple values can be given for the same field_id at the same visit.
@@ -24,7 +31,9 @@ Notes:
  - Fields not given in the mapping tables are also ignored (these are fields not prioritised)
  - Mappings that have not been approved will be mapped to a 0 (see the mapping status column in the mapping tables). 
  - If a field has no value mappings, but the value can't be converted to a float, then it is treated as free-text and populates the value_as_string field.
- - There are some cases where instances run higher than 3. These correspond to positions in the death or cancer registry and should be handled separately. **TODO**
+ - There are some cases where instances run higher than 3. These correspond to positions in the death or cancer registry and are handled separately.
+ - Waist and Hip circumference (fields 48 and 49) are mapped to observation concepts ([4172830](https://athena.ohdsi.org/search-terms/terms/4172830) [4111665](https://athena.ohdsi.org/search-terms/terms/4111665), respectively).
+   There does not exist an equivalent target concept for both in the measurement domain (see also issue #176).
 
 | Destination Field | Source field | Logic | Comment |
 | --- | --- | --- | --- |
@@ -38,15 +47,15 @@ Notes:
 | visit_occurrence_id |  |  | TBD |
 | provider_id |  |  | Not provided |
 | concept_id | target.event_concept_id | Lookup from field_id and value (step c) |  |
-| source_value | `field_id` value | If value numeric: `field_id`<br>If discrete: `field_id`\|`value` |  |
-| source_concept_id |  | 0 |  |
+| source_value | `field_id` value | If value numeric: `field_id`<br>If discrete: `field_id`\|`value`. Truncated to 50 characters. |  |
+| source_concept_id | `field_id` value | Use `field_id` to find the UK Biobank vocabulary concept_id | UK Biobank has it is own vocabulary in Athena |
 | value_as_concept_id | target.value_as_concept_id | Lookup from field_id and value (step c) | If value has a discrete mapping |
 | value_as_number | target.value_as_number | Lookup from field_id and value (step c) | If value is numeric |
-| value_as_string | target.value_as_string | Lookup from field_id and value (step c) | If value is text |
+| value_as_string | target.value_as_string | Lookup from field_id and value (step c). Truncated to 50 characters. | If value is text |
 | value_source_value |  |  | Not used, field and value are in source_value column |
 | unit_concept_id | target.unit_concept_id | Lookup from field_id and value (step c) | If value is numeric |
 | unit_source_value |  |  | Not used, unit is directly derived from the `field_id` |
-| type_concept_id |  | 32883 | Survey |
+| type_concept_id |  | Mapping given in [field_id_to_type_concept_id.csv](./resources/baseline_field_mapping/field_id_to_type_concept_id.csv) | Depending on the category of the field_id one of:<br>- 32862 Patient filled survey<br>- 32851 Healthcare professional filled survey<br>- 32879 Registry<br>- 32856 Lab<br>- 32817 EHR |
 
 There are 26 more columns in the stem table, each corresponding to columns in the event tables. These are not used and omitted for brevity.
 
@@ -92,7 +101,7 @@ Loop through columns:
 | start_date | 2010-01-01 | 2020-06-06 |
 | start_datetime | 2010-01-01T00:00:00 | 2020-06-06T00:00:00 |
 | visit_occurrence_id |  |  |
-| concept_id | [44805437](https://athena.ohdsi.org/search-terms/terms/44805437) | [4188893](https://athena.ohdsi.org/search-terms/terms/4188893) |
+| concept_id | [44805437](https://athena.ohdsi.org/search-terms/terms/44805437) | [4214956](https://athena.ohdsi.org/search-terms/terms/4214956) |
 | source_value | "46" | "2443\|1" |
 | source_concept_id | 0 | 0 |
 | value_as_concept_id |  | [201820](https://athena.ohdsi.org/search-terms/terms/201820) |
@@ -100,6 +109,4 @@ Loop through columns:
 | value_as_string |  |  |
 | value_source_value |  |  |
 | unit_concept_id | [9529](https://athena.ohdsi.org/search-terms/terms/9529) |  |
-| type_concept_id | [32883](https://athena.ohdsi.org/search-terms/terms/32883) | [32883](https://athena.ohdsi.org/search-terms/terms/32883) |
-
- **TODO**: text example
+| type_concept_id | [32879](https://athena.ohdsi.org/search-terms/terms/32879) | [32862](https://athena.ohdsi.org/search-terms/terms/32862) |

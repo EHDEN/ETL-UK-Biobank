@@ -9,19 +9,19 @@ expect_no_drug_exposure(person_id = 1200)
 declareTest(1201, 'Test drug fields priority when all drug fields available')
 add_baseline(eid = '1201')
 add_gp_prescriptions(eid = '1201', dmd_code = '324430000', read_2 = 'di21.', drug_name = 'Ibuprofen 200mg tablets')
-expect_drug_exposure(person_id = 1201, drug_concept_id = 1705676, drug_source_concept_id = 21199984, drug_source_value = '324430000', drug_type_concept_id=38000177)
+expect_drug_exposure(person_id = 1201, drug_concept_id = 1705676, drug_source_concept_id = 21199984, drug_source_value = '324430000', drug_type_concept_id=32838)
 
  # Read v2 -> Acetaminophen 500 MG Oral Tablet
 declareTest(1202, 'Test drug fields priority when only Read v2 & drug name available')
 add_baseline(eid = '1202')
 add_gp_prescriptions(eid = '1202', dmd_code = NULL, read_2 = 'di21.', drug_name = 'Ibuprofen 200mg tablets')
-expect_drug_exposure(person_id = 1202, drug_concept_id = 41091617, drug_source_concept_id = 0, drug_source_value = 'di21.', drug_type_concept_id=38000177)
+expect_drug_exposure(person_id = 1202, drug_concept_id = 41091617, drug_source_concept_id = 0, drug_source_value = 'di21.', drug_type_concept_id=32838)
 
 # drug name -> ibuprofen 200 MG Oral Tablet
 declareTest(1203, 'Test drug fields priority when only drug name available')
 add_baseline(eid = '1203')
 add_gp_prescriptions(eid = '1203', dmd_code = NULL, read_2 = NULL, drug_name = 'Ibuprofen 200mg tablets')
-expect_drug_exposure(person_id = 1203, drug_concept_id = 19078461, drug_source_concept_id = 0, drug_source_value = 'Ibuprofen 200mg tablets', drug_type_concept_id=38000177)
+expect_drug_exposure(person_id = 1203, drug_concept_id = 19078461, drug_source_concept_id = 0, drug_source_value = 'Ibuprofen 200mg tablets', drug_type_concept_id=32838)
 
 declareTest(1204, 'Test data source code creation')
 add_baseline(eid = '1204')
@@ -65,3 +65,13 @@ declareTest(1211, 'Test truncate long drug source value (> 50 chars)')
 add_baseline(eid = '1211')
 add_gp_prescriptions(eid = '1211', dmd_code = NULL, read_2 = NULL, drug_name = 'drug name well over the ridiculously short 50 character limit' )
 expect_drug_exposure(person_id = 1211, drug_source_value = 'drug name well over the ridiculously short 50 char')
+
+declareTest(1212, 'GP prescription, no date skip record')
+add_baseline(eid = 1212)
+add_gp_prescriptions(eid = 1212, issue_date = '', dmd_code = '324430000')
+expect_no_drug_exposure(person_id = 1212)
+
+declareTest(1213, 'GP prescription 1903/03/03 to yob-07-01')
+add_baseline(eid = 1213, `34-0.0` = '1991')
+add_gp_prescriptions(eid = '1213', issue_date = '03/03/1903', dmd_code = '324430000')
+expect_drug_exposure(person_id = 1213, drug_exposure_start_date = '1991-07-01')

@@ -3,22 +3,16 @@ from __future__ import annotations
 import csv
 from typing import List, TYPE_CHECKING
 
-from ..core.model import CareSite, Location
-
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
-def assessment_center_to_care_site(wrapper: Wrapper) -> List[CareSite, Location]:
-    records = []
+def assessment_center_to_care_site(wrapper: Wrapper) -> List[Wrapper.cdm.CareSite, Wrapper.cdm.Location]:
     with open('./resources/encodings/10_assessment_center.tsv') as f_in:
         assessment_centers = csv.DictReader(f_in, delimiter='\t')
         for row in assessment_centers:
-            r = wrapper.cdm.CareSite(
+            yield wrapper.cdm.CareSite(
                 care_site_id=row['coding'],
                 care_site_name=row['meaning'],
                 care_site_source_value=row['coding']
             )
-            records.append(r)
-
-    return records

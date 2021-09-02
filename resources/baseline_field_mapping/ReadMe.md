@@ -24,7 +24,7 @@ From the UKB source dictionary the `field_id`, `field_name`, `value_code` and `v
 Also the `category_name` and `notes` are provided. For the frequency, the `item_count` is used.
 
 Two mappings to standard concepts have to be made for each combination of field_id and value_code:
- 1. Event, e.g. 'History of'
+ 1. Event, e.g. 'History of clinical finding in subject'
  2. Value, e.g. the condition of which the history is recorded
 
 In some cases a combination of field and value is only mapped to a event_concept_id. e.g. 
@@ -46,7 +46,7 @@ Also the `category_name` and `notes` are provided. For the frequency, the `item_
 One mappings to a standard concept has to be made for each value_code:
  1. Value
 
-The event concept id is assigned on a file level (e.g. 'History of' for the fields 20001 and 20002).
+The event concept id is assigned on a file level (e.g. 'History of clinical finding in subject' for the fields 20001 and 20002).
 
 ### Other
 _`other_prio_fields.csv`_

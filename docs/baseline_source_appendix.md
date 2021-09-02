@@ -1,3 +1,10 @@
+---
+layout: default
+title: baseline appendix
+parent: appendix
+nav_order: 1
+---
+
 # Appendix: source tables
 
 ### Table: Baseline characteristics

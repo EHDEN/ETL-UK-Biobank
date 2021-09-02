@@ -21,7 +21,7 @@ mappingApproaches:
 mappings:
   - filename: date_field_lookup.csv
     mappingApproach: *date
-    default_date_field: 53  # for fields not lsited in the lookup
+    default_date_field: 53  # for fields not listed in the lookup
 
   - filename: numeric_prio_fields.csv
     mappingApproach: *numeric
@@ -37,27 +37,23 @@ mappings:
 
   - filename: 20001_cancer.csv
     mappingApproach: *valueOnly
-    event_concept_id: 4188893 # History of (SNOMED)
+    event_concept_id: 4214956 # History of clinical finding in subject (SNOMED)
 
   - filename: 20002_non-cancer_illness.csv
     mappingApproach: *valueOnly
-    event_concept_id: 4188893 # History of (SNOMED)
+    event_concept_id: 4214956 # History of clinical finding in subject (SNOMED)
 
   - filename: 20003_treatment_medication.csv
     mappingApproach: *valueOnly
-    event_concept_id: 3021806 # History of Medication use (LOINC)
+    event_concept_id: 4059354 # H/O: regular medication (SNOMED)
 
   - filename: 20004_operation.csv
     mappingApproach: *valueOnly
-    event_concept_id: 40770405 # History of procedure (LOINC)
-
-  - filename: 40011_histology_cancer_tumour.csv
-    mappingApproach: *valueOnly
-    event_concept_id: 4188893 # History of (SNOMED)
+    event_concept_id: 4215685 # Past history of procedure (SNOMED)
 
   - filename: ../mapping_tables/opcs3.csv
     mappingApproach: *mappingTable
     field_ids: [41256,41258,41273]
-    event_concept_id: 40770405 # History of procedure (LOINC)
+    event_concept_id: 4215685 # Past history of procedure (SNOMED)
 
   # Add reference to new mapping files here

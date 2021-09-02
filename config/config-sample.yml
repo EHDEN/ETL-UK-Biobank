@@ -1,12 +1,47 @@
 # Database connection
 database:
   host: 'localhost'
-  port: 6000
-  database_name: 'ukb'
+  port: 5432
+  database_name: 'ohdsi'
   username: 'postgres'
-  # Comment out password to provide at runtime
+  # If no password is needed, or to provide at runtime, leave blank
   password: 'postgres'
 
+# (Relative) path to the source data folder (optional)
+source_data_folder: './resources/synthetic_data/small_set'
+
+# The schema names of the OMOP CDM (target schema) and the vocabulary
+# tables. Additional key-value pairs can be added here if you have
+# custom ORM tables, for which you would like to have dynamic schema
+# names.
+schema_translate_map:
+  cdm_schema: 'omopcdm'
+  vocabulary_schema: 'vocab'
+
 run_options:
-  source_data_folder: './resources/synthetic_data'
-  debug_mode: False
+  # add option for loading the regular OMOP vocabularies? (not implemented yet)
+  # ask for confirmation?
+  skip_vocabulary_loading: True
+  # If True, all contents in resources/custom_vocabularies will be ignored,
+  # regardless of whether you call load_custom_vocabularies in your code.
+  skip_custom_vocabulary_loading: True
+  # If True, all contents in resources/source_to_concept will be ignored,
+  # regardless of whether you call load_stcm in your code.
+  skip_source_to_concept_map_loading: True
+  # Write two additional tsv files in the logs folder, with more
+  # detailed information on source data counts and ETL transformations.
+  write_reports: False
+  # Load gp_clinical and gp_prescription tables
+  # Both load_gp_regular and load_gp_covid19 can be set to True, but this can result in duplicated data loaded.
+  load_gp_regular: True
+  # Load covid19_emis_clinical covid19_emis_scripts,
+  # covid19_tpp_clinical and covid19_tpp_scripts tables
+  load_gp_covid19: True
+
+# sql_parameters are optional. They can be used together with parameterized
+# raw SQL queries, of which the placeholders (e.g. schema names, values)
+# indicated by an "@" will be replaced with the actual values before execution.
+# Items from the schema_translate_map, will automatically be be added to
+# the sql_parameters, but can be overruled here.
+sql_parameters:
+  #placeholder: 'value'

@@ -2,40 +2,40 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 import pandas as pd
-from ..util.date_functions import get_datetime
-from ..core.code_mapper import CodeMapping
+from delphyne.model.mapping.code_mapper import CodeMapping
+
+from ..util import get_datetime, add_dot_to_opcsx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id
+
 
 if TYPE_CHECKING:
     from src.main.python.wrapper import Wrapper
 
 
 def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ProcedureOccurrence]:
-    hesin_oper = wrapper.get_dataframe('hesin_oper.csv')
-    hesin = wrapper.get_dataframe('hesin.csv')
+    # Load hesin and hesin_oper tables, with selected columns to avoid memory failures
+    hesin_oper_source = wrapper.source_data.get_source_file('hesin_oper.csv')
+    hesin_oper = hesin_oper_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'ins_index',
+                                                                              'oper4', 'oper3',
+                                                                              'opdate', 'level'])
+    hesin_source = wrapper.source_data.get_source_file('hesin.csv')
+    hesin = hesin_source.get_csv_as_df(apply_dtypes=False, usecols=['eid', 'ins_index', 'spell_index',
+                                                                   'dsource'])
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
-    source = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
+    df = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
+    df['oper4_dot'] = df['oper4'].apply(add_dot_to_opcsx_code)
 
-    oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4', remove_dot_from_codes=True)
+    oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4')
     oper3 = wrapper.mapping_tables_lookup('./resources/mapping_tables/opcs3.csv', first_only=False)
 
-    procedure_type_concept = wrapper.mapping_tables_lookup('./resources/mapping_tables/procedure_type_concepts.csv')
-
-    records = []
-
-    for _, row in source.iterrows():
-        procedure_type_concept_id = procedure_type_concept.get(row['level'], 0)
+    for _, row in df.iterrows():
+        person_id = row['eid']
 
         procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")
 
-        person_id = wrapper.lookup_person_id(row['eid'])
-        if not person_id:
-            # Person not found
-            continue
-
         if not pd.isnull(row['oper4']):
             source_value = row['oper4']
-            procedure_targets = oper4.lookup(row['oper4'])
+            procedure_targets = oper4.lookup(row['oper4_dot'])
         elif not pd.isnull(row['oper3']):
             source_value = row['oper3']
             procedure_targets = []
@@ -49,28 +49,19 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
             continue
 
         # Visit
-        visit_occurrence_id = wrapper.lookup_visit_occurrence_id(
-            person_id=person_id,
-            record_source_value=f'HES-{row["spell_index"]}'
-        )
-
-        visit_detail_id = wrapper.lookup_visit_detail_id(
-            person_id=person_id,
-            record_source_value=f'HES-{row["ins_index"]}'
-        )
+        visit_occurrence_id = create_hes_visit_occurrence_id(row['eid'], row['spell_index'])
+        visit_detail_id = create_hes_visit_detail_id(row['eid'], row['ins_index'])
 
         for target in procedure_targets:
-            r = wrapper.cdm.ProcedureOccurrence(
+            yield wrapper.cdm.ProcedureOccurrence(
                 person_id=person_id,
                 procedure_concept_id=target.target_concept_id,
                 procedure_date=procedure_date,
                 procedure_datetime=procedure_date,
-                procedure_type_concept_id=procedure_type_concept_id,
+                procedure_type_concept_id=32817,  # EHR
                 procedure_source_value=source_value,
                 procedure_source_concept_id=target.source_concept_id,
                 visit_occurrence_id=visit_occurrence_id,
                 visit_detail_id=visit_detail_id,
                 data_source=f'HES-{row["dsource"]}'
             )
-            records.append(r)
-    return records

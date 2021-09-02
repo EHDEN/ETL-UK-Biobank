@@ -1,0 +1,15 @@
+# Use of this config file is optional. It will be needed only
+# if the transformations require reading source data from files.
+
+# For each source file, count the number of rows
+count_source_rows: True
+
+# Default options for source data files.
+# These can be overruled for individual files below.
+file_defaults:
+  delimiter: ','
+  encoding: 'utf-8'
+  quotechar: '"'
+  binary: False
+
+

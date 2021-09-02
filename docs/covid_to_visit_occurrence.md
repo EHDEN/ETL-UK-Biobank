@@ -1,19 +1,28 @@
+---
+layout: default
+title: covid to visit_occurrence
+parent: covid19 registry
+nav_order: 2
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from covid
 
 ![](md_files/image9.png)
 
+Take all rows with unique eid and specdate. If the laboratory field is different, the first is taken at random.
+
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| visit_occurrence_id |  |  | Auto-increment |
+| visit_occurrence_id | eid<br>specdate | Concatenate '2', eid and specdate in YYYYMMDD format|  |
 | person_id | eid |  |  |
 | visit_concept_id |  |  | 32693 - Health examination |
 | visit_start_date | specdate |  |  |
 | visit_start_datetime | specdate |  |  |
 | visit_end_date | specdate |  |  |
 | visit_end_datetime | specdate |  |  |
-| visit_type_concept_id |  |  | 44818518 - Visit derived from EHR record |
+| visit_type_concept_id |  |  | 32856 - Lab |
 | provider_id |  |  |  |
 | care_site_id | laboratory |  |  |
 | visit_source_value |  |  |  |

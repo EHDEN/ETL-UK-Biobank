@@ -1,3 +1,10 @@
+---
+layout: default
+title: hes, gp & covid appendix
+parent: appendix
+nav_order: 2
+---
+
 # Appendix: source tables
 
 ### Table: stem_table

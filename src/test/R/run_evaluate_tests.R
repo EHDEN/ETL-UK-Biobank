@@ -21,11 +21,13 @@ source('TestFramework_ukbb.R')
 
 # Run and output test queries ---------------------------------------------
 connectionConfig <- config$connectionDetails
+pathToDriver <- config$pathToDriver
 connectionDetails <- createConnectionDetails(dbms = connectionConfig$dbms,
                                              user = connectionConfig$user,
                                              password = connectionConfig$password,
                                              server = connectionConfig$server,
-                                             port = connectionConfig$port)
+                                             port = connectionConfig$port,
+                                             pathToDriver = pathToDriver)
 connection <- connect(connectionDetails)
 
 testSql <- readLines(config$testQueryFileName)

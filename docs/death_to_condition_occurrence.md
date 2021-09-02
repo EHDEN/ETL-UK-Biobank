@@ -1,3 +1,10 @@
+---
+layout: default
+title: death to condition_occurrence
+parent: death registry
+nav_order: 2
+---
+
 ## Table name: condition_occurrence
 
 ### Reading from death and death_cause

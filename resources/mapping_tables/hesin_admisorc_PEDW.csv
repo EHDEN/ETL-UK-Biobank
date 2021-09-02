@@ -1,0 +1,23 @@
+sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,ADD_INFO:coding_origin,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
+66,Local Authority foster care but not in Part 3 residential accommodation.,,,,-1,,PEDW,0.24317005276679993,UNCHECKED,,0,581476,EVENT,,,1605631135805
+79,Babies born in or on way to hospital.,,,,-1,,PEDW,0.3760627806186676,UNCHECKED,,0,8650,EVENT,,,1605631135806
+85,Non-NHS (other than Local Authority) run residential care home.,,,,-1,,PEDW,0.17777961492538452,APPROVED,sofia,1605631232105,38004307,EVENT,,,1605631135808
+86,Non-NHS (other than Local Authority) run nursing home.,,,,-1,,PEDW,0.23593764007091522,APPROVED,sofia,1605631251849,38004307,EVENT,,,1605631135809
+87,Non-NHS run hospital.,,,,-1,,PEDW,0.3606351315975189,APPROVED,sofia,1605631279090,38004515,EVENT,,,1605631135810
+188,Non-NHS (other than Local Authority) run Hospice,,,,-1,,PEDW,0.243398055434227,APPROVED,sofia,1605631304976,8546,EVENT,,,1605631135810
+89,"Other non NHS Hospital,Nursing Home or Residential institution",,,,-1,,PEDW,0.3268522322177887,UNCHECKED,,0,581476,EVENT,,,1605631135812
+19,"Usual place of residence unless listed below for example,a private dwelling whether owner occupied by local authority,housing association or other landlord. This includes wardened accommodation but",,,,-1,,PEDW,0.13517118990421295,UNCHECKED,,0,581476,EVENT,,,1605631135813
+55,Hospital site within the same Trust - ward for general patients or young physically disabled or A & E department,,,,-1,,PEDW,0.24464400112628937,APPROVED,sofia,1605631371271,38004515,EVENT,,,1605631135813
+56,Hospital site within the same Trust - ward for maternity patients or neonates.,,,,-1,,PEDW,0.2831786274909973,APPROVED,sofia,1605631410064,38004515,EVENT,,,1605631135815
+29,"Temporary place of residence,when usually resident elsewhere (includes hotel,residential educational institution).",,,,-1,,PEDW,0.19597378373146057,UNCHECKED,,0,581476,EVENT,,,1605631135815
+57,Hospital site within the same Trust - ward for patients who are mentally ill or have learning disabilities.,,,,-1,,PEDW,0.24667643010616302,UNCHECKED,,0,38004515,EVENT,,,1605631135816
+39,"Penal establishment,court or police station.",,,,-1,,PEDW,0.10199641436338425,UNCHECKED,,0,38003619,EVENT,,,1605631135816
+65,Local Authority Part 3 residential accommodation i.e. where care is provided.,,,,-1,,PEDW,0.1838809847831726,UNCHECKED,,0,581476,EVENT,,,1605631135817
+51,Other NHS Trust - ward for general patients or young physically disabled or A & E department,,,,-1,,PEDW,0.2542262077331543,UNCHECKED,,0,38004515,EVENT,,,1605631135817
+52,Other NHS Trust - ward for maternity patients or neonates.,,,,-1,,PEDW,0.161223366856575,APPROVED,sofia,1605631484250,8650,EVENT,,,1605631135817
+49,Special Health Authority establishment under the High Security Psychiatric Services Commissioning Board,,,,-1,,PEDW,0.2976907789707184,UNCHECKED,,0,38004284,EVENT,,,1605631135817
+99,Not Known [Until 20 February 2000],,,,-1,,PEDW,0.10061642527580261,UNCHECKED,,0,38004693,EVENT,,,1605631135818
+53,Other NHS Trust - ward for patients who are mentally ill or have learning disabilities.,,,,-1,,PEDW,0.24559363722801208,APPROVED,sofia,1605631511774,38004284,EVENT,,,1605631135818
+69,Under local authority care: Residential or foster care [Until 31 March 2001],,,,-1,,PEDW,0.21792973577976227,APPROVED,sofia,1605631523032,38004205,EVENT,,,1605631135818
+54,"NHS run nursing home,residential care home or group home.",,,,-1,,PEDW,0.39848557114601135,UNCHECKED,,0,581476,EVENT,,,1605631135818
+98,Not applicable [Until 20 February 2000],,,,-1,,PEDW,0.1577586531639099,UNCHECKED,,0,38004693,EVENT,,,1605631135819

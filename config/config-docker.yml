@@ -1,0 +1,23 @@
+# Database connection
+database:
+  host: 'postgresql'
+  port: 5432
+  database_name: 'ohdsi'
+  username: 'admin'
+  password: 'secret'
+
+source_data_folder: './resources/synthetic_data/small_set'  # To be replaced by actual path to data
+
+# The schema names of the OMOP CDM (target schema) and the vocabulary
+# tables. Additional key-value pairs can be added here if you have
+# custom ORM tables, for which you would like to have dynamic schema
+# names.
+schema_translate_map:
+  cdm_schema: 'omopcdm'
+  vocabulary_schema: 'vocab'
+
+run_options:
+  skip_vocabulary_loading: False
+  skip_custom_vocabulary_loading: False
+  skip_source_to_concept_map_loading: False
+  write_reports: True

@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to speciment
+parent: stem table
+nav_order: 7
+---
+
 ## Table name: specimen
 
 ### Reading from stem_table
@@ -8,7 +15,7 @@
 | --- | --- | --- | --- |
 | specimen_id | id |  |  |
 | person_id | person_id |  |  |
-| specimen_concept_id | concept_id |  |  |
+| specimen_concept_id | concept_id |  0 if `concept_id` is empty |  |
 | specimen_type_concept_id | type_concept_id |  |  |
 | specimen_date | start_date |  |  |
 | specimen_datetime | start_datetime |  |  |

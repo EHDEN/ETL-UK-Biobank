@@ -1,19 +1,30 @@
+---
+layout: default
+title: gp_clinical & gp_prescriptions to visit_occurrence
+parent: general practitioner
+nav_order: 2
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from gp_clinical and gp_prescriptions
 
-We assume that a person can have only one gp visit per day. To get all the visits, we take the union of gp_clinical and gp_prescriptions. Then we map each unique combination of eid and event_dt/issue_date as visit.
+We assume that a person can have only one gp visit per day. 
+To get all the visits, we take the union of gp_clinical and gp_prescriptions. Then we map each unique combination of eid and event_dt/issue_date as visit.
+If the `event_dt` or `issue_date` is not given, no visit is created.
+
+If date empty or in 2037, skip the record.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
-| visit_occurrence_id |  |  | Auto-increment |
+| visit_occurrence_id | eid<br>gp_clinical.event_dt<br>gp_prescriptions.issue_date | Concatenate '4', eid and the date in YYYYMMDD format |  |
 | person_id | eid |  |  |
 | visit_concept_id |  |  | 38004453 - Family Practice |
-| visit_start_date | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |
+| visit_start_date | gp_clinical.event_dt<br>gp_prescriptions.issue_date | If 1902-02-02 or 1903-03-3, set date to yob-07-01 (field 34 in baseline)  |  |
 | visit_start_datetime | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |
-| visit_end_date | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |
+| visit_end_date | gp_clinical.event_dt<br>gp_prescriptions.issue_date | If 1902-02-02 or 1903-03-3, set date to yob-07-01 (field 34 in baseline)  |  |
 | visit_end_datetime | gp_clinical.event_dt<br>gp_prescriptions.issue_date |  |  |
-| visit_type_concept_id |  |  | 44818518 - Visit derived from EHR record |
+| visit_type_concept_id |  |  | 32827 - 'EHR encounter record' |
 | provider_id |  |  |  |
 | care_site_id |  |  |  |
 | visit_source_value |  |  |  |

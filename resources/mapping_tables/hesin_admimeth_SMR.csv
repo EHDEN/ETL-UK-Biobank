@@ -1,0 +1,32 @@
+sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,ADD_INFO:coding_origin,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
+5,Emergency - Road Traffic Accident,,,,-1,,SMR,0.3805104196071625,APPROVED,sofia,1605630998905,9203,EVENT,,,1605630916874
+10,"Routine Admission,no additional detail added",,,,-1,,SMR,0.09732140600681305,APPROVED,sofia,1605631080216,9201,EVENT,,,1605630916874
+36,"Patient Non-Injury (e.g. stroke,MI,Ruptured Appendix)",,,,-1,,SMR,0.1324312537908554,APPROVED,sofia,1605631074505,9203,EVENT,,,1605630916875
+22,"Hospital delay (for administrative or clinical reasons e.g. arranging appropriate facilities,for test to be carried out,specialist equipment,etc.)",,,,-1,,SMR,0.22502556443214417,APPROVED,sofia,1605631026464,9201,EVENT,,,1605630916877
+38,Other Emergency Admission (including emergency transfers),,,,-1,,SMR,0.2719743251800537,APPROVED,sofia,1605631061105,9203,EVENT,,,1605630916879
+6,Emergency - Home Accident (includes Accidental Poisoning in the home),,,,-1,,SMR,0.34395933151245117,APPROVED,sofia,1605630996873,9203,EVENT,,,1605630916880
+11,"Routine elective (i.e. from waiting list as planned,excludes planned transfers)",,,,-1,,SMR,0.08795297890901566,APPROVED,sofia,1605631083414,9201,EVENT,,,1605630916880
+30,"Emergency Admission,no additional detail added",,,,-1,,SMR,0.2718183696269989,APPROVED,sofia,1605630994431,9203,EVENT,,,1605630916881
+3,Transfer,,,,-1,,SMR,0.1513516753911972,APPROVED,sofia,1605631096102,9201,EVENT,,,1605630916883
+1,Waiting List/Diary/Booked,,,,-1,,SMR,0.12472901493310928,APPROVED,sofia,1605631104866,9201,EVENT,,,1605630916884
+39,"Emergency Admission,type not known",,,,-1,,SMR,0.2548017203807831,APPROVED,sofia,1605630995306,9203,EVENT,,,1605630916884
+12,"Patient admitted on same day or following day as Attendance at Outpatients,not for medical reasons,but because suitable resources are available",,,,-1,,SMR,0.24086056649684906,APPROVED,sofia,1605631065235,9201,EVENT,,,1605630916887
+32,Patient Injury - Road Traffic Accident (RTA),,,,-1,,SMR,0.14913243055343628,APPROVED,sofia,1605631071315,9203,EVENT,,,1605630916888
+4,Emergency - Deliberate Self Injury or Poisoning,,,,-1,,SMR,0.2949334979057312,APPROVED,sofia,1605630996159,9203,EVENT,,,1605630916888
+2,Repeat Admissions,,,,-1,,SMR,0.14194129407405853,APPROVED,sofia,1605631077748,9201,EVENT,,,1605630916889
+34,Patient Injury - Accident at Work,,,,-1,,SMR,0.19640271365642548,APPROVED,sofia,1605631069066,9203,EVENT,,,1605630916889
+7,Emergency - Other Injury (includes Accidental Poisoning other than in the home),,,,-1,,SMR,0.2732177972793579,APPROVED,sofia,1605630998238,9203,EVENT,,,1605630916891
+33,Patient Injury - Home Accident (including Accidental Poisoning in the home),,,,-1,,SMR,0.19442440569400787,APPROVED,sofia,1605631069766,9203,EVENT,,,1605630916892
+20,"Urgent Admission,no additional detail added",,,,-1,,SMR,0.1551285833120346,APPROVED,sofia,1605631103372,9203,EVENT,,,1605630916893
+0,Deferred Admission,,,,-1,,SMR,0.09648030996322632,APPROVED,sofia,1605630978628,9201,EVENT,,,1605630916893
+35,Patient Injury - Other Injury (including Accidental Poisoning other than in the home) - not elsewhere classified,,,,-1,,SMR,0.15156231820583344,APPROVED,sofia,1605631070304,9203,EVENT,,,1605630916895
+8,Emergency - Other (excludes Accidental Poisoning),,,,-1,,SMR,0.2773765027523041,APPROVED,sofia,1605630997547,9203,EVENT,,,1605630916895
+31,Patient Injury - Self Inflicted (Injury or Poisoning),,,,-1,,SMR,0.1948394477367401,APPROVED,sofia,1605631071885,9203,EVENT,,,1605630916896
+21,"Patient delay (for domestic,legal or other practical reasons)",,,,-1,,SMR,0.14400900900363922,APPROVED,sofia,1605631067661,9201,EVENT,,,1605630916896
+42,Maternity Admission (Record Type 02 only),,,,-1,,SMR,0.10241671651601791,APPROVED,sofia,1605631032842,8650,EVENT,,,1605630916898
+18,Planned transfers,,,,-1,,SMR,0.15981429815292358,APPROVED,sofia,1605631076188,9201,EVENT,,,1605630916900
+43,Neonatal Admission (Record Type 11 only),,,,-1,,SMR,0.08313561230897903,APPROVED,sofia,1605631035276,8650,EVENT,,,1605630916902
+19,"Routine Admission,type not known",,,,-1,,SMR,0.05819658562541008,APPROVED,sofia,1605631081213,9201,EVENT,,,1605630916906
+40,"Other admission types,no additional detail added",,,,-1,,SMR,0.10776391625404358,UNCHECKED,,0,9201,EVENT,,,1605630916907
+48,Other,,,,-1,,SMR,0.374957799911499,UNCHECKED,,0,9201,EVENT,,,1605630916908
+41,Home Birth (Record Type 02 only),,,,-1,,SMR,0.23518596589565277,APPROVED,sofia,1605631024094,581476,EVENT,,,1605630916910

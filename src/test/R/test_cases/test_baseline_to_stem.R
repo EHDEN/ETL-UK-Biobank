@@ -14,55 +14,57 @@ expect_no_observation(person_id = 902, observation_concept_id = 4052351)
 declareTest(903, 'Baseline - White blood cell count (alternate date field)')
 add_baseline(eid = '903', `30000-0.0`='5.55', `30002-0.0`='2020-11-01')
 expect_measurement(person_id = 903, measurement_date = '2020-11-01', measurement_concept_id = 3010813,
-                   unit_concept_id = 4175206, value_as_number = 5.55)
+                   unit_concept_id = 44777588, value_as_number = 5.55)
 
 declareTest(904, 'Baseline - Field 20002, Diabetes Mellitus')
 add_baseline(eid = '904', `53-0.0`='2020-11-02', `20002-0.0`='1220', `30002-0.0`='2020-11-01')
-expect_observation(person_id = 904, observation_date = '2020-11-02', observation_concept_id = 4188893, value_as_concept_id = 201820)
+expect_observation(person_id = 904, observation_date = '2020-11-02', observation_concept_id = 4214956, value_as_concept_id = 201820)
 
 declareTest(905, 'Baseline - Chestpain absent, with source value')
 add_baseline(eid = '905', `53-0.0`='2010-10-10', `2335-0.0`='0')
-expect_observation(person_id = 905, observation_date = '2010-10-10', observation_concept_id = 4211787,
-                   value_as_concept_id = 4133044, observation_source_value = '2335|0')
+expect_observation(person_id = 905, observation_date = '2010-10-10', observation_concept_id = 40481925,
+                   value_as_concept_id = 4133044, observation_source_value = '2335|0',
+                   observation_source_concept_id = 35810289)
 
 declareTest(906, 'Baseline - Chestpain present, repeat visit')
 add_baseline(eid = '906', `53-1.0`='2013-12-11', `2335-1.0`='1')
-expect_observation(person_id = 906, observation_date = '2013-12-11', observation_concept_id = 4188893,
+expect_observation(person_id = 906, observation_date = '2013-12-11', observation_concept_id = 4214956,
                    value_as_concept_id = 4133044)
 
 declareTest(907, 'Baseline - Chestpain present, imaging visit')
 add_baseline(eid = '907', `53-2.0`='2014-12-11', `2335-2.0`='1')
-expect_observation(person_id = 907, observation_date = '2014-12-11', observation_concept_id = 4188893)
+expect_observation(person_id = 907, observation_date = '2014-12-11', observation_concept_id = 4214956)
 
 declareTest(908, 'Baseline - Chestpain present, imaging repeat visit')
 add_baseline(eid = '908', `53-3.0`='2015-12-11', `2335-3.0`='1')
-expect_observation(person_id = 908, observation_date = '2015-12-11', observation_concept_id = 4188893)
+expect_observation(person_id = 908, observation_date = '2015-12-11', observation_concept_id = 4214956)
 
 declareTest(909, 'Baseline - Chestpain ignored')
 add_baseline(eid = '909', `53-0.0`='2013-09-05', `2335-0.0`='-1')
-expect_no_observation(person_id = 909, observation_date = '2013-9-5', observation_concept_id = 4188893)
+expect_no_observation(person_id = 909, observation_date = '2013-9-5', observation_concept_id = 4214956)
 
 declareTest(910, 'Baseline - Do not map year of birth or gender')
 add_baseline(eid = '910', `31-0.0`='0', `34-0.0`='1970')
-expect_no_observation(person_id = 909, observation_source_value = '31|0')
-expect_no_observation(person_id = 909, observation_source_value = '34')
+expect_no_observation(person_id = 910, observation_source_value = '31|0')
+expect_no_observation(person_id = 910, observation_source_value = '34')
 
 declareTest(911, 'Baseline - One to many opcs')
 add_baseline(eid = '911', `41256-0.0`='027')
-expect_observation(person_id = 911, observation_concept_id = 40770405, value_as_concept_id = 4302449)
-expect_observation(person_id = 911, observation_concept_id = 40770405, value_as_concept_id = 4222434)
+expect_observation(person_id = 911, observation_concept_id = 4215685, value_as_concept_id = 4302449)
+expect_observation(person_id = 911, observation_concept_id = 4215685, value_as_concept_id = 4222434)
 
 declareTest(912, 'Baseline - Treatment')
 add_baseline(eid = '912', `20003-0.0`='2038459704')
-expect_observation(person_id = 912, observation_concept_id = 3021806, value_as_concept_id = 740275)
+expect_observation(person_id = 912, observation_concept_id = 4059354, value_as_concept_id = 740275)
 
 declareTest(913, 'Baseline - Treatment with instance and array index')
 add_baseline(eid = '913', `20003-1.15`='2038459704')
-expect_observation(person_id = 913, observation_concept_id = 3021806, value_as_concept_id = 740275)
+expect_observation(person_id = 913, observation_concept_id = 4059354, value_as_concept_id = 740275)
 
 declareTest(914, 'Baseline - Age at first live birth')
 add_baseline(eid = '914', `2754-0.0`='35')
-expect_observation(person_id = 914, value_as_number = 35, observation_source_value = '2754')
+expect_observation(person_id = 914, value_as_number = 35, observation_source_value = '2754',
+                   observation_source_concept_id = 35810315)
 
 declareTest(915, 'Baseline - Age at first live birth not given')
 add_baseline(eid = '915', `2754-0.0`='-3')
@@ -96,8 +98,81 @@ expect_observation(person_id = 920, observation_date = '2010-10-13',
 
 declareTest(921, 'Baseline - opcs3 field 41256 single target')
 add_baseline(eid = '921', `41256-0.0`='018')
-expect_observation(person_id = 921, observation_concept_id = 40770405, value_as_concept_id = 2110401)
+expect_observation(person_id = 921, observation_concept_id = 4215685, value_as_concept_id = 2110401)
 
 declareTest(922, 'Baseline - opcs3 field 41273 single target')
 add_baseline(eid = '922', `41273-0.0`='7002')
-expect_observation(person_id = 922, observation_concept_id = 40770405, value_as_concept_id = 4130184)
+expect_observation(person_id = 922, observation_concept_id = 4215685, value_as_concept_id = 4130184)
+
+declareTest(923, 'Baseline - type registry')
+add_baseline(eid = '923', `47-0.0`='7002')
+expect_observation(person_id = 923, observation_source_value = '47', observation_type_concept_id = 32879,
+                   observation_source_concept_id = 35810113)
+
+declareTest(924, 'Baseline - type patient filled survey')
+add_baseline(eid = '924', `1558-0.0`='1')
+expect_observation(person_id = 924, observation_source_value = '1558|1', observation_type_concept_id = 32862,
+                   observation_source_concept_id = 35810226)
+
+declareTest(925, 'Baseline - type professional filled survey')
+add_baseline(eid = '925', `20002-0.0`='1220')
+expect_observation(person_id = 925, observation_source_value = '20002|1220', observation_type_concept_id = 32851,
+                   observation_source_concept_id = 35810059)
+
+declareTest(926, 'Baseline - date field related to concept field, instance 0')
+add_baseline(eid = '926', `30140-0.0` = '3.8', `30142-0.0` = '2018-09-11')
+expect_measurement(person_id = 926, measurement_date = '2018-09-11')
+
+declareTest(927, 'Baseline - date field related to concept field, instance 2')
+add_baseline(eid = '927', `30080-2.0` = '235.7', `30082-2.0` = '1999-02-08')
+expect_measurement(person_id = 927, measurement_date = '1999-02-08')
+
+declareTest(928, 'Baseline - realetd date field is empty backup (53) taken')
+add_baseline(eid = 928, `30080-3.0` = '228',`30082-3.0` = '', `53-3.0` = '2019-03-16')
+expect_measurement(person_id = 928, measurement_date = '2019-03-16')
+
+declareTest(929, 'Baseline - no related date field use field 53')
+add_baseline(eid = '929', `4080-1.0` = '137', `53-1.0` = '2017-09-13')
+expect_measurement(person_id = 929, measurement_date = '2017-09-13')
+
+declareTest(930, 'Baseline - empty date field use default date')
+add_baseline(eid = '930', `4079-3.0` = '81', `53-3.0` = '')
+expect_measurement(person_id = 930, measurement_date = '1970-01-01')
+
+declareTest(931, 'Baseline - datetime format')
+add_baseline(eid = '931', `30070-0.0` = '123', `30072-0.0` = '2010-07-08T07:39:23')
+expect_measurement(person_id = 931, measurement_date = '2010-07-08')
+
+declareTest(932, 'Baseline - truncate long value')
+# additional quotes around string value needed to escape comma's
+add_baseline(eid = '932', `53-0.0` = '2020-02-01', `40010-0.0` = '"Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) Metastatic Renal Carcinoma (Spinal Metastasis), Four Level Vertebrae Resection, Dural Resection with Dural Patch Bilateral Thoracotomies - all for Tumour Resection."')
+expect_observation(person_id = 932, observation_date = '2020-02-01', value_as_string = 'Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) M')
+
+declareTest(933, 'Baseline - age at cancer diagnosis')
+add_baseline(eid = '933', `40005-1.0` = '2011-10-18', `40008-1.0` = '43')
+expect_measurement(person_id = 933, measurement_date = '2011-10-18',
+                   measurement_concept_id = 3007016, value_as_number = 43, unit_concept_id = 9448)
+
+declareTest(934, 'Baseline - behaviour of cancer tumour')
+add_baseline(eid = '934', `40005-2.0` = '2018-02-13', `40012-2.0` = '6')
+expect_observation(person_id = 934, observation_date = '2018-02-13',
+                   observation_concept_id = 4077872, value_as_concept_id = 36311298)
+
+declareTest(935, 'Baseline - cancer record format')
+add_baseline(eid = '935', `40005-4.0` = '2020-08-30', `40019-4.0` = '13')
+expect_observation(person_id = 935, observation_date = '2020-08-30',
+                   observation_concept_id = 4299598)
+
+declareTest(936, 'Baseline - cancer record origin')
+add_baseline(eid = '936', `40005-11.0` = '2017-04-07', `40021-11.0` = 'NCIN')
+expect_observation(person_id = 936, observation_date = '2017-04-07',
+                   observation_concept_id = 4299598)
+
+declareTest(937, 'Baseline - device id')
+add_baseline(eid = '937', `30003-0.0` = 'ABC123')
+expect_device_exposure(person_id = 937, device_concept_id = 4272314, unique_device_id = 'ABC123')
+
+declareTest(938, 'Baseline - Age Glaucoma: unit and concept mapping')
+add_baseline(eid = '938', `4689-0.0` = 67)
+expect_observation(person_id = 938, observation_concept_id = 4214956,
+                   value_as_number = 67, unit_concept_id = 9448, value_as_concept_id = 437541)

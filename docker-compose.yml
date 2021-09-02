@@ -1,0 +1,40 @@
+version: '2'
+
+services:
+  postgresql:
+    build:
+      context: ./postgres
+    #mem_reservation: 4gb
+    ports:
+      - 6000:5432
+    networks:
+      - app
+    volumes:
+      - postgresql_data:/bitnami/postgresql
+      - ./postgres/postgresql.conf:/opt/bitnami/postgresql/conf/conf.d/postgresql.conf
+    environment:
+      - POSTGRESQL_POSTGRES_PASSWORD=password
+      - POSTGRESQL_USERNAME=admin
+      - POSTGRESQL_PASSWORD=secret
+      - POSTGRESQL_DATABASE=ohdsi
+      - BITNAMI_DEBUG=true
+
+  etl:
+    command: python main.py
+    build:
+      context: .
+    networks:
+      - app
+    restart: on-failure
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      - ETL_CONFIG=/app/config/config-docker.yml
+
+volumes:
+  postgresql_data:
+    driver: local
+
+networks:
+  app:
+    driver: bridge

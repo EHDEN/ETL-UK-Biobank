@@ -1,0 +1,6 @@
+config.yml
+errorReportSql.txt
+output_dqd/
+output_achilles/
+output/
+.Rhistory

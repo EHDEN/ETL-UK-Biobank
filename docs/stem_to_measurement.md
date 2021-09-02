@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to measurement
+parent: stem table
+nav_order: 5
+---
+
 ## Table name: measurement
 
 ### Reading from stem_table
@@ -8,7 +15,7 @@
 | --- | --- | --- | --- |
 | measurement_id | id |  |  |
 | person_id | person_id |  |  |
-| measurement_concept_id | concept_id |  |  |
+| measurement_concept_id | concept_id |  0 if `concept_id` is empty |  |
 | measurement_date | start_date |  |  |
 | measurement_datetime | start_datetime |  |  |
 | measurement_time |  |  |  |

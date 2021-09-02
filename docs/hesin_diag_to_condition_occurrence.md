@@ -1,3 +1,10 @@
+---
+layout: default
+title: hesin_diag to condition_occurrence
+parent: hospital episode statistic
+nav_order: 3
+---
+
 ## Table name: condition_occurrence
 
 ### Reading from hesin_diag
@@ -15,13 +22,13 @@ Join hesin using ins_index
 | condition_start_datetime | admidate | Join hesin on eid and ins_index to get admidate. | hesin.admidate<br> |
 | condition_end_date |  |  |  |
 | condition_end_datetime |  |  |  |
-| condition_type_concept_id | level | 1 - 44786627 primary condition  2 - 44786629 secondary condition  3 - 44786629 |  |
+| condition_type_concept_id | | 32817 - 'EHR' | |
 | stop_reason |  |  |  |
 | provider_id |  |  |  |
 | visit_occurrence_id | ins_index | Lookup visit_occurrence_id by spell_index |  |
 | visit_detail_id |  | Lookup by eid and ins_index |  |
 | condition_source_value | diag_icd9<br>diag_icd10 |  |  |
 | condition_source_concept_id | diag_icd9<br>diag_icd10 |  |  |
-| condition_status_source_value |  |  |  |
-| condition_status_concept_id |  |  |  |
+| condition_status_concept_id |level | 1 - 32902 primary diagnosis, 2 or 3 - 32908 secondary diagnosis|  |
+| condition_status_source_value | level |  |  |
 | data_source |  | 'HES-<dsource>' |  |

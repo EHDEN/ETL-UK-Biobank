@@ -36,6 +36,7 @@ add_baseline(eid = '305')
 add_gp_registrations(eid = '305')
 expect_observation_period(person_id = 305, period_type_concept_id = 32817)
 
-declareTest(306, 'Observation Period - No person')
-add_gp_registrations(eid = '306')
-expect_no_observation_period(person_id = 306)
+# 2020-01 We do not filter for non-existing persons. We assume every eid occures in the baseline table.
+# declareTest(306, 'Observation Period - No person')
+# add_gp_registrations(eid = '306')
+# expect_no_observation_period(person_id = 306)

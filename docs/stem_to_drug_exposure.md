@@ -1,3 +1,10 @@
+---
+layout: default
+title: stem_table to drug_exposure
+parent: stem table
+nav_order: 2
+---
+
 ## Table name: drug_exposure
 
 ### Reading from stem_table
@@ -9,12 +16,12 @@
 | drug_exposure_id | id |  |  |
 | person_id | person_id |  |  |
 | drug_exposure_start_date | start_date |  |  |
-| drug_concept_id | concept_id |  |  |
+| drug_concept_id | concept_id | 0 if `concept_id` is empty |  |
 | drug_exposure_start_datetime | start_datetime |  |  |
-| drug_exposure_end_date | end_date |  |  |
-| drug_exposure_end_datetime | end_datetime |  |  |
+| drug_exposure_end_date | end_date<br>start_date | If `end_date` empty, use `start_date` |  |
+| drug_exposure_end_datetime | end_datetime<br>start_datetime | If `end_datetime` empty, use `start_datetime` |  |
 | verbatim_end_date |  |  |  |
-| drug_type_concept_id | type_concept_id |  | 38000177 - Prescription written |
+| drug_type_concept_id | type_concept_id |  | 32838 - ‘EHR prescription’; for covid19_gp records|
 | stop_reason | stop_reason |  |  |
 | refills | refills |  |  |
 | quantity | quantity |  |  |

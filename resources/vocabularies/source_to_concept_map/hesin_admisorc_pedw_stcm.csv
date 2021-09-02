@@ -1,0 +1,10 @@
+source_code,source_concept_id,source_vocabulary_id,source_code_description,target_concept_id,target_vocabulary_id,valid_start_date,valid_end_date,invalid_reason
+85,0,HESIN_ADMISORC_PEDW,Non-NHS (other than Local Authority) run residential care home.,38004307,NUCC,1970-01-01,2099-12-31,
+86,0,HESIN_ADMISORC_PEDW,Non-NHS (other than Local Authority) run nursing home.,38004307,NUCC,1970-01-01,2099-12-31,
+87,0,HESIN_ADMISORC_PEDW,Non-NHS run hospital.,38004515,Medicare Specialty,1970-01-01,2099-12-31,
+188,0,HESIN_ADMISORC_PEDW,Non-NHS (other than Local Authority) run Hospice,8546,CMS Place of Service,1970-01-01,2099-12-31,
+55,0,HESIN_ADMISORC_PEDW,Hospital site within the same Trust - ward for general patients or young physically disabled or A & E department,38004515,Medicare Specialty,1970-01-01,2099-12-31,
+56,0,HESIN_ADMISORC_PEDW,Hospital site within the same Trust - ward for maternity patients or neonates.,38004515,Medicare Specialty,1970-01-01,2099-12-31,
+52,0,HESIN_ADMISORC_PEDW,Other NHS Trust - ward for maternity patients or neonates.,8650,CMS Place of Service,1970-01-01,2099-12-31,
+53,0,HESIN_ADMISORC_PEDW,Other NHS Trust - ward for patients who are mentally ill or have learning disabilities.,38004284,NUCC,1970-01-01,2099-12-31,
+69,0,HESIN_ADMISORC_PEDW,Under local authority care: Residential or foster care [Until 31 March 2001],38004205,NUCC,1970-01-01,2099-12-31,

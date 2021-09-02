@@ -1,5 +1,5 @@
 
-INSERT INTO @target_schema.drug_exposure
+INSERT INTO @cdm_schema.drug_exposure
 (
 	person_id,
 	drug_concept_id,
@@ -34,9 +34,9 @@ SELECT
 
 	stem_table.start_datetime	AS	drug_exposure_start_datetime,
 
-	stem_table.end_date	AS	drug_exposure_end_date,
+    coalesce(stem_table.end_date, stem_table.start_date)	AS	drug_exposure_end_date,
 
-	stem_table.end_datetime	AS	drug_exposure_end_datetime,
+    coalesce(stem_table.end_datetime, stem_table.start_datetime)	AS	drug_exposure_end_datetime,
 
 	stem_table.verbatim_end_date	AS	verbatim_end_date,
 
@@ -72,7 +72,7 @@ SELECT
 
     stem_table.data_source AS data_source
 
-FROM @target_schema.stem_table
-    LEFT JOIN vocab.concept USING (concept_id)
+FROM @cdm_schema.stem_table
+    LEFT JOIN @vocabulary_schema.concept USING (concept_id)
 WHERE (stem_table.domain_id = 'Drug') OR (stem_table.domain_id IS NULL AND concept.domain_id = 'Drug')
 ;

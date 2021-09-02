@@ -1,5 +1,5 @@
 
-INSERT INTO @target_schema.procedure_occurrence
+INSERT INTO @cdm_schema.procedure_occurrence
 (
 	person_id,
 	procedure_concept_id,
@@ -45,7 +45,7 @@ SELECT
 
     stem_table.data_source AS data_source
 
-FROM @target_schema.stem_table
-    LEFT JOIN vocab.concept USING (concept_id)
+FROM @cdm_schema.stem_table
+    LEFT JOIN @vocabulary_schema.concept USING (concept_id)
 WHERE (stem_table.domain_id = 'Procedure') OR (stem_table.domain_id IS NULL AND concept.domain_id = 'Procedure')
 ;

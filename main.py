@@ -1,55 +1,43 @@
-# Copyright 2020 The Hyve
-#
-# Licensed under the GNU General Public License, version 3,
-# or (at your option) any later version (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# https://www.gnu.org/licenses/
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# !/usr/bin/env python3
+#!/usr/bin/env python3
 
 import logging
-import sys
-import click
 from pathlib import Path
-from src.main.python.core.yaml import read_yaml_file
-from src.main.python.core import setup_logging
-from src.main.python.wrapper import Wrapper
-from src.main.python.core import Database
 
-__version__ = '0.1.0'
+import click
+import sys
+from delphyne.config.models import MainConfig
+from delphyne.log.setup_logging import setup_logging
+from delphyne.util.io import read_yaml_file
+
+from src.main.python.wrapper import Wrapper
+
+__version__ = '1.4.1'
 
 logger = logging.getLogger(__name__)
+
 
 @click.command()
 @click.option('--config', '-c', required=True, metavar='<config_file_path>',
               help='Path to the yaml configuration file.',
               type=click.Path(file_okay=True, exists=True, readable=True))
 def main(config):
+    # Setup logging
+    setup_logging()
 
     # Load configuration
-    config = read_yaml_file(Path(config))
-
-    db = Database.from_config(config)
-
-    # Setup logging
-    debug: bool = config['run_options']['debug_mode']
-    setup_logging(debug)
+    config_yaml = read_yaml_file(Path(config))
+    config = MainConfig(**config_yaml)
 
     # Initialize ETL with configuration parameters
-    etl = Wrapper(db, config)
-
+    etl = Wrapper(config,
+                  load_gp_regular=config_yaml['run_options'].get('load_gp_regular', True),
+                  load_gp_covid19=config_yaml['run_options'].get('load_gp_covid19', True))
 
     logger.info('ETL version {}'.format(__version__))
 
     # Run ETL
     etl.run()
 
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(auto_envvar_prefix='ETL'))

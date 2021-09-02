@@ -1,3 +1,10 @@
+---
+layout: default
+title: covid to observation
+parent: covid19 registry
+nav_order: 3
+---
+
 ## Table name: observation
 
 ### Reading from covid
@@ -15,7 +22,7 @@ Covid is mapped as post coordinated concept.
 | observation_date | specdate |  |  |
 | observation_datetime | specdate |  |  |
 | visit_occurrence_id | specdate<br>eid | Lookup in previously created visit occurrence by eid and specdate |  |
-| observation_type_concept_id |  |  | 38000279 - Lab observation concept code result |
+| observation_type_concept_id |  |  | 32856 - Lab |
 | value_as_number |  |  |  |
 | value_as_string |  |  |  |
 | value_as_concept_id | result | the test result: 1 (Positive)-> 45884084, 0 (Negative)-> 45878583 |  |

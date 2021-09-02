@@ -1,0 +1,21 @@
+sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,ADD_INFO:coding_origin,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
+98,Not Applicable,,,,-1,,PEDW,0.31899407505989075,UNCHECKED,,0,9201,EVENT,,,1605630916872
+11,Elective: Waiting list,,,,-1,,PEDW,0.11107988655567169,APPROVED,sofia,1605630983169,9201,EVENT,,,1605630916873
+99,Not Known,,,,-1,,PEDW,0.07066985219717026,UNCHECKED,,0,9201,EVENT,,,1605630916878
+12,Elective: Booked,,,,-1,,PEDW,0.15112018585205078,APPROVED,sofia,1605630981972,9201,EVENT,,,1605630916878
+14,Elective: Activity under the Welsh Assembly Government 2nd Offer Scheme (Originating Provider),,,,-1,,PEDW,0.1475002020597458,APPROVED,sofia,1605630980880,9201,EVENT,,,1605630916885
+15,Elective: Activity under the Welsh Assembly Government 2nd Offer Scheme (Receiving Provider),,,,-1,,PEDW,0.14405933022499084,APPROVED,sofia,1605630981507,9201,EVENT,,,1605630916891
+13,Elective: Planned,,,,-1,,PEDW,0.13185644149780273,APPROVED,sofia,1605630982655,9201,EVENT,,,1605630916895
+82,The birth of a baby in this health care provider,,,,-1,,PEDW,0.3068487048149109,UNCHECKED,,0,9201,EVENT,,,1605630916897
+25,Emergency: Domiciliary visit by Consultant,,,,-1,,PEDW,0.3544340133666992,APPROVED,sofia,1605630986277,9203,EVENT,,,1605630916900
+83,Baby born outside the health care provider (except when born at home as intended. In this case the baby is an emergency admission. e.g. if midwife's decision to admit the baby use Admission Method 28),,,,-1,,PEDW,0.2038128674030304,UNCHECKED,,0,9203,EVENT,,,1605630916901
+27,Emergency: Via NHS Direct Services,,,,-1,,PEDW,0.24522830545902252,APPROVED,sofia,1605630992896,9203,EVENT,,,1605630916906
+23,Emergency: Bed bureau,,,,-1,,PEDW,0.2725696563720703,APPROVED,sofia,1605630984791,9203,EVENT,,,1605630916906
+32,Maternity: Admitted post-partum,,,,-1,,PEDW,0.18167869746685028,APPROVED,sofia,1605631031227,8650,EVENT,,,1605630916908
+29,Emergency: Other,,,,-1,,PEDW,0.3020963966846466,APPROVED,sofia,1605630987948,9203,EVENT,,,1605630916909
+21,Emergency: A & E or dental casualty department of the health care provider,,,,-1,,PEDW,0.2776168882846832,APPROVED,sofia,1605630984132,9203,EVENT,,,1605630916910
+24,Emergency: Consultant clinic of this or another health care provider,,,,-1,,PEDW,0.31213629245758057,APPROVED,sofia,1605630985297,9203,EVENT,,,1605630916910
+28,"Emergency: Other means,including admitted from the A & E department of another provider where they had not been admitted",,,,-1,,PEDW,0.20690162479877472,APPROVED,sofia,1605630989113,9203,EVENT,,,1605630916911
+81,Transfer of any admitted patient from other hospital provider. May be used for an elective or emergency transfer from other hospital provider.,,,,-1,,PEDW,0.3185383677482605,APPROVED,sofia,1605631101974,9201,EVENT,,,1605630916911
+31,Maternity: Admitted ante-partum,,,,-1,,PEDW,0.1284480094909668,APPROVED,sofia,1605631030520,8650,EVENT,,,1605630916911
+22,"Emergency: GP,after a request for immediate admission has been made direct to a hospital provider (i.e. not through a Bed Bureau) by a General Practitioner or deputy",,,,-1,,PEDW,0.17881010472774506,APPROVED,sofia,1605630986767,9203,EVENT,,,1605630916912

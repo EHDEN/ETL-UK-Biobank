@@ -16,7 +16,7 @@ declareTest(802, 'Test blood, missing date')
 add_covid(eid = 802,spectype = 28, specdate = '')
 add_baseline(eid = 802)
 expect_observation(person_id = 802, observation_concept_id = '4001225', observation_datetime = '1970/01/01',
-                   observation_type_concept_id = '38000279')
+                   observation_type_concept_id = '32856')
 
 declareTest(803, 'Test visit_id, wound (surgical)')
 add_covid(eid = 803, spectype = 36, specdate = '19/04/2020', laboratory = 52)

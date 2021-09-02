@@ -1,10 +1,20 @@
+---
+layout: default
+title: hesin_oper to procedure_occurrence
+parent: hospital episode statistic
+nav_order: 4
+---
+
 ## Table name: procedure_occurrence
 
 ### Reading from hesin_oper
 
 ![](md_files/image20.png)
 
-Combine at the start with the hesin data based on the combination of eid and ins_index. 
+Combine at the start with the hesin data based on the combination of eid and ins_index.
+
+The level (primary or secondary procedure) cannot be captured using the new type vocabulary.
+A `procedure_status` should be added to capture this information.
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
@@ -13,7 +23,7 @@ Combine at the start with the hesin data based on the combination of eid and ins
 | procedure_concept_id | oper4<br>oper3 | If oper4 is filled map to standard OMOP concept <br> If oper4 is empty and oper3 is filled map to standard OMOP concept |  |
 | procedure_date | opdate |  |  |
 | procedure_datetime | opdate |  |  |
-| procedure_type_concept_id | level | 1 - 44786630 Primary Procedure  2 - 44786631 Secondary Procedure |  |
+| procedure_type_concept_id | | 32817 - 'EHR' |  |
 | modifier_concept_id |  |  |  |
 | quantity |  |  |  |
 | provider_id |  |  |  |
