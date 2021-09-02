@@ -17,9 +17,9 @@ from src.main.python.field_mapper.FieldConceptMapper import FieldConceptMapper
 UKB_FIELD_ID_URL = "https://biobank.ctsu.ox.ac.uk/crystal/field.cgi?id=%s"
 ATHENA_CONCEPT_ID_URL = "https://athena.ohdsi.org/search-terms/terms/%s"
 
-# mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'ERROR')
-mapper = FieldConceptMapper(None, 'ERROR')
-mapper.load_usagi_file(Path('./resources/baseline_field_mapping/numeric_prio_fields.csv'))
+mapper = FieldConceptMapper(Path('./resources/baseline_field_mapping'), 'ERROR')
+# mapper = FieldConceptMapper(None, 'ERROR')
+# mapper.load_usagi_file(Path('./resources/baseline_field_mapping/numeric_prio_fields.csv'))
 
 # TODO: Add additional column for target domain.
 # TODO: Use note instead of comment?
@@ -42,7 +42,7 @@ for mapping in mapper.get_all_mappings():
 
     data.append({
         'source_file': mapping.source_file_name,
-        'field_id': int(mapping.field_id),
+        'field_id': mapping.field_id,
         'field_description': mapping.field_description,
         'approach': map_type,
         'value_codes': values
@@ -59,25 +59,28 @@ app.layout = html.Div(children=[
         columns=[{"name": i, "id": i} for i in data[0]],
         style_data={
             'whiteSpace': 'normal',
-            'height': 'auto'
+            'height': 'auto',
+            'padding-left': '5px',
+            'padding-right': '5px'
         },
-        style_cell_conditional=[
-            {'if': {'column_id': 'field_id'},
-             'width': '120px'},
-            {'if': {'column_id': 'mapping_approach'},
-             'width': '80px'},
-        ],
         style_cell={
             'textAlign': 'left',
             'overflow': 'hidden',
             'textOverflow': 'ellipsis'
         },
+        style_cell_conditional=[
+            {'if': {'column_id': 'field_id'},
+             'width': '120px',
+             'textAlign': 'right'},
+            {'if': {'column_id': 'mapping_approach'},
+             'width': '80px'},
+        ],
         row_selectable='single',
         sort_action='native',
         filter_action='native',
         page_action='native',
-        page_current= 0,
-        page_size= 10
+        page_current=0,
+        page_size=10
     ),
 
     html.Div(id='field-detail-container'),
