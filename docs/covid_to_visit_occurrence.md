@@ -9,9 +9,26 @@ nav_order: 2
 
 ### Reading from covid
 
-![](md_files/image9.png)
+<!-- ![](md_files/image9.png) -->
 
 Take all rows with unique eid and specdate. If the laboratory field is different, the first is taken at random.
+
+```mermaid
+flowchart LR
+    eid --> visit_occurrence_id
+    eid --> person_id
+    specdate --> visit_occurrence_id
+    specdate --> visit_start_date
+    specdate --> visit_start_datetime
+    specdate --> visit_end_date
+    specdate --> visit_end_datetime
+    laboratory --> care_site_id
+    S1[ ] -->|32693 - Health examination| visit_concept_id
+    S2[ ] -->|32856 - Lab| visit_type_concept_id
+    
+    style S1 fill:#FFFFFF, stroke:#FFFFFF;
+    style S2  fill:#FFFFFF, stroke:#FFFFFF;
+```
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
