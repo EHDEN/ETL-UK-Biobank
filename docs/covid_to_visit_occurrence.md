@@ -26,6 +26,23 @@ flowchart LR
     S1[ ] -->|32693 - Health examination| visit_concept_id
     S2[ ] -->|32856 - Lab| visit_type_concept_id
     
+    subgraph COVID
+        eid
+        specdate
+        laboratory
+    end
+    subgraph Visit Occurrence
+        visit_occurrence_id
+        person_id
+        visit_start_date
+        visit_start_datetime
+        visit_end_date
+        visit_end_datetime
+        care_site_id
+        visit_concept_id
+        visit_type_concept_id
+    end
+    
     style S1 fill:#FFFFFF, stroke:#FFFFFF;
     style S2  fill:#FFFFFF, stroke:#FFFFFF;
 ```
