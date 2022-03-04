@@ -176,3 +176,26 @@ declareTest(938, 'Baseline - Age Glaucoma: unit and concept mapping')
 add_baseline(eid = '938', `4689-0.0` = 67)
 expect_observation(person_id = 938, observation_concept_id = 4214956,
                    value_as_number = 67, unit_concept_id = 9448, value_as_concept_id = 437541)
+
+declareTest(939, 'Baseline - Age Diabetes')
+add_baseline(eid = '939', `2976-0.0` = 37)
+expect_observation(person_id = 939, observation_concept_id = 4214956,
+                   value_as_number = 37, unit_concept_id = 9448, value_as_concept_id = 201820)
+
+declareTest(940, 'Baseline - BMI')
+add_baseline(eid = '940', `2001-0.0` = 18)
+expect_measurement(person_id = 940, measurement_concept_id = 4245997,
+                   value_as_number = 18)
+
+declareTest(941, 'Baseline - LV ejection fraction')
+add_baseline(eid = '941', `22420-0.0` = 94)
+expect_measurement(person_id = 941, measurement_source_concept_id = 35811603,
+                   value_as_number = 94)
+
+declareTest(942, 'Baseline - Age last episode of depression - no target concept, only source concept')
+add_baseline(eid = '942', `20434-0.0` = 41)
+expect_observation(person_id = 942, observation_source_concept_id = 35811128, observation_source_value = '20434|41')
+
+declareTest(943, 'Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab')
+add_baseline(eid = '943', `5211-0.0` = 1.5)
+expect_observation(person_id = 943, observation_concept_id = 4302663, unit_concept_id = 9546, value_as_number = 1.5)
