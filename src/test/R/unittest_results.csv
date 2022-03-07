@@ -29,7 +29,7 @@
 802,Test blood, missing date,Expect observation,PASS
 803,Test visit_id, wound (surgical),Expect visit_occurrence,PASS
 803,Test visit_id, wound (surgical),Expect observation,PASS
-900,Baseline - Hand grip,Expect observation,PASS
+900,Baseline - Hand grip,Expect measurement,PASS
 901,Baseline - Alcohol use, daily to observation,Expect observation,PASS
 902,Baseline - Alcohol use, not answered,Expect No observation,PASS
 903,Baseline - White blood cell count (alternate date field),Expect measurement,PASS
@@ -54,12 +54,12 @@
 918,Baseline - Do not capture dates,Expect No observation,PASS
 918,Baseline - Do not capture dates,Expect No observation,PASS
 918,Baseline - Do not capture dates,Expect No observation,PASS
-919,Baseline - visit occurrence instance 0,Expect observation,PASS
-920,Baseline - visit occurrence instance 3,Expect observation,PASS
+919,Baseline - visit occurrence instance 0 (Alcohol use),Expect observation,PASS
+920,Baseline - visit occurrence instance 3 (Alcohol use),Expect observation,PASS
 921,Baseline - opcs3 field 41256 single target,Expect observation,PASS
 922,Baseline - opcs3 field 41273 single target,Expect observation,PASS
-923,Baseline - type registry,Expect observation,PASS
-924,Baseline - type patient filled survey,Expect observation,PASS
+923,Baseline - type registry (handgrip strength),Expect measurement,PASS
+924,Baseline - type patient filled survey (Alcohol use),Expect observation,PASS
 925,Baseline - type professional filled survey,Expect observation,PASS
 926,Baseline - date field related to concept field, instance 0,Expect measurement,PASS
 927,Baseline - date field related to concept field, instance 2,Expect measurement,PASS
@@ -75,10 +75,10 @@
 937,Baseline - device id,Expect device_exposure,PASS
 938,Baseline - Age Glaucoma: unit and concept mapping,Expect observation,PASS
 939,Baseline - Age Diabetes,Expect observation,PASS
-940,Baseline - BMI,Expect measurement,FAIL
-941,Baseline - LV ejection fraction,Expect measurement,FAIL
-942,Baseline - Age last episode of depression - no target concept, only source concept,Expect observation,FAIL
-943,Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab,Expect observation,FAIL
+940,Baseline - BMI,Expect measurement,PASS
+941,Baseline - LV ejection fraction,Expect measurement,PASS
+942,Baseline - Age last episode of depression - source concept,Expect observation,FAIL
+943,Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab,Expect observation,PASS
 1000,Test ICD10 code,Expect condition_occurrence,PASS
 1001,Test ICD9 code,Expect condition_occurrence,PASS
 1002,Test ICD9 and ICD10 code; map ICD10,Expect condition_occurrence,PASS
@@ -273,7 +273,6 @@
 2607,Covid19 EMIS GP clinical to stem, no meas when future date,Expect No measurement,PASS
 2608,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_number > 0,Expect measurement,PASS
 2609,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_concept_id != None,Expect measurement,PASS
-2610,Covid19 EMIS GP clinical to stem, domain_id=Condition when value_as_number == 0,Expect No measurement,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
