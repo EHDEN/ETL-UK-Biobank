@@ -23,7 +23,7 @@ mappings:
     mappingApproach: *date
     default_date_field: 53  # for fields not listed in the lookup
 
-  - filename: numeric_prio_fields.csv
+  - filename: numeric_fields.csv
     mappingApproach: *numeric
 
   - filename: discrete_fields.csv

@@ -1,4 +1,3 @@
--- Does not get mapping of answer to std concept and does not use pre-coordinated pairs.
 select
 --     source_numeric.concept_id,
     source_numeric.concept_code as "sourceCode",
@@ -30,6 +29,7 @@ from (select source.concept_id, source.concept_name, source.concept_code, source
         and strpos(source.concept_name, 'timestamp') = 0
         and strpos(source.concept_name, 'timestamp (pilot)') = 0
         and strpos(source.concept_name, 'assay date') = 0
+        and strpos(source.concept_name, ' flag') = 0
         and not (left(source.concept_code, 1) = '9' and cast(source.concept_code as integer) between 90000 and 91000)
      ) as source_numeric
          left join vocab.concept_relationship on
@@ -360,4 +360,5 @@ where source_numeric.vocabulary_id = 'UK Biobank'
 '30231',
 '30231'
     )
+order by source_numeric.concept_code, relationship_id
 ;
