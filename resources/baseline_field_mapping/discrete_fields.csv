@@ -2306,3 +2306,19 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30636,Apolipoprotein A reportability,2,Reportable at assay but not reportable after any corrections (too low),,444907,,0.7129971385002136,APPROVED,,0,4337512,VALUE,,,1610120932047
 30696,Cholesterol reportability,5,Not reportable at assay (too high),,487474,,0.5696058869361877,APPROVED,,0,44803923,EVENT,,,1610120932047
 30696,Cholesterol reportability,5,Not reportable at assay (too high),,487474,,0.5696058869361877,APPROVED,,0,4224820,VALUE,,,1610120932047
+36,Blood pressure device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+37,Blood pressure manual sphygmomanometer device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+38,Hand grip dynamometer device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+39,Height measure device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+40,Manual scales device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+41,Seating box device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+4136,Arterial pulse-wave stiffness device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+42,Spirometer device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+4206,Arterial stiffness device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+43,Impedance device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+44,Tape measure device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5214,Auto-refractor device ID (right),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5253,Intra-ocular pressure device ID (right),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5261,Intra-ocular pressure device ID (left),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5270,Optical-coherence tomography device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5273,Auto-refractor device ID (left),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000

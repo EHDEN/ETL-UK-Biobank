@@ -1,238 +1,238 @@
 sourceCode,sourceName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,equivalence,mappingStatus,statusSetBy,statusSetOn,conceptId,conceptName,domainId,mappingType,comment,createdBy,createdOn,assignedReviewer
-12657,Suspicious flag for 12-lead ECG,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21811,Reception sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21821,Consent sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21822,Touchscreen sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21823,Touchscreen cognitive sign-off timestamp (pilot),-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21825,Touchscreen cognitive sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21831,Verbal nterview sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21832,Pilot Spirometry sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21833,Measurement/Impedance sign-off timestamp (pilot),-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21834,Biometrics sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21836,Eye measures sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21838,ECG during exercise sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21841,Urine collection sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21842,Sample collection sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21851,Conclusion sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21861,Imaging screening sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21862,Brain MRI sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21863,Chest MRI sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21864,DXA assessment sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21865,Carotid ultrasound sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21866,ECG at rest sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-21871,Cardiac monitor sign-off timestamp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-23048,Antigen assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30505,Microalbumin in urine result flag,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30515,Creatinine (enzymatic) in urine result flag,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30525,Potassium in urine result flag,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30535,Sodium in urine result flag,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30601,Albumin assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30611,Alkaline phosphatase assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30621,Alanine aminotransferase assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30631,Apolipoprotein A assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30641,Apolipoprotein B assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30651,Aspartate aminotransferase assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30661,Direct bilirubin assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30671,Urea assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30681,Calcium assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30691,Cholesterol assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30701,Creatinine assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30711,C-reactive protein assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30721,Cystatin C assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30731,Gamma glutamyltransferase assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30741,Glucose assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30751,Glycated haemoglobin (HbA1c) assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30761,HDL cholesterol assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30771,IGF-1 assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30781,LDL direct assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30791,Lipoprotein A assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30801,Oestradiol assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30811,Phosphate assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30821,Rheumatoid factor assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30831,SHBG assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30841,Total bilirubin assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30851,Testosterone assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30861,Total protein assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30871,Triglycerides assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30881,Urate assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-30891,Vitamin D assay date,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90003,Start of requested wear period,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90010,Start time of wear,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90011,End time of wear,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90012,Overall acceleration average,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90013,Standard deviation of acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90019,Monday average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90020,Tuesday average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90021,Wednesday average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90022,Thursday average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90023,Friday average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90024,Saturday average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90025,Sunday average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90027,Average acceleration 00:00 - 00:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90028,Average acceleration 01:00 - 01:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90029,Average acceleration 02:00 - 02:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90030,Average acceleration 03:00 - 03:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90031,Average acceleration 04:00 - 04:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90032,Average acceleration 05:00 - 05:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90033,Average acceleration 06:00 - 06:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90034,Average acceleration 07:00 - 07:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90035,Average acceleration 08:00 - 08:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90036,Average acceleration 09:00 - 09:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90037,Average acceleration 10:00 - 10:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90038,Average acceleration 11:00 - 11:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90039,Average acceleration 12:00 - 12:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90040,Average acceleration 13:00 - 13:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90041,Average acceleration 14:00 - 14:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90042,Average acceleration 15:00 - 15:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90043,Average acceleration 16:00 - 16:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90044,Average acceleration 17:00 - 17:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90045,Average acceleration 18:00 - 18:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90046,Average acceleration 19:00 - 19:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90047,Average acceleration 20:00 - 20:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90048,Average acceleration 21:00 - 21:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90049,Average acceleration 22:00 - 22:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90050,Average acceleration 23:00 - 23:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90051,Wear duration overall,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90052,Non wear duration overall,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90053,Wear duration during Monday,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90054,Wear duration during Tuesday,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90055,Wear duration during Wednesday,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90056,Wear duration during Thursday,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90057,Wear duration during Friday,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90058,Wear duration during Saturday,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90059,Wear duration during Sunday,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90060,Wear duration during 00:00 - 00:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90061,Wear duration during 01:00 - 01:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90062,Wear duration during 02:00 - 02:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90063,Wear duration during 03:00 - 03:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90064,Wear duration during 04:00 - 04:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90065,Wear duration during 05:00 - 05:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90066,Wear duration during 06:00 - 06:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90067,Wear duration during 07:00 - 07:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90068,Wear duration during 08:00 - 08:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90069,Wear duration during 09:00 - 09:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90070,Wear duration during 10:00 - 10:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90071,Wear duration during 11:00 - 11:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90072,Wear duration during 12:00 - 12:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90073,Wear duration during 13:00 - 13:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90074,Wear duration during 14:00 - 14:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90075,Wear duration during 15:00 - 15:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90076,Wear duration during 16:00 - 16:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90077,Wear duration during 17:00 - 17:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90078,Wear duration during 18:00 - 18:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90079,Wear duration during 19:00 - 19:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90080,Wear duration during 20:00 - 20:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90081,Wear duration during 21:00 - 21:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90082,Wear duration during 22:00 - 22:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90083,Wear duration during 23:00 - 23:59,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90084,Unique hours of wear in a 24 hour cycle (scattered over multiple days),-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90085,Unique minutes of wear in a 24 hour cycle (scattered over multiple days),-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90086,Non wear episodes over 1 hour duration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90087,No-wear time bias adjusted average acceleration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90088,No-wear time bias adjusted acceleration standard deviation,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90089,No-wear time bias adjusted acceleration median,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90090,No-wear time bias adjusted acceleration minimum,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90091,No-wear time bias adjusted acceleration maximum,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90092,Fraction acceleration <= 1 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90093,Fraction acceleration <= 2 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90094,Fraction acceleration <= 3 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90095,Fraction acceleration <= 4 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90096,Fraction acceleration <= 5 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90097,Fraction acceleration <= 6 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90098,Fraction acceleration <= 7 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90099,Fraction acceleration <= 8 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90100,Fraction acceleration <= 9 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90101,Fraction acceleration <= 10 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90102,Fraction acceleration <= 11 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90103,Fraction acceleration <= 12 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90104,Fraction acceleration <= 13 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90105,Fraction acceleration <= 14 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90106,Fraction acceleration <= 15 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90107,Fraction acceleration <= 16 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90108,Fraction acceleration <= 17 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90109,Fraction acceleration <= 18 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90110,Fraction acceleration <= 19 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90111,Fraction acceleration <= 20 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90112,Fraction acceleration <= 25 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90113,Fraction acceleration <= 30 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90114,Fraction acceleration <= 35 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90115,Fraction acceleration <= 40 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90116,Fraction acceleration <= 45 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90117,Fraction acceleration <= 50 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90118,Fraction acceleration <= 55 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90119,Fraction acceleration <= 60 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90120,Fraction acceleration <= 65 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90121,Fraction acceleration <= 70 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90122,Fraction acceleration <= 75 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90123,Fraction acceleration <= 80 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90124,Fraction acceleration <= 85 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90125,Fraction acceleration <= 90 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90126,Fraction acceleration <= 95 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90127,Fraction acceleration <= 100 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90128,Fraction acceleration <= 125 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90129,Fraction acceleration <= 150 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90130,Fraction acceleration <= 175 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90131,Fraction acceleration <= 200 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90132,Fraction acceleration <= 225 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90133,Fraction acceleration <= 250 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90134,Fraction acceleration <= 275 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90135,Fraction acceleration <= 300 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90136,Fraction acceleration <= 325 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90137,Fraction acceleration <= 350 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90138,Fraction acceleration <= 375 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90139,Fraction acceleration <= 400 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90140,Fraction acceleration <= 425 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90141,Fraction acceleration <= 450 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90142,Fraction acceleration <= 475 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90143,Fraction acceleration <= 500 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90144,Fraction acceleration <= 600 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90145,Fraction acceleration <= 700 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90146,Fraction acceleration <= 800 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90147,Fraction acceleration <= 900 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90148,Fraction acceleration <= 1000 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90149,Fraction acceleration <= 1100 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90150,Fraction acceleration <= 1200 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90151,Fraction acceleration <= 1300 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90152,Fraction acceleration <= 1400 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90153,Fraction acceleration <= 1500 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90154,Fraction acceleration <= 1600 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90155,Fraction acceleration <= 1700 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90156,Fraction acceleration <= 1800 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90157,Fraction acceleration <= 1900 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90158,Fraction acceleration <= 2000 milli-gravities,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90159,Error tolerance before calibration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90160,Error tolerance after calibration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90161,Calibration coefficients - x offset,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90162,Calibration coefficients - y offset,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90163,Calibration coefficients - z offset,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90164,Calibration coefficients - x slope,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90165,Calibration coefficients - y slope,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90166,Calibration coefficients - z slope,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90167,Calibration coefficients - x temp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90168,Calibration coefficients - y temp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90169,Calibration coefficients - z temp,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90170,Calibration coefficients - mean temperature,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90171,Calibration - number of static points,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90172,Calibration - minimum x stationary value,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90173,Calibration - maximum x stationary value,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90174,Calibration - minimum y stationary value,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90175,Calibration - maximum y stationary value,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90176,Calibration - minimum z stationary value,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90177,Calibration - maximum z stationary value,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90179,Device ID,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90180,Interrupted recording periods,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90181,Duration of interrupted recording periods,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90182,Data recording errors,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90183,Readings exceeding +/-8 gravities before calibration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90184,Maximum readings exceeding +/-8 gravities before calibration in a 5 second epoch,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90185,Readings exceeding +/-8 gravities after calibration,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90186,Maximum readings exceeding +/-8 gravities after calibration in a 5 second epoch,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90187,Total data readings,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90188,Sample rate average,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90189,Sample rate standard deviation,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90190,Sample rate minimum,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90191,Sample rate maximum,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90192,Temperature average,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90193,Temperature standard deviation,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90194,Temperature minimum,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
-90195,Temperature maximum,-1,"",0,UNREVIEWED,IGNORED,"",0,0,Unmapped,"",MAPS_TO,"",<athena>,1646666240,""
+12657,Suspicious flag for 12-lead ECG,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21811,Reception sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21821,Consent sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21822,Touchscreen sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21823,Touchscreen cognitive sign-off timestamp (pilot),-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21825,Touchscreen cognitive sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21831,Verbal nterview sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21832,Pilot Spirometry sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21833,Measurement/Impedance sign-off timestamp (pilot),-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21834,Biometrics sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21836,Eye measures sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21838,ECG during exercise sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21841,Urine collection sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21842,Sample collection sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21851,Conclusion sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21861,Imaging screening sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21862,Brain MRI sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21863,Chest MRI sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21864,DXA assessment sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21865,Carotid ultrasound sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21866,ECG at rest sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21871,Cardiac monitor sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+23048,Antigen assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30505,Microalbumin in urine result flag,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30515,Creatinine (enzymatic) in urine result flag,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30525,Potassium in urine result flag,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30535,Sodium in urine result flag,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30601,Albumin assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30611,Alkaline phosphatase assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30621,Alanine aminotransferase assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30631,Apolipoprotein A assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30641,Apolipoprotein B assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30651,Aspartate aminotransferase assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30661,Direct bilirubin assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30671,Urea assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30681,Calcium assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30691,Cholesterol assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30701,Creatinine assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30711,C-reactive protein assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30721,Cystatin C assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30731,Gamma glutamyltransferase assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30741,Glucose assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30751,Glycated haemoglobin (HbA1c) assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30761,HDL cholesterol assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30771,IGF-1 assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30781,LDL direct assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30791,Lipoprotein A assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30801,Oestradiol assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30811,Phosphate assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30821,Rheumatoid factor assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30831,SHBG assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30841,Total bilirubin assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30851,Testosterone assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30861,Total protein assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30871,Triglycerides assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30881,Urate assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+30891,Vitamin D assay date,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90003,Start of requested wear period,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90010,Start time of wear,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90011,End time of wear,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90012,Overall acceleration average,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90013,Standard deviation of acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90019,Monday average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90020,Tuesday average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90021,Wednesday average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90022,Thursday average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90023,Friday average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90024,Saturday average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90025,Sunday average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90027,Average acceleration 00:00 - 00:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90028,Average acceleration 01:00 - 01:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90029,Average acceleration 02:00 - 02:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90030,Average acceleration 03:00 - 03:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90031,Average acceleration 04:00 - 04:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90032,Average acceleration 05:00 - 05:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90033,Average acceleration 06:00 - 06:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90034,Average acceleration 07:00 - 07:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90035,Average acceleration 08:00 - 08:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90036,Average acceleration 09:00 - 09:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90037,Average acceleration 10:00 - 10:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90038,Average acceleration 11:00 - 11:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90039,Average acceleration 12:00 - 12:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90040,Average acceleration 13:00 - 13:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90041,Average acceleration 14:00 - 14:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90042,Average acceleration 15:00 - 15:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90043,Average acceleration 16:00 - 16:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90044,Average acceleration 17:00 - 17:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90045,Average acceleration 18:00 - 18:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90046,Average acceleration 19:00 - 19:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90047,Average acceleration 20:00 - 20:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90048,Average acceleration 21:00 - 21:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90049,Average acceleration 22:00 - 22:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90050,Average acceleration 23:00 - 23:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90051,Wear duration overall,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90052,Non wear duration overall,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90053,Wear duration during Monday,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90054,Wear duration during Tuesday,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90055,Wear duration during Wednesday,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90056,Wear duration during Thursday,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90057,Wear duration during Friday,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90058,Wear duration during Saturday,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90059,Wear duration during Sunday,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90060,Wear duration during 00:00 - 00:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90061,Wear duration during 01:00 - 01:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90062,Wear duration during 02:00 - 02:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90063,Wear duration during 03:00 - 03:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90064,Wear duration during 04:00 - 04:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90065,Wear duration during 05:00 - 05:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90066,Wear duration during 06:00 - 06:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90067,Wear duration during 07:00 - 07:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90068,Wear duration during 08:00 - 08:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90069,Wear duration during 09:00 - 09:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90070,Wear duration during 10:00 - 10:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90071,Wear duration during 11:00 - 11:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90072,Wear duration during 12:00 - 12:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90073,Wear duration during 13:00 - 13:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90074,Wear duration during 14:00 - 14:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90075,Wear duration during 15:00 - 15:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90076,Wear duration during 16:00 - 16:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90077,Wear duration during 17:00 - 17:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90078,Wear duration during 18:00 - 18:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90079,Wear duration during 19:00 - 19:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90080,Wear duration during 20:00 - 20:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90081,Wear duration during 21:00 - 21:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90082,Wear duration during 22:00 - 22:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90083,Wear duration during 23:00 - 23:59,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90084,Unique hours of wear in a 24 hour cycle (scattered over multiple days),-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90085,Unique minutes of wear in a 24 hour cycle (scattered over multiple days),-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90086,Non wear episodes over 1 hour duration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90087,No-wear time bias adjusted average acceleration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90088,No-wear time bias adjusted acceleration standard deviation,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90089,No-wear time bias adjusted acceleration median,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90090,No-wear time bias adjusted acceleration minimum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90091,No-wear time bias adjusted acceleration maximum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90092,Fraction acceleration <= 1 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90093,Fraction acceleration <= 2 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90094,Fraction acceleration <= 3 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90095,Fraction acceleration <= 4 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90096,Fraction acceleration <= 5 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90097,Fraction acceleration <= 6 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90098,Fraction acceleration <= 7 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90099,Fraction acceleration <= 8 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90100,Fraction acceleration <= 9 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90101,Fraction acceleration <= 10 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90102,Fraction acceleration <= 11 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90103,Fraction acceleration <= 12 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90104,Fraction acceleration <= 13 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90105,Fraction acceleration <= 14 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90106,Fraction acceleration <= 15 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90107,Fraction acceleration <= 16 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90108,Fraction acceleration <= 17 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90109,Fraction acceleration <= 18 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90110,Fraction acceleration <= 19 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90111,Fraction acceleration <= 20 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90112,Fraction acceleration <= 25 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90113,Fraction acceleration <= 30 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90114,Fraction acceleration <= 35 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90115,Fraction acceleration <= 40 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90116,Fraction acceleration <= 45 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90117,Fraction acceleration <= 50 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90118,Fraction acceleration <= 55 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90119,Fraction acceleration <= 60 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90120,Fraction acceleration <= 65 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90121,Fraction acceleration <= 70 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90122,Fraction acceleration <= 75 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90123,Fraction acceleration <= 80 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90124,Fraction acceleration <= 85 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90125,Fraction acceleration <= 90 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90126,Fraction acceleration <= 95 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90127,Fraction acceleration <= 100 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90128,Fraction acceleration <= 125 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90129,Fraction acceleration <= 150 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90130,Fraction acceleration <= 175 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90131,Fraction acceleration <= 200 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90132,Fraction acceleration <= 225 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90133,Fraction acceleration <= 250 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90134,Fraction acceleration <= 275 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90135,Fraction acceleration <= 300 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90136,Fraction acceleration <= 325 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90137,Fraction acceleration <= 350 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90138,Fraction acceleration <= 375 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90139,Fraction acceleration <= 400 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90140,Fraction acceleration <= 425 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90141,Fraction acceleration <= 450 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90142,Fraction acceleration <= 475 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90143,Fraction acceleration <= 500 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90144,Fraction acceleration <= 600 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90145,Fraction acceleration <= 700 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90146,Fraction acceleration <= 800 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90147,Fraction acceleration <= 900 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90148,Fraction acceleration <= 1000 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90149,Fraction acceleration <= 1100 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90150,Fraction acceleration <= 1200 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90151,Fraction acceleration <= 1300 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90152,Fraction acceleration <= 1400 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90153,Fraction acceleration <= 1500 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90154,Fraction acceleration <= 1600 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90155,Fraction acceleration <= 1700 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90156,Fraction acceleration <= 1800 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90157,Fraction acceleration <= 1900 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90158,Fraction acceleration <= 2000 milli-gravities,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90159,Error tolerance before calibration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90160,Error tolerance after calibration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90161,Calibration coefficients - x offset,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90162,Calibration coefficients - y offset,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90163,Calibration coefficients - z offset,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90164,Calibration coefficients - x slope,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90165,Calibration coefficients - y slope,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90166,Calibration coefficients - z slope,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90167,Calibration coefficients - x temp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90168,Calibration coefficients - y temp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90169,Calibration coefficients - z temp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90170,Calibration coefficients - mean temperature,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90171,Calibration - number of static points,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90172,Calibration - minimum x stationary value,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90173,Calibration - maximum x stationary value,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90174,Calibration - minimum y stationary value,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90175,Calibration - maximum y stationary value,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90176,Calibration - minimum z stationary value,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90177,Calibration - maximum z stationary value,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90179,Device ID,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90180,Interrupted recording periods,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90181,Duration of interrupted recording periods,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90182,Data recording errors,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90183,Readings exceeding +/-8 gravities before calibration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90184,Maximum readings exceeding +/-8 gravities before calibration in a 5 second epoch,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90185,Readings exceeding +/-8 gravities after calibration,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90186,Maximum readings exceeding +/-8 gravities after calibration in a 5 second epoch,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90187,Total data readings,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90188,Sample rate average,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90189,Sample rate standard deviation,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90190,Sample rate minimum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90191,Sample rate maximum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90192,Temperature average,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90193,Temperature standard deviation,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90194,Temperature minimum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+90195,Temperature maximum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
