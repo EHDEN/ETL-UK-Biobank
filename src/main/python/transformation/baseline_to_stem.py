@@ -76,7 +76,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             # Lookup the mapping. If not targets defined (or ignored), skip it before calculating other things.
             targets = field_mapper.lookup(field_id, value)
-            if not targets:
+            if targets is None:  # ignored fields
                 continue
 
             # Date
