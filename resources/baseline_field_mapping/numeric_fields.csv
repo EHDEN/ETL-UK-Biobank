@@ -244,6 +244,7 @@ sourceCode,sourceName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,ma
 22159,Age asbestosis diagnosed by doctor,-1,,0.00,UNCHECKED,UNREVIEWED,,0,0,Unmapped,,MAPS_TO,,,0,,,,
 22160,Age lung cancer (not mesothelioma) diagnosed by doctor,-1,,0.00,UNCHECKED,UNREVIEWED,,0,0,Unmapped,,MAPS_TO,,,0,,,,
 22161,Age mesothelioma of the lung diagnosed by doctor,-1,,0.00,UNCHECKED,UNREVIEWED,,0,0,Unmapped,,MAPS_TO,,,0,,,,
+2355,Most recent bowel cancer screening,573745,,0.0,UNCHECKED,UNREVIEWED,,0,0,,,MAPS_TO,,,,,,,
 22200,Year of birth,-1,,0.00,UNCHECKED,UNREVIEWED,,0,9448,year,Unit,MAPS_TO_UNIT,,<athena>,1646635032,,,,
 22330,PQ interval,-1,,0.00,UNCHECKED,UNREVIEWED,,0,9593,millisecond,Unit,MAPS_TO_UNIT,,<athena>,1646635032,,,,
 22331,QT interval,-1,,0.00,UNCHECKED,UNREVIEWED,,0,9593,millisecond,Unit,MAPS_TO_UNIT,,<athena>,1646635032,,,,
