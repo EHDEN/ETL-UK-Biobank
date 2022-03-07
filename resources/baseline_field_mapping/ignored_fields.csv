@@ -1,5 +1,6 @@
 sourceCode,sourceName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,equivalence,mappingStatus,statusSetBy,statusSetOn,conceptId,conceptName,domainId,mappingType,comment,createdBy,createdOn,assignedReviewer
 12657,Suspicious flag for 12-lead ECG,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+21000,Ethnic background,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
 21811,Reception sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
 21821,Consent sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
 21822,Touchscreen sign-off timestamp,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,

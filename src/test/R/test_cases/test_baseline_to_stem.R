@@ -198,3 +198,7 @@ expect_observation(person_id = 942, observation_source_concept_id = 35811128, ob
 declareTest(943, 'Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab')
 add_baseline(eid = '943', `5211-0.0` = 1.5)
 expect_observation(person_id = 943, observation_concept_id = 4302663, unit_concept_id = 9546, value_as_number = 1.5)
+
+declareTest(943, 'Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab')
+add_baseline(eid = '943', `5211-0.0` = 1.5)
+expect_observation(person_id = 943, observation_concept_id = 4302663, unit_concept_id = 9546, value_as_number = 1.5)
