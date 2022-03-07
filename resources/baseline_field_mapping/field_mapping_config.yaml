@@ -12,7 +12,6 @@ mappingApproaches:
     name: discrete
   - &valueOnly
     name: value_only
-  # TODO: by value as number, value as concept, value as date, value as text
   - &date
     name: date
   - &mappingTable
@@ -27,6 +26,9 @@ mappings:
     mappingApproach: *numeric
 
   - filename: discrete_fields.csv
+    mappingApproach: *discrete
+
+  - filename: ignored_fields.csv
     mappingApproach: *discrete
 
   - filename: 20001_cancer.csv
