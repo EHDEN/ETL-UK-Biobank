@@ -67,7 +67,7 @@
 929,Baseline - no related date field use field 53,Expect measurement,PASS
 930,Baseline - empty date field use default date,Expect measurement,PASS
 931,Baseline - datetime format,Expect measurement,PASS
-932,Baseline - truncate long value,Expect observation,PASS
+932,Baseline - truncate long value of device ID,Expect device_exposure,PASS
 933,Baseline - age at cancer diagnosis,Expect measurement,PASS
 934,Baseline - behaviour of cancer tumour,Expect observation,PASS
 935,Baseline - cancer record format,Expect observation,PASS
@@ -79,6 +79,8 @@
 941,Baseline - LV ejection fraction,Expect measurement,PASS
 942,Baseline - Age last episode of depression - source concept,Expect observation,PASS
 943,Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab,Expect observation,PASS
+943,Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab,Expect observation,PASS
+944,Baseline - do not include primary cause of death as observation,Expect No observation,PASS
 1000,Test ICD10 code,Expect condition_occurrence,PASS
 1001,Test ICD9 code,Expect condition_occurrence,PASS
 1002,Test ICD9 and ICD10 code; map ICD10,Expect condition_occurrence,PASS

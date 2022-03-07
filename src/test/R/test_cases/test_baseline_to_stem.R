@@ -142,10 +142,10 @@ declareTest(931, 'Baseline - datetime format')
 add_baseline(eid = '931', `30070-0.0` = '123', `30072-0.0` = '2010-07-08T07:39:23')
 expect_measurement(person_id = 931, measurement_date = '2010-07-08')
 
-declareTest(932, 'Baseline - truncate long value')
-# additional quotes around string value needed to escape comma's
-add_baseline(eid = '932', `53-0.0` = '2020-02-01', `40010-0.0` = '"Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) Metastatic Renal Carcinoma (Spinal Metastasis), Four Level Vertebrae Resection, Dural Resection with Dural Patch Bilateral Thoracotomies - all for Tumour Resection."')
-expect_observation(person_id = 932, observation_date = '2020-02-01', value_as_string = 'Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) M')
+declareTest(932, 'Baseline - truncate long value of device ID')
+add_baseline(eid = '932', `53-0.0` = '2020-02-01', `36-0.0` = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz')
+expect_device_exposure(person_id = 932, device_exposure_start_date = '2020-02-01', device_concept_id = 4272314,
+                       unique_device_id = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx')
 
 declareTest(933, 'Baseline - age at cancer diagnosis')
 add_baseline(eid = '933', `40005-1.0` = '2011-10-18', `40008-1.0` = '43')
@@ -202,3 +202,7 @@ expect_observation(person_id = 943, observation_concept_id = 4302663, unit_conce
 declareTest(943, 'Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab')
 add_baseline(eid = '943', `5211-0.0` = 1.5)
 expect_observation(person_id = 943, observation_concept_id = 4302663, unit_concept_id = 9546, value_as_number = 1.5)
+
+declareTest(944, 'Baseline - do not include primary cause of death as observation')
+add_baseline(eid = '944', `40001-0.0` = 'C15')
+expect_no_observation(person_id = 944, observation_source_value = '40001|C15')

@@ -237,3 +237,8 @@ sourceCode,sourceName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,eq
 90193,Temperature standard deviation,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
 90194,Temperature minimum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
 90195,Temperature maximum,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+40001,Underlying (primary) cause of death: ICD10,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+40002,Contributory (secondary) causes of death: ICD10,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+40006,Type of cancer: ICD10,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+40011,Histology of cancer tumour,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
+40013,Type of cancer: ICD9,-1,,0,UNREVIEWED,IGNORED,,0,0,Unmapped,,MAPS_TO,,<athena>,1646666240000,
