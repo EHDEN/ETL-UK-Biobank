@@ -9,8 +9,12 @@ nav_order: 1
 
 ### Reading from 0_covid19_emis_gp_clinical.txt.gz.pure
 
-Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001
-If date empty or in 2037, skip the record.
+Rows are skipped if:
+ - `Value` is negative (-9000004, -9000003, -9000002, -9000001, -9999999, -9000099
+ - `Code` is -99, -1 or -4
+ - `Date` is emtpy or in 2037
+ - `Code type` is NOT 2 or 3.
+
 ![](md_files/image1.png)
 
 | Destination Field | Source field | Logic | Comment field |
