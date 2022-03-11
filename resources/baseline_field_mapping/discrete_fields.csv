@@ -1,222 +1,222 @@
 sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,mappingStatus,statusSetBy,statusSetOn,conceptId,mappingType,comment,createdBy,createdOn
-6151,Fractured bone site(s),4,Spine,,1,,0.55611652135849,APPROVED,Maxim,1646387940095,4307182,EVENT,,Maxim,1646387939330
-22134,Doctor diagnosed bronchiectasis,1,Yes,,1,,0.6665395498275757,APPROVED,,0,256449,VALUE,,<auto>,1646386482160
-22134,Doctor diagnosed bronchiectasis,1,Yes,,1,,0.6665395498275757,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-3005,Fracture resulting from simple fall,1,Yes,,1,,0.6323604583740234,APPROVED,maxim,1646662110368,4214956,EVENT,,maxim,1646662094720
-3005,Fracture resulting from simple fall,1,Yes,,1,,0.6323604583740234,APPROVED,maxim,1646662110368,4217808,VALUE,,maxim,1646662100527
-22126,Doctor diagnosed hayfever or allergic rhinitis,0,No,,1,,0.543834924697876,APPROVED,,0,257007,VALUE,,<auto>,1646386484720
-22126,Doctor diagnosed hayfever or allergic rhinitis,0,No,,1,,0.543834924697876,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22177,Recent medication for tuberculosis,1,Yes,,1,,0.7042408585548401,APPROVED,maxim,1646660474436,35811571,EVENT,,maxim,1646660295587
-22177,Recent medication for tuberculosis,1,Yes,,1,,0.7042408585548401,APPROVED,maxim,1646660474436,35825062,VALUE,,maxim,1646660370114
-22172,Recent medication for alpha-1 antitrypsin deficiency,1,Yes,,1,,0.6926702260971069,APPROVED,maxim,1646660390549,35811566,EVENT,,maxim,1646660178325
-22172,Recent medication for alpha-1 antitrypsin deficiency,1,Yes,,1,,0.6926702260971069,APPROVED,maxim,1646660390549,35825062,VALUE,,maxim,1646660370114
-21024,Ever diagnosed with IBS,0,No,,1,,0.5179217457771301,APPROVED,maxim,1646661945695,75576,VALUE,,maxim,1646661922957
-21024,Ever diagnosed with IBS,0,No,,1,,0.5179217457771301,APPROVED,maxim,1646661945695,4032324,EVENT,,maxim,1646661940799
-22181,Recent medication for mesothelioma of the lung,1,Yes,,1,,0.563970148563385,APPROVED,maxim,1646660465586,35811575,EVENT,,maxim,1646660274055
-22181,Recent medication for mesothelioma of the lung,1,Yes,,1,,0.563970148563385,APPROVED,maxim,1646660465586,35825062,VALUE,,maxim,1646660370114
-20544,Mental health problems ever diagnosed by a professional,-819,Prefer not to answer (group B),,1,,0.4628041386604309,IGNORED,Maxim,1646386712772,0,EVENT,,,0
-22135,Doctor diagnosed idiopathic pulmonary fibrosis,1,Yes,,1,,0.7833737134933472,APPROVED,,0,45763750,VALUE,,<auto>,1646386488513
-22135,Doctor diagnosed idiopathic pulmonary fibrosis,1,Yes,,1,,0.7833737134933472,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-6150,Vascular/heart problems diagnosed by doctor,1,Heart attack,,1,,0.4304583966732025,APPROVED,Maxim,1646388000293,4214956,EVENT,,Maxim,1646387985914
-6150,Vascular/heart problems diagnosed by doctor,1,Heart attack,,1,,0.4304583966732025,APPROVED,Maxim,1646388000293,4329847,VALUE,,Maxim,1646387999201
-22178,Recent medication for silicosis,1,Yes,,1,,0.4514694809913635,APPROVED,maxim,1646660472165,35811572,EVENT,,maxim,1646660288789
-22178,Recent medication for silicosis,1,Yes,,1,,0.4514694809913635,APPROVED,maxim,1646660472165,35825062,VALUE,,maxim,1646660370114
-6151,Fractured bone site(s),1,Ankle,,1,,0.55611652135849,APPROVED,Maxim,1646387923138,4193155,EVENT,,Maxim,1646387921474
-20544,Mental health problems ever diagnosed by a professional,4,A personality disorder,,1,,0.4628041386604309,APPROVED,maxim,1646661840720,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,4,A personality disorder,,1,,0.4628041386604309,APPROVED,maxim,1646661840720,441838,VALUE,,maxim,1646661840245
-22173,Recent medication for sarcoidosis,1,Yes,,1,,0.6986559629440308,APPROVED,maxim,1646660469283,35811567,EVENT,,maxim,1646660282128
-22173,Recent medication for sarcoidosis,1,Yes,,1,,0.6986559629440308,APPROVED,maxim,1646660469283,35825062,VALUE,,maxim,1646660370114
-22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,1,Yes,,1,,0.5477283000946045,APPROVED,,0,4025168,VALUE,,<auto>,1646386494120
-22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,1,Yes,,1,,0.5477283000946045,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22168,Recent medication for emphysema,0,No,,1,,0.6233890652656555,IGNORED,maxim,1646660455315,0,EVENT,,,0
-22181,Recent medication for mesothelioma of the lung,0,No,,1,,0.563970148563385,IGNORED,maxim,1646660467202,0,EVENT,,,0
-20116,Smoking status,0,Never,,1,,0.8355186581611633,APPROVED,maxim,1646661036963,4144272,EVENT,,maxim,1646661098700
-22179,Recent medication for asbestosis,1,Yes,,1,,0.7005959153175354,APPROVED,maxim,1646660434432,35811573,EVENT,,maxim,1646660185293
-22179,Recent medication for asbestosis,1,Yes,,1,,0.7005959153175354,APPROVED,maxim,1646660434432,35825062,VALUE,,maxim,1646660370114
-10844,Gestational diabetes only (pilot),1,Yes,,1,,0.6028794646263123,APPROVED,Maxim,1646387191541,4024659,EVENT,,Maxim,1646387180099
-22137,Doctor diagnosed tuberculosis,1,Yes,,1,,0.6671009659767151,APPROVED,,0,434557,VALUE,,Maxim,1646387339826
-22137,Doctor diagnosed tuberculosis,1,Yes,,1,,0.6671009659767151,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-20544,Mental health problems ever diagnosed by a professional,10,"Mania, hypomania, bipolar or manic-depression",,1,,0.4628041386604309,APPROVED,maxim,1646661684548,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,10,"Mania, hypomania, bipolar or manic-depression",,1,,0.4628041386604309,APPROVED,maxim,1646661684548,436665,VALUE,,maxim,1646661682187
-20117,Alcohol drinker status,0,Never,,1,,0.7097856402397156,APPROVED,maxim,1646661174273,37204556,EVENT,,maxim,1646661172733
-22506,Tobacco smoking,-818,Prefer not to answer,,1,,0.9010772109031677,IGNORED,Maxim,1646386712355,0,EVENT,,,0
-22174,Recent medication for bronchiectasis,1,Yes,,1,,0.7063411474227905,APPROVED,maxim,1646660447324,35811568,EVENT,,maxim,1646660200175
-22174,Recent medication for bronchiectasis,1,Yes,,1,,0.7063411474227905,APPROVED,maxim,1646660447324,35825062,VALUE,,maxim,1646660370114
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",5,Blood clot in the leg (DVT),,1,,0.4737726151943207,APPROVED,Maxim,1646388092781,4214956,EVENT,,Maxim,1646388066468
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",5,Blood clot in the leg (DVT),,1,,0.4737726151943207,APPROVED,Maxim,1646388092781,443537,VALUE,,Maxim,1646388091274
-21024,Ever diagnosed with IBS,-818,Prefer not to answer,,1,,0.5179217457771301,IGNORED,Maxim,1646386712118,0,EVENT,,,0
-22180,Recent medication for lung cancer (not mesothelioma),0,No,,1,,0.5044025182723999,IGNORED,maxim,1646660464110,0,EVENT,,,0
-20403,Amount of alcohol drunk on a typical drinking day,1,1 or 2,,1,,0.5913298726081848,APPROVED,maxim,1646661310981,40481011,EVENT,,<auto>,1646386504190
-20403,Amount of alcohol drunk on a typical drinking day,1,1 or 2,,1,,0.5913298726081848,APPROVED,maxim,1646661310981,4245244,VALUE,,maxim,1646661301009
-22140,Doctor diagnosed lung cancer (not mesothelioma),1,Yes,,1,,0.48137301206588745,APPROVED,,0,4128888,VALUE,,Maxim,1646387574835
-22140,Doctor diagnosed lung cancer (not mesothelioma),1,Yes,,1,,0.48137301206588745,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-6151,Fractured bone site(s),5,Wrist,,1,,0.55611652135849,APPROVED,Maxim,1646387951948,4193155,EVENT,,Maxim,1646387950605
-22180,Recent medication for lung cancer (not mesothelioma),1,Yes,,1,,0.5044025182723999,APPROVED,maxim,1646660464834,35811574,EVENT,,maxim,1646660266440
-22180,Recent medication for lung cancer (not mesothelioma),1,Yes,,1,,0.5044025182723999,APPROVED,maxim,1646660464834,35825062,VALUE,,maxim,1646660370114
-20544,Mental health problems ever diagnosed by a professional,11,Depression,,1,,0.4628041386604309,APPROVED,maxim,1646661687825,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,11,Depression,,1,,0.4628041386604309,APPROVED,maxim,1646661687825,440383,VALUE,,maxim,1646661687141
-22175,Recent medication for idiopathic pulmonary fibrosis,1,Yes,,1,,0.8188910484313965,APPROVED,maxim,1646660462082,35811569,EVENT,,maxim,1646660259764
-22175,Recent medication for idiopathic pulmonary fibrosis,1,Yes,,1,,0.8188910484313965,APPROVED,maxim,1646660462082,35825062,VALUE,,maxim,1646660370114
-20403,Amount of alcohol drunk on a typical drinking day,-818,Prefer not to answer,,1,,0.5913298726081848,IGNORED,Maxim,1646386711595,0,EVENT,,,0
-22177,Recent medication for tuberculosis,0,No,,1,,0.7042408585548401,IGNORED,maxim,1646660475635,0,EVENT,,,0
-22506,Tobacco smoking,111,Smokes on most or all days,,1,,0.9010772109031677,APPROVED,maxim,1646660849496,42709996,EVENT,,maxim,1646660620171
-22506,Tobacco smoking,112,Occasionally,,1,,0.9010772109031677,APPROVED,maxim,1646660850951,4044775,EVENT,,maxim,1646660835851
-22141,Doctor diagnosed mesothelioma of the lung,1,Yes,,1,,0.5319497585296631,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),0,No,,1,,0.8068298101425171,APPROVED,,0,255573,VALUE,,Maxim,1646387666883
-22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),0,No,,1,,0.8068298101425171,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-20544,Mental health problems ever diagnosed by a professional,1,Social anxiety or social phobia,,1,,0.4628041386604309,APPROVED,maxim,1646661668608,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,1,Social anxiety or social phobia,,1,,0.4628041386604309,APPROVED,maxim,1646661668608,440690,VALUE,,maxim,1646661667458
-20544,Mental health problems ever diagnosed by a professional,5,Any other phobia (eg disabling fear of heights or spiders),,1,,0.4628041386604309,APPROVED,maxim,1646661861285,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,5,Any other phobia (eg disabling fear of heights or spiders),,1,,0.4628041386604309,APPROVED,maxim,1646661861285,4085677,VALUE,,maxim,1646661855624
-21024,Ever diagnosed with IBS,1,Yes,,1,,0.5179217457771301,APPROVED,maxim,1646661962601,75576,VALUE,,maxim,1646661926347
-21024,Ever diagnosed with IBS,1,Yes,,1,,0.5179217457771301,APPROVED,maxim,1646661962601,4214956,EVENT,,maxim,1646661961890
-22168,Recent medication for emphysema,1,Yes,,1,,0.6233890652656555,APPROVED,maxim,1646660456308,35811562,EVENT,,maxim,1646660231822
-22168,Recent medication for emphysema,1,Yes,,1,,0.6233890652656555,APPROVED,maxim,1646660456308,35825062,VALUE,,maxim,1646660370114
-22167,Recent medication for asthma,1,Yes,,1,,0.6457778215408325,APPROVED,maxim,1646660440150,35811561,EVENT,Invalid existing target: 3661634,maxim,1646660193529
-22167,Recent medication for asthma,1,Yes,,1,,0.6457778215408325,APPROVED,maxim,1646660440150,35825062,VALUE,Invalid existing target: 3661634,maxim,1646660370114
-22129,Doctor diagnosed chronic bronchitis,0,No,,1,,0.7653823494911194,APPROVED,,0,255841,VALUE,,Maxim,1646387681201
-22129,Doctor diagnosed chronic bronchitis,0,No,,1,,0.7653823494911194,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-20116,Smoking status,1,Previous,,1,,0.8355186581611633,APPROVED,maxim,1646661052012,4310250,EVENT,,maxim,1646661049883
-22176,Recent medication for fibrosing alveolitis/unspecified alveolitis,1,Yes,,1,,0.5623502135276794,APPROVED,maxim,1646660457196,35811570,EVENT,,maxim,1646660245095
-22176,Recent medication for fibrosing alveolitis/unspecified alveolitis,1,Yes,,1,,0.5623502135276794,APPROVED,maxim,1646660457196,35825062,VALUE,,maxim,1646660370114
-20544,Mental health problems ever diagnosed by a professional,-818,Prefer not to answer (group A),,1,,0.4628041386604309,IGNORED,Maxim,1646386711883,0,EVENT,,,0
-22176,Recent medication for fibrosing alveolitis/unspecified alveolitis,0,No,,1,,0.5623502135276794,IGNORED,maxim,1646660459432,0,EVENT,,,0
-22128,Doctor diagnosed emphysema,0,No,,1,,0.6309210062026978,APPROVED,,0,261325,VALUE,,Maxim,1646387615689
-22128,Doctor diagnosed emphysema,0,No,,1,,0.6309210062026978,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22138,Doctor diagnosed silicosis,1,Yes,,1,,0.6561427712440491,APPROVED,,0,442125,VALUE,,Maxim,1646387367265
-22138,Doctor diagnosed silicosis,1,Yes,,1,,0.6561427712440491,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-20117,Alcohol drinker status,1,Previous,,1,,0.7097856402397156,APPROVED,maxim,1646661197907,4220362,EVENT,,maxim,1646661195098
-22139,Doctor diagnosed asbestosis,0,No,,1,,0.6635460257530212,APPROVED,,0,256450,VALUE,,<auto>,1646386521472
-22139,Doctor diagnosed asbestosis,0,No,,1,,0.6635460257530212,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22127,Doctor diagnosed asthma,0,No,,1,,0.8359465003013611,APPROVED,,0,317009,VALUE,,Maxim,1646387709364
-22127,Doctor diagnosed asthma,0,No,,1,,0.8359465003013611,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22139,Doctor diagnosed asbestosis,1,Yes,,1,,0.6635460257530212,APPROVED,,0,256450,VALUE,,<auto>,1646386522654
-22139,Doctor diagnosed asbestosis,1,Yes,,1,,0.6635460257530212,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22169,Recent medication for chronic bronchitis,1,Yes,,1,,0.7250893115997314,APPROVED,maxim,1646660448545,35811563,EVENT,,maxim,1646660207960
-22169,Recent medication for chronic bronchitis,1,Yes,,1,,0.7250893115997314,APPROVED,maxim,1646660448545,35825062,VALUE,,maxim,1646660370114
-3005,Fracture resulting from simple fall,0,No,,1,,0.6323604583740234,IGNORED,maxim,1646662226776,0,EVENT,,,0
-20544,Mental health problems ever diagnosed by a professional,3,Any other type of psychosis or psychotic illness,,1,,0.4628041386604309,APPROVED,maxim,1646661833248,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,3,Any other type of psychosis or psychotic illness,,1,,0.4628041386604309,APPROVED,maxim,1646661833248,765030,VALUE,,maxim,1646661832686
-22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),1,Yes,,1,,0.8068298101425171,APPROVED,,0,255573,VALUE,,Maxim,1646387663169
-22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),1,Yes,,1,,0.8068298101425171,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22138,Doctor diagnosed silicosis,0,No,,1,,0.6561427712440491,APPROVED,,0,442125,VALUE,,Maxim,1646387373781
-22138,Doctor diagnosed silicosis,0,No,,1,,0.6561427712440491,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22134,Doctor diagnosed bronchiectasis,0,No,,1,,0.6665395498275757,APPROVED,,0,256449,VALUE,,<auto>,1646386525675
-22134,Doctor diagnosed bronchiectasis,0,No,,1,,0.6665395498275757,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22171,Recent medication for cystic fibrosis,0,No,,1,,0.7047975659370422,IGNORED,maxim,1646660451522,0,EVENT,,,0
-6151,Fractured bone site(s),3,Hip,,1,,0.55611652135849,APPROVED,Maxim,1646387934153,4192270,EVENT,,Maxim,1646387932961
-22137,Doctor diagnosed tuberculosis,0,No,,1,,0.6671009659767151,APPROVED,,0,434557,VALUE,,Maxim,1646387337115
-22137,Doctor diagnosed tuberculosis,0,No,,1,,0.6671009659767151,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22131,Doctor diagnosed cystic fibrosis,1,Yes,,1,,0.6616140007972717,APPROVED,,0,441267,VALUE,,Maxim,1646387649320
-22131,Doctor diagnosed cystic fibrosis,1,Yes,,1,,0.6616140007972717,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22126,Doctor diagnosed hayfever or allergic rhinitis,1,Yes,,1,,0.543834924697876,APPROVED,,0,257007,VALUE,,<auto>,1646386527789
-22126,Doctor diagnosed hayfever or allergic rhinitis,1,Yes,,1,,0.543834924697876,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22133,Doctor diagnosed sarcoidosis,0,No,,1,,0.6621822118759155,APPROVED,,0,438688,VALUE,,<auto>,1646386528516
-22133,Doctor diagnosed sarcoidosis,0,No,,1,,0.6621822118759155,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22179,Recent medication for asbestosis,0,No,,1,,0.7005959153175354,IGNORED,maxim,1646660438256,0,EVENT,,,0
-22127,Doctor diagnosed asthma,1,Yes,,1,,0.8359465003013611,APPROVED,,0,317009,VALUE,,Maxim,1646387706189
-22127,Doctor diagnosed asthma,1,Yes,,1,,0.8359465003013611,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22170,Recent medication for COPD (Chronic Obstructive Pulmonary Disease),1,Yes,,1,,0.8890184164047241,APPROVED,maxim,1646660449732,35811564,EVENT,Invalid existing target: 3661635,maxim,1646660215711
-22170,Recent medication for COPD (Chronic Obstructive Pulmonary Disease),1,Yes,,1,,0.8890184164047241,APPROVED,maxim,1646660449732,35825062,VALUE,Invalid existing target: 3661635,maxim,1646660370114
-20403,Amount of alcohol drunk on a typical drinking day,4,"7, 8 or 9",,1,,0.5913298726081848,APPROVED,maxim,1646661480797,40481011,EVENT,,<auto>,1646386532797
-20403,Amount of alcohol drunk on a typical drinking day,4,"7, 8 or 9",,1,,0.5913298726081848,APPROVED,maxim,1646661480797,4145079,VALUE,,maxim,1646661476403
-22128,Doctor diagnosed emphysema,1,Yes,,1,,0.6309210062026978,APPROVED,,0,261325,VALUE,,Maxim,1646387629880
-22128,Doctor diagnosed emphysema,1,Yes,,1,,0.6309210062026978,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,0,No,,1,,0.5477283000946045,APPROVED,,0,4025168,VALUE,,<auto>,1646386533185
-22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,0,No,,1,,0.5477283000946045,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22132,Doctor diagnosed alpha-1 antitrypsin deficiency,1,Yes,,1,,0.6707738041877747,APPROVED,Maxim,1646387775863,192275,VALUE,,<auto>,1646386533945
-22132,Doctor diagnosed alpha-1 antitrypsin deficiency,1,Yes,,1,,0.6707738041877747,APPROVED,Maxim,1646387775863,4214956,EVENT,,Maxim,1646387757191
-22132,Doctor diagnosed alpha-1 antitrypsin deficiency,0,No,,1,,0.6707738041877747,APPROVED,,0,192275,VALUE,,<auto>,1646386534941
-22132,Doctor diagnosed alpha-1 antitrypsin deficiency,0,No,,1,,0.6707738041877747,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22178,Recent medication for silicosis,0,No,,1,,0.4514694809913635,IGNORED,maxim,1646660473408,0,EVENT,,,0
-22170,Recent medication for COPD (Chronic Obstructive Pulmonary Disease),0,No,,1,,0.8890184164047241,IGNORED,maxim,1646660450640,0,EVENT,Invalid existing target: 3661635,,0
-22133,Doctor diagnosed sarcoidosis,1,Yes,,1,,0.6621822118759155,APPROVED,,0,438688,VALUE,,<auto>,1646386536993
-22133,Doctor diagnosed sarcoidosis,1,Yes,,1,,0.6621822118759155,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-22129,Doctor diagnosed chronic bronchitis,1,Yes,,1,,0.7653823494911194,APPROVED,,0,255841,VALUE,,Maxim,1646387685268
-22129,Doctor diagnosed chronic bronchitis,1,Yes,,1,,0.7653823494911194,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
-6150,Vascular/heart problems diagnosed by doctor,4,High blood pressure,,1,,0.4304583966732025,APPROVED,Maxim,1646388014097,4214956,EVENT,,Maxim,1646387985914
-6150,Vascular/heart problems diagnosed by doctor,4,High blood pressure,,1,,0.4304583966732025,APPROVED,Maxim,1646388014097,316866,VALUE,,Maxim,1646388013500
-22131,Doctor diagnosed cystic fibrosis,0,No,,1,,0.6616140007972717,APPROVED,,0,441267,VALUE,,Maxim,1646387644246
-22131,Doctor diagnosed cystic fibrosis,0,No,,1,,0.6616140007972717,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-22171,Recent medication for cystic fibrosis,1,Yes,,1,,0.7047975659370422,APPROVED,maxim,1646660453435,0,EVENT,,,0
-22135,Doctor diagnosed idiopathic pulmonary fibrosis,0,No,,1,,0.7833737134933472,APPROVED,,0,45763750,VALUE,,<auto>,1646386539535
-22135,Doctor diagnosed idiopathic pulmonary fibrosis,0,No,,1,,0.7833737134933472,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-6151,Fractured bone site(s),7,Other bones,,1,,0.55611652135849,APPROVED,Maxim,1646387960254,4193155,EVENT,,Maxim,1646387959500
-22506,Tobacco smoking,113,Ex-smoker,,1,,0.9010772109031677,APPROVED,maxim,1646660882122,4310250,EVENT,,maxim,1646660878241
-22506,Tobacco smoking,114,Never smoked,,1,,0.9010772109031677,APPROVED,maxim,1646660902847,4144272,EVENT,,maxim,1646661112389
-22169,Recent medication for chronic bronchitis,0,No,,1,,0.7250893115997314,IGNORED,maxim,1646660449235,0,EVENT,,,0
-20403,Amount of alcohol drunk on a typical drinking day,5,10 or more,,1,,0.5913298726081848,APPROVED,maxim,1646661509118,40481011,EVENT,,<auto>,1646386545000
-20403,Amount of alcohol drunk on a typical drinking day,5,10 or more,,1,,0.5913298726081848,APPROVED,maxim,1646661509118,4244839,VALUE,,maxim,1646661502606
-20544,Mental health problems ever diagnosed by a professional,18,Attention deficit or attention deficit and hyperactivity disorder (ADD/ADHD),,1,,0.4628041386604309,APPROVED,maxim,1646661760541,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,18,Attention deficit or attention deficit and hyperactivity disorder (ADD/ADHD),,1,,0.4628041386604309,APPROVED,maxim,1646661760541,438409,VALUE,,maxim,1646661759208
-22167,Recent medication for asthma,0,No,,1,,0.6457778215408325,IGNORED,maxim,1646660445712,0,EVENT,Invalid existing target: 3661634,,0
-10844,Gestational diabetes only (pilot),0,No,,1,,0.6028794646263123,APPROVED,Maxim,1646387191083,4211787,EVENT,,Maxim,1646387142177
-10844,Gestational diabetes only (pilot),0,No,,1,,0.6028794646263123,APPROVED,Maxim,1646387191083,4024659,VALUE,,Maxim,1646387169368
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",7,Blood clot in the lung,,1,,0.4737726151943207,APPROVED,Maxim,1646388131447,4214956,EVENT,,Maxim,1646388066468
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",7,Blood clot in the lung,,1,,0.4737726151943207,APPROVED,Maxim,1646388131447,4239826,VALUE,,Maxim,1646388130919
-20544,Mental health problems ever diagnosed by a professional,14,"Autism, Asperger's or autistic spectrum disorder",,1,,0.4628041386604309,APPROVED,maxim,1646661724952,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,14,"Autism, Asperger's or autistic spectrum disorder",,1,,0.4628041386604309,APPROVED,maxim,1646661724952,439776,VALUE,,maxim,1646661724297
-20544,Mental health problems ever diagnosed by a professional,7,Obsessive compulsive disorder (OCD),,1,,0.4628041386604309,APPROVED,maxim,1646661872513,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,7,Obsessive compulsive disorder (OCD),,1,,0.4628041386604309,APPROVED,maxim,1646661872513,440374,VALUE,,maxim,1646661871536
-20403,Amount of alcohol drunk on a typical drinking day,2,3 or 4,,1,,0.5913298726081848,APPROVED,maxim,1646661459178,40481011,EVENT,,<auto>,1646386551197
-20403,Amount of alcohol drunk on a typical drinking day,2,3 or 4,,1,,0.5913298726081848,APPROVED,maxim,1646661459178,4244842,VALUE,,maxim,1646661406847
-20544,Mental health problems ever diagnosed by a professional,12,Bulimia nervosa,,1,,0.4628041386604309,APPROVED,maxim,1646661691743,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,12,Bulimia nervosa,,1,,0.4628041386604309,APPROVED,maxim,1646661691743,438407,VALUE,,maxim,1646661691209
-22166,Recent medication for hayfever or allergic rhinitis,0,No,,1,,0.5627732276916504,IGNORED,maxim,1646660460322,0,EVENT,,,0
-20544,Mental health problems ever diagnosed by a professional,6,Panic attacks,,1,,0.4628041386604309,APPROVED,maxim,1646661865858,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,6,Panic attacks,,1,,0.4628041386604309,APPROVED,maxim,1646661865858,4021498,VALUE,,maxim,1646661865216
-20117,Alcohol drinker status,2,Current,,1,,0.7097856402397156,APPROVED,maxim,1646661208951,4074035,EVENT,,maxim,1646661203967
-20116,Smoking status,2,Current,,1,,0.8355186581611633,APPROVED,maxim,1646661087072,4298794,EVENT,,maxim,1646661085182
-22166,Recent medication for hayfever or allergic rhinitis,1,Yes,,1,,0.5627732276916504,APPROVED,maxim,1646660461371,35811560,EVENT,,maxim,1646660253006
-22166,Recent medication for hayfever or allergic rhinitis,1,Yes,,1,,0.5627732276916504,APPROVED,maxim,1646660461371,35825062,VALUE,,maxim,1646660370114
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",8,Asthma,,1,,0.4737726151943207,APPROVED,Maxim,1646388109556,4214956,EVENT,,Maxim,1646388066468
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",8,Asthma,,1,,0.4737726151943207,APPROVED,Maxim,1646388109556,317009,VALUE,,Maxim,1646388109060
-6151,Fractured bone site(s),6,Arm,,1,,0.55611652135849,APPROVED,Maxim,1646387956082,4193155,EVENT,,Maxim,1646387955341
-20544,Mental health problems ever diagnosed by a professional,15,"Anxiety, nerves or generalized anxiety disorder",,1,,0.4628041386604309,APPROVED,maxim,1646661745129,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,15,"Anxiety, nerves or generalized anxiety disorder",,1,,0.4628041386604309,APPROVED,maxim,1646661745129,434613,VALUE,,maxim,1646661744335
-22141,Doctor diagnosed mesothelioma of the lung,0,No,,1,,0.5319497585296631,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-20544,Mental health problems ever diagnosed by a professional,13,Psychological over-eating or binge-eating,,1,,0.4628041386604309,APPROVED,maxim,1646661717615,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,13,Psychological over-eating or binge-eating,,1,,0.4628041386604309,APPROVED,maxim,1646661717615,4152972,VALUE,,maxim,1646661716571
-6150,Vascular/heart problems diagnosed by doctor,2,Angina,,1,,0.4304583966732025,APPROVED,Maxim,1646388005985,4214956,EVENT,,Maxim,1646387985914
-6150,Vascular/heart problems diagnosed by doctor,2,Angina,,1,,0.4304583966732025,APPROVED,Maxim,1646388005985,321318,VALUE,,Maxim,1646388005275
-22175,Recent medication for idiopathic pulmonary fibrosis,0,No,,1,,0.8188910484313965,IGNORED,maxim,1646660463393,0,EVENT,,,0
-6151,Fractured bone site(s),2,Leg,,1,,0.55611652135849,APPROVED,Maxim,1646387928652,4193155,EVENT,,Maxim,1646387927821
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",9,"Hayfever, allergic rhinitis or eczema",,1,,0.4737726151943207,APPROVED,Maxim,1646388118771,4214956,EVENT,,Maxim,1646388066468
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",9,"Hayfever, allergic rhinitis or eczema",,1,,0.4737726151943207,APPROVED,Maxim,1646388118771,257007,VALUE,,Maxim,1646388117924
-22140,Doctor diagnosed lung cancer (not mesothelioma),0,No,,1,,0.48137301206588745,APPROVED,,0,4128888,VALUE,,Maxim,1646387567915
-22140,Doctor diagnosed lung cancer (not mesothelioma),0,No,,1,,0.48137301206588745,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",6,Emphysema/chronic bronchitis,,1,,0.4737726151943207,APPROVED,Maxim,1646388100094,4214956,EVENT,,Maxim,1646388066468
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",6,Emphysema/chronic bronchitis,,1,,0.4737726151943207,APPROVED,Maxim,1646388100094,258780,VALUE,,Maxim,1646388099520
-6150,Vascular/heart problems diagnosed by doctor,3,Stroke,,1,,0.4304583966732025,APPROVED,Maxim,1646388009599,4214956,EVENT,,Maxim,1646387985914
-6150,Vascular/heart problems diagnosed by doctor,3,Stroke,,1,,0.4304583966732025,APPROVED,Maxim,1646388009599,381316,VALUE,,Maxim,1646388009026
-20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,1,,0.4628041386604309,APPROVED,maxim,1646661751039,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,1,,0.4628041386604309,APPROVED,maxim,1646661751039,436675,VALUE,,maxim,1646661750515
-3627,Age angina diagnosed,1,Do not know,,1,,0.6316303014755249,IGNORED,Maxim,1646386704928,0,EVENT,,,0
-22174,Recent medication for bronchiectasis,0,No,,1,,0.7063411474227905,IGNORED,maxim,1646660447986,0,EVENT,,,0
-6150,Vascular/heart problems diagnosed by doctor,-3,Prefer not to answer,,1,,0.4304583966732025,IGNORED,Maxim,1646386709903,0,EVENT,,,0
-21024,Ever diagnosed with IBS,-121,Do not know,,1,,0.5179217457771301,IGNORED,Maxim,1646386706041,0,EVENT,,,0
-3761,"Age hay fever, rhinitis or eczema diagnosed",1,Do not know,,1,,0.45307111740112305,IGNORED,Maxim,1646386705132,0,EVENT,,,0
-20116,Smoking status,-3,Prefer not to answer,,1,,0.8355186581611633,IGNORED,Maxim,1646386708823,0,EVENT,,,0
-20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,1,,0.5913298726081848,APPROVED,maxim,1646661459775,40481011,EVENT,,<auto>,1646386570590
-20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,1,,0.5913298726081848,APPROVED,maxim,1646661459775,4144038,VALUE,,maxim,1646661448558
-20544,Mental health problems ever diagnosed by a professional,2,Schizophrenia,,1,,0.4628041386604309,APPROVED,maxim,1646661768236,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,2,Schizophrenia,,1,,0.4628041386604309,APPROVED,maxim,1646661768236,435783,VALUE,,maxim,1646661767679
-3627,Age angina diagnosed,-3,Prefer not to answer,,1,,0.6316303014755249,IGNORED,Maxim,1646386709484,0,EVENT,,,0
-20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,1,,0.4628041386604309,APPROVED,maxim,1646661754239,35811230,EVENT,,maxim,1646661618859
-20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,1,,0.4628041386604309,APPROVED,maxim,1646661754239,4321835,VALUE,,maxim,1646661753677
-22173,Recent medication for sarcoidosis,0,No,,1,,0.6986559629440308,IGNORED,maxim,1646660471533,0,EVENT,,,0
-10844,Gestational diabetes only (pilot),1,Do not know,,1,,0.6028794646263123,IGNORED,Maxim,1646386702500,0,EVENT,,,0
-6151,Fractured bone site(s),-3,Prefer not to answer,,1,,0.55611652135849,IGNORED,Maxim,1646386710118,0,EVENT,,,0
-3761,"Age hay fever, rhinitis or eczema diagnosed",-3,Prefer not to answer,,1,,0.45307111740112305,IGNORED,Maxim,1646386709700,0,EVENT,,,0
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",-3,Prefer not to answer,,1,,0.4737726151943207,IGNORED,Maxim,1646386710421,0,EVENT,,,0
-3005,Fracture resulting from simple fall,1,Do not know,,1,,0.6323604583740234,IGNORED,Maxim,1646386704709,0,EVENT,,,0
-6150,Vascular/heart problems diagnosed by doctor,-7,None of the above,,1,,0.4304583966732025,IGNORED,Maxim,1646386710848,0,EVENT,,,0
-10844,Gestational diabetes only (pilot),-3,Prefer not to answer,,1,,0.6028794646263123,IGNORED,Maxim,1646386694716,0,EVENT,,,0
-3005,Fracture resulting from simple fall,-3,Prefer not to answer,,1,,0.6323604583740234,IGNORED,Maxim,1646386709272,0,EVENT,,,0
-22172,Recent medication for alpha-1 antitrypsin deficiency,0,No,,1,,0.6926702260971069,IGNORED,maxim,1646660400486,0,EVENT,,,0
-6151,Fractured bone site(s),1,Do not know,,1,,0.55611652135849,IGNORED,Maxim,1646386705655,0,EVENT,,,0
-20117,Alcohol drinker status,-3,Prefer not to answer,,1,,0.7097856402397156,IGNORED,Maxim,1646386709045,0,EVENT,,,0
-6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",-7,None of the above,,1,,0.4737726151943207,IGNORED,Maxim,1646386711300,0,EVENT,,,0
+6151,Fractured bone site(s),4,Spine,,-1,,0.55611652135849,APPROVED,Maxim,1646387940095,4307182,EVENT,,Maxim,1646387939330
+22134,Doctor diagnosed bronchiectasis,1,Yes,,-1,,0.6665395498275757,APPROVED,,0,256449,VALUE,,<auto>,1646386482160
+22134,Doctor diagnosed bronchiectasis,1,Yes,,-1,,0.6665395498275757,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+3005,Fracture resulting from simple fall,1,Yes,,-1,,0.6323604583740234,APPROVED,maxim,1646662110368,4214956,EVENT,,maxim,1646662094720
+3005,Fracture resulting from simple fall,1,Yes,,-1,,0.6323604583740234,APPROVED,maxim,1646662110368,4217808,VALUE,,maxim,1646662100527
+22126,Doctor diagnosed hayfever or allergic rhinitis,0,No,,-1,,0.543834924697876,APPROVED,,0,257007,VALUE,,<auto>,1646386484720
+22126,Doctor diagnosed hayfever or allergic rhinitis,0,No,,-1,,0.543834924697876,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22177,Recent medication for tuberculosis,1,Yes,,-1,,0.7042408585548401,APPROVED,maxim,1646660474436,35811571,EVENT,,maxim,1646660295587
+22177,Recent medication for tuberculosis,1,Yes,,-1,,0.7042408585548401,APPROVED,maxim,1646660474436,35825062,VALUE,,maxim,1646660370114
+22172,Recent medication for alpha-1 antitrypsin deficiency,1,Yes,,-1,,0.6926702260971069,APPROVED,maxim,1646660390549,35811566,EVENT,,maxim,1646660178325
+22172,Recent medication for alpha-1 antitrypsin deficiency,1,Yes,,-1,,0.6926702260971069,APPROVED,maxim,1646660390549,35825062,VALUE,,maxim,1646660370114
+21024,Ever diagnosed with IBS,0,No,,-1,,0.5179217457771301,APPROVED,maxim,1646661945695,75576,VALUE,,maxim,1646661922957
+21024,Ever diagnosed with IBS,0,No,,-1,,0.5179217457771301,APPROVED,maxim,1646661945695,4032324,EVENT,,maxim,1646661940799
+22181,Recent medication for mesothelioma of the lung,1,Yes,,-1,,0.563970148563385,APPROVED,maxim,1646660465586,35811575,EVENT,,maxim,1646660274055
+22181,Recent medication for mesothelioma of the lung,1,Yes,,-1,,0.563970148563385,APPROVED,maxim,1646660465586,35825062,VALUE,,maxim,1646660370114
+20544,Mental health problems ever diagnosed by a professional,-819,Prefer not to answer (group B),,-1,,0.4628041386604309,IGNORED,Maxim,1646386712772,0,EVENT,,,0
+22135,Doctor diagnosed idiopathic pulmonary fibrosis,1,Yes,,-1,,0.7833737134933472,APPROVED,,0,45763750,VALUE,,<auto>,1646386488513
+22135,Doctor diagnosed idiopathic pulmonary fibrosis,1,Yes,,-1,,0.7833737134933472,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+6150,Vascular/heart problems diagnosed by doctor,1,Heart attack,,-1,,0.4304583966732025,APPROVED,Maxim,1646388000293,4214956,EVENT,,Maxim,1646387985914
+6150,Vascular/heart problems diagnosed by doctor,1,Heart attack,,-1,,0.4304583966732025,APPROVED,Maxim,1646388000293,4329847,VALUE,,Maxim,1646387999201
+22178,Recent medication for silicosis,1,Yes,,-1,,0.4514694809913635,APPROVED,maxim,1646660472165,35811572,EVENT,,maxim,1646660288789
+22178,Recent medication for silicosis,1,Yes,,-1,,0.4514694809913635,APPROVED,maxim,1646660472165,35825062,VALUE,,maxim,1646660370114
+6151,Fractured bone site(s),1,Ankle,,-1,,0.55611652135849,APPROVED,Maxim,1646387923138,4193155,EVENT,,Maxim,1646387921474
+20544,Mental health problems ever diagnosed by a professional,4,A personality disorder,,-1,,0.4628041386604309,APPROVED,maxim,1646661840720,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,4,A personality disorder,,-1,,0.4628041386604309,APPROVED,maxim,1646661840720,441838,VALUE,,maxim,1646661840245
+22173,Recent medication for sarcoidosis,1,Yes,,-1,,0.6986559629440308,APPROVED,maxim,1646660469283,35811567,EVENT,,maxim,1646660282128
+22173,Recent medication for sarcoidosis,1,Yes,,-1,,0.6986559629440308,APPROVED,maxim,1646660469283,35825062,VALUE,,maxim,1646660370114
+22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,1,Yes,,-1,,0.5477283000946045,APPROVED,,0,4025168,VALUE,,<auto>,1646386494120
+22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,1,Yes,,-1,,0.5477283000946045,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22168,Recent medication for emphysema,0,No,,-1,,0.6233890652656555,IGNORED,maxim,1646660455315,0,EVENT,,,0
+22181,Recent medication for mesothelioma of the lung,0,No,,-1,,0.563970148563385,IGNORED,maxim,1646660467202,0,EVENT,,,0
+20116,Smoking status,0,Never,,-1,,0.8355186581611633,APPROVED,maxim,1646661036963,4144272,EVENT,,maxim,1646661098700
+22179,Recent medication for asbestosis,1,Yes,,-1,,0.7005959153175354,APPROVED,maxim,1646660434432,35811573,EVENT,,maxim,1646660185293
+22179,Recent medication for asbestosis,1,Yes,,-1,,0.7005959153175354,APPROVED,maxim,1646660434432,35825062,VALUE,,maxim,1646660370114
+10844,Gestational diabetes only (pilot),1,Yes,,-1,,0.6028794646263123,APPROVED,Maxim,1646387191541,4024659,EVENT,,Maxim,1646387180099
+22137,Doctor diagnosed tuberculosis,1,Yes,,-1,,0.6671009659767151,APPROVED,,0,434557,VALUE,,Maxim,1646387339826
+22137,Doctor diagnosed tuberculosis,1,Yes,,-1,,0.6671009659767151,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+20544,Mental health problems ever diagnosed by a professional,10,"Mania, hypomania, bipolar or manic-depression",,-1,,0.4628041386604309,APPROVED,maxim,1646661684548,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,10,"Mania, hypomania, bipolar or manic-depression",,-1,,0.4628041386604309,APPROVED,maxim,1646661684548,436665,VALUE,,maxim,1646661682187
+20117,Alcohol drinker status,0,Never,,-1,,0.7097856402397156,APPROVED,maxim,1646661174273,37204556,EVENT,,maxim,1646661172733
+22506,Tobacco smoking,-818,Prefer not to answer,,-1,,0.9010772109031677,IGNORED,Maxim,1646386712355,0,EVENT,,,0
+22174,Recent medication for bronchiectasis,1,Yes,,-1,,0.7063411474227905,APPROVED,maxim,1646660447324,35811568,EVENT,,maxim,1646660200175
+22174,Recent medication for bronchiectasis,1,Yes,,-1,,0.7063411474227905,APPROVED,maxim,1646660447324,35825062,VALUE,,maxim,1646660370114
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",5,Blood clot in the leg (DVT),,-1,,0.4737726151943207,APPROVED,Maxim,1646388092781,4214956,EVENT,,Maxim,1646388066468
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",5,Blood clot in the leg (DVT),,-1,,0.4737726151943207,APPROVED,Maxim,1646388092781,443537,VALUE,,Maxim,1646388091274
+21024,Ever diagnosed with IBS,-818,Prefer not to answer,,-1,,0.5179217457771301,IGNORED,Maxim,1646386712118,0,EVENT,,,0
+22180,Recent medication for lung cancer (not mesothelioma),0,No,,-1,,0.5044025182723999,IGNORED,maxim,1646660464110,0,EVENT,,,0
+20403,Amount of alcohol drunk on a typical drinking day,1,1 or 2,,-1,,0.5913298726081848,APPROVED,maxim,1646661310981,40481011,EVENT,,<auto>,1646386504190
+20403,Amount of alcohol drunk on a typical drinking day,1,1 or 2,,-1,,0.5913298726081848,APPROVED,maxim,1646661310981,4245244,VALUE,,maxim,1646661301009
+22140,Doctor diagnosed lung cancer (not mesothelioma),1,Yes,,-1,,0.48137301206588745,APPROVED,,0,4128888,VALUE,,Maxim,1646387574835
+22140,Doctor diagnosed lung cancer (not mesothelioma),1,Yes,,-1,,0.48137301206588745,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+6151,Fractured bone site(s),5,Wrist,,-1,,0.55611652135849,APPROVED,Maxim,1646387951948,4193155,EVENT,,Maxim,1646387950605
+22180,Recent medication for lung cancer (not mesothelioma),1,Yes,,-1,,0.5044025182723999,APPROVED,maxim,1646660464834,35811574,EVENT,,maxim,1646660266440
+22180,Recent medication for lung cancer (not mesothelioma),1,Yes,,-1,,0.5044025182723999,APPROVED,maxim,1646660464834,35825062,VALUE,,maxim,1646660370114
+20544,Mental health problems ever diagnosed by a professional,11,Depression,,-1,,0.4628041386604309,APPROVED,maxim,1646661687825,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,11,Depression,,-1,,0.4628041386604309,APPROVED,maxim,1646661687825,440383,VALUE,,maxim,1646661687141
+22175,Recent medication for idiopathic pulmonary fibrosis,1,Yes,,-1,,0.8188910484313965,APPROVED,maxim,1646660462082,35811569,EVENT,,maxim,1646660259764
+22175,Recent medication for idiopathic pulmonary fibrosis,1,Yes,,-1,,0.8188910484313965,APPROVED,maxim,1646660462082,35825062,VALUE,,maxim,1646660370114
+20403,Amount of alcohol drunk on a typical drinking day,-818,Prefer not to answer,,-1,,0.5913298726081848,IGNORED,Maxim,1646386711595,0,EVENT,,,0
+22177,Recent medication for tuberculosis,0,No,,-1,,0.7042408585548401,IGNORED,maxim,1646660475635,0,EVENT,,,0
+22506,Tobacco smoking,111,Smokes on most or all days,,-1,,0.9010772109031677,APPROVED,maxim,1646660849496,42709996,EVENT,,maxim,1646660620171
+22506,Tobacco smoking,112,Occasionally,,-1,,0.9010772109031677,APPROVED,maxim,1646660850951,4044775,EVENT,,maxim,1646660835851
+22141,Doctor diagnosed mesothelioma of the lung,1,Yes,,-1,,0.5319497585296631,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),0,No,,-1,,0.8068298101425171,APPROVED,,0,255573,VALUE,,Maxim,1646387666883
+22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),0,No,,-1,,0.8068298101425171,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+20544,Mental health problems ever diagnosed by a professional,1,Social anxiety or social phobia,,-1,,0.4628041386604309,APPROVED,maxim,1646661668608,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,1,Social anxiety or social phobia,,-1,,0.4628041386604309,APPROVED,maxim,1646661668608,440690,VALUE,,maxim,1646661667458
+20544,Mental health problems ever diagnosed by a professional,5,Any other phobia (eg disabling fear of heights or spiders),,-1,,0.4628041386604309,APPROVED,maxim,1646661861285,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,5,Any other phobia (eg disabling fear of heights or spiders),,-1,,0.4628041386604309,APPROVED,maxim,1646661861285,4085677,VALUE,,maxim,1646661855624
+21024,Ever diagnosed with IBS,1,Yes,,-1,,0.5179217457771301,APPROVED,maxim,1646661962601,75576,VALUE,,maxim,1646661926347
+21024,Ever diagnosed with IBS,1,Yes,,-1,,0.5179217457771301,APPROVED,maxim,1646661962601,4214956,EVENT,,maxim,1646661961890
+22168,Recent medication for emphysema,1,Yes,,-1,,0.6233890652656555,APPROVED,maxim,1646660456308,35811562,EVENT,,maxim,1646660231822
+22168,Recent medication for emphysema,1,Yes,,-1,,0.6233890652656555,APPROVED,maxim,1646660456308,35825062,VALUE,,maxim,1646660370114
+22167,Recent medication for asthma,1,Yes,,-1,,0.6457778215408325,APPROVED,maxim,1646660440150,35811561,EVENT,Invalid existing target: 3661634,maxim,1646660193529
+22167,Recent medication for asthma,1,Yes,,-1,,0.6457778215408325,APPROVED,maxim,1646660440150,35825062,VALUE,Invalid existing target: 3661634,maxim,1646660370114
+22129,Doctor diagnosed chronic bronchitis,0,No,,-1,,0.7653823494911194,APPROVED,,0,255841,VALUE,,Maxim,1646387681201
+22129,Doctor diagnosed chronic bronchitis,0,No,,-1,,0.7653823494911194,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+20116,Smoking status,1,Previous,,-1,,0.8355186581611633,APPROVED,maxim,1646661052012,4310250,EVENT,,maxim,1646661049883
+22176,Recent medication for fibrosing alveolitis/unspecified alveolitis,1,Yes,,-1,,0.5623502135276794,APPROVED,maxim,1646660457196,35811570,EVENT,,maxim,1646660245095
+22176,Recent medication for fibrosing alveolitis/unspecified alveolitis,1,Yes,,-1,,0.5623502135276794,APPROVED,maxim,1646660457196,35825062,VALUE,,maxim,1646660370114
+20544,Mental health problems ever diagnosed by a professional,-818,Prefer not to answer (group A),,-1,,0.4628041386604309,IGNORED,Maxim,1646386711883,0,EVENT,,,0
+22176,Recent medication for fibrosing alveolitis/unspecified alveolitis,0,No,,-1,,0.5623502135276794,IGNORED,maxim,1646660459432,0,EVENT,,,0
+22128,Doctor diagnosed emphysema,0,No,,-1,,0.6309210062026978,APPROVED,,0,261325,VALUE,,Maxim,1646387615689
+22128,Doctor diagnosed emphysema,0,No,,-1,,0.6309210062026978,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22138,Doctor diagnosed silicosis,1,Yes,,-1,,0.6561427712440491,APPROVED,,0,442125,VALUE,,Maxim,1646387367265
+22138,Doctor diagnosed silicosis,1,Yes,,-1,,0.6561427712440491,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+20117,Alcohol drinker status,1,Previous,,-1,,0.7097856402397156,APPROVED,maxim,1646661197907,4220362,EVENT,,maxim,1646661195098
+22139,Doctor diagnosed asbestosis,0,No,,-1,,0.6635460257530212,APPROVED,,0,256450,VALUE,,<auto>,1646386521472
+22139,Doctor diagnosed asbestosis,0,No,,-1,,0.6635460257530212,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22127,Doctor diagnosed asthma,0,No,,-1,,0.8359465003013611,APPROVED,,0,317009,VALUE,,Maxim,1646387709364
+22127,Doctor diagnosed asthma,0,No,,-1,,0.8359465003013611,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22139,Doctor diagnosed asbestosis,1,Yes,,-1,,0.6635460257530212,APPROVED,,0,256450,VALUE,,<auto>,1646386522654
+22139,Doctor diagnosed asbestosis,1,Yes,,-1,,0.6635460257530212,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22169,Recent medication for chronic bronchitis,1,Yes,,-1,,0.7250893115997314,APPROVED,maxim,1646660448545,35811563,EVENT,,maxim,1646660207960
+22169,Recent medication for chronic bronchitis,1,Yes,,-1,,0.7250893115997314,APPROVED,maxim,1646660448545,35825062,VALUE,,maxim,1646660370114
+3005,Fracture resulting from simple fall,0,No,,-1,,0.6323604583740234,IGNORED,maxim,1646662226776,0,EVENT,,,0
+20544,Mental health problems ever diagnosed by a professional,3,Any other type of psychosis or psychotic illness,,-1,,0.4628041386604309,APPROVED,maxim,1646661833248,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,3,Any other type of psychosis or psychotic illness,,-1,,0.4628041386604309,APPROVED,maxim,1646661833248,765030,VALUE,,maxim,1646661832686
+22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),1,Yes,,-1,,0.8068298101425171,APPROVED,,0,255573,VALUE,,Maxim,1646387663169
+22130,Doctor diagnosed COPD (chronic obstructive pulmonary disease),1,Yes,,-1,,0.8068298101425171,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22138,Doctor diagnosed silicosis,0,No,,-1,,0.6561427712440491,APPROVED,,0,442125,VALUE,,Maxim,1646387373781
+22138,Doctor diagnosed silicosis,0,No,,-1,,0.6561427712440491,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22134,Doctor diagnosed bronchiectasis,0,No,,-1,,0.6665395498275757,APPROVED,,0,256449,VALUE,,<auto>,1646386525675
+22134,Doctor diagnosed bronchiectasis,0,No,,-1,,0.6665395498275757,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22171,Recent medication for cystic fibrosis,0,No,,-1,,0.7047975659370422,IGNORED,maxim,1646660451522,0,EVENT,,,0
+6151,Fractured bone site(s),3,Hip,,-1,,0.55611652135849,APPROVED,Maxim,1646387934153,4192270,EVENT,,Maxim,1646387932961
+22137,Doctor diagnosed tuberculosis,0,No,,-1,,0.6671009659767151,APPROVED,,0,434557,VALUE,,Maxim,1646387337115
+22137,Doctor diagnosed tuberculosis,0,No,,-1,,0.6671009659767151,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22131,Doctor diagnosed cystic fibrosis,1,Yes,,-1,,0.6616140007972717,APPROVED,,0,441267,VALUE,,Maxim,1646387649320
+22131,Doctor diagnosed cystic fibrosis,1,Yes,,-1,,0.6616140007972717,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22126,Doctor diagnosed hayfever or allergic rhinitis,1,Yes,,-1,,0.543834924697876,APPROVED,,0,257007,VALUE,,<auto>,1646386527789
+22126,Doctor diagnosed hayfever or allergic rhinitis,1,Yes,,-1,,0.543834924697876,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22133,Doctor diagnosed sarcoidosis,0,No,,-1,,0.6621822118759155,APPROVED,,0,438688,VALUE,,<auto>,1646386528516
+22133,Doctor diagnosed sarcoidosis,0,No,,-1,,0.6621822118759155,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22179,Recent medication for asbestosis,0,No,,-1,,0.7005959153175354,IGNORED,maxim,1646660438256,0,EVENT,,,0
+22127,Doctor diagnosed asthma,1,Yes,,-1,,0.8359465003013611,APPROVED,,0,317009,VALUE,,Maxim,1646387706189
+22127,Doctor diagnosed asthma,1,Yes,,-1,,0.8359465003013611,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22170,Recent medication for COPD (Chronic Obstructive Pulmonary Disease),1,Yes,,-1,,0.8890184164047241,APPROVED,maxim,1646660449732,35811564,EVENT,Invalid existing target: 3661635,maxim,1646660215711
+22170,Recent medication for COPD (Chronic Obstructive Pulmonary Disease),1,Yes,,-1,,0.8890184164047241,APPROVED,maxim,1646660449732,35825062,VALUE,Invalid existing target: 3661635,maxim,1646660370114
+20403,Amount of alcohol drunk on a typical drinking day,4,"7, 8 or 9",,-1,,0.5913298726081848,APPROVED,maxim,1646661480797,40481011,EVENT,,<auto>,1646386532797
+20403,Amount of alcohol drunk on a typical drinking day,4,"7, 8 or 9",,-1,,0.5913298726081848,APPROVED,maxim,1646661480797,4145079,VALUE,,maxim,1646661476403
+22128,Doctor diagnosed emphysema,1,Yes,,-1,,0.6309210062026978,APPROVED,,0,261325,VALUE,,Maxim,1646387629880
+22128,Doctor diagnosed emphysema,1,Yes,,-1,,0.6309210062026978,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,0,No,,-1,,0.5477283000946045,APPROVED,,0,4025168,VALUE,,<auto>,1646386533185
+22136,Doctor diagnosed fibrosing alveolitis/unspecified alveolitis,0,No,,-1,,0.5477283000946045,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22132,Doctor diagnosed alpha-1 antitrypsin deficiency,1,Yes,,-1,,0.6707738041877747,APPROVED,Maxim,1646387775863,192275,VALUE,,<auto>,1646386533945
+22132,Doctor diagnosed alpha-1 antitrypsin deficiency,1,Yes,,-1,,0.6707738041877747,APPROVED,Maxim,1646387775863,4214956,EVENT,,Maxim,1646387757191
+22132,Doctor diagnosed alpha-1 antitrypsin deficiency,0,No,,-1,,0.6707738041877747,APPROVED,,0,192275,VALUE,,<auto>,1646386534941
+22132,Doctor diagnosed alpha-1 antitrypsin deficiency,0,No,,-1,,0.6707738041877747,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22178,Recent medication for silicosis,0,No,,-1,,0.4514694809913635,IGNORED,maxim,1646660473408,0,EVENT,,,0
+22170,Recent medication for COPD (Chronic Obstructive Pulmonary Disease),0,No,,-1,,0.8890184164047241,IGNORED,maxim,1646660450640,0,EVENT,Invalid existing target: 3661635,,0
+22133,Doctor diagnosed sarcoidosis,1,Yes,,-1,,0.6621822118759155,APPROVED,,0,438688,VALUE,,<auto>,1646386536993
+22133,Doctor diagnosed sarcoidosis,1,Yes,,-1,,0.6621822118759155,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+22129,Doctor diagnosed chronic bronchitis,1,Yes,,-1,,0.7653823494911194,APPROVED,,0,255841,VALUE,,Maxim,1646387685268
+22129,Doctor diagnosed chronic bronchitis,1,Yes,,-1,,0.7653823494911194,APPROVED,,0,4214956,EVENT,,Maxim,1646387757191
+6150,Vascular/heart problems diagnosed by doctor,4,High blood pressure,,-1,,0.4304583966732025,APPROVED,Maxim,1646388014097,4214956,EVENT,,Maxim,1646387985914
+6150,Vascular/heart problems diagnosed by doctor,4,High blood pressure,,-1,,0.4304583966732025,APPROVED,Maxim,1646388014097,316866,VALUE,,Maxim,1646388013500
+22131,Doctor diagnosed cystic fibrosis,0,No,,-1,,0.6616140007972717,APPROVED,,0,441267,VALUE,,Maxim,1646387644246
+22131,Doctor diagnosed cystic fibrosis,0,No,,-1,,0.6616140007972717,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+22171,Recent medication for cystic fibrosis,1,Yes,,-1,,0.7047975659370422,APPROVED,maxim,1646660453435,0,EVENT,,,0
+22135,Doctor diagnosed idiopathic pulmonary fibrosis,0,No,,-1,,0.7833737134933472,APPROVED,,0,45763750,VALUE,,<auto>,1646386539535
+22135,Doctor diagnosed idiopathic pulmonary fibrosis,0,No,,-1,,0.7833737134933472,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+6151,Fractured bone site(s),7,Other bones,,-1,,0.55611652135849,APPROVED,Maxim,1646387960254,4193155,EVENT,,Maxim,1646387959500
+22506,Tobacco smoking,113,Ex-smoker,,-1,,0.9010772109031677,APPROVED,maxim,1646660882122,4310250,EVENT,,maxim,1646660878241
+22506,Tobacco smoking,114,Never smoked,,-1,,0.9010772109031677,APPROVED,maxim,1646660902847,4144272,EVENT,,maxim,1646661112389
+22169,Recent medication for chronic bronchitis,0,No,,-1,,0.7250893115997314,IGNORED,maxim,1646660449235,0,EVENT,,,0
+20403,Amount of alcohol drunk on a typical drinking day,5,10 or more,,-1,,0.5913298726081848,APPROVED,maxim,1646661509118,40481011,EVENT,,<auto>,1646386545000
+20403,Amount of alcohol drunk on a typical drinking day,5,10 or more,,-1,,0.5913298726081848,APPROVED,maxim,1646661509118,4244839,VALUE,,maxim,1646661502606
+20544,Mental health problems ever diagnosed by a professional,18,Attention deficit or attention deficit and hyperactivity disorder (ADD/ADHD),,-1,,0.4628041386604309,APPROVED,maxim,1646661760541,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,18,Attention deficit or attention deficit and hyperactivity disorder (ADD/ADHD),,-1,,0.4628041386604309,APPROVED,maxim,1646661760541,438409,VALUE,,maxim,1646661759208
+22167,Recent medication for asthma,0,No,,-1,,0.6457778215408325,IGNORED,maxim,1646660445712,0,EVENT,Invalid existing target: 3661634,,0
+10844,Gestational diabetes only (pilot),0,No,,-1,,0.6028794646263123,APPROVED,Maxim,1646387191083,4211787,EVENT,,Maxim,1646387142177
+10844,Gestational diabetes only (pilot),0,No,,-1,,0.6028794646263123,APPROVED,Maxim,1646387191083,4024659,VALUE,,Maxim,1646387169368
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",7,Blood clot in the lung,,-1,,0.4737726151943207,APPROVED,Maxim,1646388131447,4214956,EVENT,,Maxim,1646388066468
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",7,Blood clot in the lung,,-1,,0.4737726151943207,APPROVED,Maxim,1646388131447,4239826,VALUE,,Maxim,1646388130919
+20544,Mental health problems ever diagnosed by a professional,14,"Autism, Asperger's or autistic spectrum disorder",,-1,,0.4628041386604309,APPROVED,maxim,1646661724952,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,14,"Autism, Asperger's or autistic spectrum disorder",,-1,,0.4628041386604309,APPROVED,maxim,1646661724952,439776,VALUE,,maxim,1646661724297
+20544,Mental health problems ever diagnosed by a professional,7,Obsessive compulsive disorder (OCD),,-1,,0.4628041386604309,APPROVED,maxim,1646661872513,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,7,Obsessive compulsive disorder (OCD),,-1,,0.4628041386604309,APPROVED,maxim,1646661872513,440374,VALUE,,maxim,1646661871536
+20403,Amount of alcohol drunk on a typical drinking day,2,3 or 4,,-1,,0.5913298726081848,APPROVED,maxim,1646661459178,40481011,EVENT,,<auto>,1646386551197
+20403,Amount of alcohol drunk on a typical drinking day,2,3 or 4,,-1,,0.5913298726081848,APPROVED,maxim,1646661459178,4244842,VALUE,,maxim,1646661406847
+20544,Mental health problems ever diagnosed by a professional,12,Bulimia nervosa,,-1,,0.4628041386604309,APPROVED,maxim,1646661691743,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,12,Bulimia nervosa,,-1,,0.4628041386604309,APPROVED,maxim,1646661691743,438407,VALUE,,maxim,1646661691209
+22166,Recent medication for hayfever or allergic rhinitis,0,No,,-1,,0.5627732276916504,IGNORED,maxim,1646660460322,0,EVENT,,,0
+20544,Mental health problems ever diagnosed by a professional,6,Panic attacks,,-1,,0.4628041386604309,APPROVED,maxim,1646661865858,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,6,Panic attacks,,-1,,0.4628041386604309,APPROVED,maxim,1646661865858,4021498,VALUE,,maxim,1646661865216
+20117,Alcohol drinker status,2,Current,,-1,,0.7097856402397156,APPROVED,maxim,1646661208951,4074035,EVENT,,maxim,1646661203967
+20116,Smoking status,2,Current,,-1,,0.8355186581611633,APPROVED,maxim,1646661087072,4298794,EVENT,,maxim,1646661085182
+22166,Recent medication for hayfever or allergic rhinitis,1,Yes,,-1,,0.5627732276916504,APPROVED,maxim,1646660461371,35811560,EVENT,,maxim,1646660253006
+22166,Recent medication for hayfever or allergic rhinitis,1,Yes,,-1,,0.5627732276916504,APPROVED,maxim,1646660461371,35825062,VALUE,,maxim,1646660370114
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",8,Asthma,,-1,,0.4737726151943207,APPROVED,Maxim,1646388109556,4214956,EVENT,,Maxim,1646388066468
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",8,Asthma,,-1,,0.4737726151943207,APPROVED,Maxim,1646388109556,317009,VALUE,,Maxim,1646388109060
+6151,Fractured bone site(s),6,Arm,,-1,,0.55611652135849,APPROVED,Maxim,1646387956082,4193155,EVENT,,Maxim,1646387955341
+20544,Mental health problems ever diagnosed by a professional,15,"Anxiety, nerves or generalized anxiety disorder",,-1,,0.4628041386604309,APPROVED,maxim,1646661745129,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,15,"Anxiety, nerves or generalized anxiety disorder",,-1,,0.4628041386604309,APPROVED,maxim,1646661745129,434613,VALUE,,maxim,1646661744335
+22141,Doctor diagnosed mesothelioma of the lung,0,No,,-1,,0.5319497585296631,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+20544,Mental health problems ever diagnosed by a professional,13,Psychological over-eating or binge-eating,,-1,,0.4628041386604309,APPROVED,maxim,1646661717615,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,13,Psychological over-eating or binge-eating,,-1,,0.4628041386604309,APPROVED,maxim,1646661717615,4152972,VALUE,,maxim,1646661716571
+6150,Vascular/heart problems diagnosed by doctor,2,Angina,,-1,,0.4304583966732025,APPROVED,Maxim,1646388005985,4214956,EVENT,,Maxim,1646387985914
+6150,Vascular/heart problems diagnosed by doctor,2,Angina,,-1,,0.4304583966732025,APPROVED,Maxim,1646388005985,321318,VALUE,,Maxim,1646388005275
+22175,Recent medication for idiopathic pulmonary fibrosis,0,No,,-1,,0.8188910484313965,IGNORED,maxim,1646660463393,0,EVENT,,,0
+6151,Fractured bone site(s),2,Leg,,-1,,0.55611652135849,APPROVED,Maxim,1646387928652,4193155,EVENT,,Maxim,1646387927821
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",9,"Hayfever, allergic rhinitis or eczema",,-1,,0.4737726151943207,APPROVED,Maxim,1646388118771,4214956,EVENT,,Maxim,1646388066468
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",9,"Hayfever, allergic rhinitis or eczema",,-1,,0.4737726151943207,APPROVED,Maxim,1646388118771,257007,VALUE,,Maxim,1646388117924
+22140,Doctor diagnosed lung cancer (not mesothelioma),0,No,,-1,,0.48137301206588745,APPROVED,,0,4128888,VALUE,,Maxim,1646387567915
+22140,Doctor diagnosed lung cancer (not mesothelioma),0,No,,-1,,0.48137301206588745,APPROVED,,0,4211787,EVENT,,Maxim,1646387806782
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",6,Emphysema/chronic bronchitis,,-1,,0.4737726151943207,APPROVED,Maxim,1646388100094,4214956,EVENT,,Maxim,1646388066468
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",6,Emphysema/chronic bronchitis,,-1,,0.4737726151943207,APPROVED,Maxim,1646388100094,258780,VALUE,,Maxim,1646388099520
+6150,Vascular/heart problems diagnosed by doctor,3,Stroke,,-1,,0.4304583966732025,APPROVED,Maxim,1646388009599,4214956,EVENT,,Maxim,1646387985914
+6150,Vascular/heart problems diagnosed by doctor,3,Stroke,,-1,,0.4304583966732025,APPROVED,Maxim,1646388009599,381316,VALUE,,Maxim,1646388009026
+20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,-1,,0.4628041386604309,APPROVED,maxim,1646661751039,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,-1,,0.4628041386604309,APPROVED,maxim,1646661751039,436675,VALUE,,maxim,1646661750515
+3627,Age angina diagnosed,-1,Do not know,,-1,,0.6316303014755249,IGNORED,Maxim,1646386704928,0,EVENT,,,0
+22174,Recent medication for bronchiectasis,0,No,,-1,,0.7063411474227905,IGNORED,maxim,1646660447986,0,EVENT,,,0
+6150,Vascular/heart problems diagnosed by doctor,-3,Prefer not to answer,,-1,,0.4304583966732025,IGNORED,Maxim,1646386709903,0,EVENT,,,0
+21024,Ever diagnosed with IBS,-121,Do not know,,-1,,0.5179217457771301,IGNORED,Maxim,1646386706041,0,EVENT,,,0
+3761,"Age hay fever, rhinitis or eczema diagnosed",-1,Do not know,,-1,,0.45307111740112305,IGNORED,Maxim,1646386705132,0,EVENT,,,0
+20116,Smoking status,-3,Prefer not to answer,,-1,,0.8355186581611633,IGNORED,Maxim,1646386708823,0,EVENT,,,0
+20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,-1,,0.5913298726081848,APPROVED,maxim,1646661459775,40481011,EVENT,,<auto>,1646386570590
+20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,-1,,0.5913298726081848,APPROVED,maxim,1646661459775,4144038,VALUE,,maxim,1646661448558
+20544,Mental health problems ever diagnosed by a professional,2,Schizophrenia,,-1,,0.4628041386604309,APPROVED,maxim,1646661768236,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,2,Schizophrenia,,-1,,0.4628041386604309,APPROVED,maxim,1646661768236,435783,VALUE,,maxim,1646661767679
+3627,Age angina diagnosed,-3,Prefer not to answer,,-1,,0.6316303014755249,IGNORED,Maxim,1646386709484,0,EVENT,,,0
+20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,-1,,0.4628041386604309,APPROVED,maxim,1646661754239,35811230,EVENT,,maxim,1646661618859
+20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,-1,,0.4628041386604309,APPROVED,maxim,1646661754239,4321835,VALUE,,maxim,1646661753677
+22173,Recent medication for sarcoidosis,0,No,,-1,,0.6986559629440308,IGNORED,maxim,1646660471533,0,EVENT,,,0
+10844,Gestational diabetes only (pilot),-1,Do not know,,-1,,0.6028794646263123,IGNORED,Maxim,1646386702500,0,EVENT,,,0
+6151,Fractured bone site(s),-3,Prefer not to answer,,-1,,0.55611652135849,IGNORED,Maxim,1646386710118,0,EVENT,,,0
+3761,"Age hay fever, rhinitis or eczema diagnosed",-3,Prefer not to answer,,-1,,0.45307111740112305,IGNORED,Maxim,1646386709700,0,EVENT,,,0
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",-3,Prefer not to answer,,-1,,0.4737726151943207,IGNORED,Maxim,1646386710421,0,EVENT,,,0
+3005,Fracture resulting from simple fall,-1,Do not know,,-1,,0.6323604583740234,IGNORED,Maxim,1646386704709,0,EVENT,,,0
+6150,Vascular/heart problems diagnosed by doctor,-7,None of the above,,-1,,0.4304583966732025,IGNORED,Maxim,1646386710848,0,EVENT,,,0
+10844,Gestational diabetes only (pilot),-3,Prefer not to answer,,-1,,0.6028794646263123,IGNORED,Maxim,1646386694716,0,EVENT,,,0
+3005,Fracture resulting from simple fall,-3,Prefer not to answer,,-1,,0.6323604583740234,IGNORED,Maxim,1646386709272,0,EVENT,,,0
+22172,Recent medication for alpha-1 antitrypsin deficiency,0,No,,-1,,0.6926702260971069,IGNORED,maxim,1646660400486,0,EVENT,,,0
+6151,Fractured bone site(s),-1,Do not know,,-1,,0.55611652135849,IGNORED,Maxim,1646386705655,0,EVENT,,,0
+20117,Alcohol drinker status,-3,Prefer not to answer,,-1,,0.7097856402397156,IGNORED,Maxim,1646386709045,0,EVENT,,,0
+6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",-7,None of the above,,-1,,0.4737726151943207,IGNORED,Maxim,1646386711300,0,EVENT,,,0
 2724,Had menopause,-3,Prefer not to answer,,309811,,0.8264210224151611,IGNORED,,0,4211787,EVENT,,,1610119527471
 2724,Had menopause,-3,Prefer not to answer,,309811,,0.8264210224151611,IGNORED,,0,4128329,VALUE,,,1610119527472
 2443,Diabetes diagnosed by doctor,-3,Prefer not to answer,,573331,,0.585104763507843,IGNORED,,0,0,EVENT,,,0
@@ -234,14 +234,14 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 2463,Fractured/broken bones in last 5 years,0,No,,573331,,0.4573218822479248,APPROVED,sofia,1610120777312,40481925,EVENT,Missing 'in last 5 years',sofia,1610120776048
 2814,Ever used hormone-replacement therapy (HRT),0,No,,309808,,0.7395877838134766,APPROVED,sofia,1610119987543,4141760,VALUE,,,1610119527476
 2814,Ever used hormone-replacement therapy (HRT),0,No,,309808,,0.7395877838134766,APPROVED,sofia,1610119987543,40481925,EVENT,,sofia,1610119981190
-4041,Gestational diabetes only,1,Do not know,,11738,,0.7677391767501831,IGNORED,,0,0,EVENT,,,0
+4041,Gestational diabetes only,-1,Do not know,,11738,,0.7677391767501831,IGNORED,,0,0,EVENT,,,0
 2463,Fractured/broken bones in last 5 years,1,Yes,,573331,,0.4573218822479248,APPROVED,sofia,1610119873971,75053,VALUE,Missing 'in last 5 years',,1610119527476
 2463,Fractured/broken bones in last 5 years,1,Yes,,573331,,0.4573218822479248,APPROVED,sofia,1610119873971,4214956,EVENT,Missing 'in last 5 years',sofia,1610119872011
 4041,Gestational diabetes only,-2,Not applicable,,11738,,0.7677391767501831,IGNORED,,0,0,EVENT,,,0
 2814,Ever used hormone-replacement therapy (HRT),1,Yes,,309808,,0.7395877838134766,APPROVED,sofia,1610119931436,4141760,VALUE,,,1610119527477
 2814,Ever used hormone-replacement therapy (HRT),1,Yes,,309808,,0.7395877838134766,APPROVED,sofia,1610119931436,4214956,EVENT,,sofia,1610119928051
 4041,Gestational diabetes only,-3,Prefer not to answer,,11738,,0.7677391767501831,IGNORED,,0,0,EVENT,,,0
-2463,Fractured/broken bones in last 5 years,1,Do not know,,573331,,0.4573218822479248,IGNORED,,0,0,EVENT,,,0
+2463,Fractured/broken bones in last 5 years,-1,Do not know,,573331,,0.4573218822479248,IGNORED,,0,0,EVENT,,,0
 2463,Fractured/broken bones in last 5 years,-3,Prefer not to answer,,573331,,0.4573218822479248,IGNORED,,0,0,EVENT,,,0
 2834,Bilateral oophorectomy (both ovaries removed),-3,Prefer not to answer,,309808,,0.6687980890274048,IGNORED,,0,0,EVENT,,,0
 2335,Chest pain or discomfort,0,No,,573339,,0.8702327013015747,APPROVED,sofia,1610120552130,4133044,VALUE,,,1610119527478
@@ -254,13 +254,13 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 4041,Gestational diabetes only,1,Yes,,11738,,0.7677391767501831,APPROVED,sofia,1610120590500,4024659,VALUE,,,1610119527479
 4041,Gestational diabetes only,1,Yes,,11738,,0.7677391767501831,APPROVED,sofia,1610120590500,4214956,EVENT,,sofia,1610120587415
 2834,Bilateral oophorectomy (both ovaries removed),-5,Not sure,,309808,,0.6687980890274048,IGNORED,,0,0,EVENT,,,0
-2443,Diabetes diagnosed by doctor,1,Do not know,,573331,,0.585104763507843,IGNORED,,0,0,EVENT,,,0
+2443,Diabetes diagnosed by doctor,-1,Do not know,,573331,,0.585104763507843,IGNORED,,0,0,EVENT,,,0
 2774,"Ever had stillbirth, spontaneous miscarriage or termination",0,No,,309808,,0.4950195848941803,APPROVED,sofia,1610120647410,40539858,VALUE,,,1610119527482
 2774,"Ever had stillbirth, spontaneous miscarriage or termination",0,No,,309808,,0.4950195848941803,APPROVED,sofia,1610120647410,40481925,EVENT,,sofia,1610120639741
-2335,Chest pain or discomfort,1,Do not know,,573339,,0.8702327013015747,IGNORED,,0,0,EVENT,,,0
+2335,Chest pain or discomfort,-1,Do not know,,573339,,0.8702327013015747,IGNORED,,0,0,EVENT,,,0
 2784,Ever taken oral contraceptive pill,0,No,,309808,,0.7538747787475586,APPROVED,sofia,1610120670524,4241216,VALUE,,,1610119527483
 2784,Ever taken oral contraceptive pill,0,No,,309808,,0.7538747787475586,APPROVED,sofia,1610120670524,40481925,EVENT,,sofia,1610120669441
-2986,Started insulin within one year diagnosis of diabetes,1,Do not know,,29218,,0.41381725668907166,IGNORED,,0,0,EVENT,,,0
+2986,Started insulin within one year diagnosis of diabetes,-1,Do not know,,29218,,0.41381725668907166,IGNORED,,0,0,EVENT,,,0
 2335,Chest pain or discomfort,-3,Prefer not to answer,,573339,,0.8702327013015747,IGNORED,,0,0,EVENT,,,0
 2724,Had menopause,2,Not sure - had a hysterectomy,,309811,,0.8264210224151611,IGNORED,,0,0,EVENT,History of hysterectomy to be captured from field 3591,,0
 2724,Had menopause,3,Not sure - other reason,,309811,,0.8264210224151611,IGNORED,,0,0,EVENT,,,0
@@ -269,9 +269,9 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 2784,Ever taken oral contraceptive pill,1,Yes,,309808,,0.7538747787475586,APPROVED,sofia,1610120689725,4241216,VALUE,,,1610119527484
 2784,Ever taken oral contraceptive pill,1,Yes,,309808,,0.7538747787475586,APPROVED,sofia,1610120689725,4214956,EVENT,,sofia,1610120685034
 2986,Started insulin within one year diagnosis of diabetes,-3,Prefer not to answer,,29218,,0.41381725668907166,IGNORED,,0,0,EVENT,,,0
-2814,Ever used hormone-replacement therapy (HRT),1,Do not know,,309808,,0.7395877838134766,IGNORED,,0,0,EVENT,,,0
-2784,Ever taken oral contraceptive pill,1,Do not know,,309808,,0.7538747787475586,IGNORED,,0,0,EVENT,,,0
-2774,"Ever had stillbirth, spontaneous miscarriage or termination",1,Do not know,,309808,,0.4950195848941803,IGNORED,,0,0,EVENT,,,0
+2814,Ever used hormone-replacement therapy (HRT),-1,Do not know,,309808,,0.7395877838134766,IGNORED,,0,0,EVENT,,,0
+2784,Ever taken oral contraceptive pill,-1,Do not know,,309808,,0.7538747787475586,IGNORED,,0,0,EVENT,,,0
+2774,"Ever had stillbirth, spontaneous miscarriage or termination",-1,Do not know,,309808,,0.4950195848941803,IGNORED,,0,0,EVENT,,,0
 2986,Started insulin within one year diagnosis of diabetes,0,No,,29218,,0.41381725668907166,APPROVED,sofia,1610120844623,4086160,VALUE,,,1610119527484
 2986,Started insulin within one year diagnosis of diabetes,0,No,,29218,,0.41381725668907166,APPROVED,sofia,1610120844623,40481925,EVENT,,sofia,1610120842704
 2834,Bilateral oophorectomy (both ovaries removed),0,No,,309808,,0.6687980890274048,APPROVED,sofia,1610120721193,4297990,VALUE,,,1610119527486
@@ -279,13 +279,13 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 2784,Ever taken oral contraceptive pill,-3,Prefer not to answer,,309808,,0.7538747787475586,IGNORED,,0,0,EVENT,,,0
 2834,Bilateral oophorectomy (both ovaries removed),1,Yes,,309808,,0.6687980890274048,APPROVED,sofia,1610120735293,4297990,VALUE,,,1610119527486
 2834,Bilateral oophorectomy (both ovaries removed),1,Yes,,309808,,0.6687980890274048,APPROVED,sofia,1610120735293,4214956,EVENT,,sofia,1610120732555
-2345,Ever had bowel cancer screening,1,Do not know,,573745,,0.0,IGNORED,Maxim,1610452540237,0,EVENT,,,0
+2345,Ever had bowel cancer screening,-1,Do not know,,573745,,0.0,IGNORED,Maxim,1610452540237,0,EVENT,,,0
 2345,Ever had bowel cancer screening,-3,Prefer not to answer,,573745,,0.0,IGNORED,Maxim,1610452541102,0,EVENT,,,0
 2345,Ever had bowel cancer screening,0,No,,573745,,0.0,APPROVED,Maxim,1610452676934,4211787,EVENT,,Maxim,1610452564873
 2345,Ever had bowel cancer screening,0,No,,573745,,0.0,APPROVED,Maxim,1610452676934,4175226,VALUE,,Maxim,1610452633591
 2345,Ever had bowel cancer screening,1,Yes,,573745,,0.0,APPROVED,Maxim,1610452677311,4188893,EVENT,,Maxim,1610452607816
 2345,Ever had bowel cancer screening,1,Yes,,573745,,0.0,APPROVED,Maxim,1610452677311,4175226,VALUE,,Maxim,1610452636185
-2365,Ever had prostate specific antigen (PSA) test,1,Do not know,,573745,,0.0,IGNORED,Maxim,1610452545060,0,EVENT,,,0
+2365,Ever had prostate specific antigen (PSA) test,-1,Do not know,,573745,,0.0,IGNORED,Maxim,1610452545060,0,EVENT,,,0
 2365,Ever had prostate specific antigen (PSA) test,-3,Prefer not to answer,,573745,,0.0,IGNORED,Maxim,1610452545397,0,EVENT,,,0
 2365,Ever had prostate specific antigen (PSA) test,0,No,,573745,,0.0,APPROVED,Maxim,1610452679544,4211787,EVENT,,Maxim,1610452578487
 2365,Ever had prostate specific antigen (PSA) test,0,No,,573745,,0.0,APPROVED,Maxim,1610452679544,2617206,VALUE,,Maxim,1610452670153
@@ -393,10 +393,10 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 40000,Date of death,,,,30263,,1.0,IGNORED,,0,0,EVENT,Date of 40001,,0
 40005,Date of cancer diagnosis,,,,118715,,0.83932763338089,IGNORED,,0,0,EVENT,"Date of 40006,40013",,0
 40010,Description of cause of death,,,,17147,,0.71222186088562,FLAGGED,,0,45880469,EVENT,This is free-text to be stored as note. New mapping approach needed for text fields,,1602841827036
-40014,Underlying (primary) cause of death: ICD10 addendum,,,,1,,0.543115377426148,IGNORED,Maxim,1602843041431,0,EVENT,Empty according to data dictionary,,0
-40015,Contributory (secondary) cause of death: ICD10 addendum,,,,1,,0.459375947713852,IGNORED,Maxim,1602842758873,0,EVENT,Empty according to data dictionary,,0
-40016,Type of cancer: ICD10 addendum,,,,1,,0.547840416431427,IGNORED,,0,0,EVENT,Empty according to data dictionary,,0
-40017,Type of cancer: ICD9 addendum,,,,1,,0.512554585933685,IGNORED,,0,0,EVENT,Empty according to data dictionary,,0
+40014,Underlying (primary) cause of death: ICD10 addendum,,,,-1,,0.543115377426148,IGNORED,Maxim,1602843041431,0,EVENT,Empty according to data dictionary,,0
+40015,Contributory (secondary) cause of death: ICD10 addendum,,,,-1,,0.459375947713852,IGNORED,Maxim,1602842758873,0,EVENT,Empty according to data dictionary,,0
+40016,Type of cancer: ICD10 addendum,,,,-1,,0.547840416431427,IGNORED,,0,0,EVENT,Empty according to data dictionary,,0
+40017,Type of cancer: ICD9 addendum,,,,-1,,0.512554585933685,IGNORED,,0,0,EVENT,Empty according to data dictionary,,0
 3809,Time since last prostate specific antigen (PSA) test,,,,81671,,0.0,IGNORED,Maxim,0,0,EVENT,Time since 2365,,0
 30746,Glucose reportability,3,Reportable at assay but not reportable after any corrections (too high),,445261,,0.5244626998901367,APPROVED,,0,4040635,EVENT,,,1610120931941
 30746,Glucose reportability,3,Reportable at assay but not reportable after any corrections (too high),,445261,,0.5244626998901367,APPROVED,,0,4282459,VALUE,,,1610120931941
@@ -429,7 +429,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30652,Aspartate aminotransferase aliquot,4,4,,492054,,0.8082786202430725,APPROVED,,0,4094657,VALUE,,,1610120931945
 30813,Phosphate correction level,1,Date and aliquot correction,,444901,,0.719254732131958,APPROVED,,0,4143923,EVENT,,,1610120931945
 30813,Phosphate correction level,1,Date and aliquot correction,,444901,,0.719254732131958,APPROVED,,0,4125861,VALUE,,,1610120931945
-2453,Cancer diagnosed by doctor,1,Do not know,,573331,,0.6657017469406128,IGNORED,,0,0,EVENT,,,0
+2453,Cancer diagnosed by doctor,-1,Do not know,,573331,,0.6657017469406128,IGNORED,,0,0,EVENT,,,0
 30264,Mean reticulocyte volume acquisition route,0,Direct,,494715,,0.5881596803665161,APPROVED,,0,3049858,EVENT,,,1610120931945
 30264,Mean reticulocyte volume acquisition route,0,Direct,,494715,,0.5881596803665161,APPROVED,,0,42531073,VALUE,,,1610120931945
 30786,LDL direct reportability,1,"Reportable at assay and after aliquot correction, if attempted",,486551,,0.4774496853351593,APPROVED,,0,4040635,EVENT,,,1610120931945
@@ -497,7 +497,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30274,Mean sphered cell volume acquisition route,0,Direct,,489146,,0.5589160323143005,APPROVED,,0,42531073,VALUE,,,1610120931953
 30852,Testosterone aliquot,4,4,,487203,,0.5991442203521729,APPROVED,,0,4227695,EVENT,,,1610120931953
 30852,Testosterone aliquot,4,4,,487203,,0.5991442203521729,APPROVED,,0,1636780,VALUE,,,1610120931953
-2473,Other serious medical condition/disability diagnosed by doctor,1,Do not know,,573331,,0.48448386788368225,IGNORED,,0,0,EVENT,,,0
+2473,Other serious medical condition/disability diagnosed by doctor,-1,Do not know,,573331,,0.48448386788368225,IGNORED,,0,0,EVENT,,,0
 30792,Lipoprotein A aliquot,2,2,,476535,,0.6477408409118652,APPROVED,,0,4227695,EVENT,,,1610120931954
 30792,Lipoprotein A aliquot,2,2,,476535,,0.6477408409118652,APPROVED,,0,4199406,VALUE,,,1610120931954
 30885,Urate missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24569,,0.5825872421264648,APPROVED,,0,44803923,EVENT,,,1610120931955
@@ -606,7 +606,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30794,Lipoprotein A correction reason,2,No aliquot information,,389863,,0.649182915687561,APPROVED,,0,4199406,VALUE,,,1610120931963
 30755,Glycated haemoglobin (HbA1c) missing reason,2,Original value above or below reportable limit,,30651,,0.7301281094551086,APPROVED,,0,44803923,EVENT,,,1610120931964
 30755,Glycated haemoglobin (HbA1c) missing reason,2,Original value above or below reportable limit,,30651,,0.7301281094551086,APPROVED,,0,37118746,VALUE,,,1610120931964
-2492,Taking other prescription medications,1,Do not know,,573331,,0.7345772981643677,IGNORED,,0,0,EVENT,,,0
+2492,Taking other prescription medications,-1,Do not know,,573331,,0.7345772981643677,IGNORED,,0,0,EVENT,,,0
 30854,Testosterone correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,441248,,0.5891194939613342,APPROVED,,0,4077846,EVENT,,,1610120931964
 30854,Testosterone correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,441248,,0.5891194939613342,APPROVED,,0,1636780,VALUE,,,1610120931964
 30893,Vitamin D correction level,1,Date and aliquot correction,,465389,,0.64653080701828,APPROVED,,0,4143923,EVENT,,,1610120931964
@@ -676,7 +676,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30795,Lipoprotein A missing reason,3,Unrecoverable aliquot problem (dip),,121561,,0.6637200713157654,APPROVED,,0,4199406,VALUE,,,1610120931968
 30655,Aspartate aminotransferase missing reason,3,Unrecoverable aliquot problem (dip),,25822,,0.8206011056900024,APPROVED,,0,44803923,EVENT,,,1610120931968
 30655,Aspartate aminotransferase missing reason,3,Unrecoverable aliquot problem (dip),,25822,,0.8206011056900024,APPROVED,,0,4094657,VALUE,,,1610120931968
-2844,Had other major operations,1,Do not know,,309808,,0.5609025359153748,IGNORED,,0,0,EVENT,,,0
+2844,Had other major operations,-1,Do not know,,309808,,0.5609025359153748,IGNORED,,0,0,EVENT,,,0
 30855,Testosterone missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,70176,,0.6275023221969604,APPROVED,,0,44803923,EVENT,,,1610120931968
 30855,Testosterone missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,70176,,0.6275023221969604,APPROVED,,0,1636780,VALUE,,,1610120931968
 30822,Rheumatoid factor aliquot,1,1,,491168,,0.7536104917526245,APPROVED,,0,4227695,EVENT,,,1610120931969
@@ -2291,19 +2291,19 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30636,Apolipoprotein A reportability,2,Reportable at assay but not reportable after any corrections (too low),,444907,,0.7129971385002136,APPROVED,,0,4337512,VALUE,,,1610120932047
 30696,Cholesterol reportability,5,Not reportable at assay (too high),,487474,,0.5696058869361877,APPROVED,,0,44803923,EVENT,,,1610120932047
 30696,Cholesterol reportability,5,Not reportable at assay (too high),,487474,,0.5696058869361877,APPROVED,,0,4224820,VALUE,,,1610120932047
-36,Blood pressure device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-37,Blood pressure manual sphygmomanometer device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-38,Hand grip dynamometer device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-39,Height measure device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-40,Manual scales device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-41,Seating box device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-4136,Arterial pulse-wave stiffness device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-42,Spirometer device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-4206,Arterial stiffness device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-43,Impedance device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-44,Tape measure device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-5214,Auto-refractor device ID (right),,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-5253,Intra-ocular pressure device ID (right),,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-5261,Intra-ocular pressure device ID (left),,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-5270,Optical-coherence tomography device ID,,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
-5273,Auto-refractor device ID (left),,,,1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+36,Blood pressure device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+37,Blood pressure manual sphygmomanometer device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+38,Hand grip dynamometer device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+39,Height measure device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+40,Manual scales device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+41,Seating box device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+4136,Arterial pulse-wave stiffness device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+42,Spirometer device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+4206,Arterial stiffness device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+43,Impedance device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+44,Tape measure device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5214,Auto-refractor device ID (right),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5253,Intra-ocular pressure device ID (right),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5261,Intra-ocular pressure device ID (left),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5270,Optical-coherence tomography device ID,,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
+5273,Auto-refractor device ID (left),,,,-1,,0,APPROVED,maxim,1646669570000,4272314,EVENT,,<athena>,1646669570000
