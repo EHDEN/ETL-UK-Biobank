@@ -141,7 +141,7 @@ class FieldConceptMapper:
     def lookup_one(self, field_id: str, value: str) -> Optional[MappingTarget]:
         pass
 
-    def lookup(self, field_id: str, value: str) -> List[MappingTarget]:
+    def lookup(self, field_id: str, value: str) -> Optional[List[MappingTarget]]:
         """
         For given field_id/value pair, looks up the target concept_id, value_as_concept_id, value_as_number and unit_concept_id.
 
@@ -153,17 +153,16 @@ class FieldConceptMapper:
             If mapping has a unit, values of -1 and -3 are ignored. These are considered 'not known' values.
         :param field_id: string
         :param value: string
-        :return: List[MappingTarget]
+        :return: List[MappingTarget] or None if field_id/value is ignored
         """
         field_mapping = self.get_mapping(field_id)
 
         if not field_mapping:
             logger.debug(f'Field "{field_id}" is unknown')
-            # Do not map fields not in the mapping tables. These are by default ignored.
-            return []
+            return [MappingTarget(0)]
 
         if field_mapping.is_ignored():
-            return []
+            return None
 
         is_discrete = field_mapping.has_values()
 
@@ -249,7 +248,7 @@ if __name__ == '__main__':
     # validator.print_all()
 
     def _print(targets):
-        if len(targets) == 0:
+        if targets is None or len(targets) == 0:
             print(None)
         elif len(targets) == 1:
             print(targets.pop())
@@ -288,3 +287,4 @@ if __name__ == '__main__':
 
     # Glaucoma with unit and value mapping
     _print(mapper.lookup('4689', '56'))
+    _print(mapper.lookup('100001', '56'))

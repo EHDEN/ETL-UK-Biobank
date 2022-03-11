@@ -12,7 +12,6 @@ mappingApproaches:
     name: discrete
   - &valueOnly
     name: value_only
-  # TODO: by value as number, value as concept, value as date, value as text
   - &date
     name: date
   - &mappingTable
@@ -23,16 +22,13 @@ mappings:
     mappingApproach: *date
     default_date_field: 53  # for fields not listed in the lookup
 
-  - filename: numeric_prio_fields.csv
+  - filename: numeric_fields.csv
     mappingApproach: *numeric
 
-  - filename: discrete_prio_fields.csv
+  - filename: discrete_fields.csv
     mappingApproach: *discrete
 
-  - filename: discrete_boolean_prio_fields.csv
-    mappingApproach: *discrete
-
-  - filename: discrete_other_fields.csv
+  - filename: ignored_fields.csv
     mappingApproach: *discrete
 
   - filename: 20001_cancer.csv

@@ -76,7 +76,7 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             # Lookup the mapping. If not targets defined (or ignored), skip it before calculating other things.
             targets = field_mapper.lookup(field_id, value)
-            if not targets:
+            if targets is None:  # ignored fields
                 continue
 
             # Date
@@ -99,12 +99,17 @@ def baseline_to_stem(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
 
             source_concept_id = field_to_concept_id_dict.get(field_id, None)
             for target in targets:
+                if target.source_value:
+                    source_value = target.source_value
+                else:
+                    source_value = field_id + '|' + value
+
                 yield wrapper.cdm.StemTable(
                     person_id=person_id,
                     start_date=datetime.date(),
                     start_datetime=datetime,
                     concept_id=target.concept_id,
-                    source_value=target.source_value[:50] if target.source_value else target.source_value,
+                    source_value=source_value[:50],
                     source_concept_id=source_concept_id,
                     value_as_concept_id=target.value_as_concept_id,
                     value_as_number=target.value_as_number,

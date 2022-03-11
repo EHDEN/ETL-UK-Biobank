@@ -1,6 +1,6 @@
 declareTest(900, 'Baseline - Hand grip')
 add_baseline(eid = '900', `53-0.0`='2010-10-10', `47-0.0`='11.3')
-expect_observation(person_id = 900, observation_date = '2010-10-10', observation_concept_id = 44805438,
+expect_measurement(person_id = 900, measurement_date = '2010-10-10', measurement_concept_id = 44805438,
                    unit_concept_id = 9529, value_as_number = 11.3)
 
 declareTest(901, 'Baseline - Alcohol use, daily to observation')
@@ -86,13 +86,13 @@ expect_no_observation(person_id = 918, observation_source_value = '53|2010-10-10
 expect_no_observation(person_id = 918, observation_source_value = '30002')
 expect_no_observation(person_id = 918, observation_source_value = '30002|2010-10-10')
 
-declareTest(919, 'Baseline - visit occurrence instance 0')
-add_baseline(eid = '919', `53-0.0`='2010-10-12', `47-0.0`='11.3')
+declareTest(919, 'Baseline - visit occurrence instance 0 (Alcohol use)')
+add_baseline(eid = '919', `53-0.0`='2010-10-12', `1558-0.0`='1')
 expect_observation(person_id = 919, observation_date = '2010-10-12',
                    visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 919, visit_start_date = '2010-10-12'))
 
-declareTest(920, 'Baseline - visit occurrence instance 3')
-add_baseline(eid = '920', `53-3.0`='2010-10-13', `48-3.0`='85')
+declareTest(920, 'Baseline - visit occurrence instance 3 (Alcohol use)')
+add_baseline(eid = '920', `53-3.0`='2010-10-13', `1558-3.0`='1')
 expect_observation(person_id = 920, observation_date = '2010-10-13',
                    visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 920, visit_start_date = '2010-10-13'))
 
@@ -104,12 +104,11 @@ declareTest(922, 'Baseline - opcs3 field 41273 single target')
 add_baseline(eid = '922', `41273-0.0`='7002')
 expect_observation(person_id = 922, observation_concept_id = 4215685, value_as_concept_id = 4130184)
 
-declareTest(923, 'Baseline - type registry')
+declareTest(923, 'Baseline - type registry (handgrip strength)')
 add_baseline(eid = '923', `47-0.0`='7002')
-expect_observation(person_id = 923, observation_source_value = '47', observation_type_concept_id = 32879,
-                   observation_source_concept_id = 35810113)
+expect_measurement(person_id = 923, measurement_type_concept_id = 32879)
 
-declareTest(924, 'Baseline - type patient filled survey')
+declareTest(924, 'Baseline - type patient filled survey (Alcohol use)')
 add_baseline(eid = '924', `1558-0.0`='1')
 expect_observation(person_id = 924, observation_source_value = '1558|1', observation_type_concept_id = 32862,
                    observation_source_concept_id = 35810226)
@@ -143,10 +142,10 @@ declareTest(931, 'Baseline - datetime format')
 add_baseline(eid = '931', `30070-0.0` = '123', `30072-0.0` = '2010-07-08T07:39:23')
 expect_measurement(person_id = 931, measurement_date = '2010-07-08')
 
-declareTest(932, 'Baseline - truncate long value')
-# additional quotes around string value needed to escape comma's
-add_baseline(eid = '932', `53-0.0` = '2020-02-01', `40010-0.0` = '"Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) Metastatic Renal Carcinoma (Spinal Metastasis), Four Level Vertebrae Resection, Dural Resection with Dural Patch Bilateral Thoracotomies - all for Tumour Resection."')
-expect_observation(person_id = 932, observation_date = '2020-02-01', value_as_string = 'Ia) Cardiac Arrest;Ib) Myocardial Infarction;II) M')
+declareTest(932, 'Baseline - truncate long value of device ID')
+add_baseline(eid = '932', `53-0.0` = '2020-02-01', `36-0.0` = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz')
+expect_device_exposure(person_id = 932, device_exposure_start_date = '2020-02-01', device_concept_id = 4272314,
+                       unique_device_id = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx')
 
 declareTest(933, 'Baseline - age at cancer diagnosis')
 add_baseline(eid = '933', `40005-1.0` = '2011-10-18', `40008-1.0` = '43')
@@ -176,3 +175,34 @@ declareTest(938, 'Baseline - Age Glaucoma: unit and concept mapping')
 add_baseline(eid = '938', `4689-0.0` = 67)
 expect_observation(person_id = 938, observation_concept_id = 4214956,
                    value_as_number = 67, unit_concept_id = 9448, value_as_concept_id = 437541)
+
+declareTest(939, 'Baseline - Age Diabetes')
+add_baseline(eid = '939', `2976-0.0` = 37)
+expect_observation(person_id = 939, observation_concept_id = 4214956,
+                   value_as_number = 37, unit_concept_id = 9448, value_as_concept_id = 201820)
+
+declareTest(940, 'Baseline - BMI')
+add_baseline(eid = '940', `21001-0.0` = 18)
+expect_measurement(person_id = 940, measurement_concept_id = 4245997,
+                   value_as_number = 18)
+
+declareTest(941, 'Baseline - LV ejection fraction')
+add_baseline(eid = '941', `22420-0.0` = 94)
+expect_measurement(person_id = 941, measurement_source_concept_id = 35811603,
+                   value_as_number = 94)
+
+declareTest(942, 'Baseline - Age last episode of depression - source concept')
+add_baseline(eid = '942', `20434-0.0` = 41)
+expect_observation(person_id = 942, observation_source_concept_id = 35811128, observation_source_value = '20434|41')
+
+declareTest(943, 'Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab')
+add_baseline(eid = '943', `5211-0.0` = 1.5)
+expect_observation(person_id = 943, observation_concept_id = 4302663, unit_concept_id = 9546, value_as_number = 1.5)
+
+declareTest(943, 'Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab')
+add_baseline(eid = '943', `5211-0.0` = 1.5)
+expect_observation(person_id = 943, observation_concept_id = 4302663, unit_concept_id = 9546, value_as_number = 1.5)
+
+declareTest(944, 'Baseline - do not include primary cause of death as observation')
+add_baseline(eid = '944', `40001-0.0` = 'C15')
+expect_no_observation(person_id = 944, observation_source_value = '40001|C15')
