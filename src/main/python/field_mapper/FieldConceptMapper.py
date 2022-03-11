@@ -287,3 +287,4 @@ if __name__ == '__main__':
 
     # Glaucoma with unit and value mapping
     _print(mapper.lookup('4689', '56'))
+    _print(mapper.lookup('100001', '56'))
