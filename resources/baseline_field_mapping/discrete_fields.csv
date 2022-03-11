@@ -397,21 +397,6 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 40015,Contributory (secondary) cause of death: ICD10 addendum,,,,-1,,0.459375947713852,IGNORED,Maxim,1602842758873,0,EVENT,Empty according to data dictionary,,0
 40016,Type of cancer: ICD10 addendum,,,,-1,,0.547840416431427,IGNORED,,0,0,EVENT,Empty according to data dictionary,,0
 40017,Type of cancer: ICD9 addendum,,,,-1,,0.512554585933685,IGNORED,,0,0,EVENT,Empty according to data dictionary,,0
-41206,Intended management of patient (polymorphic),,,,738542,,0.444153070449829,APPROVED,,0,4178835,EVENT,Recoded in 41244,,1603209179764
-41207,Main speciality of consultant (polymorphic),,,,1096497,,0.367187410593033,FLAGGED,,0,0,EVENT,Recoded in 41245,,0
-41208,Treatment speciality of consultant (polymorphic),,,,1227994,,0.426189243793488,FLAGGED,,0,0,EVENT,Recoded in 41246,,0
-41209,Patient classification on admission (polymorphic),,,,666531,,0.483125478029251,FLAGGED,,0,0,EVENT,Recoded in 41247,,0
-41211,Destinations on discharge from hospital (polymorphic),,,,540199,,0.627912521362305,FLAGGED,,0,4203130,EVENT,Recoded in 41248,,1602841827051
-41212,Methods of admission to hospital (polymorphic),,,,1003635,,0.605032682418823,APPROVED,,0,8715,EVENT,Recoded in 41249,,1602841827054
-41213,Methods of discharge from hospital (polymorphic),,,,535047,,0.619344890117645,FLAGGED,,0,4203130,EVENT,Recoded in 41250,,1602841827054
-41257,Date of first operative procedure - main OPCS3,,,,15453,,0.459821164608002,IGNORED,Maxim,1603208831932,0,EVENT,Date of 41256,,0
-41260,Date of first operative procedure - main OPCS4,,,,1655805,,0.456580609083176,IGNORED,Maxim,1603208851955,0,EVENT,Date of 41200,,0
-41262,Date of first in-patient diagnosis - main ICD10,,,,1726257,,0.484873205423355,IGNORED,Maxim,1603208794195,0,EVENT,Date of 41202,,0
-41263,Date of first in-patient diagnosis - main ICD9,,,,42828,,0.482877612113953,IGNORED,Maxim,1603208814905,0,EVENT,Date of 41203,,0
-41280,Date of first in-patient diagnosis - ICD10,,,,4131455,,0.503647446632385,IGNORED,Maxim,1603208737259,0,EVENT,Date of 41270,,0
-41281,Date of first in-patient diagnosis - ICD9,,,,58699,,0.501412034034729,IGNORED,Maxim,1603208761709,0,EVENT,Date of 41271,,0
-41282,Date of first operative procedure - OPCS4,,,,3640168,,0.476568877696991,IGNORED,Maxim,1603208879474,0,EVENT,Date of 41272,,0
-41283,Date of first operative procedure - OPCS3,,,,18581,,0.480257481336594,IGNORED,Maxim,1603208865889,0,EVENT,Date of 41273,,0
 3809,Time since last prostate specific antigen (PSA) test,,,,81671,,0.0,IGNORED,Maxim,0,0,EVENT,Time since 2365,,0
 30746,Glucose reportability,3,Reportable at assay but not reportable after any corrections (too high),,445261,,0.5244626998901367,APPROVED,,0,4040635,EVENT,,,1610120931941
 30746,Glucose reportability,3,Reportable at assay but not reportable after any corrections (too high),,445261,,0.5244626998901367,APPROVED,,0,4282459,VALUE,,,1610120931941

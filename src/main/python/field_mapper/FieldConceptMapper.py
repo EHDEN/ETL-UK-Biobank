@@ -248,7 +248,7 @@ if __name__ == '__main__':
     # validator.print_all()
 
     def _print(targets):
-        if len(targets) == 0:
+        if targets is None or len(targets) == 0:
             print(None)
         elif len(targets) == 1:
             print(targets.pop())
