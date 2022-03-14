@@ -129,5 +129,9 @@ add_hesin(eid = 1016, ins_index = 1, admidate = '03/02/2021')
 add_hesin_diag(eid = 1016, ins_index = 1, diag_icd10 = 'V12')
 expect_condition_occurrence(person_id = 1016, condition_start_date = '2021-02-03', condition_concept_id = 433099, condition_source_concept_id = 45756179)
 
-
+declareTest(1017, 'ICD code exceptions: ICD10 code starting with W, X, Y map to one letter and two numbers')
+add_baseline(eid = 1017)
+add_hesin(eid = 1017, ins_index = 1, admidate = '11/02/2021')
+add_hesin_diag(eid = 1017, ins_index = 1, diag_icd10 = 'Y053')
+expect_condition_occurrence(person_id = 1008, condition_start_date = '2021-02-11', condition_concept_id = 248110007)
 

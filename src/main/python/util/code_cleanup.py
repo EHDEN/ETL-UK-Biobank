@@ -43,6 +43,9 @@ def refactor_icdx_code(icd_code: str) -> str:
         # V chapters map to format VXX.X
         elif icd_code[0] == 'V':
             return icd_code[:3] + '.' + icd_code[3]
+        # Keep only the first three characters for ICD10 codes with X instead of a decimal
+        elif icd_code[3] == 'X':
+            return icd_code[:3]
         # General rule for remaining ICD codes is map to format XXX.X
         elif (not '.' in icd_code) and icd_code != '45532996':
             return icd_code[:3] + '.' + icd_code[3:4]

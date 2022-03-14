@@ -103,6 +103,7 @@
 1014,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
 1015,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
 1016,Test ICD10 code,Expect condition_occurrence,PASS
+1017,ICD code exceptions: ICD10 code starting with W, X, Y map to one letter and two numbers,Expect condition_occurrence,FAIL
 1100,emergency admission HES/2D,Expect visit_occurrence,PASS
 1101,admission source Hospice SMR/62,Expect visit_occurrence,PASS
 1102,discharged to special hospital PEDW/49,Expect visit_occurrence,PASS
@@ -162,7 +163,6 @@
 1606,Death to condition occurrence - 4 death causes,Expect condition_occurrence,PASS
 1700,GP clinical to stem, readv2 code in read_3 field,Expect measurement,PASS
 1701,GP clinical to stem, visit lookup,Expect measurement,PASS
-1702,GP clinical to stem, unknown read2 code,Expect measurement,PASS
 1703,GP clinical to stem, read3 code,Expect measurement,PASS
 1704,GP clinical to stem, missing date,Expect No measurement,PASS
 1705,GP clinical to stem, Serum creatinine with value,Expect measurement,PASS
