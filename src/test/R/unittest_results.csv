@@ -35,14 +35,14 @@
 903,Baseline - White blood cell count (alternate date field),Expect measurement,PASS
 904,Baseline - Field 20002, Diabetes Mellitus,Expect observation,PASS
 905,Baseline - Chestpain absent, with source value,Expect observation,PASS
-906,Baseline - Chestpain present, repeat visit,Expect observation,PASS
-907,Baseline - Chestpain present, imaging visit,Expect observation,PASS
-908,Baseline - Chestpain present, imaging repeat visit,Expect observation,PASS
+906,Baseline - Chestpain present, repeat visit,Expect observation,FAIL
+907,Baseline - Chestpain present, imaging visit,Expect observation,FAIL
+908,Baseline - Chestpain present, imaging repeat visit,Expect observation,FAIL
 909,Baseline - Chestpain ignored,Expect No observation,PASS
 910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
 910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
-911,Baseline - One to many opcs,Expect observation,PASS
-911,Baseline - One to many opcs,Expect observation,PASS
+911,Baseline - One to many opcs,Expect observation,FAIL
+911,Baseline - One to many opcs,Expect observation,FAIL
 912,Baseline - Treatment,Expect observation,PASS
 913,Baseline - Treatment with instance and array index,Expect observation,PASS
 914,Baseline - Age at first live birth,Expect observation,PASS
@@ -56,8 +56,8 @@
 918,Baseline - Do not capture dates,Expect No observation,PASS
 919,Baseline - visit occurrence instance 0 (Alcohol use),Expect observation,PASS
 920,Baseline - visit occurrence instance 3 (Alcohol use),Expect observation,PASS
-921,Baseline - opcs3 field 41256 single target,Expect observation,PASS
-922,Baseline - opcs3 field 41273 single target,Expect observation,PASS
+921,Baseline - opcs3 field 41256 single target,Expect observation,FAIL
+922,Baseline - opcs3 field 41273 single target,Expect observation,FAIL
 923,Baseline - type registry (handgrip strength),Expect measurement,PASS
 924,Baseline - type patient filled survey (Alcohol use),Expect observation,PASS
 925,Baseline - type professional filled survey,Expect observation,PASS
@@ -263,8 +263,8 @@
 2515,Covid19 TPP GP clinical to stem, G801. to condition,Expect condition_occurrence,PASS
 2516,Covid19 TPP GP clinical to stem, CTV3 code to observation,Expect observation,PASS
 2517,Covid19 TPP GP clinical to stem, CTV3 code measurement without value,Expect measurement,PASS
-2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_exposure,PASS
-2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_era,PASS
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_exposure,FAIL
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_era,FAIL
 2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
 2601,No Event date,Expect No measurement,PASS
 2602,Value is -9000001.0,Expect No measurement,PASS

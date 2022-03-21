@@ -27,8 +27,8 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         if not event_date:
             continue
 
-        # Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001, don't ignore values -9999999, -9000099
-        if re.match(r'^-\d', str(row['value'])) and str(float(row['value'])) not in ['-9999999.0', '-9000099.0']:
+        # Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001
+        if row['value'] in ['-9000001', '-9000002', '-9000003', '-9000004']:
             continue
 
         if row['code'] in ['-99', '-1', '-4']:
@@ -49,8 +49,8 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         # Add value, only if numeric
         value_as_string = None
         try:
-            if str(float(row['value'])) in ['-9999999.0', '-9000099.0']:
-                value_as_string = str(row['value'])
+            if row['value'] in ['-9999999', '-9000099']:
+                value_as_string = row['value']
                 value_as_number = None
             else:
                 value_as_number = float(row['value'])
@@ -69,7 +69,7 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
 
         # override the target domain (concept.domain_id) to be 'Measurement' if necessary
         domain_id = None
-        if (value_as_number is not None and value_as_number != 0) or (value_as_concept_id is not None) or value_as_string is not None:
+        if (value_as_number is not None and value_as_number != 0) or (value_as_concept_id is not None):
             domain_id = 'Measurement'
 
         yield wrapper.cdm.StemTable(
