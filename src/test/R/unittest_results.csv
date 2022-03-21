@@ -35,9 +35,9 @@
 903,Baseline - White blood cell count (alternate date field),Expect measurement,PASS
 904,Baseline - Field 20002, Diabetes Mellitus,Expect observation,PASS
 905,Baseline - Chestpain absent, with source value,Expect observation,PASS
-906,Baseline - Chestpain present, repeat visit,Expect observation,FAIL
-907,Baseline - Chestpain present, imaging visit,Expect observation,FAIL
-908,Baseline - Chestpain present, imaging repeat visit,Expect observation,FAIL
+906,Baseline - Chestpain present, repeat visit,Expect observation,PASS
+907,Baseline - Chestpain present, imaging visit,Expect observation,PASS
+908,Baseline - Chestpain present, imaging repeat visit,Expect observation,PASS
 909,Baseline - Chestpain ignored,Expect No observation,PASS
 910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
 910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
