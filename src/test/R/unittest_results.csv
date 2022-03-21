@@ -275,6 +275,7 @@
 2607,Covid19 EMIS GP clinical to stem, no meas when future date,Expect No measurement,PASS
 2608,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_number > 0,Expect measurement,PASS
 2609,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_concept_id != None,Expect measurement,PASS
+2610,Covid19 EMIS GP clinical to stem, DVT test,Expect condition_occurrence,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS

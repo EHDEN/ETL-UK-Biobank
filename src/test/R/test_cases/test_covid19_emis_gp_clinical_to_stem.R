@@ -52,7 +52,8 @@ expect_measurement(person_id = 2609, measurement_date = '2017-07-01')
 
 declareTest(2610, 'Covid19 EMIS GP clinical to stem, DVT test')
 add_baseline(eid = 2610)
-add_covid19_emis_gp_clinical(eid = 2610, event_dt = '21/03/2021', code_type = 3, code='EMISNQWE16')
+add_covid19_emis_gp_clinical(eid = 2610, event_dt = '21/03/2021', code_type = 2, code='128053003', value = '-9999999')
+expect_condition_occurrence(person_id = 2610, condition_concept_id = 4133004)
 
 # 2022-03: this emis code now maps to a measurement (Serum alanine aminotransferase level)
 # declareTest(2610, 'Covid19 EMIS GP clinical to stem, domain_id=Condition when value_as_number == 0')
