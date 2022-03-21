@@ -35,14 +35,14 @@
 903,Baseline - White blood cell count (alternate date field),Expect measurement,PASS
 904,Baseline - Field 20002, Diabetes Mellitus,Expect observation,PASS
 905,Baseline - Chestpain absent, with source value,Expect observation,PASS
-906,Baseline - Chestpain present, repeat visit,Expect observation,FAIL
-907,Baseline - Chestpain present, imaging visit,Expect observation,FAIL
-908,Baseline - Chestpain present, imaging repeat visit,Expect observation,FAIL
+906,Baseline - Chestpain present, repeat visit,Expect observation,PASS
+907,Baseline - Chestpain present, imaging visit,Expect observation,PASS
+908,Baseline - Chestpain present, imaging repeat visit,Expect observation,PASS
 909,Baseline - Chestpain ignored,Expect No observation,PASS
 910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
 910,Baseline - Do not map year of birth or gender,Expect No observation,PASS
-911,Baseline - One to many opcs,Expect observation,FAIL
-911,Baseline - One to many opcs,Expect observation,FAIL
+911,Baseline - One to many opcs,Expect observation,PASS
+911,Baseline - One to many opcs,Expect observation,PASS
 912,Baseline - Treatment,Expect observation,PASS
 913,Baseline - Treatment with instance and array index,Expect observation,PASS
 914,Baseline - Age at first live birth,Expect observation,PASS
@@ -56,8 +56,8 @@
 918,Baseline - Do not capture dates,Expect No observation,PASS
 919,Baseline - visit occurrence instance 0 (Alcohol use),Expect observation,PASS
 920,Baseline - visit occurrence instance 3 (Alcohol use),Expect observation,PASS
-921,Baseline - opcs3 field 41256 single target,Expect observation,FAIL
-922,Baseline - opcs3 field 41273 single target,Expect observation,FAIL
+921,Baseline - opcs3 field 41256 single target,Expect observation,PASS
+922,Baseline - opcs3 field 41273 single target,Expect observation,PASS
 923,Baseline - type registry (handgrip strength),Expect measurement,PASS
 924,Baseline - type patient filled survey (Alcohol use),Expect observation,PASS
 925,Baseline - type professional filled survey,Expect observation,PASS
@@ -103,6 +103,7 @@
 1014,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
 1015,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
 1016,Test ICD10 code,Expect condition_occurrence,PASS
+1017,ICD code exceptions: ICD10 codes with X instead of a decimal,Expect condition_occurrence,PASS
 1100,emergency admission HES/2D,Expect visit_occurrence,PASS
 1101,admission source Hospice SMR/62,Expect visit_occurrence,PASS
 1102,discharged to special hospital PEDW/49,Expect visit_occurrence,PASS

@@ -129,5 +129,8 @@ add_hesin(eid = 1016, ins_index = 1, admidate = '03/02/2021')
 add_hesin_diag(eid = 1016, ins_index = 1, diag_icd10 = 'V12')
 expect_condition_occurrence(person_id = 1016, condition_start_date = '2021-02-03', condition_concept_id = 433099, condition_source_concept_id = 45756179)
 
-
-
+declareTest(1017, 'ICD code exceptions: ICD10 codes with X instead of a decimal')
+add_baseline(eid = 1017)
+add_hesin(eid = 1017, ins_index = 1, admidate = '14/04/2021')
+add_hesin_diag(eid = 1017, ins_index = 1, diag_icd10 = 'M45X9')
+expect_condition_occurrence(person_id = 1017, condition_start_date = '2021-04-14', condition_concept_id = 437082)
