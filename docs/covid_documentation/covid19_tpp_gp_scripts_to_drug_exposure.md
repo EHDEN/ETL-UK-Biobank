@@ -9,7 +9,9 @@ nav_order: 5
 
 ### Reading from 1_covid19_tpp_gp_scripts.txt.gz.pure
 
-If date empty or in 2037, skip the record.
+Rows are skipped if:
+ - `dm+d code` is -1 or empty
+ - `Date` is emtpy or in 2037
 
 ![](md_files/image6.png)
 
