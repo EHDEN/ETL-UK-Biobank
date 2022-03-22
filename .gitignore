@@ -160,3 +160,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/osx,pycharm,windows,intellij
+.Rproj.user
