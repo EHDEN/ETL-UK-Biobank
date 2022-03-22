@@ -1,11 +1,11 @@
 ---
 layout: default
-title: baseline to stem table
+title: baseline to stem_table
 parent: assessment centre
 nav_order: 4
 ---
 
-## Baseline to stem table
+## Baseline to stem_table
 
 The Baseline table contains one row per person and a column for each field. There can be thousands of columns. Each column name is structured as `field_id-instance.array` (e.g. `20001-1.15`). The `field_id` encodes the variable, the `instance` indicates one of the four assessment centre visits (ranging from 0 to 3) and with the `array` index multiple values can be given for the same field_id at the same visit.
 
