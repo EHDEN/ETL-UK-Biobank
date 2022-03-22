@@ -4,7 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 from delphyne.model.mapping.code_mapper import CodeMapping
 
-from ..util import get_datetime, add_dot_to_opcsx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id
+from ..util import get_datetime, add_dot_to_opcsx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id, refactor_icdx_code
 
 
 if TYPE_CHECKING:
@@ -23,7 +23,8 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     df = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
-    df['oper4_dot'] = df['oper4'].apply(add_dot_to_opcsx_code)
+    df['oper4_ref'] = df['oper4'].apply(refactor_icdx_code)
+    df['oper4_dot'] = df['oper4_ref'].apply(add_dot_to_opcsx_code)
 
     oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4')
     oper3 = wrapper.mapping_tables_lookup('./resources/mapping_tables/opcs3.csv', first_only=False)
@@ -32,6 +33,9 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
         person_id = row['eid']
 
         procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")
+
+        if row['oper4'] in ['X998', 'X9999']:
+            continue
 
         if not pd.isnull(row['oper4']):
             source_value = row['oper4']
