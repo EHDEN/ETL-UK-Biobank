@@ -141,8 +141,8 @@
 1500,Test OPCS4 code - standard,Expect procedure_occurrence,PASS
 1501,Test OPCS4 code - non standard,Expect procedure_occurrence,PASS
 1502,Test OPCS3 code,Expect procedure_occurrence,PASS
-1503,Test OPCS3 and OPCS4 code; map OPCS4,Expect procedure_occurrence,FAIL
-1504,No concept found,Expect procedure_occurrence,FAIL
+1503,Test OPCS3 and OPCS4 code; map OPCS4,Expect procedure_occurrence,PASS
+1504,No concept found,Expect No procedure_occurrence,PASS
 1505,Test if OPCS4 code has more > 1 target concept,Expect procedure_occurrence,PASS
 1505,Test if OPCS4 code has more > 1 target concept,Expect procedure_occurrence,PASS
 1506,Test if OPCS3 code has more > 1 target concept,Expect procedure_occurrence,PASS
@@ -280,7 +280,7 @@
 2608,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_number > 0,Expect measurement,PASS
 2609,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_concept_id != None,Expect measurement,PASS
 2610,Covid19 EMIS GP clinical to stem, DVT test,Expect condition_occurrence,PASS
-2611,Covid19 EMIS GP clinical to stem, EMISATTACHMENT,Expect observation,PASS
+2611,Covid19 EMIS GP clinical to stem, EMISATTACHMENT and code_type 5,Expect observation,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS

@@ -4,7 +4,7 @@ from typing import List, TYPE_CHECKING
 import pandas as pd
 from delphyne.model.mapping.code_mapper import CodeMapping
 
-from ..util import get_datetime, add_dot_to_opcsx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id, refactor_icdx_code
+from ..util import get_datetime, add_dot_to_opcsx_code, create_hes_visit_occurrence_id, create_hes_visit_detail_id, refactor_opcs_code
 
 
 if TYPE_CHECKING:
@@ -23,7 +23,7 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
     hesin = hesin.drop_duplicates(subset=['eid', 'ins_index'])  # fix for synthetic data
 
     df = hesin_oper.merge(hesin, on=['eid', 'ins_index'], how='left', suffixes=('', '_x'))
-    df['oper4_ref'] = df['oper4'].apply(refactor_icdx_code)
+    df['oper4_ref'] = df['oper4'].apply(refactor_opcs_code)
     df['oper4_dot'] = df['oper4_ref'].apply(add_dot_to_opcsx_code)
 
     oper4 = wrapper.code_mapper.generate_code_mapping_dictionary('OPCS4')

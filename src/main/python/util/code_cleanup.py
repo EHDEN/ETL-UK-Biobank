@@ -23,6 +23,14 @@ def add_dot_to_opcsx_code(opcs_code: str) -> str:
     return opcs_code
 
 
+def refactor_opcs_code(opcs_code: str) -> str:
+    # Specific exceptions who need refactoring to XXX
+    if opcs_code in ['G475', 'E856', 'M064', 'Z916', 'Z917', 'S524', 'S522']:
+        return opcs_code[:3]
+    else:
+        return opcs_code
+
+
 def refactor_icdx_code(icd_code: str) -> str:
     # Skip empty values
     if not is_null(icd_code):
@@ -49,9 +57,6 @@ def refactor_icdx_code(icd_code: str) -> str:
             return icd_code[:3] + '.' + icd_code[3]
         # Keep only the first three characters for ICD10 codes with X instead of a decimal
         elif icd_code[3] == 'X':
-            return icd_code[:3]
-        # Specific exceptions who need refactoring to XXX
-        elif icd_code in ['G475', 'E856', 'M064', 'Z916', 'Z917', 'S524', 'S522']:
             return icd_code[:3]
         # General rule for remaining ICD codes is map to format XXX.X
         elif (not '.' in icd_code) and icd_code != '45532996':

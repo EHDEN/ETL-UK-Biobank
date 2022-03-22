@@ -41,8 +41,7 @@ declareTest(1504, 'No concept found')
 add_baseline(eid = 1504)
 add_hesin(eid = 1504, ins_index = 3)
 add_hesin_oper(eid = 1504, ins_index = 3, opdate = '01/05/2014', oper4 = 'X998', level = 2)
-expect_procedure_occurrence(person_id = 1504, procedure_concept_id = 0, procedure_date = '2014-05-01',
-                            procedure_type_concept_id = 32817, procedure_source_value = 'X998')
+expect_no_procedure_occurrence(person_id = 1504)
 
 
 # Test if code has more > 1 code OPCS4
