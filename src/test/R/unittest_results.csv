@@ -263,11 +263,11 @@
 2515,Covid19 TPP GP clinical to stem, G801. to condition,Expect condition_occurrence,PASS
 2516,Covid19 TPP GP clinical to stem, CTV3 code to observation,Expect observation,PASS
 2517,Covid19 TPP GP clinical to stem, CTV3 code measurement without value,Expect measurement,PASS
-2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_exposure,FAIL
-2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_era,FAIL
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_exposure,PASS
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_era,PASS
 2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
 2601,No Event date,Expect No measurement,PASS
-2602,Value is -9000001.0,Expect No measurement,PASS
+2602,Value is -9000001,Expect No measurement,PASS
 2603,Code is -99,Expect No measurement,PASS
 2604,Local code: Suspected 2019-nCoV (novel coronavirus) infection,Expect measurement,PASS
 2605,Unit is -9999999,Expect measurement,PASS
@@ -276,6 +276,7 @@
 2608,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_number > 0,Expect measurement,PASS
 2609,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_concept_id != None,Expect measurement,PASS
 2610,Covid19 EMIS GP clinical to stem, DVT test,Expect condition_occurrence,PASS
+2611,Covid19 EMIS GP clinical to stem, EMISATTACHMENT,Expect observation,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS

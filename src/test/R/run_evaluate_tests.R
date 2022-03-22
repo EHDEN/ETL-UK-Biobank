@@ -27,7 +27,7 @@ connectionDetails <- createConnectionDetails(dbms = connectionConfig$dbms,
                                              password = connectionConfig$password,
                                              server = connectionConfig$server,
                                              port = connectionConfig$port,
-                                             pathToDriver = 'C:\\Program Files\\JDBC')
+                                             pathToDriver = pathToDriver)
 connection <- connect(connectionDetails)
 
 testSql <- readLines(config$testQueryFileName)

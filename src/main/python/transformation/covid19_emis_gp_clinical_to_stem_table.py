@@ -44,7 +44,9 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             target_concept_id = mapping_lookup.get(row['code'], 0)
             source_concept_id = 0
         else:
-            continue
+            # 5 is another possibility
+            target_concept_id = 0
+            source_concept_id = 0
 
         # Add value, only if numeric
         value_as_string = None
