@@ -1,7 +1,7 @@
 declareTest(1700, 'GP clinical to stem, readv2 code in read_3 field')
 add_baseline(eid = 1700)
-add_gp_clinical(eid = 1700, event_dt = '19/04/2020', read_2 = NULL, read_3 = '246A.', value1 = 100)
-expect_measurement(person_id = 1700, measurement_concept_id = 4060831,  measurement_source_concept_id = 45468573, measurement_source_value = '246A.')
+add_gp_clinical(eid = 1700, event_dt = '19/04/2020', read_2 = NULL, read_3 = '246E.00', value1 = 100)
+expect_measurement(person_id = 1700, measurement_concept_id = 4060834,  measurement_source_concept_id = 45515092, measurement_source_value = '246E.00')
 
 declareTest(1701, 'GP clinical to stem, visit lookup')
 add_baseline(eid = 1701)

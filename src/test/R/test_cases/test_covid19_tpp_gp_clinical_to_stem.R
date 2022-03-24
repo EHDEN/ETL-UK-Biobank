@@ -96,3 +96,12 @@ expect_drug_exposure(person_id = 2518, drug_exposure_start_date = '2005-01-01', 
                      drug_concept_id = 529411,  drug_source_value = '65KZ.', drug_source_concept_id = 45482248)
 expect_drug_era(person_id = 2518, drug_concept_id = 529411)
 
+declareTest(2519, 'Covid19 TPP GP clinical to stem, ctv3 DVT (Xa9Bs) condition')
+add_baseline(eid = 2519)
+add_covid19_tpp_gp_clinical(eid = 2519, event_dt = '01/07/2022', code_type=0, code='Xa9Bs', value=NULL)
+expect_condition_occurrence(person_id = 2519, condition_start_date='2022-07-01', condition_concept_id=443537)
+
+declareTest(2520, 'Covid19 TPP GP clinical to stem, ctv3 eGFR (XacUK) condition')
+add_baseline(eid = 2520)
+add_covid19_tpp_gp_clinical(eid = 2520, event_dt = '01/07/2022', code_type=0, code='XacUK', value=12)
+expect_measurement(person_id = 2520, measurement_date='2022-07-01', measurement_concept_id=37393011)

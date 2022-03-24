@@ -48,11 +48,6 @@ add_baseline(eid = '910', `31-0.0`='0', `34-0.0`='1970')
 expect_no_observation(person_id = 910, observation_source_value = '31|0')
 expect_no_observation(person_id = 910, observation_source_value = '34')
 
-declareTest(911, 'Baseline - One to many opcs')
-add_baseline(eid = '911', `41256-0.0`='027')
-expect_observation(person_id = 911, observation_concept_id = 4215685, value_as_concept_id = 4302449)
-expect_observation(person_id = 911, observation_concept_id = 4215685, value_as_concept_id = 4222434)
-
 declareTest(912, 'Baseline - Treatment')
 add_baseline(eid = '912', `20003-0.0`='2038459704')
 expect_observation(person_id = 912, observation_concept_id = 4059354, value_as_concept_id = 740275)
@@ -95,14 +90,6 @@ declareTest(920, 'Baseline - visit occurrence instance 3 (Alcohol use)')
 add_baseline(eid = '920', `53-3.0`='2010-10-13', `1558-3.0`='1')
 expect_observation(person_id = 920, observation_date = '2010-10-13',
                    visit_occurrence_id = lookup_visit_occurrence('visit_occurrence_id', person_id = 920, visit_start_date = '2010-10-13'))
-
-declareTest(921, 'Baseline - opcs3 field 41256 single target')
-add_baseline(eid = '921', `41256-0.0`='018')
-expect_observation(person_id = 921, observation_concept_id = 4215685, value_as_concept_id = 2110401)
-
-declareTest(922, 'Baseline - opcs3 field 41273 single target')
-add_baseline(eid = '922', `41273-0.0`='7002')
-expect_observation(person_id = 922, observation_concept_id = 4215685, value_as_concept_id = 4130184)
 
 declareTest(923, 'Baseline - type registry (handgrip strength)')
 add_baseline(eid = '923', `47-0.0`='7002')
