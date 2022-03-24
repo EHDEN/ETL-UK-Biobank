@@ -24,9 +24,12 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
     # Note: if we add restricting to codes, we might miss some added from the phenotype_logic
     # TODO: observed multiple mappings for vaccines to SNOMED and CVX, which is better?
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
-    ctv3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
-    local_tpp_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/gp_clinical_covid.csv", approved_only=False)
-    value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv")
+    ctv3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv',
+                                                approved_only=False, first_only=False)
+    local_tpp_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/gp_clinical_covid.csv",
+                                                     approved_only=False, first_only=False)
+    value_mapping_lookup = wrapper.mapping_tables_lookup("resources/mapping_tables/covid_value_mapping.csv",
+                                                         approved_only=True)
 
     for row in rows:
         if is_null(row['code']):
@@ -44,20 +47,20 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
         # If 'code_type’ = '1'   use Local TPP lookup. 
         # If 'code_type' = '-1', '-2' or other, discard record from the table
         if row["code_type"] == '0':
-            target_concept_id = ctv3_lookup.get(row['code'], 0)
+            target_concept_ids = ctv3_lookup.get(row['code'], 0)
             source_concept_id = 0
         elif row["code_type"] == '1':
-            target_concept_id = local_tpp_lookup.get(row['code'], 0)
+            target_concept_ids = local_tpp_lookup.get(row['code'], 0)
             source_concept_id = 0
         else:
             continue
 
         # If no mapping found, try read2
-        if target_concept_id == 0:
+        if target_concept_ids == 0:
             read_code_extended = extend_read_code(row['code'], read_v2_mapping_dict)
-            target_read_mapping = read2_mapper.lookup(read_code_extended, first_only=True)
-            target_concept_id = target_read_mapping.target_concept_id
-            source_concept_id = target_read_mapping.source_concept_id
+            target_read_mappings = read2_mapper.lookup(read_code_extended)
+            target_concept_ids = [x.target_concept_id for x in target_read_mappings]
+            source_concept_id = target_read_mappings[0].source_concept_id if target_read_mappings else 0
 
         # Add value, only if numeric
         try:
@@ -75,17 +78,18 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
             domain_id = 'Measurement'
 
         # Insert terms in stem_table
-        yield wrapper.cdm.StemTable(
-            person_id=row['eid'],
-            concept_id=target_concept_id,
-            source_value=row['code'],
-            source_concept_id=source_concept_id,
-            start_date=event_date,
-            start_datetime=event_date,
-            value_as_number=value_as_number,
-            visit_occurrence_id=visit_id,
-            value_as_concept_id=value_as_concept_id,
-            domain_id=domain_id,
-            type_concept_id=32817,     # 32817: EHR
-            data_source='covid19 gp_tpp'
-        )
+        for target_concept_id in target_concept_ids:
+            yield wrapper.cdm.StemTable(
+                person_id=row['eid'],
+                concept_id=target_concept_id,
+                source_value=row['code'],
+                source_concept_id=source_concept_id,
+                start_date=event_date,
+                start_datetime=event_date,
+                value_as_number=value_as_number,
+                visit_occurrence_id=visit_id,
+                value_as_concept_id=value_as_concept_id,
+                domain_id=domain_id,
+                type_concept_id=32817,     # 32817: EHR
+                data_source='covid19 gp_tpp'
+            )
