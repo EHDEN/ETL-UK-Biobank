@@ -41,8 +41,7 @@ declareTest(1504, 'No concept found')
 add_baseline(eid = 1504)
 add_hesin(eid = 1504, ins_index = 3)
 add_hesin_oper(eid = 1504, ins_index = 3, opdate = '01/05/2014', oper4 = 'X998', level = 2)
-expect_procedure_occurrence(person_id = 1504, procedure_concept_id = 0, procedure_date = '2014-05-01',
-                            procedure_type_concept_id = 32817, procedure_source_value = 'X998')
+expect_no_procedure_occurrence(person_id = 1504)
 
 
 # Test if code has more > 1 code OPCS4
@@ -81,3 +80,20 @@ add_hesin_oper(eid = 1508, ins_index = 0, opdate = '19/12/2020', oper4 = 'Z857')
 expect_visit_detail(person_id = 1508, visit_detail_start_date = '2020-12-19')
 expect_procedure_occurrence(person_id = 1508, procedure_date = '2020-12-19',
                             visit_detail_id = lookup_visit_detail('visit_detail_id', person_id = 1508, visit_detail_start_date = '2020-12-19'))
+
+declareTest(1509, 'Skip record X999 - Unknown procedure')
+add_baseline(eid = 1509)
+add_hesin(eid = 1509, ins_index = 0, epistart = '22/03/2021', admidate = '22/03/2021')
+add_hesin_oper(eid = 1509, ins_index = 0, opdate = '22/03/2021', oper4 = 'X999')
+expect_no_procedure_occurrence(person_id = 1509)
+
+declareTest(1510, 'Map S524 - Introduction of therapeutic substance into subcutaneous tissue')
+add_baseline(eid = 1510)
+add_hesin(eid = 1510, ins_index = 0, epistart = '22/03/2021', admidate = '22/03/2021')
+add_hesin_oper(eid = 1510, ins_index = 0, opdate = '22/03/2021', oper4 = 'S524')
+expect_procedure_occurrence(person_id = 1510, procedure_concept_id = 4074722, procedure_source_concept_id = 46233045)
+
+
+
+
+

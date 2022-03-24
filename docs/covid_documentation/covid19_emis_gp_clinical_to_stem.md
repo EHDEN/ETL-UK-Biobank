@@ -10,10 +10,9 @@ nav_order: 1
 ### Reading from 0_covid19_emis_gp_clinical.txt.gz.pure
 
 Rows are skipped if:
- - `Value` is negative (-9000004, -9000003, -9000002, -9000001, -9999999, -9000099
- - `Code` is -99, -1 or -4
- - `Date` is emtpy or in 2037
- - `Code type` is NOT 2 or 3.
+ - `value` is  -9000001, -9000002, -9000003 or -9000004
+ - `code` is -99, -1 or -4
+ - `event_dt` is emtpy or in 2037
 
 ![](md_files/image1.png)
 
@@ -53,7 +52,7 @@ Rows are skipped if:
 | unit_source_value | unit |  |  |
 | value_as_concept_id |  |  |  |
 | value_as_number | value | If "value" = -9999999 or -9000099 leave "value_as_number" empty.  If "values" = -9000004, -9000003, -9000002, -9000001 ignore the row. https://biobank.ndph.ox.ac.uk/showcase/coding.cgi?id=2360 |  |
-| value_as_string |  |  |  |
+| value_as_string | value | If "value" = -9999999 or -9000099, save as value_as_string |  |
 | value_source_value |  |  |  |
 | anatomic_site_concept_id |  |  |  |
 | disease_status_concept_id |  |  |  |

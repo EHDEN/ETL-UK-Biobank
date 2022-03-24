@@ -27,8 +27,8 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
         if not event_date:
             continue
 
-        # Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001, -9999999, -9000099
-        if re.match(r'^-\d', str(row['value'])):
+        # Ignore rows were "value" = -9000004, -9000003, -9000002, -9000001
+        if row['value'] in ['-9000001', '-9000002', '-9000003', '-9000004']:
             continue
 
         if row['code'] in ['-99', '-1', '-4']:
@@ -44,11 +44,18 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             target_concept_id = mapping_lookup.get(row['code'], 0)
             source_concept_id = 0
         else:
-            continue
+            # 5 is another possibility
+            target_concept_id = 0
+            source_concept_id = 0
 
         # Add value, only if numeric
+        value_as_string = None
         try:
-            value_as_number = float(row['value'])
+            if row['value'] in ['-9999999', '-9000099']:
+                value_as_string = row['value']
+                value_as_number = None
+            else:
+                value_as_number = float(row['value'])
         except ValueError:
             value_as_number = None
 
@@ -81,5 +88,6 @@ def covid19_emis_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm
             unit_source_value=unit_source_value,
             value_as_concept_id=value_as_concept_id,
             value_as_number=value_as_number,
+            value_as_string=value_as_string,
             data_source='covid19 gp_emis'
         )
