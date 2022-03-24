@@ -191,11 +191,11 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 6150,Vascular/heart problems diagnosed by doctor,3,Stroke,,556721,,0.4304583966732030,APPROVED,Maxim,1646388009599,381316,VALUE,,Maxim,1646388009026
 20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,74869,,0.4628041386604310,APPROVED,maxim,1646661751039,35811230,EVENT,,maxim,1646661618859
 20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,74869,,0.4628041386604310,APPROVED,maxim,1646661751039,436675,VALUE,,maxim,1646661750515
-3627,Age angina diagnosed,1,Do not know,,17915,,0.6316303014755250,IGNORED,Maxim,1646386704928,0,EVENT,,,0
+3627,Age angina diagnosed,-1,Do not know,,17915,,0.6316303014755250,IGNORED,Maxim,1646386704928,0,EVENT,,,0
 22174,Recent medication for bronchiectasis,0,No,,1073,,0.7063411474227910,IGNORED,maxim,1646660447986,0,EVENT,,,0
 6150,Vascular/heart problems diagnosed by doctor,-3,Prefer not to answer,,556721,,0.4304583966732030,IGNORED,Maxim,1646386709903,0,EVENT,,,0
 21024,Ever diagnosed with IBS,-121,Do not know,,174760,,0.5179217457771300,IGNORED,Maxim,1646386706041,0,EVENT,,,0
-3761,"Age hay fever, rhinitis or eczema diagnosed",1,Do not know,,132257,,0.45307111740112300,IGNORED,Maxim,1646386705132,0,EVENT,,,0
+3761,"Age hay fever, rhinitis or eczema diagnosed",-1,Do not know,,132257,,0.45307111740112300,IGNORED,Maxim,1646386705132,0,EVENT,,,0
 20116,Smoking status,-3,Prefer not to answer,,573778,,0.8355186581611630,IGNORED,Maxim,1646386708823,0,EVENT,,,0
 20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,143658,,0.5913298726081850,APPROVED,maxim,1646661459775,40481011,EVENT,,<auto>,1646386570590
 20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,143658,,0.5913298726081850,APPROVED,maxim,1646661459775,4144038,VALUE,,maxim,1646661448558
@@ -205,16 +205,16 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,74869,,0.4628041386604310,APPROVED,maxim,1646661754239,35811230,EVENT,,maxim,1646661618859
 20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,74869,,0.4628041386604310,APPROVED,maxim,1646661754239,4321835,VALUE,,maxim,1646661753677
 22173,Recent medication for sarcoidosis,0,No,,529,,0.6986559629440310,IGNORED,maxim,1646660471533,0,EVENT,,,0
-10844,Gestational diabetes only (pilot),1,Do not know,,63,,0.6028794646263120,IGNORED,Maxim,1646386702500,0,EVENT,,,0
+10844,Gestational diabetes only (pilot),-1,Do not know,,63,,0.6028794646263120,IGNORED,Maxim,1646386702500,0,EVENT,,,0
 6151,Fractured bone site(s),-3,Prefer not to answer,,59744,,0.55611652135849,IGNORED,Maxim,1646386710118,0,EVENT,,,0
 3761,"Age hay fever, rhinitis or eczema diagnosed",-3,Prefer not to answer,,132257,,0.45307111740112300,IGNORED,Maxim,1646386709700,0,EVENT,,,0
 6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",-3,Prefer not to answer,,613916,,0.4737726151943210,IGNORED,Maxim,1646386710421,0,EVENT,,,0
-3005,Fracture resulting from simple fall,1,Do not know,,54048,,0.6323604583740230,IGNORED,Maxim,1646386704709,0,EVENT,,,0
+3005,Fracture resulting from simple fall,-1,Do not know,,54048,,0.6323604583740230,IGNORED,Maxim,1646386704709,0,EVENT,,,0
 6150,Vascular/heart problems diagnosed by doctor,-7,None of the above,,556721,,0.4304583966732030,IGNORED,Maxim,1646386710848,0,EVENT,,,0
 10844,Gestational diabetes only (pilot),-3,Prefer not to answer,,63,,0.6028794646263120,IGNORED,Maxim,1646386694716,0,EVENT,,,0
 3005,Fracture resulting from simple fall,-3,Prefer not to answer,,54048,,0.6323604583740230,IGNORED,Maxim,1646386709272,0,EVENT,,,0
 22172,Recent medication for alpha-1 antitrypsin deficiency,0,No,,48,,0.6926702260971070,IGNORED,maxim,1646660400486,0,EVENT,,,0
-6151,Fractured bone site(s),1,Do not know,,59744,,0.55611652135849,IGNORED,Maxim,1646386705655,0,EVENT,,,0
+6151,Fractured bone site(s),-1,Do not know,,59744,,0.55611652135849,IGNORED,Maxim,1646386705655,0,EVENT,,,0
 20117,Alcohol drinker status,-3,Prefer not to answer,,573772,,0.7097856402397160,IGNORED,Maxim,1646386709045,0,EVENT,,,0
 6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",-7,None of the above,,613916,,0.4737726151943210,IGNORED,Maxim,1646386711300,0,EVENT,,,0
 2724,Had menopause,-3,Prefer not to answer,,310011,,0.8264210224151610,IGNORED,,0,4211787,EVENT,,,1610119527471
@@ -234,14 +234,14 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 2463,Fractured/broken bones in last 5 years,0,No,,573738,,0.4573218822479250,APPROVED,sofia,1610120777312,40481925,EVENT,Missing 'in last 5 years',sofia,1610120776048
 2814,Ever used hormone-replacement therapy (HRT),0,No,,310008,,0.7395877838134770,APPROVED,sofia,1610119987543,4141760,VALUE,,,1610119527476
 2814,Ever used hormone-replacement therapy (HRT),0,No,,310008,,0.7395877838134770,APPROVED,sofia,1610119987543,40481925,EVENT,,sofia,1610119981190
-4041,Gestational diabetes only,1,Do not know,,11744,,0.7677391767501830,IGNORED,,0,0,EVENT,,,0
+4041,Gestational diabetes only,-1,Do not know,,11744,,0.7677391767501830,IGNORED,,0,0,EVENT,,,0
 2463,Fractured/broken bones in last 5 years,1,Yes,,573738,,0.4573218822479250,APPROVED,sofia,1610119873971,75053,VALUE,Missing 'in last 5 years',,1610119527476
 2463,Fractured/broken bones in last 5 years,1,Yes,,573738,,0.4573218822479250,APPROVED,sofia,1610119873971,4214956,EVENT,Missing 'in last 5 years',sofia,1610119872011
 4041,Gestational diabetes only,-2,Not applicable,,11744,,0.7677391767501830,IGNORED,,0,0,EVENT,,,0
 2814,Ever used hormone-replacement therapy (HRT),1,Yes,,310008,,0.7395877838134770,APPROVED,sofia,1610119931436,4141760,VALUE,,,1610119527477
 2814,Ever used hormone-replacement therapy (HRT),1,Yes,,310008,,0.7395877838134770,APPROVED,sofia,1610119931436,4214956,EVENT,,sofia,1610119928051
 4041,Gestational diabetes only,-3,Prefer not to answer,,11744,,0.7677391767501830,IGNORED,,0,0,EVENT,,,0
-2463,Fractured/broken bones in last 5 years,1,Do not know,,573738,,0.4573218822479250,IGNORED,,0,0,EVENT,,,0
+2463,Fractured/broken bones in last 5 years,-1,Do not know,,573738,,0.4573218822479250,IGNORED,,0,0,EVENT,,,0
 2463,Fractured/broken bones in last 5 years,-3,Prefer not to answer,,573738,,0.4573218822479250,IGNORED,,0,0,EVENT,,,0
 2834,Bilateral oophorectomy (both ovaries removed),-3,Prefer not to answer,,310008,,0.6687980890274050,IGNORED,,0,0,EVENT,,,0
 2335,Chest pain or discomfort,0,No,,573746,,0.8702327013015750,APPROVED,sofia,1610120552130,4133044,VALUE,,,1610119527478
@@ -254,13 +254,13 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 4041,Gestational diabetes only,1,Yes,,11744,,0.7677391767501830,APPROVED,sofia,1610120590500,4024659,VALUE,,,1610119527479
 4041,Gestational diabetes only,1,Yes,,11744,,0.7677391767501830,APPROVED,sofia,1610120590500,4214956,EVENT,,sofia,1610120587415
 2834,Bilateral oophorectomy (both ovaries removed),-5,Not sure,,310008,,0.6687980890274050,IGNORED,,0,0,EVENT,,,0
-2443,Diabetes diagnosed by doctor,1,Do not know,,573738,,0.585104763507843,IGNORED,,0,0,EVENT,,,0
+2443,Diabetes diagnosed by doctor,-1,Do not know,,573738,,0.585104763507843,IGNORED,,0,0,EVENT,,,0
 2774,"Ever had stillbirth, spontaneous miscarriage or termination",0,No,,310008,,0.4950195848941800,APPROVED,sofia,1610120647410,40539858,VALUE,,,1610119527482
 2774,"Ever had stillbirth, spontaneous miscarriage or termination",0,No,,310008,,0.4950195848941800,APPROVED,sofia,1610120647410,40481925,EVENT,,sofia,1610120639741
-2335,Chest pain or discomfort,1,Do not know,,573746,,0.8702327013015750,IGNORED,,0,0,EVENT,,,0
+2335,Chest pain or discomfort,-1,Do not know,,573746,,0.8702327013015750,IGNORED,,0,0,EVENT,,,0
 2784,Ever taken oral contraceptive pill,0,No,,310008,,0.7538747787475590,APPROVED,sofia,1610120670524,4241216,VALUE,,,1610119527483
 2784,Ever taken oral contraceptive pill,0,No,,310008,,0.7538747787475590,APPROVED,sofia,1610120670524,40481925,EVENT,,sofia,1610120669441
-2986,Started insulin within one year diagnosis of diabetes,1,Do not know,,29238,,0.41381725668907200,IGNORED,,0,0,EVENT,,,0
+2986,Started insulin within one year diagnosis of diabetes,-1,Do not know,,29238,,0.41381725668907200,IGNORED,,0,0,EVENT,,,0
 2335,Chest pain or discomfort,-3,Prefer not to answer,,573746,,0.8702327013015750,IGNORED,,0,0,EVENT,,,0
 2724,Had menopause,2,Not sure - had a hysterectomy,,310011,,0.8264210224151610,IGNORED,,0,0,EVENT,History of hysterectomy to be captured from field 3591,,0
 2724,Had menopause,3,Not sure - other reason,,310011,,0.8264210224151610,IGNORED,,0,0,EVENT,,,0
@@ -269,9 +269,9 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 2784,Ever taken oral contraceptive pill,1,Yes,,310008,,0.7538747787475590,APPROVED,sofia,1610120689725,4241216,VALUE,,,1610119527484
 2784,Ever taken oral contraceptive pill,1,Yes,,310008,,0.7538747787475590,APPROVED,sofia,1610120689725,4214956,EVENT,,sofia,1610120685034
 2986,Started insulin within one year diagnosis of diabetes,-3,Prefer not to answer,,29238,,0.41381725668907200,IGNORED,,0,0,EVENT,,,0
-2814,Ever used hormone-replacement therapy (HRT),1,Do not know,,310008,,0.7395877838134770,IGNORED,,0,0,EVENT,,,0
-2784,Ever taken oral contraceptive pill,1,Do not know,,310008,,0.7538747787475590,IGNORED,,0,0,EVENT,,,0
-2774,"Ever had stillbirth, spontaneous miscarriage or termination",1,Do not know,,310008,,0.4950195848941800,IGNORED,,0,0,EVENT,,,0
+2814,Ever used hormone-replacement therapy (HRT),-1,Do not know,,310008,,0.7395877838134770,IGNORED,,0,0,EVENT,,,0
+2784,Ever taken oral contraceptive pill,-1,Do not know,,310008,,0.7538747787475590,IGNORED,,0,0,EVENT,,,0
+2774,"Ever had stillbirth, spontaneous miscarriage or termination",-1,Do not know,,310008,,0.4950195848941800,IGNORED,,0,0,EVENT,,,0
 2986,Started insulin within one year diagnosis of diabetes,0,No,,29238,,0.41381725668907200,APPROVED,sofia,1610120844623,4086160,VALUE,,,1610119527484
 2986,Started insulin within one year diagnosis of diabetes,0,No,,29238,,0.41381725668907200,APPROVED,sofia,1610120844623,40481925,EVENT,,sofia,1610120842704
 2834,Bilateral oophorectomy (both ovaries removed),0,No,,310008,,0.6687980890274050,APPROVED,sofia,1610120721193,4297990,VALUE,,,1610119527486
@@ -279,13 +279,13 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 2784,Ever taken oral contraceptive pill,-3,Prefer not to answer,,310008,,0.7538747787475590,IGNORED,,0,0,EVENT,,,0
 2834,Bilateral oophorectomy (both ovaries removed),1,Yes,,310008,,0.6687980890274050,APPROVED,sofia,1610120735293,4297990,VALUE,,,1610119527486
 2834,Bilateral oophorectomy (both ovaries removed),1,Yes,,310008,,0.6687980890274050,APPROVED,sofia,1610120735293,4214956,EVENT,,sofia,1610120732555
-2345,Ever had bowel cancer screening,1,Do not know,,573745,,0.0,IGNORED,Maxim,1610452540237,0,EVENT,,,0
+2345,Ever had bowel cancer screening,-1,Do not know,,573745,,0.0,IGNORED,Maxim,1610452540237,0,EVENT,,,0
 2345,Ever had bowel cancer screening,-3,Prefer not to answer,,573745,,0.0,IGNORED,Maxim,1610452541102,0,EVENT,,,0
 2345,Ever had bowel cancer screening,0,No,,573745,,0.0,APPROVED,Maxim,1610452676934,4211787,EVENT,,Maxim,1610452564873
 2345,Ever had bowel cancer screening,0,No,,573745,,0.0,APPROVED,Maxim,1610452676934,4175226,VALUE,,Maxim,1610452633591
 2345,Ever had bowel cancer screening,1,Yes,,573745,,0.0,APPROVED,Maxim,1610452677311,4188893,EVENT,,Maxim,1610452607816
 2345,Ever had bowel cancer screening,1,Yes,,573745,,0.0,APPROVED,Maxim,1610452677311,4175226,VALUE,,Maxim,1610452636185
-2365,Ever had prostate specific antigen (PSA) test,1,Do not know,,263709,,0.0,IGNORED,Maxim,1610452545060,0,EVENT,,,0
+2365,Ever had prostate specific antigen (PSA) test,-1,Do not know,,263709,,0.0,IGNORED,Maxim,1610452545060,0,EVENT,,,0
 2365,Ever had prostate specific antigen (PSA) test,-3,Prefer not to answer,,263709,,0.0,IGNORED,Maxim,1610452545397,0,EVENT,,,0
 2365,Ever had prostate specific antigen (PSA) test,0,No,,263709,,0.0,APPROVED,Maxim,1610452679544,4211787,EVENT,,Maxim,1610452578487
 2365,Ever had prostate specific antigen (PSA) test,0,No,,263709,,0.0,APPROVED,Maxim,1610452679544,2617206,VALUE,,Maxim,1610452670153
@@ -429,7 +429,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30652,Aspartate aminotransferase aliquot,4,4,,492041,,0.8082786202430730,APPROVED,,0,4094657,VALUE,,,1610120931945
 30813,Phosphate correction level,1,Date and aliquot correction,,444889,,0.719254732131958,APPROVED,,0,4143923,EVENT,,,1610120931945
 30813,Phosphate correction level,1,Date and aliquot correction,,444889,,0.719254732131958,APPROVED,,0,4125861,VALUE,,,1610120931945
-2453,Cancer diagnosed by doctor,1,Do not know,,573738,,0.6657017469406130,IGNORED,,0,0,EVENT,,,0
+2453,Cancer diagnosed by doctor,-1,Do not know,,573738,,0.6657017469406130,IGNORED,,0,0,EVENT,,,0
 30264,Mean reticulocyte volume acquisition route,0,Direct,,494700,,0.5881596803665160,APPROVED,,0,3049858,EVENT,,,1610120931945
 30264,Mean reticulocyte volume acquisition route,0,Direct,,494700,,0.5881596803665160,APPROVED,,0,42531073,VALUE,,,1610120931945
 30786,LDL direct reportability,1,"Reportable at assay and after aliquot correction, if attempted",,486538,,0.4774496853351590,APPROVED,,0,4040635,EVENT,,,1610120931945
@@ -497,7 +497,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30274,Mean sphered cell volume acquisition route,0,Direct,,489131,,0.5589160323143010,APPROVED,,0,42531073,VALUE,,,1610120931953
 30852,Testosterone aliquot,4,4,,487190,,0.5991442203521730,APPROVED,,0,4227695,EVENT,,,1610120931953
 30852,Testosterone aliquot,4,4,,487190,,0.5991442203521730,APPROVED,,0,1636780,VALUE,,,1610120931953
-2473,Other serious medical condition/disability diagnosed by doctor,1,Do not know,,573738,,0.48448386788368200,IGNORED,,0,0,EVENT,,,0
+2473,Other serious medical condition/disability diagnosed by doctor,-1,Do not know,,573738,,0.48448386788368200,IGNORED,,0,0,EVENT,,,0
 30792,Lipoprotein A aliquot,2,2,,476522,,0.6477408409118650,APPROVED,,0,4227695,EVENT,,,1610120931954
 30792,Lipoprotein A aliquot,2,2,,476522,,0.6477408409118650,APPROVED,,0,4199406,VALUE,,,1610120931954
 30885,Urate missing reason,9,Not reportable because dilution factor <0.9 or >1.1,,24568,,0.5825872421264650,APPROVED,,0,44803923,EVENT,,,1610120931955
@@ -606,7 +606,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30794,Lipoprotein A correction reason,2,No aliquot information,,389853,,0.649182915687561,APPROVED,,0,4199406,VALUE,,,1610120931963
 30755,Glycated haemoglobin (HbA1c) missing reason,2,Original value above or below reportable limit,,30651,,0.7301281094551090,APPROVED,,0,44803923,EVENT,,,1610120931964
 30755,Glycated haemoglobin (HbA1c) missing reason,2,Original value above or below reportable limit,,30651,,0.7301281094551090,APPROVED,,0,37118746,VALUE,,,1610120931964
-2492,Taking other prescription medications,1,Do not know,,573738,,0.7345772981643680,IGNORED,,0,0,EVENT,,,0
+2492,Taking other prescription medications,-1,Do not know,,573738,,0.7345772981643680,IGNORED,,0,0,EVENT,,,0
 30854,Testosterone correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,441237,,0.5891194939613340,APPROVED,,0,4077846,EVENT,,,1610120931964
 30854,Testosterone correction reason,3,Original log assay result more than 15 SDs below mean of log results in manual aliquots,,441237,,0.5891194939613340,APPROVED,,0,1636780,VALUE,,,1610120931964
 30893,Vitamin D correction level,1,Date and aliquot correction,,465377,,0.64653080701828,APPROVED,,0,4143923,EVENT,,,1610120931964
@@ -676,7 +676,7 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30795,Lipoprotein A missing reason,3,Unrecoverable aliquot problem (dip),,121557,,0.6637200713157650,APPROVED,,0,4199406,VALUE,,,1610120931968
 30655,Aspartate aminotransferase missing reason,3,Unrecoverable aliquot problem (dip),,25821,,0.8206011056900020,APPROVED,,0,44803923,EVENT,,,1610120931968
 30655,Aspartate aminotransferase missing reason,3,Unrecoverable aliquot problem (dip),,25821,,0.8206011056900020,APPROVED,,0,4094657,VALUE,,,1610120931968
-2844,Had other major operations,1,Do not know,,310008,,0.5609025359153750,IGNORED,,0,0,EVENT,,,0
+2844,Had other major operations,-1,Do not know,,310008,,0.5609025359153750,IGNORED,,0,0,EVENT,,,0
 30855,Testosterone missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,70173,,0.6275023221969600,APPROVED,,0,44803923,EVENT,,,1610120931968
 30855,Testosterone missing reason,4,Unrecoverable aliquot problem (possible aliquot mis-classification),,70173,,0.6275023221969600,APPROVED,,0,1636780,VALUE,,,1610120931968
 30822,Rheumatoid factor aliquot,1,1,,491156,,0.7536104917526250,APPROVED,,0,4227695,EVENT,,,1610120931969

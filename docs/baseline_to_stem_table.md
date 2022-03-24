@@ -7,28 +7,42 @@ nav_order: 4
 
 ## Baseline to stem table
 
-The Baseline table contains one row per person and a column for each field. There can be thousands of columns. Each column name is structured as `field_id-instance.array` (e.g. `20001-1.15`). The `field_id` encodes the variable, the `instance` indicates one of the four assessment centre visits (ranging from 0 to 3) and with the `array` index multiple values can be given for the same field_id at the same visit.
+The baseline table contains one row per person and a column for each field. 
+There can be thousands of columns and each column name is structured as `field_id-instance.array` (e.g. `20001-1.15`). 
+The `field_id` encodes the variable, the `instance` indicates one of the four assessment centre visits (ranging from 0 to 3) and with the `array` index multiple values can be given for the same field_id at the same visit.
 
-To map all these columns to individual events, we map them first to a staging table: the stem table. Depending on the domain of the target concepts, the events are then mapped to their respective tables. See the [section on stem table mapping](stem/index.md)
+To map all these columns to individual events, we map them first to a staging table: the stem table. 
+Depending on the domain of the target concepts, the events are then mapped to their respective tables. 
+See the [section on stem table mapping](stem/index.md)
 
-The input for this transformation are mapping tables for given prioritised `field_id`s (n=519). Each field can have multiple values, for which a separate mapping is made. The mappings are made using a modified version of Usagi, allowing for mapping of values and having different target types. They are saved as default Usagi save files: [resources/baseline_field_mapping](/resources/baseline_field_mapping) (also contains a detailed description of how the mappings were made). 
+The input for this transformation are mapping tables of the`field_id` . 
+Each field can have multiple values, for which a separate mapping is made. 
+The mappings are made using a modified version of Usagi, allowing for mapping of values and having different target types. 
+They are saved as default Usagi save files in this location: `resources/baseline_field_mapping`.
+This folder also contains a readme with a detailed description of how the mappings were made. 
 
-Each field or field/value combination can have a mapping to an event, unit and/or value. Also, each field is associated to a date field_id. Based the mappings given, both the semantic mapping and structural mapping is made. The field is considered discrete if it has mappings for its values, numeric if it has no values and value can be converted to float and text if the value cannot be converted to a float.
+Each field or field/value combination can have a mapping to an event, unit and/or value concept. 
+Also, each field is associated to a date field_id (`resources/baseline_field_mapping/date_field_lookup.csv`). 
+Based the mappings given, both the semantic mapping and structural mapping is made. 
+The value can be either a discrete (mapping to a value_as_concept_id), numeric (mapping to value_as_number) or a text (mapping to value_as_string). 
+ - discrete if the value is coded
+ - numeric if the value can be converted to float (or if the value is missing)
+ - text in all other cases
 
-The process is as follows:
+The ETL is implemented as follows:
 - Loop through all rows of the baseline table:
   - Loop through all columns in the row (except for the `eid`):
     1. If the value is empty, go to next column.
-    2. From the column name, extract `field_id` and `instance` index (we can ignore the array index)
-    3. Look up `target` concepts by `field_id` and value. If target is empty (=ignored field), go to next column.
+    2. From the column name, extract `field_id` and `instance` index (we ignore the array index)
+    3. Look up `target` concepts by `field_id` and value. If the `field_id` is ignored, we continue to the next field.
     4. Look up date_field_id by `field_id`. Create the column name, using the extracted `instance` and array '0'. (e.g. `53-1.0`, if the date_field_id is '53' and the instance is '1')
     5. Map record to stem table columns according to the overview below.
 
 Notes:
  - The field is considered numeric if it has no value mappings
- - For numeric fields, -1 and -3 are filtered out.
- - A field can also be 'ignored' meaning it should not map to an event
- - Fields not given in the mapping tables are also ignored (these are fields not prioritised)
+ - For numeric fields, values of -1 and -3 are filtered out.
+ - A field can also be 'ignored' meaning that no OMOP record should be created for this field.
+ - Fields not given in the mapping tables are also included with a `concept_id` of 0. The `source_concept_id` is looked up for the given `field_id`.
  - Mappings that have not been approved will be mapped to a 0 (see the mapping status column in the mapping tables). 
  - If a field has no value mappings, but the value can't be converted to a float, then it is treated as free-text and populates the value_as_string field.
  - There are some cases where instances run higher than 3. These correspond to positions in the death or cancer registry and are handled separately.
@@ -103,7 +117,7 @@ Loop through columns:
 | visit_occurrence_id |  |  |
 | concept_id | [44805437](https://athena.ohdsi.org/search-terms/terms/44805437) | [4214956](https://athena.ohdsi.org/search-terms/terms/4214956) |
 | source_value | "46" | "2443\|1" |
-| source_concept_id | 0 | 0 |
+| source_concept_id | [35810112](https://athena.ohdsi.org/search-terms/terms/35810112) | [35810297](https://athena.ohdsi.org/search-terms/terms/35810297) |
 | value_as_concept_id |  | [201820](https://athena.ohdsi.org/search-terms/terms/201820) |
 | value_as_number | 12.5 |  |
 | value_as_string |  |  |
