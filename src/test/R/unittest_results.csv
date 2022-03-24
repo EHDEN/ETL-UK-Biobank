@@ -265,6 +265,8 @@
 2517,Covid19 TPP GP clinical to stem, CTV3 code measurement without value,Expect measurement,PASS
 2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_exposure,PASS
 2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_era,PASS
+2519,Covid19 TPP GP clinical to stem, ctv3 DVT (Xa9Bs) condition,Expect condition_occurrence,PASS
+2520,Covid19 TPP GP clinical to stem, ctv3 eGFR (XacUK) condition,Expect measurement,PASS
 2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
 2601,No Event date,Expect No measurement,PASS
 2602,Value is -9000001,Expect No measurement,PASS
