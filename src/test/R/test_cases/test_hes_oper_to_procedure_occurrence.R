@@ -84,7 +84,7 @@ expect_procedure_occurrence(person_id = 1508, procedure_date = '2020-12-19',
 declareTest(1509, 'Skip record X999 - Unknown procedure')
 add_baseline(eid = 1509)
 add_hesin(eid = 1509, ins_index = 0, epistart = '22/03/2021', admidate = '22/03/2021')
-add_hesin_oper(eid = 1509, ins_index = 0, opdate = '22/03/2021', oper4 = 'X9999')
+add_hesin_oper(eid = 1509, ins_index = 0, opdate = '22/03/2021', oper4 = 'X999')
 expect_no_procedure_occurrence(person_id = 1509)
 
 declareTest(1510, 'Map S524 - Introduction of therapeutic substance into subcutaneous tissue')

@@ -34,7 +34,7 @@ def hesin_oper_to_procedure_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Pro
 
         procedure_date = get_datetime(row['opdate'], "%d/%m/%Y")
 
-        if row['oper4'] in ['X998', 'X9999']:
+        if row['oper4'] in ['X998', 'X999']:
             continue
 
         if not pd.isnull(row['oper4']):
