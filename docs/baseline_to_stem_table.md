@@ -24,7 +24,10 @@ This folder also contains a readme with a detailed description of how the mappin
 Each field or field/value combination can have a mapping to an event, unit and/or value concept. 
 Also, each field is associated to a date field_id (`resources/baseline_field_mapping/date_field_lookup.csv`). 
 Based the mappings given, both the semantic mapping and structural mapping is made. 
-The field is considered discrete if it has mappings for its values, numeric if it has no values and value can be converted to float and text if the value cannot be converted to a float.
+The value can be either a discrete (mapping to a value_as_concept_id), numeric (mapping to value_as_number) or a text (mapping to value_as_string). 
+ - discrete if the value is coded
+ - numeric if the value can be converted to float (or if the value is missing)
+ - text in all other cases
 
 The ETL is implemented as follows:
 - Loop through all rows of the baseline table:
