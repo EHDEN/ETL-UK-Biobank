@@ -104,6 +104,7 @@
 1015,ICD code exceptions: A few specific exceptions who need a refactoring to XXX.X,Expect condition_occurrence,PASS
 1016,Test ICD10 code,Expect condition_occurrence,PASS
 1017,ICD code exceptions: ICD10 codes with X instead of a decimal,Expect condition_occurrence,PASS
+1018,ICD code expections: E88799 maps to E887,Expect condition_occurrence,PASS
 1100,emergency admission HES/2D,Expect visit_occurrence,PASS
 1101,admission source Hospice SMR/62,Expect visit_occurrence,PASS
 1102,discharged to special hospital PEDW/49,Expect visit_occurrence,PASS
@@ -141,7 +142,7 @@
 1501,Test OPCS4 code - non standard,Expect procedure_occurrence,PASS
 1502,Test OPCS3 code,Expect procedure_occurrence,PASS
 1503,Test OPCS3 and OPCS4 code; map OPCS4,Expect procedure_occurrence,PASS
-1504,No concept found,Expect procedure_occurrence,PASS
+1504,No concept found,Expect No procedure_occurrence,PASS
 1505,Test if OPCS4 code has more > 1 target concept,Expect procedure_occurrence,PASS
 1505,Test if OPCS4 code has more > 1 target concept,Expect procedure_occurrence,PASS
 1506,Test if OPCS3 code has more > 1 target concept,Expect procedure_occurrence,PASS
@@ -150,6 +151,8 @@
 1507,HES diagnosis with visit,Expect procedure_occurrence,PASS
 1508,HES diagnosis with visit detail,Expect visit_detail,PASS
 1508,HES diagnosis with visit detail,Expect procedure_occurrence,PASS
+1509,Skip record X999 - Unknown procedure,Expect No procedure_occurrence,PASS
+1510,Map S524 - Introduction of therapeutic substance into subcutaneous tissue,Expect procedure_occurrence,PASS
 1600,Death to condition occurrence,Expect condition_occurrence,PASS
 1601,Death to condition occurrence 2,Expect condition_occurrence,PASS
 1602,Death to condition occurrence - No death date,Expect No condition_occurrence,PASS
@@ -277,7 +280,7 @@
 2608,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_number > 0,Expect measurement,PASS
 2609,Covid19 EMIS GP clinical to stem, domain_id=Measure when value_as_concept_id != None,Expect measurement,PASS
 2610,Covid19 EMIS GP clinical to stem, DVT test,Expect condition_occurrence,PASS
-2611,Covid19 EMIS GP clinical to stem, EMISATTACHMENT,Expect observation,PASS
+2611,Covid19 EMIS GP clinical to stem, EMISATTACHMENT and code_type 5,Expect observation,PASS
 2700,covid19 emis gp clinical to visit occurrence 1,Expect visit_occurrence,PASS
 2701,covid19 emis gp clinical to visit occurrence 2,Expect visit_occurrence,PASS
 2702,covid19 emis gp clinical to visit occurrence - no visit without date,Expect No visit_occurrence,PASS

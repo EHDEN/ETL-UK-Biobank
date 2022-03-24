@@ -132,5 +132,11 @@ expect_condition_occurrence(person_id = 1016, condition_start_date = '2021-02-03
 declareTest(1017, 'ICD code exceptions: ICD10 codes with X instead of a decimal')
 add_baseline(eid = 1017)
 add_hesin(eid = 1017, ins_index = 1, admidate = '14/04/2021')
-add_hesin_diag(eid = 1017, ins_index = 1, diag_icd10 = 'M45X9')
+add_hesin_diag(eid = 1017, ins_index = 1, diag_icd10 = 'M45X4')
 expect_condition_occurrence(person_id = 1017, condition_start_date = '2021-04-14', condition_concept_id = 437082)
+
+declareTest(1018, 'ICD code expections: E88799 maps to E887')
+add_baseline(eid = 1018)
+add_hesin(eid = 1018, ins_index = 1, admidate = '22/03/2021')
+add_hesin_diag(eid = 1018, ins_index = 1, diag_icd9 = 'E88799', diag_icd10 = '')
+expect_condition_occurrence(person_id = 1018, condition_start_date = '2021-03-22', condition_concept_id = 75053, condition_source_concept_id = 44835350)
