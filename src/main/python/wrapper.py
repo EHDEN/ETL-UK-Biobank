@@ -92,6 +92,7 @@ class Wrapper(BaseWrapper):
         # Covid tests
         self.execute_batch_transformation(covid_to_visit_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(covid_to_observation, bulk=True, batch_size=100000)
+        self.execute_batch_transformation(covid_to_measurement, bulk=True, batch_size=100000)
 
         # GP
         if self.load_gp_regular:
