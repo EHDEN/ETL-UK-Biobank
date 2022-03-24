@@ -31,6 +31,7 @@ def covid_to_measurement(wrapper: Wrapper) -> List[Wrapper.cdm.Measurement]:
             measurement_date=date.date(),
             measurement_datetime=date,
             value_as_concept_id=result.get(row['result'], None),
+            value_source_value=row['result'],
             measurement_type_concept_id=32856,  # Lab
             visit_occurrence_id=visit_occurrence_id,
             data_source='covid'

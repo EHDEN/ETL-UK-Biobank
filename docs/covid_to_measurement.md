@@ -22,4 +22,5 @@ An additional mapping of the covid table to measurement. Measurement concept com
 | visit_occurrence_id | specdate<br>eid | Lookup id of previously created visit occurrence (from covid_to_observation) by eid and specdate |  |
 | measurement_type_concept_id |  |  | 32856 - Lab |
 | value_as_concept_id | result | the test result: 1 (Positive)-> 45884084, 0 (Negative)-> 45878583 |  |
+| value_source_value | result |  |  |
 | data_source |  | 'covid' |  |
