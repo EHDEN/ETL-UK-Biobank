@@ -9,7 +9,10 @@ nav_order: 2
 
 ### Reading from 2_covid19_emis_gp_scripts.txt.gz.pure
 
-If date empty or in 2037, skip the record.
+Rows are skipped if:
+- `code_type` is NOT 3 (EMIS code) or NOT 6 (dm+d code)
+- `date` is emtpy or in 2037
+
 ![](md_files/image7.png)
 
 | Destination Field | Source field | Logic | Comment field |

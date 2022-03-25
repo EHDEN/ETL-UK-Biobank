@@ -248,7 +248,7 @@
 2501,Covid19 TPP GP clinical to stem, missing date,Expect No measurement,PASS
 2502,Covid19 TPP GP clinical to stem, CTV3 code measurement with value,Expect measurement,PASS
 2503,Covid19 TPP GP clinical to stem, local TPP code,Expect measurement,PASS
-2504,Covid19 TPP GP clinical to stem, code_type is -1,Expect No measurement,PASS
+2504,Covid19 TPP GP clinical to stem, code is -1,Expect No measurement,PASS
 2505,Covid19 TPP GP clinical to stem, missing code,Expect No measurement,PASS
 2506,Covid19 TPP GP clinical to stem, value,Expect measurement,PASS
 2507,Covid19 TPP GP clinical to stem, visit_occurrence_id,Expect measurement,PASS
@@ -263,8 +263,11 @@
 2515,Covid19 TPP GP clinical to stem, G801. to condition,Expect condition_occurrence,PASS
 2516,Covid19 TPP GP clinical to stem, CTV3 code to observation,Expect observation,PASS
 2517,Covid19 TPP GP clinical to stem, CTV3 code measurement without value,Expect measurement,PASS
-2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_exposure,PASS
-2518,Covid19 TPP GP clinical to stem, CTV3 code drug,Expect drug_era,PASS
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug one-to-many,Expect drug_exposure,PASS
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug one-to-many,Expect drug_exposure,PASS
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug one-to-many,Expect procedure_occurrence,PASS
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug one-to-many,Expect drug_era,PASS
+2518,Covid19 TPP GP clinical to stem, CTV3 code drug one-to-many,Expect drug_era,PASS
 2519,Covid19 TPP GP clinical to stem, ctv3 DVT (Xa9Bs) condition,Expect condition_occurrence,PASS
 2520,Covid19 TPP GP clinical to stem, ctv3 eGFR (XacUK) condition,Expect measurement,PASS
 2600,SNOMED code: Serum alanine aminotransferase level,Expect measurement,PASS
