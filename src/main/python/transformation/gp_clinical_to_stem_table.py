@@ -22,9 +22,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         read_v2_mapping_dict = dict(row[1:] for row in reader if row)  # skip 1st column
 
     # Note: if we add restricting to codes, we might miss some added from the phenotype_logic
-    # TODO: observed multiple mappings for vaccines to SNOMED and CVX, which is better?
     read2_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('Read')
-    read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False)
+    read3_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/ctv3.csv', approved_only=False, first_only=False)
     unit_lookup = wrapper.mapping_tables_lookup('resources/mapping_tables/gp_clinical_units.csv')
     value_mapper = GpClinicalValueMapper(mapping_dict=read_v2_mapping_dict)
 
@@ -67,32 +66,33 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
         for map_as_read_code, value_as_number in map_as_read_code_and_value:
             # temporarily extract mapping as Read v2 code, might be used even if CTV3
             map_as_read_code_extended = extend_read_code(map_as_read_code, read_v2_mapping_dict)
-            target_read_mapping = read2_mapper.lookup(map_as_read_code_extended, first_only=True)
+            target_read2_mappings = read2_mapper.lookup(map_as_read_code_extended, first_only=False)
             if read_col == 'read_2':
-                target_concept_id = target_read_mapping.target_concept_id
+                target_concept_ids = [x.target_concept_id for x in target_read2_mappings]
                 source_concept_id = source_read_mapping.source_concept_id
             else:  # read_col == 'read_3'
-                target_concept_id = read3_lookup.get(map_as_read_code, 0)
+                target_concept_ids = read3_lookup.get(map_as_read_code, None)
                 source_concept_id = 0
                 # If read_3 code not mapped to standard concept_id using v3 mapper, try v2 mapper
-                if target_concept_id == 0 and target_read_mapping.target_concept_id != 0:
-                    target_concept_id = target_read_mapping.target_concept_id
+                if target_concept_ids is None and source_read_mapping.source_concept_id != 0:
+                    target_concept_ids = [x.target_concept_id for x in target_read2_mappings]
                     source_concept_id = source_read_mapping.source_concept_id
 
-            yield wrapper.cdm.StemTable(
-                person_id=row['eid'],
-                # Always override concept.domain_id, also if the concept is legitimately a condition
-                domain_id='Measurement',
-                type_concept_id=32817,
-                start_date=event_date,
-                start_datetime=event_date,
-                visit_occurrence_id=visit_id,
-                concept_id=target_concept_id,
-                source_concept_id=source_concept_id,
-                source_value=source_read_code,  # original before adding cyphers after dots
-                operator_concept_id=operator,
-                unit_concept_id=unit_concept_id,
-                unit_source_value=unit_source_value,
-                value_as_number=value_as_number,
-                data_source=data_source
-            )
+            for target_concept_id in target_concept_ids:
+                yield wrapper.cdm.StemTable(
+                    person_id=row['eid'],
+                    # Always override concept.domain_id, also if the concept is from condition domain
+                    domain_id='Measurement',
+                    type_concept_id=32817,
+                    start_date=event_date,
+                    start_datetime=event_date,
+                    visit_occurrence_id=visit_id,
+                    concept_id=target_concept_id,
+                    source_concept_id=source_concept_id,
+                    source_value=source_read_code,  # original before adding cyphers after dots
+                    operator_concept_id=operator,
+                    unit_concept_id=unit_concept_id,
+                    unit_source_value=unit_source_value,
+                    value_as_number=value_as_number,
+                    data_source=data_source
+                )
