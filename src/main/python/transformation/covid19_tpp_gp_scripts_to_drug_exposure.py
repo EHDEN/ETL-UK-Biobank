@@ -15,12 +15,10 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
     dmd_mapper = wrapper.code_mapper.generate_code_mapping_dictionary('dm+d')
 
     for row in rows:
-        if row['dmd_code'] == '-1':  # -1: No dm+d code
+        if is_null(row['dmd_code']) or row['dmd_code'] == '-1':
             continue
-        elif not is_null(row['dmd_code']):
-            mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
-        else:
-            continue
+
+        mappings = dmd_mapper.lookup(row['dmd_code'], first_only=False)
 
         date_start = wrapper.get_gp_datetime(row['issue_date'],
                                              person_source_value=row['eid'],
@@ -31,16 +29,17 @@ def covid19_tpp_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cd
 
         visit_id = create_gp_tpp_visit_occurrence_id(row['eid'], date_start)
 
-        yield wrapper.cdm.DrugExposure(
-            person_id=row['eid'],
-            drug_exposure_start_date=date_start,
-            drug_exposure_start_datetime=date_start,
-            drug_exposure_end_date=date_start,
-            drug_exposure_end_datetime=date_start,
-            drug_concept_id=mapping.target_concept_id,
-            drug_source_concept_id=mapping.source_concept_id,
-            drug_source_value=mapping.source_concept_code,
-            drug_type_concept_id=32838,  # 'EHR prescription'
-            data_source='covid19 gp_tpp',
-            visit_occurrence_id=visit_id
-        )
+        for mapping in mappings:
+            yield wrapper.cdm.DrugExposure(
+                person_id=row['eid'],
+                drug_exposure_start_date=date_start,
+                drug_exposure_start_datetime=date_start,
+                drug_exposure_end_date=date_start,
+                drug_exposure_end_datetime=date_start,
+                drug_concept_id=mapping.target_concept_id,
+                drug_source_concept_id=mapping.source_concept_id,
+                drug_source_value=mapping.source_concept_code,
+                drug_type_concept_id=32838,  # 'EHR prescription'
+                data_source='covid19 gp_tpp',
+                visit_occurrence_id=visit_id
+            )
