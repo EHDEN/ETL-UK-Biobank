@@ -20,5 +20,5 @@ expect_condition_occurrence(person_id=3103, condition_start_date='2020-03-17',
 declareTest(3104, 'Baseline to condition occurrence - already in condition occurrence table')
 add_baseline(eid=3104, `40000-0.0`='2020-01-30', `40002-0.0`='C80')
 add_death(eid=3104, ins_index=0, date_of_death='29/01/2020')
-add_death_cause(eid=3104, ins_index=0, arr_index = 0, cause_icd10='C80')
+add_death_cause(eid=3104, ins_index=0, arr_index = 1, cause_icd10='C80')
 expect_no_condition_occurrence(person_id=3104, condition_start_date='2020-01-30')
