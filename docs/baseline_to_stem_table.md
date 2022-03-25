@@ -1,11 +1,11 @@
 ---
 layout: default
-title: baseline to stem table
+title: baseline to stem_table
 parent: assessment centre
 nav_order: 4
 ---
 
-## Baseline to stem table
+## Baseline to stem_table
 
 The baseline table contains one row per person and a column for each field. 
 There can be thousands of columns and each column name is structured as `field_id-instance.array` (e.g. `20001-1.15`). 

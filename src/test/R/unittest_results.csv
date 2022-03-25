@@ -295,6 +295,12 @@
 3000,covid19 tpp gp scripts to visit occurrence 1,Expect visit_occurrence,PASS
 3001,covid19 tpp gp scripts to visit occurrence 2,Expect visit_occurrence,PASS
 3002,covid19 tpp gp scripts to visit occurrence - no visit without date,Expect No visit_occurrence,PASS
+3100,Baseline to condition occurrence - secondary cause of death,Expect condition_occurrence,PASS
+3101,Baseline to condition occurrence, no date,Expect No condition_occurrence,PASS
+3102,Baseline to condition occurrence - no ICD10 code,Expect No condition_occurrence,PASS
+3103,Baseline to condition occurrence - secondary cause of death,Expect condition_occurrence,PASS
+3104,Baseline to condition occurrence - already in condition occurrence table,Expect condition_occurrence,PASS
+3104,Baseline to condition occurrence - already in condition occurrence table,Expect No condition_occurrence,PASS
 3200,Test tissue, positive,Expect measurement,PASS
 3201,Test tissue, negative,Expect measurement,PASS
 3202,Test missing date,Expect measurement,PASS
