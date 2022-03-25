@@ -139,6 +139,7 @@ add_baseline(eid = '933', `40005-1.0` = '2011-10-18', `40008-1.0` = '43')
 expect_measurement(person_id = 933, measurement_date = '2011-10-18',
                    measurement_concept_id = 3007016, value_as_number = 43, unit_concept_id = 9448)
 
+# Field 40012 already mapped in the cancer_register_to_condition_occurrence mapping
 # declareTest(934, 'Baseline - behaviour of cancer tumour')
 # add_baseline(eid = '934', `40005-2.0` = '2018-02-13', `40012-2.0` = '6')
 # expect_observation(person_id = 934, observation_date = '2018-02-13',
