@@ -18,10 +18,10 @@ add_baseline(eid = 2503)
 add_covid19_tpp_gp_clinical(eid = 2503, event_dt = '12/03/1999', code_type = 1, code = '242..', value = 10.0)
 expect_measurement(person_id = 2503, measurement_concept_id = 4060733,  measurement_source_concept_id = 45431729, measurement_source_value = '242..')
 
-declareTest(2504, 'Covid19 TPP GP clinical to stem, code_type is -1')
+declareTest(2504, 'Covid19 TPP GP clinical to stem, code is -1')
 add_baseline(eid = 2504)
-add_covid19_tpp_gp_clinical(eid = 2504, event_dt = '12/03/1999', code_type = -1, code = 'XaF8d', value = 10.0)
-expect_no_measurement(person_id = 2504, measurement_concept_id = 4200295)
+add_covid19_tpp_gp_clinical(eid = 2504, event_dt = '12/03/1999', code = '-1')
+expect_no_measurement(person_id = 2504)
 
 declareTest(2505, 'Covid19 TPP GP clinical to stem, missing code')
 add_baseline(eid = 2505)

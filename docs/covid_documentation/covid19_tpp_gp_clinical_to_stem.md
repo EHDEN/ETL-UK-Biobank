@@ -10,9 +10,8 @@ nav_order: 4
 ### Reading from 3_covid19_tpp_gp_clinical.txt.gz.pure
 
 Rows are skipped if:
- - `Code` is empty
- - `Date` is empty or in 2037
- - `Code type` is -1 or -2
+ - `code` is empty or '-1'
+ - `date` is empty or in the year 2037
 
 ![](md_files/image2.png)
 

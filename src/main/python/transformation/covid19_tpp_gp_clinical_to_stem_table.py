@@ -32,7 +32,7 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
                                                          approved_only=True)
 
     for row in rows:
-        if is_null(row['code']):
+        if is_null(row['code']) or row['code'] == '-1':
             continue
 
         # Date
@@ -45,18 +45,15 @@ def covid19_tpp_gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.
 
         # If 'code_type' = '0'   use CTV3 lookup. 
         # If 'code_type’ = '1'   use Local TPP lookup. 
-        # If 'code_type' = '-1', '-2' or other, discard record from the table
+        source_concept_id = 0
+        target_concept_ids = None
         if row["code_type"] == '0':
-            target_concept_ids = ctv3_lookup.get(row['code'], 0)
-            source_concept_id = 0
+            target_concept_ids = ctv3_lookup.get(row['code'], None)
         elif row["code_type"] == '1':
-            target_concept_ids = local_tpp_lookup.get(row['code'], 0)
-            source_concept_id = 0
-        else:
-            continue
+            target_concept_ids = local_tpp_lookup.get(row['code'], None)
 
         # If no mapping found, try read2
-        if target_concept_ids == 0:
+        if target_concept_ids is None:
             read_code_extended = extend_read_code(row['code'], read_v2_mapping_dict)
             target_read_mappings = read2_mapper.lookup(read_code_extended)
             target_concept_ids = [x.target_concept_id for x in target_read_mappings]
