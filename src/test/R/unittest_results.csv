@@ -77,6 +77,8 @@
 943,Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab,Expect observation,PASS
 943,Baseline - Distance to viewer left eye - lookup target concept from OMOP vocab,Expect observation,PASS
 944,Baseline - do not include primary cause of death as observation,Expect No observation,PASS
+945,Baseline - ignore dietary fields,Expect No observation,PASS
+945,Baseline - ignore dietary fields,Expect No measurement,PASS
 1000,Test ICD10 code,Expect condition_occurrence,PASS
 1001,Test ICD9 code,Expect condition_occurrence,PASS
 1002,Test ICD9 and ICD10 code; map ICD10,Expect condition_occurrence,PASS

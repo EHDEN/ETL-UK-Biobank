@@ -193,3 +193,8 @@ expect_observation(person_id = 943, observation_concept_id = 4302663, unit_conce
 declareTest(944, 'Baseline - do not include primary cause of death as observation')
 add_baseline(eid = '944', `40001-0.0` = 'C15')
 expect_no_observation(person_id = 944, observation_source_value = '40001|C15')
+
+declareTest(945, 'Baseline - ignore dietary fields')
+add_baseline(eid = '945', `100007-2.0` = '55')
+expect_no_observation(person_id = 945, observation_source_value = '100007')
+expect_no_measurement(person_id = 945, measurement_source_value = '100007')

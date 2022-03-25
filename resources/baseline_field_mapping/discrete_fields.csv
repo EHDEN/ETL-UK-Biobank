@@ -390,9 +390,6 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 30871,Triglycerides assay date,,,,491876,,0.784792602062225,IGNORED,,0,0,EVENT,Date of 30870,,0
 30881,Urate assay date,,,,491690,,0.642554342746735,IGNORED,,0,0,EVENT,Date of 30880,,0
 30891,Vitamin D assay date,,,,491912,,0.572092294692993,IGNORED,,0,0,EVENT,Date of 30890,,0
-40000,Date of death,,,,30263,,1.0,IGNORED,,0,0,EVENT,Date of 40001,,0
-40005,Date of cancer diagnosis,,,,118715,,0.83932763338089,IGNORED,,0,0,EVENT,"Date of 40006,40013",,0
-40010,Description of cause of death,,,,22983,,0.71222186088562,FLAGGED,,0,45880469,EVENT,This is free-text to be stored as note. New mapping approach needed for text fields,,1602841827036
 40014,Underlying (primary) cause of death: ICD10 addendum,,,,,,0.543115377426148,IGNORED,Maxim,1602843041431,0,EVENT,Empty according to data dictionary,,0
 40015,Contributory (secondary) cause of death: ICD10 addendum,,,,,,0.459375947713852,IGNORED,Maxim,1602842758873,0,EVENT,Empty according to data dictionary,,0
 40016,Type of cancer: ICD10 addendum,,,,,,0.547840416431427,IGNORED,,0,0,EVENT,Empty according to data dictionary,,0
