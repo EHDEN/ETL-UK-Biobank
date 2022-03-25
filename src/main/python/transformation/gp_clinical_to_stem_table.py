@@ -77,6 +77,8 @@ def gp_clinical_to_stem_table(wrapper: Wrapper) -> List[Wrapper.cdm.StemTable]:
                 if target_concept_ids is None and source_read_mapping.source_concept_id != 0:
                     target_concept_ids = [x.target_concept_id for x in target_read2_mappings]
                     source_concept_id = source_read_mapping.source_concept_id
+                else:
+                    target_concept_ids = [0]
 
             for target_concept_id in target_concept_ids:
                 yield wrapper.cdm.StemTable(
