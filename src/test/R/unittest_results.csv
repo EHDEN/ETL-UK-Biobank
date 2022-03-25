@@ -155,7 +155,6 @@
 1603,Death to condition occurrence - No cause icd10 code,Expect No condition_occurrence,PASS
 1604,Death to condition occurrence - arr_index is 0,Expect No condition_occurrence,PASS
 1605,Death to condition occurrence - 2 death causes,Expect condition_occurrence,PASS
-3203,Test visit_id,Expect measurement,PASS
 1605,Death to condition occurrence - 2 death causes,Expect condition_occurrence,PASS
 1606,Death to condition occurrence - 4 death causes,Expect condition_occurrence,PASS
 1606,Death to condition occurrence - 4 death causes,Expect condition_occurrence,PASS
@@ -306,3 +305,4 @@
 3201,Test tissue, negative,Expect measurement,PASS
 3202,Test missing date,Expect measurement,PASS
 3203,Test visit_id,Expect visit_occurrence,PASS
+3203,Test visit_id,Expect measurement,PASS
