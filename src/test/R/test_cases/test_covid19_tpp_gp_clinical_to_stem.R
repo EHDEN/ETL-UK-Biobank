@@ -18,10 +18,10 @@ add_baseline(eid = 2503)
 add_covid19_tpp_gp_clinical(eid = 2503, event_dt = '12/03/1999', code_type = 1, code = '242..', value = 10.0)
 expect_measurement(person_id = 2503, measurement_concept_id = 4060733,  measurement_source_concept_id = 45431729, measurement_source_value = '242..')
 
-declareTest(2504, 'Covid19 TPP GP clinical to stem, code_type is -1')
+declareTest(2504, 'Covid19 TPP GP clinical to stem, code is -1')
 add_baseline(eid = 2504)
-add_covid19_tpp_gp_clinical(eid = 2504, event_dt = '12/03/1999', code_type = -1, code = 'XaF8d', value = 10.0)
-expect_no_measurement(person_id = 2504, measurement_concept_id = 4200295)
+add_covid19_tpp_gp_clinical(eid = 2504, event_dt = '12/03/1999', code = '-1')
+expect_no_measurement(person_id = 2504)
 
 declareTest(2505, 'Covid19 TPP GP clinical to stem, missing code')
 add_baseline(eid = 2505)
@@ -89,12 +89,17 @@ add_baseline(eid = 2517)
 add_covid19_tpp_gp_clinical(eid = 2517, event_dt = '01/07/2020', code_type = 0, code = 'XaJVi', value=NULL)
 expect_measurement(person_id = 2517, measurement_concept_id = 4136881,  value_as_number = NULL, measurement_source_value = 'XaJVi')
 
-declareTest(2518, 'Covid19 TPP GP clinical to stem, CTV3 code drug')
+declareTest(2518, 'Covid19 TPP GP clinical to stem, CTV3 code drug one-to-many')
 add_baseline(eid = 2518)
 add_covid19_tpp_gp_clinical(eid = 2518, event_dt = '01/01/2005', code_type = 1, code = '65KZ.', value=NULL)
 expect_drug_exposure(person_id = 2518, drug_exposure_start_date = '2005-01-01', drug_exposure_end_date = '2005-01-01',
                      drug_concept_id = 529411,  drug_source_value = '65KZ.', drug_source_concept_id = 45482248)
+expect_drug_exposure(person_id = 2518, drug_exposure_start_date = '2005-01-01', drug_exposure_end_date = '2005-01-01',
+                     drug_concept_id = 529303,  drug_source_value = '65KZ.', drug_source_concept_id = 45482248)
+expect_procedure_occurrence(person_id = 2518, procedure_date = '2005-01-01', procedure_concept_id = 3655690,
+                            procedure_source_value = '65KZ.', procedure_source_concept_id = 45482248)
 expect_drug_era(person_id = 2518, drug_concept_id = 529411)
+expect_drug_era(person_id = 2518, drug_concept_id = 529303)
 
 declareTest(2519, 'Covid19 TPP GP clinical to stem, ctv3 DVT (Xa9Bs) condition')
 add_baseline(eid = 2519)
