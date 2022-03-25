@@ -65,7 +65,6 @@
 931,Baseline - datetime format,Expect measurement,PASS
 932,Baseline - truncate long value of device ID,Expect device_exposure,PASS
 933,Baseline - age at cancer diagnosis,Expect measurement,PASS
-934,Baseline - behaviour of cancer tumour,Expect observation,PASS
 935,Baseline - cancer record format,Expect observation,PASS
 936,Baseline - cancer record origin,Expect observation,PASS
 937,Baseline - device id,Expect device_exposure,PASS

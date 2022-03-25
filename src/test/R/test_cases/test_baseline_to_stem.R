@@ -139,10 +139,10 @@ add_baseline(eid = '933', `40005-1.0` = '2011-10-18', `40008-1.0` = '43')
 expect_measurement(person_id = 933, measurement_date = '2011-10-18',
                    measurement_concept_id = 3007016, value_as_number = 43, unit_concept_id = 9448)
 
-declareTest(934, 'Baseline - behaviour of cancer tumour')
-add_baseline(eid = '934', `40005-2.0` = '2018-02-13', `40012-2.0` = '6')
-expect_observation(person_id = 934, observation_date = '2018-02-13',
-                   observation_concept_id = 4077872, value_as_concept_id = 36311298)
+# declareTest(934, 'Baseline - behaviour of cancer tumour')
+# add_baseline(eid = '934', `40005-2.0` = '2018-02-13', `40012-2.0` = '6')
+# expect_observation(person_id = 934, observation_date = '2018-02-13',
+#                    observation_concept_id = 4077872, value_as_concept_id = 36311298)
 
 declareTest(935, 'Baseline - cancer record format')
 add_baseline(eid = '935', `40005-4.0` = '2020-08-30', `40019-4.0` = '13')
