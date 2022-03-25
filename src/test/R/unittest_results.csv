@@ -248,7 +248,7 @@
 2501,Covid19 TPP GP clinical to stem, missing date,Expect No measurement,PASS
 2502,Covid19 TPP GP clinical to stem, CTV3 code measurement with value,Expect measurement,PASS
 2503,Covid19 TPP GP clinical to stem, local TPP code,Expect measurement,PASS
-2504,Covid19 TPP GP clinical to stem, code_type is -1,Expect No measurement,PASS
+2504,Covid19 TPP GP clinical to stem, code is -1,Expect No measurement,PASS
 2505,Covid19 TPP GP clinical to stem, missing code,Expect No measurement,PASS
 2506,Covid19 TPP GP clinical to stem, value,Expect measurement,PASS
 2507,Covid19 TPP GP clinical to stem, visit_occurrence_id,Expect measurement,PASS

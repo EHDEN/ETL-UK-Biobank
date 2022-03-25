@@ -18,7 +18,6 @@ def covid19_emis_gp_scripts_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.c
 
     for row in rows:
         if row['code_type'] == '6':
-            # dm+d codes have one to one mappings to standard concepts: first_only parameter doesn't change the outcome
             mappings = dmd_mapper.lookup(row['code'], first_only=False)
         elif row['code_type'] == '3':
             # Emis codes

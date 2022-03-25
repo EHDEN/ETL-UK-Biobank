@@ -19,26 +19,32 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
     read2_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_Read2.csv',
-            first_only=True, approved_only=False)
+            first_only=False, approved_only=False)
     drug_mapper = \
         wrapper.mapping_tables_lookup(
             './resources/mapping_tables/gp_prescriptions_drugs_freetext.csv',
-            first_only=True, approved_only=False)
+            first_only=False, approved_only=False)
 
     for row in rows:
         if not is_null(row['dmd_code']):
-            mapping = dmd_mapper.lookup(row['dmd_code'], first_only=True)
+            mappings = dmd_mapper.lookup(row['dmd_code'], first_only=False)
         elif not is_null(row['read_2']):
             read_2_extended = extend_read_code(row['read_2'])
-            mapping = CodeMapping()
-            mapping.source_concept_code = row['read_2']
-            mapping.source_concept_id = 0
-            mapping.target_concept_id = read2_mapper.get(read_2_extended, 0)
+            mappings = []
+            for target_concept_id in read2_mapper.get(read_2_extended, [0]):
+                mapping = CodeMapping()
+                mapping.source_concept_code = row['read_2']
+                mapping.target_concept_id = target_concept_id
+                mapping.source_concept_id = 0
+                mappings.append(mapping)
         elif not is_null(row['drug_name']):
-            mapping = CodeMapping()
-            mapping.source_concept_code = row['drug_name']
-            mapping.source_concept_id = 0
-            mapping.target_concept_id = drug_mapper.get(row['drug_name'], 0)
+            mappings = []
+            for target_concept_id in drug_mapper.get(row['drug_name'], [0]):
+                mapping = CodeMapping()
+                mapping.source_concept_code = row['drug_name']
+                mapping.source_concept_id = 0
+                mapping.target_concept_id = target_concept_id
+                mappings.append(mapping)
         else:
             continue
 
@@ -66,18 +72,19 @@ def gp_prescriptions_to_drug_exposure(wrapper: Wrapper) -> List[Wrapper.cdm.Drug
             num_quantity = extract_numeric_quantity(raw_quantity)
             date_end = date_start
 
-        yield wrapper.cdm.DrugExposure(
-            person_id=row['eid'],
-            drug_exposure_start_date=date_start,
-            drug_exposure_start_datetime=date_start,
-            drug_exposure_end_date=date_end,
-            drug_exposure_end_datetime=date_end,
-            drug_concept_id=mapping.target_concept_id,
-            drug_source_concept_id=mapping.source_concept_id,
-            drug_source_value=mapping.source_concept_code[:50],
-            drug_type_concept_id=32838,  # 'EHR prescription'
-            quantity=num_quantity,
-            dose_unit_source_value=unit,
-            data_source=data_source,
-            visit_occurrence_id=visit_id,
-        )
+        for mapping in mappings:
+            yield wrapper.cdm.DrugExposure(
+                person_id=row['eid'],
+                drug_exposure_start_date=date_start,
+                drug_exposure_start_datetime=date_start,
+                drug_exposure_end_date=date_end,
+                drug_exposure_end_datetime=date_end,
+                drug_concept_id=mapping.target_concept_id,
+                drug_source_concept_id=mapping.source_concept_id,
+                drug_source_value=mapping.source_concept_code[:50],
+                drug_type_concept_id=32838,  # 'EHR prescription'
+                quantity=num_quantity,
+                dose_unit_source_value=unit,
+                data_source=data_source,
+                visit_occurrence_id=visit_id,
+            )
