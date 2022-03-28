@@ -191,23 +191,19 @@ sourceCode,sourceName,sourceValueCode,sourceValueName,sourceUnitName,sourceFrequ
 6150,Vascular/heart problems diagnosed by doctor,3,Stroke,,556721,,0.4304583966732030,APPROVED,Maxim,1646388009599,381316,VALUE,,Maxim,1646388009026
 20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,74869,,0.4628041386604310,APPROVED,maxim,1646661751039,35811230,EVENT,,maxim,1646661618859
 20544,Mental health problems ever diagnosed by a professional,16,Anorexia nervosa,,74869,,0.4628041386604310,APPROVED,maxim,1646661751039,436675,VALUE,,maxim,1646661750515
-3627,Age angina diagnosed,-1,Do not know,,17915,,0.6316303014755250,IGNORED,Maxim,1646386704928,0,EVENT,,,0
 22174,Recent medication for bronchiectasis,0,No,,1073,,0.7063411474227910,IGNORED,maxim,1646660447986,0,EVENT,,,0
 6150,Vascular/heart problems diagnosed by doctor,-3,Prefer not to answer,,556721,,0.4304583966732030,IGNORED,Maxim,1646386709903,0,EVENT,,,0
 21024,Ever diagnosed with IBS,-121,Do not know,,174760,,0.5179217457771300,IGNORED,Maxim,1646386706041,0,EVENT,,,0
-3761,"Age hay fever, rhinitis or eczema diagnosed",-1,Do not know,,132257,,0.45307111740112300,IGNORED,Maxim,1646386705132,0,EVENT,,,0
 20116,Smoking status,-3,Prefer not to answer,,573778,,0.8355186581611630,IGNORED,Maxim,1646386708823,0,EVENT,,,0
 20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,143658,,0.5913298726081850,APPROVED,maxim,1646661459775,40481011,EVENT,,<auto>,1646386570590
 20403,Amount of alcohol drunk on a typical drinking day,3,5 or 6,,143658,,0.5913298726081850,APPROVED,maxim,1646661459775,4144038,VALUE,,maxim,1646661448558
 20544,Mental health problems ever diagnosed by a professional,2,Schizophrenia,,74869,,0.4628041386604310,APPROVED,maxim,1646661768236,35811230,EVENT,,maxim,1646661618859
 20544,Mental health problems ever diagnosed by a professional,2,Schizophrenia,,74869,,0.4628041386604310,APPROVED,maxim,1646661768236,435783,VALUE,,maxim,1646661767679
-3627,Age angina diagnosed,-3,Prefer not to answer,,17915,,0.6316303014755250,IGNORED,Maxim,1646386709484,0,EVENT,,,0
 20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,74869,,0.4628041386604310,APPROVED,maxim,1646661754239,35811230,EVENT,,maxim,1646661618859
 20544,Mental health problems ever diagnosed by a professional,17,Agoraphobia,,74869,,0.4628041386604310,APPROVED,maxim,1646661754239,4321835,VALUE,,maxim,1646661753677
 22173,Recent medication for sarcoidosis,0,No,,529,,0.6986559629440310,IGNORED,maxim,1646660471533,0,EVENT,,,0
 10844,Gestational diabetes only (pilot),-1,Do not know,,63,,0.6028794646263120,IGNORED,Maxim,1646386702500,0,EVENT,,,0
 6151,Fractured bone site(s),-3,Prefer not to answer,,59744,,0.55611652135849,IGNORED,Maxim,1646386710118,0,EVENT,,,0
-3761,"Age hay fever, rhinitis or eczema diagnosed",-3,Prefer not to answer,,132257,,0.45307111740112300,IGNORED,Maxim,1646386709700,0,EVENT,,,0
 6152,"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor",-3,Prefer not to answer,,613916,,0.4737726151943210,IGNORED,Maxim,1646386710421,0,EVENT,,,0
 3005,Fracture resulting from simple fall,-1,Do not know,,54048,,0.6323604583740230,IGNORED,Maxim,1646386704709,0,EVENT,,,0
 6150,Vascular/heart problems diagnosed by doctor,-7,None of the above,,556721,,0.4304583966732030,IGNORED,Maxim,1646386710848,0,EVENT,,,0
