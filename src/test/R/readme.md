@@ -98,4 +98,5 @@ This convention should be used for other numerical variables whenever applicable
 | test_cases/test_covid19_emis_gp_scripts_to_visit-occurrence.R | 2800-2899 |
 | test_cases/test_covid19_tpp_gp_clinical_to_visit_occurrence.R | 2900-2999 |
 | test_cases/test_covid19_tpp_gp_scripts_to_visit_occurrence.R | 3000-3099 |
-| test_cases/test_baseline_to_observation.R | 3100-3199 |
+| test_cases/test_baseline_to_condition_occurrence.R | 3100-3199 |
+| test_cases/test_covid_to_measurement.R | 3200-3299 |

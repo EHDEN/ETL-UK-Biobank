@@ -82,13 +82,13 @@ class Wrapper(BaseWrapper):
         # Death
         self.execute_batch_transformation(death_to_death, bulk=True, batch_size=100000)
         self.execute_batch_transformation(death_to_condition_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(baseline_to_death, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(baseline_to_death, bulk=True, batch_size=100000)
 
         # Baseline
         self.execute_batch_transformation(baseline_to_visit_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
         self.execute_batch_transformation(cancer_register_to_condition_occurrence, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(baseline_to_condition_occurrence, bulk=True, batch_size=100000)
+        # self.execute_batch_transformation(baseline_to_condition_occurrence, bulk=True, batch_size=100000)
 
         # Covid tests
         self.execute_batch_transformation(covid_to_visit_occurrence, bulk=True, batch_size=100000)
