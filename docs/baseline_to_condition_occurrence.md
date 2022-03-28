@@ -9,9 +9,11 @@ nav_order: 7
 
 ### Reading from Baseline
 
+**NOTE: Secondary cause of death is taken from the death registry. The logic below is not currently used.**
+
 The baseline also includes information about the secondary cause of death of a person.
 This information might also exist in the death registry records. 
-Currently first a check is made if the record is already in the OMOP instance. 
+Firstly check if the record is already in the death registry data. 
 If not a script is executed according to the table below. 
 
 | Destination Field | Source field | Logic | Comment field |
@@ -20,6 +22,6 @@ If not a script is executed according to the table below.
 | condition_start_date | 40000-0.0 |  |  |
 | condition_start_datetime | 40000-0.0 |  |  |
 | condition_type_concept_id |  |  | 32815: Death Certificate |
-| condition_concept_id | 40002-0.0 | vocabulary lookup |  |
-| condition_source_concept_id | 40002-0.0 | reformat the ICD10 code given |  |
-| condition_source_value | 40002-0.0 |  |
+| condition_concept_id | 40002-0.1 | vocabulary lookup |  |
+| condition_source_concept_id | 40002-0.1 | reformat the ICD10 code given |  |
+| condition_source_value | 40002-0.1 |  |

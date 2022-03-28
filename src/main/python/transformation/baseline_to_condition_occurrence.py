@@ -11,14 +11,14 @@ if TYPE_CHECKING:
 
 def baseline_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.ConditionOccurrence]:
     source = wrapper.source_data.get_source_file('baseline.csv')
-    df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '40000-0.0', '40002-0.0'])
+    df = source.get_csv_as_df(apply_dtypes=False, usecols=['eid', '40000-0.0', '40002-0.1'])
 
     source_death = wrapper.source_data.get_source_file('death_cause.csv')
     df_death = source_death.get_csv_as_df(apply_dtypes=False)
     secondary_death = df_death[df_death['arr_index'] != '0'][['eid', 'cause_icd10']]\
         .apply(tuple, axis=1).tolist()
 
-    df['ICD10_dot'] = df['40002-0.0'].apply(refactor_icdx_code)
+    df['ICD10_dot'] = df['40002-0.1'].apply(refactor_icdx_code)
 
     mapper = \
         wrapper.code_mapper.generate_code_mapping_dictionary(
@@ -28,11 +28,11 @@ def baseline_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Condi
         if pd.isna(row['40000-0.0']):
             continue
 
-        if pd.isna(row['40002-0.0']):
+        if pd.isna(row['40002-0.1']):
             continue
 
         # if the person, icd code combination is already in the death registry it has been mapped
-        if (row['eid'], row['40002-0.0']) in secondary_death:
+        if (row['eid'], row['40002-0.1']) in secondary_death:
             continue
 
         target = mapper.lookup(row['ICD10_dot'], first_only=True)
@@ -43,5 +43,5 @@ def baseline_to_condition_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.Condi
             condition_start_datetime=row['40000-0.0'],
             condition_type_concept_id=32815,  # Death Certificate
             condition_source_concept_id=target.source_concept_id,
-            condition_source_value=row['40002-0.0']
+            condition_source_value=row['40002-0.1']
         )
