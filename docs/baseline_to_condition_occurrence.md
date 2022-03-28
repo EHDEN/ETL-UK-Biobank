@@ -9,7 +9,7 @@ nav_order: 7
 
 ### Reading from Baseline
 
-NOTE: Secondary cause of death is taken from the death registry. The logic below is not currently used.
+**NOTE: Secondary cause of death is taken from the death registry. The logic below is not currently used.**
 
 The baseline also includes information about the secondary cause of death of a person.
 This information might also exist in the death registry records. 
