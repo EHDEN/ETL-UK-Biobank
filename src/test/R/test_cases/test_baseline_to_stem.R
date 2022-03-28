@@ -199,3 +199,8 @@ declareTest(945, 'Baseline - ignore dietary fields')
 add_baseline(eid = '945', `100007-2.0` = '55')
 expect_no_observation(person_id = 945, observation_source_value = '100007')
 expect_no_measurement(person_id = 945, measurement_source_value = '100007')
+
+declareTest(946, 'Baseline - field 3627 age angina diagnosed')
+add_baseline(eid = '946', `3627-0.0` = '13')
+expect_observation(person_id = 946, observation_concept_id = 4214956, value_as_concept_id = 321318,
+                   value_as_number = 13, unit_concept_id = 9448)
