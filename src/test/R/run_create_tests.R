@@ -39,7 +39,6 @@ source('test_cases/test_hes_oper_to_procedure_occurrence.R')           # test ID
 source('test_cases/test_death_to_condition_occurrence.R')              # test IDs 1600-1699
 source('test_cases/test_gp_clinical_to_stem.R')                        # test IDs 1700-1799
 source('test_cases/test_hesin_to_visit_detail.R')                      # test IDs 1800-1899
-# source('test_cases/test_baseline_to_death.R')                            # test IDs 1900-1999
 source('test_cases/test_cancer_register_to_condition_occurrence.R')    # test IDs 2000-2099
 source('test_cases/test_drug_era.R')                                   # test IDs 2100-2199
 source('test_cases/test_observation_period.R')                         # test IDs 2200-2299
@@ -51,8 +50,11 @@ source('test_cases/test_covid19_emis_gp_clinical_to_visit_occurrence.R') # test 
 source('test_cases/test_covid19_emis_gp_scripts_to_visit-occurrence.R')  # test IDs 2800-2899
 source('test_cases/test_covid19_tpp_gp_clinical_to_visit_occurrence.R')  # test IDs 2900-2999
 source('test_cases/test_covid19_tpp_gp_scripts_to_visit_occurrence.R')    # test IDs 3000-3099
-# source('test_cases/test_baseline_to_condition_occurrence.R')                # test IDs 3100-3199
 source('test_cases/test_covid_to_measurement.R')                         # test IDs 3200-3299
+
+# If load_death_from_baseline
+# source('test_cases/test_baseline_to_death.R')                            # test IDs 1900-1999
+# source('test_cases/test_baseline_to_condition_occurrence.R')                # test IDs 3100-3199
 
 # Generate source csv files -----------------------------------------------------
 dir.create(config$sourceDataDir, recursive=T, showWarnings = F)

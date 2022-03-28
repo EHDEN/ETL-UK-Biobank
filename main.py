@@ -31,7 +31,8 @@ def main(config):
     # Initialize ETL with configuration parameters
     etl = Wrapper(config,
                   load_gp_regular=config_yaml['run_options'].get('load_gp_regular', True),
-                  load_gp_covid19=config_yaml['run_options'].get('load_gp_covid19', True))
+                  load_gp_covid19=config_yaml['run_options'].get('load_gp_covid19', True),
+                  load_death_from_baseline=config_yaml['run_options'].get('load_death_from_baseline', False))
 
     logger.info('ETL version {}'.format(__version__))
 

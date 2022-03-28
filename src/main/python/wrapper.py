@@ -32,13 +32,14 @@ logger = logging.getLogger(__name__)
 class Wrapper(BaseWrapper):
     cdm = cdm
 
-    def __init__(self, config: MainConfig, load_gp_regular: bool, load_gp_covid19: bool):
+    def __init__(self, config: MainConfig, load_gp_regular: bool, load_gp_covid19: bool, load_death_from_baseline: bool):
         super().__init__(config, cdm)
 
         # Load config settings
         self.path_mapping_tables = Path('./resources/mapping_tables')
         self.load_gp_regular = load_gp_regular
         self.load_gp_covid19 = load_gp_covid19
+        self.load_death_from_baseline = load_death_from_baseline
 
     def run(self):
 
@@ -80,15 +81,17 @@ class Wrapper(BaseWrapper):
         self.execute_batch_transformation(baseline_to_person, bulk=True, batch_size=100000)
 
         # Death
-        self.execute_batch_transformation(death_to_death, bulk=True, batch_size=100000)
-        self.execute_batch_transformation(death_to_condition_occurrence, bulk=True, batch_size=100000)
-        # self.execute_batch_transformation(baseline_to_death, bulk=True, batch_size=100000)
+        if self.load_death_from_baseline:
+            self.execute_batch_transformation(baseline_to_death, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(baseline_to_condition_occurrence, bulk=True, batch_size=100000)
+        else:  # from death tables
+            self.execute_batch_transformation(death_to_death, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(death_to_condition_occurrence, bulk=True, batch_size=100000)
 
         # Baseline
         self.execute_batch_transformation(baseline_to_visit_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(baseline_to_stem, bulk=True, batch_size=100000)
         self.execute_batch_transformation(cancer_register_to_condition_occurrence, bulk=True, batch_size=100000)
-        # self.execute_batch_transformation(baseline_to_condition_occurrence, bulk=True, batch_size=100000)
 
         # Covid tests
         self.execute_batch_transformation(covid_to_visit_occurrence, bulk=True, batch_size=100000)
@@ -101,23 +104,20 @@ class Wrapper(BaseWrapper):
             self.execute_batch_transformation(gp_clinical_to_stem_table, bulk=True, batch_size=100000)
             self.execute_batch_transformation(gp_prescriptions_to_drug_exposure, bulk=True, batch_size=100000)
 
-        # COVID-19 GP tables
-        if self.load_gp_covid19:
-            self.execute_batch_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
-            self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
-
         # HES
         self.execute_batch_transformation(hesin_to_visit_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_to_visit_detail, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_diag_to_condition_occurrence, bulk=True, batch_size=100000)
         self.execute_batch_transformation(hesin_oper_to_procedure_occurrence, bulk=True, batch_size=100000)
 
+        # COVID-19 GP tables
         if self.load_gp_covid19:
-            # these are expected to be the most memory heavy transformations. Execute last
             self.execute_batch_transformation(covid19_emis_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
             self.execute_batch_transformation(covid19_tpp_gp_clinical_scripts_to_visit_occurrence, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_emis_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_emis_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_tpp_gp_scripts_to_drug_exposure, bulk=True, batch_size=100000)
+            self.execute_batch_transformation(covid19_tpp_gp_clinical_to_stem_table, bulk=True, batch_size=100000)
 
         # CDM Source
         self.execute_transformation(cdm_source, bulk=True)

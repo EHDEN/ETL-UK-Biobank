@@ -37,6 +37,9 @@ run_options:
   # Load covid19_emis_clinical covid19_emis_scripts,
   # covid19_tpp_clinical and covid19_tpp_scripts tables
   load_gp_covid19: True
+  # Load death registry from baseline (field 40000, 40001, 40002)
+  # instead from separate death and death_cause tables
+  load_death_from_baseline: True
 
 # sql_parameters are optional. They can be used together with parameterized
 # raw SQL queries, of which the placeholders (e.g. schema names, values)
