@@ -148,7 +148,7 @@ class Wrapper(BaseWrapper):
         Create a dictionary to lookup target concept_id by source code from a mapping file.
         If mapping is not APPROVED, it is not included.
         :param mapping_file: path to the csv file with the mapping
-        :param add_info: for some records we needed to find the standard concept by combine two source fields.
+        :param add_info: for some records we needed to find the standard concept by combining two source fields.
                          If this parameter is filled the dictionary keys will be a combination of the two fields.
         :param first_only: if True, return the first available match only (default True). If False, all targets are lists of concept ids.
         :param approved_only: if True, return only approved mappings (mappingStatus=approved)
