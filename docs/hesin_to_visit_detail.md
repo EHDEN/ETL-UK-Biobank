@@ -17,7 +17,7 @@ Episodes are combined into spells (one visit_occurrence record), which are a tot
 | --- | --- | --- | --- |
 | visit_detail_id | eid<br>ins_index | Concatenate eid and ins_index | |
 | person_id | eid |  |  |
-| visit_occurrence_id | eid<br>spell_index | Lookup vist_occurrence_id by eid and spellindex  eid=visit_occurrence.person_id  'HES-spell_index'=visit_occurrence.record_source_value<br> |  |
+| visit_occurrence_id | eid<br>spell_index | Create visit_occurrence_id as 3<eid><spell_index>  |  |
 | visit_detail_start_date | epistart | if missing use the admission date "admidate".  If both empty us default date 01/01/1970 |  |
 | visit_detail_start_datetime | epistart |  |  |
 | visit_detail_end_date | epiend | if missing use start_date |  |
