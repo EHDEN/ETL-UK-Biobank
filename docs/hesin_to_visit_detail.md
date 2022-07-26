@@ -8,9 +8,6 @@ nav_order: 2
 ## Table name: visit_detail
 
 ### Reading from hesin_c.txt
-
-Create a new field 'record_source_value' for lookup of visit_detail_id by eid and ins_index.
-
 Every record of hesin episode is a visit_detail record. 
 Episodes are combined into spells (one visit_occurrence record), which are a total continuous stay of a patient in a single hospital from admission to discharge.
 
