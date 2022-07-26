@@ -33,5 +33,4 @@ Follow-up online or to assessment center.
 | discharge_to_concept_id |  |  |  |
 | discharge_to_source_value |  |  |  |
 | preceding_visit_occurrence_id |  |  |  |
-| record_source_value |  | 'baseline-<instance> |  |  |
-|data_source |  | 'baseline' |  |  |
+| data_source |  | 'baseline' |  |  |
