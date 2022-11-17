@@ -1,0 +1,14 @@
+click<8,>=7.0
+psycopg2-binary<3,>=2.8
+pydantic<2,>=1.7
+SQLAlchemy<1.4,>=1.3
+SQLAlchemy-Utils<1,>=0.36
+pandas<2,>=1.0.5
+PyYAML<6,>=5.3
+
+[TEST]
+pytest
+pytest-cov
+docker
+nox
+flake8

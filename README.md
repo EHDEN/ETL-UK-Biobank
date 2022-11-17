@@ -7,8 +7,7 @@ This repository will host the ETL code, Mapping Files, Test code, and ETL Docume
 ### Python
 All python dependencies can be installed with `pip install -r requirements.txt`
 
-The ETL is based on [delphyne](https://github.com/thehyve/delphyne), the python OMOP ETL wrapper build by The Hyve.
-Please refer to the delphyne documentation for further information on the ETL structure.
+The ETL is based on **delphyne**, the python OMOP ETL wrapper build by The Hyve. Please refer to the delphyne documentation for further information on the ETL structure.
 
 ### OMOP Vocabularies
 In order to run the ETL, you have to download the OMOP standard vocabulary from [Athena](athena.ohdsi.org). Keep the default selection of vocabularies and in addition select:
