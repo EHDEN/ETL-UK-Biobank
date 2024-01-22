@@ -42,10 +42,6 @@ class VisitOccurrence(BaseVisitOccurrenceCdm531, Base):
         return Column(BigInteger, primary_key=True)
 
     @declared_attr
-    def record_source_value(cls):
-        return Column(String(50))
-
-    @declared_attr
     def data_source(cls):
         return Column(String(50))
 
@@ -55,10 +51,6 @@ class VisitDetail(BaseVisitDetailCdm531, Base):
     @declared_attr
     def visit_detail_id(cls):
         return Column(BigInteger, primary_key=True)
-
-    @declared_attr
-    def record_source_value(cls):
-        return Column(String(50))
 
     @declared_attr
     def data_source(cls):
@@ -275,30 +267,3 @@ class SourceToConceptMapVersion(BaseSourceToConceptMapVersion, Base):
 
 class DrugStrength(BaseDrugStrength, Base):
     pass
-
-
-# class Cohort(BaseCohortCdm531, Base):
-#     pass
-
-
-# class CohortDefinition(BaseCohortDefinition, Base):
-#     pass
-
-
-########################################################################
-#                              EXTENSIONS                              #
-########################################################################
-
-
-# class Episode(BaseEpisodeOncExt, Base):
-#     pass
-#
-#
-# class EpisodeEvent(BaseEpisodeEventOncExt, Base):
-#     pass
-#
-#
-# # Make sure to remove the regular Measurement class under CLINICAL DATA
-# # if using this extension
-# class Measurement(BaseMeasurementOncExt, Base):
-#     pass

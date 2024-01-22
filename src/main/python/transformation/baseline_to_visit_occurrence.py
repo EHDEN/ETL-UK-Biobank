@@ -38,6 +38,5 @@ def baseline_to_visit_occurrence(wrapper: Wrapper) -> List[Wrapper.cdm.VisitOccu
                 visit_end_datetime=date,
                 visit_type_concept_id=32883,  # Survey
                 care_site_id=None if pd.isna(assessment_center) else assessment_center,
-                record_source_value=f'baseline-{instance}',
                 data_source='baseline'
             )

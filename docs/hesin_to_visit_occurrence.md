@@ -35,5 +35,4 @@ From admission to discharge
 | discharge_to_concept_id | dsource<br>disdest | Lookup depends on dsource.  Group by high level mapping:   - Home (19, 10)   - Hospital <br> Mapping to standard concept in: /resources/mapping_tables/hesin_disdest.csv |  |
 | discharge_to_source_value | dsource<br>disdest | 'record origin:<dsource>/admission method:<disdest>' |  |
 | preceding_visit_occurrence_id |  |  |  |
-| recoed_source_value |  | 'HES-<spel_index> |  |
-| data_source |  | HES-<data_source>|  |
+| data_source | dsource | 'HES-<dsource>' |  |
